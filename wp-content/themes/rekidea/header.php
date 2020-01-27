@@ -12,6 +12,15 @@
     <?php wp_head(); ?>
 </head>
 <body>
+  <?php
+    $query = new WP_Query(array (
+            'category_name'=>'common',
+            'post_per_page'=>'5'
+    ));
+    while ($query->have_posts()) {
+        $query->the_post();
+    }
+  ?>
      <header>
          <div class="header">
              <div class="container-flex">
@@ -19,7 +28,11 @@
                     <a href="/"><img src="<?= get_template_directory_uri()?>/img/logo_rekidea.png" alt="Рекидея лого"></a>
                 </div>
                 <div class="header__search-bar">
-
+                    <form class="" action="">
+                        <input id="title-search-input" type="text" placeholder="Найти лучшее для вашей рекламы..."
+                               class="header__search-input">
+                        <button class="header__search-btn" type="submit"></button>
+                    </form>
                 </div>
                 <div class="header__phone-wrapper">
                     <img class="logo" src="<?= get_template_directory_uri()?>/img/phone-logo.png" alt="">
@@ -28,10 +41,10 @@
                     <img class="arrow" src="<?= get_template_directory_uri()?>/img/phone-arrow.png" alt="">
                 </div>
                 <div class="header__email-wrapper">
-                    info@rekidea.ru
+                    <? the_field('email', get_the_ID());?>
                 </div>
                 <div class="header__address-wrapper">
-                    ул. Электрозаводская, 21
+                    <? the_field('address', get_the_ID());?>
                 </div>
             </div>
          </div>
