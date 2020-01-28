@@ -57,7 +57,7 @@
       display: inline-block;
       width: 16px;
       height: 16px;
-      background: url(../img/search-icon.svg) center no-repeat;
+      background: url(img/search-icon.svg) center no-repeat;
       position: relative;
       top: 2px;
     }
@@ -117,7 +117,7 @@
 
 .top-slider-wrapper {
   height: 500px;
-  background: url("../img/top-slider/top-banner.jpg") center no-repeat;
+  //background: url("img/top-slider/top-banner.jpg") center no-repeat;
 }
 
 // block with craft cards
@@ -153,7 +153,7 @@
 // More pictures block
 .pictures-block-wrapper {
   height: 253px;
-  background: url("../img/pictures-block/banner.png");
+  background: url("img/pictures-block/banner.png");
 }
 
 // Stands block
@@ -208,7 +208,7 @@
 
 // Services block
 .services-block-wrapper {
-  background: url("../img/services/services-background.png") center no-repeat;
+  background: url("img/services/services-background.png") center no-repeat;
   min-height: 850px;
   padding-top: 130px;
 }

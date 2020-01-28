@@ -60,7 +60,7 @@
       display: inline-block;
       width: 16px;
       height: 16px;
-      background: url(../img/search-icon.svg) center no-repeat;
+      background: url(img/search-icon.svg) center no-repeat;
       position: relative;
       top: 2px; }
 
@@ -104,8 +104,7 @@
     height: inherit; }
 
 .top-slider-wrapper {
-  height: 500px;
-  background: url("../img/top-slider/top-banner.jpg") center no-repeat; }
+  height: 500px; }
 
 .craft-cards-wrapper {
   padding: 10px 0 50px 0;
@@ -129,7 +128,7 @@
 
 .pictures-block-wrapper {
   height: 253px;
-  background: url("../img/pictures-block/banner.png"); }
+  background: url("img/pictures-block/banner.png"); }
 
 .stands-block-wrapper {
   padding: 90px 0 90px 0;
@@ -169,7 +168,7 @@
       text-decoration: none; }
 
 .services-block-wrapper {
-  background: url("../img/services/services-background.png") center no-repeat;
+  background: url("img/services/services-background.png") center no-repeat;
   min-height: 850px;
   padding-top: 130px; }
 

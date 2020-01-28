@@ -3,11 +3,12 @@ get_header();
 ?>
 <!--top slider block-->
  <div class="top-slider-wrapper">
-    <div class="container">
+     <?php echo do_shortcode('[slick-slider category="4"]'); ?>
+     <!--    <div class="container">-->
         <div class="top-slider">
-             <?php echo do_shortcode('[slick-slider]'); ?>
+             <?php echo do_shortcode('[slick-slider category="4"]'); ?>
         </div>
-    </div>
+<!--    </div>-->
  </div>
 <!--Crafts block-->
  <div class="craft-cards-wrapper container">
