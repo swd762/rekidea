@@ -5,7 +5,7 @@ get_header();
  <div class="top-slider-wrapper">
     <div class="container">
         <div class="top-slider">
-
+             <?php echo do_shortcode('[slick-slider]'); ?>
         </div>
     </div>
  </div>
