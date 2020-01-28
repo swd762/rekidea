@@ -12,55 +12,26 @@ get_header();
  </div>
 <!--Crafts block-->
  <div class="craft-cards-wrapper container">
-    <div class="card">
-        <a href="#">
-            <img src="<?= get_template_directory_uri() ?>/img/craft-cards/signs.png" alt="">
-            <h3>Вывески</h3>
-        </a>
-    </div>
-    <div class="card">
-        <a href="#">
-            <img src="<?= get_template_directory_uri() ?>/img/craft-cards/signs.png" alt="">
-            <h3>Вывески</h3>
-        </a>
-    </div>
-    <div class="card">
-        <a href="#">
-            <img src="<?= get_template_directory_uri() ?>/img/craft-cards/signs.png" alt="">
-            <h3>Вывески</h3>
-        </a>
-    </div>
-    <div class="card">
-        <a href="#">
-            <img src="<?= get_template_directory_uri() ?>/img/craft-cards/signs.png" alt="">
-            <h3>Вывески</h3>
-        </a>
-    </div>
-    <div class="card">
-        <a href="#">
-            <img src="<?= get_template_directory_uri() ?>/img/craft-cards/signs.png" alt="">
-            <h3>Вывески</h3>
-        </a>
-    </div>
-    <div class="card">
-        <a href="#">
-            <img src="<?= get_template_directory_uri() ?>/img/craft-cards/signs.png" alt="">
-            <h3>Вывески</h3>
-        </a>
-    </div>
-    <div class="card">
-        <a href="#">
-            <img src="<?= get_template_directory_uri() ?>/img/craft-cards/signs.png" alt="">
-            <h3>Вывески</h3>
-        </a>
-    </div>
-    <div class="card">
-        <a href="#">
-            <img src="<?= get_template_directory_uri() ?>/img/craft-cards/signs.png" alt="">
-            <h3>Вывески</h3>
-        </a>
-    </div>
+    <?php
+    $query = new WP_Query(array(
+            'category_name'=>'cards-block',
+            'post_per_page'=>-1
+    ));
+    while ($query->have_posts()) {
+
+     $query->the_post();
+    ?>
+
+        <div class="card">
+            <a href="#">
+                <img src="<?php the_field('link_thumbnail', get_the_ID());?>" alt="">
+                <h3><?php the_title() ?></h3>
+            </a>
+        </div>
+
+    <?php } ?>
  </div>
+<!--******************************************-->
 <!--Pictures block-->
  <div class="pictures-block-wrapper">
     <div class="container">
