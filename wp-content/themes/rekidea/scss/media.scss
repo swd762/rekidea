@@ -10,17 +10,85 @@
     justify-content: space-around;
   }
 
-  //.craft-cards-wrapper .card:nth-child(1n+1) {
-  //  margin-left: 0;
-  //}
-  //
-  //.card:nth-child(4n+4) {
-  //  margin-right: 0;
-  //}
 
-  //.craft-cards-wrapper .card {
-  //  margin-right: 0;
-  //}
+}
 
+
+@media (max-width: 1090px) {
+  .top-slider-wrapper {
+    height: 350px;
+  }
+
+  .card {
+    width: 220px;
+    flex-basis: 220px;
+    a img {
+      width: 100%;
+
+    }
+  }
+
+  .stands-block-wrapper {
+    padding: 50px 0 0 0;
+    .icon-block img {
+      position: initial;
+      width: 100%;
+      height: auto;
+    }
+    .description-block {
+      width: 420px;
+      h2 {
+        font-size: 42px;
+      }
+    }
+  }
+}
+
+
+
+
+@media (max-width: 900px) {
+  .stands-block-wrapper {
+    padding: 10px 0 0 0;
+    flex-direction: column;
+    align-items: center;
+    .description-block {
+      p {
+        margin: 10px 0 10px 0;
+        text-align: center;
+      }
+    }
+  }
+}
+
+
+
+@media (max-width: 520px) {
+
+  .card {
+    width: 153px;
+    flex-basis: 153px;
+    a img {
+      width: 100%;
+    }
+    a h3 {
+      font-size: 11px;
+    }
+  }
+  .stands-block-wrapper {
+    .icon-block {
+      width: 300px;
+    }
+    .description-block {
+      width: 300px;
+      flex-basis: initial;
+      h2 {
+        font-size: 24px;
+      }
+      p {
+        font-size: 12px;
+      }
+    }
+  }
 
 }

@@ -4,7 +4,7 @@
 
 
 @import 'common';
-@import 'media';
+
 
 
 
@@ -116,10 +116,12 @@
 //top slider
 .top-slider-wrapper {
   height: 500px;
-  //background: url("img/top-slider/top-banner.jpg") center no-repeat;
 }
 
+
+
 // block with craft cards
+
 .craft-cards-wrapper {
   padding: 10px 0 35px 0;
   display: flex;
@@ -138,6 +140,7 @@
   width: 265px;
   flex-basis: 265px;
   margin-top: 25px;
+
 }
 
 // More pictures block
@@ -177,7 +180,8 @@
 .stands-block-wrapper {
   padding: 90px 0 90px 0;
 
-  min-height: 500px;
+
+  //min-height: 500px;
   display: flex;
   .icon-block {
     width: 446px;
@@ -500,7 +504,6 @@ footer {
   text-align: center;
   padding-top: 10px;
   font-size: 14px;
-
 }
 .footer-socials {
   li a {
@@ -512,3 +515,4 @@ footer {
   }
 }
 
+@import 'media';

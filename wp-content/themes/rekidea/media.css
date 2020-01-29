@@ -4,5 +4,51 @@
 
   body .craft-cards-wrapper {
     justify-content: space-around; } }
+@media (max-width: 1090px) {
+  .top-slider-wrapper {
+    height: 350px; }
+
+  .card {
+    width: 220px;
+    flex-basis: 220px; }
+    .card a img {
+      width: 100%; }
+
+  .stands-block-wrapper {
+    padding: 50px 0 0 0; }
+    .stands-block-wrapper .icon-block img {
+      position: initial;
+      width: 100%;
+      height: auto; }
+    .stands-block-wrapper .description-block {
+      width: 420px; }
+      .stands-block-wrapper .description-block h2 {
+        font-size: 42px; } }
+@media (max-width: 900px) {
+  .stands-block-wrapper {
+    padding: 10px 0 0 0;
+    flex-direction: column;
+    align-items: center; }
+    .stands-block-wrapper .description-block p {
+      margin: 10px 0 10px 0;
+      text-align: center; } }
+@media (max-width: 520px) {
+  .card {
+    width: 153px;
+    flex-basis: 153px; }
+    .card a img {
+      width: 100%; }
+    .card a h3 {
+      font-size: 11px; }
+
+  .stands-block-wrapper .icon-block {
+    width: 300px; }
+  .stands-block-wrapper .description-block {
+    width: 300px;
+    flex-basis: initial; }
+    .stands-block-wrapper .description-block h2 {
+      font-size: 24px; }
+    .stands-block-wrapper .description-block p {
+      font-size: 12px; } }
 
 /*# sourceMappingURL=media.css.map */
