@@ -2,6 +2,10 @@
 
 //** Header */
 ?>
+<?php
+wp_head();
+?>
+
 <!DOCTYPE html>
 <html <?php language_attributes(); ?> >
 <head>

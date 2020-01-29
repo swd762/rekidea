@@ -1,0 +1,26 @@
+@media (max-width: 1170px) {
+
+  //Common
+  .container {
+    width: auto;
+  }
+
+  // cards wrapper
+  body .craft-cards-wrapper {
+    justify-content: space-around;
+  }
+
+  //.craft-cards-wrapper .card:nth-child(1n+1) {
+  //  margin-left: 0;
+  //}
+  //
+  //.card:nth-child(4n+4) {
+  //  margin-right: 0;
+  //}
+
+  //.craft-cards-wrapper .card {
+  //  margin-right: 0;
+  //}
+
+
+}

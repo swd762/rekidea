@@ -3,7 +3,6 @@
 
 
 
-@import "variables";
 @import 'common';
 @import 'media';
 
@@ -115,7 +114,6 @@
 
 
 //top slider
-
 .top-slider-wrapper {
   height: 500px;
   //background: url("img/top-slider/top-banner.jpg") center no-repeat;
@@ -123,17 +121,10 @@
 
 // block with craft cards
 .craft-cards-wrapper {
-  padding: 10px 0 50px 0;
+  padding: 10px 0 35px 0;
   display: flex;
-
   flex-wrap: wrap;
-
-  .card {
-    width: 265px;
-    flex-basis: 265px;
-    margin-top: 25px;
-    margin-right: 20px;
-
+  justify-content: space-between;
     a {
       color: $red;
       text-align: center;
@@ -142,19 +133,44 @@
     a h3 {
       margin-top: 10px;
     }
-  }
-  .card:nth-child(1n+1) {
-    margin-left: 5px;
-  }
-  .card:nth-child(4n+4) {
-    margin-right: 0;
-  }
+}
+.card {
+  width: 265px;
+  flex-basis: 265px;
+  margin-top: 25px;
 }
 
 // More pictures block
 .pictures-block-wrapper {
   height: 253px;
-  background: url("img/pictures-block/banner.png");
+  background: url("img/pictures-block/banner.png") center no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  div {
+    width: 247px;
+    height: 190px;
+    background-color: #fff;
+    h3 {
+      color: $red;
+      text-transform: uppercase;
+      text-align: center;
+      font-size: 17px;
+      margin: 30px 0 30px 0;
+    }
+    a.button {
+      width: 165px;
+      height: 44px;
+      background-color: $red;
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      margin: 0 auto;
+      color: #fff;
+      text-transform: uppercase;
+      text-decoration: none;
+    }
+  }
 }
 
 // Stands block
@@ -279,6 +295,7 @@
 }
 .why-us-block {
   min-height: 720px;
+  position: relative;
 
 }
 .why-us-block__header {
@@ -296,26 +313,48 @@
 .why-us-block__content {
   display: flex;
   margin-top: 30px;
+
   .services-list {
     width: 40%;
     ul {
       display: flex;
       flex-direction: column;
+      padding-right: 30px;
     }
     ul li {
-      list-style: none;
-      text-transform: uppercase;
-      padding: 25px 0 25px 30px;
-      text-decoration: underline;
-      color: $red;
     }
   }
   .services-content {
+    display: none;
     width: 60%;
     p {
       margin: 35px 0 35px 0;
     }
   }
+}
+.akk-menu-item {
+  list-style: none;
+  text-transform: uppercase;
+  padding: 25px 0 25px 30px;
+  text-decoration: underline;
+  color: $red;
+  cursor: pointer;
+}
+.akk-menu-content {
+  list-style: none;
+  position: absolute;
+  left: 460px;
+  top: 120px;
+  display: none;
+}
+
+.show {
+  display: block!important;
+}
+
+.btn-checked {
+  background-color: $red;
+  color: #fff!important;
 }
 
 // 3 steps block
