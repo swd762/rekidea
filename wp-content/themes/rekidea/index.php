@@ -276,23 +276,15 @@ get_header();
 <div class="our-partners-block-wrapper">
     <div class="container">
         <div class="our-partners-block">
-            <img src="<?= get_template_directory_uri()?>/img/our-partners/logo-elize.png" alt="">
-            <img src="<?= get_template_directory_uri()?>/img/our-partners/logo-gorzdrav.png" alt="">
-            <img src="<?= get_template_directory_uri()?>/img/our-partners/logo-mars.png" alt="">
-            <img src="<?= get_template_directory_uri()?>/img/our-partners/logo-leofarm.png" alt="">
-            <img src="<?= get_template_directory_uri()?>/img/our-partners/logo-sletatru.png" alt="">
+           <?= do_shortcode('[slick-carousel-slider category="6" 
+           dots="false" arrows="false"  
+           image_size="large"
+           autoplay="true" autoplay_interval="3000" 
+           image_fit="true" sliderheight="100"  ]'); ?>
         </div>
     </div>
 </div>
-
-
-
-
-
-
-
-
-
+<!--********************************************-->
 
 <?php
 get_footer();

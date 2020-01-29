@@ -1,0 +1,8 @@
+@media (max-width: 1170px) {
+  .container {
+    width: auto; }
+
+  body .craft-cards-wrapper {
+    justify-content: space-around; } }
+
+/*# sourceMappingURL=media.css.map */

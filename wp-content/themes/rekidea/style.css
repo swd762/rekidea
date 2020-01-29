@@ -368,15 +368,17 @@ body {
     color: #000; }
 
 .our-partners-block-wrapper {
-  background-color: #f7f7f7;
-  min-height: 170px;
-  height: 1px; }
+  background-color: #f7f7f7; }
 
 .our-partners-block {
-  height: inherit;
-  display: flex;
-  justify-content: space-between;
-  align-items: center; }
+  height: 180px; }
+  .our-partners-block .wpsisac-image-slide {
+    display: flex;
+    align-items: center;
+    justify-content: center; }
+  .our-partners-block .wpsisac-image-slide-wrap
+  img {
+    width: auto; }
 
 footer {
   min-height: 290px;
