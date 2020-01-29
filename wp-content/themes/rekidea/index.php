@@ -259,17 +259,29 @@ get_header();
 </div>
 <!--Portfolio block-->
 <div class="portfolio-block-wrapper">
-    <div class="portfolio-block__header container">
-        <h2>наше портфолио</h2>
-        <p>Работа с разными брендами от дешевого до премиум сегмента.Насколько хорошо мы умеем находить подход
-            к каждому клиенту. Главная часть нас - это проекты, которые мы делаем и задачи, которые мы решаем.Обращаясь
-            к нам вы получаете качественные проекты. Галерея будет адаптивно настраиваемая и анимированная. Картинки
-            с водяным знаком при увеличении или нет?</p>
-    </div>
-    <div class="portfolio-block__content">
-        <img src="<?= get_template_directory_uri()?>/img/portfolio-block/slide.png" alt="">
-        <a href="#">Посмотреть больше наших работ</a>
-    </div>
+        <div class="portfolio-block__header container">
+            <h2>наше портфолио</h2>
+            <p>Работа с разными брендами от дешевого до премиум сегмента.Насколько хорошо мы умеем находить подход
+                к каждому клиенту. Главная часть нас - это проекты, которые мы делаем и задачи, которые мы решаем.Обращаясь
+                к нам вы получаете качественные проекты. Галерея будет адаптивно настраиваемая и анимированная. Картинки
+                с водяным знаком при увеличении или нет?</p>
+        </div>
+        <div class="portfolio-block__content">
+            <div class="content-big container">
+                <a href="#"><img src="<?= get_template_directory_uri()?>/img/portfolio-block/gal_big_1.png" alt=""></a>
+                    <a href="#"><img src="<?= get_template_directory_uri()?>/img/portfolio-block/gal_big_2.png" alt=""></a>
+                        <a href="#"><img src="<?= get_template_directory_uri()?>/img/portfolio-block/gal_big_3.png" alt=""></a>
+            </div>
+            <div class="content-small container">
+                <a href="#"><img src="<?= get_template_directory_uri()?>/img/portfolio-block/gal_small_1.png" alt=""></a>
+                <a href="#"><img src="<?= get_template_directory_uri()?>/img/portfolio-block/gal_small_2.png" alt=""></a>
+                <a href="#"><img src="<?= get_template_directory_uri()?>/img/portfolio-block/gal_small_3.png" alt=""></a>
+                <a href="#"><img src="<?= get_template_directory_uri()?>/img/portfolio-block/gal_small_4.png" alt=""></a>
+                <a href="#"><img src="<?= get_template_directory_uri() ?>/img/portfolio-block/gal_small_5.png"alt=""></a>
+                <a href="#"><img src="<?= get_template_directory_uri() ?>/img/portfolio-block/gal_small_6.png"alt=""></a>
+            </div>
+        </div>
+        <a href="#" class="portfolio-more">Посмотреть больше наших работ</a>
 </div>
 <!--****************************************-->
 <!--Out partners block-->
@@ -279,13 +291,12 @@ get_header();
            <?= do_shortcode('[slick-carousel-slider category="6" 
            dots="false" arrows="false"  
            image_size="large"
-           autoplay="true" autoplay_interval="3000" 
+           autoplay="true" autoplay_interval="2000" 
            image_fit="true" sliderheight="100"  ]'); ?>
         </div>
     </div>
 </div>
 <!--********************************************-->
-
 <?php
 get_footer();
 ?>

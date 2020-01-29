@@ -35,11 +35,14 @@ wp_footer();
                     <li><a href="#">+7 (926) 583-23-51</a></li>
                     <li><a href="#">info@rekidea.ru</a></li>
                 </ul>
-                <ul>
+                <ul class="footer-socials">
                     <li><a href="#"><img src="<?= get_template_directory_uri()?>/img/fb.png" alt="">FACEBOOK</a></li>
                     <li><a href="#"><img src="<?= get_template_directory_uri()?>/img/insta.png" alt="">INSTAGRAM</a></li>
                     <li><a href="#"><img src="<?= get_template_directory_uri()?>/img/vk.png" alt="">VK</a></li>
                 </ul>
+            </div>
+            <div class="footer-bottom">
+                © Rekidea 2019 г. Рекламное производство. Сайт не является публичной офертой. Все права защищены.
             </div>
         </div>
     </footer>
