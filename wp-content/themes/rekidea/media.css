@@ -8,12 +8,6 @@
   .top-slider-wrapper {
     height: 350px; }
 
-  .card {
-    width: 220px;
-    flex-basis: 220px; }
-    .card a img {
-      width: 100%; }
-
   .stands-block-wrapper {
     padding: 50px 0 0 0; }
     .stands-block-wrapper .icon-block img {
@@ -64,6 +58,24 @@
         flex-basis: 16.6%; }
         .portfolio-block__content .content-small a img {
           width: 100%; } }
+@media (max-width: 1024px) {
+  .craft-cards-wrapper {
+    padding: 10px 0 35px 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between; }
+    .craft-cards-wrapper a {
+      text-align: center;
+      text-transform: uppercase; }
+    .craft-cards-wrapper a h3 {
+      margin-top: 10px;
+      font-size: 15px;
+      font-weight: normal; }
+
+  .card-craft {
+    width: 228px;
+    flex-basis: 228px;
+    margin-top: 25px; } }
 @media (max-width: 900px) {
   .stands-block-wrapper {
     padding: 10px 0 0 0;
@@ -108,12 +120,13 @@
       margin: 15px 0 10px 0;
       text-align: center; } }
 @media (max-width: 520px) {
-  .card {
+  .card-craft {
     width: 153px;
-    flex-basis: 153px; }
-    .card a img {
+    flex-basis: 153px;
+    margin-top: 10px; }
+    .card-craft a img {
       width: 100%; }
-    .card a h3 {
+    .card-craft a h3 {
       font-size: 11px; }
 
   .stands-block-wrapper .icon-block {

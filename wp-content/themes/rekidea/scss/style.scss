@@ -134,14 +134,22 @@
     }
     a h3 {
       margin-top: 10px;
+      font-weight: normal;
     }
 }
-.card {
+.card-craft {
   width: 265px;
   flex-basis: 265px;
   margin-top: 25px;
-
+  img {
+    width: 100%;
+  }
 }
+
+
+
+
+
 
 // More pictures block
 .pictures-block-wrapper {

@@ -9,8 +9,6 @@
   body .craft-cards-wrapper {
     justify-content: space-around;
   }
-
-
 }
 
 
@@ -19,15 +17,16 @@
     height: 350px;
   }
 
-  .card {
-    width: 220px;
-    flex-basis: 220px;
-    a img {
-      width: 100%;
-
-    }
-  }
-
+// Craft block
+//  .card-craft {
+//    width: 220px;
+//    flex-basis: 220px;
+//    a img {
+//      width: 100%;
+//
+//    }
+//  }
+//Stands block
   .stands-block-wrapper {
     padding: 50px 0 0 0;
     .icon-block img {
@@ -104,7 +103,33 @@
 
 
 }
+@media (max-width: 1024px) {
+  //Craft block
+  .craft-cards-wrapper {
+    padding: 10px 0 35px 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    a {
+      text-align: center;
+      text-transform: uppercase;
+    }
+    a h3 {
+      margin-top: 10px;
+      font-size: 15px;
+      font-weight: normal;
+    }
+  }
+  .card-craft {
+    width: 228px;
+    flex-basis: 228px;
+    margin-top: 25px;
+  }
 
+
+
+
+}
 
 
 
@@ -182,10 +207,11 @@
 
 
 @media (max-width: 520px) {
-
-  .card {
+//Craft cards
+  .card-craft {
     width: 153px;
     flex-basis: 153px;
+    margin-top: 10px;
     a img {
       width: 100%;
     }
@@ -193,6 +219,8 @@
       font-size: 11px;
     }
   }
+
+//Stands block
   .stands-block-wrapper {
     .icon-block {
       width: 300px;
