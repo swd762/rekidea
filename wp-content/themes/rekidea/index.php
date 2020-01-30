@@ -272,18 +272,18 @@ get_header();
                 с водяным знаком при увеличении или нет?</p>
         </div>
         <div class="portfolio-block__content">
-            <div class="content-big container">
+            <div class="content-big">
                 <a href="#"><img src="<?= get_template_directory_uri()?>/img/portfolio-block/gal_big_1.png" alt=""></a>
-                    <a href="#"><img src="<?= get_template_directory_uri()?>/img/portfolio-block/gal_big_2.png" alt=""></a>
-                        <a href="#"><img src="<?= get_template_directory_uri()?>/img/portfolio-block/gal_big_3.png" alt=""></a>
+                <a href="#"><img src="<?= get_template_directory_uri()?>/img/portfolio-block/gal_big_2.png" alt=""></a>
+                <a href="#" class="no-mobile"><img src="<?= get_template_directory_uri()?>/img/portfolio-block/gal_big_3.png" alt=""></a>
             </div>
-            <div class="content-small container">
+            <div class="content-small">
                 <a href="#"><img src="<?= get_template_directory_uri()?>/img/portfolio-block/gal_small_1.png" alt=""></a>
                 <a href="#"><img src="<?= get_template_directory_uri()?>/img/portfolio-block/gal_small_2.png" alt=""></a>
                 <a href="#"><img src="<?= get_template_directory_uri()?>/img/portfolio-block/gal_small_3.png" alt=""></a>
                 <a href="#"><img src="<?= get_template_directory_uri()?>/img/portfolio-block/gal_small_4.png" alt=""></a>
-                <a href="#"><img src="<?= get_template_directory_uri() ?>/img/portfolio-block/gal_small_5.png"alt=""></a>
-                <a href="#"><img src="<?= get_template_directory_uri() ?>/img/portfolio-block/gal_small_6.png"alt=""></a>
+                <a href="#" class="no-mobile"><img src="<?= get_template_directory_uri() ?>/img/portfolio-block/gal_small_5.png"alt=""></a>
+                <a href="#" class="no-mobile"><img src="<?= get_template_directory_uri() ?>/img/portfolio-block/gal_small_6.png"alt=""></a>
             </div>
         </div>
         <a href="#" class="portfolio-more">Посмотреть больше наших работ</a>

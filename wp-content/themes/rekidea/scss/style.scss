@@ -181,6 +181,7 @@
   padding: 90px 0 90px 0;
 
 
+
   //min-height: 500px;
   display: flex;
   .icon-block {
@@ -230,8 +231,10 @@
 // Services block
 .services-block-wrapper {
   background: url("img/services/services-background.png") center no-repeat;
+  background-size: cover;
   min-height: 850px;
   padding-top: 130px;
+
 }
 .services-block {
   width: 85%;
@@ -300,7 +303,6 @@
 .why-us-block {
   min-height: 720px;
   position: relative;
-
 }
 .why-us-block__header {
   h2 {
@@ -328,6 +330,7 @@
     ul li {
     }
   }
+
   .services-content {
     display: none;
     width: 60%;
@@ -336,6 +339,8 @@
     }
   }
 }
+
+
 .akk-menu-item {
   list-style: none;
   text-transform: uppercase;
@@ -347,9 +352,15 @@
 .akk-menu-content {
   list-style: none;
   position: absolute;
-  left: 460px;
+  left: 450px;
   top: 120px;
   display: none;
+  img {
+    width: 100%;
+  }
+  p {
+    margin: 15px 0 10px 0;
+  }
 }
 
 .show {
@@ -380,16 +391,20 @@
     }
   }
 }
+
 .three-steps-block__content {
   display: flex;
   margin-top: 40px;
+  flex-wrap: wrap;
+  justify-content: center;
   .card {
     display: flex;
     flex-direction: column;
     align-items: center;
     width: 33%;
-    flex-basis: 33%;
+    flex-basis: 240px;
     padding: 0 30px 0 30px ;
+    margin-top: 10px;
     .thumbnail {
       width: 227px;
       height: 227px;
@@ -405,6 +420,7 @@
     }
     h4 {
       margin-top: 20px;
+      text-align: center;
     }
     p {
       margin-top: 15px;
@@ -415,7 +431,7 @@
 }
 // Portfolio block
 .portfolio-block-wrapper {
-  min-height: 770px;
+  //min-height: 770px;
   padding: 45px 0 45px 0;
   display: flex;
   flex-direction: column;
@@ -437,11 +453,15 @@
   p {
     margin: 30px 0 30px 0;
     text-align: center;
+    padding: 0 5px;
   }
 }
+
 .portfolio-block__content {
   display: flex;
   flex-direction: column;
+  width: 1140px;
+  margin: 0 auto;
   .content-big {
     display: flex;
     justify-content: space-between;
