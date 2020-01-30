@@ -101,12 +101,14 @@
 
 
 
-
 }
 @media (max-width: 1024px) {
+  .container {
+    width: 1024px;
+  }
   //Craft block
   .craft-cards-wrapper {
-    padding: 10px 0 35px 0;
+    padding: 10px 20px 35px 20px;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
@@ -124,6 +126,66 @@
     width: 228px;
     flex-basis: 228px;
     margin-top: 25px;
+  }
+  //stands block
+  .stands-block-wrapper {
+    .icon-block {
+      width: 500px;
+      padding-bottom: 60px;
+    }
+
+    padding: 10px 0 0 0;
+
+    align-items: center;
+    .description-block {
+      padding-top: 25px;
+      width: 430px;
+      p {
+        margin: 10px 0 10px 0;
+        text-align: center;
+      }
+    }
+  }
+
+  //Why us block
+  .why-us-block__header {
+    p {
+      text-align: center;
+      //font-weight: 400;
+    }
+  }
+  .why-us-block__content {
+    //display: flex;
+    //margin-top: 30px;
+
+    .services-list {
+      //width: 100%;
+      //ul {
+      //  display: flex;
+      //  flex-direction: column;
+      //  padding-right: 0;
+      //}
+      ul li {
+        //text-align: center;
+        font-size: 16px;
+
+      }
+    }
+    //.services-content {
+    //  display: none;
+    //  width: 100%;
+    //  p {
+    //    margin: 35px 0 35px 0;
+    //  }
+    //}
+    .akk-menu-content {
+      position: absolute;
+      left: 400px;
+      width: 50%;
+      img {
+        width: 100%;
+      }
+    }
   }
 
 

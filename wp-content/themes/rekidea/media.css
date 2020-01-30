@@ -59,8 +59,11 @@
         .portfolio-block__content .content-small a img {
           width: 100%; } }
 @media (max-width: 1024px) {
+  .container {
+    width: 1024px; }
+
   .craft-cards-wrapper {
-    padding: 10px 0 35px 0;
+    padding: 10px 20px 35px 20px;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between; }
@@ -75,7 +78,32 @@
   .card-craft {
     width: 228px;
     flex-basis: 228px;
-    margin-top: 25px; } }
+    margin-top: 25px; }
+
+  .stands-block-wrapper {
+    padding: 10px 0 0 0;
+    align-items: center; }
+    .stands-block-wrapper .icon-block {
+      width: 500px;
+      padding-bottom: 60px; }
+    .stands-block-wrapper .description-block {
+      padding-top: 25px;
+      width: 430px; }
+      .stands-block-wrapper .description-block p {
+        margin: 10px 0 10px 0;
+        text-align: center; }
+
+  .why-us-block__header p {
+    text-align: center; }
+
+  .why-us-block__content .services-list ul li {
+    font-size: 16px; }
+  .why-us-block__content .akk-menu-content {
+    position: absolute;
+    left: 400px;
+    width: 50%; }
+    .why-us-block__content .akk-menu-content img {
+      width: 100%; } }
 @media (max-width: 900px) {
   .stands-block-wrapper {
     padding: 10px 0 0 0;
