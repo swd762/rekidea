@@ -25,7 +25,7 @@ get_header();
      $query->the_post();
     ?>
 
-        <div class="card">
+        <div class="card-craft">
             <a href="#">
                 <img src="<?php the_field('link_thumbnail', get_the_ID());?>" alt="">
                 <h3><?php the_title() ?></h3>
