@@ -718,5 +718,8 @@ footer {
       margin-top: 25px; }
     .footer_content_mobile .footer-socials {
       margin-top: 25px; } }
+@media (max-width: 360px) {
+  .craft-cards-wrapper {
+    padding: 0; } }
 
 /*# sourceMappingURL=style.css.map */
