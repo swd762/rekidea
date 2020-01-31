@@ -2,7 +2,7 @@
 
   //Common
   .container {
-    width: auto;
+    width: 1024px;
   }
 
   // cards wrapper
@@ -51,6 +51,7 @@
       width: auto;
       h2 {
         text-align: center;
+        width: 54%;
       }
       .icon-cards {
         justify-content: center;
@@ -103,9 +104,7 @@
 
 }
 @media (max-width: 1024px) {
-  .container {
-    width: 1024px;
-  }
+
   //Craft block
   .craft-cards-wrapper {
     padding: 10px 20px 35px 20px;
@@ -178,21 +177,35 @@
     //    margin: 35px 0 35px 0;
     //  }
     //}
-    .akk-menu-content {
-      position: absolute;
-      left: 400px;
-      width: 50%;
-      img {
-        width: 100%;
-      }
-    }
+    //.akk-menu-content {
+    //  position: absolute;
+    //  left: 400px;
+    //  width: 50%;
+    //  img {
+    //    width: 100%;
+    //  }
+    //}
   }
+
+.footer__content {
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
 
 
 
 
 }
 
+
+
+
+
+@media (max-width: 1023px) {
+  .container {
+    width: auto;
+  }
+}
 
 
 @media (max-width: 900px) {
@@ -211,6 +224,16 @@
   .services-block-wrapper {
     background: url(img/services/services-background.png) 2% no-repeat;
     background-size: cover;
+    .services-block  {
+      width: auto;
+      h2 {
+        text-align: center;
+        width: 100%;
+      }
+      //.icon-cards {
+      //  justify-content: center;
+      //}
+    }
   }
 
 
@@ -257,69 +280,72 @@
       text-align: center;
     }
   }
-
-
-
-
-
-
-
 }
 
 
 
 @media (max-width: 520px) {
-//Craft cards
+  //Craft cards
   .card-craft {
     width: 153px;
     flex-basis: 153px;
     margin-top: 10px;
+
     a img {
       width: 100%;
     }
+
     a h3 {
       font-size: 11px;
     }
   }
 
-//Stands block
+  //Stands block
   .stands-block-wrapper {
     .icon-block {
       width: 300px;
+      padding-bottom: 0;
     }
+
     .description-block {
       width: 300px;
       flex-basis: initial;
+
       h2 {
         font-size: 24px;
       }
+
       p {
         font-size: 12px;
       }
     }
   }
-
   .services-block-wrapper {
     background: url(img/services/services-background.png) 2% no-repeat;
     background-size: cover;
     padding-top: 50px;
     padding-bottom: 20px;
 
-    .services-block  {
+    .services-block {
       width: auto;
+
       h2 {
         text-align: center;
         font-size: 24px;
+        width: 54%;
       }
+
       h3 {
         font-size: 12px;
       }
+
       .icon-cards {
         justify-content: center;
+
         .card {
           width: 145px;
           flex-basis: 145px;
-          margin:42px 25px 0 0;
+          margin: 42px 25px 0 0;
         }
       }
     }
@@ -327,8 +353,10 @@
 
   .three-steps-block {
     padding: 15px 0 15px 0;
+
     h2 {
       font-size: 24px;
+
       span {
         font-size: 24px;
       }
@@ -341,31 +369,37 @@
     margin-top: 20px;
     flex-wrap: wrap;
     justify-content: center;
+
     .card {
       display: flex;
       flex-direction: column;
       align-items: center;
       width: 100px;
       flex-basis: 100px;
-      padding: 0 5px 0 5px ;
+      padding: 0 5px 0 5px;
+
       .thumbnail {
         width: initial;
         height: initial;
         border-radius: initial;
         overflow: hidden;
-         img {
-           width: 100%;
-         }
+
+        img {
+          width: 100%;
+        }
       }
+
       h3 {
         margin-top: 10px;
         font-size: 13px;
         font-weight: 400;
         text-align: center;
       }
+
       h4 {
         margin-top: 12px;
       }
+
       p {
         margin-top: 15px;
         font-size: 10px;
@@ -374,7 +408,7 @@
     }
   }
 
-// portfolio block
+  // portfolio block
   .portfolio-block-wrapper {
     padding: 15px 0;
   }
@@ -384,6 +418,7 @@
       font-size: 24px;
 
     }
+
     p {
       margin: 15px 0 15px 0;
       text-align: center;
@@ -395,64 +430,59 @@
   .portfolio-block__content {
 
     .content-big {
-      //display: flex;
-      //justify-content: space-between;
       .no-mobile {
         display: none;
       }
+
       a {
-            width: 50%;
-            flex-basis: 50%;
-            img {
-               width: 100%;
-            }
+        width: 50%;
+        flex-basis: 50%;
+
+        img {
+          width: 100%;
+        }
       }
     }
+
     .content-small {
-      //display: flex;
-      //justify-content: space-between;
       margin-top: 0;
+
       .no-mobile {
         display: none;
       }
+
       a {
         width: 25%;
         flex-basis: 25%;
+
         img {
           width: 100%;
         }
       }
     }
   }
-  //.portfolio-block__content {
-  //  display: flex;
-  //  flex-direction: column;
-  //  width: auto;
-  //  margin: initial;
-  //  .content-big {
-  //    display: flex;
-  //    justify-content: space-between;
-  //    a {
-  //      width: 33%;
-  //      flex-basis: 33%;
-  //      img {
-  //        width: 100%;
-  //      }
-  //    }
-  //  }
-  //  .content-small {
-  //    display: flex;
-  //    justify-content: space-between;
-  //    margin-top: 10px;
-  //    a {
-  //      width: 16.6%;
-  //      flex-basis: 16.6%;
-  //      img {
-  //        width: 100%;
-  //      }
-  //    }
-  //  }
+    .footer__content {
+      display: none;
+    }
+
+  .footer_content_mobile {
+    display: flex;
+    .footer-nav {
+      flex-basis: 50%;
+      margin-top: 25px;
+    }
+    .footer-socials {
+      margin-top: 25px;
+    }
+  }
+}
+
+@media (max-width: 360px) {
+
+  //.no-mobile-footer {
+  //  display: none;
   //}
-
-
+  //.mobile-footer {
+  //  display: block;
+  //}
 }

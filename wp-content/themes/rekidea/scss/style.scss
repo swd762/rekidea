@@ -1,11 +1,10 @@
 //fonts
-@import url('https://fonts.googleapis.com/css?family=Roboto:500&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap&subset=cyrillic');
+
 
 
 
 @import 'common';
-
-
 
 
 
@@ -32,7 +31,6 @@
   position: relative;
   form {
     width: 100%;
-
     input {
       width: 100%;
       border: none;
@@ -42,6 +40,7 @@
       padding-right: 20px;
       font-size: 9px;
     }
+
 
     button {
       position: absolute;
@@ -178,6 +177,8 @@
       color: #fff;
       text-transform: uppercase;
       text-decoration: none;
+      font-size: 14px;
+      font-weight: 300;
     }
   }
 }
@@ -185,12 +186,6 @@
 // Stands block
 .stands-block-wrapper {
   padding: 90px 0 90px 0;
-
-
-
-
-
-  //min-height: 500px;
   display: flex;
   .icon-block {
     width: 446px;
@@ -217,7 +212,9 @@
     p {
       color: $red;
       margin: 60px 0 60px 0;
+      font-weight: 300;
     }
+
 
     a.button {
       width: 165px;
@@ -230,11 +227,13 @@
       color: #fff;
       text-transform: uppercase;
       text-decoration: none;
+      font-size: 14px;
+      font-weight: 300;
     }
 
   }
-
 }
+
 
 // Services block
 .services-block-wrapper {
@@ -258,7 +257,7 @@
     font-weight: 500;
   }
   h3 {
-    font-weight: 400;
+    font-weight: 300;
     padding-left: 20px;
     margin-top: 30px;
   }
@@ -499,11 +498,10 @@
       width: auto;
   }
 }
-
 // footer block
 footer {
-  min-height: 290px;
-  height: 1px;
+  //min-height: 290px;
+  //height: 1px;
   background-color: #474747;
 }
 .footer__content {
@@ -524,15 +522,36 @@ footer {
     color: #fff;
   }
 }
+
+.footer_content_mobile {
+  display: none;
+  flex-wrap: wrap;
+  padding: 0 10px 0 10px;
+  ul li {
+    list-style: none;
+    //padding: 3px 0 0 0;
+  }
+  a {
+    font-size: 14px;
+    text-decoration: none;
+    font-weight: 400;
+    color:#adadad;
+  }
+  a:hover {
+    color: #fff;
+  }
+}
 .footer-bottom {
   margin-top: 20px;
   border-top:1px solid #adadad;
-  height: 50px;
+  //height: 50px;
   color: #adadad ;
   text-align: center;
-  padding-top: 10px;
+  padding-top: 20px;
+  padding-bottom: 40px;
   font-size: 14px;
 }
+
 .footer-socials {
   li a {
     display: flex;
@@ -542,5 +561,9 @@ footer {
     margin-right: 10px;
   }
 }
+.mobile-footer {
+  display: none;
+}
 
 @import 'media';
+

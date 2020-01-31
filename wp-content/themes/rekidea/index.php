@@ -67,7 +67,7 @@ get_header();
  <div class="services-block-wrapper">
     <div class="container">
         <div class="services-block">
-            <h2>мы предлагаем комплекс услуг</h2>
+            <h2>мы предлагаем <br> комплекс услуг</h2>
             <h3>Покажем больше выгод, группируя контент.. Максимум 2-3 предложения на мотивацию.</h3>
             <img src="<?= get_template_directory_uri()?>/img/services/logo-copy.png" alt="" class="logo-copy">
             <div class="icon-cards">
