@@ -303,7 +303,8 @@ body {
 
 .btn-checked {
   background-color: #6f0d33;
-  color: #fff !important; }
+  color: #fff !important;
+  text-decoration: none; }
 
 .three-steps-block-wrapper {
   background-color: #dbd9eb; }
@@ -590,6 +591,9 @@ footer {
       width: 100%; }
       .why-us-block__content .services-content p {
         margin: 35px 0 35px 0; }
+
+  .akk-menu-item {
+    padding: 25px 0 25px 0; }
 
   .akk-menu-content {
     list-style: none;
