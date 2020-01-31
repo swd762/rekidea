@@ -18,11 +18,14 @@ get_header();
     <?php
     $query = new WP_Query(array(
             'category_name'=>'cards-block',
-            'post_per_page'=>-1
+            'post_per_page'=>-1,
+            'order'=> 'ASC',
+            'order_by'=>'date'
     ));
     while ($query->have_posts()) {
 
      $query->the_post();
+
     ?>
 
         <div class="card-craft wow zoomIn">
