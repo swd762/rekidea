@@ -25,7 +25,7 @@ get_header();
      $query->the_post();
     ?>
 
-        <div class="card-craft">
+        <div class="card-craft wow zoomIn">
             <a href="#">
                 <img src="<?php the_field('link_thumbnail', get_the_ID());?>" alt="">
                 <h3><?php the_title() ?></h3>
@@ -47,7 +47,7 @@ get_header();
 <!--******************************************-->
 <!--Stans block-->
  <div class="stands-block-wrapper container">
-    <div class="icon-block">
+    <div class="icon-block wow fadeInUpBig">
         <img src="<?= get_template_directory_uri()?>/img/stands-block/stands.png" alt="">
     </div>
     <div class="description-block">
@@ -69,23 +69,23 @@ get_header();
         <div class="services-block">
             <h2>мы предлагаем <br> комплекс услуг</h2>
             <h3>Покажем больше выгод, группируя контент.. Максимум 2-3 предложения на мотивацию.</h3>
-            <img src="<?= get_template_directory_uri()?>/img/services/logo-copy.png" alt="" class="logo-copy">
+            <img src="<?= get_template_directory_uri()?>/img/services/logo-copy.png" alt="" class="logo-copy wow fadeInRightBig" data-wow-delay="1s">
             <div class="icon-cards">
-                <div class="card">
+                <div class="card wow zoomIn">
                     <div class="icon">
                         <img src="<?= get_template_directory_uri() ?>/img/services/zamer.png" alt="">
                     </div>
                     <h4>Бесплатный замер</h4>
                     <p>Профессиональный замерщик сделает необходимые замеры объекта</p>
                 </div>
-                <div class="card">
+                <div class="card wow zoomIn">
                     <div class="icon">
                         <img src="<?= get_template_directory_uri() ?>/img/services/arenda.png" alt="">
                     </div>
                     <h4>Аренда</h4>
                     <p>Сдаем в аренду стенды и пресс-волы</p>
                 </div>
-                <div class="card">
+                <div class="card wow zoomIn">
                     <div class="icon">
                         <img src="<?= get_template_directory_uri() ?>/img/services/print.png" alt="">
                     </div>
@@ -94,7 +94,7 @@ get_header();
                         профессиональном оборудовании
                         обеспечит наш печатник</p>
                 </div>
-                <div class="card">
+                <div class="card wow zoomIn">
                     <div class="icon">
                         <img src="<?= get_template_directory_uri() ?>/img/services/dostavka.png" alt="">
                     </div>
@@ -103,7 +103,7 @@ get_header();
                         заказать доставку товара
                         и подъём на этаж</p>
                 </div>
-                <div class="card">
+                <div class="card wow zoomIn">
                     <div class="icon">
                         <img src="<?= get_template_directory_uri() ?>/img/services/montage.png" alt="">
                     </div>
@@ -112,7 +112,7 @@ get_header();
                         и быстро произведут ремонт,
                         монтаж или демонтаж продукции</p>
                 </div>
-                <div class="card">
+                <div class="card wow zoomIn">
                     <div class="icon">
                         <img src="<?= get_template_directory_uri() ?>/img/services/garantia.png" alt="">
                     </div>
@@ -228,7 +228,7 @@ get_header();
         <div class="three-steps-block">
             <h2><span>3</span> простых шага работы с нами</h2>
             <div class="three-steps-block__content">
-                <div class="card">
+                <div class="card wow fadeInUp">
                     <div class="thumbnail">
                         <img src="<?= get_template_directory_uri()?>/img/three-steps/businesswoman-call.png" alt="">
                     </div>
@@ -238,7 +238,7 @@ get_header();
                         и наш менеджер свяжется с Вами
                         в течение 30 секунд!</p>
                 </div>
-                <div class="card">
+                <div class="card wow fadeInUp" data-wow-delay="1s">
                     <div class="thumbnail">
                         <img src="<?= get_template_directory_uri()?>/img/three-steps/business-people-meeting.png" alt="">
                     </div>
@@ -248,7 +248,7 @@ get_header();
                         Вышлем коммерческое предложение
                         и макет на согласование</p>
                 </div>
-                <div class="card">
+                <div class="card wow fadeInUp" data-wow-delay="2s">
                     <div class="thumbnail">
                         <img src="<?= get_template_directory_uri()?>/img/three-steps/close-up-business-meeting-handshake.png" alt="">
                     </div>
@@ -302,6 +302,11 @@ get_header();
     </div>
 </div>
 <!--********************************************-->
+<script>
+    new WOW().init();
+</script>
+
+
 <?php
 get_footer();
 ?>
