@@ -15,7 +15,7 @@ wp_head();
     <link rel="profile" href="https://gmpg.org/xfn/11" />
     <?php wp_head(); ?>
 </head>
-<body>
+<body <?php body_class(); ?>>
   <?php
     $query = new WP_Query(array (
             'category_name'=>'common',
@@ -58,6 +58,24 @@ wp_head();
                  </div>
             </div>
          </div>
+         <div class="header-mobile">
+             <div class="header-mobile__hamburger">
+                 <span></span>
+                 <span></span>
+                 <span></span>
+             </div>
+             <div class="header-mobile__logo">
+                 <a href="/"><img src="<?= get_template_directory_uri()?>/img/logo_mobile_rekidea.png" alt="Рекидея лого"></a>
+             </div>
+             <div class="header-mobile__meta">
+                 <div class="header-mobile__search">
+                    <img src="<?= get_template_directory_uri()?>/img/search_icon.png">
+                 </div>
+                 <div class="header-mobile__contacts">
+                     <img src="<?= get_template_directory_uri()?>/img/phone_icon.png">
+                 </div>
+             </div>
+         </div>
          <div class="nav-wrapper">
              <div class="container top-menu-desktop">
                <?php
@@ -80,6 +98,28 @@ wp_head();
                    'walker'          => '',
                ] );
                ?>
+             </div>
+             <div class="container top-menu-mobile">
+                 <?php
+                 wp_nav_menu( [
+                     'theme_location'  => 'top-mobile',
+                     'menu'            => '',
+                     'container'       => 'div',
+                     'container_class' => '',
+                     'container_id'    => '',
+                     'menu_class'      => 'menu',
+                     'menu_id'         => '',
+                     'echo'            => true,
+                     'fallback_cb'     => 'wp_page_menu',
+                     'before'          => '',
+                     'after'           => '',
+                     'link_before'     => '',
+                     'link_after'      => '',
+                     'items_wrap'      => '<ul id="%1$s" class="%2$s">%3$s</ul>',
+                     'depth'           => 0,
+                     'walker'          => '',
+                 ] );
+                 ?>
              </div>
          </div>
      </header>
