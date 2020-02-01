@@ -52,7 +52,32 @@
   body .craft-cards-wrapper {
     justify-content: space-around;
   }
+
+  // ** for desktop menu
+  .services-list-desktop {
+    //width: 100%;
+    display: flex;
+    padding-right: 15px;
+  }
+  .dtop-menu {
+    width: 450px;
+    margin-right: 12px;
+    list-style: none;
+  }
+  .dtop-menu-content {
+    width: 550px;
+    img {
+      width: 100%;
+    }
+  }
+
+
 }
+
+
+
+
+// *******************
 
 
 @media (max-width: 1090px) {
@@ -60,15 +85,7 @@
     height: 350px;
   }
 
-// Craft block
-//  .card-craft {
-//    width: 220px;
-//    flex-basis: 220px;
-//    a img {
-//      width: 100%;
-//
-//    }
-//  }
+
 //Stands block
   .stands-block-wrapper {
     padding: 50px 0 0 0;
@@ -85,7 +102,7 @@
       }
     }
   }
-
+//Services block
   .services-block-wrapper {
     .logo-copy {
       display: none;
@@ -101,7 +118,7 @@
       }
     }
   }
-
+// Why us
   .akk-menu-content {
     position: absolute;
     left: 400px;
@@ -110,7 +127,7 @@
       width: 100%;
     }
   }
-
+//Portfolio
   .portfolio-block__content {
     display: flex;
     flex-direction: column;
@@ -153,10 +170,12 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+
     a {
       text-align: center;
       text-transform: uppercase;
     }
+
     a h3 {
       margin-top: 10px;
       font-size: 15px;
@@ -178,9 +197,11 @@
     padding: 10px 0 0 0;
 
     align-items: center;
+
     .description-block {
       padding-top: 25px;
       width: 430px;
+
       p {
         margin: 10px 0 10px 0;
         text-align: center;
@@ -195,341 +216,331 @@
       //font-weight: 400;
     }
   }
+
+
   .why-us-block__content {
-    //display: flex;
-    //margin-top: 30px;
+
 
     .services-list {
-      //width: 100%;
-      //ul {
-      //  display: flex;
-      //  flex-direction: column;
-      //  padding-right: 0;
-      //}
+
       ul li {
         //text-align: center;
         font-size: 16px;
 
       }
     }
-    //.services-content {
-    //  display: none;
-    //  width: 100%;
-    //  p {
-    //    margin: 35px 0 35px 0;
-    //  }
-    //}
-    //.akk-menu-content {
-    //  position: absolute;
-    //  left: 400px;
-    //  width: 50%;
-    //  img {
-    //    width: 100%;
-    //  }
-    //}
+
   }
 
-.footer__content {
-  justify-content: space-around;
-  flex-wrap: wrap;
-}
-
-
-
-
-}
-
-
-
-
-
-@media (max-width: 1023px) {
-  .container {
-    width: auto;
+  .footer__content {
+    justify-content: space-around;
+    flex-wrap: wrap;
   }
+
 }
-
-
-@media (max-width: 900px) {
-  .stands-block-wrapper {
-
-    padding: 10px 0 0 0;
-    flex-direction: column;
-    align-items: center;
-    .description-block {
+  @media (max-width: 1023px) {
+    .container {
+      width: auto;
+    }
+    // Why us block
+    .why-us-block__header {
       p {
-        margin: 10px 0 10px 0;
         text-align: center;
       }
     }
-  }
-  .services-block-wrapper {
-    background: url(img/services/services-background.png) 2% no-repeat;
-    background-size: cover;
-    .services-block  {
-      width: auto;
-      h2 {
-        text-align: center;
+    .services-list-desktop {
+      display: none;
+    }
+    .why-us-block__content {
+      display: flex;
+      margin-top: 30px;
+
+      .services-list {
+        width: 100%;
+        display: block;
+
+        ul {
+          display: flex;
+          flex-direction: column;
+          padding-right: 0;
+        }
+
+        ul li {
+          text-align: center;
+
+        }
+      }
+
+      .services-content {
+        display: none;
+        width: 100%;
+
+        p {
+          margin: 35px 0 35px 0;
+        }
+      }
+    }
+    .akk-menu-item {
+      padding: 25px 0 25px 0;
+    }
+    .akk-menu-content {
+      list-style: none;
+      position: initial;
+      width: 100%;
+      padding: 5px;
+
+      img {
         width: 100%;
       }
-      //.icon-cards {
-      //  justify-content: center;
-      //}
-    }
-  }
-
-
-  .why-us-block__header {
-    p {
-      text-align: center;
-    }
-  }
-
-  .why-us-block__content {
-    display: flex;
-    margin-top: 30px;
-
-    .services-list {
-      width: 100%;
-      ul {
-        display: flex;
-        flex-direction: column;
-        padding-right: 0;
-      }
-      ul li {
-        text-align: center;
-
-      }
-    }
-    .services-content {
-      display: none;
-      width: 100%;
-      p {
-        margin: 35px 0 35px 0;
-      }
-    }
-  }
-  .akk-menu-item {
-    padding: 25px 0 25px 0;
-  }
-  .akk-menu-content {
-    list-style: none;
-    position: initial;
-    width: 100%;
-    padding: 5px;
-    img {
-      width: 100%;
-    }
-    p {
-      margin: 15px 0 10px 0;
-      text-align: center;
-    }
-  }
-}
-
-
-
-@media (max-width: 520px) {
-  //Craft cards
-  .card-craft {
-    width: 153px;
-    flex-basis: 153px;
-    margin-top: 10px;
-
-    a img {
-      width: 100%;
-    }
-
-    a h3 {
-      font-size: 11px;
-    }
-  }
-
-  //Stands block
-  .stands-block-wrapper {
-    .icon-block {
-      width: 300px;
-      padding-bottom: 0;
-    }
-
-    .description-block {
-      width: 300px;
-      flex-basis: initial;
-
-      h2 {
-        font-size: 24px;
-      }
 
       p {
-        font-size: 12px;
-      }
-    }
-  }
-  .services-block-wrapper {
-    background: url(img/services/services-background.png) 2% no-repeat;
-    background-size: cover;
-    padding-top: 50px;
-    padding-bottom: 20px;
-
-    .services-block {
-      width: auto;
-
-      h2 {
+        margin: 15px 0 10px 0;
         text-align: center;
-        font-size: 24px;
-        width: 54%;
-      }
-
-      h3 {
-        font-size: 12px;
-      }
-
-      .icon-cards {
-        justify-content: center;
-
-        .card {
-          width: 145px;
-          flex-basis: 145px;
-          margin: 42px 25px 0 0;
-        }
       }
     }
-  }
 
-  .three-steps-block {
-    padding: 15px 0 15px 0;
 
-    h2 {
-      font-size: 24px;
-
-      span {
-        font-size: 24px;
-      }
-    }
   }
 
 
-  .three-steps-block__content {
-    display: flex;
-    margin-top: 20px;
-    flex-wrap: wrap;
-    justify-content: center;
+  @media (max-width: 900px) {
+    .stands-block-wrapper {
 
-    .card {
-      display: flex;
+      padding: 10px 0 0 0;
       flex-direction: column;
       align-items: center;
-      width: 100px;
-      flex-basis: 100px;
-      padding: 0 5px 0 5px;
 
-      .thumbnail {
-        width: initial;
-        height: initial;
-        border-radius: initial;
-        overflow: hidden;
-
-        img {
-          width: 100%;
+      .description-block {
+        p {
+          margin: 10px 0 10px 0;
+          text-align: center;
         }
       }
+    }
+    .services-block-wrapper {
+      background: url(img/services/services-background.png) 2% no-repeat;
+      background-size: cover;
 
-      h3 {
-        margin-top: 10px;
-        font-size: 13px;
-        font-weight: 400;
-        text-align: center;
+      .services-block {
+        width: auto;
+
+        h2 {
+          text-align: center;
+          width: 100%;
+        }
+
+        //.icon-cards {
+        //  justify-content: center;
+        //}
+      }
+    }
+
+
+  }
+
+
+  @media (max-width: 520px) {
+    .only-mobile {
+      display: block;
+    }
+
+
+    //Craft cards
+    .card-craft {
+      width: 153px;
+      flex-basis: 153px;
+      margin-top: 10px;
+
+      a img {
+        width: 100%;
       }
 
-      h4 {
-        margin-top: 12px;
+      a h3 {
+        font-size: 11px;
+      }
+    }
+
+    //Stands block
+    .stands-block-wrapper {
+      .icon-block {
+        width: 300px;
+        padding-bottom: 0;
+      }
+
+      .description-block {
+        width: 300px;
+        flex-basis: initial;
+
+        h2 {
+          font-size: 24px;
+        }
+
+        p {
+          font-size: 12px;
+        }
+      }
+    }
+    .services-block-wrapper {
+      background: url(img/services/services-background.png) 2% no-repeat;
+      background-size: cover;
+      padding-top: 50px;
+      padding-bottom: 20px;
+
+      .services-block {
+        width: auto;
+
+        h2 {
+          text-align: center;
+          font-size: 24px;
+          width: 54%;
+        }
+
+        h3 {
+          font-size: 12px;
+        }
+
+        .icon-cards {
+          justify-content: center;
+
+          .card {
+            width: 145px;
+            flex-basis: 145px;
+            margin: 42px 25px 0 0;
+          }
+        }
+      }
+    }
+
+    .three-steps-block {
+      padding: 15px 0 15px 0;
+
+      h2 {
+        font-size: 24px;
+
+        span {
+          font-size: 24px;
+        }
+      }
+    }
+
+
+    .three-steps-block__content {
+      display: flex;
+      margin-top: 20px;
+      flex-wrap: wrap;
+      justify-content: center;
+
+      .card {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100px;
+        flex-basis: 100px;
+        padding: 0 5px 0 5px;
+
+        .thumbnail {
+          width: initial;
+          height: initial;
+          border-radius: initial;
+          overflow: hidden;
+
+          img {
+            width: 100%;
+          }
+        }
+
+        h3 {
+          margin-top: 10px;
+          font-size: 13px;
+          font-weight: 400;
+          text-align: center;
+        }
+
+        h4 {
+          margin-top: 12px;
+        }
+
+        p {
+          margin-top: 15px;
+          font-size: 10px;
+          text-align: center;
+        }
+      }
+    }
+
+    // portfolio block
+    .portfolio-block-wrapper {
+      padding: 15px 0;
+    }
+
+    .portfolio-block__header {
+      h2 {
+        font-size: 24px;
+
       }
 
       p {
-        margin-top: 15px;
-        font-size: 10px;
+        margin: 15px 0 15px 0;
         text-align: center;
+        font-size: 12px;
       }
     }
-  }
-
-  // portfolio block
-  .portfolio-block-wrapper {
-    padding: 15px 0;
-  }
-
-  .portfolio-block__header {
-    h2 {
-      font-size: 24px;
-
-    }
-
-    p {
-      margin: 15px 0 15px 0;
-      text-align: center;
-      font-size: 12px;
-    }
-  }
 
 
-  .portfolio-block__content {
+    .portfolio-block__content {
 
-    .content-big {
-      .no-mobile {
-        display: none;
+      .content-big {
+        .no-mobile {
+          display: none;
+        }
+
+        a {
+          width: 50%;
+          flex-basis: 50%;
+
+          img {
+            width: 100%;
+          }
+        }
       }
 
-      a {
-        width: 50%;
-        flex-basis: 50%;
+      .content-small {
+        margin-top: 0;
 
-        img {
-          width: 100%;
+        .no-mobile {
+          display: none;
+        }
+
+        a {
+          width: 25%;
+          flex-basis: 25%;
+
+          img {
+            width: 100%;
+          }
         }
       }
     }
-
-    .content-small {
-      margin-top: 0;
-
-      .no-mobile {
-        display: none;
-      }
-
-      a {
-        width: 25%;
-        flex-basis: 25%;
-
-        img {
-          width: 100%;
-        }
-      }
-    }
-  }
     .footer__content {
       display: none;
     }
 
-  .footer_content_mobile {
-    display: flex;
-    .footer-nav {
-      flex-basis: 50%;
-      margin-top: 25px;
-    }
-    .footer-socials {
-      margin-top: 25px;
+    .footer_content_mobile {
+      display: flex;
+
+      .footer-nav {
+        flex-basis: 50%;
+        margin-top: 25px;
+      }
+
+      .footer-socials {
+        margin-top: 25px;
+      }
     }
   }
-}
 
-@media (max-width: 360px) {
- .craft-cards-wrapper {
-   padding: 0;
- }
-  //.no-mobile-footer {
-  //  display: none;
-  //}
-  //.mobile-footer {
-  //  display: block;
-  //}
-}
+  @media (max-width: 360px) {
+    .craft-cards-wrapper {
+      padding: 0;
+    }
+  }

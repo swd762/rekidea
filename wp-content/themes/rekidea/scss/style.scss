@@ -8,6 +8,10 @@
 
 
 
+//
+
+
+
 
 // header
 .header {
@@ -422,11 +426,43 @@
   }
 }
 // why-us block
+
+
+  // ** for desktop menu
+  .services-list-desktop {
+    //width: 100%;
+    display: flex;
+    //padding-right: 15px;
+  }
+  .dtop-menu {
+    width: 460px;
+    margin-right: 40px;
+    list-style: none;
+    li {
+      padding: 20px 0;
+      text-align: center;
+      text-decoration: underline;
+      text-transform: uppercase;
+      cursor: pointer;
+    }
+  }
+
+  .dtop-menu-content {
+    width: 635px;
+    display: none;
+    img {
+      width: 100%;
+    }
+    p {
+      margin-top: 30px;
+    }
+  }
+  // *******************
 .why-us-block-wrapper {
   padding: 50px 0 50px 0;
 }
 .why-us-block {
-  min-height: 720px;
+  //min-height: 720px;
   position: relative;
 }
 .why-us-block__header {
@@ -440,13 +476,14 @@
   p {
     margin: 15px 0 15px 0;
   }
+
 }
 .why-us-block__content {
   display: flex;
   margin-top: 30px;
 
   .services-list {
-    width: 40%;
+    display: none;
     ul {
       display: flex;
       flex-direction: column;
@@ -455,7 +492,6 @@
     ul li {
     }
   }
-
   .services-content {
     display: none;
     width: 60%;
@@ -494,8 +530,9 @@
 .btn-checked {
   background-color: $red;
   color: #fff!important;
-  text-decoration: none;
+  text-decoration: none!important;
 }
+
 
 // 3 steps block
 .three-steps-block-wrapper {
@@ -640,6 +677,7 @@ footer {
     color: #fff;
   }
 }
+
 
 .footer_content_mobile {
   display: none;
