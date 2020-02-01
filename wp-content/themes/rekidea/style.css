@@ -105,6 +105,18 @@ body {
     display: flex;
     justify-content: space-between;
     position: relative; }
+    .nav-wrapper .top-menu-desktop #menu-top .w-arrow > a:after {
+      content: '';
+      display: inline-block;
+      background: url("img/menu-top-arrow.png");
+      width: 12px;
+      height: 9px;
+      margin-left: 7px;
+      margin-top: 3px;
+      transform: rotate(180deg);
+      transition: transform 0.3s; }
+    .nav-wrapper .top-menu-desktop #menu-top .w-arrow:hover > a:after {
+      transform: rotate(0); }
     .nav-wrapper .top-menu-desktop #menu-top > li.menu-item-has-children > .sub-menu {
       display: none;
       position: absolute;
@@ -120,7 +132,7 @@ body {
       align-items: center;
       padding: 0 20px; }
     .nav-wrapper .top-menu-desktop #menu-top > li:first-child > a {
-      padding: 0 26px 0 14px; }
+      padding: 0 7px 0 14px; }
     .nav-wrapper .top-menu-desktop #menu-top > li:last-child > a {
       padding-right: 0; }
     .nav-wrapper .top-menu-desktop #menu-top > li:hover > a {
