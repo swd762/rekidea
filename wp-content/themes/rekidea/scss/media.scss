@@ -1,5 +1,48 @@
 @media (max-width: 1170px) {
 
+  // Header
+  .header__top-content {
+    padding: 0 22px 0 25px;
+    .header__address-wrapper, .header__email-wrapper {
+      display: none;
+    }
+    .header__meta_tablet {
+      display: flex;
+      flex-direction: column;
+      padding-top: 15px;
+    }
+  }
+  .nav-wrapper {
+    .top-menu-desktop {
+      #menu-top {
+        &>li {
+          &:last-child {
+            &>a {
+              padding-right: 20px;
+            }
+          }
+        }
+        li {
+          &.separate {
+            &:first-child {
+              flex-basis: 403px;
+            }
+            &:nth-child(2) {
+              flex-shrink: 0;
+              flex-basis: 284px;
+            }
+            &>.sub-menu {
+              padding-left: 28px;
+            }
+          }
+        }
+      }
+    }
+    .top-menu-mobile {
+      display: none;
+    }
+  }
+
   //Common
   .container {
     width: 1024px;
@@ -104,7 +147,6 @@
 
 }
 @media (max-width: 1024px) {
-
   //Craft block
   .craft-cards-wrapper {
     padding: 10px 20px 35px 20px;

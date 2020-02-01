@@ -52,6 +52,10 @@ wp_head();
                 <div class="header__address-wrapper">
                     <? the_field('address', get_the_ID());?>
                 </div>
+                 <div class="header__meta_tablet">
+                    <span><? the_field('email', get_the_ID());?></span>
+                     <span><? the_field('address', get_the_ID());?></span>
+                 </div>
             </div>
          </div>
          <div class="nav-wrapper">
