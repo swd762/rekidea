@@ -27,15 +27,17 @@ wp_head();
   ?>
      <header>
          <div class="header">
-             <div class="container-flex">
+             <div class="container header__top-content">
                 <div class="header__logo">
                     <a href="/"><img src="<?= get_template_directory_uri()?>/img/logo_rekidea.png" alt="Рекидея лого"></a>
                 </div>
                 <div class="header__search-bar">
                     <form class="" action="">
-                        <input id="title-search-input" type="text" placeholder="Найти лучшее для вашей рекламы..."
-                               class="header__search-input">
-                        <button class="header__search-btn" type="submit"></button>
+                        <div class="header__search-field">
+                            <input id="title-search-input" type="text" placeholder="Найти лучшее для вашей рекламы..."
+                                   class="header__search-input">
+                            <button class="header__search-btn" type="submit"></button>
+                        </div>
                     </form>
                 </div>
                 <div class="header__phone-wrapper">
@@ -53,14 +55,27 @@ wp_head();
             </div>
          </div>
          <div class="nav-wrapper">
-             <nav class="container-flex">
-                 <a href="#">Каталог рекламы</a>
-                 <a href="#">Акции</a>
-                 <a href="#">Услуги</a>
-                 <a href="#">Цены</a>
-                 <a href="#">Портфолио</a>
-                 <a href="#">Оплата и доставка</a>
-                 <a href="#">Статьи</a>
-             </nav>
+             <div class="container top-menu-desktop">
+               <?php
+               wp_nav_menu( [
+                   'theme_location'  => 'top',
+                   'menu'            => '',
+                   'container'       => 'div',
+                   'container_class' => '',
+                   'container_id'    => '',
+                   'menu_class'      => 'menu',
+                   'menu_id'         => '',
+                   'echo'            => true,
+                   'fallback_cb'     => 'wp_page_menu',
+                   'before'          => '',
+                   'after'           => '',
+                   'link_before'     => '',
+                   'link_after'      => '',
+                   'items_wrap'      => '<ul id="%1$s" class="%2$s">%3$s</ul>',
+                   'depth'           => 0,
+                   'walker'          => '',
+               ] );
+               ?>
+             </div>
          </div>
      </header>

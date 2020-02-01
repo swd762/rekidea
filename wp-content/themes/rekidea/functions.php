@@ -14,7 +14,7 @@ function add_styles_and_scripts () {
 
 add_action('wp_enqueue_scripts', 'add_styles_and_scripts');
 // ** Register menu **
-//register_nav_menu('top', 'главное меню');
+register_nav_menu('top', 'главное меню');
 
 
 
