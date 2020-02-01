@@ -10,6 +10,78 @@
 
 
 // header
+.header-mobile {
+  display: none;
+  height: 37px;
+  padding: 0 22px 0 30px;
+  align-items: center;
+  .header-mobile__hamburger {
+    margin-right: 29px;
+    span {
+      display: block;
+      height: 3px;
+      width: 16px;
+      background-color: #000000;
+      margin-bottom: 3px;
+      border-radius: 4px;
+      transition: all 0.3s;
+      &:first-child {
+        transform-origin: 0 100%;
+        transform: rotate(0);
+      }
+      &:nth-child(2) {
+        opacity: 1;
+      }
+      &:last-child {
+        transform-origin: 0 0;
+        transform: rotate(0);
+        margin-bottom: 0;
+      }
+    }
+  }
+  .header-mobile__meta {
+    display: flex;
+    margin-left: auto;
+    .header-mobile__search {
+      margin-right: 20px;
+    }
+  }
+}
+.top-menu-mobile {
+  display: none;
+  position: absolute;
+  top: 37px;
+  background: #fff;
+  width: 100% !important;
+  z-index: 10;
+  padding: 20px;
+  ul {
+    list-style: none;
+  }
+  a {
+    color: #000000 !important;
+    font-weight: 100 !important;
+    text-transform: uppercase;
+    padding: 8px 5px;
+  }
+  li {
+    border-bottom: 1px solid #000000;
+    position: relative;
+    &:after {
+      content: '';
+      display: block;
+      position: absolute;
+      top: 4px;
+      right: 5px;
+      background: url('img/arrow-right.png');
+      height: 80%;
+      width: 15px;
+      background-size: contain;
+      background-repeat: no-repeat;
+    }
+  }
+}
+
 .header {
     height: 79px;
     background-color:$background-gray ;
@@ -223,9 +295,6 @@
         }
       }
     }
-  }
-  .top-menu-mobile {
-    display: none;
   }
 }
 

@@ -99,5 +99,11 @@ wp_footer();
             </div>
 
     </footer>
+<script>
+    //Mobile menu
+    document.querySelector('.header-mobile__hamburger').addEventListener('click', function () {
+        document.querySelector('body').classList.toggle('menu-opened');
+    })
+</script>
     </body>
 </html>

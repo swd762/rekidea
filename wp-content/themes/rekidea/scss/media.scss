@@ -147,6 +147,44 @@
 
 }
 @media (max-width: 1024px) {
+  body {
+    &.admin-bar {
+      .top-menu-mobile {
+        top: 69px;
+      }
+    }
+    &.menu-opened {
+      .top-menu-mobile {
+        display: block;
+      }
+      .header-mobile__hamburger {
+        span {
+          &:first-child {
+            transform: rotate(45deg);
+          }
+          &:nth-child(2) {
+            opacity: 0;
+          }
+          &:last-child {
+            transform: rotate(-45deg);
+          }
+        }
+      }
+    }
+  }
+
+  //header
+  .header, .top-menu-desktop {
+    display: none;
+  }
+  .header-mobile {
+    display: flex;
+  }
+  .nav-wrapper {
+    height: auto;
+    background-color: transparent;
+  }
+
   //Craft block
   .craft-cards-wrapper {
     padding: 10px 20px 35px 20px;
@@ -327,7 +365,15 @@
   }
 }
 
-
+@media (max-width: 782px) {
+  body {
+    &.admin-bar {
+      .top-menu-mobile {
+        top: 83px;
+      }
+    }
+  }
+}
 
 @media (max-width: 520px) {
   //Craft cards
