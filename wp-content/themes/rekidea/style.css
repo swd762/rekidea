@@ -378,8 +378,7 @@ body {
   margin-right: 40px;
   list-style: none; }
   .dtop-menu li {
-    padding: 20px 0;
-    text-align: center;
+    padding: 20px 0 20px 40px;
     text-decoration: underline;
     text-transform: uppercase;
     cursor: pointer; }
@@ -395,9 +394,6 @@ body {
 .why-us-block-wrapper {
   padding: 50px 0 50px 0; }
 
-.why-us-block {
-  position: relative; }
-
 .why-us-block__header h2 {
   font-size: 49px;
   text-transform: uppercase;
@@ -405,7 +401,8 @@ body {
   text-align: center;
   font-weight: 500; }
 .why-us-block__header p {
-  margin: 15px 0 15px 0; }
+  margin: 15px 0 15px 0;
+  text-align: center; }
 
 .why-us-block__content {
   display: flex;
@@ -887,6 +884,27 @@ footer {
           width: 145px;
           flex-basis: 145px;
           margin: 42px 25px 0 0; }
+
+  .why-us-block-wrapper {
+    padding: 15px 0; }
+
+  .why-us-block__header h2 {
+    font-size: 24px;
+    padding: 0 40px; }
+  .why-us-block__header p {
+    font-size: 12px;
+    font-weight: 300; }
+
+  .why-us-block__content {
+    margin-top: 0px; }
+    .why-us-block__content .services-list ul li {
+      font-size: 12px; }
+    .why-us-block__content .services-list .akk-menu-item {
+      padding: 15px 0; }
+    .why-us-block__content .services-list .akk-menu-content {
+      padding: 0 5px; }
+      .why-us-block__content .services-list .akk-menu-content img {
+        margin-top: 5px; }
 
   .three-steps-block {
     padding: 15px 0 15px 0; }
