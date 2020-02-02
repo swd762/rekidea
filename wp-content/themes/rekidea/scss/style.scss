@@ -17,6 +17,9 @@
   height: 37px;
   padding: 0 22px 0 30px;
   align-items: center;
+  .header-mobile__logo {
+    img {width: 120px;}
+  }
   .header-mobile__hamburger {
     margin-right: 29px;
     span {
@@ -665,11 +668,19 @@
   padding: 45px 0 45px 0;
   display: flex;
   flex-direction: column;
-  a.portfolio-more {
-    display: block;
-    margin: 20px 0 20px 0;
-    color: #000;
-    align-self: center;
+  a.button {
+    background-color: #6f0d33;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin: 0 auto;
+    color: #fff;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 300;
+    padding: 15px;
+    margin-top: 15px;
   }
 }
 .portfolio-block__header {
@@ -692,6 +703,7 @@
   flex-direction: column;
   width: 1140px;
   margin: 0 auto;
+
   .content-big {
     display: flex;
     justify-content: space-between;

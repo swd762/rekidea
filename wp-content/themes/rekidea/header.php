@@ -65,7 +65,7 @@ wp_head();
                  <span></span>
              </div>
              <div class="header-mobile__logo">
-                 <a href="/"><img src="<?= get_template_directory_uri()?>/img/logo_mobile_rekidea.png" alt="Рекидея лого"></a>
+                 <a href="/"><img src="<?= get_template_directory_uri()?>/img/rekidea-mobile.svg" alt="Рекидея лого"></a>
              </div>
              <div class="header-mobile__meta">
                  <div class="header-mobile__search">

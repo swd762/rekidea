@@ -18,6 +18,8 @@ body {
   height: 37px;
   padding: 0 22px 0 30px;
   align-items: center; }
+  .header-mobile .header-mobile__logo img {
+    width: 120px; }
   .header-mobile .header-mobile__hamburger {
     margin-right: 29px; }
     .header-mobile .header-mobile__hamburger span {
@@ -504,11 +506,19 @@ body {
   padding: 45px 0 45px 0;
   display: flex;
   flex-direction: column; }
-  .portfolio-block-wrapper a.portfolio-more {
-    display: block;
-    margin: 20px 0 20px 0;
-    color: #000;
-    align-self: center; }
+  .portfolio-block-wrapper a.button {
+    background-color: #6f0d33;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin: 0 auto;
+    color: #fff;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 300;
+    padding: 15px;
+    margin-top: 15px; }
 
 .portfolio-block__header h2 {
   font-size: 49px;
