@@ -862,16 +862,19 @@ footer {
     .card-craft a h3 {
       font-size: 11px; }
 
-  .stands-block-wrapper .icon-block {
-    width: 300px;
-    padding-bottom: 0; }
-  .stands-block-wrapper .description-block {
-    width: 300px;
-    flex-basis: initial; }
-    .stands-block-wrapper .description-block h2 {
-      font-size: 24px; }
-    .stands-block-wrapper .description-block p {
-      font-size: 12px; }
+  .stands-block-wrapper {
+    padding: 0; }
+    .stands-block-wrapper .icon-block {
+      width: 300px;
+      padding-bottom: 0; }
+    .stands-block-wrapper .description-block {
+      width: 300px;
+      flex-basis: initial;
+      padding: 0; }
+      .stands-block-wrapper .description-block h2 {
+        font-size: 24px; }
+      .stands-block-wrapper .description-block p {
+        font-size: 12px; }
 
   .services-block-wrapper {
     background: url(img/services/services-background.png) 2% no-repeat;
