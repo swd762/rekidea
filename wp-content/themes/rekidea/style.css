@@ -330,8 +330,8 @@ body {
 .services-block-wrapper {
   background: url("img/services/services-background.png") center no-repeat;
   background-size: cover;
-  min-height: 850px;
-  padding-top: 130px; }
+  padding: 125px 0 20px 0;
+  margin-top: -100px; }
 
 .services-block {
   width: 85%;
@@ -344,12 +344,11 @@ body {
     font-weight: 500; }
   .services-block h3 {
     font-weight: 300;
-    padding-left: 20px;
     margin-top: 30px; }
   .services-block .logo-copy {
     position: absolute;
     right: -530px;
-    bottom: -25px; }
+    bottom: 50px; }
   .services-block .icon-cards {
     display: flex;
     flex-wrap: wrap; }
@@ -378,6 +377,35 @@ body {
           width: min-content;
           height: min-content; }
 
+.why-us-block-wrapper {
+  padding: 50px 0 50px 0; }
+
+.why-us-block__header h2 {
+  font-size: 49px;
+  text-transform: uppercase;
+  color: #6f0d33;
+  text-align: center;
+  font-weight: 500; }
+.why-us-block__header p {
+  margin: 15px 0 15px 0;
+  text-align: center;
+  font-weight: 300; }
+
+.why-us-block__content {
+  display: flex;
+  margin-top: 30px; }
+  .why-us-block__content .services-list {
+    display: none; }
+    .why-us-block__content .services-list ul {
+      display: flex;
+      flex-direction: column;
+      padding-right: 30px; }
+  .why-us-block__content .services-content {
+    display: none;
+    width: 60%; }
+    .why-us-block__content .services-content p {
+      margin: 35px 0 35px 0; }
+
 .services-list-desktop {
   display: flex; }
 
@@ -398,34 +426,6 @@ body {
     width: 100%; }
   .dtop-menu-content p {
     margin-top: 30px; }
-
-.why-us-block-wrapper {
-  padding: 50px 0 50px 0; }
-
-.why-us-block__header h2 {
-  font-size: 49px;
-  text-transform: uppercase;
-  color: #6f0d33;
-  text-align: center;
-  font-weight: 500; }
-.why-us-block__header p {
-  margin: 15px 0 15px 0;
-  text-align: center; }
-
-.why-us-block__content {
-  display: flex;
-  margin-top: 30px; }
-  .why-us-block__content .services-list {
-    display: none; }
-    .why-us-block__content .services-list ul {
-      display: flex;
-      flex-direction: column;
-      padding-right: 30px; }
-  .why-us-block__content .services-content {
-    display: none;
-    width: 60%; }
-    .why-us-block__content .services-content p {
-      margin: 35px 0 35px 0; }
 
 .akk-menu-item {
   list-style: none;
@@ -656,8 +656,10 @@ footer {
   .services-block-wrapper .services-block {
     width: auto; }
     .services-block-wrapper .services-block h2 {
-      text-align: center;
+      padding-left: 40px;
       width: 54%; }
+    .services-block-wrapper .services-block h3 {
+      padding-left: 40px; }
     .services-block-wrapper .services-block .icon-cards {
       justify-content: center; }
 
@@ -804,12 +806,14 @@ footer {
 
   .services-block-wrapper {
     background: url(img/services/services-background.png) 2% no-repeat;
-    background-size: cover; }
+    background-size: cover;
+    margin-top: -20px;
+    padding: 50px 0 20px 0; }
     .services-block-wrapper .services-block {
       width: auto; }
       .services-block-wrapper .services-block h2 {
-        text-align: center;
-        width: 100%; }
+        width: 320px;
+        font-size: 30px; }
 
   .why-us-block__header p {
     text-align: center; }
@@ -876,22 +880,35 @@ footer {
   .services-block-wrapper {
     background: url(img/services/services-background.png) 2% no-repeat;
     background-size: cover;
-    padding-top: 50px;
-    padding-bottom: 20px; }
+    padding-top: 45px;
+    padding-bottom: 20px;
+    margin-top: -10px; }
     .services-block-wrapper .services-block {
       width: auto; }
       .services-block-wrapper .services-block h2 {
         text-align: center;
         font-size: 24px;
-        width: 54%; }
+        width: 320px; }
       .services-block-wrapper .services-block h3 {
-        font-size: 12px; }
+        font-size: 12px;
+        text-align: center;
+        padding: 0 5px; }
       .services-block-wrapper .services-block .icon-cards {
         justify-content: center; }
         .services-block-wrapper .services-block .icon-cards .card {
           width: 145px;
           flex-basis: 145px;
-          margin: 42px 25px 0 0; }
+          margin: 30px 20px 0 0; }
+          .services-block-wrapper .services-block .icon-cards .card .icon {
+            width: 70px;
+            height: 70px; }
+            .services-block-wrapper .services-block .icon-cards .card .icon img {
+              width: 50%;
+              height: 50%; }
+          .services-block-wrapper .services-block .icon-cards .card h4 {
+            font-size: 12px; }
+          .services-block-wrapper .services-block .icon-cards .card p {
+            font-size: 10px; }
 
   .why-us-block-wrapper {
     padding: 15px 0; }
@@ -913,6 +930,8 @@ footer {
       padding: 0 5px; }
       .why-us-block__content .services-list .akk-menu-content img {
         margin-top: 5px; }
+      .why-us-block__content .services-list .akk-menu-content p {
+        font-size: 12px; }
 
   .three-steps-block {
     padding: 15px 0 15px 0; }

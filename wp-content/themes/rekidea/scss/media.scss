@@ -110,8 +110,12 @@
     .services-block  {
       width: auto;
       h2 {
-        text-align: center;
+        //text-align: center;
+        padding-left: 40px;
         width: 54%;
+      }
+      h3 {
+        padding-left: 40px;
       }
       .icon-cards {
         justify-content: center;
@@ -329,8 +333,8 @@
 
 
 @media (max-width: 900px) {
+  //Stands block
   .stands-block-wrapper {
-
     padding: 10px 0 0 0;
     flex-direction: column;
     align-items: center;
@@ -342,20 +346,26 @@
       }
     }
   }
+  // **********************************************
+
+  //Services block
   .services-block-wrapper {
     background: url(img/services/services-background.png) 2% no-repeat;
     background-size: cover;
-
+    margin-top: -20px;
+    padding: 50px 0 20px 0;
     .services-block {
       width: auto;
-
       h2 {
-        text-align: center;
-        width: 100%;
+        //text-align: center;
+        width: 320px;
+        font-size: 30px;
       }
-
     }
   }
+  //****************************************************
+
+  //Why us block
   .why-us-block__header {
     p {
       text-align: center;
@@ -452,6 +462,7 @@
     }
   }
   //**************************
+
   //Stands block
   .stands-block-wrapper {
     padding: 0;
@@ -480,8 +491,9 @@
   .services-block-wrapper {
     background: url(img/services/services-background.png) 2% no-repeat;
     background-size: cover;
-    padding-top: 50px;
+    padding-top: 45px;
     padding-bottom: 20px;
+    margin-top: -10px;
 
     .services-block {
       width: auto;
@@ -489,11 +501,13 @@
       h2 {
         text-align: center;
         font-size: 24px;
-        width: 54%;
+        width: 320px;
       }
 
       h3 {
         font-size: 12px;
+        text-align: center;
+        padding: 0 5px;
       }
 
       .icon-cards {
@@ -502,7 +516,21 @@
         .card {
           width: 145px;
           flex-basis: 145px;
-          margin: 42px 25px 0 0;
+          margin: 30px 20px 0 0;
+          .icon {
+            width: 70px;
+            height: 70px;
+            img {
+              width: 50%;
+              height: 50%;
+            }
+          }
+          h4 {
+            font-size: 12px;
+          }
+          p {
+            font-size: 10px;
+          }
         }
       }
     }
@@ -540,6 +568,7 @@
         img {
           margin-top: 5px;
         }
+        p {font-size: 12px}
       }
     }
   }

@@ -4,14 +4,14 @@ get_header();
 <!--top slider block-->
  <div class="top-slider-wrapper">
      <img src="<?php echo get_template_directory_uri()?>/img/top-slider/top-banner.jpg" alt="">
-<!--        <div class="top-slider">-->
-<!--             --><?php //echo do_shortcode('[slick-slider category="4"
-//             image_size="large"
-//           autoplay="true" autoplay_interval="2000"
-//           image_fit="true"
-//
-//             ]'); ?>
-<!--        </div>-->
+            <!--        <div class="top-slider">-->
+            <!--             --><?php //echo do_shortcode('[slick-slider category="4"
+            //             image_size="large"
+            //           autoplay="true" autoplay_interval="2000"
+            //           image_fit="true"
+            //
+            //             ]'); ?>
+            <!--        </div>-->
  </div>
 <!--***************************************-->
 <!--Crafts block-->
@@ -28,14 +28,14 @@ get_header();
      $query->the_post();
 
     ?>
-
+<!--Card template -->
         <div class="card-craft wow zoomIn">
             <a href="#">
                 <img src="<?php the_field('link_thumbnail', get_the_ID());?>" alt="">
                 <h3><?php the_title() ?></h3>
             </a>
         </div>
-
+<!--**************-->
     <?php } ?>
  </div>
 <!--******************************************-->
@@ -49,6 +49,7 @@ get_header();
     </div>
  </div>
 <!--******************************************-->
+
 <!--Stands block-->
  <div class="stands-block-wrapper container">
     <div class="icon-block wow fadeInUpBig">
@@ -67,11 +68,13 @@ get_header();
         </a>
     </div>
  </div>
+<!--**********************************************-->
+
 <!--Services block-->
  <div class="services-block-wrapper">
     <div class="container">
         <div class="services-block">
-            <h2>мы предлагаем <br> комплекс услуг</h2>
+            <h2>мы предлагаем комплекс услуг</h2>
             <h3>Покажем больше выгод, группируя контент.. Максимум 2-3 предложения на мотивацию.</h3>
             <img src="<?= get_template_directory_uri()?>/img/services/logo-copy.png" alt="" class="logo-copy wow fadeInRightBig" data-wow-delay="1s">
             <div class="icon-cards">
