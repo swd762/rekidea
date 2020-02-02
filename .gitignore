@@ -21,3 +21,21 @@ node_modules/
 *.log
 
 *.sqlite
+/.htaccess
+/wp-blog-header.php
+/wp-login.php
+/wp-mail.php
+/index.php
+/wp-config.php
+/wp-settings.php
+/license.txt
+/wp-trackback.php
+/wp-load.php
+/readme.html
+/wp-signup.php
+/wp-config-sample.php
+/wp-cron.php
+/wp-links-opml.php
+/wp-comments-post.php
+/wp-activate.php
+/xmlrpc.php

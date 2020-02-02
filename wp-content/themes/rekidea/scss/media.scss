@@ -157,12 +157,9 @@
       }
     }
   }
-
-
-
-
-
 }
+
+
 @media (max-width: 1024px) {
   body {
     &.admin-bar {
@@ -264,14 +261,10 @@
 
   }
 
-.footer__content {
-  justify-content: space-around;
-  flex-wrap: wrap;
-}
-
-
-
-
+  .footer__content {
+    justify-content: space-around;
+    flex-wrap: wrap;
+  }
 }
 
 
@@ -282,64 +275,39 @@
   .container {
     width: auto;
   }
-}
-
-
-@media (max-width: 900px) {
-  .stands-block-wrapper {
-
-    padding: 10px 0 0 0;
-    flex-direction: column;
-    align-items: center;
-    .description-block {
-      p {
-        margin: 10px 0 10px 0;
-        text-align: center;
-      }
-    }
-  }
-  .services-block-wrapper {
-    background: url(img/services/services-background.png) 2% no-repeat;
-    background-size: cover;
-    .services-block  {
-      width: auto;
-      h2 {
-        text-align: center;
-        width: 100%;
-      }
-      //.icon-cards {
-      //  justify-content: center;
-      //}
-    }
-  }
-
-
+  // Why us block
   .why-us-block__header {
     p {
       text-align: center;
     }
-    .services-list-desktop {
-      display: none;
-    }
-    .why-us-block__content {
-      display: flex;
-      margin-top: 30px;
+  }
+  .services-list-desktop {
+    display: none;
+  }
+  .why-us-block__content {
+    display: flex;
+    margin-top: 30px;
 
     .services-list {
       width: 100%;
+      display: block;
+
       ul {
         display: flex;
         flex-direction: column;
         padding-right: 0;
       }
+
       ul li {
         text-align: center;
 
       }
     }
+
     .services-content {
       display: none;
       width: 100%;
+
       p {
         margin: 35px 0 35px 0;
       }
@@ -353,47 +321,111 @@
     position: initial;
     width: 100%;
     padding: 5px;
+
     img {
       width: 100%;
     }
+
     p {
       margin: 15px 0 10px 0;
       text-align: center;
     }
   }
+
+
 }
-  @media (max-width: 900px) {
-    .stands-block-wrapper {
 
-      padding: 10px 0 0 0;
-      flex-direction: column;
-      align-items: center;
 
-      .description-block {
-        p {
-          margin: 10px 0 10px 0;
-          text-align: center;
-        }
-      }
-    }
-    .services-block-wrapper {
-      background: url(img/services/services-background.png) 2% no-repeat;
-      background-size: cover;
+@media (max-width: 900px) {
+  .stands-block-wrapper {
 
-      .services-block {
-        width: auto;
+    padding: 10px 0 0 0;
+    flex-direction: column;
+    align-items: center;
 
-        h2 {
-          text-align: center;
-          width: 100%;
-        }
-
-        //.icon-cards {
-        //  justify-content: center;
-        //}
+    .description-block {
+      p {
+        margin: 10px 0 10px 0;
+        text-align: center;
       }
     }
   }
+  .services-block-wrapper {
+    background: url(img/services/services-background.png) 2% no-repeat;
+    background-size: cover;
+
+    .services-block {
+      width: auto;
+
+      h2 {
+        text-align: center;
+        width: 100%;
+      }
+
+    }
+  }
+  .why-us-block__header {
+    p {
+      text-align: center;
+    }
+
+    .services-list-desktop {
+      display: none;
+    }
+
+    .why-us-block__content {
+      display: flex;
+      margin-top: 30px;
+
+      .services-list {
+        width: 100%;
+
+        ul {
+          display: flex;
+          flex-direction: column;
+          padding-right: 0;
+        }
+
+        ul li {
+          text-align: center;
+
+        }
+      }
+
+      .services-content {
+        display: none;
+        width: 100%;
+
+        p {
+          margin: 35px 0 35px 0;
+        }
+      }
+    }
+
+    .akk-menu-item {
+      padding: 25px 0 25px 0;
+    }
+
+    .akk-menu-content {
+      list-style: none;
+      position: initial;
+      width: 100%;
+      padding: 5px;
+
+      img {
+        width: 100%;
+      }
+
+      p {
+        margin: 15px 0 10px 0;
+        text-align: center;
+      }
+    }
+  }
+}
+
+
+
 
 @media (max-width: 782px) {
   body {
@@ -602,8 +634,8 @@
   }
 }
 
-  @media (max-width: 360px) {
+@media (max-width: 360px) {
     .craft-cards-wrapper {
       padding: 0;
     }
-  }
+}
