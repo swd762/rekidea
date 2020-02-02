@@ -206,7 +206,7 @@
         &>a:after {
           content: '';
           display: inline-block;
-          background: url('img/menu-top-arrow.png');
+          background: url('img/button-white.svg') no-repeat;
           width: 12px;
           height: 9px;
           margin-left: 7px;
@@ -216,7 +216,16 @@
         }
         &:hover {
           &>a:after {
+            content: '';
+            display: inline-block;
+            background: url('img/button-red.svg') no-repeat;
+            width: 12px;
+            height: 9px;
+            margin-left: 7px;
+            margin-top: 3px;
             transform: rotate(0);
+            transition: transform 0.3s;
+
           }
         }
       }

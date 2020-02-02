@@ -370,7 +370,7 @@ get_header();
 <div class="our-partners-block-wrapper">
     <div class="container">
         <div class="our-partners-block">
-           <?= do_shortcode('[slick-carousel-slider category="6" 
+           <?= do_shortcode('[slick-carousel-slider category="8" 
            dots="false" arrows="false"  
            image_size="large"
            autoplay="true" autoplay_interval="2000" 
