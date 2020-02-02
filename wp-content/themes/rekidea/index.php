@@ -3,14 +3,15 @@ get_header();
 ?>
 <!--top slider block-->
  <div class="top-slider-wrapper">
-        <div class="top-slider">
-             <?php echo do_shortcode('[slick-slider category="4"
-             image_size="large"
-           autoplay="true" autoplay_interval="2000" 
-           image_fit="true" 
-             
-             ]'); ?>
-        </div>
+     <img src="<?php echo get_template_directory_uri()?>/img/top-slider/top-banner.jpg" alt="">
+<!--        <div class="top-slider">-->
+<!--             --><?php //echo do_shortcode('[slick-slider category="4"
+//             image_size="large"
+//           autoplay="true" autoplay_interval="2000"
+//           image_fit="true"
+//
+//             ]'); ?>
+<!--        </div>-->
  </div>
 <!--***************************************-->
 <!--Crafts block-->

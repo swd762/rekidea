@@ -235,8 +235,8 @@ body {
             font-size: 15px;
             padding: 5px 0; }
 
-.top-slider-wrapper {
-  height: 500px; }
+.top-slider-wrapper img {
+  width: 100%; }
 
 .craft-cards-wrapper {
   padding: 10px 0 35px 0;
@@ -639,9 +639,6 @@ footer {
     .dtop-menu-content img {
       width: 100%; } }
 @media (max-width: 1090px) {
-  .top-slider-wrapper {
-    height: 350px; }
-
   .stands-block-wrapper {
     padding: 50px 0 0 0; }
     .stands-block-wrapper .icon-block img {
