@@ -389,14 +389,17 @@
           &>.sub-menu {
             padding-left: 42px;
             &>li {
+
               margin-bottom: 25px;
               &>a {
                 font-weight: bold;
                 font-size: 15px;
                 text-transform: uppercase;
+                &:hover {color: #c8a2c8}
               }
               &>.sub-menu {
                 &>li {
+                  &:hover a {color: #c8a2c8}
                   &>a {
                     font-weight: 100;
                     font-size: 15px;
@@ -452,8 +455,6 @@
        filter:brightness(60%);
        transition: all 0.3s;
      }
-
-
   }
 }
 
