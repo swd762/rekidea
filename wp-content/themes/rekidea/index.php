@@ -52,11 +52,11 @@ get_header();
 
 <!--Stands block-->
  <div class="stands-block-wrapper container">
-    <div class="icon-block wow fadeInUpBig">
+    <div class="icon-block wow ZoomIn">
         <img src="<?= get_template_directory_uri()?>/img/stands-block/stands.png" alt="">
     </div>
     <div class="description-block">
-        <h2>застройка <br> и аренда
+        <h2 class="fadeInUp">застройка <br> и аренда
         стендов на мероприятия</h2>
         <p>Вы ставите нам задачу, а мы, в свою очередь, предлагаем оптимальные варианты решений. Имея собственные
             производственные мощности мы готовы помочь с созданием эксклюзивных и типовых проектов, оригинальной
@@ -76,7 +76,7 @@ get_header();
         <div class="services-block">
             <h2>мы предлагаем комплекс услуг</h2>
             <h3>Покажем больше выгод, группируя контент.. Максимум 2-3 предложения на мотивацию.</h3>
-            <img src="<?= get_template_directory_uri()?>/img/services/logo-copy.png" alt="" class="logo-copy wow fadeInRightBig" data-wow-delay="1s">
+            <img src="<?= get_template_directory_uri()?>/img/services/logo-copy.png" alt="" class="logo-copy wow slideInUp" data-wow-delay="1s">
             <div class="icon-cards">
                 <div class="card wow zoomIn">
                     <div class="icon">

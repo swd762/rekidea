@@ -42,9 +42,44 @@ wp_head();
                 </div>
                 <div class="header__phone-wrapper">
                     <img class="logo" src="<?= get_template_directory_uri()?>/img/phone-logo.png" alt="">
-
                     <a href="#">+7 (495) 369-20-79</a>
                     <img class="arrow" src="<?= get_template_directory_uri()?>/img/phone-arrow.png" alt="">
+<!--                    phone modal-->
+                    <div class="header__phone-modal">
+                        <div class="phone-bold">
+                            <a href="#">+ 7 (495) 369-20-79</a>
+                        </div>
+                        <div class="phone-bold">
+                            <a href="#">+ 7 (495) 369-20-79</a>
+                        </div>
+                        <div class="working-regime">
+                            Ежедневно с 10:00 до 19:00<br>
+                            Без перерывов и выходных
+                        </div>
+                        <hr>
+                        <div class="phone-link">
+                            <a href="#">Перезвоните мне</a>
+                        </div>
+                        <div class="phone-link">
+                            <a href="#">Обратная связь</a>
+                        </div>
+                    </div>
+<!--                    ***************-->
+<!--                    feedback modal -->
+                    <div class="header__feedback-modal">
+                        <div class="feedback-link">
+                            <a href="#">< Другие варианты связи</a>
+                        </div>
+                        <hr>
+                        <div class="feedback-form-header">
+                            <h3>Хотите поговорить?</h3>
+                            <p>Оставьте телефон, мы Вам перезвоним</p>
+                        </div>
+                        <div class="feedback-form">
+                            <?= do_shortcode('[contact-form-7 id="185" title="phone-feedback-top-main"]'); ?>
+                        </div>
+                    </div>
+<!--                    ****************-->
                 </div>
                 <div class="header__email-wrapper">
                     <? the_field('email', get_the_ID());?>

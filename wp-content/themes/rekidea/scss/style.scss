@@ -143,6 +143,7 @@
   }
 }
 .header__phone-wrapper {
+  position: relative;
   display: flex;
   flex-basis: 185px;
   align-items: center;
@@ -163,6 +164,105 @@
   }
 
 }
+.header__phone-modal {
+  position: absolute;
+  top: 33px;
+  right: 0px;
+  width: 320px;
+  height: 220px;
+  padding: 18px;
+  background-color: #fff;
+  z-index: 1;
+  border-radius: 5px;
+  .phone-bold  {
+    margin-bottom: 12px;
+    a {
+      font-size: 25px;
+      color: #9d2220;
+
+    }
+  }
+  .working-regime {
+    font-size: 14px;
+    font-weight: 300;
+  }
+  hr {
+    margin: 12px -18px;
+    border: 0;
+    border-bottom: 1px solid #999999;
+  }
+  .phone-link {
+    margin-bottom: 10px;
+    a {
+      font-size: 16px;
+      /* text-transform: uppercase; */
+      font-weight: 300;
+    }
+
+  }
+}
+.header__feedback-modal {
+  position: absolute;
+  top: 33px;
+  right: 0px;
+  width: 320px;
+  height: 320px;
+  padding: 14px;
+  background-color: #fff;
+  z-index: 1;
+  border-radius: 5px;
+  hr {
+    border: 0;
+    border-bottom: 1px solid #999999;
+    margin: 0 -14px 0 -14px;
+  }
+  .feedback-form-header {
+
+    margin-top: 25px;
+    h3 {
+      font-size: 14px;
+    }
+    p {
+      font-size: 12px;
+    }
+  }
+  .feedback-link {
+    margin: 25px 0 3px 0;
+    a {
+      color:#495c6e;
+      font-weight: 300;
+      font-size: 14px;
+      &:hover {
+
+      }
+    }
+  }
+  .feedback-field {
+    margin: 15px 0;
+    input {
+      width: 100%;
+      padding: 14px;
+      border-radius: 5px;
+      border: 0;
+      background: #f7f7f7;
+      font-size: 17px;
+    }
+
+  }
+  .feedback-submit {
+    text-align: center;
+    input {
+      border: 0;
+      background: $red;
+      font-size: 19px;
+      color: #fff;
+      padding: 14px 67px;
+      text-align: center;
+      border-radius: 6px;
+    }
+  }
+}
+
 .header__email-wrapper {
   display: flex;
   flex-basis: 122px;
@@ -346,6 +446,15 @@
   img {
     width: 100%;
   }
+  &:hover {
+     a h3 {font-weight: bold;}
+     a img {
+       filter:brightness(60%);
+       transition: all 0.3s;
+     }
+
+
+  }
 }
 
 
@@ -464,7 +573,7 @@
   .logo-copy {
     position: absolute;
     right: -530px;
-    bottom: 50px;
+    bottom: -19px;
 
   }
   .icon-cards {

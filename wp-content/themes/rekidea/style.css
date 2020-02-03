@@ -122,6 +122,7 @@ body {
     top: 2px; }
 
 .header__phone-wrapper {
+  position: relative;
   display: flex;
   flex-basis: 185px;
   align-items: center; }
@@ -137,6 +138,81 @@ body {
     color: #000;
     font-weight: bold;
     text-decoration: none; }
+
+.header__phone-modal {
+  position: absolute;
+  top: 33px;
+  right: 0px;
+  width: 320px;
+  height: 220px;
+  padding: 18px;
+  background-color: #fff;
+  z-index: 1;
+  border-radius: 5px; }
+  .header__phone-modal .phone-bold {
+    margin-bottom: 12px; }
+    .header__phone-modal .phone-bold a {
+      font-size: 25px;
+      color: #9d2220; }
+  .header__phone-modal .working-regime {
+    font-size: 14px;
+    font-weight: 300; }
+  .header__phone-modal hr {
+    margin: 12px -18px;
+    border: 0;
+    border-bottom: 1px solid #999999; }
+  .header__phone-modal .phone-link {
+    margin-bottom: 10px; }
+    .header__phone-modal .phone-link a {
+      font-size: 16px;
+      /* text-transform: uppercase; */
+      font-weight: 300; }
+
+.header__feedback-modal {
+  position: absolute;
+  top: 33px;
+  right: 0px;
+  width: 320px;
+  height: 320px;
+  padding: 14px;
+  background-color: #fff;
+  z-index: 1;
+  border-radius: 5px; }
+  .header__feedback-modal hr {
+    border: 0;
+    border-bottom: 1px solid #999999;
+    margin: 0 -14px 0 -14px; }
+  .header__feedback-modal .feedback-form-header {
+    margin-top: 25px; }
+    .header__feedback-modal .feedback-form-header h3 {
+      font-size: 14px; }
+    .header__feedback-modal .feedback-form-header p {
+      font-size: 12px; }
+  .header__feedback-modal .feedback-link {
+    margin: 25px 0 3px 0; }
+    .header__feedback-modal .feedback-link a {
+      color: #495c6e;
+      font-weight: 300;
+      font-size: 14px; }
+  .header__feedback-modal .feedback-field {
+    margin: 15px 0; }
+    .header__feedback-modal .feedback-field input {
+      width: 100%;
+      padding: 14px;
+      border-radius: 5px;
+      border: 0;
+      background: #f7f7f7;
+      font-size: 17px; }
+  .header__feedback-modal .feedback-submit {
+    text-align: center; }
+    .header__feedback-modal .feedback-submit input {
+      border: 0;
+      background: #6f0d33;
+      font-size: 19px;
+      color: #fff;
+      padding: 14px 67px;
+      text-align: center;
+      border-radius: 6px; }
 
 .header__email-wrapper {
   display: flex;
@@ -259,6 +335,11 @@ body {
   margin-top: 25px; }
   .card-craft img {
     width: 100%; }
+  .card-craft:hover a h3 {
+    font-weight: bold; }
+  .card-craft:hover a img {
+    filter: brightness(60%);
+    transition: all 0.3s; }
 
 .pictures-block-wrapper {
   height: 253px;
@@ -350,7 +431,7 @@ body {
   .services-block .logo-copy {
     position: absolute;
     right: -530px;
-    bottom: 50px; }
+    bottom: -19px; }
   .services-block .icon-cards {
     display: flex;
     flex-wrap: wrap; }
