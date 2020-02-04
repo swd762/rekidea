@@ -41,34 +41,46 @@ wp_head();
                     </form>
                 </div>
                 <div class="header__phone-wrapper">
-                    <img class="logo" src="<?= get_template_directory_uri()?>/img/phone-logo.png" alt="">
-                    <a href="#">+7 (495) 369-20-79</a>
-                    <img class="arrow" src="<?= get_template_directory_uri()?>/img/phone-arrow.png" alt="">
+
+                    <a href="#" class="header__phone-logo">
+                        <img class="logo" src="<?= get_template_directory_uri()?>/img/phone-logo.png" alt="">
+<!--                        <img class="logo" src="--><?//= get_template_directory_uri()?><!--/img/modal/smartphone.svg" alt="" style="width:10px;height:16px">-->
+                        +7 (495) 369-20-79
+                    </a>
+<!--                    <img class="arrow" src="--><?//= get_template_directory_uri()?><!--/img/phone-arrow.png" alt="">-->
 <!--                    phone modal-->
                     <div class="header__phone-modal">
-                        <div class="phone-bold">
-                            <a href="#">+ 7 (495) 369-20-79</a>
-                        </div>
-                        <div class="phone-bold">
-                            <a href="#">+ 7 (495) 369-20-79</a>
-                        </div>
-                        <div class="working-regime">
-                            Ежедневно с 10:00 до 19:00<br>
-                            Без перерывов и выходных
-                        </div>
-                        <hr>
-                        <div class="phone-link">
-                            <a href="#">Перезвоните мне</a>
-                        </div>
-                        <div class="phone-link">
-                            <a href="#">Обратная связь</a>
-                        </div>
+<!--                        <div class="header__phone-modal-content">-->
+                            <div class="phone-bold">
+                                <a href="#">+ 7 (495) 369-20-79</a>
+                            </div>
+                            <div class="phone-bold">
+                                <a href="#">+ 7 (495) 369-20-79</a>
+                            </div>
+                            <div class="working-regime">
+                                Ежедневно с 10:00 до 19:00<br>
+                                Без перерывов и выходных
+                            </div>
+                            <hr>
+                            <div class="phone-link">
+                                <a href="#">
+                                    <img src="<?= get_template_directory_uri()?>/img/modal/smartphone.svg" alt="">
+                                    Перезвоните мне
+                                </a>
+                            </div>
+                            <div class="phone-link">
+                                <a href="#" id="feedback-phone">
+                                    <img src="<?= get_template_directory_uri()?>/img/modal/envelope.svg" alt="">
+                                    Обратная связь
+                                </a>
+                            </div>
+<!--                        </div>-->
                     </div>
 <!--                    ***************-->
 <!--                    feedback modal -->
                     <div class="header__feedback-modal">
                         <div class="feedback-link">
-                            <a href="#">< Другие варианты связи</a>
+                            <a href="#"><img src="<?= get_template_directory_uri()?>/img/modal/left.svg" alt=""> Другие варианты связи</a>
                         </div>
                         <hr>
                         <div class="feedback-form-header">
@@ -81,6 +93,36 @@ wp_head();
                     </div>
 <!--                    ****************-->
                 </div>
+                 <script>
+                     jQuery(function($) {
+                         $('.header__phone-logo').on('click', function(event) {
+                             event.preventDefault();
+                             $('.header__phone-logo').toggleClass('header__phone-logo-arrow');
+                            if ($('.header__phone-modal').is('.active')) {
+                                $('.header__phone-modal').removeClass('active');
+                            } else {
+                                if ($('.header__feedback-modal').is('.active')) {
+                                    $('.header__feedback-modal').removeClass('active');
+                                } else $('.header__phone-modal').addClass('active');
+                            }
+
+
+
+
+                         });
+                         $('#feedback-phone').on('click', function (e) {
+                            e.preventDefault();
+                             $('.header__feedback-modal').addClass('active');
+                             $('.header__phone-modal').removeClass('active');
+                         });
+
+                         $('.feedback-link').on('click', function (e) {
+                            e.preventDefault();
+                            $('.header__feedback-modal').removeClass('active');
+                            $('.header__phone-modal').addClass('active');
+                         })
+                     });
+                 </script>
                 <div class="header__email-wrapper">
                     <? the_field('email', get_the_ID());?>
                 </div>

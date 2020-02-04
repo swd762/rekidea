@@ -1,6 +1,7 @@
 <?php
 get_header();
 ?>
+<main>
 <!--top slider block-->
  <div class="top-slider-wrapper">
      <img src="<?php echo get_template_directory_uri()?>/img/top-slider/top-banner.jpg" alt="">
@@ -364,6 +365,7 @@ get_header();
         </div>
     </div>
 </div>
+</main>
 <!--********************************************-->
 <script>
     new WOW().init();

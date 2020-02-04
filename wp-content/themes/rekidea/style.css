@@ -138,8 +138,35 @@ body {
     color: #000;
     font-weight: bold;
     text-decoration: none; }
+  .header__phone-wrapper .header__phone-logo {
+    display: flex;
+    align-items: center; }
+    .header__phone-wrapper .header__phone-logo::after {
+      content: '';
+      display: inline-block;
+      background: url("img/button-red.svg") no-repeat;
+      width: 12px;
+      height: 9px;
+      margin-left: 7px;
+      margin-top: 3px;
+      transform: rotate(180deg);
+      transition: transform 0.3s; }
+  .header__phone-wrapper .header__phone-logo-arrow::after {
+    content: '';
+    display: inline-block;
+    background: url("img/button-red.svg") no-repeat;
+    width: 12px;
+    height: 9px;
+    margin-left: 7px;
+    margin-top: 3px;
+    transform: rotate(0deg);
+    transition: transform 0.3s; }
+  .header__phone-wrapper .active {
+    display: block; }
 
 .header__phone-modal {
+  box-shadow: 0 0 14px 0 rgba(0, 0, 0, 0.17);
+  display: none;
   position: absolute;
   top: 33px;
   right: 0px;
@@ -165,11 +192,18 @@ body {
     margin-bottom: 10px; }
     .header__phone-modal .phone-link a {
       font-size: 16px;
-      /* text-transform: uppercase; */
       font-weight: 300; }
+      .header__phone-modal .phone-link a img {
+        width: 16px;
+        height: 16px;
+        margin-right: 8px; }
+    .header__phone-modal .phone-link:hover a {
+      font-weight: 400; }
 
 .header__feedback-modal {
+  display: none;
   position: absolute;
+  box-shadow: 0 0 14px 0 rgba(0, 0, 0, 0.17);
   top: 33px;
   right: 0px;
   width: 320px;
@@ -185,15 +219,21 @@ body {
   .header__feedback-modal .feedback-form-header {
     margin-top: 25px; }
     .header__feedback-modal .feedback-form-header h3 {
-      font-size: 14px; }
+      font-size: 14px;
+      color: #183147;
+      margin-bottom: 8px; }
     .header__feedback-modal .feedback-form-header p {
-      font-size: 12px; }
+      font-size: 12px;
+      color: #183147; }
   .header__feedback-modal .feedback-link {
-    margin: 25px 0 3px 0; }
+    margin: 14px 0 8px 0; }
     .header__feedback-modal .feedback-link a {
       color: #495c6e;
       font-weight: 300;
-      font-size: 14px; }
+      font-size: 16px; }
+      .header__feedback-modal .feedback-link a img {
+        width: 15px;
+        height: 13px; }
   .header__feedback-modal .feedback-field {
     margin: 15px 0; }
     .header__feedback-modal .feedback-field input {
@@ -205,6 +245,9 @@ body {
       font-size: 17px; }
   .header__feedback-modal .feedback-submit {
     text-align: center; }
+    .header__feedback-modal .feedback-submit:hover input {
+      background-color: #9d1248;
+      transition: background-color 0.3s linear; }
     .header__feedback-modal .feedback-submit input {
       border: 0;
       background: #6f0d33;
