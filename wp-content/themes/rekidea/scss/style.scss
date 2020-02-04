@@ -869,22 +869,42 @@
   }
 }
 
-.portfolio-block__content {
-  display: flex;
-  flex-direction: column;
-  width: 1140px;
-  margin: 0 auto;
 
-  .content-big {
-    display: flex;
-    justify-content: space-between;
-  }
-  .content-small {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 10px;
+.content-big {
+  display: flex;
+  justify-content: center;
+  //padding: 8px;
+  a {
+    flex-basis: 370px;
+    flex-shrink: 0.5;
+    margin-right: 8px;
+    &:last-child {
+      margin-right: 0;
+    }
+    img {
+      max-width: 100%;
+    }
   }
 }
+.content-small {
+  margin-top: 8px;
+  display:flex;
+  justify-content: center;
+  a {
+    flex-basis: 181px;
+    flex-shrink: 0.5;
+    margin-right: 8px;
+    //height: 170px;
+    &:last-child {
+      margin-right: 0;
+    }
+    img {
+      width: 100%;
+    }
+  }
+}
+
+
 
 // Out partners block
 .our-partners-block-wrapper {

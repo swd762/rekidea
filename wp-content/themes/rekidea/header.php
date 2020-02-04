@@ -105,11 +105,8 @@ wp_head();
                                     $('.header__feedback-modal').removeClass('active');
                                 } else $('.header__phone-modal').addClass('active');
                             }
-
-
-
-
                          });
+
                          $('#feedback-phone').on('click', function (e) {
                             e.preventDefault();
                              $('.header__feedback-modal').addClass('active');

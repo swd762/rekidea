@@ -336,21 +336,54 @@ get_header();
                 с водяным знаком при увеличении или нет?</p>
         </div>
         <div class="portfolio-block__content">
-            <div class="content-big">
-                <a href="#"><img src="<?= get_template_directory_uri()?>/img/portfolio-block/gal_big_1.png" alt=""></a>
-                <a href="#"><img src="<?= get_template_directory_uri()?>/img/portfolio-block/gal_big_2.png" alt=""></a>
-                <a href="#" class="no-mobile"><img src="<?= get_template_directory_uri()?>/img/portfolio-block/gal_big_3.png" alt=""></a>
-            </div>
-            <div class="content-small">
-                <a href="#"><img src="<?= get_template_directory_uri()?>/img/portfolio-block/gal_small_1.png" alt=""></a>
-                <a href="#"><img src="<?= get_template_directory_uri()?>/img/portfolio-block/gal_small_2.png" alt=""></a>
-                <a href="#"><img src="<?= get_template_directory_uri()?>/img/portfolio-block/gal_small_3.png" alt=""></a>
-                <a href="#"><img src="<?= get_template_directory_uri()?>/img/portfolio-block/gal_small_4.png" alt=""></a>
-                <a href="#" class="no-mobile"><img src="<?= get_template_directory_uri() ?>/img/portfolio-block/gal_small_5.png"alt=""></a>
-                <a href="#" class="no-mobile"><img src="<?= get_template_directory_uri() ?>/img/portfolio-block/gal_small_6.png"alt=""></a>
-            </div>
+                <?php
+                $query = new WP_Query(array (
+                        'category_name'=>'common',
+                        'post_per_page'=>-1
+                ));
+                while ($query->have_posts())
+                    $query->the_post();
+                ?>
+                <div class="content-big">
+                    <a href="<?php the_field('portfolio-image1', get_the_ID())?>" class="single_image">
+                        <img src="<?php the_field('portfolio-image1', get_the_ID())?>" alt="">
+                    </a>
+                    <a href="<?php the_field('portfolio-image2', get_the_ID())?>" class="single_image">
+                        <img src="<?php the_field('portfolio-image2', get_the_ID())?>" alt="">
+                    </a>
+                    <a href="<?php the_field('portfolio-image3', get_the_ID())?>" class="single_image">
+                        <img src="<?php the_field('portfolio-image3', get_the_ID())?>" alt="">
+                    </a>
+                </div>
+                <div class="content-small">
+                    <a href="<?php the_field('portfolio-image4', get_the_ID())?>" class="single_image">
+                        <img src="<?php the_field('portfolio-image4', get_the_ID())?>" alt="">
+                    </a>
+                    <a href="<?php the_field('portfolio-image5', get_the_ID())?>" class="single_image">
+                        <img src="<?php the_field('portfolio-image5', get_the_ID())?>" alt="">
+                    </a>
+                    <a href="<?php the_field('portfolio-image6', get_the_ID())?>" class="single_image">
+                        <img src="<?php the_field('portfolio-image6', get_the_ID())?>" alt="">
+                    </a>
+                    <a href="<?php the_field('portfolio-image7', get_the_ID())?>" class="single_image">
+                        <img src="<?php the_field('portfolio-image7', get_the_ID())?>" alt="">
+                    </a>
+                    <a href="<?php the_field('portfolio-image8', get_the_ID())?>" class="single_image">
+                        <img src="<?php the_field('portfolio-image8', get_the_ID())?>" alt="">
+                    </a>
+                    <a href="<?php the_field('portfolio-image9', get_the_ID())?>" class="single_image">
+                        <img src="<?php the_field('portfolio-image9', get_the_ID())?>" alt="">
+                    </a>
+                </div>
         </div>
         <a href="#" class="button">Посмотреть больше наших работ</a>
+    <!--            Tooklit for gallery-->
+    <script>
+        jQuery(function($) {
+            $(".single_image").fancybox();
+        });
+    </script>
+    <!--*******************************-->
 </div>
 <!--****************************************-->
 <!--Out partners block-->
