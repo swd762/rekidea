@@ -868,12 +868,13 @@
     padding: 0 5px;
   }
 }
-
+.portfolio-block__content {
+  padding: 5px;
+}
 
 .content-big {
   display: flex;
   justify-content: center;
-  //padding: 8px;
   a {
     flex-basis: 370px;
     flex-shrink: 0.5;

@@ -663,6 +663,9 @@ body {
   text-align: center;
   padding: 0 5px; }
 
+.portfolio-block__content {
+  padding: 5px; }
+
 .content-big {
   display: flex;
   justify-content: center; }
@@ -1007,6 +1010,9 @@ footer {
   .only-mobile {
     display: block; }
 
+  .hidden-mobile {
+    display: none; }
+
   .card-craft {
     width: 153px;
     flex-basis: 153px;
@@ -1134,22 +1140,20 @@ footer {
     text-align: center;
     font-size: 12px; }
 
-  .portfolio-block__content .content-big .no-mobile {
-    display: none; }
   .portfolio-block__content .content-big a {
     width: 50%;
     flex-basis: 50%; }
+    .portfolio-block__content .content-big a:nth-child(2n+2) {
+      margin-right: 0; }
     .portfolio-block__content .content-big a img {
       width: 100%; }
-  .portfolio-block__content .content-small {
-    margin-top: 0; }
-    .portfolio-block__content .content-small .no-mobile {
-      display: none; }
-    .portfolio-block__content .content-small a {
-      width: 25%;
-      flex-basis: 25%; }
-      .portfolio-block__content .content-small a img {
-        width: 100%; }
+  .portfolio-block__content .content-small a {
+    width: 25%;
+    flex-basis: 25%; }
+    .portfolio-block__content .content-small a:nth-child(4n+4) {
+      margin-right: 0; }
+    .portfolio-block__content .content-small a img {
+      width: 100%; }
 
   .footer__content {
     display: none; }

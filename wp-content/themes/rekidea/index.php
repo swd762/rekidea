@@ -351,7 +351,7 @@ get_header();
                     <a href="<?php the_field('portfolio-image2', get_the_ID())?>" class="single_image">
                         <img src="<?php the_field('portfolio-image2', get_the_ID())?>" alt="">
                     </a>
-                    <a href="<?php the_field('portfolio-image3', get_the_ID())?>" class="single_image">
+                    <a href="<?php the_field('portfolio-image3', get_the_ID())?>" class="single_image hidden-mobile">
                         <img src="<?php the_field('portfolio-image3', get_the_ID())?>" alt="">
                     </a>
                 </div>
@@ -368,15 +368,16 @@ get_header();
                     <a href="<?php the_field('portfolio-image7', get_the_ID())?>" class="single_image">
                         <img src="<?php the_field('portfolio-image7', get_the_ID())?>" alt="">
                     </a>
-                    <a href="<?php the_field('portfolio-image8', get_the_ID())?>" class="single_image">
+                    <a href="<?php the_field('portfolio-image8', get_the_ID())?>" class="single_image hidden-mobile">
                         <img src="<?php the_field('portfolio-image8', get_the_ID())?>" alt="">
                     </a>
-                    <a href="<?php the_field('portfolio-image9', get_the_ID())?>" class="single_image">
+                    <a href="<?php the_field('portfolio-image9', get_the_ID())?>" class="single_image hidden-mobile">
                         <img src="<?php the_field('portfolio-image9', get_the_ID())?>" alt="">
                     </a>
                 </div>
         </div>
         <a href="#" class="button">Посмотреть больше наших работ</a>
+
     <!--            Tooklit for gallery-->
     <script>
         jQuery(function($) {
@@ -384,26 +385,35 @@ get_header();
         });
     </script>
     <!--*******************************-->
+
 </div>
 <!--****************************************-->
 <!--Out partners block-->
 <div class="our-partners-block-wrapper">
     <div class="container">
         <div class="our-partners-block">
-           <?= do_shortcode('[slick-carousel-slider category="8" 
-           dots="false" arrows="false"  
-           image_size="large"
-           autoplay="true" autoplay_interval="2000" 
-           image_fit="true" sliderheight="100"  ]'); ?>
+<!--           --><?//= do_shortcode('[slick-carousel-slider category="8"
+//           dots="false" arrows="false"
+//           image_size="large"
+//           autoplay="true" autoplay_interval="2000"
+//           image_fit="true" sliderheight="100"  ]'); ?>
+
+
+
+
         </div>
     </div>
 </div>
+
+
+
 </main>
 <!--********************************************-->
+<!--Init wow effects-->
 <script>
     new WOW().init();
 </script>
-
+<!--*****************-->
 
 <?php
 get_footer();

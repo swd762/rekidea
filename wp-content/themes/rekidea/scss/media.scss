@@ -446,7 +446,9 @@
   .only-mobile {
       display: block;
   }
-
+  .hidden-mobile {
+    display: none;
+  }
   //Craft cards
   .card-craft {
     width: 153px;
@@ -640,12 +642,10 @@
   .portfolio-block-wrapper {
     padding: 15px 0;
   }
-
   .portfolio-block__header {
     h2 {
       font-size: 24px;
   }
-
     p {
       margin: 15px 0 15px 0;
       text-align: center;
@@ -653,44 +653,38 @@
     }
   }
 
-
   .portfolio-block__content {
-
     .content-big {
-      .no-mobile {
-        display: none;
-      }
-
       a {
         width: 50%;
         flex-basis: 50%;
-
+        &:nth-child(2n+2) {
+          margin-right: 0;
+        }
         img {
           width: 100%;
         }
       }
     }
-
     .content-small {
-      margin-top: 0;
-
-      .no-mobile {
-        display: none;
-      }
-
       a {
         width: 25%;
         flex-basis: 25%;
-
+        &:nth-child(4n+4) {
+          margin-right: 0;
+        }
         img {
           width: 100%;
         }
       }
     }
   }
-    .footer__content {
+  // ****************************************
+
+
+  .footer__content {
       display: none;
-    }
+   }
 
   .footer_content_mobile {
     display: flex;
