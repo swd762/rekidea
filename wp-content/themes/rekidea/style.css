@@ -704,6 +704,16 @@ body {
   img {
     width: auto; }
 
+.breadcrumbs {
+  color: #8b8989;
+  font-size: 14px;
+  font-weight: 300;
+  padding: 10px 0; }
+
+.laser-top-banner {
+  height: 510px;
+  background-color: #f7f7f7; }
+
 footer {
   background-color: #474747; }
 

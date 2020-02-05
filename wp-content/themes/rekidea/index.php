@@ -398,7 +398,23 @@ get_header();
 //           autoplay="true" autoplay_interval="2000"
 //           image_fit="true" sliderheight="100"  ]'); ?>
 
+            <div class="slider">
+                <div><img src="<?= get_template_directory_uri()?>/img/our-partners/logo-gorzdrav.png" alt=""></div>
+                <div><img src="<?= get_template_directory_uri()?>/img/our-partners/logo-gorzdrav.png" alt=""></div>
+                <div><img src="<?= get_template_directory_uri()?>/img/our-partners/logo-gorzdrav.png" alt=""></div>
+                <div><img src="<?= get_template_directory_uri()?>/img/our-partners/logo-gorzdrav.png" alt=""></div>
+            </div>
 
+            <script>
+                jQuery(function($) {
+                    $('.slider').slick({
+                        infinite: true,
+                        slidesToShow: 5,
+                        slidesToScroll: 5,
+                        arrows:false
+                    });
+                });
+            </script>
 
 
         </div>

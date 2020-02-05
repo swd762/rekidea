@@ -44,13 +44,10 @@ wp_head();
 
                     <a href="#" class="header__phone-logo">
                         <img class="logo" src="<?= get_template_directory_uri()?>/img/phone-logo.png" alt="">
-<!--                        <img class="logo" src="--><?//= get_template_directory_uri()?><!--/img/modal/smartphone.svg" alt="" style="width:10px;height:16px">-->
                         +7 (495) 369-20-79
                     </a>
-<!--                    <img class="arrow" src="--><?//= get_template_directory_uri()?><!--/img/phone-arrow.png" alt="">-->
 <!--                    phone modal-->
                     <div class="header__phone-modal">
-<!--                        <div class="header__phone-modal-content">-->
                             <div class="phone-bold">
                                 <a href="#">+ 7 (495) 369-20-79</a>
                             </div>
@@ -74,9 +71,9 @@ wp_head();
                                     Обратная связь
                                 </a>
                             </div>
-<!--                        </div>-->
                     </div>
 <!--                    ***************-->
+
 <!--                    feedback modal -->
                     <div class="header__feedback-modal">
                         <div class="feedback-link">
