@@ -261,9 +261,19 @@
     justify-content: space-around;
     flex-wrap: wrap;
   }
+
+  // ***************** Laser page *********************
+
+  // **** laser cards block ************
+  .laser-cards-block {
+    padding: 0 52px;
+  }
+
+
+  // ***********************************
+
+
 }
-
-
 
 
 
@@ -426,9 +436,6 @@
   }
 }
 
-
-
-
 @media (max-width: 782px) {
   body {
     &.admin-bar {
@@ -439,26 +446,26 @@
   }
 }
 
-
-
-
+//**************************************************************************************
+//**************************************** 520 px **************************************
+//**************************************************************************************
 @media (max-width: 520px) {
-  .only-mobile {
-      display: block;
-  }
+  //.only-mobile {
+  //    display: block;
+  //}
   .hidden-mobile {
     display: none;
   }
+
+
   //Craft cards
   .card-craft {
     width: 153px;
     flex-basis: 153px;
     margin-top: 10px;
-
     a img {
       width: 100%;
     }
-
     a h3 {
       font-size: 11px;
     }
@@ -472,16 +479,13 @@
       width: 300px;
       padding-bottom: 0;
     }
-
     .description-block {
       width: 300px;
       flex-basis: initial;
       padding: 0;
-
       h2 {
         font-size: 24px;
       }
-
       p {
         font-size: 12px;
       }
@@ -496,25 +500,20 @@
     padding-top: 45px;
     padding-bottom: 20px;
     margin-top: -10px;
-
     .services-block {
       width: auto;
-
       h2 {
         text-align: center;
         font-size: 24px;
         width: 320px;
       }
-
       h3 {
         font-size: 12px;
         text-align: center;
         padding: 0 5px;
       }
-
       .icon-cards {
         justify-content: center;
-
         .card {
           width: 145px;
           flex-basis: 145px;
@@ -543,7 +542,6 @@
   .why-us-block-wrapper {
     padding: 15px 0;
   }
-
   .why-us-block__header {
     h2 {
       font-size: 24px;

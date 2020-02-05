@@ -708,11 +708,53 @@ body {
   color: #8b8989;
   font-size: 14px;
   font-weight: 300;
-  padding: 10px 0; }
+  padding: 10px 0 10px 15px; }
 
 .laser-top-banner {
   height: 510px;
   background-color: #f7f7f7; }
+
+.laser-cards-block {
+  display: flex;
+  padding: 0 65px;
+  justify-content: space-between;
+  flex-wrap: wrap; }
+
+.card-laser {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 220px;
+  flex-basis: 220px;
+  margin-top: 25px;
+  background-color: #f7f7f7; }
+  .card-laser a {
+    text-decoration: none; }
+  .card-laser h3 {
+    text-align: center;
+    text-transform: uppercase;
+    color: #6f0d33;
+    padding: 0 10px;
+    font-weight: 400; }
+  .card-laser p {
+    font-size: 10px;
+    font-weight: 300;
+    text-align: center;
+    color: #000;
+    margin-top: 20px;
+    padding: 0 14px; }
+  .card-laser img {
+    width: 100%;
+    margin-bottom: 15px; }
+  .card-laser .card-laser-button {
+    text-transform: uppercase;
+    color: #6f0d33;
+    border: 1px solid #6f0d33;
+    padding: 15px 50px;
+    margin: 20px 0; }
+    .card-laser .card-laser-button:hover {
+      color: #fff;
+      background-color: #6f0d33; }
 
 footer {
   background-color: #474747; }
@@ -919,7 +961,10 @@ footer {
 
   .footer__content {
     justify-content: space-around;
-    flex-wrap: wrap; } }
+    flex-wrap: wrap; }
+
+  .laser-cards-block {
+    padding: 0 52px; } }
 @media (max-width: 1023px) {
   .container {
     width: auto; }
@@ -1017,9 +1062,6 @@ footer {
   body.admin-bar .top-menu-mobile {
     top: 83px; } }
 @media (max-width: 520px) {
-  .only-mobile {
-    display: block; }
-
   .hidden-mobile {
     display: none; }
 
