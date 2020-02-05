@@ -949,7 +949,7 @@
 // laser cards block ***********************
 .laser-cards-block {
   display: flex;
-  padding: 0 65px;
+  padding: 10px 65px 30px 65px;
   justify-content: space-between;
   flex-wrap: wrap;
 
@@ -999,9 +999,60 @@
 
 //******************************************
 
+// ** quality video block ******************
+.quality-video-block__wrapper {
+  background: url('img/quality-laser/quality-bkg.png') center no-repeat;
+  height: 532px;
+}
+.quality-video-block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 100px 20px 20px 20px;
+  h3 {
+    color: #fffefe;
+    font-size: 52px;
+    font-weight: 500;
+    text-transform: uppercase;
+  }
+  ul li {
+    color: #fff;
+    font-size: 24px;
+    margin-top: 50px;
 
+  }
+}
+//******************************************
 
+// ** craft acrylic block ***********************
+.craft-acrylic-block {
+  padding: 40px 0;
+  display: flex;
+}
+.craft-acrylic-block__logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 15px;
 
+}
+
+.craft-acrylic-block__content {
+  padding: 0 10px;
+  h3 {
+    font-size: 37px;
+    color: $red;
+    text-transform: uppercase;
+    margin-top: 35px;
+    font-weight: 500;
+  }
+  p {
+    margin: 25px 0 40px 0;
+    font-size: 24px;
+    color: $red;
+  }
+}
+// **********************************************
 
 
 // footer block

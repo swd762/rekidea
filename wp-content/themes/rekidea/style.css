@@ -17,6 +17,12 @@ body {
   width: auto;
   margin: 0 auto; }
 
+.laser-btn-order {
+  text-decoration: none;
+  background-color: #6f0d33;
+  color: #fff;
+  padding: 16px 50px; }
+
 .header-mobile {
   display: none;
   height: 37px;
@@ -716,7 +722,7 @@ body {
 
 .laser-cards-block {
   display: flex;
-  padding: 0 65px;
+  padding: 10px 65px 30px 65px;
   justify-content: space-between;
   flex-wrap: wrap; }
 
@@ -755,6 +761,48 @@ body {
     .card-laser .card-laser-button:hover {
       color: #fff;
       background-color: #6f0d33; }
+
+.quality-video-block__wrapper {
+  background: url("img/quality-laser/quality-bkg.png") center no-repeat;
+  height: 532px; }
+
+.quality-video-block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 100px 20px 20px 20px; }
+  .quality-video-block h3 {
+    color: #fffefe;
+    font-size: 52px;
+    font-weight: 500;
+    text-transform: uppercase; }
+  .quality-video-block ul li {
+    color: #fff;
+    font-size: 24px;
+    margin-top: 50px; }
+
+.craft-acrylic-block {
+  padding: 40px 0;
+  display: flex; }
+
+.craft-acrylic-block__logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 15px; }
+
+.craft-acrylic-block__content {
+  padding: 0 10px; }
+  .craft-acrylic-block__content h3 {
+    font-size: 37px;
+    color: #6f0d33;
+    text-transform: uppercase;
+    margin-top: 35px;
+    font-weight: 500; }
+  .craft-acrylic-block__content p {
+    margin: 25px 0 40px 0;
+    font-size: 24px;
+    color: #6f0d33; }
 
 footer {
   background-color: #474747; }

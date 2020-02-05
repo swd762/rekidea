@@ -120,15 +120,40 @@ get_header();
 </div>
 <!--**************************************-->
 
+<!-- Quality video block************************-->
+<div class="quality-video-block__wrapper">
+    <div class="container">
+        <div class="quality-video-block">
+            <h3>безупречное качество резки</h3>
+            <ul>
+                <li>Производится на профессиональном оборудовании</li>
+                <li>Используются только качественные материалы</li>
+                <li>Прозрачный и ровный срез на акриле</li>
+            </ul>
+        </div>
+    </div>
+</div>
+<!--*********************************************-->
 
-
-
-
-
-
-
-
-
+<!-- Craft acrylic block **************************-->
+<div class="craft-acrylic-block container">
+    <div class="craft-acrylic-block__logo">
+        <img src="<?= get_template_directory_uri()?>/img/acrylic/logo.png" alt="">
+    </div>
+    <div class="craft-acrylic-block__content">
+        <h3>изготовим изделия
+            из Многослойного цветного акрила
+        </h3>
+        <p>
+            Поможем скорректировать техническое задание или
+            сделать с нуля чертеж изделия.
+            Знаем секреты, как сэкономить время и деньги,
+            оптимально использовать материал.
+        </p>
+        <a href="#" class="laser-btn-order">Заказать</a>
+    </div>
+</div>
+<!--***********************************************-->
 
 
 <?php
