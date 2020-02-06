@@ -49,10 +49,10 @@ wp_head();
 <!--                    phone modal-->
                     <div class="header__phone-modal">
                             <div class="phone-bold">
-                                <a href="#">+ 7 (495) 369-20-79</a>
+                                <a href="tel:+74953692079">+ 7 (495) 369-20-79</a>
                             </div>
                             <div class="phone-bold">
-                                <a href="#">+ 7 (495) 369-20-79</a>
+                                <a href="tel:+79265832351">+7 (926) 583-23-51</a>
                             </div>
                             <div class="working-regime">
                                 Ежедневно с 10:00 до 19:00<br>

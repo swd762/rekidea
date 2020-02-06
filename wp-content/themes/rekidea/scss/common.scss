@@ -34,6 +34,12 @@ body {
    background-color: $red;
    color:#fff;
    padding: 16px 50px;
+   &:hover {
+     background: lighten($red,10%);
+     box-shadow: 4px 4px 8px 0px rgba(82, 11, 27, 0.2);
+     transition: all 0.3s linear;
+
+   }
   }
 
 // *********************************

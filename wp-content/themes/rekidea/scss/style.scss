@@ -114,7 +114,7 @@
       border: none;
       padding: 0 30px 0 15px;
       border-radius: 5px;
-      height: 35px;
+      height: 30px;
       font-size: 14px;
       &::placeholder {
         color: #9999cc;
@@ -908,22 +908,32 @@
 
 
 // Out partners block
-.our-partners-block-wrapper {
-  background-color: #f7f7f7;
+.flexi-carousel-partners__wrapper {
+  height: 176px;
+  background: #f7f7f7;
+  .nbs-flexisel-nav-left {
+    display: none;
+  }
+  .nbs-flexisel-nav-right {
+    display: none;
+  }
+  .nbs-flexisel-inner {
+    border: 0;
+    background: #f7f7f7;
+  }
 }
-.our-partners-block {
-  height: 180px;
-
-  .wpsisac-image-slide {
+#flexi-carousel-partners {
+  height: 176px;
+  .nbs-flexisel-item {
     display: flex;
-    align-items: center;
+    height: inherit;
     justify-content: center;
+    align-items: center;
+    img {
+      max-width: 90%
+    }
   }
 
-  .wpsisac-image-slide-wrap
-    img {
-      width: auto;
-  }
 }
 // **************************************
 
@@ -1053,6 +1063,66 @@
   }
 }
 // **********************************************
+
+//** acryl cutting block ************************
+.acryl-cutting-block__wrapper {
+  //min-height: 500px;
+  height: 312px;
+  background: url("img/acrylic/banner-acrylic.jpg") center ;
+}
+.acryl-cutting-block__content {
+  padding: 30px 20px;
+  float: right;
+  h3 {
+    font-size: 37px;
+    color: $red;
+    text-transform: uppercase;
+  }
+  p {
+    font-size: 29px;
+    font-weight: 300;
+    color: $red;
+    margin-bottom: 50px;
+  }
+}
+//***********************************************
+
+// ** wood cutting block ***************************
+.wood-cutting-block__wrapper {
+  height: 318px;
+  background: url("img/wood/banner-wood.jpg") center ;
+}
+.wood-cutting-block__content {
+  width: 620px;
+  padding: 30px 0 0 100px;
+  h3 {
+    font-size: 40px;
+    text-transform: uppercase;
+    color: $red;
+    margin-bottom: 50px;
+  }
+}
+// *****************************************************
+
+// ** montage block ************************
+.montage-block__wrapper {
+  background: url("img/montage/montage.jpg") center;
+  height: 430px;
+}
+.montage-block__content {
+  padding:60px 0 0 10px;
+  width: 730px;
+  h3 {
+    font-size: 90px;
+    text-transform: uppercase;
+    color: #fff;
+  }
+  p {
+    color: #fff;
+    font-size: 29px;
+  }
+}
+//*****************************************************
 
 
 // footer block

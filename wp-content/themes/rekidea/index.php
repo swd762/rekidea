@@ -5,14 +5,6 @@ get_header();
 <!--top slider block-->
  <div class="top-slider-wrapper">
      <img src="<?php echo get_template_directory_uri()?>/img/top-slider/top-banner.jpg" alt="">
-            <!--        <div class="top-slider">-->
-            <!--             --><?php //echo do_shortcode('[slick-slider category="4"
-            //             image_size="large"
-            //           autoplay="true" autoplay_interval="2000"
-            //           image_fit="true"
-            //
-            //             ]'); ?>
-            <!--        </div>-->
  </div>
 <!--***************************************-->
 <!--Crafts block-->
@@ -31,7 +23,7 @@ get_header();
     ?>
 <!--Card template -->
         <div class="card-craft wow zoomIn">
-            <a href="#">
+            <a href="/404">
                 <img src="<?php the_field('link_thumbnail', get_the_ID());?>" alt="">
                 <h3><?php the_title() ?></h3>
             </a>
@@ -44,7 +36,7 @@ get_header();
  <div class="pictures-block-wrapper">
     <div>
         <h3>Картины<br> для дома и офиса</h3>
-        <a href="#" class="button">
+        <a href="/404" class="button">
             посмотреть все
         </a>
     </div>
@@ -64,7 +56,7 @@ get_header();
             широкоформатной печатью, прокатом и арендой каркасов и конструкций, доставкой и монтажом
             стендов на любой площадке Москвы и Московской области.
         </p>
-        <a href="#" class="button">
+        <a href="/404" class="button">
             посмотреть все
         </a>
     </div>
@@ -376,7 +368,7 @@ get_header();
                     </a>
                 </div>
         </div>
-        <a href="#" class="button">Посмотреть больше наших работ</a>
+        <a href="/404" class="button">Посмотреть больше наших работ</a>
 
     <!--            Tooklit for gallery-->
     <script>
@@ -387,40 +379,42 @@ get_header();
     <!--*******************************-->
 
 </div>
-<!--****************************************-->
-<!--Out partners block-->
-<div class="our-partners-block-wrapper">
-    <div class="container">
-        <div class="our-partners-block">
-<!--           --><?//= do_shortcode('[slick-carousel-slider category="8"
-//           dots="false" arrows="false"
-//           image_size="large"
-//           autoplay="true" autoplay_interval="2000"
-//           image_fit="true" sliderheight="100"  ]'); ?>
 
-            <div class="slider">
-                <div><img src="<?= get_template_directory_uri()?>/img/our-partners/logo-gorzdrav.png" alt=""></div>
-                <div><img src="<?= get_template_directory_uri()?>/img/our-partners/logo-gorzdrav.png" alt=""></div>
-                <div><img src="<?= get_template_directory_uri()?>/img/our-partners/logo-gorzdrav.png" alt=""></div>
-                <div><img src="<?= get_template_directory_uri()?>/img/our-partners/logo-gorzdrav.png" alt=""></div>
-            </div>
-
-            <script>
-                jQuery(function($) {
-                    $('.slider').slick({
-                        infinite: true,
-                        slidesToShow: 5,
-                        slidesToScroll: 5,
-                        arrows:false
-                    });
-                });
-            </script>
-
-
-        </div>
-    </div>
+<!--Our partners block ********************************************************-->
+<div class="flexi-carousel-partners__wrapper">
+       <div class="container">
+           <ul id="flexi-carousel-partners">
+               <li><img src="<?= get_template_directory_uri()?>/img/our-partners/logo-elize.png" /></li>
+               <li><img src="<?= get_template_directory_uri()?>/img/our-partners/logo-leofarm.png" /></li>
+               <li><img src="<?= get_template_directory_uri()?>/img/our-partners/logo-gorzdrav.png" /></li>
+               <li><img src="<?= get_template_directory_uri()?>/img/our-partners/logo-mars.png" /></li>
+               <li><img src="<?= get_template_directory_uri()?>/img/our-partners/logo-sletatru.png" /></li>
+           </ul>
+       </div>
 </div>
-
+    <script>
+        jQuery(function($) {
+            $("#flexi-carousel-partners").flexisel({
+                visibleItems: 5,
+                itemsToScroll: 1,
+                animationSpeed: 200,
+                infinite: true,
+                navigationTargetSelector: null,
+                autoPlay: {
+                    enable: true,
+                    interval: 4000,
+                    pauseOnHover: true },
+                responsiveBreakpoints: {
+                      portrait: {
+                         changePoint:600,
+                         visibleItems: 3,
+                         itemsToScroll: 3
+                      }
+                }
+            });
+        });
+    </script>
+<!--**********************************************************************************-->
 
 
 </main>
