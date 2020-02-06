@@ -40,14 +40,16 @@ wp_head();
                         </div>
                     </form>
                 </div>
-                <div class="header__phone-wrapper">
-
+                <div class="header__phone-wrapper" id="phone-modal">
+                    <div class="fade"></div>
                     <a href="#" class="header__phone-logo">
                         <img class="logo" src="<?= get_template_directory_uri()?>/img/phone-logo.png" alt="">
                         +7 (495) 369-20-79
                     </a>
 <!--                    phone modal-->
+<!--                    <div class="fade"></div>-->
                     <div class="header__phone-modal">
+
                             <div class="phone-bold">
                                 <a href="tel:+74953692079">+ 7 (495) 369-20-79</a>
                             </div>
@@ -90,33 +92,59 @@ wp_head();
                     </div>
 <!--                    ****************-->
                 </div>
+<!--                 script for modal on phone number click-->
                  <script>
                      jQuery(function($) {
                          $('.header__phone-logo').on('click', function(event) {
                              event.preventDefault();
                              $('.header__phone-logo').toggleClass('header__phone-logo-arrow');
-                            if ($('.header__phone-modal').is('.active')) {
+                            if (($('.header__phone-modal').is('.active')) ||
+                                ($('.header__feedback-modal').is('.active')) )
+                            {
                                 $('.header__phone-modal').removeClass('active');
-                            } else {
-                                if ($('.header__feedback-modal').is('.active')) {
-                                    $('.header__feedback-modal').removeClass('active');
-                                } else $('.header__phone-modal').addClass('active');
+                                $('.fade').removeClass('active');
+                                $('.header__feedback-modal').removeClass('active');
                             }
+                            else {
+
+                                $('.header__phone-modal').addClass('active');
+                                $('.fade').addClass('active');
+                                }
+
                          });
 
                          $('#feedback-phone').on('click', function (e) {
                             e.preventDefault();
                              $('.header__feedback-modal').addClass('active');
+                             $('.fade').addClass('active');
                              $('.header__phone-modal').removeClass('active');
                          });
 
                          $('.feedback-link').on('click', function (e) {
                             e.preventDefault();
                             $('.header__feedback-modal').removeClass('active');
+                             $('.fade').addClass('active');
                             $('.header__phone-modal').addClass('active');
-                         })
+                         });
+
+                         // $(document).on('click', function (e){
+                         //     var div1 = $(".header__phone-modal");
+                         //     var div2 = $(".header__feedback-modal");
+                         //     if (!div1.is(e.target)
+                         //         && div1.has(e.target).length === 0
+                         //        && div1.hasClass('active')) {
+                         //         $('.header__phone-modal').removeClass('active');
+                         //         $('.fade').removeClass('active');
+                         //     }
+                         //     // if (!div2.is(e.target)
+                         //     //     && div2.has(e.target).length === 0) {
+                         //     //     $('.header__feedback-modal').removeClass('active');
+                         //     //     $('.fade').removeClass('active');
+                         //     // }
+                         // });
                      });
                  </script>
+<!--******************************************************************-->
                 <div class="header__email-wrapper">
                     <? the_field('email', get_the_ID());?>
                 </div>

@@ -208,7 +208,7 @@
   height: 220px;
   padding: 18px;
   background-color: #fff;
-  z-index: 1;
+  z-index: 401;
   border-radius: 5px;
   .phone-bold  {
     margin-bottom: 12px;
@@ -255,7 +255,7 @@
   height: 320px;
   padding: 14px;
   background-color: #fff;
-  z-index: 1;
+  z-index: 401;
   border-radius: 5px;
   hr {
     border: 0;
@@ -265,6 +265,7 @@
   .feedback-form-header {
 
     margin-top: 25px;
+    margin-bottom: -10px;
     h3 {
       font-size: 14px;
       color: #183147;

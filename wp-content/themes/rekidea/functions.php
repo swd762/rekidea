@@ -23,7 +23,20 @@ add_action('wp_enqueue_scripts', 'add_styles_and_scripts');
 register_nav_menu('top', 'главное меню');
 register_nav_menu('top-mobile', 'главное меню мобилка');
 
+add_filter('wpcf7_form_elements', 'contact_form_remove_checkbox_wrapping' );
+function contact_form_remove_checkbox_wrapping( $content ) {
+    preg_match_all('/<span class="wpcf7-form-control-wrap[a-zA-Z ]*"><span class="wpcf7-form-control wpcf7-[checkbox|radio]+" id="([^\"]+)"><span class="[^\"]+">(<input type="[checkbox|radio]+" name="[^\"]+" value="[^\"]*" \/>)<span class="wpcf7-list-item-label">[^\"]+<\/span><\/span><\/span><\/span>/i', $content, $out );
+    if ( !empty( $out[0] ) ) {
+        $count = count( $out[1] );
+        for ( $i = 0; $i<$count; $i++ ) {
+            $out[2][ $i ] = str_replace(' value=', 'id="' . $out[1][ $i ] . '" value=', $out[2][$i] );
+        }
 
+        return str_replace( $out[0], $out[2], $content );
+    }
+
+    return $content;
+}
 
 
 
