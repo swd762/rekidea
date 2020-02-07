@@ -185,17 +185,18 @@ get_header();
 <!--***********************************************-->
 
 <!--acryl cutting block ********************************-->
-<!--<div class="acryl-cutting-block__wrapper">-->
-<!--     <div class="container">-->
-<!--        <div class="acryl-cutting-block__content">-->
-<!--            <h3>лазерная резка<br>-->
-<!--                и гравировка акрила-->
-<!--            </h3>-->
-<!--            <p>Изделия из акрила любой сложности и формы</p>-->
-<!--            <a href="#" class="laser-btn-order">Заказать</a>-->
-<!--        </div>-->
-<!--     </div>-->
-<!--</div>-->
+<div class="acryl-cutting-block__wrapper">
+     <div class="container">
+        <img src="<?= get_template_directory_uri()?>/img/acrylic/lev.jpg" alt="" class="cutting-acrylic-logo">
+        <div class="acryl-cutting-block__content">
+            <h3>лазерная резка<br>
+                и гравировка акрила
+            </h3>
+            <p>Изделия из акрила любой сложности и формы</p>
+            <a href="#" class="laser-btn-order">Заказать</a>
+        </div>
+     </div>
+</div>
 <!--****************************************************-->
 
 <!--wood cutting block **************************************-->

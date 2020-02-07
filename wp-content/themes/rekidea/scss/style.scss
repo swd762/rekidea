@@ -1115,12 +1115,14 @@
 
 //** acryl cutting block ************************
 .acryl-cutting-block__wrapper {
-  //min-height: 500px;
-  height: 312px;
+  min-height: 312px;
   background: url("img/acrylic/banner-acrylic.jpg") center ;
 }
+.cutting-acrylic-logo {
+  display: none;
+}
 .acryl-cutting-block__content {
-  padding: 30px 20px;
+  padding: 30px 10px;
   float: right;
   h3 {
     font-size: 37px;

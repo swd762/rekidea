@@ -877,11 +877,14 @@ main {
     color: #6f0d33; }
 
 .acryl-cutting-block__wrapper {
-  height: 312px;
+  min-height: 312px;
   background: url("img/acrylic/banner-acrylic.jpg") center; }
 
+.cutting-acrylic-logo {
+  display: none; }
+
 .acryl-cutting-block__content {
-  padding: 30px 20px;
+  padding: 30px 10px;
   float: right; }
   .acryl-cutting-block__content h3 {
     font-size: 37px;
@@ -1468,6 +1471,29 @@ footer {
 
   .quality-video-block {
     padding: 80px 20px 80px 20px; }
+
+  .acryl-cutting-block__wrapper {
+    min-height: initial;
+    background: none;
+    margin-top: 25px; }
+
+  .cutting-acrylic-logo {
+    display: block;
+    margin: 0 auto; }
+
+  .acryl-cutting-block__content {
+    padding: 35px 10px;
+    float: none;
+    text-align: center; }
+    .acryl-cutting-block__content h3 {
+      font-size: 30px;
+      color: #6f0d33;
+      text-transform: uppercase; }
+    .acryl-cutting-block__content p {
+      font-size: 29px;
+      font-weight: 300;
+      color: #6f0d33;
+      margin-bottom: 50px; }
 
   main {
     overflow: hidden; }

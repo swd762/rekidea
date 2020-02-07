@@ -536,6 +536,40 @@
       padding: 80px 20px 80px 20px;
   }
 
+
+// acrylic cutting
+  .acryl-cutting-block__wrapper {
+    min-height: initial;
+    background: none ;
+    margin-top: 25px;
+  }
+  .cutting-acrylic-logo {
+    display: block;
+    margin: 0 auto;
+  }
+  .acryl-cutting-block__content {
+    padding: 35px 10px;
+    float: none;
+    text-align: center;
+    h3 {
+      font-size: 30px;
+      color: $red;
+      text-transform: uppercase;
+
+    }
+    p {
+      font-size: 29px;
+      font-weight: 300;
+      color: $red;
+      margin-bottom: 50px;
+
+    }
+  }
+
+
+ // ******************
+
+
   // ************* 404 ************************
  main {
    overflow: hidden;
@@ -673,8 +707,6 @@
   .hidden-mobile {
     display: none;
   }
-
-
   //Craft cards
   .card-craft {
     width: 153px;
