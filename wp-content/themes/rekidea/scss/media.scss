@@ -713,8 +713,28 @@
       margin-bottom: 50px;
     }
   }
-
   // *********************
+
+  // montage block
+
+  .montage-block__content {
+    padding: 34px 0 40px 20px;
+    width: 100%;
+    h3 {
+      font-size: 81px;
+      text-transform: uppercase;
+      color: #fff;
+    }
+    p {
+      color: #fff;
+      font-size: 26px;
+    }
+  }
+
+  //****************
+
+
+
 
 }
 
@@ -950,6 +970,23 @@
   }
   // ****************************************
 
+  // montage block
+
+  .montage-block__content {
+    padding: 34px 0 40px 20px;
+    width: 100%;
+    h3 {
+      font-size: 41px;
+      text-transform: uppercase;
+      color: #fff;
+    }
+    p {
+      color: #fff;
+      font-size: 13px;
+    }
+  }
+
+  //****************
 
   .footer__content {
       display: none;

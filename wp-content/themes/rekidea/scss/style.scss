@@ -1161,11 +1161,11 @@
 // ** montage block ************************
 .montage-block__wrapper {
   background: url("img/montage/montage.jpg") center;
-  height: 430px;
+  //height: 430px;
 }
 .montage-block__content {
-  padding:60px 0 0 10px;
-  width: 730px;
+  padding: 67px 0 100px 20px;
+  width: 90%;
   h3 {
     font-size: 90px;
     text-transform: uppercase;

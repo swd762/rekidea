@@ -913,12 +913,11 @@ main {
     margin-bottom: 50px; }
 
 .montage-block__wrapper {
-  background: url("img/montage/montage.jpg") center;
-  height: 430px; }
+  background: url("img/montage/montage.jpg") center; }
 
 .montage-block__content {
-  padding: 60px 0 0 10px;
-  width: 730px; }
+  padding: 67px 0 100px 20px;
+  width: 90%; }
   .montage-block__content h3 {
     font-size: 90px;
     text-transform: uppercase;
@@ -1591,7 +1590,18 @@ footer {
       font-size: 30px;
       text-transform: uppercase;
       color: #6f0d33;
-      margin-bottom: 50px; } }
+      margin-bottom: 50px; }
+
+  .montage-block__content {
+    padding: 34px 0 40px 20px;
+    width: 100%; }
+    .montage-block__content h3 {
+      font-size: 81px;
+      text-transform: uppercase;
+      color: #fff; }
+    .montage-block__content p {
+      color: #fff;
+      font-size: 26px; } }
 @media (max-width: 520px) {
   .hidden-mobile {
     display: none; }
@@ -1737,6 +1747,17 @@ footer {
       margin-right: 0; }
     .portfolio-block__content .content-small a img {
       width: 100%; }
+
+  .montage-block__content {
+    padding: 34px 0 40px 20px;
+    width: 100%; }
+    .montage-block__content h3 {
+      font-size: 41px;
+      text-transform: uppercase;
+      color: #fff; }
+    .montage-block__content p {
+      color: #fff;
+      font-size: 13px; }
 
   .footer__content {
     display: none; }
