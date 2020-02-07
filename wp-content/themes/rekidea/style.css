@@ -744,9 +744,39 @@ body {
   font-weight: 300;
   padding: 10px 0 10px 15px; }
 
-.laser-top-banner {
-  height: 510px;
+.laser-top-banner__wrapper {
   background-color: #f7f7f7; }
+
+.laser-top-banner__content {
+  background: #f7f7f7 url("img/laser-page/laser.png") 108% no-repeat;
+  padding-left: 25px;
+  padding-top: 35px;
+  padding-bottom: 50px; }
+
+.laser-top-banner {
+  width: 720px; }
+  .laser-top-banner h1 {
+    font-size: 37px;
+    font-weight: 400;
+    color: #6f0d33;
+    text-transform: uppercase; }
+  .laser-top-banner h3 {
+    color: #6f0d33;
+    font-size: 20px;
+    margin-top: 20px; }
+  .laser-top-banner p {
+    width: 75%;
+    font-size: 20px;
+    margin-top: 32px; }
+    .laser-top-banner p img {
+      width: 23px;
+      height: 16px; }
+
+.laser-flag {
+  background-color: #914764;
+  color: #fff;
+  padding: 10px 70px 10px 30px;
+  margin-top: 35px; }
 
 .laser-cards-block {
   display: flex;
@@ -768,14 +798,14 @@ body {
     text-align: center;
     text-transform: uppercase;
     color: #6f0d33;
-    padding: 0 10px;
+    padding: 0 5px;
     font-weight: 400; }
   .card-laser p {
     font-size: 10px;
     font-weight: 300;
     text-align: center;
     color: #000;
-    margin-top: 20px;
+    margin-top: 10px;
     padding: 0 14px; }
   .card-laser img {
     width: 100%;
@@ -877,6 +907,98 @@ body {
     color: #fff;
     font-size: 29px; }
 
+.laser-partners-block-wrapper {
+  padding: 46px 10px 0 46px;
+  background: #fff; }
+  .laser-partners-block-wrapper h3 {
+    font-size: 42px;
+    font-weight: 500;
+    text-transform: uppercase;
+    color: #6f0d33; }
+
+.laser-portfolio-block-wrapper {
+  padding: 45px 0 45px 0;
+  display: flex;
+  flex-direction: column; }
+  .laser-portfolio-block-wrapper .button {
+    background-color: #6f0d33;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin: 0 auto;
+    color: #fff;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 300;
+    padding: 15px;
+    margin-top: 15px; }
+    .laser-portfolio-block-wrapper .button:hover {
+      background-color: #9d1248;
+      box-shadow: 4px 4px 8px 0px rgba(82, 11, 27, 0.2);
+      transition: all 0.3s linear; }
+
+.laser-portfolio-block__header h2 {
+  font-size: 49px;
+  color: #6f0d33;
+  text-transform: uppercase;
+  font-weight: 500;
+  text-align: center; }
+.laser-portfolio-block__header p {
+  margin: 30px 0 30px 0;
+  text-align: center;
+  padding: 0 5px; }
+
+.portfolio-block__content {
+  padding: 5px; }
+
+.content-big {
+  display: flex;
+  justify-content: center; }
+  .content-big a {
+    flex-basis: 370px;
+    flex-shrink: 0.5;
+    margin-right: 8px; }
+    .content-big a:last-child {
+      margin-right: 0; }
+    .content-big a img {
+      max-width: 100%; }
+
+.laser-questions-contact__wrapper {
+  color: #6f0d33;
+  border: 10px solid #6f0d33;
+  padding-top: 40px;
+  padding-left: 60px;
+  padding-bottom: 80px;
+  margin-bottom: 65px; }
+  .laser-questions-contact__wrapper img {
+    position: absolute;
+    bottom: -75px;
+    right: 50px; }
+
+.laser-questions-contact__content {
+  position: relative; }
+  .laser-questions-contact__content h2 {
+    font-size: 44px;
+    text-transform: uppercase;
+    font-weight: 500; }
+  .laser-questions-contact__content p {
+    font-size: 15px;
+    margin-top: 23px;
+    margin-bottom: 36px;
+    width: 400px; }
+  .laser-questions-contact__content span {
+    font-size: 39px;
+    font-weight: 500;
+    margin-right: 25px; }
+
+.hren-wrapper {
+  display: flex;
+  justify-content: center; }
+
+.hren {
+  width: 1240px; }
+
 .recunstruction-wrapper {
   height: 340px;
   background: url("img/404/reconstruction.jpg") 0% no-repeat;
@@ -895,9 +1017,34 @@ body {
   .reconstruction__content h3 {
     font-size: 20px;
     margin-top: 25px;
-    margin-bottom: 25px; }
+    margin-bottom: 25px;
+    font-weight: 400; }
   .reconstruction__content p {
-    font-size: 20px; }
+    font-size: 20px;
+    font-weight: 400; }
+
+.recunstruction-mobile-wrapper {
+  display: none; }
+
+.reconstruction-mobile__content {
+  color: #6f0d33;
+  padding: 50px 5px 0 5px;
+  text-align: center; }
+  .reconstruction-mobile__content h1 {
+    font-size: 36px;
+    text-transform: uppercase; }
+  .reconstruction-mobile__content h3 {
+    font-size: 20px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-weight: 400; }
+  .reconstruction-mobile__content p {
+    font-size: 20px;
+    font-weight: 400; }
+  .reconstruction-mobile__content img {
+    width: 100%;
+    margin-top: 15px;
+    margin-bottom: 15px; }
 
 .questions-contact__wrapper {
   color: #6f0d33;
@@ -907,10 +1054,12 @@ body {
   padding-bottom: 80px;
   margin-bottom: 65px;
   position: relative; }
-  .questions-contact__wrapper img {
+  .questions-contact__wrapper .question-operator {
     position: absolute;
     bottom: -75px;
     right: 50px; }
+  .questions-contact__wrapper .question-operator-mobile {
+    display: none; }
 
 .questions-contact__content h2 {
   font-size: 44px;
@@ -920,11 +1069,29 @@ body {
   font-size: 15px;
   margin-top: 23px;
   margin-bottom: 36px;
-  width: 400px; }
+  width: 55%; }
 .questions-contact__content span {
   font-size: 39px;
   font-weight: 500;
-  margin-right: 35px; }
+  margin-right: 25px; }
+
+.questions-contact__content-contacts {
+  display: flex;
+  width: 60%;
+  flex-wrap: wrap; }
+  .questions-contact__content-contacts h4 {
+    font-size: 39px;
+    margin-right: 25px; }
+  .questions-contact__content-contacts .button {
+    font-size: 13px;
+    background-color: #6f0d33;
+    color: #fff;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 185px;
+    height: 50px; }
 
 footer {
   background-color: #474747; }
@@ -1175,7 +1342,25 @@ footer {
       width: 100%; }
     .akk-menu-content p {
       margin: 15px 0 10px 0;
-      text-align: center; } }
+      text-align: center; }
+
+  .recunstruction-wrapper {
+    display: none; }
+
+  .recunstruction-mobile-wrapper {
+    display: block;
+    margin-bottom: 80px; }
+
+  .reconstruction-mobile__content h3 {
+    margin-top: 25px;
+    margin-bottom: 25px; }
+  .reconstruction-mobile__content img {
+    width: initial; }
+
+  .questions-contact__content-contacts {
+    width: 55%; }
+    .questions-contact__content-contacts .button {
+      margin-top: 20px; } }
 @media (max-width: 900px) {
   .stands-block-wrapper {
     padding: 10px 0 0 0;
@@ -1227,7 +1412,44 @@ footer {
       width: 100%; }
     .why-us-block__header .akk-menu-content p {
       margin: 15px 0 10px 0;
-      text-align: center; } }
+      text-align: center; }
+
+  main {
+    overflow: hidden; }
+
+  .questions-contact__content-contacts {
+    width: 55%; }
+    .questions-contact__content-contacts .button {
+      margin-top: 20px; }
+
+  .questions-contact__wrapper {
+    padding-top: 40px;
+    padding-left: 30px;
+    padding-bottom: 80px;
+    margin-bottom: 65px;
+    position: relative; }
+    .questions-contact__wrapper .question-operator {
+      display: none; }
+    .questions-contact__wrapper .question-operator-mobile {
+      display: block;
+      position: absolute;
+      right: -150px;
+      bottom: 0; }
+
+  .questions-contact__content h2 {
+    width: 55%; }
+  .questions-contact__content p {
+    font-size: 15px;
+    margin-top: 23px;
+    margin-bottom: 36px;
+    width: 55%; }
+  .questions-contact__content span {
+    font-size: 39px;
+    font-weight: 500;
+    margin-right: 25px; }
+
+  .questions-contact__content-contacts h4 {
+    font-size: 24px; } }
 @media (max-width: 782px) {
   body.admin-bar .top-menu-mobile {
     top: 83px; } }
@@ -1386,7 +1608,41 @@ footer {
       flex-basis: 50%;
       margin-top: 25px; }
     .footer_content_mobile .footer-socials {
-      margin-top: 25px; } }
+      margin-top: 25px; }
+
+  main {
+    overflow: hidden; }
+
+  .reconstruction-mobile__content img {
+    width: 100%; }
+
+  .questions-contact__content-contacts {
+    width: 55%; }
+    .questions-contact__content-contacts .button {
+      margin-top: 20px; }
+
+  .questions-contact__wrapper {
+    padding-top: 40px;
+    padding-left: 0;
+    padding-bottom: 80px;
+    margin-bottom: 65px; }
+    .questions-contact__wrapper .question-operator-mobile {
+      display: none; }
+
+  .questions-contact__content h2 {
+    width: 100%;
+    text-align: center; }
+  .questions-contact__content p {
+    width: 100%;
+    text-align: center; }
+
+  .questions-contact__content-contacts {
+    width: 100%;
+    flex-direction: column;
+    align-items: center; }
+    .questions-contact__content-contacts h4 {
+      font-size: 30px;
+      margin-right: 0; } }
 @media (max-width: 360px) {
   .craft-cards-wrapper {
     padding: 0; } }

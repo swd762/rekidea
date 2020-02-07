@@ -10,10 +10,38 @@ get_header();
 <!--*************************************-->
 
 <!--Laser top banner block ***************-->
-<div class="laser-top-banner">
+<div class="laser-top-banner__wrapper">
+    <div class="container">
+    <div class="laser-top-banner__content">
+        <div class="laser-top-banner">
+        <h1>ЛАЗЕРНАЯ РЕЗКА<br>
+            Ювелирная точность исполнения
+        </h1>
+        <h3>Современный высокоскоростной
+            лазерный станок поможет воплотить
+            в жизнь самые смелые и сложные идеи
+        </h3>
+        <p>
+            <img src="<?= get_template_directory_uri()?>/img/laser-page/check-box.png" alt="">
+            Лазерная резка оргстекла, цветного акрила, ПЭТ, фанеры,
+            полистирола, поролона, кожи и ткани
+        </p>
+        <p>
+            <img src="<?= get_template_directory_uri()?>/img/laser-page/check-box.png" alt="">
+            Используем ваши материалы или купим под заказ без наценки
+        </p>
+        <p style="margin-bottom: 30px;">
+            <img src="<?= get_template_directory_uri()?>/img/laser-page/check-box.png" alt="">
+            Организуем доставку и монтаж
+        </p>
+            <span class="laser-flag">рабочее поле 900х1300мм</span>
+        </div>
+
+<!--        <img src="--><?//= get_template_directory_uri()?><!--/img/laser-page/flag.png" alt="" class="laser-flag">-->
 
 
-
+    </div>
+    </div>
 
 
 </div>
@@ -35,7 +63,7 @@ get_header();
     <div class="card-laser">
         <a href="#">
             <img src="<?= get_template_directory_uri()?>/img/laser-cards/flowers.png" alt="">
-            <h3>лазерная гравировка</h3>
+            <h3>лазерная<br> гравировка</h3>
             <p>Нанесение рисунка, надписи, орнамента на поверхности оргстекла, дерева, кожи. Возможные варианты
                 - по контуру и с заполнением.
             </p>
@@ -46,10 +74,10 @@ get_header();
     </div>
     <div class="card-laser">
         <a href="#">
-            <img src="<?= get_template_directory_uri()?>/img/laser-cards/flowers.png" alt="">
-            <h3>лазерная гравировка</h3>
-            <p>Нанесение рисунка, надписи, орнамента на поверхности оргстекла, дерева, кожи. Возможные варианты
-                - по контуру и с заполнением.
+            <img src="<?= get_template_directory_uri()?>/img/laser-cards/orgs.jpg" alt="">
+            <h3>изделия и подставки из оргстекла</h3>
+            <p>Изготовление заготовок для буклетниц, подставок под рекламную продукцию,
+                товаров, ценникодержателей и других POS-товаров.
             </p>
             <a href="#" class="card-laser-button">
                 заказать
@@ -58,10 +86,9 @@ get_header();
     </div>
     <div class="card-laser">
         <a href="#">
-            <img src="<?= get_template_directory_uri()?>/img/laser-cards/flowers.png" alt="">
-            <h3>лазерная гравировка</h3>
-            <p>Нанесение рисунка, надписи, орнамента на поверхности оргстекла, дерева, кожи. Возможные варианты
-                - по контуру и с заполнением.
+            <img src="<?= get_template_directory_uri()?>/img/laser-cards/litters-3d.jpg" alt="">
+            <h3>объемные слова <br> и буквы</h3>
+            <p>Изготовление объемных слов и букв из многослойного цветного акрила. Эксклюзивная разработка и дизайн.
             </p>
             <a href="#" class="card-laser-button">
                 заказать
@@ -70,20 +97,10 @@ get_header();
     </div>
     <div class="card-laser">
         <a href="#">
-            <img src="<?= get_template_directory_uri()?>/img/laser-cards/lazer-contur.png" alt="">
-            <h3>контурная фигурная лазерная резка</h3>
-            <p>Современный высокоскоростной лазерный станок поможет воплотить в жизнь самые смелые и сложные идеи.</p>
-            <a href="#" class="card-laser-button">
-                заказать
-            </a>
-        </a>
-    </div>
-    <div class="card-laser">
-        <a href="#">
-            <img src="<?= get_template_directory_uri()?>/img/laser-cards/flowers.png" alt="">
-            <h3>лазерная гравировка</h3>
-            <p>Нанесение рисунка, надписи, орнамента на поверхности оргстекла, дерева, кожи. Возможные варианты
-                - по контуру и с заполнением.
+            <img src="<?= get_template_directory_uri()?>/img/laser-cards/laser-cutting-wood.jpg" alt="">
+            <h3>резка фанеры</h3>
+            <p>Посредством лазера можно достичь идеально ровного края, который дополнительно не надо обрабатывать.
+                При толщине листа менее 6 мм лазер кроит фанеру быстрее механических методов.
             </p>
             <a href="#" class="card-laser-button">
                 заказать
@@ -92,10 +109,10 @@ get_header();
     </div>
     <div class="card-laser">
         <a href="#">
-            <img src="<?= get_template_directory_uri()?>/img/laser-cards/flowers.png" alt="">
-            <h3>лазерная гравировка</h3>
-            <p>Нанесение рисунка, надписи, орнамента на поверхности оргстекла, дерева, кожи. Возможные варианты
-                - по контуру и с заполнением.
+            <img src="<?= get_template_directory_uri()?>/img/laser-cards/badge.jpg" alt="">
+            <h3>бейджи и номерки</h3>
+            <p>Нагрудные бейджи и номерки для гардероба из различных материалов (АБС-пластик, полистирол, оргстекло)
+                от простых до сложных, выполненных по индивидуальному эскизу.
             </p>
             <a href="#" class="card-laser-button">
                 заказать
@@ -104,10 +121,22 @@ get_header();
     </div>
     <div class="card-laser">
         <a href="#">
-            <img src="<?= get_template_directory_uri()?>/img/laser-cards/flowers.png" alt="">
-            <h3>лазерная гравировка</h3>
-            <p>Нанесение рисунка, надписи, орнамента на поверхности оргстекла, дерева, кожи. Возможные варианты
-                - по контуру и с заполнением.
+            <img src="<?= get_template_directory_uri()?>/img/laser-cards/suvenier.jpg" alt="">
+            <h3>сувенирная продукция</h3>
+            <p>НИзготовление заготовок для буклетниц, подставок под рекламную продукцию,
+                товаров, ценникодержателей и других POS-товаров.
+            </p>
+            <a href="#" class="card-laser-button">
+                заказать
+            </a>
+        </a>
+    </div>
+    <div class="card-laser">
+        <a href="#">
+            <img src="<?= get_template_directory_uri()?>/img/laser-cards/gerb.jpg" alt="">
+            <h3>гербы, рамки, слова метрики</h3>
+            <p>Слова, метрики, топперы, свадебные и фамильные гербы выполненные из пластика ПВХ, АКП,
+                дерева по индивидуальному дизайну.
             </p>
             <a href="#" class="card-laser-button">
                 заказать
@@ -192,15 +221,25 @@ get_header();
 
 </div>
 <!--*******************************************************-->
+
+<!--************ laser partners block**********************-->
+<div class="laser-partners-block-wrapper">
+    <div class="container">
+        <h3>Нам доверяют как крупные компании,<br> так и средний бизнес</h3>
+
+
+    </div>
+</div>
+<!--*******************************************************-->
 <!--slide carousel**************-->
 <div class="flexi-carousel-partners__wrapper">
     <div class="container">
     <ul id="flexi-carousel-partners">
-        <li><img src="<?= get_template_directory_uri()?>/img/our-partners/logo-elize.png" /></li>
-        <li><img src="<?= get_template_directory_uri()?>/img/our-partners/logo-leofarm.png" /></li>
-        <li><img src="<?= get_template_directory_uri()?>/img/our-partners/logo-gorzdrav.png" /></li>
-        <li><img src="<?= get_template_directory_uri()?>/img/our-partners/logo-mars.png" /></li>
-        <li><img src="<?= get_template_directory_uri()?>/img/our-partners/logo-sletatru.png" /></li>
+        <li><img src="<?= get_template_directory_uri()?>/img/our-partners/elis.png" /></li>
+        <li><img src="<?= get_template_directory_uri()?>/img/our-partners/burger.png" /></li>
+        <li><img src="<?= get_template_directory_uri()?>/img/our-partners/mars-color.png" /></li>
+        <li><img src="<?= get_template_directory_uri()?>/img/our-partners/gorzdrav.png" /></li>
+        <li><img src="<?= get_template_directory_uri()?>/img/our-partners/Mosgortrans-color.png" /></li>
     </ul>
     </div>
 </div>
@@ -223,6 +262,85 @@ get_header();
 </script>
 
 <!--******************************-->
+<!-- laser Portfolio block-->
+<div class="laser-portfolio-block-wrapper">
+    <div class="laser-portfolio-block__header container">
+        <h2>наше портфолио</h2>
+        <p>Работа с разными брендами от дешевого до премиум сегмента.Насколько хорошо мы умеем находить подход
+            к каждому клиенту. Главная часть нас - это проекты, которые мы делаем и задачи, которые мы решаем.Обращаясь
+            к нам вы получаете качественные проекты.</p>
+    </div>
+    <div class="laser-portfolio-block__content">
+        <div class="content-big">
+            <a href="<?php the_field('portfolio-image1', get_the_ID())?>" class="single_image">
+                <img src="<?php the_field('portfolio-image1', get_the_ID())?>" alt="">
+            </a>
+            <a href="<?php the_field('portfolio-image2', get_the_ID())?>" class="single_image">
+                <img src="<?php the_field('portfolio-image2', get_the_ID())?>" alt="">
+            </a>
+            <a href="<?php the_field('portfolio-image3', get_the_ID())?>" class="single_image hidden-mobile">
+                <img src="<?php the_field('portfolio-image3', get_the_ID())?>" alt="">
+            </a>
+            <a href="<?php the_field('portfolio-image1', get_the_ID())?>" class="single_image">
+                <img src="<?php the_field('portfolio-image1', get_the_ID())?>" alt="">
+            </a>
+            <a href="<?php the_field('portfolio-image2', get_the_ID())?>" class="single_image">
+                <img src="<?php the_field('portfolio-image2', get_the_ID())?>" alt="">
+            </a>
+        </div>
+    </div>
+    <a href="/404" class="button">Посмотреть наши работы</a>
+
+
+
+
+
+
+    <!--            Tooklit for gallery-->
+    <script>
+        jQuery(function($) {
+            $(".single_image").fancybox();
+        });
+    </script>
+    <!--*******************************-->
+</div>
+<!--*************************************-->
+<!--****************-->
+<div class="hren-wrapper container">
+    <div class="hren">
+        <div class="laser-questions-contact__wrapper">
+            <div class="laser-questions-contact__content">
+                <h2>у вас есть вопросы?</h2>
+                <p>Мы сэкономим ваше время! Звоните для консультаций
+                    или оставьте заявку на обратный звонок.
+                </p>
+                <span>+ 7 (495) 369-20-79</span>
+                <a href="#" class="laser-btn-order">ПЕРЕЗВОНИТЬ МНЕ</a>
+                <img src="<?= get_template_directory_uri()?>/img/404/operator.png" alt="">
+            </div>
+
+        </div>
+    </div>
+
+
+</div>
+<!--**************-->
+<!--consultant block ***********************************-->
+<div class="laser-questions-contact__wrapper container">
+    <div class="laser-questions-contact__content">
+        <h2>у вас есть вопросы?</h2>
+        <p>Мы сэкономим ваше время! Звоните для консультаций
+            или оставьте заявку на обратный звонок.
+        </p>
+        <span>+ 7 (495) 369-20-79</span>
+        <a href="#" class="laser-btn-order">ПЕРЕЗВОНИТЬ МНЕ</a>
+        <img src="<?= get_template_directory_uri()?>/img/404/operator.png" alt="">
+    </div>
+
+</div>
+<!--****************************************************-->
+
+
 <?php
 get_footer();
 ?>

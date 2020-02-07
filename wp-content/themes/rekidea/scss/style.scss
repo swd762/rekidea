@@ -950,10 +950,49 @@
 //******************************************
 
 // laser top banner block ******************
-.laser-top-banner {
-  height: 510px;
+.laser-top-banner__wrapper {
+  //height: 510px;
+  //background-color: ;
   background-color: #f7f7f7;
 }
+.laser-top-banner__content {
+  background: #f7f7f7 url("img/laser-page/laser.png") 108% no-repeat;
+  padding-left: 25px;
+  padding-top: 35px;
+  //height: 520px;
+  padding-bottom: 50px;
+}
+.laser-top-banner {
+  width: 720px;
+
+  h1 {
+    font-size: 37px;
+    font-weight: 400;
+    color: $red;
+    text-transform: uppercase;
+  }
+  h3 {
+    color: $red;
+    font-size: 20px;
+    margin-top: 20px;
+  }
+  p {
+    width: 75%;
+    font-size: 20px;
+    margin-top: 32px;
+    img {
+      width: 23px;
+      height: 16px;
+    }
+  }
+}
+.laser-flag {
+  background-color: #914764;
+  color: #fff;
+  padding:10px 70px 10px 30px;
+  margin-top: 35px;
+}
+
 
 //******************************************
 
@@ -980,7 +1019,7 @@
     text-align: center;
     text-transform: uppercase;
     color: $red;
-    padding: 0 10px;
+    padding: 0 5px;
     font-weight: 400;
   }
   p {
@@ -988,7 +1027,7 @@
     font-weight: 300;
     text-align: center;
     color: #000;
-    margin-top:20px;
+    margin-top:10px;
     padding: 0 14px;
   }
   img {
@@ -1125,36 +1164,83 @@
 }
 //*****************************************************
 
-//*************************************************
-// **************** 404 page **********************
-//*************************************************
-.recunstruction-wrapper {
-  height: 340px;
-  background: url("img/404/reconstruction.jpg") 0% no-repeat;
-  margin-top: 38px;
-  margin-bottom: 38px;
-}
-.reconstruction__content {
-  width: 500px;
-  float: right;
-  color: $red;
-  padding: 50px 5px 0 5px;
-  text-align: center;
-  h1 {
-    font-size: 36px;
-    text-transform: uppercase;
-  }
+// ** laser partners block *****************************
+.laser-partners-block-wrapper {
+  padding: 46px 10px 0 46px;
+  background: #fff;
   h3 {
-    font-size: 20px;
-    margin-top: 25px;
-    margin-bottom: 25px;
-  }
-  p {
-    font-size: 20px;
+    font-size: 42px;
+    font-weight: 500;
+    text-transform: uppercase;
+    color: $red;
   }
 }
 
-.questions-contact__wrapper {
+//*****************************************************
+
+// laser portfolio ************************************
+.laser-portfolio-block-wrapper {
+  //min-height: 770px;
+  padding: 45px 0 45px 0;
+  display: flex;
+  flex-direction: column;
+  .button {
+    background-color: #6f0d33;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin: 0 auto;
+    color: #fff;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 300;
+    padding: 15px;
+    margin-top: 15px;
+    &:hover {
+      background-color: lighten($red, 10%);
+      box-shadow: 4px 4px 8px 0px rgba(82, 11, 27, 0.2);
+      transition: all 0.3s linear;
+    }
+  }
+}
+.laser-portfolio-block__header {
+  h2 {
+    font-size: 49px;
+    color:$red;
+    text-transform: uppercase;
+    font-weight: 500;
+    text-align: center;
+  }
+  p {
+    margin: 30px 0 30px 0;
+    text-align: center;
+    padding: 0 5px;
+  }
+}
+.portfolio-block__content {
+  padding: 5px;
+}
+
+.content-big {
+  display: flex;
+  justify-content: center;
+  a {
+    flex-basis: 370px;
+    flex-shrink: 0.5;
+    margin-right: 8px;
+    &:last-child {
+      margin-right: 0;
+    }
+    img {
+      max-width: 100%;
+    }
+  }
+}
+// **********************************
+
+// ** laser questions *************
+.laser-questions-contact__wrapper {
   color: $red;
   border: 10px solid $red;
   //height: 400px;
@@ -1162,15 +1248,16 @@
   padding-left: 60px;
   padding-bottom: 80px;
   margin-bottom: 65px;
-  position: relative;
+  //background: url("img/404/operator.png");
+
   img {
     position: absolute;
     bottom: -75px;
     right: 50px;
   }
 }
-.questions-contact__content {
-
+.laser-questions-contact__content {
+  position: relative;
   h2 {
     font-size: 44px;
     text-transform: uppercase;
@@ -1185,7 +1272,138 @@
   span {
     font-size: 39px;
     font-weight: 500;
-    margin-right: 35px;
+    margin-right: 25px;
+  }
+}
+
+// ********************************
+.hren-wrapper {
+  display: flex;
+  justify-content: center;
+}
+.hren {
+  width: 1240px;
+}
+
+
+
+//*************************************************
+// **************** 404 page **********************
+//*************************************************
+
+.recunstruction-wrapper {
+  height: 340px;
+  background: url("img/404/reconstruction.jpg") 0% no-repeat;
+  margin-top: 38px;
+  margin-bottom: 38px;
+}
+.reconstruction__content {
+  width: 500px;
+  float: right;
+  color: $red;
+  padding: 50px 5px 0 5px;
+  text-align: center;
+
+  h1 {
+    font-size: 36px;
+    text-transform: uppercase;
+
+  }
+  h3 {
+    font-size: 20px;
+    margin-top: 25px;
+    margin-bottom: 25px;
+    font-weight: 400;
+  }
+  p {
+    font-size: 20px;
+    font-weight: 400;
+  }
+}
+.recunstruction-mobile-wrapper {
+  display: none;
+}
+.reconstruction-mobile__content {
+  color: $red;
+  padding: 50px 5px 0 5px;
+  text-align: center;
+  h1 {
+    font-size: 36px;
+    text-transform: uppercase;
+  }
+  h3 {
+    font-size: 20px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-weight: 400;
+  }
+  p {
+    font-size: 20px;
+    font-weight: 400;
+  }
+  img {
+    width: 100%;
+    margin-top: 15px;
+    margin-bottom: 15px;
+  }
+}
+
+
+.questions-contact__wrapper {
+  color: $red;
+  border: 10px solid $red;
+  padding-top: 40px;
+  padding-left: 60px;
+  padding-bottom: 80px;
+  margin-bottom: 65px;
+  position: relative;
+  .question-operator {
+    position: absolute;
+    bottom: -75px;
+    right: 50px;
+  }
+  .question-operator-mobile {
+    display: none;
+  }
+}
+.questions-contact__content {
+
+  h2 {
+    font-size: 44px;
+    text-transform: uppercase;
+    font-weight: 500;
+  }
+  p {
+    font-size: 15px;
+    margin-top: 23px;
+    margin-bottom: 36px;
+   //width: 400px;
+    width: 55%;
+  }
+  span {
+    font-size: 39px;
+    font-weight: 500;
+    margin-right: 25px;
+  }
+}
+.questions-contact__content-contacts {
+  display: flex;
+  width: 60%;
+  flex-wrap: wrap;
+  h4 {
+    font-size: 39px;
+    margin-right: 25px;
+  }
+  .button {
+    font-size: 13px;
+    background-color: $red;
+    color: #fff;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 185px;
+    height: 50px;
   }
 }
 
