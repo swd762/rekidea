@@ -70,6 +70,13 @@
       width: 100%;
     }
   }
+// laser banner
+  .laser-top-banner__wrapper {
+    background: #f7f7f7 url(img/laser-page/laser.png) 105% no-repeat;
+
+  }
+
+// **********
 
 // laser cards
 .laser-cards-block {
@@ -270,12 +277,31 @@
 
   // **** laser cards block ************
   .laser-cards-block {
-    padding: 0 10px;
+    padding: 20px 10px;
   }
 
 
   // ***********************************
-
+  // acrylic block
+  .craft-acrylic-block__content {
+    padding: 0 10px;
+    h3 {
+      font-size: 30px;
+    }
+    p {
+      font-size: 20px;
+    }
+  }
+  .craft-acrylic-block__logo {
+   img {
+     width: 290px;
+     height: 290px;
+   }
+  }
+  .craft-acrylic-block {
+    padding: 30px 0;
+  }
+//*********************************
 
 }
 
@@ -505,6 +531,10 @@
   }
   // ****************************
 
+// quality video
+  .quality-video-block {
+      padding: 80px 20px 80px 20px;
+  }
 
   // ************* 404 ************************
  main {
@@ -583,8 +613,52 @@
 
 
   // ****************************
+  // laser video ****************
+  .quality-video-block {
+    padding: 100px 20px 120px 20px;
+    h3 {
+      color: #fffefe;
+      font-size: 32px;
+      font-weight: 500;
+      text-transform: uppercase;
+      text-align: center;
+    }
+    ul li {
+      color: #fff;
+      font-size: 16px;
+      margin-top: 30px;
 
+    }
+  }
+  //******************************
+  // acrylic block
+  .craft-acrylic-block__logo {
+    display: none;
+  }
+  .craft-acrylic-block__logo-mobile {
+    display: flex;
+    margin: 25px 0;
+    img {
+      width: 214px;
 
+    }
+  }
+  .craft-acrylic-block__content {
+    padding: 0 10px;
+    text-align: center;
+    h3 {
+      margin-top: 0;
+      text-align: center;
+    }
+    p {
+      margin: 25px 0 40px 0;
+      font-size: 24px;
+      color: $red;
+      text-align: center;
+    }
+  }
+
+  // ********************
 
 }
 

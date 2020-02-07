@@ -952,7 +952,7 @@
 // laser top banner block ******************
 .laser-top-banner__wrapper {
   height: 510px;
-  background: #f7f7f7 url(img/laser-page/laser.png) 110% no-repeat;
+  background: #f7f7f7 url(img/laser-page/laser.png) 85% no-repeat;
 }
 .laser-top-banner {
   padding-left: 25px;
@@ -1054,18 +1054,20 @@
 // ** quality video block ******************
 .quality-video-block__wrapper {
   background: url('img/quality-laser/quality-bkg.png') center no-repeat;
-  height: 532px;
+  //height: 532px;
 }
 .quality-video-block {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 100px 20px 20px 20px;
+  padding: 100px 20px 120px 20px;
+
   h3 {
     color: #fffefe;
     font-size: 52px;
     font-weight: 500;
     text-transform: uppercase;
+    text-align: center;
   }
   ul li {
     color: #fff;
@@ -1086,7 +1088,12 @@
   justify-content: center;
   align-items: center;
   padding: 0 15px;
-
+}
+.craft-acrylic-block__logo-mobile {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  padding: 0 15px;
 }
 
 .craft-acrylic-block__content {
@@ -1096,7 +1103,7 @@
     color: $red;
     text-transform: uppercase;
     margin-top: 35px;
-    font-weight: 500;
+    font-weight: 600;
   }
   p {
     margin: 25px 0 40px 0;
