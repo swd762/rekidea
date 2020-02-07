@@ -1,6 +1,7 @@
 <?php
 get_header();
 ?>
+<main>
 <!--Breadcrumbs block *******************-->
 <div class="breadcrumbs">
     <div class="container">
@@ -12,36 +13,32 @@ get_header();
 <!--Laser top banner block ***************-->
 <div class="laser-top-banner__wrapper">
     <div class="container">
-    <div class="laser-top-banner__content">
         <div class="laser-top-banner">
-        <h1>ЛАЗЕРНАЯ РЕЗКА<br>
-            Ювелирная точность исполнения
-        </h1>
-        <h3>Современный высокоскоростной
-            лазерный станок поможет воплотить
-            в жизнь самые смелые и сложные идеи
-        </h3>
-        <p>
-            <img src="<?= get_template_directory_uri()?>/img/laser-page/check-box.png" alt="">
-            Лазерная резка оргстекла, цветного акрила, ПЭТ, фанеры,
-            полистирола, поролона, кожи и ткани
-        </p>
-        <p>
-            <img src="<?= get_template_directory_uri()?>/img/laser-page/check-box.png" alt="">
-            Используем ваши материалы или купим под заказ без наценки
-        </p>
-        <p style="margin-bottom: 30px;">
-            <img src="<?= get_template_directory_uri()?>/img/laser-page/check-box.png" alt="">
-            Организуем доставку и монтаж
-        </p>
+            <h1>ЛАЗЕРНАЯ РЕЗКА<br>
+                Ювелирная точность исполнения
+            </h1>
+            <h3>Современный высокоскоростной
+                лазерный станок поможет воплотить
+                в жизнь самые смелые и сложные идеи
+            </h3>
+            <p>
+                <img src="<?= get_template_directory_uri()?>/img/laser-page/check-box.png" alt="">
+                Лазерная резка оргстекла, цветного акрила, ПЭТ, фанеры,
+                полистирола, поролона, кожи и ткани
+            </p>
+            <p>
+                <img src="<?= get_template_directory_uri()?>/img/laser-page/check-box.png" alt="">
+                Используем ваши материалы или купим под заказ без наценки
+            </p>
+            <p style="margin-bottom: 30px;">
+                <img src="<?= get_template_directory_uri()?>/img/laser-page/check-box.png" alt="">
+                Организуем доставку и монтаж
+            </p>
             <span class="laser-flag">рабочее поле 900х1300мм</span>
         </div>
 
-<!--        <img src="--><?//= get_template_directory_uri()?><!--/img/laser-page/flag.png" alt="" class="laser-flag">-->
-
-
-    </div>
-    </div>
+        <img src="<?= get_template_directory_uri()?>/img/laser-page/laser.png" alt="" class="laser-banner-logo">
+</div>
 
 
 </div>
@@ -150,197 +147,174 @@ get_header();
 <!--**************************************-->
 
 <!-- Quality video block************************-->
-<div class="quality-video-block__wrapper">
-    <div class="container">
-        <div class="quality-video-block">
-            <h3>безупречное качество резки</h3>
-            <ul>
-                <li>Производится на профессиональном оборудовании</li>
-                <li>Используются только качественные материалы</li>
-                <li>Прозрачный и ровный срез на акриле</li>
-            </ul>
-        </div>
-    </div>
-</div>
+<!--<div class="quality-video-block__wrapper">-->
+<!--    <div class="container">-->
+<!--        <div class="quality-video-block">-->
+<!--            <h3>безупречное качество резки</h3>-->
+<!--            <ul>-->
+<!--                <li>Производится на профессиональном оборудовании</li>-->
+<!--                <li>Используются только качественные материалы</li>-->
+<!--                <li>Прозрачный и ровный срез на акриле</li>-->
+<!--            </ul>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--</div>-->
 <!--*********************************************-->
 
 <!-- Craft acrylic block **************************-->
-<div class="craft-acrylic-block container">
-    <div class="craft-acrylic-block__logo">
-        <img src="<?= get_template_directory_uri()?>/img/acrylic/logo.png" alt="">
-    </div>
-    <div class="craft-acrylic-block__content">
-        <h3>изготовим изделия<br>
-            из Многослойного цветного акрила
-        </h3>
-        <p>
-            Поможем скорректировать техническое задание или
-            сделать с нуля чертеж изделия.
-            Знаем секреты, как сэкономить время и деньги,
-            оптимально использовать материал.
-        </p>
-        <a href="#" class="laser-btn-order">Заказать</a>
-    </div>
-</div>
+<!--<div class="craft-acrylic-block container">-->
+<!--    <div class="craft-acrylic-block__logo">-->
+<!--        <img src="--><?//= get_template_directory_uri()?><!--/img/acrylic/logo.png" alt="">-->
+<!--    </div>-->
+<!--    <div class="craft-acrylic-block__content">-->
+<!--        <h3>изготовим изделия<br>-->
+<!--            из Многослойного цветного акрила-->
+<!--        </h3>-->
+<!--        <p>-->
+<!--            Поможем скорректировать техническое задание или-->
+<!--            сделать с нуля чертеж изделия.-->
+<!--            Знаем секреты, как сэкономить время и деньги,-->
+<!--            оптимально использовать материал.-->
+<!--        </p>-->
+<!--        <a href="#" class="laser-btn-order">Заказать</a>-->
+<!--    </div>-->
+<!--</div>-->
 <!--***********************************************-->
 
 <!--acryl cutting block ********************************-->
-<div class="acryl-cutting-block__wrapper">
-     <div class="container">
-        <div class="acryl-cutting-block__content">
-            <h3>лазерная резка<br>
-                и гравировка акрила
-            </h3>
-            <p>Изделия из акрила любой сложности и формы</p>
-            <a href="#" class="laser-btn-order">Заказать</a>
-        </div>
-     </div>
-</div>
+<!--<div class="acryl-cutting-block__wrapper">-->
+<!--     <div class="container">-->
+<!--        <div class="acryl-cutting-block__content">-->
+<!--            <h3>лазерная резка<br>-->
+<!--                и гравировка акрила-->
+<!--            </h3>-->
+<!--            <p>Изделия из акрила любой сложности и формы</p>-->
+<!--            <a href="#" class="laser-btn-order">Заказать</a>-->
+<!--        </div>-->
+<!--     </div>-->
+<!--</div>-->
 <!--****************************************************-->
 
 <!--wood cutting block **************************************-->
-<div class="wood-cutting-block__wrapper">
-    <div class="container">
-        <div class="wood-cutting-block__content">
-            <h3>резка фанеры, МДФ и массива</h3>
-            <a href="#" class="laser-btn-order">Заказать</a>
-        </div>
-    </div>
-</div>
+<!--<div class="wood-cutting-block__wrapper">-->
+<!--    <div class="container">-->
+<!--        <div class="wood-cutting-block__content">-->
+<!--            <h3>резка фанеры, МДФ и массива</h3>-->
+<!--            <a href="#" class="laser-btn-order">Заказать</a>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--</div>-->
 <!--*********************************************************-->
 
 <!--** montage block ***************************************-->
-<div class="montage-block__wrapper">
-    <div class="container">
-        <div class="montage-block__content">
-            <h3>МЫ ЦЕНИМ ВАШЕ ВРЕМЯ</h3>
-            <p>Осуществим монтаж и доставку<br>
-                даже в нерабочее время по всей Москве и области</p>
-        </div>
-    </div>
-
-</div>
+<!--<div class="montage-block__wrapper">-->
+<!--    <div class="container">-->
+<!--        <div class="montage-block__content">-->
+<!--            <h3>МЫ ЦЕНИМ ВАШЕ ВРЕМЯ</h3>-->
+<!--            <p>Осуществим монтаж и доставку<br>-->
+<!--                даже в нерабочее время по всей Москве и области</p>-->
+<!--        </div>-->
+<!--    </div>-->
+<!---->
+<!--</div>-->
 <!--*******************************************************-->
 
 <!--************ laser partners block**********************-->
-<div class="laser-partners-block-wrapper">
-    <div class="container">
-        <h3>Нам доверяют как крупные компании,<br> так и средний бизнес</h3>
-
-
-    </div>
-</div>
+<!--<div class="laser-partners-block-wrapper">-->
+<!--    <div class="container">-->
+<!--        <h3>Нам доверяют как крупные компании,<br> так и средний бизнес</h3>-->
+<!--    </div>-->
+<!--</div>-->
 <!--*******************************************************-->
 <!--slide carousel**************-->
-<div class="flexi-carousel-partners__wrapper">
-    <div class="container">
-    <ul id="flexi-carousel-partners">
-        <li><img src="<?= get_template_directory_uri()?>/img/our-partners/elis.png" /></li>
-        <li><img src="<?= get_template_directory_uri()?>/img/our-partners/burger.png" /></li>
-        <li><img src="<?= get_template_directory_uri()?>/img/our-partners/mars-color.png" /></li>
-        <li><img src="<?= get_template_directory_uri()?>/img/our-partners/gorzdrav.png" /></li>
-        <li><img src="<?= get_template_directory_uri()?>/img/our-partners/Mosgortrans-color.png" /></li>
-    </ul>
-    </div>
-</div>
-
-<script>
-    jQuery(function($) {
-        $("#flexi-carousel-partners").flexisel({
-            visibleItems: 5,
-            itemsToScroll: 5,
-            animationSpeed: 200,
-            infinite: true,
-            navigationTargetSelector: null,
-            autoPlay: {
-                enable: true,
-                interval: 4000,
-                pauseOnHover: true
-            }
-        });
-    });
-</script>
+<!--<div class="flexi-carousel-partners__wrapper">-->
+<!--    <div class="container">-->
+<!--    <ul id="flexi-carousel-partners">-->
+<!--        <li><img src="--><?//= get_template_directory_uri()?><!--/img/our-partners/elis.png" /></li>-->
+<!--        <li><img src="--><?//= get_template_directory_uri()?><!--/img/our-partners/burger.png" /></li>-->
+<!--        <li><img src="--><?//= get_template_directory_uri()?><!--/img/our-partners/mars-color.png" /></li>-->
+<!--        <li><img src="--><?//= get_template_directory_uri()?><!--/img/our-partners/gorzdrav.png" /></li>-->
+<!--        <li><img src="--><?//= get_template_directory_uri()?><!--/img/our-partners/Mosgortrans-color.png" /></li>-->
+<!--    </ul>-->
+<!--    </div>-->
+<!--</div>-->
+<!---->
+<!--<script>-->
+<!--    jQuery(function($) {-->
+<!--        $("#flexi-carousel-partners").flexisel({-->
+<!--            visibleItems: 5,-->
+<!--            itemsToScroll: 5,-->
+<!--            animationSpeed: 200,-->
+<!--            infinite: true,-->
+<!--            navigationTargetSelector: null,-->
+<!--            autoPlay: {-->
+<!--                enable: true,-->
+<!--                interval: 4000,-->
+<!--                pauseOnHover: true-->
+<!--            }-->
+<!--        });-->
+<!--    });-->
+<!--</script>-->
 
 <!--******************************-->
 <!-- laser Portfolio block-->
-<div class="laser-portfolio-block-wrapper">
-    <div class="laser-portfolio-block__header container">
-        <h2>наше портфолио</h2>
-        <p>Работа с разными брендами от дешевого до премиум сегмента.Насколько хорошо мы умеем находить подход
-            к каждому клиенту. Главная часть нас - это проекты, которые мы делаем и задачи, которые мы решаем.Обращаясь
-            к нам вы получаете качественные проекты.</p>
-    </div>
-    <div class="laser-portfolio-block__content">
-        <div class="content-big">
-            <a href="<?php the_field('portfolio-image1', get_the_ID())?>" class="single_image">
-                <img src="<?php the_field('portfolio-image1', get_the_ID())?>" alt="">
-            </a>
-            <a href="<?php the_field('portfolio-image2', get_the_ID())?>" class="single_image">
-                <img src="<?php the_field('portfolio-image2', get_the_ID())?>" alt="">
-            </a>
-            <a href="<?php the_field('portfolio-image3', get_the_ID())?>" class="single_image hidden-mobile">
-                <img src="<?php the_field('portfolio-image3', get_the_ID())?>" alt="">
-            </a>
-            <a href="<?php the_field('portfolio-image1', get_the_ID())?>" class="single_image">
-                <img src="<?php the_field('portfolio-image1', get_the_ID())?>" alt="">
-            </a>
-            <a href="<?php the_field('portfolio-image2', get_the_ID())?>" class="single_image">
-                <img src="<?php the_field('portfolio-image2', get_the_ID())?>" alt="">
-            </a>
-        </div>
-    </div>
-    <a href="/404" class="button">Посмотреть наши работы</a>
+<!--<div class="laser-portfolio-block-wrapper">-->
+<!--    <div class="laser-portfolio-block__header container">-->
+<!--        <h2>наше портфолио</h2>-->
+<!--        <p>Работа с разными брендами от дешевого до премиум сегмента.Насколько хорошо мы умеем находить подход-->
+<!--            к каждому клиенту. Главная часть нас - это проекты, которые мы делаем и задачи, которые мы решаем.Обращаясь-->
+<!--            к нам вы получаете качественные проекты.</p>-->
+<!--    </div>-->
+<!--    <div class="laser-portfolio-block__content">-->
+<!--        <div class="content-big">-->
+<!--            <a href="--><?php //the_field('portfolio-image1', get_the_ID())?><!--" class="single_image">-->
+<!--                <img src="--><?php //the_field('portfolio-image1', get_the_ID())?><!--" alt="">-->
+<!--            </a>-->
+<!--            <a href="--><?php //the_field('portfolio-image2', get_the_ID())?><!--" class="single_image">-->
+<!--                <img src="--><?php //the_field('portfolio-image2', get_the_ID())?><!--" alt="">-->
+<!--            </a>-->
+<!--            <a href="--><?php //the_field('portfolio-image3', get_the_ID())?><!--" class="single_image hidden-mobile">-->
+<!--                <img src="--><?php //the_field('portfolio-image3', get_the_ID())?><!--" alt="">-->
+<!--            </a>-->
+<!--            <a href="--><?php //the_field('portfolio-image1', get_the_ID())?><!--" class="single_image">-->
+<!--                <img src="--><?php //the_field('portfolio-image1', get_the_ID())?><!--" alt="">-->
+<!--            </a>-->
+<!--            <a href="--><?php //the_field('portfolio-image2', get_the_ID())?><!--" class="single_image">-->
+<!--                <img src="--><?php //the_field('portfolio-image2', get_the_ID())?><!--" alt="">-->
+<!--            </a>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--    <a href="/404" class="button">Посмотреть наши работы</a>-->
+<!--</div>-->
+<!--            Tooklit for gallery-->
+<!--<script>-->
+<!--    jQuery(function($) {-->
+<!--        $(".single_image").fancybox();-->
+<!--    });-->
+<!--</script>-->
+<!--*******************************-->
+
+<!--*********************************************************-->
 
 
-
-
-
-
-    <!--            Tooklit for gallery-->
-    <script>
-        jQuery(function($) {
-            $(".single_image").fancybox();
-        });
-    </script>
-    <!--*******************************-->
-</div>
-<!--*************************************-->
-<!--****************-->
-<div class="hren-wrapper container">
-    <div class="hren">
-        <div class="laser-questions-contact__wrapper">
-            <div class="laser-questions-contact__content">
-                <h2>у вас есть вопросы?</h2>
-                <p>Мы сэкономим ваше время! Звоните для консультаций
-                    или оставьте заявку на обратный звонок.
-                </p>
-                <span>+ 7 (495) 369-20-79</span>
-                <a href="#" class="laser-btn-order">ПЕРЕЗВОНИТЬ МНЕ</a>
-                <img src="<?= get_template_directory_uri()?>/img/404/operator.png" alt="">
-            </div>
-
-        </div>
-    </div>
-
-
-</div>
-<!--**************-->
 <!--consultant block ***********************************-->
-<div class="laser-questions-contact__wrapper container">
-    <div class="laser-questions-contact__content">
-        <h2>у вас есть вопросы?</h2>
-        <p>Мы сэкономим ваше время! Звоните для консультаций
-            или оставьте заявку на обратный звонок.
-        </p>
-        <span>+ 7 (495) 369-20-79</span>
-        <a href="#" class="laser-btn-order">ПЕРЕЗВОНИТЬ МНЕ</a>
-        <img src="<?= get_template_directory_uri()?>/img/404/operator.png" alt="">
-    </div>
-
-</div>
+<!--<div class="questions-contact__wrapper container">-->
+<!--    <div class="questions-contact__content">-->
+<!--        <h2>у вас есть вопросы?</h2>-->
+<!--        <p>Мы сэкономим ваше время! Звоните для консультаций-->
+<!--            или оставьте заявку на обратный звонок.-->
+<!--        </p>-->
+<!--        <div class="questions-contact__content-contacts">-->
+<!--            <h4>+ 7 (495) 369-20-79</h4>-->
+<!--            <a href="#" class="button">ПЕРЕЗВОНИТЬ МНЕ</a>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--    <img src="--><?//= get_template_directory_uri()?><!--/img/404/operator.png" alt="" class="question-operator">-->
+<!--    <img src="--><?//= get_template_directory_uri()?><!--/img/404/operator.png" alt="" class="question-operator-mobile">-->
+<!--</div>-->
 <!--****************************************************-->
 
-
+</main>
 <?php
 get_footer();
 ?>

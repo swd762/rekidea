@@ -951,34 +951,29 @@
 
 // laser top banner block ******************
 .laser-top-banner__wrapper {
-  //height: 510px;
-  //background-color: ;
-  background-color: #f7f7f7;
-}
-.laser-top-banner__content {
-  background: #f7f7f7 url("img/laser-page/laser.png") 108% no-repeat;
-  padding-left: 25px;
-  padding-top: 35px;
-  //height: 520px;
-  padding-bottom: 50px;
+  height: 510px;
+  background: #f7f7f7 url(img/laser-page/laser.png) 110% no-repeat;
 }
 .laser-top-banner {
-  width: 720px;
-
+  padding-left: 25px;
+  padding-top: 35px;
+  padding-bottom: 50px;
   h1 {
-    font-size: 37px;
-    font-weight: 400;
+    font-size: 35px;
+    font-weight: bold;
     color: $red;
     text-transform: uppercase;
   }
   h3 {
+    width: 45%;
     color: $red;
-    font-size: 20px;
+    font-size: 19px;
+    font-weight: 400;
     margin-top: 20px;
   }
   p {
-    width: 75%;
-    font-size: 20px;
+    width: 55%;
+    font-size: 19px;
     margin-top: 32px;
     img {
       width: 23px;
@@ -991,7 +986,13 @@
   color: #fff;
   padding:10px 70px 10px 30px;
   margin-top: 35px;
+  text-transform: uppercase;
 }
+.laser-banner-logo {
+  display: none;
+  margin: 0 auto;
+}
+
 
 
 //******************************************
@@ -1014,6 +1015,7 @@
   background-color: #f7f7f7;
   a {
     text-decoration: none;
+    color: $red;
   }
   h3 {
     text-align: center;
@@ -1166,7 +1168,7 @@
 
 // ** laser partners block *****************************
 .laser-partners-block-wrapper {
-  padding: 46px 10px 0 46px;
+  padding: 46px 0;
   background: #fff;
   h3 {
     font-size: 42px;
@@ -1243,13 +1245,10 @@
 .laser-questions-contact__wrapper {
   color: $red;
   border: 10px solid $red;
-  //height: 400px;
   padding-top: 40px;
   padding-left: 60px;
   padding-bottom: 80px;
   margin-bottom: 65px;
-  //background: url("img/404/operator.png");
-
   img {
     position: absolute;
     bottom: -75px;
@@ -1277,13 +1276,7 @@
 }
 
 // ********************************
-.hren-wrapper {
-  display: flex;
-  justify-content: center;
-}
-.hren {
-  width: 1240px;
-}
+
 
 
 

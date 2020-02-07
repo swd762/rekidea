@@ -71,7 +71,12 @@
     }
   }
 
+// laser cards
+.laser-cards-block {
+  padding: 10px 35px 30px 35px;
+}
 
+//***************
 }
 
 
@@ -82,7 +87,6 @@
 
 @media (max-width: 1090px) {
   .top-slider-wrapper {
-    //height: 350px;
   }
 
 
@@ -266,7 +270,7 @@
 
   // **** laser cards block ************
   .laser-cards-block {
-    padding: 0 52px;
+    padding: 0 10px;
   }
 
 
@@ -327,16 +331,39 @@
     position: initial;
     width: 100%;
     padding: 5px;
-
     img {
       width: 100%;
     }
-
     p {
       margin: 15px 0 10px 0;
       text-align: center;
     }
   }
+// laser top banner ************************
+.laser-top-banner__wrapper {
+  background: #f7f7f7;
+  height: initial;
+}
+.laser-banner-logo {
+  display: block;
+}
+  .laser-top-banner {
+    h3 {
+      width: 80%;
+    }
+    p {
+      width: 80%;
+      img {
+        width: 23px;
+        height: 16px;
+      }
+    }
+  }
+
+
+
+
+//*******************************************
 
 // ************* 404 ************************
 .recunstruction-wrapper {
@@ -463,6 +490,22 @@
       }
     }
   }
+
+  // laser cards
+  .laser-cards-block {
+    padding: 0px 10px 30px 10px;
+    justify-content: space-around;
+  }
+  .card-laser {
+    flex-basis: 180px;
+    .card-laser-button {
+      padding: 10px 30px;
+      font-size: 9px;
+    }
+  }
+  // ****************************
+
+
   // ************* 404 ************************
  main {
    overflow: hidden;
@@ -533,7 +576,18 @@
       }
     }
   }
+  // laser cards
+  .laser-cards-block {
+    padding: 0px 10px 30px 10px;
+  }
+
+
+  // ****************************
+
+
+
 }
+
 
 //**************************************************************************************
 //**************************************** 520 px **************************************
@@ -802,9 +856,9 @@
   }
   .questions-contact__wrapper {
     padding-top: 40px;
-    padding-left: 0;
+    padding: 0 5px;
     padding-bottom: 80px;
-    margin-bottom: 65px;
+    margin-bottom: 20px;
 
     .question-operator-mobile {
       display: none;
@@ -833,6 +887,17 @@
   }
 
   // ******************************************
+
+  // laser cards
+  .laser-cards-block {
+    padding: 0px 10px 30px 10px;
+    justify-content: space-around;
+  }
+  .card-laser {
+    flex-basis: 145px;
+  }
+
+  // ****************************
 
 
 
