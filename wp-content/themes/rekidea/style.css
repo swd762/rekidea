@@ -927,13 +927,34 @@ main {
     font-size: 29px; }
 
 .laser-partners-block-wrapper {
-  padding: 46px 0;
+  padding: 40px 10px;
   background: #fff; }
   .laser-partners-block-wrapper h3 {
-    font-size: 42px;
+    font-size: 41px;
     font-weight: 500;
     text-transform: uppercase;
     color: #6f0d33; }
+
+.flexi-carousel-partners-laser__wrapper {
+  height: 176px;
+  background: #f7f7f7; }
+  .flexi-carousel-partners-laser__wrapper .nbs-flexisel-nav-left {
+    display: none; }
+  .flexi-carousel-partners-laser__wrapper .nbs-flexisel-nav-right {
+    display: none; }
+  .flexi-carousel-partners-laser__wrapper .nbs-flexisel-inner {
+    border: 0;
+    background: #f7f7f7; }
+
+#flexi-carousel-partners-laser {
+  height: 176px; }
+  #flexi-carousel-partners-laser .nbs-flexisel-item {
+    display: flex;
+    height: inherit;
+    justify-content: center;
+    align-items: center; }
+    #flexi-carousel-partners-laser .nbs-flexisel-item img {
+      max-width: 90%; }
 
 .laser-portfolio-block-wrapper {
   padding: 45px 0 45px 0;
@@ -1333,7 +1354,10 @@ footer {
     height: 290px; }
 
   .craft-acrylic-block {
-    padding: 30px 0; } }
+    padding: 30px 0; }
+
+  .no-mobile-portfolio {
+    display: none; } }
 @media (max-width: 1023px) {
   .container {
     width: auto; }
@@ -1497,6 +1521,15 @@ footer {
       color: #6f0d33;
       margin-bottom: 50px; }
 
+  .laser-partners-block-wrapper {
+    background: #fff; }
+    .laser-partners-block-wrapper h3 {
+      font-size: 41px;
+      font-weight: 500;
+      text-transform: uppercase;
+      color: #6f0d33;
+      text-align: center; }
+
   main {
     overflow: hidden; }
 
@@ -1538,7 +1571,7 @@ footer {
     top: 83px; }
 
   .laser-cards-block {
-    padding: 0px 10px 30px 10px; }
+    padding: 0 10px 30px 10px; }
 
   .quality-video-block {
     padding: 100px 20px 120px 20px; }
@@ -1601,7 +1634,15 @@ footer {
       color: #fff; }
     .montage-block__content p {
       color: #fff;
-      font-size: 26px; } }
+      font-size: 26px; }
+
+  .laser-partners-block-wrapper {
+    padding: 15px 10px; }
+    .laser-partners-block-wrapper h3 {
+      font-size: 26px;
+      font-weight: 500;
+      text-transform: uppercase;
+      color: #6f0d33; } }
 @media (max-width: 520px) {
   .hidden-mobile {
     display: none; }
@@ -1759,6 +1800,16 @@ footer {
       color: #fff;
       font-size: 13px; }
 
+  .laser-portfolio-block-wrapper {
+    padding: 10px 0 35px 0; }
+
+  .laser-portfolio-block__header h2 {
+    font-size: 24px; }
+  .laser-portfolio-block__header p {
+    margin: 10px 0 15px 0;
+    text-align: center;
+    padding: 0 5px; }
+
   .footer__content {
     display: none; }
 
@@ -1784,8 +1835,8 @@ footer {
   .questions-contact__wrapper {
     padding-top: 40px;
     padding: 0 5px;
-    padding-bottom: 80px;
-    margin-bottom: 20px; }
+    padding-bottom: 50px;
+    margin-bottom: 15px; }
     .questions-contact__wrapper .question-operator-mobile {
       display: none; }
 

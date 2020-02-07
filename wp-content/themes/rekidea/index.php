@@ -338,33 +338,33 @@ get_header();
                 ?>
                 <div class="content-big">
                     <a href="<?php the_field('portfolio-image1', get_the_ID())?>" class="single_image">
-                        <img src="<?php the_field('portfolio-image1', get_the_ID())?>" alt="">
+                        <img src="<?= get_template_directory_uri()?>/img/portfolio-block/gal-big-1.png" alt="">
                     </a>
                     <a href="<?php the_field('portfolio-image2', get_the_ID())?>" class="single_image">
-                        <img src="<?php the_field('portfolio-image2', get_the_ID())?>" alt="">
+                        <img src="<?= get_template_directory_uri()?>/img/portfolio-block/gal-big-2.png" alt="">
                     </a>
                     <a href="<?php the_field('portfolio-image3', get_the_ID())?>" class="single_image hidden-mobile">
-                        <img src="<?php the_field('portfolio-image3', get_the_ID())?>" alt="">
+                        <img src="<?= get_template_directory_uri()?>/img/portfolio-block/gal-big-3.png" alt="">
                     </a>
                 </div>
                 <div class="content-small">
                     <a href="<?php the_field('portfolio-image4', get_the_ID())?>" class="single_image">
-                        <img src="<?php the_field('portfolio-image4', get_the_ID())?>" alt="">
+                        <img src="<?= get_template_directory_uri()?>/img/portfolio-block/gal-small-1.png" alt="">
                     </a>
                     <a href="<?php the_field('portfolio-image5', get_the_ID())?>" class="single_image">
-                        <img src="<?php the_field('portfolio-image5', get_the_ID())?>" alt="">
+                        <img src="<?= get_template_directory_uri()?>/img/portfolio-block/gal-small-2.png" alt="">
                     </a>
                     <a href="<?php the_field('portfolio-image6', get_the_ID())?>" class="single_image">
-                        <img src="<?php the_field('portfolio-image6', get_the_ID())?>" alt="">
+                        <img src="<?= get_template_directory_uri()?>/img/portfolio-block/gal-small-3.png" alt="">
                     </a>
                     <a href="<?php the_field('portfolio-image7', get_the_ID())?>" class="single_image">
-                        <img src="<?php the_field('portfolio-image7', get_the_ID())?>" alt="">
+                        <img src="<?= get_template_directory_uri()?>/img/portfolio-block/gal-small-4.png" alt="">
                     </a>
                     <a href="<?php the_field('portfolio-image8', get_the_ID())?>" class="single_image hidden-mobile">
-                        <img src="<?php the_field('portfolio-image8', get_the_ID())?>" alt="">
+                        <img src="<?= get_template_directory_uri()?>/img/portfolio-block/gal-small-5.png" alt="">
                     </a>
                     <a href="<?php the_field('portfolio-image9', get_the_ID())?>" class="single_image hidden-mobile">
-                        <img src="<?php the_field('portfolio-image9', get_the_ID())?>" alt="">
+                        <img src="<?= get_template_directory_uri()?>/img/portfolio-block/gal-small-6.png" alt="">
                     </a>
                 </div>
         </div>
@@ -403,13 +403,7 @@ get_header();
                 autoPlay: {
                     enable: true,
                     interval: 4000,
-                    pauseOnHover: true },
-                responsiveBreakpoints: {
-                      portrait: {
-                         changePoint:600,
-                         visibleItems: 3,
-                         itemsToScroll: 3
-                      }
+                    pauseOnHover: true
                 }
             });
         });

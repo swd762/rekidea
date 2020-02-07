@@ -1180,10 +1180,10 @@
 
 // ** laser partners block *****************************
 .laser-partners-block-wrapper {
-  padding: 46px 0;
+  padding: 40px 10px;
   background: #fff;
   h3 {
-    font-size: 42px;
+    font-size: 41px;
     font-weight: 500;
     text-transform: uppercase;
     color: $red;
@@ -1191,6 +1191,35 @@
 }
 
 //*****************************************************
+// OLaser partners block
+.flexi-carousel-partners-laser__wrapper {
+  height: 176px;
+  background: #f7f7f7;
+  .nbs-flexisel-nav-left {
+    display: none;
+  }
+  .nbs-flexisel-nav-right {
+    display: none;
+  }
+  .nbs-flexisel-inner {
+    border: 0;
+    background: #f7f7f7;
+  }
+}
+#flexi-carousel-partners-laser {
+  height: 176px;
+  .nbs-flexisel-item {
+    display: flex;
+    height: inherit;
+    justify-content: center;
+    align-items: center;
+    img {
+      max-width: 90%
+    }
+  }
+
+}
+// **************************************
 
 // laser portfolio ************************************
 .laser-portfolio-block-wrapper {
@@ -1288,7 +1317,7 @@
 }
 
 // ********************************
-
+#flexi-carousel-partners-laser {}
 
 
 

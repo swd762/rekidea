@@ -47,7 +47,7 @@ get_header();
 <!--Laser cards block ********************-->
 <div class="laser-cards-block container">
 
-    <div class="card-laser">
+    <div class="card-laser wow zoomIn">
         <a href="#">
             <img src="<?= get_template_directory_uri()?>/img/laser-cards/lazer-contur.png" alt="">
             <h3>контурная фигурная лазерная резка</h3>
@@ -57,7 +57,7 @@ get_header();
             </a>
         </a>
     </div>
-    <div class="card-laser">
+    <div class="card-laser wow zoomIn">
         <a href="#">
             <img src="<?= get_template_directory_uri()?>/img/laser-cards/flowers.png" alt="">
             <h3>лазерная<br> гравировка</h3>
@@ -69,7 +69,7 @@ get_header();
             </a>
         </a>
     </div>
-    <div class="card-laser">
+    <div class="card-laser wow zoomIn">
         <a href="#">
             <img src="<?= get_template_directory_uri()?>/img/laser-cards/orgs.jpg" alt="">
             <h3>изделия и подставки из оргстекла</h3>
@@ -81,7 +81,7 @@ get_header();
             </a>
         </a>
     </div>
-    <div class="card-laser">
+    <div class="card-laser wow zoomIn">
         <a href="#">
             <img src="<?= get_template_directory_uri()?>/img/laser-cards/litters-3d.jpg" alt="">
             <h3>объемные слова <br> и буквы</h3>
@@ -92,7 +92,7 @@ get_header();
             </a>
         </a>
     </div>
-    <div class="card-laser">
+    <div class="card-laser wow zoomIn">
         <a href="#">
             <img src="<?= get_template_directory_uri()?>/img/laser-cards/laser-cutting-wood.jpg" alt="">
             <h3>резка фанеры</h3>
@@ -104,7 +104,7 @@ get_header();
             </a>
         </a>
     </div>
-    <div class="card-laser">
+    <div class="card-laser wow zoomIn">
         <a href="#">
             <img src="<?= get_template_directory_uri()?>/img/laser-cards/badge.jpg" alt="">
             <h3>бейджи и номерки</h3>
@@ -116,7 +116,7 @@ get_header();
             </a>
         </a>
     </div>
-    <div class="card-laser">
+    <div class="card-laser wow zoomIn">
         <a href="#">
             <img src="<?= get_template_directory_uri()?>/img/laser-cards/suvenier.jpg" alt="">
             <h3>сувенирная продукция</h3>
@@ -128,7 +128,7 @@ get_header();
             </a>
         </a>
     </div>
-    <div class="card-laser">
+    <div class="card-laser wow zoomIn">
         <a href="#">
             <img src="<?= get_template_directory_uri()?>/img/laser-cards/gerb.jpg" alt="">
             <h3>гербы, рамки, слова метрики</h3>
@@ -163,7 +163,7 @@ get_header();
 
 <!-- Craft acrylic block **************************-->
 <div class="craft-acrylic-block container">
-    <div class="craft-acrylic-block__logo">
+    <div class="craft-acrylic-block__logo wow zoomIn">
         <img src="<?= get_template_directory_uri()?>/img/acrylic/logo.png" alt="">
     </div>
     <div class="craft-acrylic-block__content">
@@ -185,7 +185,7 @@ get_header();
 <!--***********************************************-->
 
 <!--acryl cutting block ********************************-->
-<div class="acryl-cutting-block__wrapper clearfix">
+<div class="acryl-cutting-block__wrapper clearfix wow slideInLeft">
      <div class="container">
         <img src="<?= get_template_directory_uri()?>/img/acrylic/lev.jpg" alt="" class="cutting-acrylic-logo">
         <div class="acryl-cutting-block__content">
@@ -200,7 +200,7 @@ get_header();
 <!--****************************************************-->
 
 <!--wood cutting block **************************************-->
-<div class="wood-cutting-block__wrapper clearfix">
+<div class="wood-cutting-block__wrapper clearfix wow slideInRight">
     <div class="container">
         <img src="<?= get_template_directory_uri()?>/img/wood/slide1.jpg" alt="" class="cutting-wood-logo">
         <div class="wood-cutting-block__content">
@@ -225,100 +225,102 @@ get_header();
 <!--*******************************************************-->
 
 <!--************ laser partners block**********************-->
-<!--<div class="laser-partners-block-wrapper">-->
-<!--    <div class="container">-->
-<!--        <h3>Нам доверяют как крупные компании,<br> так и средний бизнес</h3>-->
-<!--    </div>-->
-<!--</div>-->
+<div class="laser-partners-block-wrapper">
+    <div class="container">
+        <h3>Нам доверяют как крупные компании, так и средний бизнес</h3>
+    </div>
+</div>
 <!--*******************************************************-->
 <!--slide carousel**************-->
-<!--<div class="flexi-carousel-partners__wrapper">-->
-<!--    <div class="container">-->
-<!--    <ul id="flexi-carousel-partners">-->
-<!--        <li><img src="--><?//= get_template_directory_uri()?><!--/img/our-partners/elis.png" /></li>-->
-<!--        <li><img src="--><?//= get_template_directory_uri()?><!--/img/our-partners/burger.png" /></li>-->
-<!--        <li><img src="--><?//= get_template_directory_uri()?><!--/img/our-partners/mars-color.png" /></li>-->
-<!--        <li><img src="--><?//= get_template_directory_uri()?><!--/img/our-partners/gorzdrav.png" /></li>-->
-<!--        <li><img src="--><?//= get_template_directory_uri()?><!--/img/our-partners/Mosgortrans-color.png" /></li>-->
-<!--    </ul>-->
-<!--    </div>-->
-<!--</div>-->
-<!---->
-<!--<script>-->
-<!--    jQuery(function($) {-->
-<!--        $("#flexi-carousel-partners").flexisel({-->
-<!--            visibleItems: 5,-->
-<!--            itemsToScroll: 5,-->
-<!--            animationSpeed: 200,-->
-<!--            infinite: true,-->
-<!--            navigationTargetSelector: null,-->
-<!--            autoPlay: {-->
-<!--                enable: true,-->
-<!--                interval: 4000,-->
-<!--                pauseOnHover: true-->
-<!--            }-->
-<!--        });-->
-<!--    });-->
-<!--</script>-->
+<div class="flexi-carousel-partners-laser__wrapper">
+    <div class="container">
+    <ul id="flexi-carousel-partners-laser">
+        <li><img src="<?= get_template_directory_uri()?>/img/our-partners/elis.png" /></li>
+        <li><img src="<?= get_template_directory_uri()?>/img/our-partners/burger.png" /></li>
+        <li><img src="<?= get_template_directory_uri()?>/img/our-partners/mars-color.png" /></li>
+        <li><img src="<?= get_template_directory_uri()?>/img/our-partners/gorzdrav.png" /></li>
+        <li><img src="<?= get_template_directory_uri()?>/img/our-partners/Mosgortrans-color.png" /></li>
+    </ul>
+    </div>
+</div>
+
+<script>
+    jQuery(function($) {
+        $("#flexi-carousel-partners-laser").flexisel({
+            visibleItems: 5,
+            itemsToScroll: 5,
+            animationSpeed: 200,
+            infinite: true,
+            navigationTargetSelector: null,
+            autoPlay: {
+                enable: true,
+                interval: 4000,
+                pauseOnHover: true
+            }
+        });
+    });
+</script>
 
 <!--******************************-->
 <!-- laser Portfolio block-->
-<!--<div class="laser-portfolio-block-wrapper">-->
-<!--    <div class="laser-portfolio-block__header container">-->
-<!--        <h2>наше портфолио</h2>-->
-<!--        <p>Работа с разными брендами от дешевого до премиум сегмента.Насколько хорошо мы умеем находить подход-->
-<!--            к каждому клиенту. Главная часть нас - это проекты, которые мы делаем и задачи, которые мы решаем.Обращаясь-->
-<!--            к нам вы получаете качественные проекты.</p>-->
-<!--    </div>-->
-<!--    <div class="laser-portfolio-block__content">-->
-<!--        <div class="content-big">-->
-<!--            <a href="--><?php //the_field('portfolio-image1', get_the_ID())?><!--" class="single_image">-->
-<!--                <img src="--><?php //the_field('portfolio-image1', get_the_ID())?><!--" alt="">-->
-<!--            </a>-->
-<!--            <a href="--><?php //the_field('portfolio-image2', get_the_ID())?><!--" class="single_image">-->
-<!--                <img src="--><?php //the_field('portfolio-image2', get_the_ID())?><!--" alt="">-->
-<!--            </a>-->
-<!--            <a href="--><?php //the_field('portfolio-image3', get_the_ID())?><!--" class="single_image hidden-mobile">-->
-<!--                <img src="--><?php //the_field('portfolio-image3', get_the_ID())?><!--" alt="">-->
-<!--            </a>-->
-<!--            <a href="--><?php //the_field('portfolio-image1', get_the_ID())?><!--" class="single_image">-->
-<!--                <img src="--><?php //the_field('portfolio-image1', get_the_ID())?><!--" alt="">-->
-<!--            </a>-->
-<!--            <a href="--><?php //the_field('portfolio-image2', get_the_ID())?><!--" class="single_image">-->
-<!--                <img src="--><?php //the_field('portfolio-image2', get_the_ID())?><!--" alt="">-->
-<!--            </a>-->
-<!--        </div>-->
-<!--    </div>-->
-<!--    <a href="/404" class="button">Посмотреть наши работы</a>-->
-<!--</div>-->
+<div class="laser-portfolio-block-wrapper">
+    <div class="laser-portfolio-block__header container">
+        <h2>наше портфолио</h2>
+        <p>Работа с разными брендами от дешевого до премиум сегмента.Насколько хорошо мы умеем находить подход
+            к каждому клиенту. Главная часть нас - это проекты, которые мы делаем и задачи, которые мы решаем.Обращаясь
+            к нам вы получаете качественные проекты.</p>
+    </div>
+    <div class="laser-portfolio-block__content">
+        <div class="content-big">
+            <a href="<?php the_field('portfolio-image1', get_the_ID())?>" class="single_image">
+                <img src="<?= get_template_directory_uri()?>/img/portfolio-block/gal-big-1.png" alt="">
+            </a>
+            <a href="<?php the_field('portfolio-image2', get_the_ID())?>" class="single_image">
+                <img src="<?= get_template_directory_uri()?>/img/portfolio-block/gal-big-2.png" alt="">
+            </a>
+            <a href="<?php the_field('portfolio-image3', get_the_ID())?>" class="single_image hidden-mobile">
+                <img src="<?= get_template_directory_uri()?>/img/portfolio-block/gal-big-3.png" alt="">
+            </a>
+            <a href="<?php the_field('portfolio-image1', get_the_ID())?>" class="single_image no-mobile-portfolio">
+                <img src="<?= get_template_directory_uri()?>/img/portfolio-block/gal-big-1.png" alt="">
+            </a>
+            <a href="<?php the_field('portfolio-image2', get_the_ID())?>" class="single_image no-mobile-portfolio">
+                <img src="<?= get_template_directory_uri()?>/img/portfolio-block/gal-big-2.png" alt="">
+            </a>
+        </div>
+    </div>
+    <a href="/404" class="button">Посмотреть наши работы</a>
+</div>
 <!--            Tooklit for gallery-->
-<!--<script>-->
-<!--    jQuery(function($) {-->
-<!--        $(".single_image").fancybox();-->
-<!--    });-->
-<!--</script>-->
+<script>
+    jQuery(function($) {
+        $(".single_image").fancybox();
+    });
+</script>
 <!--*******************************-->
 
 <!--*********************************************************-->
 
 
 <!--consultant block ***********************************-->
-<!--<div class="questions-contact__wrapper container">-->
-<!--    <div class="questions-contact__content">-->
-<!--        <h2>у вас есть вопросы?</h2>-->
-<!--        <p>Мы сэкономим ваше время! Звоните для консультаций-->
-<!--            или оставьте заявку на обратный звонок.-->
-<!--        </p>-->
-<!--        <div class="questions-contact__content-contacts">-->
-<!--            <h4>+ 7 (495) 369-20-79</h4>-->
-<!--            <a href="#" class="button">ПЕРЕЗВОНИТЬ МНЕ</a>-->
-<!--        </div>-->
-<!--    </div>-->
-<!--    <img src="--><?//= get_template_directory_uri()?><!--/img/404/operator.png" alt="" class="question-operator">-->
-<!--    <img src="--><?//= get_template_directory_uri()?><!--/img/404/operator.png" alt="" class="question-operator-mobile">-->
-<!--</div>-->
+<div class="questions-contact__wrapper container">
+    <div class="questions-contact__content">
+        <h2>у вас есть вопросы?</h2>
+        <p>Мы сэкономим ваше время! Звоните для консультаций
+            или оставьте заявку на обратный звонок.
+        </p>
+        <div class="questions-contact__content-contacts">
+            <h4>+ 7 (495) 369-20-79</h4>
+            <a href="#" class="button">ПЕРЕЗВОНИТЬ МНЕ</a>
+        </div>
+    </div>
+    <img src="<?= get_template_directory_uri()?>/img/404/operator.png" alt="" class="question-operator">
+    <img src="<?= get_template_directory_uri()?>/img/404/operator.png" alt="" class="question-operator-mobile">
+</div>
 <!--****************************************************-->
-
+    <script>
+        new WOW().init();
+    </script>
 </main>
 <?php
 get_footer();
