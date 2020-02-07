@@ -691,8 +691,30 @@
       text-align: center;
     }
   }
-
   // ********************
+
+  // wood cutting block
+  .wood-cutting-block__wrapper {
+    height: initial;
+    background: none ;
+  }
+  .cutting-wood-logo {
+    display: block;
+    width: 100%;
+  }
+  .wood-cutting-block__content {
+    width: auto;
+    padding: 30px 40px 40px 40px;
+    text-align: center;
+    h3 {
+      font-size: 30px;
+      text-transform: uppercase;
+      color: $red;
+      margin-bottom: 50px;
+    }
+  }
+
+  // *********************
 
 }
 

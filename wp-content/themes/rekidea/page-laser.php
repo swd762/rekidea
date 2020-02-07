@@ -185,7 +185,7 @@ get_header();
 <!--***********************************************-->
 
 <!--acryl cutting block ********************************-->
-<div class="acryl-cutting-block__wrapper">
+<div class="acryl-cutting-block__wrapper clearfix">
      <div class="container">
         <img src="<?= get_template_directory_uri()?>/img/acrylic/lev.jpg" alt="" class="cutting-acrylic-logo">
         <div class="acryl-cutting-block__content">
@@ -200,14 +200,15 @@ get_header();
 <!--****************************************************-->
 
 <!--wood cutting block **************************************-->
-<!--<div class="wood-cutting-block__wrapper">-->
-<!--    <div class="container">-->
-<!--        <div class="wood-cutting-block__content">-->
-<!--            <h3>резка фанеры, МДФ и массива</h3>-->
-<!--            <a href="#" class="laser-btn-order">Заказать</a>-->
-<!--        </div>-->
-<!--    </div>-->
-<!--</div>-->
+<div class="wood-cutting-block__wrapper clearfix">
+    <div class="container">
+        <img src="<?= get_template_directory_uri()?>/img/wood/slide1.jpg" alt="" class="cutting-wood-logo">
+        <div class="wood-cutting-block__content">
+            <h3>резка фанеры, МДФ и массива</h3>
+            <a href="#" class="laser-btn-order">Заказать</a>
+        </div>
+    </div>
+</div>
 <!--*********************************************************-->
 
 <!--** montage block ***************************************-->
