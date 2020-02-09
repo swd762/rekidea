@@ -545,7 +545,43 @@
   .quality-video-block {
       padding: 80px 20px 80px 20px;
   }
+// ****************************
 
+// laser price
+  .laser-price-block-wrapper {
+    padding: 20px 0 40px 0;
+    background-color: #ebebeb;
+  }
+  .laser-price-block {
+    color: $red;
+    text-align: center;
+    h2 {
+      font-size: 30px;
+      font-weight: bold;
+      text-transform: uppercase;
+      text-align: center;
+    }
+    ul {
+      list-style: none;
+      margin: 10px 0 35px 0;
+
+      li {
+        font-size: 20px;
+        font-weight: 300;
+        margin-bottom: 10px;
+        span {
+          font-weight: bold;
+          font-size: 20px;
+        }
+      }
+    }
+    a {
+      text-align: center;
+      padding-right: 20px;
+      padding-left: 20px;
+    }
+  }
+//*************
 
 // acrylic cutting
   .acryl-cutting-block__wrapper {

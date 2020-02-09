@@ -27,7 +27,9 @@ main {
   text-decoration: none;
   background-color: #6f0d33;
   color: #fff;
-  padding: 16px 50px; }
+  padding: 14px 50px;
+  font-size: 14px;
+  text-transform: uppercase; }
   .laser-btn-order:hover {
     background-color: #d0b9c2;
     transition: all 0.3s linear; }
@@ -880,6 +882,31 @@ main {
     font-size: 24px;
     margin-top: 50px; }
 
+.laser-price-block-wrapper {
+  padding: 35px 0 60px 0;
+  background-color: #ebebeb; }
+
+.laser-price-block {
+  color: #6f0d33;
+  text-align: center; }
+  .laser-price-block h2 {
+    font-size: 37px;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-align: center; }
+  .laser-price-block ul {
+    list-style: none;
+    margin: 37px 0 44px 0; }
+    .laser-price-block ul li {
+      font-size: 27px;
+      font-weight: 300;
+      margin-bottom: 35px; }
+      .laser-price-block ul li span {
+        font-weight: bold;
+        font-size: 27px; }
+  .laser-price-block a {
+    text-align: center; }
+
 .craft-acrylic-block {
   padding: 40px 0;
   display: flex; }
@@ -1004,7 +1031,7 @@ main {
     text-decoration: none;
     font-size: 14px;
     font-weight: 300;
-    padding: 15px;
+    padding: 15px 50px;
     margin-top: 15px; }
     .laser-portfolio-block-wrapper .button:hover {
       background-color: #d0b9c2;
@@ -1596,6 +1623,33 @@ footer {
 
   .quality-video-block {
     padding: 80px 20px 80px 20px; }
+
+  .laser-price-block-wrapper {
+    padding: 20px 0 40px 0;
+    background-color: #ebebeb; }
+
+  .laser-price-block {
+    color: #6f0d33;
+    text-align: center; }
+    .laser-price-block h2 {
+      font-size: 30px;
+      font-weight: bold;
+      text-transform: uppercase;
+      text-align: center; }
+    .laser-price-block ul {
+      list-style: none;
+      margin: 10px 0 35px 0; }
+      .laser-price-block ul li {
+        font-size: 20px;
+        font-weight: 300;
+        margin-bottom: 10px; }
+        .laser-price-block ul li span {
+          font-weight: bold;
+          font-size: 20px; }
+    .laser-price-block a {
+      text-align: center;
+      padding-right: 20px;
+      padding-left: 20px; }
 
   .acryl-cutting-block__wrapper {
     min-height: initial;
