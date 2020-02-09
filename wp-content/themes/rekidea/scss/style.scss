@@ -1000,9 +1000,19 @@
 .laser-flag {
   background-color: #914764;
   color: #fff;
-  padding:10px 70px 10px 30px;
+  padding: 10px 60px 10px 30px;
   margin-top: 35px;
   text-transform: uppercase;
+  position: relative;
+  &::after {
+    content: "";
+    border-top: 20px solid transparent;
+    border-right: 21px solid #f7f7f7;
+    border-bottom: 20px solid transparent;
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
 }
 .laser-banner-logo {
   display: none;
