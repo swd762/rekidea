@@ -170,7 +170,7 @@ get_header();
         <h3>изготовим изделия<br>
             из Многослойного цветного акрила
         </h3>
-        <div class="craft-acrylic-block__logo-mobile">
+        <div class="craft-acrylic-block__logo-mobile wow zoomIn">
             <img src="<?= get_template_directory_uri()?>/img/acrylic/logo.png" alt="">
         </div>
         <p>

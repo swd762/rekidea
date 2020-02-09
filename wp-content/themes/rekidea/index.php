@@ -283,7 +283,7 @@ get_header();
         <div class="three-steps-block">
             <h2><span>3</span> простых шага работы с нами</h2>
             <div class="three-steps-block__content">
-                <div class="card wow fadeInUp">
+                <div class="card wow zoomIn">
                     <div class="thumbnail">
                         <img src="<?= get_template_directory_uri()?>/img/three-steps/businesswoman-call.png" alt="">
                     </div>
@@ -293,7 +293,7 @@ get_header();
                         и наш менеджер свяжется с Вами
                         в течение 30 секунд!</p>
                 </div>
-                <div class="card wow fadeInUp" data-wow-delay="1s">
+                <div class="card wow zoomIn" data-wow-delay="1s">
                     <div class="thumbnail">
                         <img src="<?= get_template_directory_uri()?>/img/three-steps/business-people-meeting.png" alt="">
                     </div>
@@ -303,7 +303,7 @@ get_header();
                         Вышлем коммерческое предложение
                         и макет на согласование</p>
                 </div>
-                <div class="card wow fadeInUp" data-wow-delay="2s">
+                <div class="card wow zoomIn" data-wow-delay="2s">
                     <div class="thumbnail">
                         <img src="<?= get_template_directory_uri()?>/img/three-steps/close-up-business-meeting-handshake.png" alt="">
                     </div>
