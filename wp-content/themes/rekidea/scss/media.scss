@@ -649,8 +649,6 @@
 
 
 
-
-
 }
 
 @media (max-width: 782px) {
@@ -769,7 +767,29 @@
     }
   }
   //*****************************************************
+  // *********** feedback page *****************
+  .feedback-form-page {
 
+    width: 100%;
+    margin: 0 auto;
+
+    form {
+      padding: 30px;
+      border: 1px solid gray;
+
+      input {
+        border: none;
+        background-color: #f7f7f7;
+        padding: 10px;
+        border-radius: 5px;
+        margin: 10px 0;
+        width: 100%;
+      }
+    }
+  }
+
+
+  // *********************************************
 
 
 

@@ -1142,6 +1142,63 @@ main {
     width: 185px;
     height: 50px; }
 
+.feedback-form-page-wrapper {
+  padding: 30px 30px; }
+
+.file-send-wrapper {
+  position: relative; }
+  .file-send-wrapper .file-send {
+    opacity: 0;
+    visibility: hidden;
+    position: absolute; }
+  .file-send-wrapper label {
+    background-color: #f7f7f7;
+    width: 186px;
+    display: flex;
+    padding: 10px 0;
+    justify-content: center;
+    border-radius: 5px;
+    border: 1px solid lightgrey; }
+
+.feedback-form-page {
+  width: 70%;
+  margin: 0 auto; }
+  .feedback-form-page h1 {
+    font-size: 25px;
+    color: #6f0d33;
+    margin: 0 0 30px 10px; }
+  .feedback-form-page h3 {
+    margin: 0 0 30px 0;
+    font-weight: 300; }
+  .feedback-form-page p {
+    margin-top: 22px; }
+  .feedback-form-page form {
+    padding: 30px;
+    border: 1px solid lightgrey; }
+    .feedback-form-page form input {
+      border: none;
+      background-color: #f7f7f7;
+      padding: 10px;
+      border-radius: 5px;
+      margin: 10px 0; }
+    .feedback-form-page form label {
+      color: #333333;
+      font-weight: 500; }
+    .feedback-form-page form input[type="submit"] {
+      background-color: #6f0d33;
+      color: #fff;
+      padding: 10px 50px;
+      width: initial; }
+      .feedback-form-page form input[type="submit"]:hover {
+        background-color: #9d1248; }
+    .feedback-form-page form textarea {
+      border: none;
+      background-color: #f7f7f7;
+      padding: 10px;
+      border-radius: 5px;
+      margin: 10px 0;
+      width: 100%; }
+
 footer {
   background-color: #474747; }
 
@@ -1670,7 +1727,21 @@ footer {
       font-size: 26px;
       font-weight: 500;
       text-transform: uppercase;
-      color: #6f0d33; } }
+      color: #6f0d33; }
+
+  .feedback-form-page {
+    width: 100%;
+    margin: 0 auto; }
+    .feedback-form-page form {
+      padding: 30px;
+      border: 1px solid gray; }
+      .feedback-form-page form input {
+        border: none;
+        background-color: #f7f7f7;
+        padding: 10px;
+        border-radius: 5px;
+        margin: 10px 0;
+        width: 100%; } }
 @media (max-width: 520px) {
   .hidden-mobile {
     display: none; }
