@@ -165,13 +165,16 @@ get_header();
             <source src="<?= get_template_directory_uri()?>/img/laser-page/video_lazer.mp4" type="video/mp4"/>
         </video>
     </div>
+    <div class="video-bg-container-overlay wow slideInLeft">
+
+    </div>
     <div class="container">
         <div class="quality-video-block">
-            <h3>безупречное качество резки</h3>
+            <h3 class="wow zoomIn" data-wow-delay="1s">безупречное качество резки</h3>
             <ul>
-                <li>Производится на профессиональном оборудовании</li>
-                <li>Используются только качественные материалы</li>
-                <li>Прозрачный и ровный срез на акриле</li>
+                <li class="wow zoomIn" data-wow-delay="2s">Производится на профессиональном оборудовании</li>
+                <li class="wow zoomIn" data-wow-delay="3s">Используются только качественные материалы</li>
+                <li class="wow zoomIn" data-wow-delay="4s">Прозрачный и ровный срез на акриле</li>
             </ul>
         </div>
     </div>

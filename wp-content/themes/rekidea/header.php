@@ -62,13 +62,13 @@ wp_head();
                             </div>
                             <hr>
                             <div class="phone-link">
-                                <a href="#">
+                                <a href="#" id="feedback-phone">
                                     <img src="<?= get_template_directory_uri()?>/img/modal/smartphone.svg" alt="">
                                     Перезвоните мне
                                 </a>
                             </div>
                             <div class="phone-link">
-                                <a href="#" id="feedback-phone">
+                                <a href="/feedback" >
                                     <img src="<?= get_template_directory_uri()?>/img/modal/envelope.svg" alt="">
                                     Обратная связь
                                 </a>

@@ -881,6 +881,12 @@ main {
     bottom: 0;
     transform: translate(-50%, -50%); }
 
+.video-bg-container-overlay {
+  background-color: rgba(232, 20, 195, 0.6);
+  position: absolute;
+  width: 100%;
+  height: 100%; }
+
 .quality-video-block {
   display: flex;
   flex-direction: column;
@@ -1253,7 +1259,8 @@ main {
       padding: 10px 50px;
       width: initial; }
       .feedback-form-page form input[type="submit"]:hover {
-        background-color: #9d1248; }
+        background-color: #d0b9c2;
+        transition: all 0.3s linear; }
     .feedback-form-page form textarea {
       border: none;
       background-color: #f7f7f7;
