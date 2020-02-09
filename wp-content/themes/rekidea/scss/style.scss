@@ -1079,14 +1079,34 @@
 
 // ** quality video block ******************
 .quality-video-block__wrapper {
-  background: url('img/quality-laser/quality-bkg.png') center no-repeat;
+  position: relative;
+  //background: url('img/quality-laser/video_lazer.mp4') center no-repeat;
   //height: 532px;
+  .video-bg-container {
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+  video {
+    position: absolute;
+    top: 50%;
+    width: 1920px;
+    left: 50%;
+    right: 0;
+    bottom: 0;
+    transform: translate(-50%,-50%);
+  }
 }
 .quality-video-block {
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 100px 20px 120px 20px;
+  position: relative;
+  z-index: 1;
 
   h3 {
     color: #fffefe;

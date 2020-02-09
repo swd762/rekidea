@@ -145,9 +145,14 @@ get_header();
 
 </div>
 <!--**************************************-->
-
+<!--    poster="--><?//= get_template_directory_uri()?><!--/img/quality-laser/quality-bkg.png"-->
 <!-- Quality video block************************-->
 <div class="quality-video-block__wrapper">
+    <div class="video-bg-container">
+        <video autoplay="autoplay" loop="loop" preload="auto" muted="muted">
+            <source src="<?= get_template_directory_uri()?>/img/laser-page/video_lazer.mp4" type="video/mp4"/>
+        </video>
+    </div>
     <div class="container">
         <div class="quality-video-block">
             <h3>безупречное качество резки</h3>

@@ -403,7 +403,7 @@ main {
             .nav-wrapper .top-menu-desktop #menu-top li.separate > .sub-menu > li > a:hover {
               color: #c8a2c8; }
           .nav-wrapper .top-menu-desktop #menu-top li.separate > .sub-menu > li > .sub-menu > li:hover a {
-            color: #c8a2c8; }
+            color: #6f0d33; }
           .nav-wrapper .top-menu-desktop #menu-top li.separate > .sub-menu > li > .sub-menu > li > a {
             font-weight: 100;
             font-size: 15px;
@@ -854,13 +854,30 @@ main {
       background-color: #6f0d33; }
 
 .quality-video-block__wrapper {
-  background: url("img/quality-laser/quality-bkg.png") center no-repeat; }
+  position: relative; }
+  .quality-video-block__wrapper .video-bg-container {
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0; }
+  .quality-video-block__wrapper video {
+    position: absolute;
+    top: 50%;
+    width: 1920px;
+    left: 50%;
+    right: 0;
+    bottom: 0;
+    transform: translate(-50%, -50%); }
 
 .quality-video-block {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 100px 20px 120px 20px; }
+  padding: 100px 20px 120px 20px;
+  position: relative;
+  z-index: 1; }
   .quality-video-block h3 {
     color: #fffefe;
     font-size: 52px;
