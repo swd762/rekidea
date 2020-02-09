@@ -1136,6 +1136,39 @@
 }
 //******************************************
 
+//******* Laser price block ******************
+.laser-price-block-wrapper {
+  padding: 35px 0 60px 0;
+  background-color: #ebebeb;
+}
+.laser-price-block {
+  color: $red;
+  text-align: center;
+  h2 {
+    font-size: 37px;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-align: center;
+  }
+  ul {
+    list-style: none;
+    margin: 37px 0 44px 0;
+    li {
+      font-size: 27px;
+      font-weight: 300;
+      margin-bottom: 35px;
+      span {
+        font-weight: bold;
+        font-size: 27px;
+      }
+    }
+  }
+  a {
+    text-align: center;
+  }
+}
+// ************************************************
+
 // ** craft acrylic block ***********************
 .craft-acrylic-block {
   padding: 40px 0;
@@ -1296,7 +1329,7 @@
     text-decoration: none;
     font-size: 14px;
     font-weight: 300;
-    padding: 15px;
+    padding: 15px 50px;
     margin-top: 15px;
     &:hover {
       background-color: #d0b9c2;
