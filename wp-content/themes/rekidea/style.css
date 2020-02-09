@@ -29,8 +29,7 @@ main {
   color: #fff;
   padding: 16px 50px; }
   .laser-btn-order:hover {
-    background: #9d1248;
-    box-shadow: 4px 4px 8px 0px rgba(82, 11, 27, 0.2);
+    background-color: #d0b9c2;
     transition: all 0.3s linear; }
 
 .fade {
@@ -401,7 +400,7 @@ main {
             font-size: 15px;
             text-transform: uppercase; }
             .nav-wrapper .top-menu-desktop #menu-top li.separate > .sub-menu > li > a:hover {
-              color: #c8a2c8; }
+              color: #6f0d33; }
           .nav-wrapper .top-menu-desktop #menu-top li.separate > .sub-menu > li > .sub-menu > li:hover a {
             color: #6f0d33; }
           .nav-wrapper .top-menu-desktop #menu-top li.separate > .sub-menu > li > .sub-menu > li > a {
@@ -466,6 +465,9 @@ main {
       text-decoration: none;
       font-size: 14px;
       font-weight: 300; }
+      .pictures-block-wrapper div a.button:hover {
+        background-color: #d0b9c2;
+        transition: all 0.3s linear; }
 
 .stands-block-wrapper {
   padding: 90px 0 90px 0;
@@ -505,6 +507,9 @@ main {
       text-decoration: none;
       font-size: 14px;
       font-weight: 300; }
+      .stands-block-wrapper .description-block a.button:hover {
+        background-color: #d0b9c2;
+        transition: all 0.3s linear; }
 
 .services-block-wrapper {
   background: url("img/services/services-background.png") center no-repeat;
@@ -696,6 +701,9 @@ main {
     font-weight: 300;
     padding: 15px;
     margin-top: 15px; }
+    .portfolio-block-wrapper a.button:hover {
+      background-color: #d0b9c2;
+      transition: all 0.3s linear; }
 
 .portfolio-block__header h2 {
   font-size: 49px;
@@ -764,7 +772,7 @@ main {
   padding: 10px 0 10px 15px; }
 
 .laser-top-banner__wrapper {
-  height: 510px;
+  height: 550px;
   background: #f7f7f7 url(img/laser-page/laser.png) 85% no-repeat; }
 
 .laser-top-banner {
@@ -1016,8 +1024,7 @@ main {
     padding: 15px;
     margin-top: 15px; }
     .laser-portfolio-block-wrapper .button:hover {
-      background-color: #9d1248;
-      box-shadow: 4px 4px 8px 0px rgba(82, 11, 27, 0.2);
+      background-color: #d0b9c2;
       transition: all 0.3s linear; }
 
 .laser-portfolio-block__header h2 {
@@ -1167,6 +1174,9 @@ main {
     justify-content: center;
     width: 185px;
     height: 50px; }
+    .questions-contact__content-contacts .button:hover {
+      background-color: #d0b9c2;
+      transition: all 0.3s linear; }
 
 .feedback-form-page-wrapper {
   padding: 30px 30px; }
@@ -1592,7 +1602,7 @@ footer {
       text-align: center; }
 
   .laser-cards-block {
-    padding: 0px 10px 30px 10px;
+    padding: 0 10px 30px 10px;
     justify-content: space-around; }
 
   .card-laser {
@@ -1641,8 +1651,6 @@ footer {
 
   .questions-contact__content-contacts {
     width: 55%; }
-    .questions-contact__content-contacts .button {
-      margin-top: 20px; }
 
   .questions-contact__wrapper {
     padding-top: 40px;
@@ -1839,7 +1847,7 @@ footer {
     font-weight: 300; }
 
   .why-us-block__content {
-    margin-top: 0px; }
+    margin-top: 0; }
     .why-us-block__content .services-list ul li {
       font-size: 12px; }
     .why-us-block__content .services-list .akk-menu-item {
@@ -1954,8 +1962,6 @@ footer {
 
   .questions-contact__content-contacts {
     width: 55%; }
-    .questions-contact__content-contacts .button {
-      margin-top: 20px; }
 
   .questions-contact__wrapper {
     padding-top: 40px;
@@ -1981,7 +1987,7 @@ footer {
       margin-right: 0; }
 
   .laser-cards-block {
-    padding: 0px 10px 30px 10px;
+    padding: 0 10px 30px 10px;
     justify-content: space-around; }
 
   .card-laser {

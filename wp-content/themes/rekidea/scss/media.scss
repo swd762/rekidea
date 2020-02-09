@@ -420,10 +420,10 @@
 }
 
   .questions-contact__content-contacts {
-
     width: 55%;
    .button {
      margin-top: 20px;
+
    }
   }
 
@@ -529,7 +529,7 @@
 
   // laser cards
   .laser-cards-block {
-    padding: 0px 10px 30px 10px;
+    padding: 0 10px 30px 10px;
     justify-content: space-around;
   }
   .card-laser {
@@ -598,9 +598,9 @@
  .questions-contact__content-contacts {
 
     width: 55%;
-    .button {
-      margin-top: 20px;
-    }
+    //.button {
+    //  margin-top: 20px;
+    //}
   }
   .questions-contact__wrapper {
     padding-top: 40px;
@@ -811,9 +811,11 @@
     width: 153px;
     flex-basis: 153px;
     margin-top: 10px;
+
     a img {
       width: 100%;
     }
+
     a h3 {
       font-size: 11px;
     }
@@ -823,17 +825,21 @@
   //Stands block
   .stands-block-wrapper {
     padding: 0;
+
     .icon-block {
       width: 300px;
       padding-bottom: 0;
     }
+
     .description-block {
       width: 300px;
       flex-basis: initial;
       padding: 0;
+
       h2 {
         font-size: 24px;
       }
+
       p {
         font-size: 12px;
       }
@@ -848,35 +854,44 @@
     padding-top: 45px;
     padding-bottom: 20px;
     margin-top: -10px;
+
     .services-block {
       width: auto;
+
       h2 {
         text-align: center;
         font-size: 24px;
         width: 320px;
       }
+
       h3 {
         font-size: 12px;
         text-align: center;
         padding: 0 5px;
       }
+
       .icon-cards {
         justify-content: center;
+
         .card {
           width: 145px;
           flex-basis: 145px;
           margin: 30px 20px 0 0;
+
           .icon {
             width: 70px;
             height: 70px;
+
             img {
               width: 50%;
               height: 50%;
             }
           }
+
           h4 {
             font-size: 12px;
           }
+
           p {
             font-size: 10px;
           }
@@ -895,6 +910,7 @@
       font-size: 24px;
       padding: 0 40px;
     }
+
     p {
       font-size: 12px;
       font-weight: 300;
@@ -902,28 +918,31 @@
     }
   }
   .why-us-block__content {
-    margin-top: 0px;
+    margin-top: 0;
+
     .services-list {
       ul li {
         font-size: 12px;
 
       }
+
       .akk-menu-item {
         padding: 15px 0;
       }
+
       .akk-menu-content {
         padding: 0 5px;
+
         img {
           margin-top: 5px;
         }
-        p {font-size: 12px}
+
+        p {
+          font-size: 12px
+        }
       }
     }
   }
-
-
-
-
 
 
   //***************************************
@@ -991,7 +1010,8 @@
   .portfolio-block__header {
     h2 {
       font-size: 24px;
-  }
+    }
+
     p {
       margin: 15px 0 15px 0;
       text-align: center;
@@ -1004,21 +1024,26 @@
       a {
         width: 50%;
         flex-basis: 50%;
+
         &:nth-child(2n+2) {
           margin-right: 0;
         }
+
         img {
           width: 100%;
         }
       }
     }
+
     .content-small {
       a {
         width: 25%;
         flex-basis: 25%;
+
         &:nth-child(4n+4) {
           margin-right: 0;
         }
+
         img {
           width: 100%;
         }
@@ -1032,11 +1057,13 @@
   .montage-block__content {
     padding: 34px 0 40px 20px;
     width: 100%;
+
     h3 {
       font-size: 41px;
       text-transform: uppercase;
       color: #fff;
     }
+
     p {
       color: #fff;
       font-size: 13px;
@@ -1051,6 +1078,7 @@
     h2 {
       font-size: 24px;
     }
+
     p {
       margin: 10px 0 15px 0;
       text-align: center;
@@ -1060,15 +1088,17 @@
 
 
   .footer__content {
-      display: none;
-   }
+    display: none;
+  }
 
   .footer_content_mobile {
     display: flex;
+
     .footer-nav {
       flex-basis: 50%;
       margin-top: 25px;
     }
+
     .footer-socials {
       margin-top: 25px;
     }
@@ -1086,9 +1116,10 @@
   .questions-contact__content-contacts {
 
     width: 55%;
-    .button {
-      margin-top: 20px;
-    }
+
+    //.button {
+    //  margin-top: 20px;
+    //}
   }
   .questions-contact__wrapper {
     padding-top: 40px;
@@ -1106,6 +1137,7 @@
       width: 100%;
       text-align: center;
     }
+
     p {
       width: 100%;
       text-align: center;
@@ -1116,6 +1148,7 @@
     width: 100%;
     flex-direction: column;
     align-items: center;
+
     h4 {
       font-size: 30px;
       margin-right: 0;
@@ -1126,7 +1159,7 @@
 
   // laser cards
   .laser-cards-block {
-    padding: 0px 10px 30px 10px;
+    padding: 0 10px 30px 10px;
     justify-content: space-around;
   }
   .card-laser {
@@ -1137,8 +1170,6 @@
   .laser-flag {
     font-size: 16px;
   }
-
-
 }
 
 @media (max-width: 360px) {
