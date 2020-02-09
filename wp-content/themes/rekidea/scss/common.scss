@@ -4,17 +4,22 @@ $background-gray: #efefef;
 
 
 // ** Common styles
-body {
-  overflow-x: hidden;
-}
-
-
 *, body, html {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: 'Roboto', sans-serif;
   font-size: 17px;
+}
+
+body {
+  overflow-x: hidden;
+  padding-top: 119px;
+  &.admin-bar {
+    .main-header {
+      top: 32px;
+    }
+  }
 }
 
 main {

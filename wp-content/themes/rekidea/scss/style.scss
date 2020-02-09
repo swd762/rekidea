@@ -12,11 +12,20 @@
 
 
 // header
+.main-header {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 99999;
+}
 .header-mobile {
   display: none;
   height: 37px;
   padding: 0 22px 0 30px;
   align-items: center;
+  background: #ffffff;
+  z-index: 999999;
+  position: relative;
   .header-mobile__logo {
     img {width: 120px;}
   }
@@ -55,11 +64,13 @@
 .top-menu-mobile {
   display: none;
   position: absolute;
-  top: 37px;
+  top: 0;
   background: #fff;
   width: 100% !important;
-  z-index: 10;
-  padding: 20px;
+  z-index: 999998;
+  padding: 57px 20px 20px 20px;
+  height: 100vh;
+  overflow: auto;
   ul {
     list-style: none;
   }
@@ -67,7 +78,7 @@
     color: #000000 !important;
     font-weight: 100 !important;
     text-transform: uppercase;
-    padding: 8px 5px;
+    padding: 8px 23px 8px 5px;
   }
   li {
     border-bottom: 1px solid #000000;
@@ -414,6 +425,12 @@
           padding: 0 20px;
         }
         &:first-child {
+          &:hover {
+            &>a {
+              background: #ffffff;
+              color: #6f0d33;
+            }
+          }
           &>a {
             padding: 0 7px 0 14px;
           }
@@ -425,8 +442,7 @@
         }
         &:hover {
           &>a {
-            background: #ffffff;
-            color: #6f0d33;
+            font-weight: bold;
           }
           &>.sub-menu {
             display: flex;

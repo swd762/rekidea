@@ -178,12 +178,18 @@
 @media (max-width: 1024px) {
   // Menu
   body {
+    padding-top: 37px;
     &.admin-bar {
       .top-menu-mobile {
-        top: 69px;
+        top: -31px;
+        padding-top: 89px;
+      }
+      .main-header {
+        top: 31px;
       }
     }
     &.menu-opened {
+      overflow: hidden;
       .top-menu-mobile {
         display: block;
       }
@@ -651,7 +657,13 @@
   body {
     &.admin-bar {
       .top-menu-mobile {
-        top: 83px;
+        top: -46px;
+        padding-top: 102px;
+      }
+      .main-header {
+        position: fixed;
+        width: 100%;
+        top: 46px;
       }
     }
   }

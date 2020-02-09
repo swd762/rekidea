@@ -25,7 +25,7 @@ wp_head();
         $query->the_post();
     }
   ?>
-     <header>
+     <header class="main-header">
          <div class="header">
              <div class="container header__top-content">
                 <div class="header__logo">
