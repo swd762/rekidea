@@ -93,38 +93,91 @@ wp_head();
                 </div>
 <!--                 script for modal on phone number click-->
                  <script>
-                     jQuery(function($) {
-                         $('.header__phone-logo').on('click', function(event) {
-                             event.preventDefault();
-                             $('.header__phone-logo').toggleClass('header__phone-logo-arrow');
-                            if (($('.header__phone-modal').is('.active')) ||
-                                ($('.header__feedback-modal').is('.active')) )
-                            {
-                                $('.header__phone-modal').removeClass('active');
-                                $('.fade').removeClass('active');
-                                $('.header__feedback-modal').removeClass('active');
-                            }
-                            else {
+                     let phoneModal = document.querySelector('.header__phone-modal'),
+                         feedbackModal = document.querySelector('.header__feedback-modal'),
+                         fade = document.querySelector('.fade'),
+                         phoneBlock = document.querySelector('#phone-modal'),
+                         phoneLogo = document.querySelector('.header__phone-logo');
 
-                                $('.header__phone-modal').addClass('active');
-                                $('.fade').addClass('active');
-                                }
+                     document.querySelector('.header__phone-logo').addEventListener('click', function (e) {
+                         e.preventDefault();
+                         e.target.classList.toggle('header__phone-logo-arrow');
 
-                         });
+                         if(phoneModal.classList.contains('active') || feedbackModal.classList.contains('active')) {
+                             phoneModal.classList.remove('active');
+                             feedbackModal.classList.remove('active');
+                             fade.classList.remove('active');
+                         } else {
+                             phoneModal.classList.add('active');
+                             fade.classList.add('active');
+                             phoneBlock.classList.add('active');
+                         }
+                     });
 
-                         $('#feedback-phone').on('click', function (e) {
-                            e.preventDefault();
-                             $('.header__feedback-modal').addClass('active');
-                             $('.fade').addClass('active');
-                             $('.header__phone-modal').removeClass('active');
-                         });
+                     document.querySelector('#feedback-phone').addEventListener('click', function (e) {
+                         e.preventDefault();
+                         phoneModal.classList.remove('active');
+                         feedbackModal.classList.add('active');
+                         fade.classList.add('active');
+                         phoneBlock.classList.add('active');
+                     });
 
-                         $('.feedback-link').on('click', function (e) {
-                            e.preventDefault();
-                            $('.header__feedback-modal').removeClass('active');
-                             $('.fade').addClass('active');
-                            $('.header__phone-modal').addClass('active');
-                         });
+                     document.querySelector('.feedback-link').addEventListener('click', function (e) {
+                         e.preventDefault();
+                         phoneModal.classList.add('active');
+                         feedbackModal.classList.remove('active');
+                         fade.classList.add('active');
+                         phoneBlock.classList.add('active');
+                     });
+
+                     document.addEventListener('click', e => {
+                         let target = e.target;
+                         let itsPhone = target == phoneBlock || phoneBlock.contains(target);
+                         let itsFade = target == fade;
+                         let phoneIsActive = phoneBlock.classList.contains('active');
+
+                         if ((!itsPhone || itsFade) && phoneIsActive) {
+                             phoneModal.classList.remove('active');
+                             feedbackModal.classList.remove('active');
+                             fade.classList.remove('active');
+                             phoneBlock.classList.remove('active');
+                             phoneLogo.classList.remove('header__phone-logo-arrow');
+                         }
+                     })
+
+
+                     // jQuery(function($) {
+                     //     $('.header__phone-logo').on('click', function(event) {
+                     //         event.preventDefault();
+                     //         $('.header__phone-logo').toggleClass('header__phone-logo-arrow');
+                     //        if (($('.header__phone-modal').is('.active')) ||
+                     //            ($('.header__feedback-modal').is('.active')) )
+                     //        {
+                     //            $('.header__phone-modal').removeClass('active');
+                     //            $('.fade').removeClass('active');
+                     //            $('.header__feedback-modal').removeClass('active');
+                     //        }
+                     //        else {
+                     //
+                     //            $('.header__phone-modal').addClass('active');
+                     //            $('.fade').addClass('active');
+                     //            }
+                     //
+                     //     });
+                     //
+                     //     $('#feedback-phone').on('click', function (e) {
+                     //        e.preventDefault();
+                     //         $('.header__feedback-modal').addClass('active');
+                     //         $('.fade').addClass('active');
+                     //         $('.header__phone-modal').removeClass('active');
+                     //     });
+                     //
+                     //     $('.feedback-link').on('click', function (e) {
+                     //        e.preventDefault();
+                     //        $('.header__feedback-modal').removeClass('active');
+                     //         $('.fade').addClass('active');
+                     //        $('.header__phone-modal').addClass('active');
+                     //     });
 
                          // $(document).on('click', function (e){
                          //     var div1 = $(".header__phone-modal");
@@ -141,7 +194,7 @@ wp_head();
                          //     //     $('.fade').removeClass('active');
                          //     // }
                          // });
-                     });
+                     // });
                  </script>
 <!--******************************************************************-->
                 <div class="header__email-wrapper">
