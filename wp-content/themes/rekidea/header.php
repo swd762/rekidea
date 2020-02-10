@@ -47,7 +47,6 @@ wp_head();
                         +7 (495) 369-20-79
                     </a>
 <!--                    phone modal-->
-<!--                    <div class="fade"></div>-->
                     <div class="header__phone-modal">
 
                             <div class="phone-bold">
