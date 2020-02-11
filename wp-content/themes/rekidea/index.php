@@ -83,7 +83,7 @@ get_header();
                 </div>
                 <div class="card wow zoomIn">
                     <div class="icon">
-                        <img src="<?= get_template_directory_uri() ?>/img/services/factory.svg" alt="" style="width: 79px">
+                        <img src="<?= get_template_directory_uri() ?>/img/services/factory.png" alt="">
                     </div>
                     <h4>Производство</h4>
                     <p>Собственная производственная база позволяет нам в короткие сроки выполнять
@@ -156,7 +156,7 @@ get_header();
                                 Монтажная бригада доставит и установит вашу рекламу.
                             </p>
                         </li>
-                        <li class="akk-menu-item">Собственной производство</li>
+                        <li class="akk-menu-item">Собственное производство</li>
                         <li  class="akk-menu-content"> <img src="<?= get_template_directory_uri()?>/img/why-us/banner2.png" alt="">
                             <p>Наше производство оборудовано всем необходимым для быстрого и качественного
                                 изготовления любой рекламной продукции. Лазерная и фрезерная резка на станках ЧПУ,
@@ -208,7 +208,7 @@ get_header();
                 <div class="services-list-desktop">
                     <ul class="dtop-menu">
                         <li class="dtop-menu-item btn-checked">ПОЛНЫЙ ЦИКЛ ПРОИЗВОДСТВА РЕКЛАМЫ</li>
-                        <li class="dtop-menu-item ">Собственной производство</li>
+                        <li class="dtop-menu-item ">Собственное производство</li>
                         <li class="dtop-menu-item ">реальные сроки по договору</li>
                         <li class="dtop-menu-item ">Гарантия</li>
                         <li class="dtop-menu-item ">демократичные цены</li>
@@ -423,17 +423,15 @@ get_header();
                <li><img src="<?= get_template_directory_uri()?>/img/our-partners/logo-gorzdrav.png" /></li>
                <li><img src="<?= get_template_directory_uri()?>/img/our-partners/logo-mars.png" /></li>
                <li><img src="<?= get_template_directory_uri()?>/img/our-partners/logo-sletatru.png" /></li>
-               <li><img src="<?= get_template_directory_uri()?>/img/our-partners/azimut.png" /></li>
-               <li><img src="<?= get_template_directory_uri()?>/img/our-partners/botsadmgu.png" /></li>
-               <li><img src="<?= get_template_directory_uri()?>/img/our-partners/doshirak.png" /></li>
-               <li><img src="<?= get_template_directory_uri()?>/img/our-partners/eapteka-logo.png" /></li>
-               <li><img src="<?= get_template_directory_uri()?>/img/our-partners/essence.png" /></li>
-               <li><img src="<?= get_template_directory_uri()?>/img/our-partners/inmarko.png" /></li>
-               <li><img src="<?= get_template_directory_uri()?>/img/our-partners/ladycollection.png" /></li>
-               <li><img src="<?= get_template_directory_uri()?>/img/our-partners/ligastavok.png" /></li>
-               <li><img src="<?= get_template_directory_uri()?>/img/our-partners/logo-bruka.svg" /></li>
-
-
+<!--               <li><img src="--><?//= get_template_directory_uri()?><!--/img/our-partners/azimut.png" /></li>-->
+<!--               <li><img src="--><?//= get_template_directory_uri()?><!--/img/our-partners/botsadmgu.png" /></li>-->
+<!--               <li><img src="--><?//= get_template_directory_uri()?><!--/img/our-partners/doshirak.png" /></li>-->
+<!--               <li><img src="--><?//= get_template_directory_uri()?><!--/img/our-partners/eapteka-logo.png" /></li>-->
+<!--               <li><img src="--><?//= get_template_directory_uri()?><!--/img/our-partners/essence.png" /></li>-->
+<!--               <li><img src="--><?//= get_template_directory_uri()?><!--/img/our-partners/inmarko.png" /></li>-->
+<!--               <li><img src="--><?//= get_template_directory_uri()?><!--/img/our-partners/ladycollection.png" /></li>-->
+<!--               <li><img src="--><?//= get_template_directory_uri()?><!--/img/our-partners/ligastavok.png" /></li>-->
+<!--               <li><img src="--><?//= get_template_directory_uri()?><!--/img/our-partners/logo-bruka.svg" /></li>-->
            </ul>
        </div>
 </div>

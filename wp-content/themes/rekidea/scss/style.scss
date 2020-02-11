@@ -719,8 +719,8 @@
         justify-content: center;
         align-items: center;
         img {
-          width: min-content;
-          height: min-content;
+          width: 60%;
+          //height: min-content;
         }
       }
     }
@@ -759,6 +759,7 @@
       padding-right: 30px;
     }
     ul li {
+      //color: #6f0d33;
     }
   }
   .services-content {
@@ -783,6 +784,10 @@
     text-decoration: underline;
     text-transform: uppercase;
     cursor: pointer;
+    color: #6f0d33;
+    &:hover {
+      font-weight: bold;
+    }
   }
 }
 
@@ -1709,6 +1714,7 @@ footer {
   li a {
     display: flex;
     align-items: center;
+    padding: 5px 0 0 0;
   }
   img {
     margin-right: 10px;
