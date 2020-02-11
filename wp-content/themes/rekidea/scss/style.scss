@@ -68,32 +68,48 @@
   background: #fff;
   width: 100% !important;
   z-index: 999998;
-  padding: 57px 20px 20px 20px;
+  padding: 57px 0 20px;
   height: 100vh;
   overflow: auto;
   ul {
     list-style: none;
   }
   a {
-    color: #000000 !important;
+    color: #6f0d33 !important;
     font-weight: 100 !important;
     text-transform: uppercase;
     padding: 8px 23px 8px 5px;
+    border-bottom: 1px solid #959595;
   }
   li {
-    border-bottom: 1px solid #000000;
     position: relative;
+    padding: 0 20px;
     &:after {
       content: '';
       display: block;
       position: absolute;
       top: 4px;
-      right: 5px;
+      right: 24px;
       background: url('img/arrow-right.png');
       height: 80%;
       width: 15px;
       background-size: contain;
       background-repeat: no-repeat;
+    }
+    &:last-child {
+      padding-bottom: 40px;
+    }
+    &.dark {
+      background: #e3d0d6;
+    }
+  }
+  .sub-menu {
+    li {
+      padding-right: 0;
+      padding-bottom: 0;
+      &:after {
+        right: 5px;
+      }
     }
   }
 }
