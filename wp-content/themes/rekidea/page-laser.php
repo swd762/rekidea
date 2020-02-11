@@ -35,11 +35,12 @@ get_header();
                 Организуем доставку и монтаж
             </p>
 
-            <p style="margin-bottom: 30px;">
+            <p style="margin-bottom: 35px;">
                 <img src="<?= get_template_directory_uri()?>/img/laser-page/check-box.png" alt="">
                 Срочные заказы без наценок
             </p>
             <span class="laser-flag">рабочее поле 900х1300мм</span>
+            <img src="<?= get_template_directory_uri()?>/img/laser-page/laser.png" alt="" class="laser-banner-logo-1">
         </div>
 
         <img src="<?= get_template_directory_uri()?>/img/laser-page/laser.png" alt="" class="laser-banner-logo">
@@ -314,21 +315,22 @@ get_header();
     </div>
     <div class="laser-portfolio-block__content">
         <div class="content-big">
-            <a href="<?php the_field('portfolio-image1', get_the_ID())?>" class="single_image">
-                <img src="<?= get_template_directory_uri()?>/img/portfolio-block/gal-big-1.png" alt="">
+            <a href="<?= get_template_directory_uri()?>/img/portfolio-laser/1.png" class="single_image">
+                <img src="<?= get_template_directory_uri()?>/img/portfolio-laser/1-1.png" alt="">
             </a>
-            <a href="<?php the_field('portfolio-image2', get_the_ID())?>" class="single_image">
-                <img src="<?= get_template_directory_uri()?>/img/portfolio-block/gal-big-2.png" alt="">
+            <a href="<?= get_template_directory_uri()?>/img/portfolio-laser/2.png" class="single_image">
+                <img src="<?= get_template_directory_uri()?>/img/portfolio-laser/2-1.png" alt="">
             </a>
-            <a href="<?php the_field('portfolio-image3', get_the_ID())?>" class="single_image hidden-mobile">
-                <img src="<?= get_template_directory_uri()?>/img/portfolio-block/gal-big-3.png" alt="">
+            <a href="<?= get_template_directory_uri()?>/img/portfolio-laser/3.png" class="single_image">
+                <img src="<?= get_template_directory_uri()?>/img/portfolio-laser/3-1.png" alt="">
             </a>
-            <a href="<?php the_field('portfolio-image1', get_the_ID())?>" class="single_image no-mobile-portfolio">
-                <img src="<?= get_template_directory_uri()?>/img/portfolio-block/gal-big-1.png" alt="">
+            <a href="<?= get_template_directory_uri()?>/img/portfolio-laser/4.png" class="single_image">
+                <img src="<?= get_template_directory_uri()?>/img/portfolio-laser/4-1.png" alt="">
             </a>
-            <a href="<?php the_field('portfolio-image2', get_the_ID())?>" class="single_image no-mobile-portfolio">
-                <img src="<?= get_template_directory_uri()?>/img/portfolio-block/gal-big-2.png" alt="">
+            <a href="<?= get_template_directory_uri()?>/img/portfolio-laser/5.png" class="single_image">
+                <img src="<?= get_template_directory_uri()?>/img/portfolio-laser/5-1.png" alt="">
             </a>
+
         </div>
     </div>
     <a href="/404" class="button">Посмотреть наши работы</a>

@@ -72,7 +72,12 @@
   }
 // laser banner
   .laser-top-banner__wrapper {
-    background: #f7f7f7 url(img/laser-page/laser.png) 105% no-repeat;
+    //background: #f7f7f7 url(img/laser-page/laser.png) 105% no-repeat;
+    .laser-banner-logo-1 {
+      position: absolute;
+      right: -135px;
+      top: 40px;
+    }
 
   }
 
@@ -376,13 +381,17 @@
     }
   }
 // laser top banner ************************
-.laser-top-banner__wrapper {
-  background: #f7f7f7;
-  height: initial;
-}
-.laser-banner-logo {
-  display: block;
-}
+  .laser-top-banner__wrapper {
+    background: #f7f7f7;
+    //height: initial;
+  }
+  .laser-banner-logo {
+    display: block;
+  }
+  .laser-banner-logo-1 {
+    display: none;
+  }
+
   .laser-top-banner {
     h3 {
       width: 80%;
@@ -1087,7 +1096,29 @@
     }
   }
   // ****************************************
+  .laser-banner-logo {
+    width: 232px;
+    height: 242px;
+  }
+  .laser-top-banner__wrapper {
+    padding-bottom: 20px;
+  }
+   .laser-top-banner {
+     h1 {
+       font-size: 24px;
+     }
+     h3 {
+       font-size: 13px;
+     }
+     p {
+       font-size: 13px;
+       img {
+         width: 15px;
+         height: 10px;
+       }
+     }
 
+   }
   // montage block
 
   .montage-block__content {
@@ -1204,7 +1235,7 @@
 
   // ****************************
   .laser-flag {
-    font-size: 16px;
+    font-size: 14px;
   }
 }
 

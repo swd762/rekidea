@@ -97,30 +97,40 @@ main {
   background: #fff;
   width: 100% !important;
   z-index: 999998;
-  padding: 57px 20px 20px 20px;
+  padding: 57px 0 20px;
   height: 100vh;
   overflow: auto; }
   .top-menu-mobile ul {
     list-style: none; }
   .top-menu-mobile a {
-    color: #000000 !important;
+    color: #6f0d33 !important;
     font-weight: 100 !important;
     text-transform: uppercase;
-    padding: 8px 23px 8px 5px; }
+    padding: 8px 23px 8px 5px;
+    border-bottom: 1px solid #959595; }
   .top-menu-mobile li {
-    border-bottom: 1px solid #000000;
-    position: relative; }
+    position: relative;
+    padding: 0 20px; }
     .top-menu-mobile li:after {
       content: '';
       display: block;
       position: absolute;
       top: 4px;
-      right: 5px;
+      right: 24px;
       background: url("img/arrow-right.png");
       height: 80%;
       width: 15px;
       background-size: contain;
       background-repeat: no-repeat; }
+    .top-menu-mobile li:last-child {
+      padding-bottom: 40px; }
+    .top-menu-mobile li.dark {
+      background: #e3d0d6; }
+  .top-menu-mobile .sub-menu li {
+    padding-right: 0;
+    padding-bottom: 0; }
+    .top-menu-mobile .sub-menu li:after {
+      right: 5px; }
 
 .header {
   height: 79px;
@@ -647,7 +657,16 @@ main {
 .btn-checked {
   background-color: #6f0d33;
   color: #fff !important;
-  text-decoration: none !important; }
+  text-decoration: none !important;
+  position: relative; }
+  .btn-checked::after {
+    content: "";
+    background: url("img/why-us/triangle.png");
+    position: absolute;
+    width: 8px;
+    height: 10px;
+    right: 15px;
+    top: 24px; }
 
 .three-steps-block-wrapper {
   background-color: #dbd9eb; }
@@ -783,31 +802,35 @@ main {
   padding: 10px 0 10px 15px; }
 
 .laser-top-banner__wrapper {
-  height: 550px;
-  background: #f7f7f7 url(img/laser-page/laser.png) 85% no-repeat; }
+  background: #f7f7f7; }
 
 .laser-top-banner {
   padding-left: 25px;
   padding-top: 35px;
-  padding-bottom: 50px; }
+  padding-bottom: 50px;
+  position: relative; }
   .laser-top-banner h1 {
-    font-size: 35px;
+    font-size: 37px;
     font-weight: bold;
     color: #6f0d33;
     text-transform: uppercase; }
   .laser-top-banner h3 {
-    width: 45%;
+    width: 35%;
     color: #6f0d33;
-    font-size: 19px;
+    font-size: 20px;
     font-weight: 400;
-    margin-top: 20px; }
+    margin-top: 18px;
+    margin-bottom: 40px; }
   .laser-top-banner p {
-    width: 55%;
-    font-size: 19px;
-    margin-top: 32px; }
+    width: 60%;
+    font-size: 20px;
+    margin-top: 25px;
+    display: flex;
+    align-items: baseline; }
     .laser-top-banner p img {
       width: 23px;
-      height: 16px; }
+      height: 16px;
+      margin-right: 5px; }
 
 .laser-flag {
   background-color: #914764;
@@ -828,6 +851,11 @@ main {
 .laser-banner-logo {
   display: none;
   margin: 0 auto; }
+
+.laser-banner-logo-1 {
+  position: absolute;
+  right: 0;
+  top: 40px; }
 
 .laser-cards-block {
   display: flex;
@@ -853,7 +881,7 @@ main {
     padding: 0 5px;
     font-weight: 400; }
   .card-laser p {
-    font-size: 10px;
+    font-size: 17px;
     font-weight: 300;
     text-align: center;
     color: #000;
@@ -891,7 +919,8 @@ main {
     transform: translate(-50%, -50%); }
 
 .video-bg-container-overlay {
-  background-color: rgba(232, 20, 195, 0.6);
+  background: url("img/quality-laser/fon.png") center no-repeat;
+  opacity: 0.5;
   position: absolute;
   width: 100%;
   height: 100%; }
@@ -970,7 +999,8 @@ main {
 
 .acryl-cutting-block__wrapper {
   min-height: 312px;
-  background: url("img/acrylic/banner-acrylic.jpg") center; }
+  background: url("img/acrylic/banner-acrylic.jpg") center;
+  background-size: cover; }
 
 .cutting-acrylic-logo {
   display: none; }
@@ -990,7 +1020,8 @@ main {
 
 .wood-cutting-block__wrapper {
   height: 318px;
-  background: url("img/wood/banner-wood.jpg") center; }
+  background: url("img/wood/banner-wood.jpg") center;
+  background-size: cover; }
 
 .cutting-wood-logo {
   display: none; }
@@ -1005,7 +1036,8 @@ main {
     margin-bottom: 50px; }
 
 .montage-block__wrapper {
-  background: url("img/montage/montage.jpg") center; }
+  background: url("img/montage/montage.jpg") center;
+  background-size: cover; }
 
 .montage-block__content {
   padding: 67px 0 100px 20px;
@@ -1371,8 +1403,10 @@ footer {
     .dtop-menu-content img {
       width: 100%; }
 
-  .laser-top-banner__wrapper {
-    background: #f7f7f7 url(img/laser-page/laser.png) 105% no-repeat; }
+  .laser-top-banner__wrapper .laser-banner-logo-1 {
+    position: absolute;
+    right: -135px;
+    top: 40px; }
 
   .laser-cards-block {
     padding: 10px 35px 30px 35px; } }
@@ -1561,11 +1595,13 @@ footer {
       text-align: center; }
 
   .laser-top-banner__wrapper {
-    background: #f7f7f7;
-    height: initial; }
+    background: #f7f7f7; }
 
   .laser-banner-logo {
     display: block; }
+
+  .laser-banner-logo-1 {
+    display: none; }
 
   .laser-top-banner h3 {
     width: 80%; }
@@ -1992,6 +2028,23 @@ footer {
     .portfolio-block__content .content-small a img {
       width: 100%; }
 
+  .laser-banner-logo {
+    width: 232px;
+    height: 242px; }
+
+  .laser-top-banner__wrapper {
+    padding-bottom: 20px; }
+
+  .laser-top-banner h1 {
+    font-size: 24px; }
+  .laser-top-banner h3 {
+    font-size: 13px; }
+  .laser-top-banner p {
+    font-size: 13px; }
+    .laser-top-banner p img {
+      width: 15px;
+      height: 10px; }
+
   .montage-block__content {
     padding: 34px 0 40px 20px;
     width: 100%; }
@@ -2064,7 +2117,7 @@ footer {
     flex-basis: 145px; }
 
   .laser-flag {
-    font-size: 16px; } }
+    font-size: 14px; } }
 @media (max-width: 360px) {
   .craft-cards-wrapper {
     padding: 0; } }
