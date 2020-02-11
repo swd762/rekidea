@@ -107,10 +107,12 @@ wp_head();
                              phoneModal.classList.remove('active');
                              feedbackModal.classList.remove('active');
                              fade.classList.remove('active');
+                             phoneLogo.classList.remove('header__phone-logo-bkg');
                          } else {
                              phoneModal.classList.add('active');
                              fade.classList.add('active');
                              phoneBlock.classList.add('active');
+                             phoneLogo.classList.add('header__phone-logo-bkg');
                          }
                      });
 
@@ -142,6 +144,7 @@ wp_head();
                              fade.classList.remove('active');
                              phoneBlock.classList.remove('active');
                              phoneLogo.classList.remove('header__phone-logo-arrow');
+                             phoneLogo.classList.remove('header__phone-logo-bkg');
                          }
                      })
 

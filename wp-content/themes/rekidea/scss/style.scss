@@ -156,7 +156,7 @@
 .header__phone-wrapper {
   position: relative;
   display: flex;
-  flex-basis: 185px;
+  flex-basis: 195px;
   align-items: center;
   .logo {
     width: 10px;
@@ -177,6 +177,8 @@
   .header__phone-logo {
     display: flex;
     align-items: center;
+    padding: 5px;
+    border-radius: 3px;
     &::after {
       content: '';
       display: inline-block;
@@ -188,8 +190,17 @@
       transform: rotate(180deg);
       transition: transform 0.3s;
     }
-
+    &:hover {
+      background-color: #d0b9c2;
+      transition: all 0.3s linear;
+    }
   }
+
+  .header__phone-logo-bkg {
+    background-color: #d0b9c2;
+  }
+
+
   .header__phone-logo-arrow {
     &::after {
       content: '';
@@ -318,7 +329,7 @@
     text-align: center;
     &:hover {
       input {
-        background-color:lighten($red,10%);
+        background-color:#d0b9c2;
         transition: background-color 0.3s linear;
       }
 

@@ -135,7 +135,11 @@ get_header();
         <div class="why-us-block">
             <div class="why-us-block__header">
                 <h2>почему выбирают именно нас</h2>
-                <p>Покажем больше выгод, группируя контент.. Максимум 2-3 предложения на мотивацию.</p>
+                <p>Наша компания влaдеет сoбственными пpoизвoдственными и технoлoгическими мoщнoстями,
+                    paспoлaгaет тaлaнтливыми дизaйнеpaми, штaтoм менеджеров, технoлoгoв и мaстеpoв. 
+                    Ответственный подход к работе, внимание и разумные цены – вот то, что отличает нас и дает
+                    возможность помогать вам, достигать высоких целей. Мы всегда готовы помочь вам в создании
+                    положительного имиджа вашей компании.</p>
             </div>
             <div class="why-us-block__content">
                 <div class="services-list">
@@ -419,6 +423,17 @@ get_header();
                <li><img src="<?= get_template_directory_uri()?>/img/our-partners/logo-gorzdrav.png" /></li>
                <li><img src="<?= get_template_directory_uri()?>/img/our-partners/logo-mars.png" /></li>
                <li><img src="<?= get_template_directory_uri()?>/img/our-partners/logo-sletatru.png" /></li>
+               <li><img src="<?= get_template_directory_uri()?>/img/our-partners/azimut.png" /></li>
+               <li><img src="<?= get_template_directory_uri()?>/img/our-partners/botsadmgu.png" /></li>
+               <li><img src="<?= get_template_directory_uri()?>/img/our-partners/doshirak.png" /></li>
+               <li><img src="<?= get_template_directory_uri()?>/img/our-partners/eapteka-logo.png" /></li>
+               <li><img src="<?= get_template_directory_uri()?>/img/our-partners/essence.png" /></li>
+               <li><img src="<?= get_template_directory_uri()?>/img/our-partners/inmarko.png" /></li>
+               <li><img src="<?= get_template_directory_uri()?>/img/our-partners/ladycollection.png" /></li>
+               <li><img src="<?= get_template_directory_uri()?>/img/our-partners/ligastavok.png" /></li>
+               <li><img src="<?= get_template_directory_uri()?>/img/our-partners/logo-bruka.svg" /></li>
+
+
            </ul>
        </div>
 </div>

@@ -171,7 +171,7 @@ main {
 .header__phone-wrapper {
   position: relative;
   display: flex;
-  flex-basis: 185px;
+  flex-basis: 195px;
   align-items: center; }
   .header__phone-wrapper .logo {
     width: 10px;
@@ -187,7 +187,9 @@ main {
     text-decoration: none; }
   .header__phone-wrapper .header__phone-logo {
     display: flex;
-    align-items: center; }
+    align-items: center;
+    padding: 5px;
+    border-radius: 3px; }
     .header__phone-wrapper .header__phone-logo::after {
       content: '';
       display: inline-block;
@@ -198,6 +200,11 @@ main {
       margin-top: 3px;
       transform: rotate(180deg);
       transition: transform 0.3s; }
+    .header__phone-wrapper .header__phone-logo:hover {
+      background-color: #d0b9c2;
+      transition: all 0.3s linear; }
+  .header__phone-wrapper .header__phone-logo-bkg {
+    background-color: #d0b9c2; }
   .header__phone-wrapper .header__phone-logo-arrow::after {
     content: '';
     display: inline-block;
@@ -294,7 +301,7 @@ main {
   .header__feedback-modal .feedback-submit {
     text-align: center; }
     .header__feedback-modal .feedback-submit:hover input {
-      background-color: #9d1248;
+      background-color: #d0b9c2;
       transition: background-color 0.3s linear; }
     .header__feedback-modal .feedback-submit input {
       border: 0;
