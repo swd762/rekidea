@@ -1858,6 +1858,10 @@ footer {
   main {
     overflow: hidden; }
 
+  .er404 {
+    width: 250px !important;
+    height: 330px !important; }
+
   .questions-contact__content-contacts {
     width: 55%; }
 
@@ -1891,7 +1895,7 @@ footer {
     font-size: 10px; }
 
   .quality-video-block {
-    padding: 100px 20px 120px 20px; }
+    padding: 100px 20px 120px 30px; }
     .quality-video-block h3 {
       color: #fffefe;
       font-size: 32px;
@@ -1969,6 +1973,9 @@ footer {
     margin-top: 15px;
     margin-bottom: 10px;
     width: 55%; }
+
+  .recunstruction-mobile-wrapper {
+    margin-bottom: 30; }
 
   .feedback-form-page {
     width: 100%;
@@ -2190,16 +2197,25 @@ footer {
   main {
     overflow: hidden; }
 
+  .recunstruction-mobile-wrapper {
+    margin-bottom: 0; }
+
   .reconstruction-mobile__content img {
     width: 100%; }
 
   .questions-contact__content-contacts {
     width: 55%; }
 
+  .err404 {
+    overflow: initial !important; }
+
   .questions-contact__wrapper {
     margin: 10px 5px;
     padding: 15px;
     overflow: hidden; }
+    .questions-contact__wrapper .er404 {
+      width: 200px !important;
+      height: 250px !important; }
     .questions-contact__wrapper .question-operator {
       position: absolute;
       bottom: 0;
