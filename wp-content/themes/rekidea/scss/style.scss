@@ -1216,7 +1216,7 @@
   }
   ul {
     list-style: none;
-    margin: 37px 0 44px 0;
+    margin: 37px 0 15px 0;
     li {
       font-size: 27px;
       font-weight: 300;
@@ -1349,6 +1349,10 @@
   }
 }
 
+.mobile-flexi {
+  display: none;
+}
+
 //*****************************************************
 // OLaser partners block
 .flexi-carousel-partners-laser__wrapper {
@@ -1376,7 +1380,18 @@
       max-width: 90%
     }
   }
-
+}
+#flexi-carousel-partners-laser-mobile {
+  height: 176px;
+  .nbs-flexisel-item {
+    display: flex;
+    height: inherit;
+    justify-content: center;
+    align-items: center;
+    img {
+      max-width: 90%
+    }
+  }
 }
 // **************************************
 

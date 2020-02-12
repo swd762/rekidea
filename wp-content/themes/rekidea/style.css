@@ -961,7 +961,7 @@ main {
     text-align: center; }
   .laser-price-block ul {
     list-style: none;
-    margin: 37px 0 44px 0; }
+    margin: 37px 0 15px 0; }
     .laser-price-block ul li {
       font-size: 27px;
       font-weight: 300;
@@ -1064,6 +1064,9 @@ main {
     text-transform: uppercase;
     color: #6f0d33; }
 
+.mobile-flexi {
+  display: none; }
+
 .flexi-carousel-partners-laser__wrapper {
   height: 176px;
   background: #f7f7f7; }
@@ -1083,6 +1086,16 @@ main {
     justify-content: center;
     align-items: center; }
     #flexi-carousel-partners-laser .nbs-flexisel-item img {
+      max-width: 90%; }
+
+#flexi-carousel-partners-laser-mobile {
+  height: 176px; }
+  #flexi-carousel-partners-laser-mobile .nbs-flexisel-item {
+    display: flex;
+    height: inherit;
+    justify-content: center;
+    align-items: center; }
+    #flexi-carousel-partners-laser-mobile .nbs-flexisel-item img {
       max-width: 90%; }
 
 .laser-portfolio-block-wrapper {
@@ -2162,6 +2175,12 @@ footer {
     .montage-block__content p {
       color: #fff;
       font-size: 13px; }
+
+  .mobile-flexi {
+    display: block; }
+
+  .desk-flexi {
+    display: none; }
 
   .laser-portfolio-block-wrapper {
     padding: 10px 0 35px 0; }

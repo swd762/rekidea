@@ -269,29 +269,51 @@ get_header();
 <!--************ laser partners block**********************-->
 <div class="laser-partners-block-wrapper">
     <div class="container">
-        <h3>Нам доверяют крупные компании.
-            Мы предлагаем высокое качество для всех.</h3>
+        <h3>Нам доверяют крупные компании<br>
+            Мы предлагаем высокое качество для всех</h3>
     </div>
 </div>
 <!--*******************************************************-->
 <!--slide carousel**************-->
-<div class="flexi-carousel-partners-laser__wrapper">
+<div class="flexi-carousel-partners-laser__wrapper desk-flexi">
     <div class="container">
     <ul id="flexi-carousel-partners-laser">
-        <li><img src="<?= get_template_directory_uri()?>/img/our-partners/elis.png" /></li>
-        <li><img src="<?= get_template_directory_uri()?>/img/our-partners/burger.png" /></li>
-        <li><img src="<?= get_template_directory_uri()?>/img/our-partners/mars-color.png" /></li>
-        <li><img src="<?= get_template_directory_uri()?>/img/our-partners/gorzdrav.png" /></li>
-        <li><img src="<?= get_template_directory_uri()?>/img/our-partners/Mosgortrans-color.png" /></li>
+        <li><img src="<?= get_template_directory_uri()?>/img/our-partners/group-1.png" /></li>
+        <li><img src="<?= get_template_directory_uri()?>/img/our-partners/group-2.png" /></li>
+        <li><img src="<?= get_template_directory_uri()?>/img/our-partners/group-3.png" /></li>
+        <li><img src="<?= get_template_directory_uri()?>/img/our-partners/group-4.png" /></li>
+        <li><img src="<?= get_template_directory_uri()?>/img/our-partners/group-5.png" /></li>
+        <li><img src="<?= get_template_directory_uri()?>/img/our-partners/group-6.png" /></li>
+        <li><img src="<?= get_template_directory_uri()?>/img/our-partners/group-7.png" /></li>
     </ul>
     </div>
 </div>
+<div class="flexi-carousel-partners-laser__wrapper mobile-flexi">
+        <div class="container">
+            <ul id="flexi-carousel-partners-laser-mobile">
+                <li><img src="<?= get_template_directory_uri()?>/img/our-partners/color/83.png" /></li>
+                <li><img src="<?= get_template_directory_uri()?>/img/our-partners/color/84.png" /></li>
+                <li><img src="<?= get_template_directory_uri()?>/img/our-partners/color/85.png" /></li>
+                <li><img src="<?= get_template_directory_uri()?>/img/our-partners/color/86.png" /></li>
+                <li><img src="<?= get_template_directory_uri()?>/img/our-partners/color/87.png" /></li>
+                <li><img src="<?= get_template_directory_uri()?>/img/our-partners/color/88.png" /></li>
+<!--                <li><img src="--><?//= get_template_directory_uri()?><!--/img/our-partners/gorzdrav.png" /></li>-->
+<!--                <li><img src="--><?//= get_template_directory_uri()?><!--/img/our-partners/group-3.png" /></li>-->
+<!--                <li><img src="--><?//= get_template_directory_uri()?><!--/img/our-partners/group-4.png" /></li>-->
+<!--                <li><img src="--><?//= get_template_directory_uri()?><!--/img/our-partners/group-5.png" /></li>-->
+<!--                <li><img src="--><?//= get_template_directory_uri()?><!--/img/our-partners/group-6.png" /></li>-->
+<!--                <li><img src="--><?//= get_template_directory_uri()?><!--/img/our-partners/group-7.png" /></li>-->
+            </ul>
+        </div>
+</div>
+
+
 
 <script>
     jQuery(function($) {
         $("#flexi-carousel-partners-laser").flexisel({
-            visibleItems: 5,
-            itemsToScroll: 5,
+            visibleItems: 1,
+            itemsToScroll: 1,
             animationSpeed: 200,
             infinite: true,
             navigationTargetSelector: null,
@@ -299,6 +321,52 @@ get_header();
                 enable: true,
                 interval: 4000,
                 pauseOnHover: true
+            },
+            responsiveBreakpoints: {
+                portrait: {
+                    changePoint:480,
+                    visibleItems: 1,
+                    itemsToScroll: 1
+                },
+                landscape: {
+                    changePoint:640,
+                    visibleItems: 1,
+                    itemsToScroll: 1
+                },
+                tablet: {
+                    changePoint:768,
+                    visibleItems: 1,
+                    itemsToScroll: 1
+                }
+            }
+        });
+        $("#flexi-carousel-partners-laser-mobile").flexisel({
+            visibleItems: 2,
+            itemsToScroll: 1,
+            animationSpeed: 200,
+            infinite: true,
+            navigationTargetSelector: null,
+            autoPlay: {
+                enable: true,
+                interval: 4000,
+                pauseOnHover: true
+            },
+            responsiveBreakpoints: {
+                portrait: {
+                    changePoint:480,
+                    visibleItems: 2,
+                    itemsToScroll: 1
+                },
+                landscape: {
+                    changePoint:640,
+                    visibleItems: 2,
+                    itemsToScroll: 1
+                },
+                tablet: {
+                    changePoint:768,
+                    visibleItems: 2,
+                    itemsToScroll: 1
+                }
             }
         });
     });
