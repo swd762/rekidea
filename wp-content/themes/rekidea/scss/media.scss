@@ -328,6 +328,9 @@
   .container {
     width: auto;
   }
+  .hidden-tablet {
+    display: none;
+  }
   // Why us block
   .why-us-block__header {
     p {
@@ -437,10 +440,24 @@
 
    }
   }
-
-
 // ******************************************
+  .laser-portfolio-block__content {
+    padding: 5px;
+    .content-big {
+      a {
+        width: 50%;
+        flex-basis: 50%;
 
+        &:nth-child(3n+3) {
+          margin-right: 0;
+        }
+
+        img {
+          width: 100%;
+        }
+      }
+    }
+  }
 
 }
 
@@ -1160,6 +1177,23 @@
       margin: 10px 0 15px 0;
       text-align: center;
       padding: 0 5px;
+    }
+  }
+  .laser-portfolio-block__content {
+    padding: 5px;
+    .content-big {
+      a {
+        width: 50%;
+        flex-basis: 50%;
+
+        &:nth-child(2n+2) {
+          margin-right: 0;
+        }
+
+        img {
+          width: 100%;
+        }
+      }
     }
   }
 
