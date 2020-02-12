@@ -1103,6 +1103,7 @@
   flex-basis: 220px;
   margin-top: 25px;
   background-color: #f7f7f7;
+  justify-content: space-between;
   a {
     text-decoration: none;
     color: $red;
@@ -1166,6 +1167,7 @@
 }
 .video-bg-container-overlay {
   background: url("img/quality-laser/fon.png") center no-repeat;
+  background-size: cover;
   opacity: 0.5;
   position: absolute;
   width: 100%;

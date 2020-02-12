@@ -870,7 +870,8 @@ main {
   width: 220px;
   flex-basis: 220px;
   margin-top: 25px;
-  background-color: #f7f7f7; }
+  background-color: #f7f7f7;
+  justify-content: space-between; }
   .card-laser a {
     text-decoration: none;
     color: #6f0d33; }
@@ -920,6 +921,7 @@ main {
 
 .video-bg-container-overlay {
   background: url("img/quality-laser/fon.png") center no-repeat;
+  background-size: cover;
   opacity: 0.5;
   position: absolute;
   width: 100%;
@@ -1799,6 +1801,9 @@ footer {
   .laser-cards-block {
     padding: 0 10px 30px 10px; }
 
+  .card-laser p {
+    font-size: 10px; }
+
   .quality-video-block {
     padding: 100px 20px 120px 20px; }
     .quality-video-block h3 {
@@ -2110,7 +2115,7 @@ footer {
       margin-right: 0; }
 
   .laser-cards-block {
-    padding: 0 10px 30px 10px;
+    padding: 0 5px 15px 5px;
     justify-content: space-around; }
 
   .card-laser {
