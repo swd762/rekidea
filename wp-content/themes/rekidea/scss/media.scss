@@ -1362,16 +1362,15 @@
     //}
   }
   .questions-contact__wrapper {
-
-    margin-bottom: 15px;
-    margin-top: 0;
+    margin: 10px 5px;
     padding: 15px;
+    overflow: hidden;
     .question-operator {
       position: absolute;
-      bottom: 0px;
+      bottom: 0;
       right: -74px;
-      width: 208px;
-      height: 282px;
+      width: 200px;
+      height: 250px;
     }
 
 
