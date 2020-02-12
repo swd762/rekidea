@@ -278,13 +278,13 @@ get_header();
 <div class="flexi-carousel-partners-laser__wrapper desk-flexi">
     <div class="container">
     <ul id="flexi-carousel-partners-laser">
-        <li><img src="<?= get_template_directory_uri()?>/img/our-partners/group-1.png" /></li>
-        <li><img src="<?= get_template_directory_uri()?>/img/our-partners/group-2.png" /></li>
-        <li><img src="<?= get_template_directory_uri()?>/img/our-partners/group-3.png" /></li>
-        <li><img src="<?= get_template_directory_uri()?>/img/our-partners/group-4.png" /></li>
-        <li><img src="<?= get_template_directory_uri()?>/img/our-partners/group-5.png" /></li>
-        <li><img src="<?= get_template_directory_uri()?>/img/our-partners/group-6.png" /></li>
-        <li><img src="<?= get_template_directory_uri()?>/img/our-partners/group-7.png" /></li>
+        <li><img src="<?= get_template_directory_uri()?>/img/our-partners/color/group-1.png" /></li>
+        <li><img src="<?= get_template_directory_uri()?>/img/our-partners/color/group-2.png" /></li>
+        <li><img src="<?= get_template_directory_uri()?>/img/our-partners/color/group-3.png" /></li>
+        <li><img src="<?= get_template_directory_uri()?>/img/our-partners/color/group-4.png" /></li>
+        <li><img src="<?= get_template_directory_uri()?>/img/our-partners/color/group-5.png" /></li>
+        <li><img src="<?= get_template_directory_uri()?>/img/our-partners/color/group-6.png" /></li>
+        <li><img src="<?= get_template_directory_uri()?>/img/our-partners/color/group-7.png" /></li>
     </ul>
     </div>
 </div>
@@ -297,18 +297,34 @@ get_header();
                 <li><img src="<?= get_template_directory_uri()?>/img/our-partners/color/86.png" /></li>
                 <li><img src="<?= get_template_directory_uri()?>/img/our-partners/color/87.png" /></li>
                 <li><img src="<?= get_template_directory_uri()?>/img/our-partners/color/88.png" /></li>
-<!--                <li><img src="--><?//= get_template_directory_uri()?><!--/img/our-partners/gorzdrav.png" /></li>-->
-<!--                <li><img src="--><?//= get_template_directory_uri()?><!--/img/our-partners/group-3.png" /></li>-->
-<!--                <li><img src="--><?//= get_template_directory_uri()?><!--/img/our-partners/group-4.png" /></li>-->
-<!--                <li><img src="--><?//= get_template_directory_uri()?><!--/img/our-partners/group-5.png" /></li>-->
-<!--                <li><img src="--><?//= get_template_directory_uri()?><!--/img/our-partners/group-6.png" /></li>-->
-<!--                <li><img src="--><?//= get_template_directory_uri()?><!--/img/our-partners/group-7.png" /></li>-->
+
+                <li><img src="<?= get_template_directory_uri()?>/img/our-partners/color/bethoven.png" /></li>
+                <li><img src="<?= get_template_directory_uri()?>/img/our-partners/color/Layer89.png" /></li>
+                <li><img src="<?= get_template_directory_uri()?>/img/our-partners/color/Layer90.png" /></li>
+                <li><img src="<?= get_template_directory_uri()?>/img/our-partners/color/Layer91.png" /></li>
+                <li><img src="<?= get_template_directory_uri()?>/img/our-partners/color/Layer92.png" /></li>
+                <li><img src="<?= get_template_directory_uri()?>/img/our-partners/color/Layer93.png" /></li>
+                <li><img src="<?= get_template_directory_uri()?>/img/our-partners/color/Layer94.png" /></li>
+                <li><img src="<?= get_template_directory_uri()?>/img/our-partners/color/Layer95.png" /></li>
+                <li><img src="<?= get_template_directory_uri()?>/img/our-partners/color/Layer96.png" /></li>
+                <li><img src="<?= get_template_directory_uri()?>/img/our-partners/color/Layer97.png" /></li>
+                <li><img src="<?= get_template_directory_uri()?>/img/our-partners/color/Layer98.png" /></li>
+                <li><img src="<?= get_template_directory_uri()?>/img/our-partners/color/Layer99.png" /></li>
+                <li><img src="<?= get_template_directory_uri()?>/img/our-partners/color/Layer100.png" /></li>
+                <li><img src="<?= get_template_directory_uri()?>/img/our-partners/color/Layer101.png" /></li>
+                <li><img src="<?= get_template_directory_uri()?>/img/our-partners/color/Layer102.png" /></li>
+                <li><img src="<?= get_template_directory_uri()?>/img/our-partners/color/Layer103.png" /></li>
+                <li><img src="<?= get_template_directory_uri()?>/img/our-partners/color/Layer104.png" /></li>
+                <li><img src="<?= get_template_directory_uri()?>/img/our-partners/color/Layer105.png" /></li>
+                <li><img src="<?= get_template_directory_uri()?>/img/our-partners/color/Layer106.png" /></li>
+                <li><img src="<?= get_template_directory_uri()?>/img/our-partners/color/Layer107.png" /></li>
+                <li><img src="<?= get_template_directory_uri()?>/img/our-partners/color/Layer108.png" /></li>
+                <li><img src="<?= get_template_directory_uri()?>/img/our-partners/color/Layer109.png" /></li>
+                <li><img src="<?= get_template_directory_uri()?>/img/our-partners/color/Layer110.png" /></li>
+                <li><img src="<?= get_template_directory_uri()?>/img/our-partners/color/Layer111.png" /></li>
             </ul>
         </div>
 </div>
-
-
-
 <script>
     jQuery(function($) {
         $("#flexi-carousel-partners-laser").flexisel({

@@ -415,30 +415,82 @@ get_header();
 </div>
 
 <!--Our partners block ********************************************************-->
-<div class="flexi-carousel-partners__wrapper">
-       <div class="container">
-           <ul id="flexi-carousel-partners">
-               <li><img src="<?= get_template_directory_uri()?>/img/our-partners/logo-elize.png" /></li>
-               <li><img src="<?= get_template_directory_uri()?>/img/our-partners/logo-leofarm.png" /></li>
-               <li><img src="<?= get_template_directory_uri()?>/img/our-partners/logo-gorzdrav.png" /></li>
-               <li><img src="<?= get_template_directory_uri()?>/img/our-partners/logo-mars.png" /></li>
-               <li><img src="<?= get_template_directory_uri()?>/img/our-partners/logo-sletatru.png" /></li>
-<!--               <li><img src="--><?//= get_template_directory_uri()?><!--/img/our-partners/azimut.png" /></li>-->
-<!--               <li><img src="--><?//= get_template_directory_uri()?><!--/img/our-partners/botsadmgu.png" /></li>-->
-<!--               <li><img src="--><?//= get_template_directory_uri()?><!--/img/our-partners/doshirak.png" /></li>-->
-<!--               <li><img src="--><?//= get_template_directory_uri()?><!--/img/our-partners/eapteka-logo.png" /></li>-->
-<!--               <li><img src="--><?//= get_template_directory_uri()?><!--/img/our-partners/essence.png" /></li>-->
-<!--               <li><img src="--><?//= get_template_directory_uri()?><!--/img/our-partners/inmarko.png" /></li>-->
-<!--               <li><img src="--><?//= get_template_directory_uri()?><!--/img/our-partners/ladycollection.png" /></li>-->
-<!--               <li><img src="--><?//= get_template_directory_uri()?><!--/img/our-partners/ligastavok.png" /></li>-->
-<!--               <li><img src="--><?//= get_template_directory_uri()?><!--/img/our-partners/logo-bruka.svg" /></li>-->
-           </ul>
-       </div>
-</div>
+<!--<div class="flexi-carousel-partners__wrapper">-->
+<!--       <div class="container">-->
+<!--           <ul id="flexi-carousel-partners">-->
+<!--               <li><img src="--><?//= get_template_directory_uri()?><!--/img/our-partners/logo-elize.png" /></li>-->
+<!--               <li><img src="--><?//= get_template_directory_uri()?><!--/img/our-partners/logo-leofarm.png" /></li>-->
+<!--               <li><img src="--><?//= get_template_directory_uri()?><!--/img/our-partners/logo-gorzdrav.png" /></li>-->
+<!--               <li><img src="--><?//= get_template_directory_uri()?><!--/img/our-partners/logo-mars.png" /></li>-->
+<!--               <li><img src="--><?//= get_template_directory_uri()?><!--/img/our-partners/logo-sletatru.png" /></li>-->
+
+<!--           </ul>-->
+<!--       </div>-->
+<!--</div>-->
+<!--    <script>-->
+<!--        jQuery(function($) {-->
+<!--            $("#flexi-carousel-partners").flexisel({-->
+<!--                visibleItems: 5,-->
+<!--                itemsToScroll: 1,-->
+<!--                animationSpeed: 200,-->
+<!--                infinite: true,-->
+<!--                navigationTargetSelector: null,-->
+<!--                autoPlay: {-->
+<!--                    enable: true,-->
+<!--                    interval: 4000,-->
+<!--                    pauseOnHover: true-->
+<!--                }-->
+<!--            });-->
+<!--        });-->
+<!---->
+<!--    </script>-->
+    <div class="flexi-carousel-partners__wrapper desk-flexi">
+        <div class="container">
+            <ul id="flexi-carousel-partners">
+                <li><img src="<?= get_template_directory_uri()?>/img/our-partners/bw/group1.png" /></li>
+                <li><img src="<?= get_template_directory_uri()?>/img/our-partners/bw/group2.png" /></li>
+                <li><img src="<?= get_template_directory_uri()?>/img/our-partners/bw/group3.png" /></li>
+                <li><img src="<?= get_template_directory_uri()?>/img/our-partners/bw/group4.png" /></li>
+                <li><img src="<?= get_template_directory_uri()?>/img/our-partners/bw/group5.png" /></li>
+                <li><img src="<?= get_template_directory_uri()?>/img/our-partners/bw/group6.png" /></li>
+                <li><img src="<?= get_template_directory_uri()?>/img/our-partners/bw/group7.png" /></li>
+            </ul>
+        </div>
+    </div>
+    <div class="flexi-carousel-partners__wrapper mobile-flexi">
+        <div class="container">
+            <ul id="flexi-carousel-partners-mobile">
+                <li><img src="<?= get_template_directory_uri()?>/img/our-partners/bw/azimut.png" /></li>
+                <li><img src="<?= get_template_directory_uri()?>/img/our-partners/bw/botsadmgu.png" /></li>
+                <li><img src="<?= get_template_directory_uri()?>/img/our-partners/bw/doshirak.png" /></li>
+                <li><img src="<?= get_template_directory_uri()?>/img/our-partners/bw/eapteka-logo.png" /></li>
+                <li><img src="<?= get_template_directory_uri()?>/img/our-partners/bw/essence.png" /></li>
+                <li><img src="<?= get_template_directory_uri()?>/img/our-partners/bw/inmarko.png" /></li>
+
+                <li><img src="<?= get_template_directory_uri()?>/img/our-partners/bw/ladycollection.png" /></li>
+                <li><img src="<?= get_template_directory_uri()?>/img/our-partners/bw/ligastavok.png" /></li>
+                <li><img src="<?= get_template_directory_uri()?>/img/our-partners/bw/logo1xbet.png" /></li>
+                <li><img src="<?= get_template_directory_uri()?>/img/our-partners/bw/logounilever.png" /></li>
+                <li><img src="<?= get_template_directory_uri()?>/img/our-partners/bw/Layer1.png" /></li>
+                <li><img src="<?= get_template_directory_uri()?>/img/our-partners/bw/Layer2.png" /></li>
+                <li><img src="<?= get_template_directory_uri()?>/img/our-partners/bw/logoburgerking.png" /></li>
+                <li><img src="<?= get_template_directory_uri()?>/img/our-partners/bw/logocoraltravel.png" /></li>
+                <li><img src="<?= get_template_directory_uri()?>/img/our-partners/bw/logodeutz.png" /></li>
+                <li><img src="<?= get_template_directory_uri()?>/img/our-partners/bw/logoimperiapizza.png" /></li>
+                <li><img src="<?= get_template_directory_uri()?>/img/our-partners/bw/logomysnitskiryad.png" /></li>
+                <li><img src="<?= get_template_directory_uri()?>/img/our-partners/bw/logoscholl.png" /></li>
+                <li><img src="<?= get_template_directory_uri()?>/img/our-partners/bw/logotrialsport.png" /></li>
+                <li><img src="<?= get_template_directory_uri()?>/img/our-partners/bw/maytoni.png" /></li>
+                <li><img src="<?= get_template_directory_uri()?>/img/our-partners/bw/mosgortrance.png" /></li>
+                <li><img src="<?= get_template_directory_uri()?>/img/our-partners/bw/sunlight.png" /></li>
+                <li><img src="<?= get_template_directory_uri()?>/img/our-partners/bw/velostrana-logo.png" /></li>
+            </ul>
+        </div>
+    </div>
     <script>
         jQuery(function($) {
             $("#flexi-carousel-partners").flexisel({
-                visibleItems: 5,
+                visibleItems: 1,
                 itemsToScroll: 1,
                 animationSpeed: 200,
                 infinite: true,
@@ -447,6 +499,52 @@ get_header();
                     enable: true,
                     interval: 4000,
                     pauseOnHover: true
+                },
+                responsiveBreakpoints: {
+                    portrait: {
+                        changePoint:480,
+                        visibleItems: 1,
+                        itemsToScroll: 1
+                    },
+                    landscape: {
+                        changePoint:640,
+                        visibleItems: 1,
+                        itemsToScroll: 1
+                    },
+                    tablet: {
+                        changePoint:768,
+                        visibleItems: 1,
+                        itemsToScroll: 1
+                    }
+                }
+            });
+            $("#flexi-carousel-partners-mobile").flexisel({
+                visibleItems: 2,
+                itemsToScroll: 1,
+                animationSpeed: 200,
+                infinite: true,
+                navigationTargetSelector: null,
+                autoPlay: {
+                    enable: true,
+                    interval: 4000,
+                    pauseOnHover: true
+                },
+                responsiveBreakpoints: {
+                    portrait: {
+                        changePoint:480,
+                        visibleItems: 2,
+                        itemsToScroll: 1
+                    },
+                    landscape: {
+                        changePoint:640,
+                        visibleItems: 2,
+                        itemsToScroll: 1
+                    },
+                    tablet: {
+                        changePoint:768,
+                        visibleItems: 2,
+                        itemsToScroll: 1
+                    }
                 }
             });
         });

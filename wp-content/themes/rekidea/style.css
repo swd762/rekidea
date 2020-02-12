@@ -795,6 +795,16 @@ main {
     #flexi-carousel-partners .nbs-flexisel-item img {
       max-width: 90%; }
 
+#flexi-carousel-partners-mobile {
+  height: 176px; }
+  #flexi-carousel-partners-mobile .nbs-flexisel-item {
+    display: flex;
+    height: inherit;
+    justify-content: center;
+    align-items: center; }
+    #flexi-carousel-partners-mobile .nbs-flexisel-item img {
+      max-width: 90%; }
+
 .breadcrumbs {
   color: #8b8989;
   font-size: 14px;

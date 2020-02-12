@@ -1004,8 +1004,20 @@
       max-width: 90%
     }
   }
-
 }
+#flexi-carousel-partners-mobile {
+  height: 176px;
+  .nbs-flexisel-item {
+    display: flex;
+    height: inherit;
+    justify-content: center;
+    align-items: center;
+    img {
+      max-width: 90%
+    }
+  }
+}
+
 // **************************************
 
 // Laser page
@@ -1490,7 +1502,7 @@
 }
 
 // ********************************
-#flexi-carousel-partners-laser {}
+
 
 
 
