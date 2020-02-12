@@ -87,8 +87,77 @@
 .laser-cards-block {
   padding: 10px 35px 30px 35px;
 }
-
 //***************
+  .questions-contact__wrapper {
+    color: #6f0d33;
+    border: 10px solid #6f0d33;
+    padding-top: 35px;
+    padding-left: 60px;
+    padding-bottom: 50px;
+    margin-bottom: 65px;
+    position: relative;
+    .question-operator {
+      position: absolute;
+      bottom: -75px;
+      right: 20px;
+      width: 310px;
+      height: 420px;
+    }
+  }
+  .questions-contact__content {
+
+    h2 {
+      font-size: 40px;
+      text-transform: uppercase;
+      font-weight: 500;
+    }
+    p {
+      font-size: 15px;
+      margin-top: 23px;
+      margin-bottom: 36px;
+      //width: 400px;
+      width: 55%;
+    }
+    span {
+      font-size: 39px;
+      font-weight: 500;
+      margin-right: 25px;
+    }
+  }
+  .questions-contact__content-contacts {
+    display: flex;
+    width: 60%;
+    flex-wrap: wrap;
+    h4 {
+      font-size: 35px;
+      margin-right: 25px;
+    }
+    .button {
+      font-size: 13px;
+      background-color: $red;
+      color: #fff;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 185px;
+      height: 50px;
+      &:hover {
+        background-color: #d0b9c2;
+        transition: all 0.3s linear;
+      }
+    }
+  }
+
+
+
+
+
+
+
+
+
+
 }
 
 
@@ -411,6 +480,48 @@
   }
 
 
+  .questions-contact__wrapper {
+    color: #6f0d33;
+    border: 5px solid #6f0d33;
+    padding-top: 10px;
+    padding-left: 25px;
+    padding-bottom: 20px;
+    margin-bottom: 30px;
+    margin-top: 35px;
+    position: relative;
+    .question-operator {
+      bottom: 0;
+      //right: -100px;
+    }
+  }
+  .questions-contact__content-contacts {
+    display: flex;
+    width: 60%;
+    flex-wrap: wrap;
+    align-items: baseline;
+    h4 {
+      font-size: 39px;
+      margin-right: 25px;
+    }
+    .button {
+      font-size: 13px;
+      background-color: $red;
+      color: #fff;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 185px;
+      height: 50px;
+      position: relative;
+      z-index: 99;
+      &:hover {
+        background-color: #d0b9c2;
+        transition: all 0.3s linear;
+      }
+    }
+  }
+
 
 
 //*******************************************
@@ -583,7 +694,7 @@
   }
   .laser-price-block {
     color: $red;
-    text-align: center;
+    padding: 0 12px 0 12px;
     h2 {
       font-size: 30px;
       font-weight: bold;
@@ -667,22 +778,17 @@
     //  margin-top: 20px;
     //}
   }
-  .questions-contact__wrapper {
-    padding-top: 40px;
-    padding-left: 30px;
-    padding-bottom: 80px;
-    margin-bottom: 65px;
-    position: relative;
-    .question-operator {
-      display: none;
-    }
-    .question-operator-mobile {
-      display: block;
-      position: absolute;
-      right: -150px;
-      bottom: 0;
-    }
-  }
+  //.questions-contact__wrapper {
+  //  padding-top: 40px;
+  //  padding-left: 30px;
+  //  padding-bottom: 80px;
+  //  margin-bottom: 30px;
+  //  position: relative;
+  //  .question-operator {
+  //    display: none;
+  //  }
+  //
+  //}
   .questions-contact__content {
 
     h2 {
@@ -838,6 +944,29 @@
       color: $red;
     }
   }
+
+  .questions-contact__wrapper {
+    //color: #6f0d33;
+    //border: 5px solid #6f0d33;
+    //padding-top: 10px;
+    //padding-left: 25px;
+    //padding-bottom: 20px;
+    //margin-bottom: 30px;
+    //margin-top: 35px;
+    //position: relative;
+    .question-operator {
+      right: -100px;
+    }
+  }
+  .questions-contact__content p {
+    font-size: 15px;
+    margin-top: 15px;
+    margin-bottom: 10px;
+    width: 55%;
+  }
+
+
+
   //*****************************************************
   // *********** feedback page *****************
   .feedback-form-page {
@@ -1233,35 +1362,38 @@
     //}
   }
   .questions-contact__wrapper {
-    padding-top: 40px;
-    padding: 0 5px;
-    padding-bottom: 50px;
-    margin-bottom: 15px;
 
-    .question-operator-mobile {
-      display: none;
+    margin-bottom: 15px;
+    margin-top: 0;
+    padding: 15px;
+    .question-operator {
+      position: absolute;
+      bottom: 0px;
+      right: -74px;
+      width: 208px;
+      height: 282px;
     }
+
+
   }
   .questions-contact__content {
-
     h2 {
-      width: 100%;
+      width: 65%;
       text-align: center;
+      font-size: 25px;
     }
-
     p {
-      width: 100%;
+      width: 65%;
       text-align: center;
+      font-size: 13px;
     }
-
   }
   .questions-contact__content-contacts {
     width: 100%;
     flex-direction: column;
-    align-items: center;
-
+    //align-items: center;
     h4 {
-      font-size: 30px;
+      font-size: 20px;
       margin-right: 0;
     }
   }

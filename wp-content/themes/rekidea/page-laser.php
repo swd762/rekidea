@@ -349,7 +349,7 @@ get_header();
 <!--consultant block ***********************************-->
 <div class="questions-contact__wrapper container">
     <div class="questions-contact__content">
-        <h2>у вас есть вопросы?</h2>
+        <h2>Затрудняетесь с выбором?</h2>
         <p>Мы сэкономим ваше время! Звоните для консультаций
             или оставьте заявку на обратный звонок.
         </p>
@@ -359,7 +359,7 @@ get_header();
         </div>
     </div>
     <img src="<?= get_template_directory_uri()?>/img/404/operator.png" alt="" class="question-operator">
-    <img src="<?= get_template_directory_uri()?>/img/404/operator.png" alt="" class="question-operator-mobile">
+<!--    <img src="--><?//= get_template_directory_uri()?><!--/img/404/operator.png" alt="" class="question-operator-mobile">-->
 </div>
 <!--****************************************************-->
     <script>
