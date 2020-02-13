@@ -227,7 +227,7 @@ wp_head();
                     <img src="<?= get_template_directory_uri()?>/img/search_icon.png">
                  </div>
                  <div class="header-mobile__contacts">
-                     <img src="<?= get_template_directory_uri()?>/img/phone_icon.png">
+                     <a href="tel:+74953692079"><img src="<?= get_template_directory_uri()?>/img/phone_icon.png"></a>
                  </div>
              </div>
          </div>

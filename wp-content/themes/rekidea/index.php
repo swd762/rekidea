@@ -453,7 +453,7 @@ get_header();
                 <li><img src="<?= get_template_directory_uri()?>/img/our-partners/bw/group4.png" /></li>
                 <li><img src="<?= get_template_directory_uri()?>/img/our-partners/bw/group5.png" /></li>
                 <li><img src="<?= get_template_directory_uri()?>/img/our-partners/bw/group6.png" /></li>
-                <li><img src="<?= get_template_directory_uri()?>/img/our-partners/bw/group7.png" /></li>
+<!--                <li><img src="--><?//= get_template_directory_uri()?><!--/img/our-partners/bw/group7.png" /></li>-->
             </ul>
         </div>
     </div>

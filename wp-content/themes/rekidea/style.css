@@ -2235,13 +2235,9 @@ footer {
   .questions-contact__content-contacts {
     width: 55%; }
 
-  .err404 {
-    overflow: initial !important; }
-
   .questions-contact__wrapper {
     margin: 10px 5px;
-    padding: 15px;
-    overflow: hidden; }
+    padding: 15px; }
     .questions-contact__wrapper .er404 {
       width: 200px !important;
       height: 250px !important; }
