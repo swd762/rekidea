@@ -53,7 +53,7 @@ main {
   position: fixed;
   width: 100%;
   top: 0;
-  z-index: 99999; }
+  z-index: 99992; }
 
 .header-mobile {
   display: none;
