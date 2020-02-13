@@ -1,0 +1,473 @@
+# Translation of Plugins - Image Watermark - Stable (latest release) in Russian
+# This file is distributed under the same license as the Plugins - Image Watermark - Stable (latest release) package.
+msgid ""
+msgstr ""
+"PO-Revision-Date: 2019-11-12 23:12:14+0000\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"X-Generator: GlotPress/2.4.0-alpha\n"
+"Language: ru\n"
+"Project-Id-Version: Plugins - Image Watermark - Stable (latest release)\n"
+
+#. Author URI of the plugin
+msgid "https://dfactory.eu/"
+msgstr "https://dfactory.eu/"
+
+#: includes/class-settings.php:449
+msgid "pixels"
+msgstr "пиксели"
+
+#: includes/class-settings.php:450
+msgid "percentages"
+msgstr "проценты"
+
+#: includes/class-settings.php:451
+msgid "Select the watermark offset unit."
+msgstr "Выберите единицы смещения для водяного знака."
+
+#: includes/class-settings.php:317
+msgid "Enable Apply Watermark option for Media Library images."
+msgstr "Включить действие наложения водяного знака для изображений медиатеки."
+
+#: includes/class-settings.php:341
+msgid "Check the image sizes watermark will be applied to."
+msgstr "Выберите размеры изображений для наложения водяного знака."
+
+#: includes/class-settings.php:342
+msgid "<strong>IMPORTANT:</strong> checking full size is NOT recommended as it's the original image. You may need it later - for removing or changing watermark, image sizes regeneration or any other image manipulations. Use it only if you know what you are doing."
+msgstr "<strong>Важно:</strong> выбор полноразмерного изображения не рекомендуется, так как это оригинал. Возможно он потребуется позже для того чтобы убрать или изменить водяной знак, изменения размеров изображений или других манипуляций. Используйте только если знаете что вы делаете."
+
+#: includes/class-settings.php:582
+msgid "Enter a number ranging from 0 to 100. 100 makes width of watermark image equal to width of the image it is applied to."
+msgstr "Введите номер от 0 до 100. 100 сделает ширину водяного знака равной ширине изображения на которое он накладывается."
+
+#: includes/class-settings.php:72
+msgid "Offset unit"
+msgstr "Единица смещения"
+
+#: includes/class-settings.php:80
+msgid "Watermark scale"
+msgstr "Масштабирование водяного знака"
+
+#: includes/class-settings.php:467
+msgid "Enter watermark offset value."
+msgstr "Значение смещения водяного знака (можно со знаком минуса)."
+
+#: includes/class-settings.php:436
+msgid "Select the watermark alignment."
+msgstr "Выберите выравнивание для водяного знака относительно изображения."
+
+#: image-watermark.php:723
+msgid "Watermark prevented, this is your selected watermark image"
+msgstr "Водяной знак не наложен, это изображение выбранное вами для водяного знака"
+
+#: image-watermark.php:489 image-watermark.php:529
+msgid "Cheatin uh?"
+msgstr "Эй! Жульничаем? "
+
+#: image-watermark.php:252 image-watermark.php:466
+msgid "Remove watermark"
+msgstr "Удалить водяной знак"
+
+#: image-watermark.php:326
+msgid "Watermark was succesfully applied to %s images."
+msgstr "Водяной знак успешно наложен на %s изображений."
+
+#: image-watermark.php:327 image-watermark.php:661
+msgid "Watermark could not be removed from selected files or no valid images (JPEG, PNG) were selected."
+msgstr "Водяной знак не может быть убран с выделеных файлов или не были выбраны файлы (JPEG,PNG) изображений"
+
+#: image-watermark.php:328 image-watermark.php:663
+msgid "Watermark was succesfully removed from 1 image."
+msgid_plural "Watermark was succesfully removed from %s images."
+msgstr[0] "Водяной знак убран с одного изображения"
+msgstr[1] ""
+msgstr[2] ""
+
+#: image-watermark.php:329
+msgid "Watermark was succesfully removed from %s images."
+msgstr "Водяной знак убран с %s изображений"
+
+#: image-watermark.php:331
+msgid "Bulk action is currently running, please wait."
+msgstr "Идет пакетная обработка, пожалуйста подождите."
+
+#: image-watermark.php:332
+msgid "Dismiss this notice."
+msgstr "Убрать это уведомление."
+
+#: includes/class-settings.php:735
+msgid "Toggle panel"
+msgstr "Вкл/Выкл панель"
+
+#: image-watermark.php:1212
+msgid "Your uploads folder is not writable so we can't create a backup of your image uploads. We've disabled this feature for now."
+msgstr "Ваша папка загрузок не доступна для записи поэтому нельзя создать резервные копии загружаемых изображений. Эта возможность была отключена."
+
+#: includes/class-settings.php:92 image-watermark.php:1212
+msgid "Image backup"
+msgstr "Резервные копии изображений"
+
+#: includes/class-settings.php:93
+msgid "Backup full size image"
+msgstr "Резервирование"
+
+#: includes/class-settings.php:94
+msgid "Backup image quality"
+msgstr "Качество резервной копии изображения"
+
+#: includes/class-settings.php:692
+msgid "Backup the full size image."
+msgstr "Делать резервную копию полноразмерного изображения, на которое ставится водяной знак"
+
+#: includes/class-settings.php:60
+msgid "PHP library"
+msgstr "PHP библиотека"
+
+#: includes/class-settings.php:289
+msgid "Select extension."
+msgstr "Выберите расширение"
+
+#: image-watermark.php:1462
+msgid "Support"
+msgstr "Поддержка"
+
+#: image-watermark.php:1485
+msgid "Settings"
+msgstr "Настройки"
+
+#: includes/class-settings.php:252
+msgid "Settings saved."
+msgstr "Настройки сохранены."
+
+#: includes/class-settings.php:257
+msgid "Settings restored to defaults."
+msgstr "Настройки успешно сброшены."
+
+#: includes/class-settings.php:403
+msgid "Delete all database settings on plugin deactivation."
+msgstr "Удалить все настройки в базе данных при деактивации плагина."
+
+#: includes/class-settings.php:464 includes/class-settings.php:559
+msgid "x:"
+msgstr "x:"
+
+#: includes/class-settings.php:525 includes/class-settings.php:559
+#: includes/class-settings.php:561 image-watermark.php:290
+msgid "px"
+msgstr "пиксели"
+
+#: includes/class-settings.php:466 includes/class-settings.php:561
+msgid "y:"
+msgstr "y:"
+
+#: includes/class-settings.php:487
+msgid "Select image"
+msgstr "Выбрать изображение"
+
+#: includes/class-settings.php:489
+msgid "You have to save changes after the selection or removal of the image."
+msgstr "Вам необходимо сохранить изменения после выбора или удаления изображения."
+
+#: includes/class-settings.php:542
+msgid "original"
+msgstr "исходный"
+
+#: includes/class-settings.php:543
+msgid "custom"
+msgstr "выборочный"
+
+#: includes/class-settings.php:563
+msgid "Those dimensions will be used if \"custom\" method is selected above."
+msgstr "Эти размеры будут использованы если \"выборочный\" метод выбран выше. "
+
+#: includes/class-settings.php:664
+msgid "Prevent drag and drop"
+msgstr "Запретить метод drag and drop"
+
+#: includes/class-settings.php:488
+msgid "Remove image"
+msgstr "Удалить изображение"
+
+#. Author of the plugin
+msgid "dFactory"
+msgstr "dFactory"
+
+#: includes/class-settings.php:388
+msgid "Enable frontend image uploading. (uploading script is not included, but you may use a plugin or custom code)."
+msgstr "Разрешить загрузку изображений с фронтэнда (скрипт не включен в плагин, но вы можете использовать другой плагин или пользовательский код)"
+
+#. Description of the plugin
+msgid "Image Watermark allows you to automatically watermark images uploaded to the WordPress Media Library and bulk watermark previously uploaded images."
+msgstr "Image Watermark позволяет автоматически ставить водяной знак на изображения загруженные в библиотеку медиа-файлов WordPress, а также групповое наложение знака на уже загруженные изображения."
+
+#: includes/class-settings.php:262
+msgid "Watermark will not be applied when watermark image is not set."
+msgstr "Водяной знак не может быть наложен если не задано изображение для водяного знака."
+
+#: includes/class-settings.php:265
+msgid "Watermark will not be applied when no image sizes are selected."
+msgstr "Водяной знак не может быть наложен если не выбран ни один размер изображения."
+
+#: includes/class-settings.php:390
+msgid "<br /><strong>Notice:</strong> This functionality works only if uploaded images are processed using WordPress native upload methods."
+msgstr "<br /><strong>Уведомление</strong>: Эта возможность работает только если загружаемые изображения обрабатываются нативными методами WordPress."
+
+#: includes/class-settings.php:544
+msgid "scaled"
+msgstr "масштабируемый"
+
+#: includes/class-settings.php:546
+msgid "Select method of aplying watermark size."
+msgstr "Выберите способ вычисления размера водяного знака."
+
+#: includes/class-settings.php:601
+msgid "Enter a number ranging from 0 to 100. 0 makes watermark image completely transparent, 100 shows it as is."
+msgstr "Выберите значение в диапазоне от 0 до 100. 0 делает водяной знак полностью прозрачным, 100 оставляет его как есть."
+
+#: includes/class-settings.php:620 includes/class-settings.php:712
+msgid "Set output image quality."
+msgstr "Установить качество изображения на выходе."
+
+#: includes/class-settings.php:637
+msgid "Select baseline or progressive image format."
+msgstr "Выберите базовый или прогрессивный формат."
+
+#: includes/class-settings.php:678
+msgid "Enable image protection for logged-in users also"
+msgstr "Активировать защиту изображения и для авторизованных пользователей."
+
+#: includes/class-settings.php:634
+msgid "progressive"
+msgstr "прогрессивный"
+
+#: includes/class-settings.php:633
+msgid "baseline"
+msgstr "базовый"
+
+#: includes/class-settings.php:650
+msgid "Disable right mouse click on images"
+msgstr "Отключить действие правой кнопки мыши при нажатии на изображения"
+
+#. Plugin URI of the plugin
+msgid "https://dfactory.eu/plugins/image-watermark/"
+msgstr "https://dfactory.eu/plugins/image-watermark/"
+
+#: image-watermark.php:330 image-watermark.php:658 image-watermark.php:663
+msgid "Skipped files"
+msgstr "Пропущенные файлы"
+
+#: includes/class-settings.php:102
+msgid "Image Watermark Options"
+msgstr "Настройки плагина Image Watermark"
+
+#. Plugin Name of the plugin
+#: includes/class-settings.php:116 includes/class-settings.php:122
+#: image-watermark.php:465 image-watermark.php:1212
+msgid "Image Watermark"
+msgstr "Image Watermark"
+
+#: includes/class-settings.php:127
+msgid "Do you like this plugin?"
+msgstr "Вам нравится плагин?"
+
+#: includes/class-settings.php:128
+msgid "Rate it 5"
+msgstr "Оценить на 5"
+
+#: includes/class-settings.php:128
+msgid "on WordPress.org"
+msgstr "на WordPress.org"
+
+#: includes/class-settings.php:130
+msgid "WordPress plugins"
+msgstr "Плагины WordPress"
+
+#: includes/class-settings.php:133
+msgid "Created by"
+msgstr "Создано"
+
+#: includes/class-settings.php:56
+msgid "General settings"
+msgstr "Основные настройки"
+
+#: includes/class-settings.php:82
+msgid "Image quality"
+msgstr "Качество изображения"
+
+#: includes/class-settings.php:83
+msgid "Image format"
+msgstr "Формат изображения"
+
+#: includes/class-settings.php:86
+msgid "Image protection"
+msgstr "Защита изображения"
+
+#: includes/class-settings.php:148
+msgid "Reset to defaults"
+msgstr "Сбросить настройки"
+
+#: includes/class-settings.php:66
+msgid "Deactivation"
+msgstr "Деактивация"
+
+#: includes/class-settings.php:125
+msgid "If you are having problems with this plugin, checkout plugin"
+msgstr "Если у вас проблемы с этим плагином, попробуйте "
+
+#: includes/class-settings.php:125
+msgid "or talk about them in the"
+msgstr "или обсудите их на"
+
+#: image-watermark.php:646
+msgid "<strong>Image Watermark:</strong> Bulk watermarking is available in list mode only, under <em>Bulk Actions</em> dropdown. <a href=\"%1$s\">Got to List Mode</a> or <a href=\"%2$s\">Hide this notice</a>"
+msgstr "<strong>Image Watermark:</strong> групповое наложение водяного знака доступно только в режиме списка в  селекторе <em>Действия</em>.  <a href=\"%1$s\">Перейти в режим списка</a> или <a href=\"%2$s\">убрать это предупреждение</a>"
+
+#: includes/class-settings.php:89
+msgid "Logged-in users"
+msgstr "Авторизованные пользователи"
+
+#: includes/class-settings.php:303
+msgid "Enable watermark for uploaded images."
+msgstr "Включить водяной знак для загружаемых изображений."
+
+#: includes/class-settings.php:124
+msgid "Need support?"
+msgstr "Нужна помощь?"
+
+#: includes/class-settings.php:125
+msgid "Documentation"
+msgstr "Документацию"
+
+#: includes/class-settings.php:125
+msgid "Support forum"
+msgstr "Форуме поддержки"
+
+#: includes/class-settings.php:129
+msgid "Blog about it & link to the"
+msgstr "Напишите в блог и дайте ссылку на"
+
+#: includes/class-settings.php:129
+msgid "plugin page"
+msgstr "страницу плагина"
+
+#: includes/class-settings.php:130
+msgid "Check out our other"
+msgstr "Попробуйте наши другие"
+
+#: includes/class-settings.php:359
+msgid "everywhere"
+msgstr "везде"
+
+#: includes/class-settings.php:374
+msgid "Check custom post types on which watermark should be applied to uploaded images."
+msgstr "Выберите пользовательские типы записей, на которых необходимо отображение водяного знака."
+
+#: image-watermark.php:249 image-watermark.php:466
+msgid "Apply watermark"
+msgstr "Применить водяной знак"
+
+#: image-watermark.php:286
+msgid "Select watermark"
+msgstr "Выбрать водяной знак"
+
+#: includes/class-settings.php:525 image-watermark.php:287
+msgid "Original size"
+msgstr "Исходный размер"
+
+#: includes/class-settings.php:521 image-watermark.php:288
+msgid "Watermak has not been selected yet."
+msgstr "Водяной знак еще не был выбран"
+
+#: image-watermark.php:289
+msgid "This image is not supported as watermark. Use JPEG, PNG or GIF."
+msgstr "Данное изображение нельзя установить как водяной знак. Используйте JPEG, PNG или GIF."
+
+#: image-watermark.php:292
+msgid "Add watermark"
+msgstr "Добавить водяной знак"
+
+#: image-watermark.php:301
+msgid "Are you sure you want to reset settings to defaults?"
+msgstr "Вы уверены, что хотите вернуть настройки по умолчанию?"
+
+#: image-watermark.php:325 image-watermark.php:658
+msgid "Watermark was succesfully applied to 1 image."
+msgid_plural "Watermark was succesfully applied to %s images."
+msgstr[0] "Водяной знак был успешно применен к 1 изображению."
+msgstr[1] ""
+msgstr[2] ""
+
+#: image-watermark.php:656 image-watermark.php:661
+msgid "Images skipped"
+msgstr "Изображений пропущено"
+
+#: includes/class-settings.php:62
+msgid "Automatic watermarking"
+msgstr "Автоматическое добавление водяного знака"
+
+#: includes/class-settings.php:63
+msgid "Manual watermarking"
+msgstr "Ручное наложение водяного знака"
+
+#: includes/class-settings.php:64
+msgid "Enable watermark for"
+msgstr "Включить водяной знак для"
+
+#: includes/class-settings.php:65
+msgid "Frontend watermarking"
+msgstr "Наложение водяного знака на фронтэнде"
+
+#: includes/class-settings.php:69
+msgid "Watermark position"
+msgstr "Расположение водяного знака"
+
+#: includes/class-settings.php:71
+msgid "Watermark offset"
+msgstr "Смещение водяного знака"
+
+#: includes/class-settings.php:75 includes/class-settings.php:76
+msgid "Watermark image"
+msgstr "Изображение водяного знака"
+
+#: includes/class-settings.php:78
+msgid "Watermark size"
+msgstr "Размер водяного знака"
+
+#: includes/class-settings.php:79
+msgid "Watermark custom size"
+msgstr "Произвольный размер водяного знака"
+
+#: includes/class-settings.php:102
+msgid "Watermark"
+msgstr "Водяной знак"
+
+#: image-watermark.php:324 image-watermark.php:656
+msgid "Watermark could not be applied to selected files or no valid images (JPEG, PNG) were selected."
+msgstr "Водяной знак не может быть применен к выбранным файлам, либо не было выбрано допустимых изображений (JPEG, PNG)."
+
+#: includes/class-settings.php:360
+msgid "on selected post types only"
+msgstr "только в выбранных типах записей"
+
+#: includes/class-settings.php:81
+msgid "Watermark transparency / opacity"
+msgstr "Прозрачность водяного знака"
+
+#: includes/class-settings.php:87
+msgid "Right click"
+msgstr "Правый щелчок"
+
+#: includes/class-settings.php:88
+msgid "Drag and drop"
+msgstr "Тащи и бросай"
+
+#: includes/class-settings.php:77
+msgid "Watermark preview"
+msgstr "Предпросмотр"
+
+#: includes/class-settings.php:70
+msgid "Watermark alignment"
+msgstr "Выравнивание"

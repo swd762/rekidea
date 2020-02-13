@@ -1,13 +1,15 @@
 -- phpMyAdmin SQL Dump
--- version 4.6.5.2
+-- version 4.8.3
 -- https://www.phpmyadmin.net/
 --
 -- Хост: 127.0.0.1:3306
--- Время создания: Фев 11 2020 г., 20:08
--- Версия сервера: 5.7.16
--- Версия PHP: 7.1.0
+-- Время создания: Фев 13 2020 г., 09:05
+-- Версия сервера: 5.7.23
+-- Версия PHP: 7.0.32
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
+START TRANSACTION;
 SET time_zone = "+00:00";
 
 
@@ -17,7 +19,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- База данных: `rsht`
+-- База данных: `wp_rek`
 --
 
 -- --------------------------------------------------------
@@ -104,8 +106,8 @@ CREATE TABLE `wp_options` (
 --
 
 INSERT INTO `wp_options` (`option_id`, `option_name`, `option_value`, `autoload`) VALUES
-(1, 'siteurl', 'http://rsht.local', 'yes'),
-(2, 'home', 'http://rsht.local', 'yes'),
+(1, 'siteurl', 'http://rek.local/', 'yes'),
+(2, 'home', 'http://rek.local/', 'yes'),
 (3, 'blogname', 'Rek', 'yes'),
 (4, 'blogdescription', 'Ещё один сайт на WordPress', 'yes'),
 (5, 'users_can_register', '0', 'yes'),
@@ -151,7 +153,7 @@ INSERT INTO `wp_options` (`option_id`, `option_name`, `option_value`, `autoload`
 (45, 'html_type', 'text/html', 'yes'),
 (46, 'use_trackback', '0', 'yes'),
 (47, 'default_role', 'subscriber', 'yes'),
-(48, 'db_version', '44719', 'yes'),
+(48, 'db_version', '45805', 'yes'),
 (49, 'uploads_use_yearmonth_folders', '1', 'yes'),
 (50, 'upload_path', '', 'yes'),
 (51, 'blog_public', '1', 'yes'),
@@ -207,7 +209,7 @@ INSERT INTO `wp_options` (`option_id`, `option_name`, `option_value`, `autoload`
 (101, 'widget_archives', 'a:2:{i:2;a:3:{s:5:\"title\";s:0:\"\";s:5:\"count\";i:0;s:8:\"dropdown\";i:0;}s:12:\"_multiwidget\";i:1;}', 'yes'),
 (102, 'widget_meta', 'a:2:{i:2;a:1:{s:5:\"title\";s:0:\"\";}s:12:\"_multiwidget\";i:1;}', 'yes'),
 (103, 'sidebars_widgets', 'a:2:{s:19:\"wp_inactive_widgets\";a:6:{i:0;s:8:\"search-2\";i:1;s:14:\"recent-posts-2\";i:2;s:17:\"recent-comments-2\";i:3;s:10:\"archives-2\";i:4;s:12:\"categories-2\";i:5;s:6:\"meta-2\";}s:13:\"array_version\";i:3;}', 'yes'),
-(104, 'cron', 'a:5:{i:1581441618;a:1:{s:32:\"recovery_mode_clean_expired_keys\";a:1:{s:32:\"40cd750bba9870f18aada2478b24840a\";a:3:{s:8:\"schedule\";s:5:\"daily\";s:4:\"args\";a:0:{}s:8:\"interval\";i:86400;}}}i:1581441619;a:4:{s:34:\"wp_privacy_delete_old_export_files\";a:1:{s:32:\"40cd750bba9870f18aada2478b24840a\";a:3:{s:8:\"schedule\";s:6:\"hourly\";s:4:\"args\";a:0:{}s:8:\"interval\";i:3600;}}s:16:\"wp_version_check\";a:1:{s:32:\"40cd750bba9870f18aada2478b24840a\";a:3:{s:8:\"schedule\";s:10:\"twicedaily\";s:4:\"args\";a:0:{}s:8:\"interval\";i:43200;}}s:17:\"wp_update_plugins\";a:1:{s:32:\"40cd750bba9870f18aada2478b24840a\";a:3:{s:8:\"schedule\";s:10:\"twicedaily\";s:4:\"args\";a:0:{}s:8:\"interval\";i:43200;}}s:16:\"wp_update_themes\";a:1:{s:32:\"40cd750bba9870f18aada2478b24840a\";a:3:{s:8:\"schedule\";s:10:\"twicedaily\";s:4:\"args\";a:0:{}s:8:\"interval\";i:43200;}}}i:1581441629;a:2:{s:19:\"wp_scheduled_delete\";a:1:{s:32:\"40cd750bba9870f18aada2478b24840a\";a:3:{s:8:\"schedule\";s:5:\"daily\";s:4:\"args\";a:0:{}s:8:\"interval\";i:86400;}}s:25:\"delete_expired_transients\";a:1:{s:32:\"40cd750bba9870f18aada2478b24840a\";a:3:{s:8:\"schedule\";s:5:\"daily\";s:4:\"args\";a:0:{}s:8:\"interval\";i:86400;}}}i:1581441631;a:1:{s:30:\"wp_scheduled_auto_draft_delete\";a:1:{s:32:\"40cd750bba9870f18aada2478b24840a\";a:3:{s:8:\"schedule\";s:5:\"daily\";s:4:\"args\";a:0:{}s:8:\"interval\";i:86400;}}}s:7:\"version\";i:2;}', 'yes'),
+(104, 'cron', 'a:6:{i:1581574819;a:1:{s:34:\"wp_privacy_delete_old_export_files\";a:1:{s:32:\"40cd750bba9870f18aada2478b24840a\";a:3:{s:8:\"schedule\";s:6:\"hourly\";s:4:\"args\";a:0:{}s:8:\"interval\";i:3600;}}}i:1581614418;a:1:{s:32:\"recovery_mode_clean_expired_keys\";a:1:{s:32:\"40cd750bba9870f18aada2478b24840a\";a:3:{s:8:\"schedule\";s:5:\"daily\";s:4:\"args\";a:0:{}s:8:\"interval\";i:86400;}}}i:1581614419;a:3:{s:16:\"wp_version_check\";a:1:{s:32:\"40cd750bba9870f18aada2478b24840a\";a:3:{s:8:\"schedule\";s:10:\"twicedaily\";s:4:\"args\";a:0:{}s:8:\"interval\";i:43200;}}s:17:\"wp_update_plugins\";a:1:{s:32:\"40cd750bba9870f18aada2478b24840a\";a:3:{s:8:\"schedule\";s:10:\"twicedaily\";s:4:\"args\";a:0:{}s:8:\"interval\";i:43200;}}s:16:\"wp_update_themes\";a:1:{s:32:\"40cd750bba9870f18aada2478b24840a\";a:3:{s:8:\"schedule\";s:10:\"twicedaily\";s:4:\"args\";a:0:{}s:8:\"interval\";i:43200;}}}i:1581614429;a:2:{s:19:\"wp_scheduled_delete\";a:1:{s:32:\"40cd750bba9870f18aada2478b24840a\";a:3:{s:8:\"schedule\";s:5:\"daily\";s:4:\"args\";a:0:{}s:8:\"interval\";i:86400;}}s:25:\"delete_expired_transients\";a:1:{s:32:\"40cd750bba9870f18aada2478b24840a\";a:3:{s:8:\"schedule\";s:5:\"daily\";s:4:\"args\";a:0:{}s:8:\"interval\";i:86400;}}}i:1581614431;a:1:{s:30:\"wp_scheduled_auto_draft_delete\";a:1:{s:32:\"40cd750bba9870f18aada2478b24840a\";a:3:{s:8:\"schedule\";s:5:\"daily\";s:4:\"args\";a:0:{}s:8:\"interval\";i:86400;}}}s:7:\"version\";i:2;}', 'yes'),
 (105, 'widget_pages', 'a:1:{s:12:\"_multiwidget\";i:1;}', 'yes'),
 (106, 'widget_calendar', 'a:1:{s:12:\"_multiwidget\";i:1;}', 'yes'),
 (107, 'widget_media_audio', 'a:1:{s:12:\"_multiwidget\";i:1;}', 'yes'),
@@ -242,18 +244,31 @@ INSERT INTO `wp_options` (`option_id`, `option_name`, `option_value`, `autoload`
 (531, '_site_transient_browser_d065cfce6faf939329d1e9fed273f193', 'a:10:{s:4:\"name\";s:6:\"Chrome\";s:7:\"version\";s:12:\"80.0.3987.87\";s:8:\"platform\";s:7:\"Windows\";s:10:\"update_url\";s:29:\"https://www.google.com/chrome\";s:7:\"img_src\";s:43:\"http://s.w.org/images/browsers/chrome.png?1\";s:11:\"img_src_ssl\";s:44:\"https://s.w.org/images/browsers/chrome.png?1\";s:15:\"current_version\";s:2:\"18\";s:7:\"upgrade\";b:0;s:8:\"insecure\";b:0;s:6:\"mobile\";b:0;}', 'no'),
 (532, '_site_transient_timeout_php_check_e481018c713db17b5f16f6d87bf44ece', '1581848491', 'no'),
 (533, '_site_transient_php_check_e481018c713db17b5f16f6d87bf44ece', 'a:5:{s:19:\"recommended_version\";s:3:\"7.3\";s:15:\"minimum_version\";s:6:\"5.6.20\";s:12:\"is_supported\";b:0;s:9:\"is_secure\";b:0;s:13:\"is_acceptable\";b:1;}', 'no'),
-(551, '_site_transient_timeout_theme_roots', '1581442053', 'no'),
-(552, '_site_transient_theme_roots', 'a:1:{s:7:\"rekidea\";s:7:\"/themes\";}', 'no'),
-(554, '_site_transient_update_themes', 'O:8:\"stdClass\":4:{s:12:\"last_checked\";i:1581440256;s:7:\"checked\";a:1:{s:7:\"rekidea\";s:0:\"\";}s:8:\"response\";a:0:{}s:12:\"translations\";a:0:{}}', 'no'),
-(555, '_site_transient_update_plugins', 'O:8:\"stdClass\":5:{s:12:\"last_checked\";i:1581440257;s:7:\"checked\";a:6:{s:30:\"advanced-custom-fields/acf.php\";s:5:\"5.8.7\";s:19:\"akismet/akismet.php\";s:5:\"4.1.3\";s:36:\"contact-form-7/wp-contact-form-7.php\";s:5:\"5.1.6\";s:43:\"custom-post-type-ui/custom-post-type-ui.php\";s:5:\"1.7.2\";s:35:\"image-watermark/image-watermark.php\";s:5:\"1.6.6\";s:60:\"wp-slick-slider-and-image-carousel/wp-slick-image-slider.php\";s:5:\"1.9.1\";}s:8:\"response\";a:1:{s:43:\"custom-post-type-ui/custom-post-type-ui.php\";O:8:\"stdClass\":12:{s:2:\"id\";s:33:\"w.org/plugins/custom-post-type-ui\";s:4:\"slug\";s:19:\"custom-post-type-ui\";s:6:\"plugin\";s:43:\"custom-post-type-ui/custom-post-type-ui.php\";s:11:\"new_version\";s:5:\"1.7.3\";s:3:\"url\";s:50:\"https://wordpress.org/plugins/custom-post-type-ui/\";s:7:\"package\";s:68:\"https://downloads.wordpress.org/plugin/custom-post-type-ui.1.7.3.zip\";s:5:\"icons\";a:2:{s:2:\"2x\";s:72:\"https://ps.w.org/custom-post-type-ui/assets/icon-256x256.png?rev=1069557\";s:2:\"1x\";s:72:\"https://ps.w.org/custom-post-type-ui/assets/icon-128x128.png?rev=1069557\";}s:7:\"banners\";a:2:{s:2:\"2x\";s:75:\"https://ps.w.org/custom-post-type-ui/assets/banner-1544x500.png?rev=1069557\";s:2:\"1x\";s:74:\"https://ps.w.org/custom-post-type-ui/assets/banner-772x250.png?rev=1069557\";}s:11:\"banners_rtl\";a:0:{}s:6:\"tested\";s:5:\"5.3.2\";s:12:\"requires_php\";s:3:\"5.6\";s:13:\"compatibility\";O:8:\"stdClass\":0:{}}}s:12:\"translations\";a:2:{i:0;a:7:{s:4:\"type\";s:6:\"plugin\";s:4:\"slug\";s:14:\"contact-form-7\";s:8:\"language\";s:5:\"ru_RU\";s:7:\"version\";s:5:\"5.1.6\";s:7:\"updated\";s:19:\"2019-08-05 17:14:46\";s:7:\"package\";s:81:\"https://downloads.wordpress.org/translation/plugin/contact-form-7/5.1.6/ru_RU.zip\";s:10:\"autoupdate\";b:1;}i:1;a:7:{s:4:\"type\";s:6:\"plugin\";s:4:\"slug\";s:15:\"image-watermark\";s:8:\"language\";s:5:\"ru_RU\";s:7:\"version\";s:5:\"1.6.6\";s:7:\"updated\";s:19:\"2019-11-12 23:12:14\";s:7:\"package\";s:82:\"https://downloads.wordpress.org/translation/plugin/image-watermark/1.6.6/ru_RU.zip\";s:10:\"autoupdate\";b:1;}}s:9:\"no_update\";a:5:{s:30:\"advanced-custom-fields/acf.php\";O:8:\"stdClass\":9:{s:2:\"id\";s:36:\"w.org/plugins/advanced-custom-fields\";s:4:\"slug\";s:22:\"advanced-custom-fields\";s:6:\"plugin\";s:30:\"advanced-custom-fields/acf.php\";s:11:\"new_version\";s:5:\"5.8.7\";s:3:\"url\";s:53:\"https://wordpress.org/plugins/advanced-custom-fields/\";s:7:\"package\";s:71:\"https://downloads.wordpress.org/plugin/advanced-custom-fields.5.8.7.zip\";s:5:\"icons\";a:2:{s:2:\"2x\";s:75:\"https://ps.w.org/advanced-custom-fields/assets/icon-256x256.png?rev=1082746\";s:2:\"1x\";s:75:\"https://ps.w.org/advanced-custom-fields/assets/icon-128x128.png?rev=1082746\";}s:7:\"banners\";a:2:{s:2:\"2x\";s:78:\"https://ps.w.org/advanced-custom-fields/assets/banner-1544x500.jpg?rev=1729099\";s:2:\"1x\";s:77:\"https://ps.w.org/advanced-custom-fields/assets/banner-772x250.jpg?rev=1729102\";}s:11:\"banners_rtl\";a:0:{}}s:19:\"akismet/akismet.php\";O:8:\"stdClass\":9:{s:2:\"id\";s:21:\"w.org/plugins/akismet\";s:4:\"slug\";s:7:\"akismet\";s:6:\"plugin\";s:19:\"akismet/akismet.php\";s:11:\"new_version\";s:5:\"4.1.3\";s:3:\"url\";s:38:\"https://wordpress.org/plugins/akismet/\";s:7:\"package\";s:56:\"https://downloads.wordpress.org/plugin/akismet.4.1.3.zip\";s:5:\"icons\";a:2:{s:2:\"2x\";s:59:\"https://ps.w.org/akismet/assets/icon-256x256.png?rev=969272\";s:2:\"1x\";s:59:\"https://ps.w.org/akismet/assets/icon-128x128.png?rev=969272\";}s:7:\"banners\";a:1:{s:2:\"1x\";s:61:\"https://ps.w.org/akismet/assets/banner-772x250.jpg?rev=479904\";}s:11:\"banners_rtl\";a:0:{}}s:36:\"contact-form-7/wp-contact-form-7.php\";O:8:\"stdClass\":9:{s:2:\"id\";s:28:\"w.org/plugins/contact-form-7\";s:4:\"slug\";s:14:\"contact-form-7\";s:6:\"plugin\";s:36:\"contact-form-7/wp-contact-form-7.php\";s:11:\"new_version\";s:5:\"5.1.6\";s:3:\"url\";s:45:\"https://wordpress.org/plugins/contact-form-7/\";s:7:\"package\";s:63:\"https://downloads.wordpress.org/plugin/contact-form-7.5.1.6.zip\";s:5:\"icons\";a:2:{s:2:\"2x\";s:66:\"https://ps.w.org/contact-form-7/assets/icon-256x256.png?rev=984007\";s:2:\"1x\";s:66:\"https://ps.w.org/contact-form-7/assets/icon-128x128.png?rev=984007\";}s:7:\"banners\";a:2:{s:2:\"2x\";s:69:\"https://ps.w.org/contact-form-7/assets/banner-1544x500.png?rev=860901\";s:2:\"1x\";s:68:\"https://ps.w.org/contact-form-7/assets/banner-772x250.png?rev=880427\";}s:11:\"banners_rtl\";a:0:{}}s:35:\"image-watermark/image-watermark.php\";O:8:\"stdClass\":9:{s:2:\"id\";s:29:\"w.org/plugins/image-watermark\";s:4:\"slug\";s:15:\"image-watermark\";s:6:\"plugin\";s:35:\"image-watermark/image-watermark.php\";s:11:\"new_version\";s:5:\"1.6.6\";s:3:\"url\";s:46:\"https://wordpress.org/plugins/image-watermark/\";s:7:\"package\";s:64:\"https://downloads.wordpress.org/plugin/image-watermark.1.6.6.zip\";s:5:\"icons\";a:2:{s:2:\"2x\";s:68:\"https://ps.w.org/image-watermark/assets/icon-256x256.png?rev=1018443\";s:2:\"1x\";s:68:\"https://ps.w.org/image-watermark/assets/icon-128x128.png?rev=1018443\";}s:7:\"banners\";a:1:{s:2:\"1x\";s:69:\"https://ps.w.org/image-watermark/assets/banner-772x250.png?rev=692625\";}s:11:\"banners_rtl\";a:0:{}}s:60:\"wp-slick-slider-and-image-carousel/wp-slick-image-slider.php\";O:8:\"stdClass\":9:{s:2:\"id\";s:48:\"w.org/plugins/wp-slick-slider-and-image-carousel\";s:4:\"slug\";s:34:\"wp-slick-slider-and-image-carousel\";s:6:\"plugin\";s:60:\"wp-slick-slider-and-image-carousel/wp-slick-image-slider.php\";s:11:\"new_version\";s:5:\"1.9.1\";s:3:\"url\";s:65:\"https://wordpress.org/plugins/wp-slick-slider-and-image-carousel/\";s:7:\"package\";s:77:\"https://downloads.wordpress.org/plugin/wp-slick-slider-and-image-carousel.zip\";s:5:\"icons\";a:1:{s:2:\"1x\";s:87:\"https://ps.w.org/wp-slick-slider-and-image-carousel/assets/icon-128x128.png?rev=1443298\";}s:7:\"banners\";a:1:{s:2:\"1x\";s:89:\"https://ps.w.org/wp-slick-slider-and-image-carousel/assets/banner-772x250.png?rev=1711327\";}s:11:\"banners_rtl\";a:0:{}}}}', 'no'),
-(556, '_site_transient_update_core', 'O:8:\"stdClass\":4:{s:7:\"updates\";a:4:{i:0;O:8:\"stdClass\":10:{s:8:\"response\";s:7:\"upgrade\";s:8:\"download\";s:65:\"https://downloads.wordpress.org/release/ru_RU/wordpress-5.3.2.zip\";s:6:\"locale\";s:5:\"ru_RU\";s:8:\"packages\";O:8:\"stdClass\":5:{s:4:\"full\";s:65:\"https://downloads.wordpress.org/release/ru_RU/wordpress-5.3.2.zip\";s:10:\"no_content\";b:0;s:11:\"new_bundled\";b:0;s:7:\"partial\";b:0;s:8:\"rollback\";b:0;}s:7:\"current\";s:5:\"5.3.2\";s:7:\"version\";s:5:\"5.3.2\";s:11:\"php_version\";s:6:\"5.6.20\";s:13:\"mysql_version\";s:3:\"5.0\";s:11:\"new_bundled\";s:3:\"5.3\";s:15:\"partial_version\";s:0:\"\";}i:1;O:8:\"stdClass\":10:{s:8:\"response\";s:7:\"upgrade\";s:8:\"download\";s:59:\"https://downloads.wordpress.org/release/wordpress-5.3.2.zip\";s:6:\"locale\";s:5:\"en_US\";s:8:\"packages\";O:8:\"stdClass\":5:{s:4:\"full\";s:59:\"https://downloads.wordpress.org/release/wordpress-5.3.2.zip\";s:10:\"no_content\";s:70:\"https://downloads.wordpress.org/release/wordpress-5.3.2-no-content.zip\";s:11:\"new_bundled\";s:71:\"https://downloads.wordpress.org/release/wordpress-5.3.2-new-bundled.zip\";s:7:\"partial\";b:0;s:8:\"rollback\";b:0;}s:7:\"current\";s:5:\"5.3.2\";s:7:\"version\";s:5:\"5.3.2\";s:11:\"php_version\";s:6:\"5.6.20\";s:13:\"mysql_version\";s:3:\"5.0\";s:11:\"new_bundled\";s:3:\"5.3\";s:15:\"partial_version\";s:0:\"\";}i:2;O:8:\"stdClass\":11:{s:8:\"response\";s:10:\"autoupdate\";s:8:\"download\";s:65:\"https://downloads.wordpress.org/release/ru_RU/wordpress-5.3.2.zip\";s:6:\"locale\";s:5:\"ru_RU\";s:8:\"packages\";O:8:\"stdClass\":5:{s:4:\"full\";s:65:\"https://downloads.wordpress.org/release/ru_RU/wordpress-5.3.2.zip\";s:10:\"no_content\";b:0;s:11:\"new_bundled\";b:0;s:7:\"partial\";b:0;s:8:\"rollback\";b:0;}s:7:\"current\";s:5:\"5.3.2\";s:7:\"version\";s:5:\"5.3.2\";s:11:\"php_version\";s:6:\"5.6.20\";s:13:\"mysql_version\";s:3:\"5.0\";s:11:\"new_bundled\";s:3:\"5.3\";s:15:\"partial_version\";s:0:\"\";s:9:\"new_files\";s:1:\"1\";}i:3;O:8:\"stdClass\":11:{s:8:\"response\";s:10:\"autoupdate\";s:8:\"download\";s:65:\"https://downloads.wordpress.org/release/ru_RU/wordpress-5.2.5.zip\";s:6:\"locale\";s:5:\"ru_RU\";s:8:\"packages\";O:8:\"stdClass\":5:{s:4:\"full\";s:65:\"https://downloads.wordpress.org/release/ru_RU/wordpress-5.2.5.zip\";s:10:\"no_content\";b:0;s:11:\"new_bundled\";b:0;s:7:\"partial\";b:0;s:8:\"rollback\";b:0;}s:7:\"current\";s:5:\"5.2.5\";s:7:\"version\";s:5:\"5.2.5\";s:11:\"php_version\";s:6:\"5.6.20\";s:13:\"mysql_version\";s:3:\"5.0\";s:11:\"new_bundled\";s:3:\"5.3\";s:15:\"partial_version\";s:0:\"\";s:9:\"new_files\";s:1:\"1\";}}s:12:\"last_checked\";i:1581440389;s:15:\"version_checked\";s:5:\"5.2.2\";s:12:\"translations\";a:0:{}}', 'no'),
 (557, '_site_transient_timeout_browser_d939080b114a7b9883f6459477dce21a', '1582045190', 'no'),
 (558, '_site_transient_browser_d939080b114a7b9883f6459477dce21a', 'a:10:{s:4:\"name\";s:7:\"Firefox\";s:7:\"version\";s:4:\"72.0\";s:8:\"platform\";s:7:\"Windows\";s:10:\"update_url\";s:24:\"https://www.firefox.com/\";s:7:\"img_src\";s:44:\"http://s.w.org/images/browsers/firefox.png?1\";s:11:\"img_src_ssl\";s:45:\"https://s.w.org/images/browsers/firefox.png?1\";s:15:\"current_version\";s:2:\"56\";s:7:\"upgrade\";b:0;s:8:\"insecure\";b:0;s:6:\"mobile\";b:0;}', 'no'),
 (559, '_site_transient_timeout_php_check_c1087265602856b93bc71165bc9dc548', '1582045191', 'no'),
 (560, '_site_transient_php_check_c1087265602856b93bc71165bc9dc548', 'a:5:{s:19:\"recommended_version\";s:3:\"7.3\";s:15:\"minimum_version\";s:6:\"5.6.20\";s:12:\"is_supported\";b:0;s:9:\"is_secure\";b:1;s:13:\"is_acceptable\";b:1;}', 'no'),
-(561, '_site_transient_timeout_community-events-1aecf33ab8525ff212ebdffbb438372e', '1581483596', 'no'),
-(562, '_site_transient_community-events-1aecf33ab8525ff212ebdffbb438372e', 'a:3:{s:9:\"sandboxed\";b:0;s:8:\"location\";a:1:{s:2:\"ip\";s:9:\"127.0.0.0\";}s:6:\"events\";a:1:{i:0;a:8:{s:4:\"type\";s:6:\"meetup\";s:5:\"title\";s:42:\"WP Moscow #12. Весенний митап\";s:3:\"url\";s:57:\"https://www.meetup.com/wordpress-moscow/events/268216933/\";s:6:\"meetup\";s:16:\"WordPress Moscow\";s:10:\"meetup_url\";s:40:\"https://www.meetup.com/wordpress-moscow/\";s:4:\"date\";s:19:\"2020-03-12 19:00:00\";s:8:\"end_date\";s:19:\"2020-03-12 21:00:00\";s:8:\"location\";a:4:{s:8:\"location\";s:20:\"Москва, Russia\";s:7:\"country\";s:2:\"ru\";s:8:\"latitude\";d:55.807910919189;s:9:\"longitude\";d:37.573364257812;}}}}', 'no'),
-(563, 'can_compress_scripts', '1', 'no');
+(586, '_site_transient_timeout_browser_51e1b2a3a880ff40322f93b380b8417d', '1582139557', 'no'),
+(587, '_site_transient_browser_51e1b2a3a880ff40322f93b380b8417d', 'a:10:{s:4:\"name\";s:6:\"Chrome\";s:7:\"version\";s:13:\"79.0.3945.136\";s:8:\"platform\";s:7:\"Android\";s:10:\"update_url\";s:0:\"\";s:7:\"img_src\";s:0:\"\";s:11:\"img_src_ssl\";s:0:\"\";s:15:\"current_version\";s:0:\"\";s:7:\"upgrade\";b:0;s:8:\"insecure\";b:0;s:6:\"mobile\";b:1;}', 'no'),
+(588, '_site_transient_timeout_php_check_2ab73141e07c174afcee0664f1ca7ae5', '1582139558', 'no'),
+(589, '_site_transient_php_check_2ab73141e07c174afcee0664f1ca7ae5', 'a:5:{s:19:\"recommended_version\";s:3:\"7.3\";s:15:\"minimum_version\";s:6:\"5.6.20\";s:12:\"is_supported\";b:0;s:9:\"is_secure\";b:1;s:13:\"is_acceptable\";b:1;}', 'no'),
+(590, '_site_transient_timeout_community-events-57c8861544d04dbb122b6b755473daf2', '1581577960', 'no'),
+(591, '_site_transient_community-events-57c8861544d04dbb122b6b755473daf2', 'a:3:{s:9:\"sandboxed\";b:0;s:8:\"location\";a:1:{s:2:\"ip\";s:13:\"176.100.120.0\";}s:6:\"events\";a:0:{}}', 'no'),
+(592, '_site_transient_timeout_browser_3737817f3d5fe37394eb18e64dbb79e5', '1582139652', 'no'),
+(593, '_site_transient_browser_3737817f3d5fe37394eb18e64dbb79e5', 'a:10:{s:4:\"name\";s:6:\"Chrome\";s:7:\"version\";s:13:\"79.0.3945.136\";s:8:\"platform\";s:7:\"Windows\";s:10:\"update_url\";s:29:\"https://www.google.com/chrome\";s:7:\"img_src\";s:43:\"http://s.w.org/images/browsers/chrome.png?1\";s:11:\"img_src_ssl\";s:44:\"https://s.w.org/images/browsers/chrome.png?1\";s:15:\"current_version\";s:2:\"18\";s:7:\"upgrade\";b:0;s:8:\"insecure\";b:0;s:6:\"mobile\";b:0;}', 'no'),
+(599, '_site_transient_timeout_theme_roots', '1581574411', 'no'),
+(600, '_site_transient_theme_roots', 'a:1:{s:7:\"rekidea\";s:7:\"/themes\";}', 'no'),
+(606, '_site_transient_timeout_browser_d501fa6ac9c01c23c9a72870b89eeaa1', '1582178144', 'no'),
+(607, '_site_transient_browser_d501fa6ac9c01c23c9a72870b89eeaa1', 'a:10:{s:4:\"name\";s:6:\"Chrome\";s:7:\"version\";s:13:\"80.0.3987.100\";s:8:\"platform\";s:7:\"Windows\";s:10:\"update_url\";s:29:\"https://www.google.com/chrome\";s:7:\"img_src\";s:43:\"http://s.w.org/images/browsers/chrome.png?1\";s:11:\"img_src_ssl\";s:44:\"https://s.w.org/images/browsers/chrome.png?1\";s:15:\"current_version\";s:2:\"18\";s:7:\"upgrade\";b:0;s:8:\"insecure\";b:0;s:6:\"mobile\";b:0;}', 'no'),
+(608, 'can_compress_scripts', '1', 'no'),
+(609, '_site_transient_timeout_community-events-1aecf33ab8525ff212ebdffbb438372e', '1581616545', 'no'),
+(610, '_site_transient_community-events-1aecf33ab8525ff212ebdffbb438372e', 'a:3:{s:9:\"sandboxed\";b:0;s:8:\"location\";a:1:{s:2:\"ip\";s:9:\"127.0.0.0\";}s:6:\"events\";a:0:{}}', 'no'),
+(614, '_transient_timeout_plugin_slugs', '1581659817', 'no'),
+(615, '_transient_plugin_slugs', 'a:7:{i:0;s:30:\"advanced-custom-fields/acf.php\";i:1;s:19:\"akismet/akismet.php\";i:2;s:36:\"contact-form-7/wp-contact-form-7.php\";i:3;s:43:\"custom-post-type-ui/custom-post-type-ui.php\";i:4;s:9:\"hello.php\";i:5;s:35:\"image-watermark/image-watermark.php\";i:6;s:60:\"wp-slick-slider-and-image-carousel/wp-slick-image-slider.php\";}', 'no'),
+(617, 'dismissed_update_core', 'a:1:{s:11:\"5.3.2|ru_RU\";b:1;}', 'no'),
+(618, '_site_transient_update_core', 'O:8:\"stdClass\":4:{s:7:\"updates\";a:1:{i:0;O:8:\"stdClass\":10:{s:8:\"response\";s:6:\"latest\";s:8:\"download\";s:65:\"https://downloads.wordpress.org/release/ru_RU/wordpress-5.3.2.zip\";s:6:\"locale\";s:5:\"ru_RU\";s:8:\"packages\";O:8:\"stdClass\":5:{s:4:\"full\";s:65:\"https://downloads.wordpress.org/release/ru_RU/wordpress-5.3.2.zip\";s:10:\"no_content\";b:0;s:11:\"new_bundled\";b:0;s:7:\"partial\";b:0;s:8:\"rollback\";b:0;}s:7:\"current\";s:5:\"5.3.2\";s:7:\"version\";s:5:\"5.3.2\";s:11:\"php_version\";s:6:\"5.6.20\";s:13:\"mysql_version\";s:3:\"5.0\";s:11:\"new_bundled\";s:3:\"5.3\";s:15:\"partial_version\";s:0:\"\";}}s:12:\"last_checked\";i:1581573436;s:15:\"version_checked\";s:5:\"5.3.2\";s:12:\"translations\";a:0:{}}', 'no'),
+(619, '_site_transient_update_plugins', 'O:8:\"stdClass\":5:{s:12:\"last_checked\";i:1581573438;s:7:\"checked\";a:7:{s:30:\"advanced-custom-fields/acf.php\";s:5:\"5.8.7\";s:19:\"akismet/akismet.php\";s:5:\"4.1.3\";s:36:\"contact-form-7/wp-contact-form-7.php\";s:5:\"5.1.6\";s:43:\"custom-post-type-ui/custom-post-type-ui.php\";s:5:\"1.7.3\";s:9:\"hello.php\";s:5:\"1.7.2\";s:35:\"image-watermark/image-watermark.php\";s:5:\"1.6.6\";s:60:\"wp-slick-slider-and-image-carousel/wp-slick-image-slider.php\";s:5:\"1.9.1\";}s:8:\"response\";a:0:{}s:12:\"translations\";a:0:{}s:9:\"no_update\";a:7:{s:30:\"advanced-custom-fields/acf.php\";O:8:\"stdClass\":9:{s:2:\"id\";s:36:\"w.org/plugins/advanced-custom-fields\";s:4:\"slug\";s:22:\"advanced-custom-fields\";s:6:\"plugin\";s:30:\"advanced-custom-fields/acf.php\";s:11:\"new_version\";s:5:\"5.8.7\";s:3:\"url\";s:53:\"https://wordpress.org/plugins/advanced-custom-fields/\";s:7:\"package\";s:71:\"https://downloads.wordpress.org/plugin/advanced-custom-fields.5.8.7.zip\";s:5:\"icons\";a:2:{s:2:\"2x\";s:75:\"https://ps.w.org/advanced-custom-fields/assets/icon-256x256.png?rev=1082746\";s:2:\"1x\";s:75:\"https://ps.w.org/advanced-custom-fields/assets/icon-128x128.png?rev=1082746\";}s:7:\"banners\";a:2:{s:2:\"2x\";s:78:\"https://ps.w.org/advanced-custom-fields/assets/banner-1544x500.jpg?rev=1729099\";s:2:\"1x\";s:77:\"https://ps.w.org/advanced-custom-fields/assets/banner-772x250.jpg?rev=1729102\";}s:11:\"banners_rtl\";a:0:{}}s:19:\"akismet/akismet.php\";O:8:\"stdClass\":9:{s:2:\"id\";s:21:\"w.org/plugins/akismet\";s:4:\"slug\";s:7:\"akismet\";s:6:\"plugin\";s:19:\"akismet/akismet.php\";s:11:\"new_version\";s:5:\"4.1.3\";s:3:\"url\";s:38:\"https://wordpress.org/plugins/akismet/\";s:7:\"package\";s:56:\"https://downloads.wordpress.org/plugin/akismet.4.1.3.zip\";s:5:\"icons\";a:2:{s:2:\"2x\";s:59:\"https://ps.w.org/akismet/assets/icon-256x256.png?rev=969272\";s:2:\"1x\";s:59:\"https://ps.w.org/akismet/assets/icon-128x128.png?rev=969272\";}s:7:\"banners\";a:1:{s:2:\"1x\";s:61:\"https://ps.w.org/akismet/assets/banner-772x250.jpg?rev=479904\";}s:11:\"banners_rtl\";a:0:{}}s:36:\"contact-form-7/wp-contact-form-7.php\";O:8:\"stdClass\":9:{s:2:\"id\";s:28:\"w.org/plugins/contact-form-7\";s:4:\"slug\";s:14:\"contact-form-7\";s:6:\"plugin\";s:36:\"contact-form-7/wp-contact-form-7.php\";s:11:\"new_version\";s:5:\"5.1.6\";s:3:\"url\";s:45:\"https://wordpress.org/plugins/contact-form-7/\";s:7:\"package\";s:63:\"https://downloads.wordpress.org/plugin/contact-form-7.5.1.6.zip\";s:5:\"icons\";a:2:{s:2:\"2x\";s:66:\"https://ps.w.org/contact-form-7/assets/icon-256x256.png?rev=984007\";s:2:\"1x\";s:66:\"https://ps.w.org/contact-form-7/assets/icon-128x128.png?rev=984007\";}s:7:\"banners\";a:2:{s:2:\"2x\";s:69:\"https://ps.w.org/contact-form-7/assets/banner-1544x500.png?rev=860901\";s:2:\"1x\";s:68:\"https://ps.w.org/contact-form-7/assets/banner-772x250.png?rev=880427\";}s:11:\"banners_rtl\";a:0:{}}s:43:\"custom-post-type-ui/custom-post-type-ui.php\";O:8:\"stdClass\":9:{s:2:\"id\";s:33:\"w.org/plugins/custom-post-type-ui\";s:4:\"slug\";s:19:\"custom-post-type-ui\";s:6:\"plugin\";s:43:\"custom-post-type-ui/custom-post-type-ui.php\";s:11:\"new_version\";s:5:\"1.7.3\";s:3:\"url\";s:50:\"https://wordpress.org/plugins/custom-post-type-ui/\";s:7:\"package\";s:68:\"https://downloads.wordpress.org/plugin/custom-post-type-ui.1.7.3.zip\";s:5:\"icons\";a:2:{s:2:\"2x\";s:72:\"https://ps.w.org/custom-post-type-ui/assets/icon-256x256.png?rev=1069557\";s:2:\"1x\";s:72:\"https://ps.w.org/custom-post-type-ui/assets/icon-128x128.png?rev=1069557\";}s:7:\"banners\";a:2:{s:2:\"2x\";s:75:\"https://ps.w.org/custom-post-type-ui/assets/banner-1544x500.png?rev=1069557\";s:2:\"1x\";s:74:\"https://ps.w.org/custom-post-type-ui/assets/banner-772x250.png?rev=1069557\";}s:11:\"banners_rtl\";a:0:{}}s:9:\"hello.php\";O:8:\"stdClass\":9:{s:2:\"id\";s:25:\"w.org/plugins/hello-dolly\";s:4:\"slug\";s:11:\"hello-dolly\";s:6:\"plugin\";s:9:\"hello.php\";s:11:\"new_version\";s:5:\"1.7.2\";s:3:\"url\";s:42:\"https://wordpress.org/plugins/hello-dolly/\";s:7:\"package\";s:60:\"https://downloads.wordpress.org/plugin/hello-dolly.1.7.2.zip\";s:5:\"icons\";a:2:{s:2:\"2x\";s:64:\"https://ps.w.org/hello-dolly/assets/icon-256x256.jpg?rev=2052855\";s:2:\"1x\";s:64:\"https://ps.w.org/hello-dolly/assets/icon-128x128.jpg?rev=2052855\";}s:7:\"banners\";a:1:{s:2:\"1x\";s:66:\"https://ps.w.org/hello-dolly/assets/banner-772x250.jpg?rev=2052855\";}s:11:\"banners_rtl\";a:0:{}}s:35:\"image-watermark/image-watermark.php\";O:8:\"stdClass\":9:{s:2:\"id\";s:29:\"w.org/plugins/image-watermark\";s:4:\"slug\";s:15:\"image-watermark\";s:6:\"plugin\";s:35:\"image-watermark/image-watermark.php\";s:11:\"new_version\";s:5:\"1.6.6\";s:3:\"url\";s:46:\"https://wordpress.org/plugins/image-watermark/\";s:7:\"package\";s:64:\"https://downloads.wordpress.org/plugin/image-watermark.1.6.6.zip\";s:5:\"icons\";a:2:{s:2:\"2x\";s:68:\"https://ps.w.org/image-watermark/assets/icon-256x256.png?rev=1018443\";s:2:\"1x\";s:68:\"https://ps.w.org/image-watermark/assets/icon-128x128.png?rev=1018443\";}s:7:\"banners\";a:1:{s:2:\"1x\";s:69:\"https://ps.w.org/image-watermark/assets/banner-772x250.png?rev=692625\";}s:11:\"banners_rtl\";a:0:{}}s:60:\"wp-slick-slider-and-image-carousel/wp-slick-image-slider.php\";O:8:\"stdClass\":9:{s:2:\"id\";s:48:\"w.org/plugins/wp-slick-slider-and-image-carousel\";s:4:\"slug\";s:34:\"wp-slick-slider-and-image-carousel\";s:6:\"plugin\";s:60:\"wp-slick-slider-and-image-carousel/wp-slick-image-slider.php\";s:11:\"new_version\";s:5:\"1.9.1\";s:3:\"url\";s:65:\"https://wordpress.org/plugins/wp-slick-slider-and-image-carousel/\";s:7:\"package\";s:77:\"https://downloads.wordpress.org/plugin/wp-slick-slider-and-image-carousel.zip\";s:5:\"icons\";a:1:{s:2:\"1x\";s:87:\"https://ps.w.org/wp-slick-slider-and-image-carousel/assets/icon-128x128.png?rev=1443298\";}s:7:\"banners\";a:1:{s:2:\"1x\";s:89:\"https://ps.w.org/wp-slick-slider-and-image-carousel/assets/banner-772x250.png?rev=1711327\";}s:11:\"banners_rtl\";a:0:{}}}}', 'no'),
+(620, '_site_transient_update_themes', 'O:8:\"stdClass\":4:{s:12:\"last_checked\";i:1581573438;s:7:\"checked\";a:1:{s:7:\"rekidea\";s:0:\"\";}s:8:\"response\";a:0:{}s:12:\"translations\";a:0:{}}', 'no');
 
 -- --------------------------------------------------------
 
@@ -273,7 +288,6 @@ CREATE TABLE `wp_postmeta` (
 --
 
 INSERT INTO `wp_postmeta` (`meta_id`, `post_id`, `meta_key`, `meta_value`) VALUES
-(1, 2, '_wp_page_template', 'default'),
 (2, 3, '_wp_page_template', 'default'),
 (3, 5, '_menu_item_type', 'custom'),
 (4, 5, '_menu_item_menu_item_parent', '0'),
@@ -284,18 +298,6 @@ INSERT INTO `wp_postmeta` (`meta_id`, `post_id`, `meta_key`, `meta_value`) VALUE
 (9, 5, '_menu_item_xfn', ''),
 (10, 5, '_menu_item_url', 'http://rek.local/'),
 (11, 5, '_menu_item_orphaned', '1579800147'),
-(12, 6, '_menu_item_type', 'post_type'),
-(13, 6, '_menu_item_menu_item_parent', '0'),
-(14, 6, '_menu_item_object_id', '2'),
-(15, 6, '_menu_item_object', 'page'),
-(16, 6, '_menu_item_target', ''),
-(17, 6, '_menu_item_classes', 'a:1:{i:0;s:0:\"\";}'),
-(18, 6, '_menu_item_xfn', ''),
-(19, 6, '_menu_item_url', ''),
-(20, 6, '_menu_item_orphaned', '1579800147'),
-(21, 2, '_wp_trash_meta_status', 'publish'),
-(22, 2, '_wp_trash_meta_time', '1579838583'),
-(23, 2, '_wp_desired_post_slug', 'sample-page'),
 (24, 8, '_form', '<h3>Мы открыты для обратной связи с покупателями, партнерами и соискателями!</h3>\n\n<label> Имя\n    [text* your-name] </label>\n\n<label> Электронная почта\n    [email* your-email] </label>\n\n<label> Телефон\n    [tel tel-729] </label>\n\n<label> Тема\n    [text your-subject] </label>\n\n<label> Сообщение\n    [textarea your-message] </label>\n<div class=\"file-send-wrapper\">\n<label> \n   [file file-171 class:file-send] Файл</label>\n</div>\n\n[submit \"Отправить\"]'),
 (25, 8, '_mail', 'a:9:{s:6:\"active\";b:1;s:7:\"subject\";s:20:\"Rek \"[your-subject]\"\";s:6:\"sender\";s:25:\"Rek <wordpress@rek.local>\";s:9:\"recipient\";s:17:\"swd.admin@mail.ru\";s:4:\"body\";s:158:\"From: [your-name] <[your-email]>\nSubject: [your-subject]\n\nMessage Body:\n[your-message]\n\n-- \nThis e-mail was sent from a contact form on Rek (http://rek.local)\";s:18:\"additional_headers\";s:24:\"Reply-To: [11your-email]\";s:11:\"attachments\";s:0:\"\";s:8:\"use_html\";b:0;s:13:\"exclude_blank\";b:0;}'),
 (26, 8, '_mail_2', 'a:9:{s:6:\"active\";b:0;s:7:\"subject\";s:20:\"Rek \"[your-subject]\"\";s:6:\"sender\";s:25:\"Rek <wordpress@rek.local>\";s:9:\"recipient\";s:12:\"[your-email]\";s:4:\"body\";s:100:\"Message Body:\n[your-message]\n\n-- \nThis e-mail was sent from a contact form on Rek (http://rek.local)\";s:18:\"additional_headers\";s:27:\"Reply-To: swd.admin@mail.ru\";s:11:\"attachments\";s:0:\"\";s:8:\"use_html\";b:0;s:13:\"exclude_blank\";b:0;}'),
@@ -654,7 +656,7 @@ INSERT INTO `wp_postmeta` (`meta_id`, `post_id`, `meta_key`, `meta_value`) VALUE
 (457, 118, '_menu_item_target', ''),
 (458, 118, '_menu_item_classes', 'a:1:{i:0;s:0:\"\";}'),
 (459, 118, '_menu_item_xfn', ''),
-(460, 118, '_menu_item_url', '/'),
+(460, 118, '_menu_item_url', '/404'),
 (462, 119, '_menu_item_type', 'custom'),
 (463, 119, '_menu_item_menu_item_parent', '105'),
 (464, 119, '_menu_item_object_id', '119'),
@@ -662,7 +664,7 @@ INSERT INTO `wp_postmeta` (`meta_id`, `post_id`, `meta_key`, `meta_value`) VALUE
 (466, 119, '_menu_item_target', ''),
 (467, 119, '_menu_item_classes', 'a:1:{i:0;s:0:\"\";}'),
 (468, 119, '_menu_item_xfn', ''),
-(469, 119, '_menu_item_url', '/'),
+(469, 119, '_menu_item_url', '/404'),
 (471, 120, '_menu_item_type', 'custom'),
 (472, 120, '_menu_item_menu_item_parent', '106'),
 (473, 120, '_menu_item_object_id', '120'),
@@ -670,7 +672,7 @@ INSERT INTO `wp_postmeta` (`meta_id`, `post_id`, `meta_key`, `meta_value`) VALUE
 (475, 120, '_menu_item_target', ''),
 (476, 120, '_menu_item_classes', 'a:1:{i:0;s:0:\"\";}'),
 (477, 120, '_menu_item_xfn', ''),
-(478, 120, '_menu_item_url', '/'),
+(478, 120, '_menu_item_url', '/404'),
 (480, 121, '_menu_item_type', 'custom'),
 (481, 121, '_menu_item_menu_item_parent', '106'),
 (482, 121, '_menu_item_object_id', '121'),
@@ -678,7 +680,7 @@ INSERT INTO `wp_postmeta` (`meta_id`, `post_id`, `meta_key`, `meta_value`) VALUE
 (484, 121, '_menu_item_target', ''),
 (485, 121, '_menu_item_classes', 'a:1:{i:0;s:0:\"\";}'),
 (486, 121, '_menu_item_xfn', ''),
-(487, 121, '_menu_item_url', '/'),
+(487, 121, '_menu_item_url', '/404'),
 (489, 122, '_menu_item_type', 'custom'),
 (490, 122, '_menu_item_menu_item_parent', '106'),
 (491, 122, '_menu_item_object_id', '122'),
@@ -686,7 +688,7 @@ INSERT INTO `wp_postmeta` (`meta_id`, `post_id`, `meta_key`, `meta_value`) VALUE
 (493, 122, '_menu_item_target', ''),
 (494, 122, '_menu_item_classes', 'a:1:{i:0;s:0:\"\";}'),
 (495, 122, '_menu_item_xfn', ''),
-(496, 122, '_menu_item_url', '/'),
+(496, 122, '_menu_item_url', '/404'),
 (498, 123, '_menu_item_type', 'custom'),
 (499, 123, '_menu_item_menu_item_parent', '106'),
 (500, 123, '_menu_item_object_id', '123'),
@@ -694,7 +696,7 @@ INSERT INTO `wp_postmeta` (`meta_id`, `post_id`, `meta_key`, `meta_value`) VALUE
 (502, 123, '_menu_item_target', ''),
 (503, 123, '_menu_item_classes', 'a:1:{i:0;s:0:\"\";}'),
 (504, 123, '_menu_item_xfn', ''),
-(505, 123, '_menu_item_url', '/'),
+(505, 123, '_menu_item_url', '/404'),
 (507, 124, '_menu_item_type', 'custom'),
 (508, 124, '_menu_item_menu_item_parent', '106'),
 (509, 124, '_menu_item_object_id', '124'),
@@ -702,7 +704,7 @@ INSERT INTO `wp_postmeta` (`meta_id`, `post_id`, `meta_key`, `meta_value`) VALUE
 (511, 124, '_menu_item_target', ''),
 (512, 124, '_menu_item_classes', 'a:1:{i:0;s:0:\"\";}'),
 (513, 124, '_menu_item_xfn', ''),
-(514, 124, '_menu_item_url', '/'),
+(514, 124, '_menu_item_url', '/404'),
 (516, 125, '_menu_item_type', 'custom'),
 (517, 125, '_menu_item_menu_item_parent', '107'),
 (518, 125, '_menu_item_object_id', '125'),
@@ -710,7 +712,7 @@ INSERT INTO `wp_postmeta` (`meta_id`, `post_id`, `meta_key`, `meta_value`) VALUE
 (520, 125, '_menu_item_target', ''),
 (521, 125, '_menu_item_classes', 'a:1:{i:0;s:0:\"\";}'),
 (522, 125, '_menu_item_xfn', ''),
-(523, 125, '_menu_item_url', '/'),
+(523, 125, '_menu_item_url', '/404'),
 (525, 126, '_menu_item_type', 'custom'),
 (526, 126, '_menu_item_menu_item_parent', '107'),
 (527, 126, '_menu_item_object_id', '126'),
@@ -718,7 +720,7 @@ INSERT INTO `wp_postmeta` (`meta_id`, `post_id`, `meta_key`, `meta_value`) VALUE
 (529, 126, '_menu_item_target', ''),
 (530, 126, '_menu_item_classes', 'a:1:{i:0;s:0:\"\";}'),
 (531, 126, '_menu_item_xfn', ''),
-(532, 126, '_menu_item_url', '/'),
+(532, 126, '_menu_item_url', '/404'),
 (534, 127, '_menu_item_type', 'custom'),
 (535, 127, '_menu_item_menu_item_parent', '107'),
 (536, 127, '_menu_item_object_id', '127'),
@@ -726,7 +728,7 @@ INSERT INTO `wp_postmeta` (`meta_id`, `post_id`, `meta_key`, `meta_value`) VALUE
 (538, 127, '_menu_item_target', ''),
 (539, 127, '_menu_item_classes', 'a:1:{i:0;s:0:\"\";}'),
 (540, 127, '_menu_item_xfn', ''),
-(541, 127, '_menu_item_url', '/'),
+(541, 127, '_menu_item_url', '/404'),
 (543, 128, '_menu_item_type', 'custom'),
 (544, 128, '_menu_item_menu_item_parent', '107'),
 (545, 128, '_menu_item_object_id', '128'),
@@ -734,7 +736,7 @@ INSERT INTO `wp_postmeta` (`meta_id`, `post_id`, `meta_key`, `meta_value`) VALUE
 (547, 128, '_menu_item_target', ''),
 (548, 128, '_menu_item_classes', 'a:1:{i:0;s:0:\"\";}'),
 (549, 128, '_menu_item_xfn', ''),
-(550, 128, '_menu_item_url', '/'),
+(550, 128, '_menu_item_url', '/404'),
 (552, 129, '_menu_item_type', 'custom'),
 (553, 129, '_menu_item_menu_item_parent', '114'),
 (554, 129, '_menu_item_object_id', '129'),
@@ -742,7 +744,7 @@ INSERT INTO `wp_postmeta` (`meta_id`, `post_id`, `meta_key`, `meta_value`) VALUE
 (556, 129, '_menu_item_target', ''),
 (557, 129, '_menu_item_classes', 'a:1:{i:0;s:0:\"\";}'),
 (558, 129, '_menu_item_xfn', ''),
-(559, 129, '_menu_item_url', '/'),
+(559, 129, '_menu_item_url', '/404'),
 (561, 130, '_menu_item_type', 'custom'),
 (562, 130, '_menu_item_menu_item_parent', '114'),
 (563, 130, '_menu_item_object_id', '130'),
@@ -750,7 +752,7 @@ INSERT INTO `wp_postmeta` (`meta_id`, `post_id`, `meta_key`, `meta_value`) VALUE
 (565, 130, '_menu_item_target', ''),
 (566, 130, '_menu_item_classes', 'a:1:{i:0;s:0:\"\";}'),
 (567, 130, '_menu_item_xfn', ''),
-(568, 130, '_menu_item_url', '/'),
+(568, 130, '_menu_item_url', '/404'),
 (570, 131, '_menu_item_type', 'custom'),
 (571, 131, '_menu_item_menu_item_parent', '114'),
 (572, 131, '_menu_item_object_id', '131'),
@@ -758,7 +760,7 @@ INSERT INTO `wp_postmeta` (`meta_id`, `post_id`, `meta_key`, `meta_value`) VALUE
 (574, 131, '_menu_item_target', ''),
 (575, 131, '_menu_item_classes', 'a:1:{i:0;s:0:\"\";}'),
 (576, 131, '_menu_item_xfn', ''),
-(577, 131, '_menu_item_url', '/'),
+(577, 131, '_menu_item_url', '/404'),
 (579, 132, '_menu_item_type', 'custom'),
 (580, 132, '_menu_item_menu_item_parent', '115'),
 (581, 132, '_menu_item_object_id', '132'),
@@ -766,7 +768,7 @@ INSERT INTO `wp_postmeta` (`meta_id`, `post_id`, `meta_key`, `meta_value`) VALUE
 (583, 132, '_menu_item_target', ''),
 (584, 132, '_menu_item_classes', 'a:1:{i:0;s:0:\"\";}'),
 (585, 132, '_menu_item_xfn', ''),
-(586, 132, '_menu_item_url', '/'),
+(586, 132, '_menu_item_url', '/404'),
 (588, 133, '_menu_item_type', 'custom'),
 (589, 133, '_menu_item_menu_item_parent', '115'),
 (590, 133, '_menu_item_object_id', '133'),
@@ -774,7 +776,7 @@ INSERT INTO `wp_postmeta` (`meta_id`, `post_id`, `meta_key`, `meta_value`) VALUE
 (592, 133, '_menu_item_target', ''),
 (593, 133, '_menu_item_classes', 'a:1:{i:0;s:0:\"\";}'),
 (594, 133, '_menu_item_xfn', ''),
-(595, 133, '_menu_item_url', '/'),
+(595, 133, '_menu_item_url', '/404'),
 (597, 134, '_menu_item_type', 'custom'),
 (598, 134, '_menu_item_menu_item_parent', '115'),
 (599, 134, '_menu_item_object_id', '134'),
@@ -782,7 +784,7 @@ INSERT INTO `wp_postmeta` (`meta_id`, `post_id`, `meta_key`, `meta_value`) VALUE
 (601, 134, '_menu_item_target', ''),
 (602, 134, '_menu_item_classes', 'a:1:{i:0;s:0:\"\";}'),
 (603, 134, '_menu_item_xfn', ''),
-(604, 134, '_menu_item_url', '/'),
+(604, 134, '_menu_item_url', '/404'),
 (606, 135, '_menu_item_type', 'custom'),
 (607, 135, '_menu_item_menu_item_parent', '115'),
 (608, 135, '_menu_item_object_id', '135'),
@@ -790,7 +792,7 @@ INSERT INTO `wp_postmeta` (`meta_id`, `post_id`, `meta_key`, `meta_value`) VALUE
 (610, 135, '_menu_item_target', ''),
 (611, 135, '_menu_item_classes', 'a:1:{i:0;s:0:\"\";}'),
 (612, 135, '_menu_item_xfn', ''),
-(613, 135, '_menu_item_url', '/'),
+(613, 135, '_menu_item_url', '/404'),
 (615, 136, '_menu_item_type', 'custom'),
 (616, 136, '_menu_item_menu_item_parent', '120'),
 (617, 136, '_menu_item_object_id', '136'),
@@ -798,7 +800,7 @@ INSERT INTO `wp_postmeta` (`meta_id`, `post_id`, `meta_key`, `meta_value`) VALUE
 (619, 136, '_menu_item_target', ''),
 (620, 136, '_menu_item_classes', 'a:1:{i:0;s:0:\"\";}'),
 (621, 136, '_menu_item_xfn', ''),
-(622, 136, '_menu_item_url', '/'),
+(622, 136, '_menu_item_url', '/404'),
 (624, 137, '_menu_item_type', 'custom'),
 (625, 137, '_menu_item_menu_item_parent', '120'),
 (626, 137, '_menu_item_object_id', '137'),
@@ -806,7 +808,7 @@ INSERT INTO `wp_postmeta` (`meta_id`, `post_id`, `meta_key`, `meta_value`) VALUE
 (628, 137, '_menu_item_target', ''),
 (629, 137, '_menu_item_classes', 'a:1:{i:0;s:0:\"\";}'),
 (630, 137, '_menu_item_xfn', ''),
-(631, 137, '_menu_item_url', '/'),
+(631, 137, '_menu_item_url', '/404'),
 (633, 138, '_menu_item_type', 'custom'),
 (634, 138, '_menu_item_menu_item_parent', '120'),
 (635, 138, '_menu_item_object_id', '138'),
@@ -814,7 +816,7 @@ INSERT INTO `wp_postmeta` (`meta_id`, `post_id`, `meta_key`, `meta_value`) VALUE
 (637, 138, '_menu_item_target', ''),
 (638, 138, '_menu_item_classes', 'a:1:{i:0;s:0:\"\";}'),
 (639, 138, '_menu_item_xfn', ''),
-(640, 138, '_menu_item_url', '/'),
+(640, 138, '_menu_item_url', '/404'),
 (642, 139, '_menu_item_type', 'custom'),
 (643, 139, '_menu_item_menu_item_parent', '121'),
 (644, 139, '_menu_item_object_id', '139'),
@@ -822,7 +824,7 @@ INSERT INTO `wp_postmeta` (`meta_id`, `post_id`, `meta_key`, `meta_value`) VALUE
 (646, 139, '_menu_item_target', ''),
 (647, 139, '_menu_item_classes', 'a:1:{i:0;s:0:\"\";}'),
 (648, 139, '_menu_item_xfn', ''),
-(649, 139, '_menu_item_url', '/'),
+(649, 139, '_menu_item_url', '/404'),
 (651, 140, '_menu_item_type', 'custom'),
 (652, 140, '_menu_item_menu_item_parent', '121'),
 (653, 140, '_menu_item_object_id', '140'),
@@ -830,7 +832,7 @@ INSERT INTO `wp_postmeta` (`meta_id`, `post_id`, `meta_key`, `meta_value`) VALUE
 (655, 140, '_menu_item_target', ''),
 (656, 140, '_menu_item_classes', 'a:1:{i:0;s:0:\"\";}'),
 (657, 140, '_menu_item_xfn', ''),
-(658, 140, '_menu_item_url', '/'),
+(658, 140, '_menu_item_url', '/404'),
 (660, 141, '_menu_item_type', 'custom'),
 (661, 141, '_menu_item_menu_item_parent', '121'),
 (662, 141, '_menu_item_object_id', '141'),
@@ -838,7 +840,7 @@ INSERT INTO `wp_postmeta` (`meta_id`, `post_id`, `meta_key`, `meta_value`) VALUE
 (664, 141, '_menu_item_target', ''),
 (665, 141, '_menu_item_classes', 'a:1:{i:0;s:0:\"\";}'),
 (666, 141, '_menu_item_xfn', ''),
-(667, 141, '_menu_item_url', '/'),
+(667, 141, '_menu_item_url', '/404'),
 (669, 142, '_menu_item_type', 'custom'),
 (670, 142, '_menu_item_menu_item_parent', '122'),
 (671, 142, '_menu_item_object_id', '142'),
@@ -846,7 +848,7 @@ INSERT INTO `wp_postmeta` (`meta_id`, `post_id`, `meta_key`, `meta_value`) VALUE
 (673, 142, '_menu_item_target', ''),
 (674, 142, '_menu_item_classes', 'a:1:{i:0;s:0:\"\";}'),
 (675, 142, '_menu_item_xfn', ''),
-(676, 142, '_menu_item_url', '/'),
+(676, 142, '_menu_item_url', '/404'),
 (678, 143, '_menu_item_type', 'custom'),
 (679, 143, '_menu_item_menu_item_parent', '122'),
 (680, 143, '_menu_item_object_id', '143'),
@@ -854,7 +856,7 @@ INSERT INTO `wp_postmeta` (`meta_id`, `post_id`, `meta_key`, `meta_value`) VALUE
 (682, 143, '_menu_item_target', ''),
 (683, 143, '_menu_item_classes', 'a:1:{i:0;s:0:\"\";}'),
 (684, 143, '_menu_item_xfn', ''),
-(685, 143, '_menu_item_url', '/'),
+(685, 143, '_menu_item_url', '/404'),
 (687, 144, '_menu_item_type', 'custom'),
 (688, 144, '_menu_item_menu_item_parent', '0'),
 (689, 144, '_menu_item_object_id', '144'),
@@ -1063,12 +1065,12 @@ INSERT INTO `wp_postmeta` (`meta_id`, `post_id`, `meta_key`, `meta_value`) VALUE
 (911, 183, '_edit_lock', '1580646841:1'),
 (912, 183, '_thumbnail_id', '173'),
 (913, 183, 'wpsisac_slide_link', ''),
-(914, 184, '_edit_last', '1');
-INSERT INTO `wp_postmeta` (`meta_id`, `post_id`, `meta_key`, `meta_value`) VALUES
+(914, 184, '_edit_last', '1'),
 (915, 184, '_thumbnail_id', '172'),
 (916, 184, 'wpsisac_slide_link', ''),
 (917, 184, '_edit_lock', '1580653607:1'),
-(918, 185, '_form', '<div class=\"feedback-field\">\n[text feedback-name placeholder \"Имя\"]\n</div>\n<div class=\"feedback-field\">\n[tel feedback-phone placeholder \"Телефон\"]\n</div>\n<div class=\"feedback-submit\">\n[submit value \"Перезвоните мне\" ]\n</div>'),
+(918, 185, '_form', '<div class=\"feedback-field\">\n[text feedback-name placeholder \"Имя\"]\n</div>\n<div class=\"feedback-field\">\n[tel feedback-phone placeholder \"Телефон\"]\n</div>\n<div class=\"feedback-submit\">\n[submit value \"Перезвоните мне\" ]\n</div>');
+INSERT INTO `wp_postmeta` (`meta_id`, `post_id`, `meta_key`, `meta_value`) VALUES
 (919, 185, '_mail', 'a:9:{s:6:\"active\";b:1;s:7:\"subject\";s:20:\"Rek \"[your-subject]\"\";s:6:\"sender\";s:25:\"Rek <wordpress@rek.local>\";s:9:\"recipient\";s:17:\"swd.admin@mail.ru\";s:4:\"body\";s:158:\"From: [your-name] <[your-email]>\nSubject: [your-subject]\n\nMessage Body:\n[your-message]\n\n-- \nThis e-mail was sent from a contact form on Rek (http://rek.local)\";s:18:\"additional_headers\";s:22:\"Reply-To: [your-email]\";s:11:\"attachments\";s:0:\"\";s:8:\"use_html\";b:0;s:13:\"exclude_blank\";b:0;}'),
 (920, 185, '_mail_2', 'a:9:{s:6:\"active\";b:0;s:7:\"subject\";s:20:\"Rek \"[your-subject]\"\";s:6:\"sender\";s:25:\"Rek <wordpress@rek.local>\";s:9:\"recipient\";s:12:\"[your-email]\";s:4:\"body\";s:100:\"Message Body:\n[your-message]\n\n-- \nThis e-mail was sent from a contact form on Rek (http://rek.local)\";s:18:\"additional_headers\";s:27:\"Reply-To: swd.admin@mail.ru\";s:11:\"attachments\";s:0:\"\";s:8:\"use_html\";b:0;s:13:\"exclude_blank\";b:0;}'),
 (921, 185, '_messages', 'a:22:{s:12:\"mail_sent_ok\";s:45:\"Thank you for your message. It has been sent.\";s:12:\"mail_sent_ng\";s:71:\"There was an error trying to send your message. Please try again later.\";s:16:\"validation_error\";s:0:\"\";s:4:\"spam\";s:71:\"There was an error trying to send your message. Please try again later.\";s:12:\"accept_terms\";s:69:\"You must accept the terms and conditions before sending your message.\";s:16:\"invalid_required\";s:22:\"The field is required.\";s:16:\"invalid_too_long\";s:22:\"The field is too long.\";s:17:\"invalid_too_short\";s:23:\"The field is too short.\";s:12:\"invalid_date\";s:29:\"The date format is incorrect.\";s:14:\"date_too_early\";s:44:\"The date is before the earliest one allowed.\";s:13:\"date_too_late\";s:41:\"The date is after the latest one allowed.\";s:13:\"upload_failed\";s:46:\"There was an unknown error uploading the file.\";s:24:\"upload_file_type_invalid\";s:49:\"You are not allowed to upload files of this type.\";s:21:\"upload_file_too_large\";s:20:\"The file is too big.\";s:23:\"upload_failed_php_error\";s:38:\"There was an error uploading the file.\";s:14:\"invalid_number\";s:29:\"The number format is invalid.\";s:16:\"number_too_small\";s:47:\"The number is smaller than the minimum allowed.\";s:16:\"number_too_large\";s:46:\"The number is larger than the maximum allowed.\";s:23:\"quiz_answer_not_correct\";s:36:\"The answer to the quiz is incorrect.\";s:13:\"invalid_email\";s:38:\"The e-mail address entered is invalid.\";s:11:\"invalid_url\";s:19:\"The URL is invalid.\";s:11:\"invalid_tel\";s:32:\"The telephone number is invalid.\";}'),
@@ -1106,7 +1108,6 @@ INSERT INTO `wp_postmeta` (`meta_id`, `post_id`, `meta_key`, `meta_value`) VALUE
 (974, 195, '_portfolio-image2', 'field_5e39a56fa18d7'),
 (975, 195, 'portfolio-image3', '190'),
 (976, 195, '_portfolio-image3', 'field_5e39a57fa18d8'),
-(977, 196, '_edit_lock', '1580837379:1'),
 (980, 18, 'portfolio-image1', '190'),
 (981, 18, '_portfolio-image1', 'field_5e39a52fa18d5'),
 (982, 197, 'email', 'info@rekidea.ru'),
@@ -1223,9 +1224,8 @@ INSERT INTO `wp_postmeta` (`meta_id`, `post_id`, `meta_key`, `meta_value`) VALUE
 (1097, 214, '_portfolio-image8', 'field_5e39ad09c35a5'),
 (1098, 214, 'portfolio-image9', '213'),
 (1099, 214, '_portfolio-image9', 'field_5e39ad08c35a4'),
-(1100, 215, '_edit_lock', '1580884022:1'),
 (1101, 216, '_edit_lock', '1580884209:1'),
-(1102, 219, '_edit_lock', '1581243803:1'),
+(1102, 219, '_edit_lock', '1581534778:1'),
 (1114, 8, '_config_errors', 'a:1:{s:23:\"mail.additional_headers\";a:1:{i:0;a:2:{s:4:\"code\";i:102;s:4:\"args\";a:3:{s:7:\"message\";s:51:\"Invalid mailbox syntax is used in the %name% field.\";s:6:\"params\";a:1:{s:4:\"name\";s:8:\"Reply-To\";}s:4:\"link\";s:68:\"https://contactform7.com/configuration-errors/invalid-mailbox-syntax\";}}}}'),
 (1115, 221, '_menu_item_type', 'post_type'),
 (1116, 221, '_menu_item_menu_item_parent', '0'),
@@ -1251,7 +1251,24 @@ INSERT INTO `wp_postmeta` (`meta_id`, `post_id`, `meta_key`, `meta_value`) VALUE
 (1137, 223, '_menu_item_target', ''),
 (1138, 223, '_menu_item_classes', 'a:1:{i:0;s:0:\"\";}'),
 (1139, 223, '_menu_item_xfn', ''),
-(1140, 223, '_menu_item_url', '');
+(1140, 223, '_menu_item_url', ''),
+(1146, 226, '_wp_attached_file', '2020/02/1_800x600-standART.jpg'),
+(1147, 226, '_wp_attachment_metadata', 'a:5:{s:5:\"width\";i:800;s:6:\"height\";i:600;s:4:\"file\";s:30:\"2020/02/1_800x600-standART.jpg\";s:5:\"sizes\";a:3:{s:6:\"medium\";a:4:{s:4:\"file\";s:30:\"1_800x600-standART-300x225.jpg\";s:5:\"width\";i:300;s:6:\"height\";i:225;s:9:\"mime-type\";s:10:\"image/jpeg\";}s:9:\"thumbnail\";a:4:{s:4:\"file\";s:30:\"1_800x600-standART-150x150.jpg\";s:5:\"width\";i:150;s:6:\"height\";i:150;s:9:\"mime-type\";s:10:\"image/jpeg\";}s:12:\"medium_large\";a:4:{s:4:\"file\";s:30:\"1_800x600-standART-768x576.jpg\";s:5:\"width\";i:768;s:6:\"height\";i:576;s:9:\"mime-type\";s:10:\"image/jpeg\";}}s:10:\"image_meta\";a:12:{s:8:\"aperture\";s:1:\"0\";s:6:\"credit\";s:0:\"\";s:6:\"camera\";s:0:\"\";s:7:\"caption\";s:0:\"\";s:17:\"created_timestamp\";s:1:\"0\";s:9:\"copyright\";s:0:\"\";s:12:\"focal_length\";s:1:\"0\";s:3:\"iso\";s:1:\"0\";s:13:\"shutter_speed\";s:1:\"0\";s:5:\"title\";s:0:\"\";s:11:\"orientation\";s:1:\"0\";s:8:\"keywords\";a:0:{}}}'),
+(1148, 227, '_wp_attached_file', '2020/02/1_800x600-lion6.jpg'),
+(1149, 227, '_wp_attachment_metadata', 'a:5:{s:5:\"width\";i:800;s:6:\"height\";i:600;s:4:\"file\";s:27:\"2020/02/1_800x600-lion6.jpg\";s:5:\"sizes\";a:3:{s:6:\"medium\";a:4:{s:4:\"file\";s:27:\"1_800x600-lion6-300x225.jpg\";s:5:\"width\";i:300;s:6:\"height\";i:225;s:9:\"mime-type\";s:10:\"image/jpeg\";}s:9:\"thumbnail\";a:4:{s:4:\"file\";s:27:\"1_800x600-lion6-150x150.jpg\";s:5:\"width\";i:150;s:6:\"height\";i:150;s:9:\"mime-type\";s:10:\"image/jpeg\";}s:12:\"medium_large\";a:4:{s:4:\"file\";s:27:\"1_800x600-lion6-768x576.jpg\";s:5:\"width\";i:768;s:6:\"height\";i:576;s:9:\"mime-type\";s:10:\"image/jpeg\";}}s:10:\"image_meta\";a:12:{s:8:\"aperture\";s:1:\"0\";s:6:\"credit\";s:0:\"\";s:6:\"camera\";s:0:\"\";s:7:\"caption\";s:0:\"\";s:17:\"created_timestamp\";s:1:\"0\";s:9:\"copyright\";s:0:\"\";s:12:\"focal_length\";s:1:\"0\";s:3:\"iso\";s:1:\"0\";s:13:\"shutter_speed\";s:1:\"0\";s:5:\"title\";s:0:\"\";s:11:\"orientation\";s:1:\"0\";s:8:\"keywords\";a:0:{}}}'),
+(1150, 228, '_wp_attached_file', '2020/02/1_800x600-lion5.jpg'),
+(1151, 228, '_wp_attachment_metadata', 'a:5:{s:5:\"width\";i:800;s:6:\"height\";i:600;s:4:\"file\";s:27:\"2020/02/1_800x600-lion5.jpg\";s:5:\"sizes\";a:3:{s:6:\"medium\";a:4:{s:4:\"file\";s:27:\"1_800x600-lion5-300x225.jpg\";s:5:\"width\";i:300;s:6:\"height\";i:225;s:9:\"mime-type\";s:10:\"image/jpeg\";}s:9:\"thumbnail\";a:4:{s:4:\"file\";s:27:\"1_800x600-lion5-150x150.jpg\";s:5:\"width\";i:150;s:6:\"height\";i:150;s:9:\"mime-type\";s:10:\"image/jpeg\";}s:12:\"medium_large\";a:4:{s:4:\"file\";s:27:\"1_800x600-lion5-768x576.jpg\";s:5:\"width\";i:768;s:6:\"height\";i:576;s:9:\"mime-type\";s:10:\"image/jpeg\";}}s:10:\"image_meta\";a:12:{s:8:\"aperture\";s:1:\"0\";s:6:\"credit\";s:0:\"\";s:6:\"camera\";s:0:\"\";s:7:\"caption\";s:0:\"\";s:17:\"created_timestamp\";s:1:\"0\";s:9:\"copyright\";s:0:\"\";s:12:\"focal_length\";s:1:\"0\";s:3:\"iso\";s:1:\"0\";s:13:\"shutter_speed\";s:1:\"0\";s:5:\"title\";s:0:\"\";s:11:\"orientation\";s:1:\"0\";s:8:\"keywords\";a:0:{}}}'),
+(1152, 229, '_wp_attached_file', '2020/02/1_800x600-maria_poz.jpg'),
+(1153, 229, '_wp_attachment_metadata', 'a:5:{s:5:\"width\";i:800;s:6:\"height\";i:600;s:4:\"file\";s:31:\"2020/02/1_800x600-maria_poz.jpg\";s:5:\"sizes\";a:3:{s:6:\"medium\";a:4:{s:4:\"file\";s:31:\"1_800x600-maria_poz-300x225.jpg\";s:5:\"width\";i:300;s:6:\"height\";i:225;s:9:\"mime-type\";s:10:\"image/jpeg\";}s:9:\"thumbnail\";a:4:{s:4:\"file\";s:31:\"1_800x600-maria_poz-150x150.jpg\";s:5:\"width\";i:150;s:6:\"height\";i:150;s:9:\"mime-type\";s:10:\"image/jpeg\";}s:12:\"medium_large\";a:4:{s:4:\"file\";s:31:\"1_800x600-maria_poz-768x576.jpg\";s:5:\"width\";i:768;s:6:\"height\";i:576;s:9:\"mime-type\";s:10:\"image/jpeg\";}}s:10:\"image_meta\";a:12:{s:8:\"aperture\";s:1:\"0\";s:6:\"credit\";s:0:\"\";s:6:\"camera\";s:0:\"\";s:7:\"caption\";s:0:\"\";s:17:\"created_timestamp\";s:1:\"0\";s:9:\"copyright\";s:0:\"\";s:12:\"focal_length\";s:1:\"0\";s:3:\"iso\";s:1:\"0\";s:13:\"shutter_speed\";s:1:\"0\";s:5:\"title\";s:0:\"\";s:11:\"orientation\";s:1:\"0\";s:8:\"keywords\";a:0:{}}}'),
+(1154, 230, '_wp_attached_file', '2020/02/11_800x600_infostend6.jpg'),
+(1155, 230, '_wp_attachment_metadata', 'a:5:{s:5:\"width\";i:800;s:6:\"height\";i:600;s:4:\"file\";s:33:\"2020/02/11_800x600_infostend6.jpg\";s:5:\"sizes\";a:3:{s:6:\"medium\";a:4:{s:4:\"file\";s:33:\"11_800x600_infostend6-300x225.jpg\";s:5:\"width\";i:300;s:6:\"height\";i:225;s:9:\"mime-type\";s:10:\"image/jpeg\";}s:9:\"thumbnail\";a:4:{s:4:\"file\";s:33:\"11_800x600_infostend6-150x150.jpg\";s:5:\"width\";i:150;s:6:\"height\";i:150;s:9:\"mime-type\";s:10:\"image/jpeg\";}s:12:\"medium_large\";a:4:{s:4:\"file\";s:33:\"11_800x600_infostend6-768x576.jpg\";s:5:\"width\";i:768;s:6:\"height\";i:576;s:9:\"mime-type\";s:10:\"image/jpeg\";}}s:10:\"image_meta\";a:12:{s:8:\"aperture\";s:1:\"0\";s:6:\"credit\";s:0:\"\";s:6:\"camera\";s:0:\"\";s:7:\"caption\";s:0:\"\";s:17:\"created_timestamp\";s:1:\"0\";s:9:\"copyright\";s:0:\"\";s:12:\"focal_length\";s:1:\"0\";s:3:\"iso\";s:1:\"0\";s:13:\"shutter_speed\";s:1:\"0\";s:5:\"title\";s:0:\"\";s:11:\"orientation\";s:1:\"0\";s:8:\"keywords\";a:0:{}}}'),
+(1156, 227, '_edit_lock', '1581573366:1'),
+(1157, 227, '_edit_last', '1'),
+(1158, 227, 'iw-is-watermarked', '1'),
+(1159, 226, 'iw-is-watermarked', '1'),
+(1160, 229, 'iw-is-watermarked', '1'),
+(1161, 228, 'iw-is-watermarked', '1'),
+(1162, 230, 'iw-is-watermarked', '1');
 
 -- --------------------------------------------------------
 
@@ -1291,11 +1308,8 @@ CREATE TABLE `wp_posts` (
 
 INSERT INTO `wp_posts` (`ID`, `post_author`, `post_date`, `post_date_gmt`, `post_content`, `post_title`, `post_excerpt`, `post_status`, `comment_status`, `ping_status`, `post_password`, `post_name`, `to_ping`, `pinged`, `post_modified`, `post_modified_gmt`, `post_content_filtered`, `post_parent`, `guid`, `menu_order`, `post_type`, `post_mime_type`, `comment_count`) VALUES
 (1, 1, '2020-01-23 20:20:18', '2020-01-23 17:20:18', '<!-- wp:paragraph -->\n<p>Добро пожаловать в WordPress. Это ваша первая запись. Отредактируйте или удалите ее, затем начинайте создавать!</p>\n<!-- /wp:paragraph -->', 'Привет, мир!', '', 'trash', 'open', 'open', '', '%d0%bf%d1%80%d0%b8%d0%b2%d0%b5%d1%82-%d0%bc%d0%b8%d1%80__trashed', '', '', '2020-01-27 19:00:42', '2020-01-27 16:00:42', '', 0, 'http://rek.local/?p=1', 0, 'post', '', 1),
-(2, 1, '2020-01-23 20:20:18', '2020-01-23 17:20:18', '<!-- wp:paragraph -->\n<p>Это пример страницы. От записей в блоге она отличается тем, что остаётся на одном месте и отображается в меню сайта (в большинстве тем). На странице &laquo;Детали&raquo; владельцы сайтов обычно рассказывают о себе потенциальным посетителям. Например, так:</p>\n<!-- /wp:paragraph -->\n\n<!-- wp:quote -->\n<blockquote class=\"wp-block-quote\"><p>Привет! Днём я курьер, а вечером &#8212; подающий надежды актёр. Это мой блог. Я живу в Ростове-на-Дону, люблю своего пса Джека и пинаколаду. (И ещё попадать под дождь.)</p></blockquote>\n<!-- /wp:quote -->\n\n<!-- wp:paragraph -->\n<p>...или так:</p>\n<!-- /wp:paragraph -->\n\n<!-- wp:quote -->\n<blockquote class=\"wp-block-quote\"><p>Компания &laquo;Штучки XYZ&raquo; была основана в 1971 году и с тех пор производит качественные штучки. Компания находится в Готэм-сити, имеет штат из более чем 2000 сотрудников и приносит много пользы жителям Готэма.</p></blockquote>\n<!-- /wp:quote -->\n\n<!-- wp:paragraph -->\n<p>Перейдите <a href=\"http://rek.local/wp-admin/\">в консоль</a>, чтобы удалить эту страницу и создать новые. Успехов!</p>\n<!-- /wp:paragraph -->', 'Пример страницы', '', 'trash', 'closed', 'open', '', 'sample-page__trashed', '', '', '2020-01-24 07:03:03', '2020-01-24 04:03:03', '', 0, 'http://rek.local/?page_id=2', 0, 'page', '', 0),
 (3, 1, '2020-01-23 20:20:18', '2020-01-23 17:20:18', '<!-- wp:heading --><h2>Кто мы</h2><!-- /wp:heading --><!-- wp:paragraph --><p>Наш адрес сайта: http://rek.local.</p><!-- /wp:paragraph --><!-- wp:heading --><h2>Какие персональные данные мы собираем и с какой целью</h2><!-- /wp:heading --><!-- wp:heading {\"level\":3} --><h3>Комментарии</h3><!-- /wp:heading --><!-- wp:paragraph --><p>Если посетитель оставляет комментарий на сайте, мы собираем данные указанные в форме комментария, а также IP адрес посетителя и данные user-agent браузера с целью определения спама.</p><!-- /wp:paragraph --><!-- wp:paragraph --><p>Анонимизированная строка создаваемая из вашего адреса email (\"хеш\") может предоставляться сервису Gravatar, чтобы определить используете ли вы его. Политика конфиденциальности Gravatar доступна здесь: https://automattic.com/privacy/ . После одобрения комментария ваше изображение профиля будет видимым публично в контексте вашего комментария.</p><!-- /wp:paragraph --><!-- wp:heading {\"level\":3} --><h3>Медиафайлы</h3><!-- /wp:heading --><!-- wp:paragraph --><p>Если вы зарегистрированный пользователь и загружаете фотографии на сайт, вам возможно следует избегать загрузки изображений с метаданными EXIF, так как они могут содержать данные вашего месторасположения по GPS. Посетители могут извлечь эту информацию скачав изображения с сайта.</p><!-- /wp:paragraph --><!-- wp:heading {\"level\":3} --><h3>Формы контактов</h3><!-- /wp:heading --><!-- wp:heading {\"level\":3} --><h3>Куки</h3><!-- /wp:heading --><!-- wp:paragraph --><p>Если вы оставляете комментарий на нашем сайте, вы можете включить сохранение вашего имени, адреса email и вебсайта в куки. Это делается для вашего удобства, чтобы не заполнять данные снова при повторном комментировании. Эти куки хранятся в течение одного года.</p><!-- /wp:paragraph --><!-- wp:paragraph --><p>Если у вас есть учетная запись на сайте и вы войдете в неё, мы установим временный куки для определения поддержки куки вашим браузером, куки не содержит никакой личной информации и удаляется при закрытии вашего браузера.</p><!-- /wp:paragraph --><!-- wp:paragraph --><p>При входе в учетную запись мы также устанавливаем несколько куки с данными входа и настройками экрана. Куки входа хранятся в течение двух дней, куки с настройками экрана - год. Если вы выберете возможность \"Запомнить меня\", данные о входе будут сохраняться в течение двух недель. При выходе из учетной записи куки входа будут удалены.</p><!-- /wp:paragraph --><!-- wp:paragraph --><p>При редактировании или публикации статьи в браузере будет сохранен дополнительный куки, он не содержит персональных данных и содержит только ID записи отредактированной вами, истекает через 1 день.</p><!-- /wp:paragraph --><!-- wp:heading {\"level\":3} --><h3>Встраиваемое содержимое других вебсайтов</h3><!-- /wp:heading --><!-- wp:paragraph --><p>Статьи на этом сайте могут включать встраиваемое содержимое (например видео, изображения, статьи и др.), подобное содержимое ведет себя так же, как если бы посетитель зашел на другой сайт.</p><!-- /wp:paragraph --><!-- wp:paragraph --><p>Эти сайты могут собирать данные о вас, использовать куки, внедрять дополнительное отслеживание третьей стороной и следить за вашим взаимодействием с внедренным содержимым, включая отслеживание взаимодействия, если у вас есть учетная запись и вы авторизовались на том сайте.</p><!-- /wp:paragraph --><!-- wp:heading {\"level\":3} --><h3>Веб-аналитика</h3><!-- /wp:heading --><!-- wp:heading --><h2>С кем мы делимся вашими данными</h2><!-- /wp:heading --><!-- wp:heading --><h2>Как долго мы храним ваши данные</h2><!-- /wp:heading --><!-- wp:paragraph --><p>Если вы оставляете комментарий, то сам комментарий и его метаданные сохраняются неопределенно долго. Это делается для того, чтобы определять и одобрять последующие комментарии автоматически, вместо помещения их в очередь на одобрение.</p><!-- /wp:paragraph --><!-- wp:paragraph --><p>Для пользователей с регистрацией на нашем сайте мы храним ту личную информацию, которую они указывают в своем профиле. Все пользователи могут видеть, редактировать или удалить свою информацию из профиля в любое время (кроме имени пользователя). Администрация вебсайта также может видеть и изменять эту информацию.</p><!-- /wp:paragraph --><!-- wp:heading --><h2>Какие у вас права на ваши данные</h2><!-- /wp:heading --><!-- wp:paragraph --><p>При наличии учетной записи на сайте или если вы оставляли комментарии, то вы можете запросить файл экспорта персональных данных, которые мы сохранили о вас, включая предоставленные вами данные. Вы также можете запросить удаление этих данных, это не включает данные, которые мы обязаны хранить в административных целях, по закону или целях безопасности.</p><!-- /wp:paragraph --><!-- wp:heading --><h2>Куда мы отправляем ваши данные</h2><!-- /wp:heading --><!-- wp:paragraph --><p>Комментарии пользователей могут проверяться автоматическим сервисом определения спама.</p><!-- /wp:paragraph --><!-- wp:heading --><h2>Ваша контактная информация</h2><!-- /wp:heading --><!-- wp:heading --><h2>Дополнительная информация</h2><!-- /wp:heading --><!-- wp:heading {\"level\":3} --><h3>Как мы защищаем ваши данные</h3><!-- /wp:heading --><!-- wp:heading {\"level\":3} --><h3>Какие принимаются процедуры против взлома данных</h3><!-- /wp:heading --><!-- wp:heading {\"level\":3} --><h3>От каких третьих сторон мы получаем данные</h3><!-- /wp:heading --><!-- wp:heading {\"level\":3} --><h3>Какие автоматические решения принимаются на основе данных пользователей</h3><!-- /wp:heading --><!-- wp:heading {\"level\":3} --><h3>Требования к раскрытию отраслевых нормативных требований</h3><!-- /wp:heading -->', 'Политика конфиденциальности', '', 'draft', 'closed', 'open', '', 'privacy-policy', '', '', '2020-01-23 20:20:18', '2020-01-23 17:20:18', '', 0, 'http://rek.local/?page_id=3', 0, 'page', '', 0),
 (5, 1, '2020-01-23 20:22:27', '0000-00-00 00:00:00', '', 'Главная', '', 'draft', 'closed', 'closed', '', '', '', '', '2020-01-23 20:22:27', '0000-00-00 00:00:00', '', 0, 'http://rek.local/?p=5', 1, 'nav_menu_item', '', 0),
-(6, 1, '2020-01-23 20:22:27', '0000-00-00 00:00:00', ' ', '', '', 'draft', 'closed', 'closed', '', '', '', '', '2020-01-23 20:22:27', '0000-00-00 00:00:00', '', 0, 'http://rek.local/?p=6', 1, 'nav_menu_item', '', 0),
-(7, 1, '2020-01-24 07:03:03', '2020-01-24 04:03:03', '<!-- wp:paragraph -->\n<p>Это пример страницы. От записей в блоге она отличается тем, что остаётся на одном месте и отображается в меню сайта (в большинстве тем). На странице &laquo;Детали&raquo; владельцы сайтов обычно рассказывают о себе потенциальным посетителям. Например, так:</p>\n<!-- /wp:paragraph -->\n\n<!-- wp:quote -->\n<blockquote class=\"wp-block-quote\"><p>Привет! Днём я курьер, а вечером &#8212; подающий надежды актёр. Это мой блог. Я живу в Ростове-на-Дону, люблю своего пса Джека и пинаколаду. (И ещё попадать под дождь.)</p></blockquote>\n<!-- /wp:quote -->\n\n<!-- wp:paragraph -->\n<p>...или так:</p>\n<!-- /wp:paragraph -->\n\n<!-- wp:quote -->\n<blockquote class=\"wp-block-quote\"><p>Компания &laquo;Штучки XYZ&raquo; была основана в 1971 году и с тех пор производит качественные штучки. Компания находится в Готэм-сити, имеет штат из более чем 2000 сотрудников и приносит много пользы жителям Готэма.</p></blockquote>\n<!-- /wp:quote -->\n\n<!-- wp:paragraph -->\n<p>Перейдите <a href=\"http://rek.local/wp-admin/\">в консоль</a>, чтобы удалить эту страницу и создать новые. Успехов!</p>\n<!-- /wp:paragraph -->', 'Пример страницы', '', 'inherit', 'closed', 'closed', '', '2-revision-v1', '', '', '2020-01-24 07:03:03', '2020-01-24 04:03:03', '', 2, 'http://rek.local/2020/01/24/2-revision-v1/', 0, 'revision', '', 0),
 (8, 1, '2020-01-27 16:44:25', '2020-01-27 13:44:25', '<h3>Мы открыты для обратной связи с покупателями, партнерами и соискателями!</h3>\r\n\r\n<label> Имя\r\n    [text* your-name] </label>\r\n\r\n<label> Электронная почта\r\n    [email* your-email] </label>\r\n\r\n<label> Телефон\r\n    [tel tel-729] </label>\r\n\r\n<label> Тема\r\n    [text your-subject] </label>\r\n\r\n<label> Сообщение\r\n    [textarea your-message] </label>\r\n<div class=\"file-send-wrapper\">\r\n<label> \r\n   [file file-171 class:file-send] Файл</label>\r\n</div>\r\n\r\n[submit \"Отправить\"]\n1\nRek \"[your-subject]\"\nRek <wordpress@rek.local>\nswd.admin@mail.ru\nFrom: [your-name] <[your-email]>\r\nSubject: [your-subject]\r\n\r\nMessage Body:\r\n[your-message]\r\n\r\n-- \r\nThis e-mail was sent from a contact form on Rek (http://rek.local)\nReply-To: [11your-email]\n\n\n\n\nRek \"[your-subject]\"\nRek <wordpress@rek.local>\n[your-email]\nMessage Body:\r\n[your-message]\r\n\r\n-- \r\nThis e-mail was sent from a contact form on Rek (http://rek.local)\nReply-To: swd.admin@mail.ru\n\n\n\nThank you for your message. It has been sent.\nThere was an error trying to send your message. Please try again later.\nOne or more fields have an error. Please check and try again.\nThere was an error trying to send your message. Please try again later.\nYou must accept the terms and conditions before sending your message.\nThe field is required.\nThe field is too long.\nThe field is too short.\nThe date format is incorrect.\nThe date is before the earliest one allowed.\nThe date is after the latest one allowed.\nThere was an unknown error uploading the file.\nYou are not allowed to upload files of this type.\nThe file is too big.\nThere was an error uploading the file.\nThe number format is invalid.\nThe number is smaller than the minimum allowed.\nThe number is larger than the maximum allowed.\nThe answer to the quiz is incorrect.\nThe e-mail address entered is invalid.\nThe URL is invalid.\nThe telephone number is invalid.', 'Feedback', '', 'publish', 'closed', 'closed', '', 'contact-form-1', '', '', '2020-02-09 15:32:09', '2020-02-09 12:32:09', '', 0, 'http://rek.local/?post_type=wpcf7_contact_form&#038;p=8', 0, 'wpcf7_contact_form', '', 0),
 (13, 1, '2020-01-27 18:52:15', '2020-01-27 15:52:15', 'a:7:{s:8:\"location\";a:1:{i:0;a:2:{i:0;a:3:{s:5:\"param\";s:9:\"post_type\";s:8:\"operator\";s:2:\"==\";s:5:\"value\";s:4:\"post\";}i:1;a:3:{s:5:\"param\";s:13:\"post_category\";s:8:\"operator\";s:2:\"==\";s:5:\"value\";s:15:\"category:common\";}}}s:8:\"position\";s:6:\"normal\";s:5:\"style\";s:7:\"default\";s:15:\"label_placement\";s:3:\"top\";s:21:\"instruction_placement\";s:5:\"label\";s:14:\"hide_on_screen\";s:0:\"\";s:11:\"description\";s:0:\"\";}', 'общие параметры', '%d0%be%d0%b1%d1%89%d0%b8%d0%b5-%d0%bf%d0%b0%d1%80%d0%b0%d0%bc%d0%b5%d1%82%d1%80%d1%8b', 'publish', 'closed', 'closed', '', 'group_5e2f0669d466c', '', '', '2020-01-27 19:15:35', '2020-01-27 16:15:35', '', 0, 'http://rek.local/?post_type=acf-field-group&#038;p=13', 0, 'acf-field-group', '', 0),
 (14, 1, '2020-01-27 18:52:15', '2020-01-27 15:52:15', 'a:10:{s:4:\"type\";s:4:\"text\";s:12:\"instructions\";s:0:\"\";s:8:\"required\";i:1;s:17:\"conditional_logic\";i:0;s:7:\"wrapper\";a:3:{s:5:\"width\";s:0:\"\";s:5:\"class\";s:0:\"\";s:2:\"id\";s:0:\"\";}s:13:\"default_value\";s:0:\"\";s:11:\"placeholder\";s:0:\"\";s:7:\"prepend\";s:0:\"\";s:6:\"append\";s:0:\"\";s:9:\"maxlength\";s:0:\"\";}', 'Электронная почта', 'email', 'publish', 'closed', 'closed', '', 'field_5e2f072a4555c', '', '', '2020-01-27 19:00:26', '2020-01-27 16:00:26', '', 13, 'http://rek.local/?post_type=acf-field&#038;p=14', 0, 'acf-field', '', 0),
@@ -1360,76 +1374,76 @@ INSERT INTO `wp_posts` (`ID`, `post_author`, `post_date`, `post_date_gmt`, `post
 (88, 1, '2020-01-30 13:56:54', '0000-00-00 00:00:00', ' ', '', '', 'draft', 'closed', 'closed', '', '', '', '', '2020-01-30 13:56:54', '0000-00-00 00:00:00', '', 0, 'http://rsht.local/?p=88', 1, 'nav_menu_item', '', 0),
 (89, 1, '2020-01-30 13:56:54', '0000-00-00 00:00:00', ' ', '', '', 'draft', 'closed', 'closed', '', '', '', '', '2020-01-30 13:56:54', '0000-00-00 00:00:00', '', 0, 'http://rsht.local/?p=89', 1, 'nav_menu_item', '', 0),
 (90, 1, '2020-01-30 13:56:54', '0000-00-00 00:00:00', ' ', '', '', 'draft', 'closed', 'closed', '', '', '', '', '2020-01-30 13:56:54', '0000-00-00 00:00:00', '', 0, 'http://rsht.local/?p=90', 1, 'nav_menu_item', '', 0),
-(91, 1, '2020-01-30 14:52:15', '2020-01-30 11:52:15', '', 'Каталог рекламы', '', 'publish', 'closed', 'closed', '', '%d0%ba%d0%b0%d1%82%d0%b0%d0%bb%d0%be%d0%b3-%d1%80%d0%b5%d0%ba%d0%bb%d0%b0%d0%bc%d1%8b', '', '', '2020-02-06 22:51:17', '2020-02-06 19:51:17', '', 0, 'http://rsht.local/?p=91', 1, 'nav_menu_item', '', 0),
+(91, 1, '2020-01-30 14:52:15', '2020-01-30 11:52:15', '', 'Каталог рекламы', '', 'publish', 'closed', 'closed', '', '%d0%ba%d0%b0%d1%82%d0%b0%d0%bb%d0%be%d0%b3-%d1%80%d0%b5%d0%ba%d0%bb%d0%b0%d0%bc%d1%8b', '', '', '2020-02-12 22:19:28', '2020-02-12 19:19:28', '', 0, 'http://rsht.local/?p=91', 1, 'nav_menu_item', '', 0),
 (92, 1, '2020-01-30 14:52:07', '2020-01-30 11:52:07', 'a:7:{s:8:\"location\";a:1:{i:0;a:1:{i:0;a:3:{s:5:\"param\";s:13:\"nav_menu_item\";s:8:\"operator\";s:2:\"==\";s:5:\"value\";s:1:\"6\";}}}s:8:\"position\";s:6:\"normal\";s:5:\"style\";s:7:\"default\";s:15:\"label_placement\";s:3:\"top\";s:21:\"instruction_placement\";s:5:\"label\";s:14:\"hide_on_screen\";s:0:\"\";s:11:\"description\";s:0:\"\";}', 'Верхнее меню', '%d0%b2%d0%b5%d1%80%d1%85%d0%bd%d0%b5%d0%b5-%d0%bc%d0%b5%d0%bd%d1%8e', 'publish', 'closed', 'closed', '', 'group_5e32c3151260c', '', '', '2020-01-30 15:03:36', '2020-01-30 12:03:36', '', 0, 'http://rsht.local/?post_type=acf-field-group&#038;p=92', 0, 'acf-field-group', '', 0),
-(97, 1, '2020-01-30 15:09:03', '2020-01-30 12:09:03', '', 'Акции', '', 'publish', 'closed', 'closed', '', '%d0%b0%d0%ba%d1%86%d0%b8%d0%b8', '', '', '2020-02-06 22:51:17', '2020-02-06 19:51:17', '', 0, 'http://rsht.local/?p=97', 42, 'nav_menu_item', '', 0),
-(98, 1, '2020-01-30 15:09:03', '2020-01-30 12:09:03', '', 'Услуги', '', 'publish', 'closed', 'closed', '', '%d1%83%d1%81%d0%bb%d1%83%d0%b3%d0%b8', '', '', '2020-02-06 22:51:17', '2020-02-06 19:51:17', '', 0, 'http://rsht.local/?p=98', 43, 'nav_menu_item', '', 0),
-(99, 1, '2020-01-30 15:09:03', '2020-01-30 12:09:03', '', 'Цены', '', 'publish', 'closed', 'closed', '', '%d1%86%d0%b5%d0%bd%d1%8b', '', '', '2020-02-06 22:51:17', '2020-02-06 19:51:17', '', 0, 'http://rsht.local/?p=99', 44, 'nav_menu_item', '', 0),
-(100, 1, '2020-01-30 15:09:03', '2020-01-30 12:09:03', '', 'Портфолио', '', 'publish', 'closed', 'closed', '', '%d0%bf%d0%be%d1%80%d1%82%d1%84%d0%be%d0%bb%d0%b8%d0%be', '', '', '2020-02-06 22:51:17', '2020-02-06 19:51:17', '', 0, 'http://rsht.local/?p=100', 45, 'nav_menu_item', '', 0),
-(101, 1, '2020-01-30 15:09:03', '2020-01-30 12:09:03', '', 'Оплата и доставка', '', 'publish', 'closed', 'closed', '', '%d0%be%d0%bf%d0%bb%d0%b0%d1%82%d0%b0-%d0%b8-%d0%b4%d0%be%d1%81%d1%82%d0%b0%d0%b2%d0%ba%d0%b0', '', '', '2020-02-06 22:51:17', '2020-02-06 19:51:17', '', 0, 'http://rsht.local/?p=101', 46, 'nav_menu_item', '', 0),
-(102, 1, '2020-01-30 15:09:03', '2020-01-30 12:09:03', '', 'Статьи', '', 'publish', 'closed', 'closed', '', '%d1%81%d1%82%d0%b0%d1%82%d1%8c%d0%b8', '', '', '2020-02-06 22:51:17', '2020-02-06 19:51:17', '', 0, 'http://rsht.local/?p=102', 47, 'nav_menu_item', '', 0),
-(103, 1, '2020-01-30 15:09:03', '2020-01-30 12:09:03', '', 'Контакты', '', 'publish', 'closed', 'closed', '', '%d0%ba%d0%be%d0%bd%d1%82%d0%b0%d0%ba%d1%82%d1%8b', '', '', '2020-02-06 22:51:17', '2020-02-06 19:51:17', '', 0, 'http://rsht.local/?p=103', 48, 'nav_menu_item', '', 0),
-(104, 1, '2020-01-30 15:09:03', '2020-01-30 12:09:03', '', 'Разделитель', '', 'publish', 'closed', 'closed', '', '%d1%80%d0%b0%d0%b7%d0%b4%d0%b5%d0%bb%d0%b8%d1%82%d0%b5%d0%bb%d1%8c', '', '', '2020-02-06 22:51:17', '2020-02-06 19:51:17', '', 0, 'http://rsht.local/?p=104', 2, 'nav_menu_item', '', 0),
-(105, 1, '2020-01-30 15:09:03', '2020-01-30 12:09:03', '', 'Разделитель', '', 'publish', 'closed', 'closed', '', '%d1%80%d0%b0%d0%b7%d0%b4%d0%b5%d0%bb%d0%b8%d1%82%d0%b5%d0%bb%d1%8c-2', '', '', '2020-02-06 22:51:17', '2020-02-06 19:51:17', '', 0, 'http://rsht.local/?p=105', 14, 'nav_menu_item', '', 0),
-(106, 1, '2020-01-30 15:09:03', '2020-01-30 12:09:03', '', 'Разделитель', '', 'publish', 'closed', 'closed', '', '%d1%80%d0%b0%d0%b7%d0%b4%d0%b5%d0%bb%d0%b8%d1%82%d0%b5%d0%bb%d1%8c-3', '', '', '2020-02-06 22:51:17', '2020-02-06 19:51:17', '', 0, 'http://rsht.local/?p=106', 28, 'nav_menu_item', '', 0),
-(107, 1, '2020-01-30 15:09:03', '2020-01-30 12:09:03', '', 'Вывески', '', 'publish', 'closed', 'closed', '', '%d0%b2%d1%8b%d0%b2%d0%b5%d1%81%d0%ba%d0%b8', '', '', '2020-02-06 22:51:17', '2020-02-06 19:51:17', '', 0, 'http://rsht.local/?p=107', 3, 'nav_menu_item', '', 0),
-(108, 1, '2020-01-30 15:09:03', '2020-01-30 12:09:03', '', 'Фотозона', '', 'publish', 'closed', 'closed', '', '%d1%84%d0%be%d1%82%d0%be%d0%b7%d0%be%d0%bd%d0%b0', '', '', '2020-02-06 22:51:17', '2020-02-06 19:51:17', '', 0, 'http://rsht.local/?p=108', 8, 'nav_menu_item', '', 0),
-(109, 1, '2020-01-30 15:09:03', '2020-01-30 12:09:03', '', 'Пресс волл', '', 'publish', 'closed', 'closed', '', '%d0%bf%d1%80%d0%b5%d1%81%d1%81-%d0%b2%d0%be%d0%bb%d0%bb', '', '', '2020-02-06 22:51:17', '2020-02-06 19:51:17', '', 0, 'http://rsht.local/?p=109', 9, 'nav_menu_item', '', 0),
-(110, 1, '2020-01-30 15:09:03', '2020-01-30 12:09:03', '', 'Промостойки', '', 'publish', 'closed', 'closed', '', '%d0%bf%d1%80%d0%be%d0%bc%d0%be%d1%81%d1%82%d0%be%d0%b9%d0%ba%d0%b8', '', '', '2020-02-06 22:51:17', '2020-02-06 19:51:17', '', 0, 'http://rsht.local/?p=110', 10, 'nav_menu_item', '', 0),
-(111, 1, '2020-01-30 15:09:03', '2020-01-30 12:09:03', '', 'Баннерные стенды', '', 'publish', 'closed', 'closed', '', '%d0%b1%d0%b0%d0%bd%d0%bd%d0%b5%d1%80%d0%bd%d1%8b%d0%b5-%d1%81%d1%82%d0%b5%d0%bd%d0%b4%d1%8b', '', '', '2020-02-06 22:51:17', '2020-02-06 19:51:17', '', 0, 'http://rsht.local/?p=111', 11, 'nav_menu_item', '', 0),
-(112, 1, '2020-01-30 15:09:03', '2020-01-30 12:09:03', '', 'Ролл ап', '', 'publish', 'closed', 'closed', '', '%d1%80%d0%be%d0%bb%d0%bb-%d0%b0%d0%bf', '', '', '2020-02-06 22:51:17', '2020-02-06 19:51:17', '', 0, 'http://rsht.local/?p=112', 12, 'nav_menu_item', '', 0),
-(113, 1, '2020-01-30 15:09:03', '2020-01-30 12:09:03', '', 'Аренда рекламных конструкций', '', 'publish', 'closed', 'closed', '', '%d0%b0%d1%80%d0%b5%d0%bd%d0%b4%d0%b0-%d1%80%d0%b5%d0%ba%d0%bb%d0%b0%d0%bc%d0%bd%d1%8b%d1%85-%d0%ba%d0%be%d0%bd%d1%81%d1%82%d1%80%d1%83%d0%ba%d1%86%d0%b8%d0%b9', '', '', '2020-02-06 22:51:17', '2020-02-06 19:51:17', '', 0, 'http://rsht.local/?p=113', 13, 'nav_menu_item', '', 0),
-(114, 1, '2020-01-30 15:10:46', '2020-01-30 12:10:46', '', 'Световые панели', '', 'publish', 'closed', 'closed', '', '%d1%81%d0%b2%d0%b5%d1%82%d0%be%d0%b2%d1%8b%d0%b5-%d0%bf%d0%b0%d0%bd%d0%b5%d0%bb%d0%b8', '', '', '2020-02-06 22:51:17', '2020-02-06 19:51:17', '', 0, 'http://rsht.local/?p=114', 15, 'nav_menu_item', '', 0),
-(115, 1, '2020-01-30 15:10:46', '2020-01-30 12:10:46', '', 'Широкоформатная печать', '', 'publish', 'closed', 'closed', '', '%d1%88%d0%b8%d1%80%d0%be%d0%ba%d0%be%d1%84%d0%be%d1%80%d0%bc%d0%b0%d1%82%d0%bd%d0%b0%d1%8f-%d0%bf%d0%b5%d1%87%d0%b0%d1%82%d1%8c', '', '', '2020-02-06 22:51:17', '2020-02-06 19:51:17', '', 0, 'http://rsht.local/?p=115', 19, 'nav_menu_item', '', 0),
-(116, 1, '2020-01-30 15:10:46', '2020-01-30 12:10:46', '', 'Лазерная резка', '', 'publish', 'closed', 'closed', '', '%d0%bb%d0%b0%d0%b7%d0%b5%d1%80%d0%bd%d0%b0%d1%8f-%d1%80%d0%b5%d0%b7%d0%ba%d0%b0', '', '', '2020-02-06 22:51:17', '2020-02-06 19:51:17', '', 0, 'http://rsht.local/?p=116', 24, 'nav_menu_item', '', 0),
-(117, 1, '2020-01-30 15:10:46', '2020-01-30 12:10:46', '', 'Ростовые фигуры', '', 'publish', 'closed', 'closed', '', '%d1%80%d0%be%d1%81%d1%82%d0%be%d0%b2%d1%8b%d0%b5-%d1%84%d0%b8%d0%b3%d1%83%d1%80%d1%8b', '', '', '2020-02-06 22:51:17', '2020-02-06 19:51:17', '', 0, 'http://rsht.local/?p=117', 25, 'nav_menu_item', '', 0),
-(118, 1, '2020-01-30 15:10:46', '2020-01-30 12:10:46', '', 'Брендирование транспорта', '', 'publish', 'closed', 'closed', '', '%d0%b1%d1%80%d0%b5%d0%bd%d0%b4%d0%b8%d1%80%d0%be%d0%b2%d0%b0%d0%bd%d0%b8%d0%b5-%d1%82%d1%80%d0%b0%d0%bd%d1%81%d0%bf%d0%be%d1%80%d1%82%d0%b0', '', '', '2020-02-06 22:51:17', '2020-02-06 19:51:17', '', 0, 'http://rsht.local/?p=118', 26, 'nav_menu_item', '', 0),
-(119, 1, '2020-01-30 15:10:46', '2020-01-30 12:10:46', '', 'Оклейка витрин и офисных перегородок', '', 'publish', 'closed', 'closed', '', '%d0%be%d0%ba%d0%bb%d0%b5%d0%b9%d0%ba%d0%b0-%d0%b2%d0%b8%d1%82%d1%80%d0%b8%d0%bd-%d0%b8-%d0%be%d1%84%d0%b8%d1%81%d0%bd%d1%8b%d1%85-%d0%bf%d0%b5%d1%80%d0%b5%d0%b3%d0%be%d1%80%d0%be%d0%b4%d0%be%d0%ba', '', '', '2020-02-06 22:51:17', '2020-02-06 19:51:17', '', 0, 'http://rsht.local/?p=119', 27, 'nav_menu_item', '', 0),
-(120, 1, '2020-01-30 15:12:35', '2020-01-30 12:12:35', '', 'Штендеры', '', 'publish', 'closed', 'closed', '', '%d1%88%d1%82%d0%b5%d0%bd%d0%b4%d0%b5%d1%80%d1%8b', '', '', '2020-02-06 22:51:17', '2020-02-06 19:51:17', '', 0, 'http://rsht.local/?p=120', 29, 'nav_menu_item', '', 0),
-(121, 1, '2020-01-30 15:12:35', '2020-01-30 12:12:35', '', 'Картины для дома и офиса', '', 'publish', 'closed', 'closed', '', '%d0%ba%d0%b0%d1%80%d1%82%d0%b8%d0%bd%d1%8b-%d0%b4%d0%bb%d1%8f-%d0%b4%d0%be%d0%bc%d0%b0-%d0%b8-%d0%be%d1%84%d0%b8%d1%81%d0%b0', '', '', '2020-02-06 22:51:17', '2020-02-06 19:51:17', '', 0, 'http://rsht.local/?p=121', 33, 'nav_menu_item', '', 0),
-(122, 1, '2020-01-30 15:12:35', '2020-01-30 12:12:35', '', 'Информационные стенды', '', 'publish', 'closed', 'closed', '', '%d0%b8%d0%bd%d1%84%d0%be%d1%80%d0%bc%d0%b0%d1%86%d0%b8%d0%be%d0%bd%d0%bd%d1%8b%d0%b5-%d1%81%d1%82%d0%b5%d0%bd%d0%b4%d1%8b', '', '', '2020-02-06 22:51:17', '2020-02-06 19:51:17', '', 0, 'http://rsht.local/?p=122', 37, 'nav_menu_item', '', 0),
-(123, 1, '2020-01-30 15:12:36', '2020-01-30 12:12:36', '', 'Разработка дизайн-макетов', '', 'publish', 'closed', 'closed', '', '%d1%80%d0%b0%d0%b7%d1%80%d0%b0%d0%b1%d0%be%d1%82%d0%ba%d0%b0-%d0%b4%d0%b8%d0%b7%d0%b0%d0%b9%d0%bd-%d0%bc%d0%b0%d0%ba%d0%b5%d1%82%d0%be%d0%b2', '', '', '2020-02-06 22:51:17', '2020-02-06 19:51:17', '', 0, 'http://rsht.local/?p=123', 40, 'nav_menu_item', '', 0),
-(124, 1, '2020-01-30 15:12:36', '2020-01-30 12:12:36', '', 'Материалы для рекламы и творчества', '', 'publish', 'closed', 'closed', '', '%d0%bc%d0%b0%d1%82%d0%b5%d1%80%d0%b8%d0%b0%d0%bb%d1%8b-%d0%b4%d0%bb%d1%8f-%d1%80%d0%b5%d0%ba%d0%bb%d0%b0%d0%bc%d1%8b-%d0%b8-%d1%82%d0%b2%d0%be%d1%80%d1%87%d0%b5%d1%81%d1%82%d0%b2%d0%b0', '', '', '2020-02-06 22:51:17', '2020-02-06 19:51:17', '', 0, 'http://rsht.local/?p=124', 41, 'nav_menu_item', '', 0),
-(125, 1, '2020-01-30 15:16:26', '2020-01-30 12:16:26', '', 'Световые объемные буквы для уличных вывесок', '', 'publish', 'closed', 'closed', '', '%d1%81%d0%b2%d0%b5%d1%82%d0%be%d0%b2%d1%8b%d0%b5-%d0%be%d0%b1%d1%8a%d0%b5%d0%bc%d0%bd%d1%8b%d0%b5-%d0%b1%d1%83%d0%ba%d0%b2%d1%8b-%d0%b4%d0%bb%d1%8f-%d1%83%d0%bb%d0%b8%d1%87%d0%bd%d1%8b%d1%85-%d0%b2', '', '', '2020-02-06 22:51:17', '2020-02-06 19:51:17', '', 0, 'http://rsht.local/?p=125', 4, 'nav_menu_item', '', 0),
-(126, 1, '2020-01-30 15:16:26', '2020-01-30 12:16:26', '', 'Интерьерные вывески', '', 'publish', 'closed', 'closed', '', '%d0%b8%d0%bd%d1%82%d0%b5%d1%80%d1%8c%d0%b5%d1%80%d0%bd%d1%8b%d0%b5-%d0%b2%d1%8b%d0%b2%d0%b5%d1%81%d0%ba%d0%b8', '', '', '2020-02-06 22:51:17', '2020-02-06 19:51:17', '', 0, 'http://rsht.local/?p=126', 5, 'nav_menu_item', '', 0),
-(127, 1, '2020-01-30 15:16:26', '2020-01-30 12:16:26', '', 'Аптечные кресты', '', 'publish', 'closed', 'closed', '', '%d0%b0%d0%bf%d1%82%d0%b5%d1%87%d0%bd%d1%8b%d0%b5-%d0%ba%d1%80%d0%b5%d1%81%d1%82%d1%8b', '', '', '2020-02-06 22:51:17', '2020-02-06 19:51:17', '', 0, 'http://rsht.local/?p=127', 6, 'nav_menu_item', '', 0),
-(128, 1, '2020-01-30 15:16:26', '2020-01-30 12:16:26', '', 'Панель-кронштейны', '', 'publish', 'closed', 'closed', '', '%d0%bf%d0%b0%d0%bd%d0%b5%d0%bb%d1%8c-%d0%ba%d1%80%d0%be%d0%bd%d1%88%d1%82%d0%b5%d0%b9%d0%bd%d1%8b', '', '', '2020-02-06 22:51:17', '2020-02-06 19:51:17', '', 0, 'http://rsht.local/?p=128', 7, 'nav_menu_item', '', 0),
-(129, 1, '2020-01-30 15:17:43', '2020-01-30 12:17:43', '', 'Магнитные', '', 'publish', 'closed', 'closed', '', '%d0%bc%d0%b0%d0%b3%d0%bd%d0%b8%d1%82%d0%bd%d1%8b%d0%b5', '', '', '2020-02-06 22:51:17', '2020-02-06 19:51:17', '', 0, 'http://rsht.local/?p=129', 16, 'nav_menu_item', '', 0),
-(130, 1, '2020-01-30 15:17:43', '2020-01-30 12:17:43', '', 'С клик профилем', '', 'publish', 'closed', 'closed', '', '%d1%81-%d0%ba%d0%bb%d0%b8%d0%ba-%d0%bf%d1%80%d0%be%d1%84%d0%b8%d0%bb%d0%b5%d0%bc', '', '', '2020-02-06 22:51:17', '2020-02-06 19:51:17', '', 0, 'http://rsht.local/?p=130', 17, 'nav_menu_item', '', 0),
-(131, 1, '2020-01-30 15:17:43', '2020-01-30 12:17:43', '', 'Безрамочные', '', 'publish', 'closed', 'closed', '', '%d0%b1%d0%b5%d0%b7%d1%80%d0%b0%d0%bc%d0%be%d1%87%d0%bd%d1%8b%d0%b5', '', '', '2020-02-06 22:51:17', '2020-02-06 19:51:17', '', 0, 'http://rsht.local/?p=131', 18, 'nav_menu_item', '', 0),
-(132, 1, '2020-01-30 15:18:43', '2020-01-30 12:18:43', '', 'На баннере, плёнке, фотобумаге', '', 'publish', 'closed', 'closed', '', '%d0%bd%d0%b0-%d0%b1%d0%b0%d0%bd%d0%bd%d0%b5%d1%80%d0%b5-%d0%bf%d0%bb%d1%91%d0%bd%d0%ba%d0%b5-%d1%84%d0%be%d1%82%d0%be%d0%b1%d1%83%d0%bc%d0%b0%d0%b3%d0%b5', '', '', '2020-02-06 22:51:17', '2020-02-06 19:51:17', '', 0, 'http://rsht.local/?p=132', 20, 'nav_menu_item', '', 0),
-(133, 1, '2020-01-30 15:18:43', '2020-01-30 12:18:43', '', 'Ламинация и прикатка', '', 'publish', 'closed', 'closed', '', '%d0%bb%d0%b0%d0%bc%d0%b8%d0%bd%d0%b0%d1%86%d0%b8%d1%8f-%d0%b8-%d0%bf%d1%80%d0%b8%d0%ba%d0%b0%d1%82%d0%ba%d0%b0', '', '', '2020-02-06 22:51:17', '2020-02-06 19:51:17', '', 0, 'http://rsht.local/?p=133', 21, 'nav_menu_item', '', 0),
-(134, 1, '2020-01-30 15:18:43', '2020-01-30 12:18:43', '', 'Плоттерная резка', '', 'publish', 'closed', 'closed', '', '%d0%bf%d0%bb%d0%be%d1%82%d1%82%d0%b5%d1%80%d0%bd%d0%b0%d1%8f-%d1%80%d0%b5%d0%b7%d0%ba%d0%b0', '', '', '2020-02-06 22:51:17', '2020-02-06 19:51:17', '', 0, 'http://rsht.local/?p=134', 22, 'nav_menu_item', '', 0),
-(135, 1, '2020-01-30 15:18:43', '2020-01-30 12:18:43', '', 'Плакаты и постеры', '', 'publish', 'closed', 'closed', '', '%d0%bf%d0%bb%d0%b0%d0%ba%d0%b0%d1%82%d1%8b-%d0%b8-%d0%bf%d0%be%d1%81%d1%82%d0%b5%d1%80%d1%8b', '', '', '2020-02-06 22:51:17', '2020-02-06 19:51:17', '', 0, 'http://rsht.local/?p=135', 23, 'nav_menu_item', '', 0),
-(136, 1, '2020-01-30 15:20:00', '2020-01-30 12:20:00', '', 'Прямой и круглый', '', 'publish', 'closed', 'closed', '', '%d0%bf%d1%80%d1%8f%d0%bc%d0%be%d0%b9-%d0%b8-%d0%ba%d1%80%d1%83%d0%b3%d0%bb%d1%8b%d0%b9', '', '', '2020-02-06 22:51:17', '2020-02-06 19:51:17', '', 0, 'http://rsht.local/?p=136', 30, 'nav_menu_item', '', 0),
-(137, 1, '2020-01-30 15:20:00', '2020-01-30 12:20:00', '', 'Меловой и маркерный', '', 'publish', 'closed', 'closed', '', '%d0%bc%d0%b5%d0%bb%d0%be%d0%b2%d0%be%d0%b9-%d0%b8-%d0%bc%d0%b0%d1%80%d0%ba%d0%b5%d1%80%d0%bd%d1%8b%d0%b9', '', '', '2020-02-06 22:51:17', '2020-02-06 19:51:17', '', 0, 'http://rsht.local/?p=137', 31, 'nav_menu_item', '', 0),
-(138, 1, '2020-01-30 15:20:00', '2020-01-30 12:20:00', '', 'Нестандартные штендеры', '', 'publish', 'closed', 'closed', '', '%d0%bd%d0%b5%d1%81%d1%82%d0%b0%d0%bd%d0%b4%d0%b0%d1%80%d1%82%d0%bd%d1%8b%d0%b5-%d1%88%d1%82%d0%b5%d0%bd%d0%b4%d0%b5%d1%80%d1%8b', '', '', '2020-02-06 22:51:17', '2020-02-06 19:51:17', '', 0, 'http://rsht.local/?p=138', 32, 'nav_menu_item', '', 0),
-(139, 1, '2020-01-30 15:22:47', '2020-01-30 12:22:47', '', 'Модульные картины', '', 'publish', 'closed', 'closed', '', '%d0%bc%d0%be%d0%b4%d1%83%d0%bb%d1%8c%d0%bd%d1%8b%d0%b5-%d0%ba%d0%b0%d1%80%d1%82%d0%b8%d0%bd%d1%8b', '', '', '2020-02-06 22:51:17', '2020-02-06 19:51:17', '', 0, 'http://rsht.local/?p=139', 34, 'nav_menu_item', '', 0),
-(140, 1, '2020-01-30 15:22:47', '2020-01-30 12:22:47', '', 'Для дома', '', 'publish', 'closed', 'closed', '', '%d0%b4%d0%bb%d1%8f-%d0%b4%d0%be%d0%bc%d0%b0', '', '', '2020-02-06 22:51:17', '2020-02-06 19:51:17', '', 0, 'http://rsht.local/?p=140', 35, 'nav_menu_item', '', 0),
-(141, 1, '2020-01-30 15:22:47', '2020-01-30 12:22:47', '', 'Для офисов, кафе и ресторанов', '', 'publish', 'closed', 'closed', '', '%d0%b4%d0%bb%d1%8f-%d0%be%d1%84%d0%b8%d1%81%d0%be%d0%b2-%d0%ba%d0%b0%d1%84%d0%b5-%d0%b8-%d1%80%d0%b5%d1%81%d1%82%d0%be%d1%80%d0%b0%d0%bd%d0%be%d0%b2', '', '', '2020-02-06 22:51:17', '2020-02-06 19:51:17', '', 0, 'http://rsht.local/?p=141', 36, 'nav_menu_item', '', 0),
-(142, 1, '2020-01-30 15:22:47', '2020-01-30 12:22:47', '', 'С плоскими и объемными карманами', '', 'publish', 'closed', 'closed', '', '%d1%81-%d0%bf%d0%bb%d0%be%d1%81%d0%ba%d0%b8%d0%bc%d0%b8-%d0%b8-%d0%be%d0%b1%d1%8a%d0%b5%d0%bc%d0%bd%d1%8b%d0%bc%d0%b8-%d0%ba%d0%b0%d1%80%d0%bc%d0%b0%d0%bd%d0%b0%d0%bc%d0%b8', '', '', '2020-02-06 22:51:17', '2020-02-06 19:51:17', '', 0, 'http://rsht.local/?p=142', 38, 'nav_menu_item', '', 0),
-(143, 1, '2020-01-30 15:22:47', '2020-01-30 12:22:47', '', 'Режим работы', '', 'publish', 'closed', 'closed', '', '%d1%80%d0%b5%d0%b6%d0%b8%d0%bc-%d1%80%d0%b0%d0%b1%d0%be%d1%82%d1%8b', '', '', '2020-02-06 22:51:17', '2020-02-06 19:51:17', '', 0, 'http://rsht.local/?p=143', 39, 'nav_menu_item', '', 0),
-(144, 1, '2020-01-30 15:52:09', '2020-01-30 12:52:09', '', 'Вывески', '', 'publish', 'closed', 'closed', '', '%d0%b2%d1%8b%d0%b2%d0%b5%d1%81%d0%ba%d0%b8-2', '', '', '2020-02-11 20:01:43', '2020-02-11 17:01:43', '', 0, 'http://rsht.local/?p=144', 1, 'nav_menu_item', '', 0);
+(97, 1, '2020-01-30 15:09:03', '2020-01-30 12:09:03', '', 'Акции', '', 'publish', 'closed', 'closed', '', '%d0%b0%d0%ba%d1%86%d0%b8%d0%b8', '', '', '2020-02-12 22:19:28', '2020-02-12 19:19:28', '', 0, 'http://rsht.local/?p=97', 42, 'nav_menu_item', '', 0),
+(98, 1, '2020-01-30 15:09:03', '2020-01-30 12:09:03', '', 'Услуги', '', 'publish', 'closed', 'closed', '', '%d1%83%d1%81%d0%bb%d1%83%d0%b3%d0%b8', '', '', '2020-02-12 22:19:28', '2020-02-12 19:19:28', '', 0, 'http://rsht.local/?p=98', 43, 'nav_menu_item', '', 0),
+(99, 1, '2020-01-30 15:09:03', '2020-01-30 12:09:03', '', 'Цены', '', 'publish', 'closed', 'closed', '', '%d1%86%d0%b5%d0%bd%d1%8b', '', '', '2020-02-12 22:19:28', '2020-02-12 19:19:28', '', 0, 'http://rsht.local/?p=99', 44, 'nav_menu_item', '', 0),
+(100, 1, '2020-01-30 15:09:03', '2020-01-30 12:09:03', '', 'Портфолио', '', 'publish', 'closed', 'closed', '', '%d0%bf%d0%be%d1%80%d1%82%d1%84%d0%be%d0%bb%d0%b8%d0%be', '', '', '2020-02-12 22:19:28', '2020-02-12 19:19:28', '', 0, 'http://rsht.local/?p=100', 45, 'nav_menu_item', '', 0),
+(101, 1, '2020-01-30 15:09:03', '2020-01-30 12:09:03', '', 'Оплата и доставка', '', 'publish', 'closed', 'closed', '', '%d0%be%d0%bf%d0%bb%d0%b0%d1%82%d0%b0-%d0%b8-%d0%b4%d0%be%d1%81%d1%82%d0%b0%d0%b2%d0%ba%d0%b0', '', '', '2020-02-12 22:19:28', '2020-02-12 19:19:28', '', 0, 'http://rsht.local/?p=101', 46, 'nav_menu_item', '', 0),
+(102, 1, '2020-01-30 15:09:03', '2020-01-30 12:09:03', '', 'Статьи', '', 'publish', 'closed', 'closed', '', '%d1%81%d1%82%d0%b0%d1%82%d1%8c%d0%b8', '', '', '2020-02-12 22:19:28', '2020-02-12 19:19:28', '', 0, 'http://rsht.local/?p=102', 47, 'nav_menu_item', '', 0),
+(103, 1, '2020-01-30 15:09:03', '2020-01-30 12:09:03', '', 'Контакты', '', 'publish', 'closed', 'closed', '', '%d0%ba%d0%be%d0%bd%d1%82%d0%b0%d0%ba%d1%82%d1%8b', '', '', '2020-02-12 22:19:28', '2020-02-12 19:19:28', '', 0, 'http://rsht.local/?p=103', 48, 'nav_menu_item', '', 0),
+(104, 1, '2020-01-30 15:09:03', '2020-01-30 12:09:03', '', 'Разделитель', '', 'publish', 'closed', 'closed', '', '%d1%80%d0%b0%d0%b7%d0%b4%d0%b5%d0%bb%d0%b8%d1%82%d0%b5%d0%bb%d1%8c', '', '', '2020-02-12 22:19:28', '2020-02-12 19:19:28', '', 0, 'http://rsht.local/?p=104', 2, 'nav_menu_item', '', 0),
+(105, 1, '2020-01-30 15:09:03', '2020-01-30 12:09:03', '', 'Разделитель', '', 'publish', 'closed', 'closed', '', '%d1%80%d0%b0%d0%b7%d0%b4%d0%b5%d0%bb%d0%b8%d1%82%d0%b5%d0%bb%d1%8c-2', '', '', '2020-02-12 22:19:28', '2020-02-12 19:19:28', '', 0, 'http://rsht.local/?p=105', 14, 'nav_menu_item', '', 0),
+(106, 1, '2020-01-30 15:09:03', '2020-01-30 12:09:03', '', 'Разделитель', '', 'publish', 'closed', 'closed', '', '%d1%80%d0%b0%d0%b7%d0%b4%d0%b5%d0%bb%d0%b8%d1%82%d0%b5%d0%bb%d1%8c-3', '', '', '2020-02-12 22:19:28', '2020-02-12 19:19:28', '', 0, 'http://rsht.local/?p=106', 28, 'nav_menu_item', '', 0),
+(107, 1, '2020-01-30 15:09:03', '2020-01-30 12:09:03', '', 'Вывески', '', 'publish', 'closed', 'closed', '', '%d0%b2%d1%8b%d0%b2%d0%b5%d1%81%d0%ba%d0%b8', '', '', '2020-02-12 22:19:28', '2020-02-12 19:19:28', '', 0, 'http://rsht.local/?p=107', 3, 'nav_menu_item', '', 0),
+(108, 1, '2020-01-30 15:09:03', '2020-01-30 12:09:03', '', 'Фотозона', '', 'publish', 'closed', 'closed', '', '%d1%84%d0%be%d1%82%d0%be%d0%b7%d0%be%d0%bd%d0%b0', '', '', '2020-02-12 22:19:28', '2020-02-12 19:19:28', '', 0, 'http://rsht.local/?p=108', 8, 'nav_menu_item', '', 0),
+(109, 1, '2020-01-30 15:09:03', '2020-01-30 12:09:03', '', 'Пресс волл', '', 'publish', 'closed', 'closed', '', '%d0%bf%d1%80%d0%b5%d1%81%d1%81-%d0%b2%d0%be%d0%bb%d0%bb', '', '', '2020-02-12 22:19:28', '2020-02-12 19:19:28', '', 0, 'http://rsht.local/?p=109', 9, 'nav_menu_item', '', 0),
+(110, 1, '2020-01-30 15:09:03', '2020-01-30 12:09:03', '', 'Промостойки', '', 'publish', 'closed', 'closed', '', '%d0%bf%d1%80%d0%be%d0%bc%d0%be%d1%81%d1%82%d0%be%d0%b9%d0%ba%d0%b8', '', '', '2020-02-12 22:19:28', '2020-02-12 19:19:28', '', 0, 'http://rsht.local/?p=110', 10, 'nav_menu_item', '', 0),
+(111, 1, '2020-01-30 15:09:03', '2020-01-30 12:09:03', '', 'Баннерные стенды', '', 'publish', 'closed', 'closed', '', '%d0%b1%d0%b0%d0%bd%d0%bd%d0%b5%d1%80%d0%bd%d1%8b%d0%b5-%d1%81%d1%82%d0%b5%d0%bd%d0%b4%d1%8b', '', '', '2020-02-12 22:19:28', '2020-02-12 19:19:28', '', 0, 'http://rsht.local/?p=111', 11, 'nav_menu_item', '', 0),
+(112, 1, '2020-01-30 15:09:03', '2020-01-30 12:09:03', '', 'Ролл ап', '', 'publish', 'closed', 'closed', '', '%d1%80%d0%be%d0%bb%d0%bb-%d0%b0%d0%bf', '', '', '2020-02-12 22:19:28', '2020-02-12 19:19:28', '', 0, 'http://rsht.local/?p=112', 12, 'nav_menu_item', '', 0),
+(113, 1, '2020-01-30 15:09:03', '2020-01-30 12:09:03', '', 'Аренда рекламных конструкций', '', 'publish', 'closed', 'closed', '', '%d0%b0%d1%80%d0%b5%d0%bd%d0%b4%d0%b0-%d1%80%d0%b5%d0%ba%d0%bb%d0%b0%d0%bc%d0%bd%d1%8b%d1%85-%d0%ba%d0%be%d0%bd%d1%81%d1%82%d1%80%d1%83%d0%ba%d1%86%d0%b8%d0%b9', '', '', '2020-02-12 22:19:28', '2020-02-12 19:19:28', '', 0, 'http://rsht.local/?p=113', 13, 'nav_menu_item', '', 0),
+(114, 1, '2020-01-30 15:10:46', '2020-01-30 12:10:46', '', 'Световые панели', '', 'publish', 'closed', 'closed', '', '%d1%81%d0%b2%d0%b5%d1%82%d0%be%d0%b2%d1%8b%d0%b5-%d0%bf%d0%b0%d0%bd%d0%b5%d0%bb%d0%b8', '', '', '2020-02-12 22:19:28', '2020-02-12 19:19:28', '', 0, 'http://rsht.local/?p=114', 15, 'nav_menu_item', '', 0),
+(115, 1, '2020-01-30 15:10:46', '2020-01-30 12:10:46', '', 'Широкоформатная печать', '', 'publish', 'closed', 'closed', '', '%d1%88%d0%b8%d1%80%d0%be%d0%ba%d0%be%d1%84%d0%be%d1%80%d0%bc%d0%b0%d1%82%d0%bd%d0%b0%d1%8f-%d0%bf%d0%b5%d1%87%d0%b0%d1%82%d1%8c', '', '', '2020-02-12 22:19:28', '2020-02-12 19:19:28', '', 0, 'http://rsht.local/?p=115', 19, 'nav_menu_item', '', 0),
+(116, 1, '2020-01-30 15:10:46', '2020-01-30 12:10:46', '', 'Лазерная резка', '', 'publish', 'closed', 'closed', '', '%d0%bb%d0%b0%d0%b7%d0%b5%d1%80%d0%bd%d0%b0%d1%8f-%d1%80%d0%b5%d0%b7%d0%ba%d0%b0', '', '', '2020-02-12 22:19:28', '2020-02-12 19:19:28', '', 0, 'http://rsht.local/?p=116', 24, 'nav_menu_item', '', 0),
+(117, 1, '2020-01-30 15:10:46', '2020-01-30 12:10:46', '', 'Ростовые фигуры', '', 'publish', 'closed', 'closed', '', '%d1%80%d0%be%d1%81%d1%82%d0%be%d0%b2%d1%8b%d0%b5-%d1%84%d0%b8%d0%b3%d1%83%d1%80%d1%8b', '', '', '2020-02-12 22:19:28', '2020-02-12 19:19:28', '', 0, 'http://rsht.local/?p=117', 25, 'nav_menu_item', '', 0),
+(118, 1, '2020-01-30 15:10:46', '2020-01-30 12:10:46', '', 'Брендирование транспорта', '', 'publish', 'closed', 'closed', '', '%d0%b1%d1%80%d0%b5%d0%bd%d0%b4%d0%b8%d1%80%d0%be%d0%b2%d0%b0%d0%bd%d0%b8%d0%b5-%d1%82%d1%80%d0%b0%d0%bd%d1%81%d0%bf%d0%be%d1%80%d1%82%d0%b0', '', '', '2020-02-12 22:19:28', '2020-02-12 19:19:28', '', 0, 'http://rsht.local/?p=118', 26, 'nav_menu_item', '', 0),
+(119, 1, '2020-01-30 15:10:46', '2020-01-30 12:10:46', '', 'Оклейка витрин и офисных перегородок', '', 'publish', 'closed', 'closed', '', '%d0%be%d0%ba%d0%bb%d0%b5%d0%b9%d0%ba%d0%b0-%d0%b2%d0%b8%d1%82%d1%80%d0%b8%d0%bd-%d0%b8-%d0%be%d1%84%d0%b8%d1%81%d0%bd%d1%8b%d1%85-%d0%bf%d0%b5%d1%80%d0%b5%d0%b3%d0%be%d1%80%d0%be%d0%b4%d0%be%d0%ba', '', '', '2020-02-12 22:19:28', '2020-02-12 19:19:28', '', 0, 'http://rsht.local/?p=119', 27, 'nav_menu_item', '', 0),
+(120, 1, '2020-01-30 15:12:35', '2020-01-30 12:12:35', '', 'Штендеры', '', 'publish', 'closed', 'closed', '', '%d1%88%d1%82%d0%b5%d0%bd%d0%b4%d0%b5%d1%80%d1%8b', '', '', '2020-02-12 22:19:28', '2020-02-12 19:19:28', '', 0, 'http://rsht.local/?p=120', 29, 'nav_menu_item', '', 0),
+(121, 1, '2020-01-30 15:12:35', '2020-01-30 12:12:35', '', 'Картины для дома и офиса', '', 'publish', 'closed', 'closed', '', '%d0%ba%d0%b0%d1%80%d1%82%d0%b8%d0%bd%d1%8b-%d0%b4%d0%bb%d1%8f-%d0%b4%d0%be%d0%bc%d0%b0-%d0%b8-%d0%be%d1%84%d0%b8%d1%81%d0%b0', '', '', '2020-02-12 22:19:28', '2020-02-12 19:19:28', '', 0, 'http://rsht.local/?p=121', 33, 'nav_menu_item', '', 0),
+(122, 1, '2020-01-30 15:12:35', '2020-01-30 12:12:35', '', 'Информационные стенды', '', 'publish', 'closed', 'closed', '', '%d0%b8%d0%bd%d1%84%d0%be%d1%80%d0%bc%d0%b0%d1%86%d0%b8%d0%be%d0%bd%d0%bd%d1%8b%d0%b5-%d1%81%d1%82%d0%b5%d0%bd%d0%b4%d1%8b', '', '', '2020-02-12 22:19:28', '2020-02-12 19:19:28', '', 0, 'http://rsht.local/?p=122', 37, 'nav_menu_item', '', 0),
+(123, 1, '2020-01-30 15:12:36', '2020-01-30 12:12:36', '', 'Разработка дизайн-макетов', '', 'publish', 'closed', 'closed', '', '%d1%80%d0%b0%d0%b7%d1%80%d0%b0%d0%b1%d0%be%d1%82%d0%ba%d0%b0-%d0%b4%d0%b8%d0%b7%d0%b0%d0%b9%d0%bd-%d0%bc%d0%b0%d0%ba%d0%b5%d1%82%d0%be%d0%b2', '', '', '2020-02-12 22:19:28', '2020-02-12 19:19:28', '', 0, 'http://rsht.local/?p=123', 40, 'nav_menu_item', '', 0),
+(124, 1, '2020-01-30 15:12:36', '2020-01-30 12:12:36', '', 'Материалы для рекламы и творчества', '', 'publish', 'closed', 'closed', '', '%d0%bc%d0%b0%d1%82%d0%b5%d1%80%d0%b8%d0%b0%d0%bb%d1%8b-%d0%b4%d0%bb%d1%8f-%d1%80%d0%b5%d0%ba%d0%bb%d0%b0%d0%bc%d1%8b-%d0%b8-%d1%82%d0%b2%d0%be%d1%80%d1%87%d0%b5%d1%81%d1%82%d0%b2%d0%b0', '', '', '2020-02-12 22:19:28', '2020-02-12 19:19:28', '', 0, 'http://rsht.local/?p=124', 41, 'nav_menu_item', '', 0),
+(125, 1, '2020-01-30 15:16:26', '2020-01-30 12:16:26', '', 'Световые объемные буквы для уличных вывесок', '', 'publish', 'closed', 'closed', '', '%d1%81%d0%b2%d0%b5%d1%82%d0%be%d0%b2%d1%8b%d0%b5-%d0%be%d0%b1%d1%8a%d0%b5%d0%bc%d0%bd%d1%8b%d0%b5-%d0%b1%d1%83%d0%ba%d0%b2%d1%8b-%d0%b4%d0%bb%d1%8f-%d1%83%d0%bb%d0%b8%d1%87%d0%bd%d1%8b%d1%85-%d0%b2', '', '', '2020-02-12 22:19:28', '2020-02-12 19:19:28', '', 0, 'http://rsht.local/?p=125', 4, 'nav_menu_item', '', 0),
+(126, 1, '2020-01-30 15:16:26', '2020-01-30 12:16:26', '', 'Интерьерные вывески', '', 'publish', 'closed', 'closed', '', '%d0%b8%d0%bd%d1%82%d0%b5%d1%80%d1%8c%d0%b5%d1%80%d0%bd%d1%8b%d0%b5-%d0%b2%d1%8b%d0%b2%d0%b5%d1%81%d0%ba%d0%b8', '', '', '2020-02-12 22:19:28', '2020-02-12 19:19:28', '', 0, 'http://rsht.local/?p=126', 5, 'nav_menu_item', '', 0),
+(127, 1, '2020-01-30 15:16:26', '2020-01-30 12:16:26', '', 'Аптечные кресты', '', 'publish', 'closed', 'closed', '', '%d0%b0%d0%bf%d1%82%d0%b5%d1%87%d0%bd%d1%8b%d0%b5-%d0%ba%d1%80%d0%b5%d1%81%d1%82%d1%8b', '', '', '2020-02-12 22:19:28', '2020-02-12 19:19:28', '', 0, 'http://rsht.local/?p=127', 6, 'nav_menu_item', '', 0),
+(128, 1, '2020-01-30 15:16:26', '2020-01-30 12:16:26', '', 'Панель-кронштейны', '', 'publish', 'closed', 'closed', '', '%d0%bf%d0%b0%d0%bd%d0%b5%d0%bb%d1%8c-%d0%ba%d1%80%d0%be%d0%bd%d1%88%d1%82%d0%b5%d0%b9%d0%bd%d1%8b', '', '', '2020-02-12 22:19:28', '2020-02-12 19:19:28', '', 0, 'http://rsht.local/?p=128', 7, 'nav_menu_item', '', 0),
+(129, 1, '2020-01-30 15:17:43', '2020-01-30 12:17:43', '', 'Магнитные', '', 'publish', 'closed', 'closed', '', '%d0%bc%d0%b0%d0%b3%d0%bd%d0%b8%d1%82%d0%bd%d1%8b%d0%b5', '', '', '2020-02-12 22:19:28', '2020-02-12 19:19:28', '', 0, 'http://rsht.local/?p=129', 16, 'nav_menu_item', '', 0),
+(130, 1, '2020-01-30 15:17:43', '2020-01-30 12:17:43', '', 'С клик профилем', '', 'publish', 'closed', 'closed', '', '%d1%81-%d0%ba%d0%bb%d0%b8%d0%ba-%d0%bf%d1%80%d0%be%d1%84%d0%b8%d0%bb%d0%b5%d0%bc', '', '', '2020-02-12 22:19:28', '2020-02-12 19:19:28', '', 0, 'http://rsht.local/?p=130', 17, 'nav_menu_item', '', 0),
+(131, 1, '2020-01-30 15:17:43', '2020-01-30 12:17:43', '', 'Безрамочные', '', 'publish', 'closed', 'closed', '', '%d0%b1%d0%b5%d0%b7%d1%80%d0%b0%d0%bc%d0%be%d1%87%d0%bd%d1%8b%d0%b5', '', '', '2020-02-12 22:19:28', '2020-02-12 19:19:28', '', 0, 'http://rsht.local/?p=131', 18, 'nav_menu_item', '', 0),
+(132, 1, '2020-01-30 15:18:43', '2020-01-30 12:18:43', '', 'На баннере, плёнке, фотобумаге', '', 'publish', 'closed', 'closed', '', '%d0%bd%d0%b0-%d0%b1%d0%b0%d0%bd%d0%bd%d0%b5%d1%80%d0%b5-%d0%bf%d0%bb%d1%91%d0%bd%d0%ba%d0%b5-%d1%84%d0%be%d1%82%d0%be%d0%b1%d1%83%d0%bc%d0%b0%d0%b3%d0%b5', '', '', '2020-02-12 22:19:28', '2020-02-12 19:19:28', '', 0, 'http://rsht.local/?p=132', 20, 'nav_menu_item', '', 0),
+(133, 1, '2020-01-30 15:18:43', '2020-01-30 12:18:43', '', 'Ламинация и прикатка', '', 'publish', 'closed', 'closed', '', '%d0%bb%d0%b0%d0%bc%d0%b8%d0%bd%d0%b0%d1%86%d0%b8%d1%8f-%d0%b8-%d0%bf%d1%80%d0%b8%d0%ba%d0%b0%d1%82%d0%ba%d0%b0', '', '', '2020-02-12 22:19:28', '2020-02-12 19:19:28', '', 0, 'http://rsht.local/?p=133', 21, 'nav_menu_item', '', 0),
+(134, 1, '2020-01-30 15:18:43', '2020-01-30 12:18:43', '', 'Плоттерная резка', '', 'publish', 'closed', 'closed', '', '%d0%bf%d0%bb%d0%be%d1%82%d1%82%d0%b5%d1%80%d0%bd%d0%b0%d1%8f-%d1%80%d0%b5%d0%b7%d0%ba%d0%b0', '', '', '2020-02-12 22:19:28', '2020-02-12 19:19:28', '', 0, 'http://rsht.local/?p=134', 22, 'nav_menu_item', '', 0),
+(135, 1, '2020-01-30 15:18:43', '2020-01-30 12:18:43', '', 'Плакаты и постеры', '', 'publish', 'closed', 'closed', '', '%d0%bf%d0%bb%d0%b0%d0%ba%d0%b0%d1%82%d1%8b-%d0%b8-%d0%bf%d0%be%d1%81%d1%82%d0%b5%d1%80%d1%8b', '', '', '2020-02-12 22:19:28', '2020-02-12 19:19:28', '', 0, 'http://rsht.local/?p=135', 23, 'nav_menu_item', '', 0),
+(136, 1, '2020-01-30 15:20:00', '2020-01-30 12:20:00', '', 'Прямой и круглый', '', 'publish', 'closed', 'closed', '', '%d0%bf%d1%80%d1%8f%d0%bc%d0%be%d0%b9-%d0%b8-%d0%ba%d1%80%d1%83%d0%b3%d0%bb%d1%8b%d0%b9', '', '', '2020-02-12 22:19:28', '2020-02-12 19:19:28', '', 0, 'http://rsht.local/?p=136', 30, 'nav_menu_item', '', 0),
+(137, 1, '2020-01-30 15:20:00', '2020-01-30 12:20:00', '', 'Меловой и маркерный', '', 'publish', 'closed', 'closed', '', '%d0%bc%d0%b5%d0%bb%d0%be%d0%b2%d0%be%d0%b9-%d0%b8-%d0%bc%d0%b0%d1%80%d0%ba%d0%b5%d1%80%d0%bd%d1%8b%d0%b9', '', '', '2020-02-12 22:19:28', '2020-02-12 19:19:28', '', 0, 'http://rsht.local/?p=137', 31, 'nav_menu_item', '', 0),
+(138, 1, '2020-01-30 15:20:00', '2020-01-30 12:20:00', '', 'Нестандартные штендеры', '', 'publish', 'closed', 'closed', '', '%d0%bd%d0%b5%d1%81%d1%82%d0%b0%d0%bd%d0%b4%d0%b0%d1%80%d1%82%d0%bd%d1%8b%d0%b5-%d1%88%d1%82%d0%b5%d0%bd%d0%b4%d0%b5%d1%80%d1%8b', '', '', '2020-02-12 22:19:28', '2020-02-12 19:19:28', '', 0, 'http://rsht.local/?p=138', 32, 'nav_menu_item', '', 0),
+(139, 1, '2020-01-30 15:22:47', '2020-01-30 12:22:47', '', 'Модульные картины', '', 'publish', 'closed', 'closed', '', '%d0%bc%d0%be%d0%b4%d1%83%d0%bb%d1%8c%d0%bd%d1%8b%d0%b5-%d0%ba%d0%b0%d1%80%d1%82%d0%b8%d0%bd%d1%8b', '', '', '2020-02-12 22:19:28', '2020-02-12 19:19:28', '', 0, 'http://rsht.local/?p=139', 34, 'nav_menu_item', '', 0),
+(140, 1, '2020-01-30 15:22:47', '2020-01-30 12:22:47', '', 'Для дома', '', 'publish', 'closed', 'closed', '', '%d0%b4%d0%bb%d1%8f-%d0%b4%d0%be%d0%bc%d0%b0', '', '', '2020-02-12 22:19:28', '2020-02-12 19:19:28', '', 0, 'http://rsht.local/?p=140', 35, 'nav_menu_item', '', 0),
+(141, 1, '2020-01-30 15:22:47', '2020-01-30 12:22:47', '', 'Для офисов, кафе и ресторанов', '', 'publish', 'closed', 'closed', '', '%d0%b4%d0%bb%d1%8f-%d0%be%d1%84%d0%b8%d1%81%d0%be%d0%b2-%d0%ba%d0%b0%d1%84%d0%b5-%d0%b8-%d1%80%d0%b5%d1%81%d1%82%d0%be%d1%80%d0%b0%d0%bd%d0%be%d0%b2', '', '', '2020-02-12 22:19:28', '2020-02-12 19:19:28', '', 0, 'http://rsht.local/?p=141', 36, 'nav_menu_item', '', 0),
+(142, 1, '2020-01-30 15:22:47', '2020-01-30 12:22:47', '', 'С плоскими и объемными карманами', '', 'publish', 'closed', 'closed', '', '%d1%81-%d0%bf%d0%bb%d0%be%d1%81%d0%ba%d0%b8%d0%bc%d0%b8-%d0%b8-%d0%be%d0%b1%d1%8a%d0%b5%d0%bc%d0%bd%d1%8b%d0%bc%d0%b8-%d0%ba%d0%b0%d1%80%d0%bc%d0%b0%d0%bd%d0%b0%d0%bc%d0%b8', '', '', '2020-02-12 22:19:28', '2020-02-12 19:19:28', '', 0, 'http://rsht.local/?p=142', 38, 'nav_menu_item', '', 0),
+(143, 1, '2020-01-30 15:22:47', '2020-01-30 12:22:47', '', 'Режим работы', '', 'publish', 'closed', 'closed', '', '%d1%80%d0%b5%d0%b6%d0%b8%d0%bc-%d1%80%d0%b0%d0%b1%d0%be%d1%82%d1%8b', '', '', '2020-02-12 22:19:28', '2020-02-12 19:19:28', '', 0, 'http://rsht.local/?p=143', 39, 'nav_menu_item', '', 0),
+(144, 1, '2020-01-30 15:52:09', '2020-01-30 12:52:09', '', 'Вывески', '', 'publish', 'closed', 'closed', '', '%d0%b2%d1%8b%d0%b2%d0%b5%d1%81%d0%ba%d0%b8-2', '', '', '2020-02-12 22:14:00', '2020-02-12 19:14:00', '', 0, 'http://rsht.local/?p=144', 1, 'nav_menu_item', '', 0),
+(145, 1, '2020-01-30 15:52:09', '2020-01-30 12:52:09', '', 'Световые панели', '', 'publish', 'closed', 'closed', '', '%d1%81%d0%b2%d0%b5%d1%82%d0%be%d0%b2%d1%8b%d0%b5-%d0%bf%d0%b0%d0%bd%d0%b5%d0%bb%d0%b8-2', '', '', '2020-02-12 22:14:00', '2020-02-12 19:14:00', '', 0, 'http://rsht.local/?p=145', 2, 'nav_menu_item', '', 0),
+(146, 1, '2020-01-30 15:52:09', '2020-01-30 12:52:09', '', 'Широкоформатная печать', '', 'publish', 'closed', 'closed', '', '%d1%88%d0%b8%d1%80%d0%be%d0%ba%d0%be%d1%84%d0%be%d1%80%d0%bc%d0%b0%d1%82%d0%bd%d0%b0%d1%8f-%d0%bf%d0%b5%d1%87%d0%b0%d1%82%d1%8c-2', '', '', '2020-02-12 22:14:00', '2020-02-12 19:14:00', '', 0, 'http://rsht.local/?p=146', 3, 'nav_menu_item', '', 0),
+(147, 1, '2020-01-30 15:52:09', '2020-01-30 12:52:09', '', 'Пресс волл', '', 'publish', 'closed', 'closed', '', '%d0%bf%d1%80%d0%b5%d1%81%d1%81-%d0%b2%d0%be%d0%bb%d0%bb-2', '', '', '2020-02-12 22:14:00', '2020-02-12 19:14:00', '', 0, 'http://rsht.local/?p=147', 6, 'nav_menu_item', '', 0),
+(148, 1, '2020-01-30 15:52:09', '2020-01-30 12:52:09', '', 'Фотозона', '', 'publish', 'closed', 'closed', '', '%d1%84%d0%be%d1%82%d0%be%d0%b7%d0%be%d0%bd%d0%b0-2', '', '', '2020-02-12 22:14:00', '2020-02-12 19:14:00', '', 0, 'http://rsht.local/?p=148', 7, 'nav_menu_item', '', 0),
+(149, 1, '2020-01-30 15:52:09', '2020-01-30 12:52:09', '', 'Баннерные стенды', '', 'publish', 'closed', 'closed', '', '%d0%b1%d0%b0%d0%bd%d0%bd%d0%b5%d1%80%d0%bd%d1%8b%d0%b5-%d1%81%d1%82%d0%b5%d0%bd%d0%b4%d1%8b-2', '', '', '2020-02-12 22:14:00', '2020-02-12 19:14:00', '', 0, 'http://rsht.local/?p=149', 8, 'nav_menu_item', '', 0),
+(150, 1, '2020-01-30 15:52:09', '2020-01-30 12:52:09', '', 'Ролл ап', '', 'publish', 'closed', 'closed', '', '%d1%80%d0%be%d0%bb%d0%bb-%d0%b0%d0%bf-2', '', '', '2020-02-12 22:14:00', '2020-02-12 19:14:00', '', 0, 'http://rsht.local/?p=150', 9, 'nav_menu_item', '', 0),
+(151, 1, '2020-01-30 15:52:09', '2020-01-30 12:52:09', '', 'Ростовые фигуры', '', 'publish', 'closed', 'closed', '', '%d1%80%d0%be%d1%81%d1%82%d0%be%d0%b2%d1%8b%d0%b5-%d1%84%d0%b8%d0%b3%d1%83%d1%80%d1%8b-2', '', '', '2020-02-12 22:14:00', '2020-02-12 19:14:00', '', 0, 'http://rsht.local/?p=151', 10, 'nav_menu_item', '', 0),
+(152, 1, '2020-01-30 15:52:09', '2020-01-30 12:52:09', '', 'Брендирование транспорта', '', 'publish', 'closed', 'closed', '', '%d0%b1%d1%80%d0%b5%d0%bd%d0%b4%d0%b8%d1%80%d0%be%d0%b2%d0%b0%d0%bd%d0%b8%d0%b5-%d1%82%d1%80%d0%b0%d0%bd%d1%81%d0%bf%d0%be%d1%80%d1%82%d0%b0-2', '', '', '2020-02-12 22:14:00', '2020-02-12 19:14:00', '', 0, 'http://rsht.local/?p=152', 11, 'nav_menu_item', '', 0),
+(153, 1, '2020-01-30 15:54:46', '2020-01-30 12:54:46', '', 'Оклейка витрин и офисных перегородок', '', 'publish', 'closed', 'closed', '', '%d0%be%d0%ba%d0%bb%d0%b5%d0%b9%d0%ba%d0%b0-%d0%b2%d0%b8%d1%82%d1%80%d0%b8%d0%bd-%d0%b8-%d0%be%d1%84%d0%b8%d1%81%d0%bd%d1%8b%d1%85-%d0%bf%d0%b5%d1%80%d0%b5%d0%b3%d0%be%d1%80%d0%be%d0%b4%d0%be%d0%ba-2', '', '', '2020-02-12 22:14:01', '2020-02-12 19:14:01', '', 0, 'http://rsht.local/?p=153', 12, 'nav_menu_item', '', 0);
 INSERT INTO `wp_posts` (`ID`, `post_author`, `post_date`, `post_date_gmt`, `post_content`, `post_title`, `post_excerpt`, `post_status`, `comment_status`, `ping_status`, `post_password`, `post_name`, `to_ping`, `pinged`, `post_modified`, `post_modified_gmt`, `post_content_filtered`, `post_parent`, `guid`, `menu_order`, `post_type`, `post_mime_type`, `comment_count`) VALUES
-(145, 1, '2020-01-30 15:52:09', '2020-01-30 12:52:09', '', 'Световые панели', '', 'publish', 'closed', 'closed', '', '%d1%81%d0%b2%d0%b5%d1%82%d0%be%d0%b2%d1%8b%d0%b5-%d0%bf%d0%b0%d0%bd%d0%b5%d0%bb%d0%b8-2', '', '', '2020-02-11 20:01:43', '2020-02-11 17:01:43', '', 0, 'http://rsht.local/?p=145', 2, 'nav_menu_item', '', 0),
-(146, 1, '2020-01-30 15:52:09', '2020-01-30 12:52:09', '', 'Широкоформатная печать', '', 'publish', 'closed', 'closed', '', '%d1%88%d0%b8%d1%80%d0%be%d0%ba%d0%be%d1%84%d0%be%d1%80%d0%bc%d0%b0%d1%82%d0%bd%d0%b0%d1%8f-%d0%bf%d0%b5%d1%87%d0%b0%d1%82%d1%8c-2', '', '', '2020-02-11 20:01:43', '2020-02-11 17:01:43', '', 0, 'http://rsht.local/?p=146', 3, 'nav_menu_item', '', 0),
-(147, 1, '2020-01-30 15:52:09', '2020-01-30 12:52:09', '', 'Пресс волл', '', 'publish', 'closed', 'closed', '', '%d0%bf%d1%80%d0%b5%d1%81%d1%81-%d0%b2%d0%be%d0%bb%d0%bb-2', '', '', '2020-02-11 20:01:43', '2020-02-11 17:01:43', '', 0, 'http://rsht.local/?p=147', 6, 'nav_menu_item', '', 0),
-(148, 1, '2020-01-30 15:52:09', '2020-01-30 12:52:09', '', 'Фотозона', '', 'publish', 'closed', 'closed', '', '%d1%84%d0%be%d1%82%d0%be%d0%b7%d0%be%d0%bd%d0%b0-2', '', '', '2020-02-11 20:01:43', '2020-02-11 17:01:43', '', 0, 'http://rsht.local/?p=148', 7, 'nav_menu_item', '', 0),
-(149, 1, '2020-01-30 15:52:09', '2020-01-30 12:52:09', '', 'Баннерные стенды', '', 'publish', 'closed', 'closed', '', '%d0%b1%d0%b0%d0%bd%d0%bd%d0%b5%d1%80%d0%bd%d1%8b%d0%b5-%d1%81%d1%82%d0%b5%d0%bd%d0%b4%d1%8b-2', '', '', '2020-02-11 20:01:43', '2020-02-11 17:01:43', '', 0, 'http://rsht.local/?p=149', 8, 'nav_menu_item', '', 0),
-(150, 1, '2020-01-30 15:52:09', '2020-01-30 12:52:09', '', 'Ролл ап', '', 'publish', 'closed', 'closed', '', '%d1%80%d0%be%d0%bb%d0%bb-%d0%b0%d0%bf-2', '', '', '2020-02-11 20:01:43', '2020-02-11 17:01:43', '', 0, 'http://rsht.local/?p=150', 9, 'nav_menu_item', '', 0),
-(151, 1, '2020-01-30 15:52:09', '2020-01-30 12:52:09', '', 'Ростовые фигуры', '', 'publish', 'closed', 'closed', '', '%d1%80%d0%be%d1%81%d1%82%d0%be%d0%b2%d1%8b%d0%b5-%d1%84%d0%b8%d0%b3%d1%83%d1%80%d1%8b-2', '', '', '2020-02-11 20:01:43', '2020-02-11 17:01:43', '', 0, 'http://rsht.local/?p=151', 10, 'nav_menu_item', '', 0),
-(152, 1, '2020-01-30 15:52:09', '2020-01-30 12:52:09', '', 'Брендирование транспорта', '', 'publish', 'closed', 'closed', '', '%d0%b1%d1%80%d0%b5%d0%bd%d0%b4%d0%b8%d1%80%d0%be%d0%b2%d0%b0%d0%bd%d0%b8%d0%b5-%d1%82%d1%80%d0%b0%d0%bd%d1%81%d0%bf%d0%be%d1%80%d1%82%d0%b0-2', '', '', '2020-02-11 20:01:43', '2020-02-11 17:01:43', '', 0, 'http://rsht.local/?p=152', 11, 'nav_menu_item', '', 0),
-(153, 1, '2020-01-30 15:54:46', '2020-01-30 12:54:46', '', 'Оклейка витрин и офисных перегородок', '', 'publish', 'closed', 'closed', '', '%d0%be%d0%ba%d0%bb%d0%b5%d0%b9%d0%ba%d0%b0-%d0%b2%d0%b8%d1%82%d1%80%d0%b8%d0%bd-%d0%b8-%d0%be%d1%84%d0%b8%d1%81%d0%bd%d1%8b%d1%85-%d0%bf%d0%b5%d1%80%d0%b5%d0%b3%d0%be%d1%80%d0%be%d0%b4%d0%be%d0%ba-2', '', '', '2020-02-11 20:01:43', '2020-02-11 17:01:43', '', 0, 'http://rsht.local/?p=153', 12, 'nav_menu_item', '', 0),
-(154, 1, '2020-01-30 15:54:46', '2020-01-30 12:54:46', '', 'Картины для дома и офиса', '', 'publish', 'closed', 'closed', '', '%d0%ba%d0%b0%d1%80%d1%82%d0%b8%d0%bd%d1%8b-%d0%b4%d0%bb%d1%8f-%d0%b4%d0%be%d0%bc%d0%b0-%d0%b8-%d0%be%d1%84%d0%b8%d1%81%d0%b0-2', '', '', '2020-02-11 20:01:43', '2020-02-11 17:01:43', '', 0, 'http://rsht.local/?p=154', 13, 'nav_menu_item', '', 0),
-(155, 1, '2020-01-30 15:54:46', '2020-01-30 12:54:46', '', 'Лазерная резка', '', 'publish', 'closed', 'closed', '', '%d0%bb%d0%b0%d0%b7%d0%b5%d1%80%d0%bd%d0%b0%d1%8f-%d1%80%d0%b5%d0%b7%d0%ba%d0%b0-2', '', '', '2020-02-11 20:01:43', '2020-02-11 17:01:43', '', 0, 'http://rsht.local/?p=155', 14, 'nav_menu_item', '', 0),
-(156, 1, '2020-01-30 15:54:46', '2020-01-30 12:54:46', '', 'Информационные стенды', '', 'publish', 'closed', 'closed', '', '%d0%b8%d0%bd%d1%84%d0%be%d1%80%d0%bc%d0%b0%d1%86%d0%b8%d0%be%d0%bd%d0%bd%d1%8b%d0%b5-%d1%81%d1%82%d0%b5%d0%bd%d0%b4%d1%8b-2', '', '', '2020-02-11 20:01:43', '2020-02-11 17:01:43', '', 0, 'http://rsht.local/?p=156', 15, 'nav_menu_item', '', 0),
-(157, 1, '2020-01-30 15:54:46', '2020-01-30 12:54:46', '', 'Разработка дизайн-макетов', '', 'publish', 'closed', 'closed', '', '%d1%80%d0%b0%d0%b7%d1%80%d0%b0%d0%b1%d0%be%d1%82%d0%ba%d0%b0-%d0%b4%d0%b8%d0%b7%d0%b0%d0%b9%d0%bd-%d0%bc%d0%b0%d0%ba%d0%b5%d1%82%d0%be%d0%b2-2', '', '', '2020-02-11 20:01:43', '2020-02-11 17:01:43', '', 0, 'http://rsht.local/?p=157', 16, 'nav_menu_item', '', 0),
-(158, 1, '2020-01-30 15:54:46', '2020-01-30 12:54:46', '', 'Услуги', '', 'publish', 'closed', 'closed', '', '%d1%83%d1%81%d0%bb%d1%83%d0%b3%d0%b8-2', '', '', '2020-02-11 20:01:43', '2020-02-11 17:01:43', '', 0, 'http://rsht.local/?p=158', 17, 'nav_menu_item', '', 0),
-(159, 1, '2020-01-30 15:54:46', '2020-01-30 12:54:46', '', 'Цены', '', 'publish', 'closed', 'closed', '', '%d1%86%d0%b5%d0%bd%d1%8b-2', '', '', '2020-02-11 20:01:43', '2020-02-11 17:01:43', '', 0, 'http://rsht.local/?p=159', 18, 'nav_menu_item', '', 0),
-(160, 1, '2020-01-30 15:54:46', '2020-01-30 12:54:46', '', 'Портфолио', '', 'publish', 'closed', 'closed', '', '%d0%bf%d0%be%d1%80%d1%82%d1%84%d0%be%d0%bb%d0%b8%d0%be-2', '', '', '2020-02-11 20:01:43', '2020-02-11 17:01:43', '', 0, 'http://rsht.local/?p=160', 19, 'nav_menu_item', '', 0),
-(161, 1, '2020-01-30 15:54:46', '2020-01-30 12:54:46', '', 'Оплата и доставка', '', 'publish', 'closed', 'closed', '', '%d0%be%d0%bf%d0%bb%d0%b0%d1%82%d0%b0-%d0%b8-%d0%b4%d0%be%d1%81%d1%82%d0%b0%d0%b2%d0%ba%d0%b0-2', '', '', '2020-02-11 20:01:43', '2020-02-11 17:01:43', '', 0, 'http://rsht.local/?p=161', 20, 'nav_menu_item', '', 0),
-(162, 1, '2020-01-30 15:54:46', '2020-01-30 12:54:46', '', 'Статьи', '', 'publish', 'closed', 'closed', '', '%d1%81%d1%82%d0%b0%d1%82%d1%8c%d0%b8-2', '', '', '2020-02-11 20:01:43', '2020-02-11 17:01:43', '', 0, 'http://rsht.local/?p=162', 21, 'nav_menu_item', '', 0),
-(163, 1, '2020-01-30 15:54:46', '2020-01-30 12:54:46', '', 'Контакты', '', 'publish', 'closed', 'closed', '', '%d0%ba%d0%be%d0%bd%d1%82%d0%b0%d0%ba%d1%82%d1%8b-2', '', '', '2020-02-11 20:01:43', '2020-02-11 17:01:43', '', 0, 'http://rsht.local/?p=163', 22, 'nav_menu_item', '', 0),
+(154, 1, '2020-01-30 15:54:46', '2020-01-30 12:54:46', '', 'Картины для дома и офиса', '', 'publish', 'closed', 'closed', '', '%d0%ba%d0%b0%d1%80%d1%82%d0%b8%d0%bd%d1%8b-%d0%b4%d0%bb%d1%8f-%d0%b4%d0%be%d0%bc%d0%b0-%d0%b8-%d0%be%d1%84%d0%b8%d1%81%d0%b0-2', '', '', '2020-02-12 22:14:01', '2020-02-12 19:14:01', '', 0, 'http://rsht.local/?p=154', 13, 'nav_menu_item', '', 0),
+(155, 1, '2020-01-30 15:54:46', '2020-01-30 12:54:46', '', 'Лазерная резка', '', 'publish', 'closed', 'closed', '', '%d0%bb%d0%b0%d0%b7%d0%b5%d1%80%d0%bd%d0%b0%d1%8f-%d1%80%d0%b5%d0%b7%d0%ba%d0%b0-2', '', '', '2020-02-12 22:14:01', '2020-02-12 19:14:01', '', 0, 'http://rsht.local/?p=155', 14, 'nav_menu_item', '', 0),
+(156, 1, '2020-01-30 15:54:46', '2020-01-30 12:54:46', '', 'Информационные стенды', '', 'publish', 'closed', 'closed', '', '%d0%b8%d0%bd%d1%84%d0%be%d1%80%d0%bc%d0%b0%d1%86%d0%b8%d0%be%d0%bd%d0%bd%d1%8b%d0%b5-%d1%81%d1%82%d0%b5%d0%bd%d0%b4%d1%8b-2', '', '', '2020-02-12 22:14:01', '2020-02-12 19:14:01', '', 0, 'http://rsht.local/?p=156', 15, 'nav_menu_item', '', 0),
+(157, 1, '2020-01-30 15:54:46', '2020-01-30 12:54:46', '', 'Разработка дизайн-макетов', '', 'publish', 'closed', 'closed', '', '%d1%80%d0%b0%d0%b7%d1%80%d0%b0%d0%b1%d0%be%d1%82%d0%ba%d0%b0-%d0%b4%d0%b8%d0%b7%d0%b0%d0%b9%d0%bd-%d0%bc%d0%b0%d0%ba%d0%b5%d1%82%d0%be%d0%b2-2', '', '', '2020-02-12 22:14:01', '2020-02-12 19:14:01', '', 0, 'http://rsht.local/?p=157', 16, 'nav_menu_item', '', 0),
+(158, 1, '2020-01-30 15:54:46', '2020-01-30 12:54:46', '', 'Услуги', '', 'publish', 'closed', 'closed', '', '%d1%83%d1%81%d0%bb%d1%83%d0%b3%d0%b8-2', '', '', '2020-02-12 22:14:01', '2020-02-12 19:14:01', '', 0, 'http://rsht.local/?p=158', 17, 'nav_menu_item', '', 0),
+(159, 1, '2020-01-30 15:54:46', '2020-01-30 12:54:46', '', 'Цены', '', 'publish', 'closed', 'closed', '', '%d1%86%d0%b5%d0%bd%d1%8b-2', '', '', '2020-02-12 22:14:01', '2020-02-12 19:14:01', '', 0, 'http://rsht.local/?p=159', 18, 'nav_menu_item', '', 0),
+(160, 1, '2020-01-30 15:54:46', '2020-01-30 12:54:46', '', 'Портфолио', '', 'publish', 'closed', 'closed', '', '%d0%bf%d0%be%d1%80%d1%82%d1%84%d0%be%d0%bb%d0%b8%d0%be-2', '', '', '2020-02-12 22:14:01', '2020-02-12 19:14:01', '', 0, 'http://rsht.local/?p=160', 19, 'nav_menu_item', '', 0),
+(161, 1, '2020-01-30 15:54:46', '2020-01-30 12:54:46', '', 'Оплата и доставка', '', 'publish', 'closed', 'closed', '', '%d0%be%d0%bf%d0%bb%d0%b0%d1%82%d0%b0-%d0%b8-%d0%b4%d0%be%d1%81%d1%82%d0%b0%d0%b2%d0%ba%d0%b0-2', '', '', '2020-02-12 22:14:01', '2020-02-12 19:14:01', '', 0, 'http://rsht.local/?p=161', 20, 'nav_menu_item', '', 0),
+(162, 1, '2020-01-30 15:54:46', '2020-01-30 12:54:46', '', 'Статьи', '', 'publish', 'closed', 'closed', '', '%d1%81%d1%82%d0%b0%d1%82%d1%8c%d0%b8-2', '', '', '2020-02-12 22:14:01', '2020-02-12 19:14:01', '', 0, 'http://rsht.local/?p=162', 21, 'nav_menu_item', '', 0),
+(163, 1, '2020-01-30 15:54:46', '2020-01-30 12:54:46', '', 'Контакты', '', 'publish', 'closed', 'closed', '', '%d0%ba%d0%be%d0%bd%d1%82%d0%b0%d0%ba%d1%82%d1%8b-2', '', '', '2020-02-12 22:14:01', '2020-02-12 19:14:01', '', 0, 'http://rsht.local/?p=163', 22, 'nav_menu_item', '', 0),
 (166, 1, '2020-02-02 15:04:58', '2020-02-02 12:04:58', '', 'velostrana', '', 'publish', 'closed', 'closed', '', 'velostrana', '', '', '2020-02-02 15:04:58', '2020-02-02 12:04:58', '', 0, 'http://rek.local/?post_type=slick_slider&#038;p=166', 0, 'slick_slider', '', 0),
 (167, 1, '2020-02-02 15:04:36', '2020-02-02 12:04:36', '', 'azimut', '', 'inherit', 'open', 'closed', '', 'azimut', '', '', '2020-02-02 15:04:36', '2020-02-02 12:04:36', '', 166, 'http://rek.local/wp-content/uploads/2020/02/azimut.png', 0, 'attachment', 'image/png', 0),
 (168, 1, '2020-02-02 15:04:36', '2020-02-02 12:04:36', '', 'botsadmgu', '', 'inherit', 'open', 'closed', '', 'botsadmgu', '', '', '2020-02-02 15:04:36', '2020-02-02 12:04:36', '', 166, 'http://rek.local/wp-content/uploads/2020/02/botsadmgu.png', 0, 'attachment', 'image/png', 0),
@@ -1459,7 +1473,6 @@ INSERT INTO `wp_posts` (`ID`, `post_author`, `post_date`, `post_date_gmt`, `post
 (193, 1, '2020-02-04 20:10:53', '2020-02-04 17:10:53', 'a:15:{s:4:\"type\";s:5:\"image\";s:12:\"instructions\";s:0:\"\";s:8:\"required\";i:1;s:17:\"conditional_logic\";i:0;s:7:\"wrapper\";a:3:{s:5:\"width\";s:0:\"\";s:5:\"class\";s:0:\"\";s:2:\"id\";s:0:\"\";}s:13:\"return_format\";s:3:\"url\";s:12:\"preview_size\";s:4:\"full\";s:7:\"library\";s:3:\"all\";s:9:\"min_width\";s:0:\"\";s:10:\"min_height\";s:0:\"\";s:8:\"min_size\";s:0:\"\";s:9:\"max_width\";s:0:\"\";s:10:\"max_height\";s:0:\"\";s:8:\"max_size\";s:0:\"\";s:10:\"mime_types\";s:0:\"\";}', 'portfolio-image2', 'portfolio-image2', 'publish', 'closed', 'closed', '', 'field_5e39a56fa18d7', '', '', '2020-02-04 20:10:53', '2020-02-04 17:10:53', '', 191, 'http://rek.local/?post_type=acf-field&p=193', 1, 'acf-field', '', 0),
 (194, 1, '2020-02-04 20:10:53', '2020-02-04 17:10:53', 'a:15:{s:4:\"type\";s:5:\"image\";s:12:\"instructions\";s:0:\"\";s:8:\"required\";i:1;s:17:\"conditional_logic\";i:0;s:7:\"wrapper\";a:3:{s:5:\"width\";s:0:\"\";s:5:\"class\";s:0:\"\";s:2:\"id\";s:0:\"\";}s:13:\"return_format\";s:3:\"url\";s:12:\"preview_size\";s:4:\"full\";s:7:\"library\";s:3:\"all\";s:9:\"min_width\";s:0:\"\";s:10:\"min_height\";s:0:\"\";s:8:\"min_size\";s:0:\"\";s:9:\"max_width\";s:0:\"\";s:10:\"max_height\";s:0:\"\";s:8:\"max_size\";s:0:\"\";s:10:\"mime_types\";s:0:\"\";}', 'portfolio-image3', 'portfolio-image3', 'publish', 'closed', 'closed', '', 'field_5e39a57fa18d8', '', '', '2020-02-04 20:10:53', '2020-02-04 17:10:53', '', 191, 'http://rek.local/?post_type=acf-field&p=194', 2, 'acf-field', '', 0),
 (195, 1, '2020-02-04 20:11:53', '2020-02-04 17:11:53', '', 'Главная страница', '', 'inherit', 'closed', 'closed', '', '18-revision-v1', '', '', '2020-02-04 20:11:53', '2020-02-04 17:11:53', '', 18, 'http://rek.local/2020/02/04/18-revision-v1/', 0, 'revision', '', 0),
-(196, 1, '2020-02-04 20:31:59', '0000-00-00 00:00:00', '', 'Черновик', '', 'auto-draft', 'open', 'open', '', '', '', '', '2020-02-04 20:31:59', '0000-00-00 00:00:00', '', 0, 'http://rek.local/?p=196', 0, 'post', '', 0),
 (197, 1, '2020-02-04 20:33:43', '2020-02-04 17:33:43', '', 'Главная страница', '', 'inherit', 'closed', 'closed', '', '18-revision-v1', '', '', '2020-02-04 20:33:43', '2020-02-04 17:33:43', '', 18, 'http://rek.local/2020/02/04/18-revision-v1/', 0, 'revision', '', 0),
 (198, 1, '2020-02-04 20:39:39', '2020-02-04 17:39:39', '', '1_800x600-Eapteka-2', '', 'inherit', 'open', 'closed', '', '1_800x600-eapteka-2', '', '', '2020-02-04 20:39:39', '2020-02-04 17:39:39', '', 18, 'http://rek.local/wp-content/uploads/2020/01/1_800x600-Eapteka-2.jpg', 0, 'attachment', 'image/jpeg', 0),
 (199, 1, '2020-02-04 20:40:07', '2020-02-04 17:40:07', '', '1_800x600-Akvarel', '', 'inherit', 'open', 'closed', '', '1_800x600-akvarel', '', '', '2020-02-04 20:40:07', '2020-02-04 17:40:07', '', 18, 'http://rek.local/wp-content/uploads/2020/01/1_800x600-Akvarel.jpg', 0, 'attachment', 'image/jpeg', 0),
@@ -1478,15 +1491,19 @@ INSERT INTO `wp_posts` (`ID`, `post_author`, `post_date`, `post_date_gmt`, `post
 (212, 1, '2020-02-04 20:45:58', '2020-02-04 17:45:58', '', '600x600-cofeport', '', 'inherit', 'open', 'closed', '', '600x600-cofeport', '', '', '2020-02-04 20:45:58', '2020-02-04 17:45:58', '', 18, 'http://rek.local/wp-content/uploads/2020/01/600x600-cofeport.jpg', 0, 'attachment', 'image/jpeg', 0),
 (213, 1, '2020-02-04 20:46:09', '2020-02-04 17:46:09', '', '600x600-krest', '', 'inherit', 'open', 'closed', '', '600x600-krest', '', '', '2020-02-04 20:46:09', '2020-02-04 17:46:09', '', 18, 'http://rek.local/wp-content/uploads/2020/01/600x600-krest.jpg', 0, 'attachment', 'image/jpeg', 0),
 (214, 1, '2020-02-04 20:46:15', '2020-02-04 17:46:15', '', 'Главная страница', '', 'inherit', 'closed', 'closed', '', '18-revision-v1', '', '', '2020-02-04 20:46:15', '2020-02-04 17:46:15', '', 18, 'http://rek.local/2020/02/04/18-revision-v1/', 0, 'revision', '', 0),
-(215, 1, '2020-02-05 09:29:22', '0000-00-00 00:00:00', '', 'Черновик', '', 'auto-draft', 'open', 'open', '', '', '', '', '2020-02-05 09:29:22', '0000-00-00 00:00:00', '', 0, 'http://rek.local/?p=215', 0, 'post', '', 0),
 (216, 1, '2020-02-05 09:32:32', '2020-02-05 06:32:32', '', 'Лазерная резка', '', 'publish', 'closed', 'closed', '', 'laser', '', '', '2020-02-05 09:32:32', '2020-02-05 06:32:32', '', 0, 'http://rek.local/?page_id=216', 0, 'page', '', 0),
 (217, 1, '2020-02-05 09:29:41', '2020-02-05 06:29:41', '', 'Лазерная резка', '', 'inherit', 'closed', 'closed', '', '216-revision-v1', '', '', '2020-02-05 09:29:41', '2020-02-05 06:29:41', '', 216, 'http://rek.local/2020/02/05/216-revision-v1/', 0, 'revision', '', 0),
 (218, 1, '2020-02-09 13:21:31', '0000-00-00 00:00:00', '', 'Черновик', '', 'auto-draft', 'open', 'open', '', '', '', '', '2020-02-09 13:21:31', '0000-00-00 00:00:00', '', 0, 'http://rek.local/?p=218', 0, 'post', '', 0),
-(219, 1, '2020-02-09 13:23:17', '0000-00-00 00:00:00', '', 'Форма обратной связи', '', 'draft', 'closed', 'closed', '', 'feedback', '', '', '2020-02-09 13:23:17', '2020-02-09 10:23:17', '', 0, 'http://rek.local/?page_id=219', 0, 'page', '', 0),
+(219, 1, '2020-02-12 22:13:06', '2020-02-12 19:13:06', '', 'Форма обратной связи', '', 'publish', 'closed', 'closed', '', 'feedback', '', '', '2020-02-12 22:13:06', '2020-02-12 19:13:06', '', 0, 'http://rek.local/?page_id=219', 0, 'page', '', 0),
 (220, 1, '2020-02-09 13:23:00', '2020-02-09 10:23:00', '', 'Форма обратной связи', '', 'inherit', 'closed', 'closed', '', '219-revision-v1', '', '', '2020-02-09 13:23:00', '2020-02-09 10:23:00', '', 219, 'http://rek.local/2020/02/09/219-revision-v1/', 0, 'revision', '', 0),
 (221, 1, '2020-02-11 20:00:27', '0000-00-00 00:00:00', ' ', '', '', 'draft', 'closed', 'closed', '', '', '', '', '2020-02-11 20:00:27', '0000-00-00 00:00:00', '', 0, 'http://rsht.local/?p=221', 1, 'nav_menu_item', '', 0),
-(222, 1, '2020-02-11 20:01:05', '2020-02-11 17:01:05', ' ', '', '', 'publish', 'closed', 'closed', '', '222', '', '', '2020-02-11 20:01:43', '2020-02-11 17:01:43', '', 0, 'http://rsht.local/?p=222', 4, 'nav_menu_item', '', 0),
-(223, 1, '2020-02-11 20:01:05', '2020-02-11 17:01:05', ' ', '', '', 'publish', 'closed', 'closed', '', '223', '', '', '2020-02-11 20:01:43', '2020-02-11 17:01:43', '', 0, 'http://rsht.local/?p=223', 5, 'nav_menu_item', '', 0);
+(222, 1, '2020-02-11 20:01:05', '2020-02-11 17:01:05', ' ', '', '', 'publish', 'closed', 'closed', '', '222', '', '', '2020-02-12 22:14:00', '2020-02-12 19:14:00', '', 0, 'http://rsht.local/?p=222', 4, 'nav_menu_item', '', 0),
+(223, 1, '2020-02-11 20:01:05', '2020-02-11 17:01:05', ' ', '', '', 'publish', 'closed', 'closed', '', '223', '', '', '2020-02-12 22:14:00', '2020-02-12 19:14:00', '', 0, 'http://rsht.local/?p=223', 5, 'nav_menu_item', '', 0),
+(226, 1, '2020-02-13 08:58:07', '2020-02-13 05:58:07', '', '1_800x600-standART', '', 'inherit', 'open', 'closed', '', '1_800x600-standart', '', '', '2020-02-13 08:58:07', '2020-02-13 05:58:07', '', 0, 'http://rek.local/wp-content/uploads/2020/02/1_800x600-standART.jpg', 0, 'attachment', 'image/jpeg', 0),
+(227, 1, '2020-02-13 08:58:07', '2020-02-13 05:58:07', '', '1_800x600-lion6', '', 'inherit', 'open', 'closed', '', '1_800x600-lion6', '', '', '2020-02-13 08:58:24', '2020-02-13 05:58:24', '', 0, 'http://rek.local/wp-content/uploads/2020/02/1_800x600-lion6.jpg', 0, 'attachment', 'image/jpeg', 0),
+(228, 1, '2020-02-13 08:58:08', '2020-02-13 05:58:08', '', '1_800x600-lion5', '', 'inherit', 'open', 'closed', '', '1_800x600-lion5', '', '', '2020-02-13 08:58:08', '2020-02-13 05:58:08', '', 0, 'http://rek.local/wp-content/uploads/2020/02/1_800x600-lion5.jpg', 0, 'attachment', 'image/jpeg', 0),
+(229, 1, '2020-02-13 08:58:08', '2020-02-13 05:58:08', '', '1_800x600-maria_poz', '', 'inherit', 'open', 'closed', '', '1_800x600-maria_poz', '', '', '2020-02-13 08:58:08', '2020-02-13 05:58:08', '', 0, 'http://rek.local/wp-content/uploads/2020/02/1_800x600-maria_poz.jpg', 0, 'attachment', 'image/jpeg', 0),
+(230, 1, '2020-02-13 08:58:09', '2020-02-13 05:58:09', '', '11_800x600_infostend6', '', 'inherit', 'open', 'closed', '', '11_800x600_infostend6', '', '', '2020-02-13 08:58:09', '2020-02-13 05:58:09', '', 0, 'http://rek.local/wp-content/uploads/2020/02/11_800x600_infostend6.jpg', 0, 'attachment', 'image/jpeg', 0);
 
 -- --------------------------------------------------------
 
@@ -1695,7 +1712,7 @@ INSERT INTO `wp_usermeta` (`umeta_id`, `user_id`, `meta_key`, `meta_value`) VALU
 (13, 1, 'wp_user_level', '10'),
 (14, 1, 'dismissed_wp_pointers', 'plugin_editor_notice,theme_editor_notice'),
 (15, 1, 'show_welcome_panel', '0'),
-(16, 1, 'session_tokens', 'a:2:{s:64:\"63ddf1b6e2804ee67dcaafc4ff368d3802495fe7f7fa5f7dd98b106ac24904e0\";a:4:{s:10:\"expiration\";i:1582453289;s:2:\"ip\";s:9:\"127.0.0.1\";s:2:\"ua\";s:114:\"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.87 Safari/537.36\";s:5:\"login\";i:1581243689;}s:64:\"075509dbfebbe7ff56dd4b4a364b05d4e112bdc9820aab388c23cef1424625ad\";a:4:{s:10:\"expiration\";i:1581613187;s:2:\"ip\";s:9:\"127.0.0.1\";s:2:\"ua\";s:78:\"Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:72.0) Gecko/20100101 Firefox/72.0\";s:5:\"login\";i:1581440387;}}'),
+(16, 1, 'session_tokens', 'a:4:{s:64:\"63ddf1b6e2804ee67dcaafc4ff368d3802495fe7f7fa5f7dd98b106ac24904e0\";a:4:{s:10:\"expiration\";i:1582453289;s:2:\"ip\";s:9:\"127.0.0.1\";s:2:\"ua\";s:114:\"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.87 Safari/537.36\";s:5:\"login\";i:1581243689;}s:64:\"075509dbfebbe7ff56dd4b4a364b05d4e112bdc9820aab388c23cef1424625ad\";a:4:{s:10:\"expiration\";i:1581613187;s:2:\"ip\";s:9:\"127.0.0.1\";s:2:\"ua\";s:78:\"Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:72.0) Gecko/20100101 Firefox/72.0\";s:5:\"login\";i:1581440387;}s:64:\"3241dbceed897d02c97c835eda6973945fca07b3f1b591054cca16b346348240\";a:4:{s:10:\"expiration\";i:1581707556;s:2:\"ip\";s:15:\"176.100.120.178\";s:2:\"ua\";s:135:\"Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.136 Mobile Safari/537.36\";s:5:\"login\";i:1581534756;}s:64:\"b8c45c0cd73084fd54aa9676ede592973d52f42350210e7ab542f9f72d19d2c9\";a:4:{s:10:\"expiration\";i:1581745995;s:2:\"ip\";s:15:\"176.100.120.178\";s:2:\"ua\";s:142:\"Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.136 YaBrowser/20.2.1.248 Yowser/2.5 Safari/537.36\";s:5:\"login\";i:1581573195;}}'),
 (17, 1, 'wp_dashboard_quick_press_last_post_id', '218'),
 (18, 1, 'community-events-location', 'a:1:{s:2:\"ip\";s:9:\"127.0.0.0\";}'),
 (19, 1, 'closedpostboxes_dashboard', 'a:2:{i:0;s:19:\"dashboard_right_now\";i:1;s:17:\"dashboard_primary\";}'),
@@ -1711,9 +1728,10 @@ INSERT INTO `wp_usermeta` (`umeta_id`, `user_id`, `meta_key`, `meta_value`) VALU
 (29, 1, 'meta-box-order_slick_slider', 'a:4:{s:15:\"acf_after_title\";s:0:\"\";s:4:\"side\";s:36:\"submitdiv,wpsisac_slider-categorydiv\";s:6:\"normal\";s:22:\"slugdiv,custom-metabox\";s:8:\"advanced\";s:0:\"\";}'),
 (30, 1, 'screen_layout_slick_slider', '2'),
 (31, 1, 'meta-box-order_post', 'a:4:{s:6:\"normal\";s:47:\"acf-group_5e2f0669d466c,acf-group_5e39a521c94a8\";s:15:\"acf_after_title\";s:0:\"\";s:4:\"side\";s:0:\"\";s:8:\"advanced\";s:0:\"\";}'),
-(32, 1, 'nav_menu_recently_edited', '7'),
+(32, 1, 'nav_menu_recently_edited', '6'),
 (33, 1, 'closedpostboxes_post', 'a:2:{i:0;s:23:\"acf-group_5e2f0669d466c\";i:1;s:23:\"acf-group_5e39a521c94a8\";}'),
-(34, 1, 'metaboxhidden_post', 'a:0:{}');
+(34, 1, 'metaboxhidden_post', 'a:0:{}'),
+(35, 1, 'wp_media_library_mode', 'grid');
 
 -- --------------------------------------------------------
 
@@ -1854,56 +1872,68 @@ ALTER TABLE `wp_users`
 --
 ALTER TABLE `wp_commentmeta`
   MODIFY `meta_id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+
 --
 -- AUTO_INCREMENT для таблицы `wp_comments`
 --
 ALTER TABLE `wp_comments`
   MODIFY `comment_ID` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
 --
 -- AUTO_INCREMENT для таблицы `wp_links`
 --
 ALTER TABLE `wp_links`
   MODIFY `link_id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+
 --
 -- AUTO_INCREMENT для таблицы `wp_options`
 --
 ALTER TABLE `wp_options`
-  MODIFY `option_id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=564;
+  MODIFY `option_id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=621;
+
 --
 -- AUTO_INCREMENT для таблицы `wp_postmeta`
 --
 ALTER TABLE `wp_postmeta`
-  MODIFY `meta_id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1142;
+  MODIFY `meta_id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1163;
+
 --
 -- AUTO_INCREMENT для таблицы `wp_posts`
 --
 ALTER TABLE `wp_posts`
-  MODIFY `ID` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=224;
+  MODIFY `ID` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=231;
+
 --
 -- AUTO_INCREMENT для таблицы `wp_termmeta`
 --
 ALTER TABLE `wp_termmeta`
   MODIFY `meta_id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+
 --
 -- AUTO_INCREMENT для таблицы `wp_terms`
 --
 ALTER TABLE `wp_terms`
   MODIFY `term_id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+
 --
 -- AUTO_INCREMENT для таблицы `wp_term_taxonomy`
 --
 ALTER TABLE `wp_term_taxonomy`
   MODIFY `term_taxonomy_id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+
 --
 -- AUTO_INCREMENT для таблицы `wp_usermeta`
 --
 ALTER TABLE `wp_usermeta`
-  MODIFY `umeta_id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
+  MODIFY `umeta_id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=36;
+
 --
 -- AUTO_INCREMENT для таблицы `wp_users`
 --
 ALTER TABLE `wp_users`
   MODIFY `ID` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+COMMIT;
+
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

@@ -399,19 +399,19 @@ get_header();
     </div>
     <div class="laser-portfolio-block__content">
         <div class="content-big">
-            <a href="<?= get_template_directory_uri()?>/img/portfolio-laser/1.png" class="single_image">
+            <a href="<?= get_template_directory_uri()?>/img/portfolio-laser/1.jpg" class="single_image">
                 <img src="<?= get_template_directory_uri()?>/img/portfolio-laser/1-1.png" alt="">
             </a>
-            <a href="<?= get_template_directory_uri()?>/img/portfolio-laser/2.png" class="single_image">
+            <a href="<?= get_template_directory_uri()?>/img/portfolio-laser/2.jpg" class="single_image">
                 <img src="<?= get_template_directory_uri()?>/img/portfolio-laser/2-1.png" alt="">
             </a>
-            <a href="<?= get_template_directory_uri()?>/img/portfolio-laser/3.png" class="single_image hidden-mobile">
+            <a href="<?= get_template_directory_uri()?>/img/portfolio-laser/3.jpg" class="single_image hidden-mobile">
                 <img src="<?= get_template_directory_uri()?>/img/portfolio-laser/3-1.png" alt="">
             </a>
-            <a href="<?= get_template_directory_uri()?>/img/portfolio-laser/4.png" class="single_image hidden-tablet">
+            <a href="<?= get_template_directory_uri()?>/img/portfolio-laser/4.jpg" class="single_image hidden-tablet">
                 <img src="<?= get_template_directory_uri()?>/img/portfolio-laser/4-1.png" alt="">
             </a>
-            <a href="<?= get_template_directory_uri()?>/img/portfolio-laser/5.png" class="single_image hidden-tablet">
+            <a href="<?= get_template_directory_uri()?>/img/portfolio-laser/5.jpg" class="single_image hidden-tablet">
                 <img src="<?= get_template_directory_uri()?>/img/portfolio-laser/5-1.png" alt="">
             </a>
 
