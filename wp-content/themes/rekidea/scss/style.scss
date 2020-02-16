@@ -1796,5 +1796,35 @@ footer {
   display: none;
 }
 
+// text content
+.text-content {
+  h1 {
+      font-size: 22px;
+    &::before {
+      content: " ";
+      display: inline-block;
+      width: 20px;
+      height: 20px;
+      margin: 0 7px 3px 0;
+      vertical-align: middle;
+      font-size: 20px;
+      background: #00913d;
+    }
+  }
+  padding: 50px;
+  font-weight: 300;
+  p {
+    margin: 10px 0;
+  }
+  ul {
+    padding-left: 50px;
+  }
+
+
+
+}
+
+
+
 @import 'media';
 

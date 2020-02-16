@@ -1401,6 +1401,25 @@ footer {
 .mobile-footer {
   display: none; }
 
+.text-content {
+  padding: 50px;
+  font-weight: 300; }
+  .text-content h1 {
+    font-size: 22px; }
+    .text-content h1::before {
+      content: " ";
+      display: inline-block;
+      width: 20px;
+      height: 20px;
+      margin: 0 7px 3px 0;
+      vertical-align: middle;
+      font-size: 20px;
+      background: #00913d; }
+  .text-content p {
+    margin: 10px 0; }
+  .text-content ul {
+    padding-left: 50px; }
+
 @media (max-width: 1170px) {
   .header__top-content {
     padding: 0 22px 0 25px; }
