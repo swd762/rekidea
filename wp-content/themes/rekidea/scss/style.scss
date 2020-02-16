@@ -296,7 +296,6 @@
   top: 33px;
   right: 0px;
   width: 320px;
-  height: 320px;
   padding: 14px;
   background-color: #fff;
   z-index: 401;
@@ -365,6 +364,15 @@
       text-align: center;
       border-radius: 6px;
 
+    }
+  }
+  .private_term_agree {
+    font-size: 14px;
+    a {
+      font-weight: normal;
+      color: #0000EE;
+      text-decoration: underline;
+      font-size: 14px;
     }
   }
 }
@@ -1706,6 +1714,9 @@
       border-radius: 5px;
       margin: 10px 0;
       width: 100%;
+    }
+    .private_term_agree {
+      font-weight: 300;
     }
   }
 }

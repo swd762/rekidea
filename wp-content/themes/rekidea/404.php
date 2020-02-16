@@ -29,7 +29,7 @@ get_header();
         </p>
         <div class="questions-contact__content-contacts">
             <h4>+ 7 (495) 369-20-79</h4>
-            <a href="#" class="button">ПЕРЕЗВОНИТЬ МНЕ</a>
+            <a href="/feedback" class="button">ПЕРЕЗВОНИТЬ МНЕ</a>
         </div>
     </div>
     <img src="<?= get_template_directory_uri()?>/img/404/operator.png" alt="" class="question-operator er404">

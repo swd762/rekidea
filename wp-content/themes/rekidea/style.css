@@ -277,7 +277,6 @@ main {
   top: 33px;
   right: 0px;
   width: 320px;
-  height: 320px;
   padding: 14px;
   background-color: #fff;
   z-index: 401;
@@ -327,6 +326,13 @@ main {
       padding: 14px 67px;
       text-align: center;
       border-radius: 6px; }
+  .header__feedback-modal .private_term_agree {
+    font-size: 14px; }
+    .header__feedback-modal .private_term_agree a {
+      font-weight: normal;
+      color: #0000EE;
+      text-decoration: underline;
+      font-size: 14px; }
 
 .header__email-wrapper {
   display: flex;
@@ -1341,6 +1347,8 @@ main {
       border-radius: 5px;
       margin: 10px 0;
       width: 100%; }
+    .feedback-form-page form .private_term_agree {
+      font-weight: 300; }
 
 footer {
   background-color: #474747; }
