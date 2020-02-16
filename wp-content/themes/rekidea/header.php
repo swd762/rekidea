@@ -148,57 +148,6 @@ wp_head();
                              phoneLogo.classList.remove('header__phone-logo-bkg');
                          }
                      })
-
-
-                     // jQuery(function($) {
-                     //     $('.header__phone-logo').on('click', function(event) {
-                     //         event.preventDefault();
-                     //         $('.header__phone-logo').toggleClass('header__phone-logo-arrow');
-                     //        if (($('.header__phone-modal').is('.active')) ||
-                     //            ($('.header__feedback-modal').is('.active')) )
-                     //        {
-                     //            $('.header__phone-modal').removeClass('active');
-                     //            $('.fade').removeClass('active');
-                     //            $('.header__feedback-modal').removeClass('active');
-                     //        }
-                     //        else {
-                     //
-                     //            $('.header__phone-modal').addClass('active');
-                     //            $('.fade').addClass('active');
-                     //            }
-                     //
-                     //     });
-                     //
-                     //     $('#feedback-phone').on('click', function (e) {
-                     //        e.preventDefault();
-                     //         $('.header__feedback-modal').addClass('active');
-                     //         $('.fade').addClass('active');
-                     //         $('.header__phone-modal').removeClass('active');
-                     //     });
-                     //
-                     //     $('.feedback-link').on('click', function (e) {
-                     //        e.preventDefault();
-                     //        $('.header__feedback-modal').removeClass('active');
-                     //         $('.fade').addClass('active');
-                     //        $('.header__phone-modal').addClass('active');
-                     //     });
-
-                         // $(document).on('click', function (e){
-                         //     var div1 = $(".header__phone-modal");
-                         //     var div2 = $(".header__feedback-modal");
-                         //     if (!div1.is(e.target)
-                         //         && div1.has(e.target).length === 0
-                         //        && div1.hasClass('active')) {
-                         //         $('.header__phone-modal').removeClass('active');
-                         //         $('.fade').removeClass('active');
-                         //     }
-                         //     // if (!div2.is(e.target)
-                         //     //     && div2.has(e.target).length === 0) {
-                         //     //     $('.header__feedback-modal').removeClass('active');
-                         //     //     $('.fade').removeClass('active');
-                         //     // }
-                         // });
-                     // });
                  </script>
 <!--******************************************************************-->
                 <div class="header__email-wrapper">
@@ -278,3 +227,13 @@ wp_head();
              </div>
          </div>
      </header>
+<!--  Mobile submenu-->
+  <script>
+      let menuItemsWithChildren = document.querySelectorAll('.top-menu-mobile .menu-item-has-children');
+      menuItemsWithChildren.forEach(function (e) {
+          e.querySelector('a').addEventListener('click', function (event) {
+              event.preventDefault();
+            e.querySelector('.sub-menu').classList.toggle('active');
+          })
+      })
+  </script>

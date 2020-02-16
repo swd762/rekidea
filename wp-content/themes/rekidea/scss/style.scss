@@ -104,6 +104,12 @@
     }
   }
   .sub-menu {
+    max-height: 0;
+    transition: max-height 0.5s;
+    overflow: hidden;
+    &.active {
+      max-height: 400px;
+    }
     li {
       padding-right: 0;
       padding-bottom: 0;

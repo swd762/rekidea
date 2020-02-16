@@ -126,11 +126,17 @@ main {
       padding-bottom: 40px; }
     .top-menu-mobile li.dark {
       background: #e3d0d6; }
-  .top-menu-mobile .sub-menu li {
-    padding-right: 0;
-    padding-bottom: 0; }
-    .top-menu-mobile .sub-menu li:after {
-      right: 5px; }
+  .top-menu-mobile .sub-menu {
+    max-height: 0;
+    transition: max-height 0.5s;
+    overflow: hidden; }
+    .top-menu-mobile .sub-menu.active {
+      max-height: 400px; }
+    .top-menu-mobile .sub-menu li {
+      padding-right: 0;
+      padding-bottom: 0; }
+      .top-menu-mobile .sub-menu li:after {
+        right: 5px; }
 
 .header {
   height: 79px;
