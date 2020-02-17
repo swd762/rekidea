@@ -1,7 +1,7 @@
 <?php
  get_header();
  ?>
-<main>
+<div>
 <!--Breadcrumbs block *******************-->
 <div class="breadcrumbs">
   <div class="container">
@@ -42,7 +42,8 @@
             <img src="<?= get_template_directory_uri()?>/img/magnetic-page/top-banner-logo.jpg" alt="" class="magnetic-banner-logo wow zoomIn" data-wow-delay="1.7s">
         </div>
 <!--        <p class="flag-banner wow zoomIn"><span class="banner-cont wow zoomInUp" data-wow-delay="2s">Срок службы маркерной доски практически неограничен</span></p>-->
-
+    </div>
+</div>
 
 
 
@@ -513,6 +514,7 @@
    </div>
   </div>
   <img src="<?= get_template_directory_uri()?>/img/404/operator.png" alt="" class="question-operator">
+ </div>
  <!--****************************************************-->
  <script>
   new WOW().init();
