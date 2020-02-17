@@ -415,35 +415,7 @@ get_header();
 </div>
 
 <!--Our partners block ********************************************************-->
-<!--<div class="flexi-carousel-partners__wrapper">-->
-<!--       <div class="container">-->
-<!--           <ul id="flexi-carousel-partners">-->
-<!--               <li><img src="--><?//= get_template_directory_uri()?><!--/img/our-partners/logo-elize.png" /></li>-->
-<!--               <li><img src="--><?//= get_template_directory_uri()?><!--/img/our-partners/logo-leofarm.png" /></li>-->
-<!--               <li><img src="--><?//= get_template_directory_uri()?><!--/img/our-partners/logo-gorzdrav.png" /></li>-->
-<!--               <li><img src="--><?//= get_template_directory_uri()?><!--/img/our-partners/logo-mars.png" /></li>-->
-<!--               <li><img src="--><?//= get_template_directory_uri()?><!--/img/our-partners/logo-sletatru.png" /></li>-->
 
-<!--           </ul>-->
-<!--       </div>-->
-<!--</div>-->
-<!--    <script>-->
-<!--        jQuery(function($) {-->
-<!--            $("#flexi-carousel-partners").flexisel({-->
-<!--                visibleItems: 5,-->
-<!--                itemsToScroll: 1,-->
-<!--                animationSpeed: 200,-->
-<!--                infinite: true,-->
-<!--                navigationTargetSelector: null,-->
-<!--                autoPlay: {-->
-<!--                    enable: true,-->
-<!--                    interval: 4000,-->
-<!--                    pauseOnHover: true-->
-<!--                }-->
-<!--            });-->
-<!--        });-->
-<!---->
-<!--    </script>-->
     <div class="flexi-carousel-partners__wrapper desk-flexi">
         <div class="container">
             <ul id="flexi-carousel-partners">
