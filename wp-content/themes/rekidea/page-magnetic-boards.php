@@ -2,6 +2,13 @@
  get_header();
  ?>
 <main>
+<!--Breadcrumbs block *******************-->
+<div class="breadcrumbs">
+  <div class="container">
+     <p>Главная  > Магнитно - маркерные доски</p>
+  </div>
+</div>
+<!--*************************************-->
 
 
 
@@ -145,7 +152,7 @@
  </div>
  <!--***************************************-->
  <!--Services block-->
- <div class="services-block-wrapper" style="background: none">
+ <div class="services-block-wrapper" style="background: none;">
   <div class="container">
    <div class="services-block">
     <h2>мы предлагаем комплекс услуг</h2>
@@ -341,22 +348,21 @@
   </div>
   <div class="laser-portfolio-block__content">
    <div class="content-big">
-    <a href="<?= get_template_directory_uri()?>/img/portfolio-laser/1.jpg" class="single_image">
-     <img src="<?= get_template_directory_uri()?>/img/portfolio-laser/1-1.png" alt="">
+    <a href="<?= get_template_directory_uri()?>/img/portfolio-magnetic/2.jpg" class="single_image hidden-tablet">
+     <img src="<?= get_template_directory_uri()?>/img/portfolio-magnetic/2-1.png" alt="">
     </a>
-    <a href="<?= get_template_directory_uri()?>/img/portfolio-laser/2.jpg" class="single_image">
-     <img src="<?= get_template_directory_uri()?>/img/portfolio-laser/2-1.png" alt="">
+    <a href="<?= get_template_directory_uri()?>/img/portfolio-magnetic/5.jpg" class="single_image hidden-mobile">
+      <img src="<?= get_template_directory_uri()?>/img/portfolio-magnetic/5-1.png" alt="">
     </a>
-    <a href="<?= get_template_directory_uri()?>/img/portfolio-laser/3.jpg" class="single_image hidden-mobile">
-     <img src="<?= get_template_directory_uri()?>/img/portfolio-laser/3-1.png" alt="">
+    <a href="<?= get_template_directory_uri()?>/img/portfolio-magnetic/3.jpg" class="single_image">
+      <img src="<?= get_template_directory_uri()?>/img/portfolio-magnetic/3-1.png" alt="">
     </a>
-    <a href="<?= get_template_directory_uri()?>/img/portfolio-laser/4.jpg" class="single_image hidden-tablet">
-     <img src="<?= get_template_directory_uri()?>/img/portfolio-laser/4-1.png" alt="">
+    <a href="<?= get_template_directory_uri()?>/img/portfolio-magnetic/4.jpg" class="single_image">
+      <img src="<?= get_template_directory_uri()?>/img/portfolio-magnetic/4-1.png" alt="">
     </a>
-    <a href="<?= get_template_directory_uri()?>/img/portfolio-laser/5.jpg" class="single_image hidden-tablet">
-     <img src="<?= get_template_directory_uri()?>/img/portfolio-laser/5-1.png" alt="">
+    <a href="<?= get_template_directory_uri()?>/img/portfolio-magnetic/1.jpg" class="single_image hidden-tablet">
+      <img src="<?= get_template_directory_uri()?>/img/portfolio-magnetic/1-1.png" alt="">
     </a>
-
    </div>
   </div>
   <a href="/404" class="button">Посмотреть наши работы</a>

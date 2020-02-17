@@ -680,9 +680,9 @@
 .services-block-wrapper {
   background: url("img/services/services-background.png") center no-repeat;
   background-size: cover;
-  //min-height: 850px;
   padding: 125px 0 20px 0;
   margin-top: -100px;
+  overflow: hidden;
 }
 .services-block {
   width: 85%;

@@ -709,7 +709,8 @@ main {
   background: url("img/services/services-background.png") center no-repeat;
   background-size: cover;
   padding: 125px 0 20px 0;
-  margin-top: -100px; }
+  margin-top: -100px;
+  overflow: hidden; }
 
 .services-block {
   width: 85%;
