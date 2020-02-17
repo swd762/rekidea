@@ -14,7 +14,83 @@
 
 
 
-
+<div class="special-price-block">
+    <div class="container special-price-container">
+        <h3><span>мы предлагаем специальные цены</span><span>на стеклянные магнитно-маркерные доски</span></h3>
+        <div class="special-price-content">
+            <table class="special-price-table">
+                <tr>
+                    <td>ШИРИНА, мм</td>
+                    <td>ВЫСОТА, мм</td>
+                    <td><span>Скидка 10%</span></td>
+                    <td>СТОИМОСТЬ</td>
+                </tr>
+                <tr>
+                    <td>600</td>
+                    <td>900</td>
+                    <td>6700 р.</td>
+                    <td>5700 р.</td>
+                </tr>
+                <tr>
+                    <td>900</td>
+                    <td>1200</td>
+                    <td>9800 р.</td>
+                    <td>8800 р.</td>
+                </tr>
+                <tr>
+                    <td>1000</td>
+                    <td>1500</td>
+                    <td>16 400 р.</td>
+                    <td>15 400 р.</td>
+                </tr>
+                <tr>
+                    <td>1000</td>
+                    <td>2000</td>
+                    <td>23 000 р.</td>
+                    <td>22 000 р.</td>
+                </tr>
+                <tr>
+                    <td>1200</td>
+                    <td>1800</td>
+                    <td>21 500 р.</td>
+                    <td>20 500 р.</td>
+                </tr>
+                <tr>
+                    <td>1200</td>
+                    <td>2000</td>
+                    <td>25 000 р.</td>
+                    <td>24 000 р.</td>
+                </tr>
+                <tr>
+                    <td>1200</td>
+                    <td>2400</td>
+                    <td>28 000 р.</td>
+                    <td>27 000 р.</td>
+                </tr>
+            </table>
+            <div class="special-price-containment">
+                <header>В КОМПЛЕКТ ВХОДЯТ:</header>
+                <div class="special-price-containment__items">
+                    <div class="special-price-containment__item">
+                        <img src="<?= get_template_directory_uri()?>/img/special-price/eraser_icon.png">
+                        <span>губка стиратель</span>
+                    </div>
+                    <div class="special-price-containment__item">
+                        <img src="<?= get_template_directory_uri()?>/img/special-price/magnet_icon.png">
+                        <span>от 5 неодимовых магнитов</span>
+                    </div>
+                    <div class="special-price-containment__item">
+                        <img src="<?= get_template_directory_uri()?>/img/special-price/marker_icon.png">
+                        <span>маркер меловой</span>
+                    </div>
+                </div>
+            </div>
+            <div class="special-price-order-btn">
+                <a href="#" class="laser-btn-order">Заказать</a>
+            </div>
+        </div>
+    </div>
+</div>
 
  <!--** montage block ***************************************-->
  <div class="montage-block__wrapper">
