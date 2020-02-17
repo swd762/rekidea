@@ -9,21 +9,46 @@
   </div>
 </div>
 <!--*************************************-->
+<!--*****Magnetic top banner****************-->
+<div class="magnetic-top-banner__wrapper">
+    <div class="container" >
+        <div class="magnetic-top-banner__header wow zoomIn">
+            <h2>скидка — 10% на все магнитно-маркерные доски до 6.03.2019</h2>
+        </div>
+        <div class="magnetic-top-banner__content">
+            <section style="overflow: hidden">
+                <h1 class="wow zoomIn" data-wow-delay=".7s">стеклянная<br>магнитно-маркерная доска</h1>
+                <p class="wow zoomIn" data-wow-delay="1.2s">
+                    Инновационная магнитно-маркерная доска из закаленного стекла
+                    с любым фоном. Преобразите свое рабочее пространство!
+                    Сделайте его эффективным и эффектным!
+                    Стеклянная магнитно-маркерная доска изготавливается из нескольких
+                    слоев: закаленное стекло толщиной 4 мм, декоративный слой с фоновым
+                    изображением и металлическая основа.
+                    На таком стекле можно и писать маркерами, и использовать магниты.</p>
+                <div class="flag-banner red wow slideInLeft" data-wow-delay="2.5s">
+                    <span class="wow zoomInUp" data-wow-delay="3s">Срок службы маркерной доски практически неограничен</span>
+                </div>
+                <div class="flag-banner blue wow slideInLeft" data-wow-delay="3.5s"">
+                     <span class="wow zoomInUp" data-wow-delay="4s">Брендированные доски и магниты с вашим логотипом</span>
+                </div>
+                <div class="flag-banner red wow slideInLeft" data-wow-delay="4.5s"">
+                    <span class="wow zoomInUp" data-wow-delay="5s">На доске не остаются разводы и пятна</span>
+                </div>
+                <div class="flag-banner blue wow slideInLeft" data-wow-delay="5.5s"">
+                    <span class="wow zoomInUp" data-wow-delay="6s">Доставка и монтаж. Срок изготовления до 5 рабочих дней</span>
+                </div>
+            </section>
+            <img src="<?= get_template_directory_uri()?>/img/magnetic-page/top-banner-logo.jpg" alt="" class="magnetic-banner-logo wow zoomIn" data-wow-delay="1.7s">
+        </div>
+<!--        <p class="flag-banner wow zoomIn"><span class="banner-cont wow zoomInUp" data-wow-delay="2s">Срок службы маркерной доски практически неограничен</span></p>-->
 
+    </div>
+</div>
 
+<!--*******************************************************-->
 
-
-
-
-
-
-
-
-
-
-
-
- <!--** montage block ***************************************-->
+<!--** montage block ***************************************-->
  <div class="montage-block__wrapper">
   <div class="container">
    <div class="montage-block__content">
