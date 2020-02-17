@@ -191,3 +191,109 @@
     }
   }
 }
+
+.colors-block {
+  padding: 30px 0 40px 0;
+  @media(max-width: 1023px) {
+    padding: 8px 0 25px 0;
+  }
+  h3 {
+    font-size: 37px;
+    color: #6f0d33;
+    text-align: center;
+    text-transform: uppercase;
+    width: 847px;
+    margin: 0 auto 16px;
+    @media(max-width: 1023px) {
+      font-size: 24px;
+      width: auto;
+      margin: 0 0 12px;
+      word-break: keep-all;
+      padding: 0 10px;
+    }
+  }
+  h4 {
+    text-align: center;
+    font-size: 18px;
+    margin-bottom: 16px;
+    font-weight: 300;
+    @media(max-width: 1139px) {
+      width: 513px;
+      margin: 0 auto 16px;
+    }
+    @media(max-width: 1023px) {
+      font-size: 14px;
+      margin: 0 0 12px;
+      width: auto;
+    }
+  }
+  .colors-table-content {
+    display: flex;
+    width: 992px;
+    margin: 0 auto 38px;
+    @media(max-width: 1023px) {
+      flex-direction: column;
+      width: auto;
+      padding: 0 8px;
+      margin-bottom: 20px;
+    }
+    &>div {
+      width: 8.3%;
+      flex: 8.3% 0 0;
+      @media(max-width: 1023px) {
+        display: flex;
+        width: 100%;
+        flex: 100% 0 0;
+      }
+      &:last-child {
+        display: flex;
+        flex-direction: column;
+        @media(max-width: 1023px) {
+          flex-direction: row;
+        }
+        &>div {
+          border-right: 2px solid #9da5a5;
+          flex-grow: 1;
+          @media(max-width: 1023px) {
+            border-right: none;
+            border-bottom: 2px solid #9da5a5;
+            &:last-child {
+              border-bottom: 2px solid #9da5a5;
+            }
+          }
+        }
+      }
+      &>div {
+        border: 2px solid #9da5a5;
+        border-right: none;
+        border-bottom: none;
+        height: 82px;
+        display: flex;
+        align-items: flex-end;
+        padding: 0 0 5px 7px;
+        @media(max-width: 1023px) {
+          flex: 20% 1 1;
+          height: 64px;
+          align-items: flex-start;
+          padding-top: 5px;
+        }
+        span {
+          font-size: 14px;
+        }
+        &:last-child {
+          border-bottom: 2px solid #9da5a5;
+          @media(max-width: 1023px) {
+            border-right: 2px solid #9da5a5;
+            border-bottom: none;
+          }
+        }
+      }
+    }
+  }
+  .colors-order-btn {
+    text-align: center;
+    a {
+      display: inline-block;
+    }
+  }
+}
