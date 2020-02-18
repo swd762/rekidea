@@ -1978,17 +1978,7 @@ footer {
 // text content
 .text-content {
   h1 {
-      font-size: 22px;
-    &::before {
-      content: " ";
-      display: inline-block;
-      width: 20px;
-      height: 20px;
-      margin: 0 7px 3px 0;
-      vertical-align: middle;
-      font-size: 20px;
-      background: #00913d;
-    }
+    font-size: 22px;
   }
   padding: 50px;
   font-weight: 300;

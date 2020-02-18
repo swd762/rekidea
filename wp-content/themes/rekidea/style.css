@@ -37,7 +37,7 @@ main {
 .fade {
   display: none;
   position: fixed;
-  top: 112px;
+  top: 119px;
   left: 0;
   z-index: 400;
   width: 100%;
@@ -1923,15 +1923,6 @@ footer {
   font-weight: 300; }
   .text-content h1 {
     font-size: 22px; }
-    .text-content h1::before {
-      content: " ";
-      display: inline-block;
-      width: 20px;
-      height: 20px;
-      margin: 0 7px 3px 0;
-      vertical-align: middle;
-      font-size: 20px;
-      background: #00913d; }
   .text-content p {
     margin: 10px 0; }
   .text-content ul {
