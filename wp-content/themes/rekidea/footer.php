@@ -99,6 +99,90 @@ wp_footer();
             </div>
 
     </footer>
+
+<!--Order click modal-->
+<div class="fade-max"></div>
+<div class="order-click__modal">
+    <div class="call-us">
+        <h4>Позвоните нам!</h4>
+        <a href="tel:+74953692079">+ 7 (495) 369-20-79</a>
+        <a href="tel:+79265832351">+ 7 (926) 583-23-51</a>
+        <div class="working-regime">
+            Ежедневно с 10:00 до 19:00<br>
+            Без перерывов и выходных
+        </div>
+    </div>
+    <div class="we-call">
+        <h4>или Оставьте телефон
+            мы вам перезвоним</h4>
+    </div>
+    <div class="feedback-form">
+        <?= do_shortcode('[contact-form-7 id="274" title="order-btn"]'); ?>
+    </div>
+</div>
+<div class="call-me__modal">
+<!--    <div class="call-us">-->
+<!--        <h4>Позвоните нам!</h4>-->
+<!--        <a href="tel:+74953692079">+ 7 (495) 369-20-79</a>-->
+<!--        <a href="tel:+79265832351">+ 7 (926) 583-23-51</a>-->
+<!--        <div class="working-regime">-->
+<!--            Ежедневно с 10:00 до 19:00<br>-->
+<!--            Без перерывов и выходных-->
+<!--        </div>-->
+<!--    </div>-->
+    <div class="we-call">
+        <h4>Оставьте телефон и
+            мы вам перезвоним</h4>
+    </div>
+    <div class="feedback-form">
+        <?= do_shortcode('[contact-form-7 id="274" title="order-btn"]'); ?>
+    </div>
+</div>
+
+<script>
+    orderButtons = document.querySelectorAll('.card-laser-button, .laser-btn-order'); // laser-btn-order
+    fadeMax = document.querySelector('.fade-max');
+    for (let i = 0; i <orderButtons.length ; i++) {
+        orderButtons[i].addEventListener('click', function (e) {
+            e.preventDefault();
+            document.querySelector('.order-click__modal').classList.add('active');
+            fadeMax.classList.add('active');
+        });
+    }
+    document.addEventListener('click', e=> {
+        let target = e.target;
+        let formIsActive = document.querySelector('.order-click__modal').classList.contains('active');
+        let itsFade = target == fadeMax;
+        if (formIsActive && itsFade) {
+            document.querySelector('.order-click__modal').classList.remove('active');
+            fadeMax.classList.remove('active');
+        }
+    });
+</script>
+<script>
+    callmeButtons = document.querySelector('.call-me-js');
+    fadeMax = document.querySelector('.fade-max');
+
+        callmeButtons.addEventListener('click', function (e) {
+            e.preventDefault();
+            document.querySelector('.call-me__modal').classList.add('active');
+            fadeMax.classList.add('active');
+        });
+
+    document.addEventListener('click', e=> {
+        let target = e.target;
+        let formIsActive = document.querySelector('.call-me__modal').classList.contains('active');
+        let itsFade = target == fadeMax;
+        if (formIsActive && itsFade) {
+            document.querySelector('.call-me__modal').classList.remove('active');
+            fadeMax.classList.remove('active');
+        }
+    });
+</script>
+
+<!--******************-->
+
+
 <script>
     //Mobile menu
     document.querySelector('.header-mobile__hamburger').addEventListener('click', function () {
@@ -109,22 +193,16 @@ wp_footer();
 <script>
     jQuery(function($) {
         $(document).ready(function() {
-
             let defaults = {
                 containerID: 'toTop', // fading element id
                 containerHoverID: 'toTopHover', // fading element hover id
                 scrollSpeed: 1200,
                 easingType: 'linear'
             };
-
-
             $().UItoTop({ easingType: 'easeOutQuart' });
-
         });
     });
 </script>
-
-
 <!--**********-->
 
     </body>

@@ -9,6 +9,7 @@
   </div>
 </div>
 <!--*************************************-->
+
 <!--*****Magnetic top banner****************-->
 <div class="magnetic-top-banner__wrapper">
     <div class="container" >
@@ -41,14 +42,23 @@
             </section>
             <img src="<?= get_template_directory_uri()?>/img/magnetic-page/top-banner-logo.jpg" alt="" class="magnetic-banner-logo wow zoomIn" data-wow-delay="1.7s">
         </div>
-<!--        <p class="flag-banner wow zoomIn"><span class="banner-cont wow zoomInUp" data-wow-delay="2s">Срок службы маркерной доски практически неограничен</span></p>-->
     </div>
 </div>
+<!--********************************************************************************************************************-->
 
-
-
-
-
+<!--************************************-craft boards block *************************************************************-->
+<div class="craft-boards__wrapper">
+    <div class="container">
+       <div class="craft-boards__content">
+           <section>
+               
+           </section>
+           <img src="" alt="">
+            
+       </div>
+    </div>
+</div>
+<!--********************************************************************************************************************-->
 
 <div class="colors-block">
     <div class="container">
