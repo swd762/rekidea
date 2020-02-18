@@ -1817,8 +1817,7 @@ main {
         position: initial;
         width: 380px;
         height: 290px;
-        margin: 0 auto;
-        margin-bottom: 20px; } }
+        margin: 0 auto; } }
   @media (max-width: 520px) {
     .magnetic-top-banner__content section {
       padding: 0; }
@@ -1841,7 +1840,9 @@ main {
           border-bottom: 30px solid transparent;
           position: absolute;
           right: -1px;
-          top: 0; } }
+          top: 0; }
+    .magnetic-top-banner__content .magnetic-banner-logo {
+      width: 100%; } }
 
 .flag-banner {
   margin: 20px 0;
@@ -1870,6 +1871,9 @@ main {
   background-color: #f3f3f4;
   height: 407px;
   position: relative; }
+  @media (max-width: 900px) {
+    .craft-boards__wrapper {
+      height: initial; } }
 
 .craft-boards__overlay {
   position: absolute;
@@ -1878,12 +1882,16 @@ main {
   left: 0;
   right: 0;
   background: url("img/magnetic-page/bondarenko.jpg") center no-repeat; }
+  @media (max-width: 900px) {
+    .craft-boards__overlay {
+      display: none; } }
 
 .craft-boards__content {
   width: 60%;
   float: right;
   padding-top: 50px;
-  text-align: center; }
+  text-align: center;
+  margin-right: 20px; }
   .craft-boards__content h3 {
     font-size: 30px;
     font-weight: bold;
@@ -1894,6 +1902,33 @@ main {
     font-size: 18px;
     margin-top: 35px;
     margin-bottom: 65px; }
+
+.craft-boards__content-mobile {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px 0 0 0; }
+  @media (max-width: 900px) {
+    .craft-boards__content-mobile {
+      display: flex; } }
+  .craft-boards__content-mobile h3 {
+    font-size: 24px;
+    font-weight: bold;
+    color: #6f0d33;
+    text-transform: uppercase;
+    text-align: center;
+    width: 70%; }
+  .craft-boards__content-mobile p {
+    font-size: 13px;
+    margin-top: 15px;
+    margin-bottom: 25px;
+    width: 70%;
+    text-align: center; }
+  .craft-boards__content-mobile img {
+    margin-top: 20px; }
+    @media (max-width: 520px) {
+      .craft-boards__content-mobile img {
+        width: 100%; } }
 
 footer {
   background-color: #474747; }

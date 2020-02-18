@@ -1833,7 +1833,7 @@
       width: 380px;
       height: 290px;
       margin: 0 auto;
-      margin-bottom: 20px;
+      //margin-bottom: 20px;
     }
   }
   @media (max-width: 520px) {
@@ -1863,6 +1863,9 @@
           top: 0;
         }
       }
+    }
+    .magnetic-banner-logo {
+      width: 100%;
     }
   }
 }
@@ -1898,6 +1901,9 @@
   background-color: #f3f3f4;
   height: 407px;
   position: relative;
+  @media (max-width: 900px) {
+    height: initial;
+  }
 }
 .craft-boards__overlay {
   position: absolute;
@@ -1906,13 +1912,18 @@
   left: 0;
   right: 0;
   background: url("img/magnetic-page/bondarenko.jpg") center no-repeat;
+  @media (max-width: 900px) {
+    display: none;
+  }
 
 }
 .craft-boards__content {
+  //display: none;
   width: 60%;
   float: right;
   padding-top: 50px;
   text-align: center;
+  margin-right: 20px;
   h3 {
     font-size: 30px;
     font-weight: bold;
@@ -1925,8 +1936,36 @@
     margin-top: 35px;
     margin-bottom: 65px;
   }
-
-
+}
+.craft-boards__content-mobile {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px 0 0 0  ;
+  @media (max-width: 900px) {
+    display: flex;
+  }
+  h3 {
+    font-size: 24px;
+    font-weight: bold;
+    color: $red;
+    text-transform: uppercase;
+    text-align: center;
+    width: 70%;
+  }
+  p {
+    font-size: 13px;
+    margin-top: 15px;
+    margin-bottom: 25px;
+    width: 70%;
+    text-align: center;
+  }
+  img {
+    margin-top: 20px;
+    @media (max-width: 520px) {
+      width: 100%;
+    }
+  }
 }
 
 
