@@ -1756,7 +1756,8 @@
   position: relative;
 
   section {
-    width: 60%;
+    //width: 60%;
+    width: 600px;
     padding: 0 0 20px 0;
     h1 {
       font-size: 37px;
@@ -1801,8 +1802,11 @@
         padding: 0 25px 0 15px;
         margin-top: 25px;
         margin-bottom: 25px;
-        font-size: 16px;
+        font-size: 15px;
         font-weight: 300;
+      }
+      .flag-banner {
+
       }
     }
     .magnetic-banner-logo {
@@ -1889,9 +1893,38 @@
 // *************** craft boards ****************************
 .craft-boards__wrapper {
   background-color: #f3f3f4;
-  height: 500px;
+  height: 407px;
+  position: relative;
 }
+.craft-boards__overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: url("img/magnetic-page/bondarenko.jpg") center no-repeat;
 
+}
+.craft-boards__content {
+  width: 60%;
+  float: right;
+  padding-top: 50px;
+  text-align: center;
+  h3 {
+    font-size: 30px;
+    font-weight: bold;
+    color: $red;
+    text-transform: uppercase;
+    text-align: center;
+  }
+  p {
+    font-size: 18px;
+    margin-top: 35px;
+    margin-bottom: 65px;
+  }
+
+
+}
 
 
 
