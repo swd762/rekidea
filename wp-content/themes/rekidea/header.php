@@ -233,6 +233,7 @@ wp_head();
       menuItemsWithChildren.forEach(function (e) {
           e.querySelector('a').addEventListener('click', function (event) {
               event.preventDefault();
+              e.classList.toggle('bold');
             e.querySelector('.sub-menu').classList.toggle('active');
           })
       })

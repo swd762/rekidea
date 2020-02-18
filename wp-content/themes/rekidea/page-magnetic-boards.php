@@ -56,7 +56,7 @@
         <h4>Вы можете выбрать цвет своей магнитно-маркерной доски, в том числе с нанесением логотипа и любого изображения.</h4>
 
         <div class="colors-show-btn">
-            <a href="#" class="laser-btn-order">Посмотреть цвета каталога</a>
+            <a href="#" class="laser-btn-order">Посмотреть цвета каталога (Стрелка)</a>
         </div>
 
         <div class="colors-table-content">
