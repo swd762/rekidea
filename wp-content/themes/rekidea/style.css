@@ -247,7 +247,9 @@ main {
       .colors-block h4 {
         font-size: 14px;
         margin: 0 0 12px;
-        width: auto; } }
+        width: auto;
+        word-break: keep-all;
+        padding: 0 10px; } }
   .colors-block .colors-table-content {
     display: flex;
     width: 992px;
@@ -486,7 +488,7 @@ main {
     list-style: none; }
   .top-menu-mobile a {
     color: #6f0d33 !important;
-    font-weight: 100 !important;
+    font-weight: 100;
     text-transform: uppercase;
     padding: 8px 23px 8px 5px;
     border-bottom: 1px solid #959595; }
@@ -508,6 +510,8 @@ main {
       padding-bottom: 40px; }
     .top-menu-mobile li.dark {
       background: #e3d0d6; }
+    .top-menu-mobile li.bold > a {
+      font-weight: 500; }
   .top-menu-mobile .sub-menu {
     max-height: 0;
     transition: max-height 0.5s;
@@ -2623,7 +2627,7 @@ footer {
     padding: 0 10px 30px 10px; }
 
   .card-laser p {
-    font-size: 10px; }
+    font-size: 14px; }
 
   .quality-video-block {
     padding: 100px 20px 120px 30px; }
