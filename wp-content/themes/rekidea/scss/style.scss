@@ -1995,7 +1995,7 @@ footer {
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 400;
+  z-index: 99993;
   width: 100%;
   height: 100%;
   background-color: rgba(92,92,92,.8);
@@ -2010,7 +2010,7 @@ footer {
   box-shadow: 0 0 14px 0 rgba(0,0,0,.17);
   width: 430px;
   padding: 25px 44px 20px 44px;
-  z-index: 401;
+  z-index: 99994;
   border-radius: 5px;
   @media (max-width: 520px) {
     padding: 15px 5px;
@@ -2123,7 +2123,7 @@ footer {
   box-shadow: 0 0 14px 0 rgba(0,0,0,.17);
   width: 430px;
   padding: 25px 44px 20px 44px;
-  z-index: 401;
+  z-index: 99994;
   border-radius: 5px;
   @media (max-width: 520px) {
     padding: 15px 5px;
