@@ -145,10 +145,16 @@ wp_footer();
         let formIsActive = document.querySelector('.order-click__modal').classList.contains('active');
         let itsFade = target == fadeMax;
         if (formIsActive && itsFade) {
-            document.querySelector('.order-click__modal').classList.remove('active');
-            fadeMax.classList.remove('active');
+            closeOrderModal();
         }
     });
+
+    function closeOrderModal() {
+      let modal = document.querySelector('.order-click__modal');
+      modal.classList.remove('active');
+      fadeMax.classList.remove('active');
+      modal.querySelector('.wpcf7-response-output').style.display = 'none';
+    }
 </script>
 <script>
     callmeButtons = document.querySelector('.call-me-js');
@@ -165,10 +171,16 @@ wp_footer();
         let formIsActive = document.querySelector('.call-me__modal').classList.contains('active');
         let itsFade = target == fadeMax;
         if (formIsActive && itsFade) {
-            document.querySelector('.call-me__modal').classList.remove('active');
-            fadeMax.classList.remove('active');
+            closeCallModal();
         }
     });
+
+    function closeCallModal() {
+      let modal = document.querySelector('.call-me__modal');
+      modal.classList.remove('active');
+      fadeMax.classList.remove('active');
+      modal.querySelector('.wpcf7-response-output').style.display = 'none';
+    }
 </script>
 
 <!--******************-->
@@ -195,6 +207,20 @@ wp_footer();
     });
 </script>
 <!--**********-->
+<!--feedback modals closing-->
+<script>
+  document.addEventListener( 'wpcf7mailsent', function( event ) {
+    switch (event.detail.contactFormId) {
+      case '274':
+        setTimeout(function () {
+          closeOrderModal();
+          closeCallModal();
+        }, 2000);
+        break;
+    }
+  }, false );
+</script>
+</script>
 
     </body>
 </html>
