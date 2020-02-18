@@ -1,13 +1,13 @@
 <?php
  get_header();
  ?>
-<div>
+<main xmlns="http://www.w3.org/1999/html">
 <!--Breadcrumbs block *******************-->
-<div class="breadcrumbs">
-  <div class="container">
-     <p>Главная  > Магнитно - маркерные доски</p>
-  </div>
-</div>
+    <div class="breadcrumbs">
+      <div class="container">
+         <p>Главная  > Магнитно - маркерные доски</p>
+      </div>
+    </div>
 <!--*************************************-->
 
 <!--*****Magnetic top banner****************-->
@@ -33,13 +33,13 @@
                 <div class="flag-banner red wow slideInLeft" data-wow-delay="2.5s">
                     <span class="wow zoomInUp" data-wow-delay="3s">Срок службы маркерной доски практически неограничен</span>
                 </div>
-                <div class="flag-banner blue wow slideInLeft" data-wow-delay="3.5s"">
+                <div class="flag-banner blue wow slideInLeft" data-wow-delay="3.5s">
                      <span class="wow zoomInUp" data-wow-delay="4s">Брендированные доски и магниты с вашим логотипом</span>
                 </div>
-                <div class="flag-banner red wow slideInLeft" data-wow-delay="4.5s"">
+                <div class="flag-banner red wow slideInLeft" data-wow-delay="4.5s">
                     <span class="wow zoomInUp" data-wow-delay="5s">На доске не остаются разводы и пятна</span>
                 </div>
-                <div class="flag-banner blue wow slideInLeft" data-wow-delay="5.5s"">
+                <div class="flag-banner blue wow slideInLeft" data-wow-delay="5.5s">
                     <span class="wow zoomInUp" data-wow-delay="6s">Доставка и монтаж. Срок изготовления до 5 рабочих дней</span>
                 </div>
             </section>
