@@ -11,6 +11,8 @@ body {
   padding-top: 119px; }
   body.admin-bar .main-header {
     top: 32px; }
+  body.modal-opened {
+    overflow: hidden; }
 
 main {
   overflow: hidden; }
@@ -523,6 +525,8 @@ main {
       padding-bottom: 0; }
       .top-menu-mobile .sub-menu li:after {
         right: 5px; }
+    .top-menu-mobile .sub-menu a {
+      text-transform: none; }
 
 .header {
   height: 79px;
@@ -1947,13 +1951,17 @@ footer {
   padding: 25px 44px 20px 44px;
   z-index: 99994;
   border-radius: 5px;
-  max-height: 100vh;
+  max-height: 90vh;
   overflow: auto; }
   @media (max-width: 520px) {
     .order-click__modal {
       padding: 15px 5px;
       width: 350px;
       overflow: hidden; } }
+  @media (max-width: 1023px) {
+    .order-click__modal {
+      top: 10px;
+      transform: translate(-50%); } }
   .order-click__modal .call-us {
     display: flex;
     flex-direction: column;
@@ -1964,17 +1972,28 @@ footer {
       font-weight: 400;
       color: #6f0d33;
       margin-bottom: 10px; }
+      @media (max-width: 1023px) {
+        .order-click__modal .call-us h4 {
+          font-size: 19px;
+          margin-bottom: 6px; } }
     .order-click__modal .call-us a {
       text-decoration: none;
       font-size: 24px;
       font-weight: bold;
       color: #9d2220;
       margin-bottom: 10px; }
+      @media (max-width: 1023px) {
+        .order-click__modal .call-us a {
+          font-size: 19px;
+          margin-bottom: 6px; } }
     .order-click__modal .call-us .working-regime {
-      font-size: 14px;
+      font-size: 13px;
       font-weight: 300;
       margin-bottom: 20px;
       color: #637280; }
+      @media (max-width: 1023px) {
+        .order-click__modal .call-us .working-regime {
+          margin-bottom: 6px; } }
   .order-click__modal .we-call h4 {
     color: #6f0d33;
     font-size: 24px;
@@ -1982,6 +2001,9 @@ footer {
     text-transform: uppercase;
     text-align: center;
     padding: 0 25px; }
+    @media (max-width: 1023px) {
+      .order-click__modal .we-call h4 {
+        font-size: 19px; } }
   .order-click__modal .feedback-form {
     display: flex;
     flex-direction: column;
@@ -1989,6 +2011,9 @@ footer {
     .order-click__modal .feedback-form .feedback-field {
       margin: 23px 0;
       padding: 0 25px; }
+      @media (max-width: 1023px) {
+        .order-click__modal .feedback-form .feedback-field {
+          margin: 12px 0; } }
       .order-click__modal .feedback-form .feedback-field input {
         width: 100%;
         padding: 14px;

@@ -123,6 +123,9 @@
         right: 5px;
       }
     }
+    a {
+      text-transform: none;
+    }
   }
 }
 
@@ -2012,12 +2015,16 @@ footer {
   padding: 25px 44px 20px 44px;
   z-index: 99994;
   border-radius: 5px;
-  max-height: 100vh;
+  max-height: 90vh;
   overflow: auto;
   @media (max-width: 520px) {
     padding: 15px 5px;
     width: 350px;
     overflow: hidden;
+  }
+  @media (max-width: 1023px) {
+    top: 10px;
+    transform: translate(-50%);
   }
   .call-us {
     display: flex;
@@ -2029,6 +2036,10 @@ footer {
       font-weight: 400;
       color: $red;
       margin-bottom: 10px;
+      @media (max-width: 1023px) {
+        font-size: 19px;
+        margin-bottom: 6px;
+      }
     }
     a {
       text-decoration: none;
@@ -2036,12 +2047,19 @@ footer {
       font-weight: bold;
       color: #9d2220;
       margin-bottom:10px;
+      @media (max-width: 1023px) {
+        font-size: 19px;
+        margin-bottom: 6px;
+      }
     }
     .working-regime {
-      font-size: 14px;
+      font-size: 13px;
       font-weight: 300;
       margin-bottom: 20px;
       color: #637280;
+      @media (max-width: 1023px) {
+        margin-bottom: 6px;
+      }
     }
   }
   .we-call {
@@ -2052,6 +2070,9 @@ footer {
       text-transform: uppercase;
       text-align: center;
       padding: 0 25px;
+      @media (max-width: 1023px) {
+        font-size: 19px;
+      }
     }
   }
   .feedback-form {
@@ -2061,6 +2082,9 @@ footer {
     .feedback-field {
       margin: 23px 0;
       padding: 0 25px;
+      @media (max-width: 1023px) {
+        margin: 12px 0;
+      }
       input {
         width: 100%;
         padding: 14px;

@@ -122,8 +122,8 @@ wp_footer();
 </div>
 <div class="call-me__modal">
     <div class="we-call">
-        <h4>Оставьте телефон и
-            мы вам перезвоним</h4>
+        <h4>Оставьте телефон!<br>
+            Мы вам перезвоним.</h4>
     </div>
     <div class="feedback-form">
         <?= do_shortcode('[contact-form-7 id="274" title="order-btn"]'); ?>
@@ -138,6 +138,7 @@ wp_footer();
             e.preventDefault();
             document.querySelector('.order-click__modal').classList.add('active');
             fadeMax.classList.add('active');
+          document.querySelector('body').classList.add('modal-opened');
         });
     }
     document.addEventListener('click', e=> {
@@ -154,6 +155,7 @@ wp_footer();
       modal.classList.remove('active');
       fadeMax.classList.remove('active');
       modal.querySelector('.wpcf7-response-output').style.display = 'none';
+      document.querySelector('body').classList.remove('modal-opened');
     }
 </script>
 <script>
@@ -164,6 +166,7 @@ wp_footer();
             e.preventDefault();
             document.querySelector('.call-me__modal').classList.add('active');
             fadeMax.classList.add('active');
+          document.querySelector('body').classList.add('modal-opened');
         });
 
     document.addEventListener('click', e=> {
@@ -180,6 +183,7 @@ wp_footer();
       modal.classList.remove('active');
       fadeMax.classList.remove('active');
       modal.querySelector('.wpcf7-response-output').style.display = 'none';
+      document.querySelector('body').classList.remove('modal-opened');
     }
 </script>
 

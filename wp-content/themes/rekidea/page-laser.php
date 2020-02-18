@@ -194,7 +194,7 @@ get_header();
                 <li>ЛАЗЕРНАЯ РЕЗКА ФАНЕРЫ И МДФ —  от <span>15</span> руб м. п.</li>
                 <li>ЛАЗЕРНАЯ ГРАВИРОВКА ФАНЕРЫ  —  от <span>2</span> руб кв. см. </li>
             </ul>
-            <a href="#" class="laser-btn-order">стоимость для других материалов</a>
+            <a href="/404" class="laser-btn-order">стоимость для других материалов</a>
         </div>
     </div>
 </div>
