@@ -211,6 +211,9 @@ main {
     text-align: center; }
     .special-price-block .special-price-order-btn a {
       display: inline-block; }
+  @media (max-width: 800px) {
+    .special-price-block .special-price-desc > img {
+      width: 100%; } }
 
 .colors-block {
   padding: 30px 0 40px 0; }
@@ -251,10 +254,13 @@ main {
     margin: 0 auto 38px; }
     @media (max-width: 1023px) {
       .colors-block .colors-table-content {
+        display: none;
         flex-direction: column;
         width: auto;
         padding: 0 8px;
-        margin-bottom: 20px; } }
+        margin-bottom: 20px; }
+        .colors-block .colors-table-content.active {
+          display: flex; } }
     .colors-block .colors-table-content > div {
       width: 8.3%;
       flex: 8.3% 0 0; }
@@ -304,6 +310,126 @@ main {
     text-align: center; }
     .colors-block .colors-order-btn a {
       display: inline-block; }
+  .colors-block .colors-show-btn {
+    display: none;
+    text-align: center;
+    margin-bottom: 15px; }
+    @media (max-width: 1023px) {
+      .colors-block .colors-show-btn {
+        display: block; } }
+    .colors-block .colors-show-btn a {
+      display: inline-block;
+      font-weight: 300; }
+  .colors-block .white {
+    color: #FFFFFF; }
+  .colors-block .color-020 {
+    background: #faa41a; }
+  .colors-block .color-019 {
+    background: #e6a623; }
+  .colors-block .color-021 {
+    background: #fdc60c; }
+  .colors-block .color-022 {
+    background: #f2cc10; }
+  .colors-block .color-025 {
+    background: #efe312; }
+  .colors-block .color-312 {
+    background: #751013; }
+  .colors-block .color-030 {
+    background: #90191c; }
+  .colors-block .color-031 {
+    background: #b01f23; }
+  .colors-block .color-032 {
+    background: #cb2127; }
+  .colors-block .color-047 {
+    background: #d23327; }
+  .colors-block .color-034 {
+    background: #dd4826; }
+  .colors-block .color-036 {
+    background: #ec6823; }
+  .colors-block .color-035 {
+    background: #f36e21; }
+  .colors-block .color-404 {
+    background: #422b73; }
+  .colors-block .color-040 {
+    background: #5d2b68; }
+  .colors-block .color-043 {
+    background: #785fa3; }
+  .colors-block .color-042 {
+    background: #b994bf; }
+  .colors-block .color-041 {
+    background: #c5266b; }
+  .colors-block .color-045 {
+    background: #f088b8; }
+  .colors-block .color-562 {
+    background: #111b37; }
+  .colors-block .color-518 {
+    background: #0f113a; }
+  .colors-block .color-050 {
+    background: #1d2f5e; }
+  .colors-block .color-065 {
+    background: #252a67; }
+  .colors-block .color-049 {
+    background: #283275; }
+  .colors-block .color-086 {
+    background: #243f99; }
+  .colors-block .color-067 {
+    background: #1e3d77; }
+  .colors-block .color-057 {
+    background: #19468d; }
+  .colors-block .color-051 {
+    background: #154682; }
+  .colors-block .color-098 {
+    background: #08529f; }
+  .colors-block .color-052 {
+    background: #145fad; }
+  .colors-block .color-084 {
+    background: #0275bb; }
+  .colors-block .color-053 {
+    background: #1688c5; }
+  .colors-block .color-056 {
+    background: #3ea1d5; }
+  .colors-block .color-066 {
+    background: #0c8590; }
+  .colors-block .color-054 {
+    background: #159c99; }
+  .colors-block .color-055 {
+    background: #65c5b2; }
+  .colors-block .color-060 {
+    background: #053d24; }
+  .colors-block .color-613 {
+    background: #0b5336; }
+  .colors-block .color-061 {
+    background: #067a4d; }
+  .colors-block .color-068 {
+    background: #0a7840; }
+  .colors-block .color-062 {
+    background: #0c8a44; }
+  .colors-block .color-064 {
+    background: #209d48; }
+  .colors-block .color-063 {
+    background: #6ba944; }
+  .colors-block .color-800 {
+    background: #57331e; }
+  .colors-block .color-083 {
+    background: #af5b26; }
+  .colors-block .color-081 {
+    background: #aa895a; }
+  .colors-block .color-082 {
+    background: #ccc09e; }
+  .colors-block .color-023 {
+    background: #e8d393; }
+  .colors-block .color-072 {
+    background: #c2c2c4; }
+  .colors-block .color-074 {
+    background: #8c918c; }
+  .colors-block .color-076 {
+    background: #818689; }
+  .colors-block .color-071 {
+    background: #75807e; }
+  .colors-block .color-073 {
+    background: #4c4c4d; }
+  .colors-block .color-070 {
+    background: #070809; }
 
 .main-header {
   position: fixed;
