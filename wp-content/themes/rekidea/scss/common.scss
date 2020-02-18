@@ -19,6 +19,9 @@ body {
     .main-header {
       top: 32px;
     }
+    .fade {
+      top: 151px;
+    }
   }
   &.modal-opened {
     overflow: hidden;
@@ -63,7 +66,7 @@ main {
 .fade {
   display: none;
   position: fixed;
-  top: 151px;
+  top: 119px;
   left: 0;
   z-index: 400;
   width: 100%;

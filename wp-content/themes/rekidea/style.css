@@ -11,6 +11,8 @@ body {
   padding-top: 119px; }
   body.admin-bar .main-header {
     top: 32px; }
+  body.admin-bar .fade {
+    top: 151px; }
   body.modal-opened {
     overflow: hidden; }
 
@@ -39,7 +41,7 @@ main {
 .fade {
   display: none;
   position: fixed;
-  top: 151px;
+  top: 119px;
   left: 0;
   z-index: 400;
   width: 100%;
@@ -2387,6 +2389,9 @@ footer {
   .no-mobile-portfolio {
     display: none; } }
 @media (max-width: 1023px) {
+  .btn-checked::after {
+    top: 18px; }
+
   .container {
     width: auto; }
 
