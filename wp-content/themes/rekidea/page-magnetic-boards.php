@@ -65,6 +65,10 @@
         <h3>ВЫ МОЖЕТЕ ВЫБРАТЬ ЛЮБОЙ цвет магнитно-маркерной доски из каталога</h3>
         <h4>Вы можете выбрать цвет своей магнитно-маркерной доски, в том числе с нанесением логотипа и любого изображения.</h4>
 
+        <div class="colors-show-btn">
+            <a href="#" class="laser-btn-order">Посмотреть цвета каталога (Стрелка)</a>
+        </div>
+
         <div class="colors-table-content">
             <div>
                 <div class="color-010"><span>#010</span></div>
@@ -229,6 +233,12 @@
             </div>
             <div class="special-price-order-btn">
                 <a href="#" class="laser-btn-order">Заказать</a>
+            </div>
+            <div class="special-price-desc">
+                <img src="<?= get_template_directory_uri()?>/img/special-price/desc.png">
+                <div class="special-price-ball">
+                    <img src="<?= get_template_directory_uri()?>/img/special-price/red-ball.png">
+                </div>
             </div>
         </div>
     </div>
@@ -529,6 +539,13 @@
  <script>
   new WOW().init();
  </script>
+<script>
+//colors block
+    document.querySelector('.colors-show-btn').addEventListener('click', function (e) {
+      e.preventDefault();
+      document.querySelector('.colors-table-content').classList.toggle('active');
+    })
+</script>
 </main>
 <?php get_footer();
 

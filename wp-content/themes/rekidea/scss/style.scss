@@ -77,7 +77,7 @@
   }
   a {
     color: #6f0d33 !important;
-    font-weight: 100 !important;
+    font-weight: 100;
     text-transform: uppercase;
     padding: 8px 23px 8px 5px;
     border-bottom: 1px solid #959595;
@@ -102,6 +102,11 @@
     }
     &.dark {
       background: #e3d0d6;
+    }
+    &.bold {
+      >a {
+        font-weight: 500;
+      }
     }
   }
   .sub-menu {
