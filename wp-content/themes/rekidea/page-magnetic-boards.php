@@ -19,14 +19,17 @@
         <div class="magnetic-top-banner__content">
             <section style="overflow: hidden">
                 <h1 class="wow zoomIn" data-wow-delay=".7s">стеклянная<br>магнитно-маркерная доска</h1>
-                <p class="wow zoomIn" data-wow-delay="1.2s">
-                    Инновационная магнитно-маркерная доска из закаленного стекла
+                <div class="magnetic-top-banner__content-text wow zoomIn" data-wow-delay="1.2s">
+                    <p>Инновационная магнитно-маркерная доска из закаленного стекла
                     с любым фоном. Преобразите свое рабочее пространство!
-                    Сделайте его эффективным и эффектным!
-                    Стеклянная магнитно-маркерная доска изготавливается из нескольких
+                    </p>
+                    <p>Сделайте его эффективным и эффектным!</p>
+                    <p>Стеклянная магнитно-маркерная доска изготавливается из нескольких
                     слоев: закаленное стекло толщиной 4 мм, декоративный слой с фоновым
                     изображением и металлическая основа.
-                    На таком стекле можно и писать маркерами, и использовать магниты.</p>
+                    </p>
+                    <p>На таком стекле можно и писать маркерами, и использовать магниты.</p>
+                </div>
                 <div class="flag-banner red wow slideInLeft" data-wow-delay="2.5s">
                     <span class="wow zoomInUp" data-wow-delay="3s">Срок службы маркерной доски практически неограничен</span>
                 </div>
@@ -530,7 +533,7 @@
    </p>
    <div class="questions-contact__content-contacts">
     <h4>+ 7 (495) 369-20-79</h4>
-    <a href="#" class="button">ПЕРЕЗВОНИТЬ МНЕ</a>
+    <a href="#" class="button call-me-js">ПЕРЕЗВОНИТЬ МНЕ</a>
    </div>
   </div>
   <img src="<?= get_template_directory_uri()?>/img/404/operator.png" alt="" class="question-operator">

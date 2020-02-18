@@ -1733,6 +1733,7 @@
 
 // **********************************top banner
 .magnetic-top-banner__wrapper {
+  overflow: hidden;
 }
 .magnetic-top-banner__header {
   padding: 0 10px;
@@ -1743,7 +1744,7 @@
     font-weight: bold;
     //text-align: center;
     padding: 25px 10px;
-    @media (max-width: 1024px) {
+    @media (max-width: 1170px) {
       text-align: center;
     }
     @media (max-width: 520px) {
@@ -1753,6 +1754,7 @@
 }
 .magnetic-top-banner__content {
   position: relative;
+
   section {
     width: 60%;
     padding: 0 0 20px 0;
@@ -1762,10 +1764,10 @@
       text-transform: uppercase;
       padding: 0 20px;
     }
-    p {
+    .magnetic-top-banner__content-text {
       padding: 0 20px;
-      margin-top: 30px;
-      margin-bottom: 30px;
+      margin-top: 35px;
+      margin-bottom: 35px;
       font-size: 18px;
       font-weight: 300;
     }
@@ -1774,8 +1776,9 @@
     height: 100%;
     position: absolute;
     top: 0;
-    right: -350px;
+    right: -380px;
   }
+
   @media (max-width: 1170px) {
     .magnetic-banner-logo {
       height: 100%;
@@ -1794,8 +1797,8 @@
         text-transform: uppercase;
         padding: 0 15px;
       }
-      p {
-        padding: 0 15px;
+      .magnetic-top-banner__content-text {
+        padding: 0 25px 0 15px;
         margin-top: 25px;
         margin-bottom: 25px;
         font-size: 16px;
@@ -1806,10 +1809,10 @@
       height: 100%;
       position: absolute;
       top: 0;
-      right: -350px;
+      right: -390px;
     }
   }
-  @media (max-width: 950px) {
+  @media (max-width: 975px) {
     display: flex;
     flex-direction: column;
     section {
@@ -1833,7 +1836,7 @@
         font-size: 27px;
         text-align: center;
       }
-      p {
+      .magnetic-top-banner__content-text {
         font-size: 14px;
         margin-bottom: 10px;
       }
@@ -2033,19 +2036,20 @@ footer {
       text-transform: uppercase;
       font-weight: 400;
       color: $red;
-      margin-bottom: 17px;
+      margin-bottom: 10px;
     }
     a {
       text-decoration: none;
       font-size: 24px;
       font-weight: bold;
       color: #9d2220;
-      margin-bottom:17px;
+      margin-bottom:10px;
     }
     .working-regime {
       font-size: 14px;
       font-weight: 300;
       margin-bottom: 20px;
+      color: #637280;
     }
   }
   .we-call {
@@ -2104,8 +2108,8 @@ footer {
       font-weight: 300;
       a {
         font-weight: normal;
-        color: #0000EE;
-        text-decoration: underline;
+        color: #0a8099;
+        text-decoration: none;
         font-size: 14px;
       }
     }
@@ -2192,8 +2196,8 @@ footer {
       font-weight: 300;
       a {
         font-weight: normal;
-        color: #0000EE;
-        text-decoration: underline;
+        color: #0a8099;
+        text-decoration: none;
         font-size: 14px;
       }
     }
