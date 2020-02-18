@@ -11,6 +11,8 @@ body {
   padding-top: 119px; }
   body.admin-bar .main-header {
     top: 32px; }
+  body.admin-bar .fade {
+    top: 151px; }
   body.modal-opened {
     overflow: hidden; }
 
@@ -39,7 +41,7 @@ main {
 .fade {
   display: none;
   position: fixed;
-  top: 151px;
+  top: 119px;
   left: 0;
   z-index: 400;
   width: 100%;
@@ -54,7 +56,8 @@ main {
 .special-price-block {
   background: #ebebeb; }
   .special-price-block .special-price-container {
-    padding: 37px 108px 34px 126px; }
+    padding: 37px 108px 34px 126px;
+    position: relative; }
     @media (max-width: 1139px) {
       .special-price-block .special-price-container {
         padding: 37px 76px 30px 42px; } }
@@ -81,7 +84,8 @@ main {
           margin: 0 !important;
           font-size: 24px; } }
   .special-price-block .special-price-content {
-    width: 493px; }
+    width: 493px;
+    position: relative; }
     @media (max-width: 800px) {
       .special-price-block .special-price-content {
         width: 311px;
@@ -213,9 +217,32 @@ main {
     text-align: center; }
     .special-price-block .special-price-order-btn a {
       display: inline-block; }
-  @media (max-width: 800px) {
+  .special-price-block .special-price-desc {
+    position: absolute;
+    position: absolute;
+    top: 0;
+    left: 541px;
+    height: 432px; }
     .special-price-block .special-price-desc > img {
-      width: 100%; } }
+      max-height: 100%; }
+    .special-price-block .special-price-desc .special-price-ball {
+      position: absolute;
+      top: 77px;
+      left: 36px; }
+      .special-price-block .special-price-desc .special-price-ball img {
+        width: 100%; }
+    @media (max-width: 800px) {
+      .special-price-block .special-price-desc {
+        position: relative;
+        top: initial;
+        left: initial;
+        height: auto; }
+        .special-price-block .special-price-desc > img {
+          width: 100%; }
+        .special-price-block .special-price-desc .special-price-ball {
+          top: 52px;
+          left: 14px;
+          width: 136px; } }
 
 .colors-block {
   padding: 30px 0 40px 0; }
@@ -2459,6 +2486,9 @@ footer {
   .no-mobile-portfolio {
     display: none; } }
 @media (max-width: 1023px) {
+  .btn-checked::after {
+    top: 18px; }
+
   .container {
     width: auto; }
 

@@ -2,6 +2,7 @@
   background: #ebebeb;
   .special-price-container {
     padding: 37px 108px 34px 126px;
+    position: relative;
     @media(max-width: 1139px) {
       padding: 37px 76px 30px 42px;
     }
@@ -33,6 +34,7 @@
   }
   .special-price-content {
     width: 493px;
+    position: relative;
     @media(max-width: 800px) {
       width: 311px;
       margin-left: auto;
@@ -191,9 +193,34 @@
     }
   }
   .special-price-desc {
+    position: absolute;
+    position: absolute;
+    top: 0;
+    left: 541px;
+    height: 432px;
+    &>img {
+      max-height: 100%;
+    }
+    .special-price-ball {
+      position: absolute;
+      top: 77px;
+      left: 36px;
+      img {
+        width: 100%;
+      }
+    }
     @media(max-width: 800px) {
+      position: relative;
+      top: initial;
+      left: initial;
+      height: auto;
       &>img {
         width: 100%;
+      }
+      .special-price-ball {
+        top: 52px;
+        left: 14px;
+        width: 136px;
       }
     }
   }
