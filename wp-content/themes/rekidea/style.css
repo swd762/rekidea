@@ -1949,7 +1949,9 @@ footer {
   width: 430px;
   padding: 25px 44px 20px 44px;
   z-index: 99994;
-  border-radius: 5px; }
+  border-radius: 5px;
+  max-height: 100vh;
+  overflow: auto; }
   @media (max-width: 520px) {
     .order-click__modal {
       padding: 15px 5px;
@@ -2035,7 +2037,9 @@ footer {
   width: 430px;
   padding: 25px 44px 20px 44px;
   z-index: 99994;
-  border-radius: 5px; }
+  border-radius: 5px;
+  overflow: auto;
+  max-height: 100vh; }
   @media (max-width: 520px) {
     .call-me__modal {
       padding: 15px 5px;
