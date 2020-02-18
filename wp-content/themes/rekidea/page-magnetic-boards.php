@@ -80,6 +80,37 @@
 </div>
 <!--********************************************************************************************************************-->
 
+<!--Complex-magnetic block *******************************************************************************************  -->
+<div class="complex-magnetic__wrapper clearfix">
+    <div class="container">
+        <div class="complex-magnetic__content">
+            <h3 class="wow zoomIn">магниты стандартные
+                и&nbsp;сложной формы</h3>
+            <div class="circle-left"></div>
+            <div class="circle-right"></div>
+            <p class="wow zoomIn" data-wow-delay="1s">
+                Магнитно-маркерная доска выглядит очень красиво,
+                все наши магниты установлены в специальный корпус.
+                Вы можете выбрать любой цвет магнита, забрендировать магнит
+                вашим логотипом или любым другим изображением.
+                Магнит может быть круглым, квадратным и сложной формы.
+                Мы можем изготовить эксклюзивный дизайн в форме вашего логотипа.
+                Наша магнитно-маркерная доска это яркий элемент вашего офисного стиля и рабочего места!
+            </p>
+            <img src="<?= get_template_directory_uri()?>/img/magnetic-page/magnit1.png" alt="" class="mag1 wow zoomIn" data-wow-delay="2s" >
+            <img src="<?= get_template_directory_uri()?>/img/magnetic-page/magnit2.png" alt="" class="mag2 wow zoomIn" data-wow-delay="3s">
+            <img src="<?= get_template_directory_uri()?>/img/magnetic-page/magnit3.png" alt="" class="mag3 wow zoomIn" data-wow-delay="4s">
+
+        </div>
+    </div>
+
+
+
+</div>
+
+
+<!--*********************************************************************************************************************-->
+
 <div class="colors-block">
     <div class="container">
         <h3>ВЫ МОЖЕТЕ ВЫБРАТЬ ЛЮБОЙ цвет магнитно-маркерной доски из каталога</h3>
