@@ -2078,10 +2078,21 @@
   height: 391px;
   background: url("img/magnetic-page/big-size-bg.jpg") center no-repeat;
   background-size: cover;
+  @media (max-width: 1023px) {
+    background: none;
+    height: initial;
+    padding: 20px 0;
+  }
 }
 .big-size-boards__content {
   width: 650px;
   float: right;
+  @media (max-width: 1170px) {
+    width: 600px;
+  }
+  @media (max-width: 1023px) {
+    display: none;
+  }
   h3 {
     font-size: 30px;
     font-weight: bold;
@@ -2102,7 +2113,107 @@
     }
   }
 }
+.big-size-boards__content-mobile {
+  display: none;
+  width: 650px;
+  float: right;
+  @media (max-width: 1023px) {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+  }
+  @media (max-width: 700px) {
+    align-items: center;
 
+  }
+  .logo {
+    width: 100%;
+  }
+  h3 {
+    font-size: 30px;
+    font-weight: bold;
+    color: $red;
+    text-transform: uppercase;
+    margin: 25px 0;
+    padding-left: 100px;
+    @media (max-width: 700px) {
+      font-size: 24px;
+      padding: 0;
+      text-align: center;
+    }
+  }
+  section {
+    padding-left: 100px;
+    @media (max-width: 700px) {
+      padding: 0 20px 0 20px;
+      text-align: center;
+    }
+  }
+  p {
+    font-size: 18px;
+    font-weight: 300;
+  }
+
+  .boards-characters {
+    margin-top: 25px;
+    display: flex;
+    align-items: center;
+    align-self: flex-start;
+    margin-left: 100px;
+    @media (max-width: 700px) {
+      margin-left: 0;
+      padding: 0 20px 0 20px;
+      align-self: center;
+    }
+      img {
+      margin-right: 20px;
+    }
+  }
+}
+//********************************************************************
+.boards-clamp__wrapper {
+  height: 271px;
+  background: url("img/magnetic-page/boards-2-bg.jpg") center no-repeat;
+  background-size: cover;
+  background-color: #f7f7f7;
+  @media (max-width: 1100px) {
+    background: url("img/magnetic-page/boards-2-bg.jpg") 72% no-repeat;
+  }
+}
+.boards-clamp__content {
+  width: 350px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  padding-left: 100px;
+  position: relative;
+  p {
+    font-weight: 300;
+  }
+  img {
+    position: absolute;
+    top: -51px;
+    right: -755px;
+  }
+  @media (max-width: 1100px) {
+    width: 650px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    position: relative;
+    padding-right: 300px;
+    img {
+      right: -500px;
+    }
+  }
+}
 
 
 //*****************************************************
