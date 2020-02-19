@@ -446,12 +446,12 @@
  </div>
  <!--***************************************-->
  <!--Services block-->
- <div class="services-block-wrapper" style="background: none;">
+ <div class="services-block-wrapper " style="background: none;">
   <div class="container">
-   <div class="services-block">
+   <div class="services-block magnetic-boards-services">
     <h2>мы предлагаем комплекс услуг</h2>
-    <h3>Накопленный опыт позволяет нам производить рекламную продукцию любой сложности. Вы всегда можете
-     рассчитывать на комфортные и выгодные условия работы. Работая с нами вы получаете
+    <h3>Накопленный опыт позволяет нам производить рекламную продукцию любой сложности.<br> Вы всегда можете
+     рассчитывать на комфортные и выгодные условия работы.<br> Работая с нами вы получаете
      не поставщика, а партнера!</h3>
     <img src="<?= get_template_directory_uri()?>/img/services/logo-copy.png" alt="" class="logo-copy wow slideInUp" data-wow-delay="1s">
     <div class="icon-cards">
