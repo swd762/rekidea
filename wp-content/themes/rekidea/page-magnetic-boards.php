@@ -175,7 +175,7 @@
         <h4>Вы можете выбрать цвет своей магнитно-маркерной доски, в том числе с нанесением логотипа и любого изображения.</h4>
 
         <div class="colors-show-btn">
-            <a href="#" class="laser-btn-order">Посмотреть цвета каталога (Стрелка)</a>
+            <a href="#">Посмотреть цвета каталога</a>
         </div>
 
         <div class="colors-table-content">
@@ -650,8 +650,9 @@
  </script>
 <script>
 //colors block
-    document.querySelector('.colors-show-btn').addEventListener('click', function (e) {
+    document.querySelector('.colors-show-btn a').addEventListener('click', function (e) {
       e.preventDefault();
+      e.target.classList.toggle('active');
       document.querySelector('.colors-table-content').classList.toggle('active');
     })
 </script>
