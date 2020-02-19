@@ -1796,13 +1796,14 @@ main {
         text-align: center; } }
     @media (max-width: 520px) {
       .magnetic-top-banner__header h2 {
-        font-size: 20px; } }
+        font-size: 20px;
+        padding-bottom: 10px; } }
 
 .magnetic-top-banner__content {
   position: relative; }
   .magnetic-top-banner__content section {
-    width: 600px;
-    padding: 0 0 20px 0; }
+    width: 667px;
+    padding: 0 0 27px 0; }
     .magnetic-top-banner__content section h1 {
       font-size: 37px;
       color: #6f0d33;
@@ -1810,41 +1811,53 @@ main {
       padding: 0 20px; }
     .magnetic-top-banner__content section .magnetic-top-banner__content-text {
       padding: 0 20px;
-      margin-top: 35px;
-      margin-bottom: 35px;
+      margin-top: 21px;
+      margin-bottom: 30px;
       font-size: 18px;
-      font-weight: 300; }
+      font-weight: 300;
+      line-height: 1.3; }
+      .magnetic-top-banner__content section .magnetic-top-banner__content-text p {
+        font-size: 18px; }
   .magnetic-top-banner__content .magnetic-banner-logo {
-    height: 100%;
     position: absolute;
     top: 0;
-    right: -380px; }
+    left: 667px; }
   @media (max-width: 1170px) {
     .magnetic-top-banner__content .magnetic-banner-logo {
-      height: 100%;
       position: absolute;
       top: 0;
-      right: -510px; } }
+      left: 666px; } }
   @media (max-width: 1023px) {
     .magnetic-top-banner__content section {
-      width: 60%;
-      padding: 0 0 20px 0; }
+      width: 100% !important;
+      padding: 0 !important; }
       .magnetic-top-banner__content section h1 {
-        font-size: 32px;
+        font-size: 27px;
         color: #6f0d33;
         text-transform: uppercase;
-        padding: 0 15px; }
+        padding: 0 16px 0 28px !important; }
       .magnetic-top-banner__content section .magnetic-top-banner__content-text {
-        padding: 0 25px 0 15px;
-        margin-top: 25px;
-        margin-bottom: 25px;
-        font-size: 15px;
+        padding: 0 16px 0 28px !important;
+        margin-top: 19px;
+        margin-bottom: 10px;
+        font-size: 14px;
         font-weight: 300; }
+        .magnetic-top-banner__content section .magnetic-top-banner__content-text p {
+          font-size: 14px; }
+      .magnetic-top-banner__content section .flag-banner {
+        margin: 13px 0;
+        font-size: 13px; }
+        .magnetic-top-banner__content section .flag-banner span {
+          font-size: 13px;
+          line-height: 1.3; }
+        .magnetic-top-banner__content section .flag-banner:after {
+          top: -2px; }
     .magnetic-top-banner__content .magnetic-banner-logo {
-      height: 100%;
-      position: absolute;
-      top: 0;
-      right: -390px; } }
+      display: block;
+      position: initial;
+      max-width: 100%;
+      margin: 0 auto;
+      text-align: center; } }
   @media (max-width: 975px) {
     .magnetic-top-banner__content {
       display: flex;
@@ -1852,27 +1865,24 @@ main {
       .magnetic-top-banner__content section {
         width: initial; }
         .magnetic-top-banner__content section .flag-banner {
-          font-size: 15px; }
-      .magnetic-top-banner__content .magnetic-banner-logo {
-        position: initial;
-        width: 380px;
-        height: 290px;
-        margin: 0 auto; } }
+          font-size: 15px; } }
   @media (max-width: 520px) {
     .magnetic-top-banner__content section {
       padding: 0; }
       .magnetic-top-banner__content section h1 {
-        font-size: 27px;
-        text-align: center; }
+        font-size: 27px; }
       .magnetic-top-banner__content section .magnetic-top-banner__content-text {
         font-size: 14px;
         margin-bottom: 10px; }
       .magnetic-top-banner__content section .flag-banner {
         margin: 15px 0;
-        height: 60px;
-        padding-right: 30px;
+        height: 40px;
+        padding-right: 84px;
         display: flex;
-        align-items: center; }
+        align-items: center;
+        padding-left: 28px; }
+        .magnetic-top-banner__content section .flag-banner span {
+          display: block; }
         .magnetic-top-banner__content section .flag-banner::after {
           content: "";
           border-top: 30px solid transparent;
@@ -1880,14 +1890,14 @@ main {
           border-bottom: 30px solid transparent;
           position: absolute;
           right: -1px;
-          top: 0; }
+          top: -10px; }
     .magnetic-top-banner__content .magnetic-banner-logo {
       width: 100%; } }
 
 .flag-banner {
-  margin: 20px 0;
+  margin: 23px 0;
   padding: 10px 20px;
-  width: 95%;
+  width: 91%;
   color: #fff;
   position: relative; }
   .flag-banner:last-child {
@@ -2405,7 +2415,18 @@ footer {
       height: 50px; }
       .questions-contact__content-contacts .button:hover {
         background-color: #d0b9c2;
-        transition: all 0.3s linear; } }
+        transition: all 0.3s linear; }
+
+  .magnetic-top-banner__content section {
+    width: 658px; }
+    .magnetic-top-banner__content section h1 {
+      padding: 0 12px 0 47px; }
+  .magnetic-top-banner__content .magnetic-banner-logo {
+    left: 657px; }
+  .magnetic-top-banner__content .magnetic-top-banner__content-text {
+    padding: 0 12px 0 47px !important; }
+  .magnetic-top-banner__content .flag-banner {
+    width: 97%; } }
 @media (max-width: 1090px) {
   .stands-block-wrapper {
     padding: 50px 0 0 0; }

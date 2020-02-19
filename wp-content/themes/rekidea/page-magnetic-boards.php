@@ -34,13 +34,13 @@
                     <span class="wow zoomInUp" data-wow-delay="3s">Срок службы маркерной доски практически неограничен</span>
                 </div>
                 <div class="flag-banner blue wow slideInLeft" data-wow-delay="3.5s">
-                     <span class="wow zoomInUp" data-wow-delay="4s">Брендированные доски и магниты с вашим логотипом</span>
+                     <span class="wow zoomInUp" data-wow-delay="4s">Брендированные доски и магниты с&nbsp;вашим логотипом</span>
                 </div>
                 <div class="flag-banner red wow slideInLeft" data-wow-delay="4.5s">
                     <span class="wow zoomInUp" data-wow-delay="5s">На доске не остаются разводы и пятна</span>
                 </div>
                 <div class="flag-banner blue wow slideInLeft" data-wow-delay="5.5s">
-                    <span class="wow zoomInUp" data-wow-delay="6s">Доставка и монтаж. Срок изготовления до 5 рабочих дней</span>
+                    <span class="wow zoomInUp" data-wow-delay="6s"><span>Доставка и монтаж.</span> <span>Срок изготовления до 5 рабочих дней</span> </span>
                 </div>
             </section>
             <img src="<?= get_template_directory_uri()?>/img/magnetic-page/top-banner-logo.jpg" alt="" class="magnetic-banner-logo wow zoomIn" data-wow-delay="1.7s">

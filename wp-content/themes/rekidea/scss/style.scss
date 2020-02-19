@@ -1752,6 +1752,7 @@
     }
     @media (max-width: 520px) {
       font-size: 20px;
+      padding-bottom: 10px;
     }
   }
 }
@@ -1760,8 +1761,8 @@
 
   section {
     //width: 60%;
-    width: 600px;
-    padding: 0 0 20px 0;
+    width: 667px;
+    padding: 0 0 27px 0;
     h1 {
       font-size: 37px;
       color: $red;
@@ -1770,53 +1771,68 @@
     }
     .magnetic-top-banner__content-text {
       padding: 0 20px;
-      margin-top: 35px;
-      margin-bottom: 35px;
+      margin-top: 21px;
+      margin-bottom: 30px;
       font-size: 18px;
       font-weight: 300;
+      line-height: 1.3;
+      p {
+        font-size: 18px;
+      }
     }
   }
   .magnetic-banner-logo {
-    height: 100%;
     position: absolute;
     top: 0;
-    right: -380px;
+    left: 667px;
   }
 
   @media (max-width: 1170px) {
     .magnetic-banner-logo {
-      height: 100%;
       position: absolute;
       top: 0;
-      right: -510px;
+      left: 666px;
     }
   }
   @media (max-width: 1023px) {
     section {
-      width: 60%;
-      padding: 0 0 20px 0;
+      width: 100% !important;
+      padding: 0 !important;
       h1 {
-        font-size: 32px;
+        font-size: 27px;
         color: $red;
         text-transform: uppercase;
-        padding: 0 15px;
+        padding: 0 16px 0 28px !important;
       }
       .magnetic-top-banner__content-text {
-        padding: 0 25px 0 15px;
-        margin-top: 25px;
-        margin-bottom: 25px;
-        font-size: 15px;
+        padding: 0 16px 0 28px !important;
+        margin-top: 19px;
+        margin-bottom: 10px;
+        font-size: 14px;
         font-weight: 300;
+        p {
+          font-size: 14px;
+        }
       }
       .flag-banner {
-
+        margin: 13px 0;
+        font-size: 13px;
+        span {
+          font-size: 13px;
+          line-height: 1.3;
+        }
+        &:after {
+          top: -2px;
+        }
       }
     }
     .magnetic-banner-logo {
-      height: 100%;
-      position: absolute;
-      top: 0;
-      right: -390px;
+      display: block;
+      position: initial;
+      max-width: 100%;
+      margin: 0 auto;
+      text-align: center;
+      //margin-bottom: 20px;
     }
   }
   @media (max-width: 975px) {
@@ -1828,20 +1844,12 @@
         font-size: 15px;
       }
     }
-    .magnetic-banner-logo {
-      position: initial;
-      width: 380px;
-      height: 290px;
-      margin: 0 auto;
-      //margin-bottom: 20px;
-    }
   }
   @media (max-width: 520px) {
     section {
       padding: 0;
       h1 {
         font-size: 27px;
-        text-align: center;
       }
       .magnetic-top-banner__content-text {
         font-size: 14px;
@@ -1849,10 +1857,14 @@
       }
       .flag-banner {
         margin: 15px 0;
-        height: 60px;
-        padding-right: 30px;
+        height: 40px;
+        padding-right: 84px;
         display: flex;
         align-items: center;
+        padding-left: 28px;
+        span {
+          display: block;
+        }
         &::after {
           content: "";
           border-top: 30px solid transparent;
@@ -1860,7 +1872,7 @@
           border-bottom: 30px solid transparent;
           position: absolute;
           right: -1px;
-          top: 0;
+          top: -10px;
         }
       }
     }
@@ -1870,9 +1882,9 @@
   }
 }
 .flag-banner {
-  margin: 20px 0;
+  margin: 23px 0;
   padding: 10px 20px;
-  width: 95%;
+  width: 91%;
   color: #fff;
   position: relative;
   &:last-child {
