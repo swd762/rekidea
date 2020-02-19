@@ -1044,18 +1044,42 @@ main {
         align-items: center; }
         .services-block .icon-cards .card .icon img {
           width: 60%; }
+  @media (max-width: 1169px) {
+    .services-block.magnetic-boards-services {
+      width: 100%; } }
   .services-block.magnetic-boards-services h2 {
     width: 95%;
     text-align: center;
     font-size: 37px;
     font-weight: 500; }
+    @media (max-width: 1169px) {
+      .services-block.magnetic-boards-services h2 {
+        width: 100% !important;
+        padding-left: 0 !important; } }
+    @media (max-width: 520px) {
+      .services-block.magnetic-boards-services h2 {
+        margin-top: -20px !important;
+        padding: 0 20px; } }
   .services-block.magnetic-boards-services h3 {
     color: #4d4c4c;
     text-align: center;
     width: 93%; }
+    @media (max-width: 1169px) {
+      .services-block.magnetic-boards-services h3 {
+        width: 100%;
+        padding-left: 0 !important; } }
+    @media (max-width: 520px) {
+      .services-block.magnetic-boards-services h3 {
+        margin-top: 10px !important; } }
   .services-block.magnetic-boards-services .logo-copy {
     width: 600px;
     right: -421px; }
+    @media (max-width: 1169px) {
+      .services-block.magnetic-boards-services .logo-copy {
+        display: none; } }
+  @media (max-width: 1169px) {
+    .services-block.magnetic-boards-services .icon-cards {
+      justify-content: center; } }
 
 .why-us-block-wrapper {
   padding: 50px 0 50px 0; }
