@@ -2080,7 +2080,7 @@ main {
   height: 391px;
   background: url("img/magnetic-page/big-size-bg.jpg") center no-repeat;
   background-size: cover; }
-  @media (max-width: 1023px) {
+  @media (max-width: 1170px) {
     .big-size-boards__wrapper {
       background: none;
       height: initial;
@@ -2089,11 +2089,9 @@ main {
 
 .big-size-boards__content {
   width: 650px;
-  float: right; }
+  float: right;
+  margin-right: 15px; }
   @media (max-width: 1170px) {
-    .big-size-boards__content {
-      width: 600px; } }
-  @media (max-width: 1023px) {
     .big-size-boards__content {
       display: none; } }
   .big-size-boards__content h3 {
@@ -2110,13 +2108,14 @@ main {
     display: flex;
     align-items: center; }
     .big-size-boards__content .boards-characters img {
-      margin-right: 20px; }
+      margin-right: 10px;
+      flex-shrink: 0; }
 
 .big-size-boards__content-mobile {
   display: none;
   width: 650px;
   float: right; }
-  @media (max-width: 1023px) {
+  @media (max-width: 1170px) {
     .big-size-boards__content-mobile {
       display: flex;
       flex-direction: column;
@@ -2146,7 +2145,7 @@ main {
         padding: 0 20px 0 20px;
         text-align: center; } }
   .big-size-boards__content-mobile p {
-    font-size: 18px;
+    font-size: 14px;
     font-weight: 300; }
   .big-size-boards__content-mobile .boards-characters {
     margin-top: 25px;
@@ -2160,7 +2159,8 @@ main {
         padding: 0 20px 0 20px;
         align-self: center; } }
     .big-size-boards__content-mobile .boards-characters img {
-      margin-right: 20px; }
+      margin-right: 10px;
+      flex-shrink: 0; }
 
 .boards-clamp__wrapper {
   height: 271px;
@@ -2213,6 +2213,9 @@ main {
   display: none;
   flex-direction: column;
   align-items: center; }
+  .boards-clamp__content-mobile p {
+    font-weight: 300;
+    font-size: 14px; }
   .boards-clamp__content-mobile img {
     margin-top: 20px; }
   @media (max-width: 1023px) {

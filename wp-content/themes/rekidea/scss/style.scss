@@ -2078,7 +2078,7 @@
   height: 391px;
   background: url("img/magnetic-page/big-size-bg.jpg") center no-repeat;
   background-size: cover;
-  @media (max-width: 1023px) {
+  @media (max-width: 1170px) {
     background: none;
     height: initial;
     padding: 0 0 20px 0;
@@ -2088,10 +2088,9 @@
 .big-size-boards__content {
   width: 650px;
   float: right;
+  margin-right: 15px;
+
   @media (max-width: 1170px) {
-    width: 600px;
-  }
-  @media (max-width: 1023px) {
     display: none;
   }
   h3 {
@@ -2110,7 +2109,8 @@
     display: flex;
     align-items: center;
     img {
-      margin-right: 20px;
+      margin-right: 10px;
+      flex-shrink: 0;
     }
   }
 }
@@ -2118,7 +2118,7 @@
   display: none;
   width: 650px;
   float: right;
-  @media (max-width: 1023px) {
+  @media (max-width: 1170px) {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -2152,7 +2152,7 @@
     }
   }
   p {
-    font-size: 18px;
+    font-size: 14px;
     font-weight: 300;
   }
 
@@ -2168,7 +2168,8 @@
       align-self: center;
     }
       img {
-      margin-right: 20px;
+        margin-right: 10px;
+        flex-shrink: 0;
     }
   }
 }
@@ -2227,6 +2228,10 @@
   display: none;
   flex-direction: column;
   align-items: center;
+  p {
+    font-weight: 300;
+    font-size: 14px;
+  }
   img {
     margin-top: 20px;
   }
