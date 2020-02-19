@@ -461,6 +461,21 @@ main {
     background: #4c4c4d; }
   .colors-block .color-070 {
     background: #070809; }
+  .colors-block .color-090 {
+    background: url("img/magnit-colors/090.jpg"); }
+    @media (max-width: 1023px) {
+      .colors-block .color-090 {
+        background: url("img/magnit-colors/090-side.jpg"); } }
+  .colors-block .color-091 {
+    background: url("img/magnit-colors/091.jpg"); }
+    @media (max-width: 1023px) {
+      .colors-block .color-091 {
+        background: url("img/magnit-colors/091-side.jpg"); } }
+  .colors-block .color-092 {
+    background: url("img/magnit-colors/092.jpg"); }
+    @media (max-width: 1023px) {
+      .colors-block .color-092 {
+        background: url("img/magnit-colors/092-side.jpg"); } }
 
 .main-header {
   position: fixed;
