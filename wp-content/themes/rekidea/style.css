@@ -134,7 +134,7 @@ main {
             .special-price-block .special-price-table td:nth-child(3):after {
               width: 54px;
               top: 13px;
-              right: 11px; } }
+              right: 7px; } }
       .special-price-block .special-price-table td:nth-child(4) {
         padding-left: 28px;
         font-weight: 500; }
