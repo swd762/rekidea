@@ -311,9 +311,9 @@
 
 <div class="special-price-block">
     <div class="container special-price-container">
-        <h3><span>мы предлагаем специальные цены</span> <span>на&nbsp;стеклянные магнитно-маркерные доски</span></h3>
+        <h3 class="wow zoomIn"><span>мы предлагаем специальные цены</span> <span>на&nbsp;стеклянные магнитно-маркерные доски</span></h3>
         <div class="special-price-content">
-            <table class="special-price-table">
+            <table class="special-price-table wow zoomIn" data-wow-delay="1s">
                 <tr>
                     <td>ШИРИНА, мм</td>
                     <td>ВЫСОТА, мм</td>
@@ -383,9 +383,9 @@
             <div class="special-price-order-btn">
                 <a href="#" class="laser-btn-order">Заказать</a>
             </div>
-            <div class="special-price-desc">
+            <div class="special-price-desc wow zoomIn" data-wow-delay="1.6s">
                 <img src="<?= get_template_directory_uri()?>/img/special-price/desc.png">
-                <div class="special-price-ball">
+                <div class="special-price-ball wow zoomIn" data-wow-delay="2.5s">
                     <img src="<?= get_template_directory_uri()?>/img/special-price/red-ball.png">
                 </div>
             </div>
