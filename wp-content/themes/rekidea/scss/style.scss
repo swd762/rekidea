@@ -1974,6 +1974,10 @@
 .complex-magnetic__content {
   position: relative;
   width: 70%;
+  padding-bottom: 30px;
+  @media (max-width: 1023px) {
+    display: none;
+  }
   h3 {
     font-size: 30px;
     color: $red;
@@ -2014,12 +2018,68 @@
     top: -100px;
     right: -335px;
   }
+}
+.complex-magnetic__content-mobile {
+  display: none;
+  margin: 0 auto;
+  flex-direction: column;
+  align-items: center;
+  //width: 75%;
+  padding: 10px 20px;
+  @media (max-width: 1023px) {
+    display: flex;
+  }
+  h3 {
+    font-size: 24px;
+    color: $red;
+    text-transform: uppercase;
+    font-weight: bold;
+    margin: 15px 0 25px 0;
+    //padding: 0 120px;
+    text-align: center;
+  }
+  section {
+    p {
+      text-align: center;
+      font-size: 14px;
+    }
+  }
+}
+//********************************************************
 
+// ********* big size boards *************************
+.big-size-boards__wrapper {
+  height: 391px;
+  background: url("img/magnetic-page/big-size-bg.jpg") center no-repeat;
+  background-size: cover;
+}
+.big-size-boards__content {
+  width: 650px;
+  float: right;
+  h3 {
+    font-size: 30px;
+    font-weight: bold;
+    color: $red;
+    text-transform: uppercase;
+    margin: 40px 0;
+  }
+  p {
+    font-size: 18px;
+    font-weight: 300;
+  }
+  .boards-characters {
+    margin-top: 40px;
+    display: flex;
+    align-items: center;
+    img {
+      margin-right: 20px;
+    }
+  }
 }
 
 
-//********************************************************
 
+//*****************************************************
 
 
 

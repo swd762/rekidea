@@ -1957,7 +1957,11 @@ main {
 
 .complex-magnetic__content {
   position: relative;
-  width: 70%; }
+  width: 70%;
+  padding-bottom: 30px; }
+  @media (max-width: 1023px) {
+    .complex-magnetic__content {
+      display: none; } }
   .complex-magnetic__content h3 {
     font-size: 30px;
     color: #6f0d33;
@@ -1991,6 +1995,50 @@ main {
     position: absolute;
     top: -100px;
     right: -335px; }
+
+.complex-magnetic__content-mobile {
+  display: none;
+  margin: 0 auto;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px 20px; }
+  @media (max-width: 1023px) {
+    .complex-magnetic__content-mobile {
+      display: flex; } }
+  .complex-magnetic__content-mobile h3 {
+    font-size: 24px;
+    color: #6f0d33;
+    text-transform: uppercase;
+    font-weight: bold;
+    margin: 15px 0 25px 0;
+    text-align: center; }
+  .complex-magnetic__content-mobile section p {
+    text-align: center;
+    font-size: 14px; }
+
+.big-size-boards__wrapper {
+  height: 391px;
+  background: url("img/magnetic-page/big-size-bg.jpg") center no-repeat;
+  background-size: cover; }
+
+.big-size-boards__content {
+  width: 650px;
+  float: right; }
+  .big-size-boards__content h3 {
+    font-size: 30px;
+    font-weight: bold;
+    color: #6f0d33;
+    text-transform: uppercase;
+    margin: 40px 0; }
+  .big-size-boards__content p {
+    font-size: 18px;
+    font-weight: 300; }
+  .big-size-boards__content .boards-characters {
+    margin-top: 40px;
+    display: flex;
+    align-items: center; }
+    .big-size-boards__content .boards-characters img {
+      margin-right: 20px; }
 
 footer {
   background-color: #474747; }
