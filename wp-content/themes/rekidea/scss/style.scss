@@ -1947,6 +1947,12 @@
     font-size: 18px;
     margin-top: 35px;
     margin-bottom: 65px;
+    font-weight: 300;
+    text-align: left;
+    padding-left: 52px;
+    @media(max-width: 1169px) {
+      padding-left: 16px;
+    }
   }
 }
 .craft-boards__content-mobile {
@@ -1964,6 +1970,9 @@
     text-transform: uppercase;
     text-align: center;
     width: 70%;
+    @media (max-width: 900px) {
+      width: 86%;
+    }
   }
   p {
     font-size: 13px;
@@ -2001,6 +2010,7 @@
   }
   p {
     text-align: center;
+    font-weight: 300;
   }
   .circle-left {
     width: 180px;
@@ -2049,6 +2059,9 @@
     margin: 15px 0 25px 0;
     //padding: 0 120px;
     text-align: center;
+    @media (max-width: 1023px) {
+      margin-bottom: 10px;
+    }
   }
   section {
     p {
