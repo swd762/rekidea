@@ -179,7 +179,8 @@ main {
     margin-bottom: 28px; }
     @media (max-width: 800px) {
       .special-price-block .special-price-containment {
-        margin-bottom: 16px; } }
+        margin-bottom: 16px;
+        padding-top: 9px; } }
     .special-price-block .special-price-containment header {
       position: absolute;
       top: -11px;
