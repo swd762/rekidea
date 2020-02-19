@@ -2081,7 +2081,8 @@
   @media (max-width: 1023px) {
     background: none;
     height: initial;
-    padding: 20px 0;
+    padding: 0 0 20px 0;
+    background-color: #ebebeb;
   }
 }
 .big-size-boards__content {
@@ -2180,6 +2181,10 @@
   @media (max-width: 1100px) {
     background: url("img/magnetic-page/boards-2-bg.jpg") 72% no-repeat;
   }
+  @media (max-width: 1023px) {
+    background: none;
+    height: initial;
+  }
 }
 .boards-clamp__content {
   width: 350px;
@@ -2191,6 +2196,9 @@
   height: 100%;
   padding-left: 100px;
   position: relative;
+  @media (max-width: 1023px) {
+    display: none!important;
+  }
   p {
     font-weight: 300;
   }
@@ -2212,6 +2220,18 @@
     img {
       right: -500px;
     }
+  }
+}
+.boards-clamp__content-mobile {
+  padding: 25px 35px;
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  img {
+    margin-top: 20px;
+  }
+  @media (max-width: 1023px) {
+    display: flex;
   }
 }
 

@@ -180,6 +180,9 @@
     </div>
 </div>
 <!--*********************************************************************************************************************-->
+
+
+
 <div class="boards-clamp__wrapper">
     <div class="container">
         <div class="boards-clamp__content">
@@ -187,6 +190,13 @@
             <p>дистанционные держатели</p>
             <p>ХРОМ/ЗОЛОТО</p>
             <img src="<?= get_template_directory_uri()?>/img/magnetic-page/boards-clamp-2.jpg" alt="">
+        </div>
+        <div class="boards-clamp__content-mobile">
+            <p>В наших досках используются</p>
+            <p>дистанционные держатели</p>
+            <p>ХРОМ/ЗОЛОТО</p>
+            <img src="<?= get_template_directory_uri()?>/img/magnetic-page/boards-clamp-1.png" alt="">
+
         </div>
     </div>
 </div>
