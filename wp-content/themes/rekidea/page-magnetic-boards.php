@@ -271,7 +271,7 @@
 
 <div class="special-price-block">
     <div class="container special-price-container">
-        <h3><span>мы предлагаем специальные цены</span><span>на стеклянные магнитно-маркерные доски</span></h3>
+        <h3><span>мы предлагаем специальные цены</span> <span>на&nbsp;стеклянные магнитно-маркерные доски</span></h3>
         <div class="special-price-content">
             <table class="special-price-table">
                 <tr>
