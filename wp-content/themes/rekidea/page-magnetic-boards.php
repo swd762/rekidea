@@ -151,7 +151,7 @@
 
 <!--*********************************Big size boards********************************************************************--->
 <div class="big-size-boards__wrapper clearfix">
-    <div class="container">
+    <div class="container clearfix">
         <div class="big-size-boards__content wow zoomIn ">
             <h3>доски нестандартных размеров</h3>
             <p>Стеклянные маркерные доски нестандартных размеров.</p>
