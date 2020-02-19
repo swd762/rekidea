@@ -116,9 +116,9 @@
                     Наша магнитно-маркерная доска это яркий элемент вашего офисного стиля и рабочего места!
                 </p>
             </section>
-            <img src="<?= get_template_directory_uri()?>/img/magnetic-page/magnit1.png" alt="" class="mag1 wow zoomIn" data-wow-delay="2s" >
-            <img src="<?= get_template_directory_uri()?>/img/magnetic-page/magnit2.png" alt="" class="mag2 wow zoomIn" data-wow-delay="3s">
-            <img src="<?= get_template_directory_uri()?>/img/magnetic-page/magnit3.png" alt="" class="mag3 wow zoomIn" data-wow-delay="4s">
+            <img src="<?= get_template_directory_uri()?>/img/magnetic-page/magnit1.png" alt="" class="mag1 wow zoomIn" data-wow-delay="3s" >
+            <img src="<?= get_template_directory_uri()?>/img/magnetic-page/magnit2.png" alt="" class="mag2 wow zoomIn" data-wow-delay="4s">
+            <img src="<?= get_template_directory_uri()?>/img/magnetic-page/magnit3.png" alt="" class="mag3 wow zoomIn" data-wow-delay="2s">
         </div>
         <div class="complex-magnetic__content-mobile">
             <h3 class="wow zoomIn">магниты стандартные
@@ -152,7 +152,7 @@
 <!--*********************************Big size boards********************************************************************--->
 <div class="big-size-boards__wrapper clearfix">
     <div class="container">
-        <div class="big-size-boards__content">
+        <div class="big-size-boards__content wow zoomIn ">
             <h3>доски нестандартных размеров</h3>
             <p>Стеклянные маркерные доски нестандартных размеров.</p>
             <p>Для нестандартных помещений, когда, например, требуется вписать доску
@@ -165,8 +165,8 @@
         </div>
         <div class="big-size-boards__content-mobile">
             <img src="<?= get_template_directory_uri()?>/img/magnetic-page/big-size-boards-1.jpg" alt="" class="logo">
-            <h3>доски нестандартных размеров</h3>
-            <section>
+            <h3 class=" wow zoomIn">доски нестандартных размеров</h3>
+            <section class=" wow zoomIn">
             <p>Стеклянные маркерные доски нестандартных размеров.</p>
             <p>Для нестандартных помещений, когда, например, требуется вписать доску
                 в&nbsp;нишу стены или закрыть всю стену одной доской.</p>
@@ -185,16 +185,16 @@
 
 <div class="boards-clamp__wrapper">
     <div class="container">
-        <div class="boards-clamp__content">
-            <p>В наших досках используются</p>
-            <p>дистанционные держатели</p>
-            <p>ХРОМ/ЗОЛОТО</p>
+        <div class="boards-clamp__content  ">
+            <p class="wow zoomIn">В наших досках используются</p>
+            <p class="wow zoomIn">дистанционные держатели</p>
+            <p class="wow zoomIn">ХРОМ/ЗОЛОТО</p>
             <img src="<?= get_template_directory_uri()?>/img/magnetic-page/boards-clamp-2.jpg" alt="">
         </div>
         <div class="boards-clamp__content-mobile">
-            <p>В наших досках используются</p>
-            <p>дистанционные держатели</p>
-            <p>ХРОМ/ЗОЛОТО</p>
+            <p class="wow zoomIn">В наших досках используются</p>
+            <p class="wow zoomIn">дистанционные держатели</p>
+            <p class="wow zoomIn">ХРОМ/ЗОЛОТО</p>
             <img src="<?= get_template_directory_uri()?>/img/magnetic-page/boards-clamp-1.png" alt="">
 
         </div>
@@ -211,14 +211,14 @@
 
 <div class="colors-block">
     <div class="container">
-        <h3>ВЫ МОЖЕТЕ ВЫБРАТЬ ЛЮБОЙ цвет магнитно-маркерной доски из каталога</h3>
-        <h4>Вы можете выбрать цвет своей магнитно-маркерной доски, в том числе с нанесением логотипа и любого изображения.</h4>
+        <h3  class="wow zoomIn">ВЫ МОЖЕТЕ ВЫБРАТЬ ЛЮБОЙ цвет магнитно-маркерной доски из каталога</h3>
+        <h4  class="wow zoomIn">Вы можете выбрать цвет своей магнитно-маркерной доски, в том числе с нанесением логотипа и любого изображения.</h4>
 
         <div class="colors-show-btn">
             <a href="#">Посмотреть цвета каталога</a>
         </div>
 
-        <div class="colors-table-content">
+        <div class="colors-table-content wow zoomIn" data-wow-delay="1s">
             <div>
                 <div class="color-010"><span>#010</span></div>
                 <div class="color-034 white"><span>#034</span></div>
@@ -303,7 +303,7 @@
             </div>
         </div>
         <div class="colors-order-btn">
-            <a href="#" class="laser-btn-order">Заказать</a>
+            <a href="#" class="laser-btn-order wow zoomIn" data-wow-delay="1.7s">Заказать</a>
         </div>
     </div>
 </div>
