@@ -54,14 +54,14 @@
     <div class="craft-boards__overlay wow fadeInLeft">
         <div class="container">
             <div class="craft-boards__content">
-                    <h3>изготовим брендированные доски и&nbsp;магниты с&nbsp;вашим логотипом
+                    <h3 class="wow zoomIn" data-wow-delay=".7s">изготовим брендированные доски и&nbsp;магниты с&nbsp;вашим логотипом
                     </h3>
-                    <p>
+                    <p class="wow zoomIn" data-wow-delay="1.4s">
                         Уникальная технология позволяет персонализировать маркерную
                         доску и&nbsp;магниты, нанеся под стекло изображение, логотип, фоновый рисунок, разлиновку
                         или отдельные элементы корпоративного стиля.
                     </p>
-                    <a href="#" class="laser-btn-order">Заказать</a>
+                    <a href="#" class="laser-btn-order wow zoomIn" data-wow-delay="2.2s">Заказать</a>
             </div>
         </div>
     </div>
