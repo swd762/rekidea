@@ -343,7 +343,7 @@
             <div class="boards-characters">
                 <img src="<?= get_template_directory_uri()?>/img/magnetic-page/symbol-char.png" alt="">
                 <p>Максимальная площадь одного изделия - 3 кв. м. <br>
-                Длина/Ширина одной доски не более 2,8 м)</p>
+                Длина/Ширина одной доски не более 2,8 м</p>
             </div>
         </div>
         <div class="big-size-boards__content-mobile">
@@ -357,7 +357,7 @@
             <div class="boards-characters">
                 <img src="<?= get_template_directory_uri()?>/img/magnetic-page/symbol-char.png" alt="">
                 <p>Максимальная площадь одного изделия - 3 кв. м. <br>
-                    Длина/Ширина одной доски не более 2,8 м)</p>
+                    Длина/Ширина одной доски не более 2,8 м</p>
             </div>
         </div>
     </div>
@@ -642,17 +642,19 @@
   </div>
   <div class="laser-portfolio-block__content">
    <div class="content-big">
-    <a href="<?= get_template_directory_uri()?>/img/portfolio-magnetic/2.jpg" class="single_image hidden-tablet">
-     <img src="<?= get_template_directory_uri()?>/img/portfolio-magnetic/2-1.png" alt="">
-    </a>
-    <a href="<?= get_template_directory_uri()?>/img/portfolio-magnetic/5.jpg" class="single_image hidden-mobile">
-      <img src="<?= get_template_directory_uri()?>/img/portfolio-magnetic/5-1.png" alt="">
-    </a>
+
+
     <a href="<?= get_template_directory_uri()?>/img/portfolio-magnetic/3.jpg" class="single_image">
       <img src="<?= get_template_directory_uri()?>/img/portfolio-magnetic/3-1.png" alt="">
     </a>
     <a href="<?= get_template_directory_uri()?>/img/portfolio-magnetic/4.jpg" class="single_image">
       <img src="<?= get_template_directory_uri()?>/img/portfolio-magnetic/4-1.png" alt="">
+    </a>
+    <a href="<?= get_template_directory_uri()?>/img/portfolio-magnetic/5.jpg" class="single_image hidden-mobile">
+           <img src="<?= get_template_directory_uri()?>/img/portfolio-magnetic/5-1.png" alt="">
+    </a>
+    <a href="<?= get_template_directory_uri()?>/img/portfolio-magnetic/2.jpg" class="single_image hidden-tablet">
+           <img src="<?= get_template_directory_uri()?>/img/portfolio-magnetic/2-1.png" alt="">
     </a>
     <a href="<?= get_template_directory_uri()?>/img/portfolio-magnetic/1.jpg" class="single_image hidden-tablet">
       <img src="<?= get_template_directory_uri()?>/img/portfolio-magnetic/1-1.png" alt="">
