@@ -183,16 +183,16 @@ get_header();
             <source src="<?= get_template_directory_uri()?>/img/laser-page/video_lazer.mp4" type="video/mp4"/>
         </video>
     </div>
-    <div class="video-bg-container-overlay wow slideInLeft">
+    <div class="video-bg-container-overlay fuf slideInLeft">
 
     </div>
     <div class="container">
         <div class="quality-video-block">
-            <h3 class="wow zoomIn" data-wow-delay="1s">безупречное качество резки</h3>
+            <h3 class="fuf zoomIn" data-wow-delay="1s">безупречное качество резки</h3>
             <ul>
-                <li class="wow zoomIn" data-wow-delay="2s">Производится на профессиональном оборудовании</li>
-                <li class="wow zoomIn" data-wow-delay="3s">Используются только качественные материалы</li>
-                <li class="wow zoomIn" data-wow-delay="4s">Прозрачный и ровный срез на акриле</li>
+                <li class="fuf zoomIn" data-wow-delay="2s">Производится на профессиональном оборудовании</li>
+                <li class="fuf zoomIn" data-wow-delay="3s">Используются только качественные материалы</li>
+                <li class="fuf zoomIn" data-wow-delay="4s">Прозрачный и ровный срез на акриле</li>
             </ul>
         </div>
     </div>
@@ -457,7 +457,18 @@ get_header();
                 live:         true        // default
             }
         );
+
+        // fuf = new WOW(
+        //     {
+        //         boxClass:     'fuf',      // default
+        //         animateClass: 'animated', // default
+        //         offset:       0,          // default
+        //         mobile:       true,       // default
+        //         live:         true        // default
+        //     }
+        // );
         wow.init();
+        // fuf.init();
     </script>
 </main>
 <?php
