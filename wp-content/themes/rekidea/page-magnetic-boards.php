@@ -51,31 +51,31 @@
 
 <!--************************************-craft boards block *************************************************************-->
 <div class="craft-boards__wrapper">
-    <div class="craft-boards__overlay wow fadeInLeft">
+    <div class="craft-boards__overlay wow fadeInLeft" data-wow-offset="200">
         <div class="container">
             <div class="craft-boards__content">
-                    <h3 class="wow zoomIn" data-wow-delay=".7s">изготовим брендированные доски и&nbsp;магниты с&nbsp;вашим логотипом
+                    <h3 class="wow zoomIn" data-wow-delay=".5s" data-wow-offset="100" >изготовим брендированные доски и&nbsp;магниты с&nbsp;вашим логотипом
                     </h3>
-                    <p class="wow zoomIn" data-wow-delay="1.4s">
+                    <p class="wow zoomIn" data-wow-delay="1s" >
                         Уникальная технология позволяет персонализировать маркерную
                         доску и&nbsp;магниты, нанеся под стекло изображение, логотип, фоновый рисунок, разлиновку
                         или отдельные элементы корпоративного стиля.
                     </p>
-                    <a href="#" class="laser-btn-order wow zoomIn" data-wow-delay="2.2s">Заказать</a>
+                    <a href="#" class="laser-btn-order wow rollIn" data-wow-delay="1.5s" >Заказать</a>
             </div>
         </div>
     </div>
     <div class="craft-boards__content-mobile">
-        <h3 class="wow zoomIn" data-wow-delay=".7s">изготовим брендированные доски и&nbsp;магниты с&nbsp;вашим логотипом
+        <h3 class="">изготовим брендированные доски и&nbsp;магниты с&nbsp;вашим логотипом
         </h3>
-        <p class="wow zoomIn" data-wow-delay="1.4s">
+        <p class="">
             Уникальная технология позволяет персонализировать маркерную
             доску и&nbsp;магниты, нанеся под стекло изображение, логотип, фоновый рисунок, разлиновку
             или отдельные элементы корпоративного стиля.
         </p>
-        <a href="#" class="laser-btn-order wow zoomIn" data-wow-delay="2.2s">Заказать</a>
+        <a href="#" class="laser-btn-order wow zoomIn">Заказать</a>
 
-        <img src="<?= get_template_directory_uri()?>/img/magnetic-page/tabl.jpg" alt="" class="wow fadeInLeft">
+        <img src="<?= get_template_directory_uri()?>/img/magnetic-page/tabl.jpg" alt="" class="">
     </div>
 </div>
 <!--********************************************************************************************************************-->
@@ -88,15 +88,6 @@
                 и&nbsp;сложной формы</h3>
             <div class="circle-left"></div>
             <div class="circle-right"></div>
-<!--            <p class="wow zoomIn" data-wow-delay="1s">-->
-<!--                Магнитно-маркерная доска выглядит очень красиво,-->
-<!--                все наши магниты установлены в специальный корпус.-->
-<!--                Вы можете выбрать любой цвет магнита, забрендировать магнит-->
-<!--                вашим логотипом или любым другим изображением.-->
-<!--                Магнит может быть круглым, квадратным и сложной формы.-->
-<!--                Мы можем изготовить эксклюзивный дизайн в форме вашего логотипа.-->
-<!--                Наша магнитно-маркерная доска это яркий элемент вашего офисного стиля и рабочего места!-->
-<!--            </p>-->
             <section  class="wow zoomIn" data-wow-delay="1s">
                 <p>
                     Магнитно-маркерная доска выглядит очень красиво,
@@ -335,7 +326,7 @@
 <!--*********************************Big size boards********************************************************************--->
 <div class="big-size-boards__wrapper clearfix">
     <div class="container clearfix">
-        <div class="big-size-boards__content wow zoomIn ">
+        <div class="big-size-boards__content">
             <h3>доски нестандартных размеров</h3>
             <p>Стеклянные маркерные доски нестандартных размеров.</p>
             <p>Для нестандартных помещений, когда, например, требуется вписать доску
@@ -368,18 +359,17 @@
 
 <div class="boards-clamp__wrapper">
     <div class="container">
-        <div class="boards-clamp__content  ">
-            <p class="wow zoomIn">В наших досках используются</p>
-            <p class="wow zoomIn">дистанционные держатели</p>
-            <p class="wow zoomIn">ХРОМ/ЗОЛОТО</p>
+        <div class="boards-clamp__content">
+            <p>В наших досках используются</p>
+            <p>дистанционные держатели</p>
+            <p>ХРОМ/ЗОЛОТО</p>
             <img src="<?= get_template_directory_uri()?>/img/magnetic-page/boards-clamp-2.jpg" alt="">
         </div>
         <div class="boards-clamp__content-mobile">
-            <p class="wow zoomIn">В наших досках используются</p>
-            <p class="wow zoomIn">дистанционные держатели</p>
-            <p class="wow zoomIn">ХРОМ/ЗОЛОТО</p>
+            <p>В наших досках используются</p>
+            <p>дистанционные держатели</p>
+            <p>ХРОМ/ЗОЛОТО</p>
             <img src="<?= get_template_directory_uri()?>/img/magnetic-page/boards-clamp-1.png" alt="">
-
         </div>
     </div>
 </div>
