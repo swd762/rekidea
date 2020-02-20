@@ -18,7 +18,7 @@
         </div>
         <div class="magnetic-top-banner__content">
             <section style="overflow: hidden">
-                <h1 class="wow zoomIn" data-wow-delay=".7s">стеклянная<br>магнитно-маркерная доска</h1>
+                <h1 class="wow zoomIn" data-wow-delay=".5s">стеклянная<br>магнитно-маркерная доска</h1>
                 <div class="magnetic-top-banner__content-text wow zoomIn" data-wow-delay="1.2s">
                     <p>Инновационная магнитно-маркерная доска из закаленного стекла
                         с любым фоном. Преобразите свое рабочее пространство!
@@ -51,17 +51,17 @@
 
 <!--************************************-craft boards block *************************************************************-->
 <div class="craft-boards__wrapper">
-    <div class="craft-boards__overlay wow fadeInLeft" data-wow-offset="200">
+    <div class="craft-boards__overlay wow fadeInLeft">
         <div class="container">
             <div class="craft-boards__content">
-                    <h3 class="wow zoomIn" data-wow-delay=".5s" data-wow-offset="100" >изготовим брендированные доски и&nbsp;магниты с&nbsp;вашим логотипом
+                    <h3 class="wow zoomIn" data-wow-delay="0.5s"  >изготовим брендированные доски и&nbsp;магниты с&nbsp;вашим логотипом
                     </h3>
-                    <p class="wow zoomIn" data-wow-delay="1s" >
+                    <p class="wow zoomIn" data-wow-delay="0.5s" >
                         Уникальная технология позволяет персонализировать маркерную
                         доску и&nbsp;магниты, нанеся под стекло изображение, логотип, фоновый рисунок, разлиновку
                         или отдельные элементы корпоративного стиля.
                     </p>
-                    <a href="#" class="laser-btn-order wow rollIn" data-wow-delay="1.5s" >Заказать</a>
+                    <a href="#" class="laser-btn-order wow zoomIn" data-wow-delay="0.5s" >Заказать</a>
             </div>
         </div>
     </div>
@@ -88,7 +88,7 @@
                 и&nbsp;сложной формы</h3>
             <div class="circle-left"></div>
             <div class="circle-right"></div>
-            <section  class="wow zoomIn" data-wow-delay="1s">
+            <section  class="wow zoomIn" data-wow-delay="0.5s">
                 <p>
                     Магнитно-маркерная доска выглядит очень красиво,
                     все наши магниты установлены в специальный корпус.
@@ -107,14 +107,14 @@
                     Наша магнитно-маркерная доска это яркий элемент вашего офисного стиля и рабочего места!
                 </p>
             </section>
-            <img src="<?= get_template_directory_uri()?>/img/magnetic-page/magnit1.png" alt="" class="mag1 wow zoomIn" data-wow-delay="3s" >
-            <img src="<?= get_template_directory_uri()?>/img/magnetic-page/magnit2.png" alt="" class="mag2 wow zoomIn" data-wow-delay="4s">
-            <img src="<?= get_template_directory_uri()?>/img/magnetic-page/magnit3.png" alt="" class="mag3 wow zoomIn" data-wow-delay="2s">
+            <img src="<?= get_template_directory_uri()?>/img/magnetic-page/magnit1.png" alt="" class="mag1 wow zoomIn" data-wow-delay="1.5s" >
+            <img src="<?= get_template_directory_uri()?>/img/magnetic-page/magnit2.png" alt="" class="mag2 wow zoomIn" data-wow-delay="2s">
+            <img src="<?= get_template_directory_uri()?>/img/magnetic-page/magnit3.png" alt="" class="mag3 wow zoomIn" data-wow-delay="1s">
         </div>
         <div class="complex-magnetic__content-mobile">
             <h3 class="wow zoomIn">магниты стандартные
                 и&nbsp;сложной формы</h3>
-            <section   class="wow zoomIn" data-wow-delay="1s">
+            <section   class="">
             <p>
                 Магнитно-маркерная доска выглядит очень красиво,
                 все наши магниты установлены в специальный корпус.
@@ -133,16 +133,17 @@
                 Наша магнитно-маркерная доска это яркий элемент вашего офисного стиля и рабочего места!
             </p>
             </section>
-            <img src="<?= get_template_directory_uri()?>/img/magnetic-page/magnit4.png" alt="" class=" wow zoomIn" data-wow-delay="2s" style="margin-top: 18px" >
+            <img src="<?= get_template_directory_uri()?>/img/magnetic-page/magnit4.png" alt="" class="" style="margin-top: 18px" >
 
         </div>
     </div>
 </div>
+<!--*********************Special price block******************************************************************************************-->
     <div class="special-price-block">
         <div class="container special-price-container">
             <h3 class="wow zoomIn"><span>мы предлагаем специальные цены</span> <span>на&nbsp;стеклянные магнитно-маркерные доски</span></h3>
-            <div class="special-price-content">
-                <table class="special-price-table wow zoomIn" data-wow-delay="1s">
+            <div class="special-price-content wow zoomIn">
+                <table class="special-price-table">
                     <tr>
                         <td>ШИРИНА, мм</td>
                         <td>ВЫСОТА, мм</td>
@@ -212,26 +213,29 @@
                 <div class="special-price-order-btn">
                     <a href="#" class="laser-btn-order">Заказать</a>
                 </div>
-                <div class="special-price-desc wow zoomIn" data-wow-delay="1.6s">
+                <div class="special-price-desc wow zoomIn"  data-wow-delay=".5s">
                     <img src="<?= get_template_directory_uri()?>/img/special-price/desc.png">
-                    <div class="special-price-ball wow zoomIn" data-wow-delay="2.5s">
+                    <div class="special-price-ball wow zoomIn" data-wow-delay="1s">
                         <img src="<?= get_template_directory_uri()?>/img/special-price/red-ball.png">
                     </div>
                 </div>
             </div>
         </div>
     </div>
+<!--    ***************************************************************************************************************-->
+
+
 
     <div class="colors-block">
         <div class="container">
-            <h3  class="wow zoomIn">ВЫ МОЖЕТЕ ВЫБРАТЬ ЛЮБОЙ цвет магнитно-маркерной доски из каталога</h3>
-            <h4  class="wow zoomIn">Вы можете выбрать цвет своей магнитно-маркерной доски, в том числе с нанесением логотипа и любого изображения.</h4>
+            <h3  class="">ВЫ МОЖЕТЕ ВЫБРАТЬ ЛЮБОЙ цвет магнитно-маркерной доски из каталога</h3>
+            <h4  class="">Вы можете выбрать цвет своей магнитно-маркерной доски, в том числе с нанесением логотипа и любого изображения.</h4>
 
             <div class="colors-show-btn">
                 <a href="#">Посмотреть цвета каталога</a>
             </div>
 
-            <div class="colors-table-content wow zoomIn" data-wow-delay="1s">
+            <div class="colors-table-content">
                 <div>
                     <div class="color-010"><span>#010</span></div>
                     <div class="color-034 white"><span>#034</span></div>
@@ -316,7 +320,7 @@
                 </div>
             </div>
             <div class="colors-order-btn">
-                <a href="#" class="laser-btn-order wow zoomIn" data-wow-delay="1.7s">Заказать</a>
+                <a href="#" class="laser-btn-order">Заказать</a>
             </div>
         </div>
     </div>
@@ -678,7 +682,16 @@
  </div>
  <!--****************************************************-->
  <script>
-  new WOW().init();
+     wow = new WOW(
+         {
+             boxClass:     'wow',      // default
+             animateClass: 'animated', // default
+             offset:       150,          // default
+             mobile:       false,       // default
+             live:         true        // default
+         }
+     )
+  wow.init();
  </script>
 <script>
 //colors block
