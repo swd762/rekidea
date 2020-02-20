@@ -447,7 +447,7 @@
     <h3>Накопленный опыт позволяет нам производить рекламную продукцию любой сложности.<br> Вы всегда можете
      рассчитывать на комфортные и выгодные условия работы.<br> Работая с нами вы получаете
      не поставщика, а партнера!</h3>
-    <img src="<?= get_template_directory_uri()?>/img/services/logo-copy.png" alt="" class="logo-copy wow slideInUp" data-wow-delay="1s">
+    <img src="<?= get_template_directory_uri()?>/img/services/devica-yslugi.png" alt="" class="logo-copy wow slideInUp" data-wow-delay="1s">
     <div class="icon-cards">
      <div class="card wow zoomIn">
       <div class="icon">
