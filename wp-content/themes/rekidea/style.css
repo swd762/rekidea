@@ -147,10 +147,10 @@ main {
       border-bottom: 1px solid #252525;
       padding-left: 0; }
       .special-price-block .special-price-table tr:first-child td:first-child {
-        padding-right: 25px; }
+        width: 144px; }
         @media (max-width: 800px) {
           .special-price-block .special-price-table tr:first-child td:first-child {
-            padding-right: 18px; } }
+            width: 92px; } }
       .special-price-block .special-price-table tr:first-child td:nth-child(2) {
         padding-right: 19px; }
         @media (max-width: 800px) {
@@ -1384,9 +1384,12 @@ main {
   margin-top: 25px;
   background-color: #f7f7f7;
   justify-content: space-between; }
+  .card-laser .card-laser-content {
+    height: 100%; }
   .card-laser a {
     text-decoration: none;
-    color: #6f0d33; }
+    color: #6f0d33;
+    display: inline-block; }
   .card-laser h3 {
     text-align: center;
     text-transform: uppercase;
@@ -2120,11 +2123,14 @@ main {
     .big-size-boards__wrapper {
       background: none;
       height: initial;
-      padding: 0 0 20px 0;
+      padding: 0 0 53px 0;
       background-color: #ebebeb; } }
+  @media (max-width: 1023px) {
+    .big-size-boards__wrapper {
+      padding-bottom: 24px; } }
 
 .big-size-boards__content {
-  width: 650px;
+  width: 664px;
   float: right;
   margin-right: 15px; }
   @media (max-width: 1170px) {
@@ -2175,14 +2181,19 @@ main {
         padding: 0;
         text-align: center; } }
   .big-size-boards__content-mobile section {
-    padding-left: 100px; }
+    padding-left: 100px;
+    width: 73%; }
     @media (max-width: 700px) {
       .big-size-boards__content-mobile section {
         padding: 0 20px 0 20px;
-        text-align: center; } }
+        text-align: center;
+        width: 100%; } }
   .big-size-boards__content-mobile p {
-    font-size: 14px;
+    font-size: 18px;
     font-weight: 300; }
+    @media (max-width: 1023px) {
+      .big-size-boards__content-mobile p {
+        font-size: 14px; } }
   .big-size-boards__content-mobile .boards-characters {
     margin-top: 25px;
     display: flex;
@@ -2219,13 +2230,15 @@ main {
   justify-content: center;
   align-items: center;
   height: 100%;
-  padding-left: 100px;
+  padding-left: 93px;
   position: relative; }
   @media (max-width: 1023px) {
     .boards-clamp__content {
       display: none !important; } }
   .boards-clamp__content p {
-    font-weight: 300; }
+    font-weight: 300;
+    font-size: 18px;
+    margin-bottom: 3px; }
   .boards-clamp__content img {
     position: absolute;
     top: -51px;

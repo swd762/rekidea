@@ -105,9 +105,9 @@
           border-bottom: 1px solid #252525;
           padding-left: 0;
           &:first-child {
-            padding-right: 25px;
+            width: 144px;
             @media(max-width: 800px) {
-              padding-right: 18px;
+              width: 92px;
             }
           }
           &:nth-child(2) {

@@ -1183,9 +1183,13 @@
   margin-top: 25px;
   background-color: #f7f7f7;
   justify-content: space-between;
+  .card-laser-content {
+    height: 100%;
+  }
   a {
     text-decoration: none;
     color: $red;
+    display: inline-block;
   }
   h3 {
     text-align: center;
@@ -2125,12 +2129,15 @@
   @media (max-width: 1170px) {
     background: none;
     height: initial;
-    padding: 0 0 20px 0;
+    padding: 0 0 53px 0;
     background-color: #ebebeb;
+  }
+  @media (max-width: 1023px) {
+    padding-bottom: 24px;
   }
 }
 .big-size-boards__content {
-  width: 650px;
+  width: 664px;
   float: right;
   margin-right: 15px;
 
@@ -2190,14 +2197,19 @@
   }
   section {
     padding-left: 100px;
+    width: 73%;
     @media (max-width: 700px) {
       padding: 0 20px 0 20px;
       text-align: center;
+      width: 100%;
     }
   }
   p {
-    font-size: 14px;
+    font-size: 18px;
     font-weight: 300;
+    @media (max-width: 1023px) {
+      font-size: 14px;
+    }
   }
 
   .boards-characters {
@@ -2239,13 +2251,15 @@
   justify-content: center;
   align-items: center;
   height: 100%;
-  padding-left: 100px;
+  padding-left: 93px;
   position: relative;
   @media (max-width: 1023px) {
     display: none!important;
   }
   p {
     font-weight: 300;
+    font-size: 18px;
+    margin-bottom: 3px;
   }
   img {
     position: absolute;

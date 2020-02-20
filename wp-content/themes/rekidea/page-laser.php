@@ -54,7 +54,7 @@ get_header();
 <div class="laser-cards-block container">
 
     <div class="card-laser wow zoomIn">
-        <a href="#">
+        <div class="card-laser-content">
             <img src="<?= get_template_directory_uri()?>/img/laser-cards/lazer-contur.png" alt="">
             <h3>контурная фигурная лазерная резка</h3>
             <p>Лазерная резка оргстекла,
@@ -62,13 +62,13 @@ get_header();
                 фанеры, кожи и т.д.
                 Широкий выбор материалов
                 для лазерной резки на складе.</p>
-            <a href="#" class="card-laser-button">
-                заказать
-            </a>
+        </div>
+        <a href="#" class="card-laser-button">
+            заказать
         </a>
     </div>
     <div class="card-laser wow zoomIn">
-        <a href="#">
+        <div class="card-laser-content">
             <img src="<?= get_template_directory_uri()?>/img/laser-cards/flowers.png" alt="">
             <h3>лазерная<br> гравировка</h3>
             <p>Точное и четкое нанесение
@@ -77,80 +77,80 @@ get_header();
                 акрила, оргстекла,
                 дерева, фанеры, кожи.
             </p>
-            <a href="#" class="card-laser-button">
-                заказать
-            </a>
+        </div>
+        <a href="#" class="card-laser-button">
+            заказать
         </a>
     </div>
     <div class="card-laser wow zoomIn">
-        <a href="#">
+        <div class="card-laser-content">
             <img src="<?= get_template_directory_uri()?>/img/laser-cards/orgs.jpg" alt="">
             <h3>изделия и подставки из оргстекла</h3>
             <p>Изготовление подставок для
                 рекламной продукции и товаров. Карманы из оргстекла и ПЭТа, рекламные воблеры
                 и другая POS продукция.
             </p>
-            <a href="#" class="card-laser-button">
-                заказать
-            </a>
+        </div>
+        <a href="#" class="card-laser-button">
+            заказать
         </a>
     </div>
     <div class="card-laser wow zoomIn">
-        <a href="#">
+        <div class="card-laser-content">
             <img src="<?= get_template_directory_uri()?>/img/laser-cards/litters.jpg" alt="">
             <h3>объемные слова <br> и буквы</h3>
             <p>Изготовление объемных слов и букв из многослойного цветного акрила. Эксклюзивная разработка и дизайн.
             </p>
-            <a href="#" class="card-laser-button">
-                заказать
-            </a>
+        </div>
+        <a href="#" class="card-laser-button">
+            заказать
         </a>
     </div>
     <div class="card-laser wow zoomIn">
-        <a href="#">
+        <div class="card-laser-content">
             <img src="<?= get_template_directory_uri()?>/img/laser-cards/cutting-wood.jpg" alt="">
             <h3>резка фанеры</h3>
             <p>Лазерная резка и гравировка фанеры толщиной до 15 мм. Быстрая и точная резка.
             </p>
-            <a href="#" class="card-laser-button">
-                заказать
-            </a>
+        </div>
+        <a href="#" class="card-laser-button">
+            заказать
         </a>
     </div>
     <div class="card-laser wow zoomIn">
-        <a href="#">
+        <div class="card-laser-content">
             <img src="<?= get_template_directory_uri()?>/img/laser-cards/badge.jpg" alt="">
             <h3>бейджи и номерки</h3>
             <p>У нас можно заказать нагрудные бейджи, номерки для гардероба, офисные таблички и номера кабинетов
                 из различных материалов и любой сложности.
             </p>
-            <a href="#" class="card-laser-button">
-                заказать
-            </a>
+        </div>
+        <a href="#" class="card-laser-button">
+            заказать
         </a>
     </div>
     <div class="card-laser wow zoomIn">
-        <a href="#">
+        <div class="card-laser-content">
             <img src="<?= get_template_directory_uri()?>/img/laser-cards/suvenier.jpg" alt="">
             <h3>сувенирная продукция</h3>
             <p>Лазерная резка позволяет создавать красивые  сувениры из фанеры. Значки,
                 игрушки, подарочные коробки из фанеры смотрятся очень оригинально.
             </p>
-            <a href="#" class="card-laser-button">
-                заказать
-            </a>
+        </div>
+        <a href="#" class="card-laser-button">
+            заказать
         </a>
     </div>
     <div class="card-laser wow zoomIn">
-        <a href="#">
+        <div class="card-laser-content">
             <img src="<?= get_template_directory_uri()?>/img/laser-cards/gerb.jpg" alt="">
             <h3>гербы, рамки, слова метрики</h3>
             <p>Слова, метрики, топперы, свадебные и фамильные гербы выполненные
                 из пластика ПВХ, АКП, дерева по индивидуальному дизайну.
             </p>
-            <a href="#" class="card-laser-button">
-                заказать
-            </a>
+        </div>
+        <a href="#" class="card-laser-button">
+            заказать
         </a>
     </div>
 
@@ -190,9 +190,9 @@ get_header();
                 на лазерную резку популярных материалов
             </h2>
             <ul>
-                <li>ЛАЗЕРНАЯ РЕЗКА ОРГСТЕКЛА И АКРИЛА  —  от <span>12</span> руб м. п.</li>
-                <li>ЛАЗЕРНАЯ РЕЗКА ФАНЕРЫ И МДФ —  от <span>15</span> руб м. п.</li>
-                <li>ЛАЗЕРНАЯ ГРАВИРОВКА ФАНЕРЫ  —  от <span>2</span> руб кв. см. </li>
+                <li>ЛАЗЕРНАЯ РЕЗКА ОРГСТЕКЛА И АКРИЛА  —  от <span>10</span> руб м. п.</li>
+                <li>ЛАЗЕРНАЯ РЕЗКА ФАНЕРЫ И МДФ —  от <span>13</span> руб м. п.</li>
+                <li>ЛАЗЕРНАЯ ГРАВИРОВКА ФАНЕРЫ  —  от <span>1.5</span> руб кв. см. </li>
             </ul>
             <a href="/404" class="laser-btn-order">стоимость для других материалов</a>
         </div>
