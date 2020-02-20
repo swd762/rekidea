@@ -1183,9 +1183,13 @@
   margin-top: 25px;
   background-color: #f7f7f7;
   justify-content: space-between;
+  .card-laser-content {
+    height: 100%;
+  }
   a {
     text-decoration: none;
     color: $red;
+    display: inline-block;
   }
   h3 {
     text-align: center;

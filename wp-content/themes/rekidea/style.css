@@ -147,10 +147,10 @@ main {
       border-bottom: 1px solid #252525;
       padding-left: 0; }
       .special-price-block .special-price-table tr:first-child td:first-child {
-        padding-right: 25px; }
+        width: 144px; }
         @media (max-width: 800px) {
           .special-price-block .special-price-table tr:first-child td:first-child {
-            padding-right: 18px; } }
+            width: 92px; } }
       .special-price-block .special-price-table tr:first-child td:nth-child(2) {
         padding-right: 19px; }
         @media (max-width: 800px) {
@@ -1384,9 +1384,12 @@ main {
   margin-top: 25px;
   background-color: #f7f7f7;
   justify-content: space-between; }
+  .card-laser .card-laser-content {
+    height: 100%; }
   .card-laser a {
     text-decoration: none;
-    color: #6f0d33; }
+    color: #6f0d33;
+    display: inline-block; }
   .card-laser h3 {
     text-align: center;
     text-transform: uppercase;

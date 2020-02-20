@@ -324,43 +324,43 @@
                     <td>600</td>
                     <td>900</td>
                     <td>6700 р.</td>
-                    <td>5700 р.</td>
+                    <td>6030 р.</td>
                 </tr>
                 <tr>
                     <td>900</td>
                     <td>1200</td>
                     <td>9800 р.</td>
-                    <td>8800 р.</td>
+                    <td>8820 р.</td>
                 </tr>
                 <tr>
                     <td>1000</td>
                     <td>1500</td>
                     <td>16 400 р.</td>
-                    <td>15 400 р.</td>
+                    <td>14 760 р.</td>
                 </tr>
                 <tr>
                     <td>1000</td>
                     <td>2000</td>
-                    <td>23 000 р.</td>
-                    <td>22 000 р.</td>
+                    <td>21 500 р.</td>
+                    <td>19 350 р.</td>
                 </tr>
                 <tr>
                     <td>1200</td>
                     <td>1800</td>
-                    <td>21 500 р.</td>
-                    <td>20 500 р.</td>
+                    <td>23 000 р.</td>
+                    <td>20 700 р.</td>
                 </tr>
                 <tr>
                     <td>1200</td>
                     <td>2000</td>
                     <td>25 000 р.</td>
-                    <td>24 000 р.</td>
+                    <td>22 500 р.</td>
                 </tr>
                 <tr>
                     <td>1200</td>
                     <td>2400</td>
                     <td>28 000 р.</td>
-                    <td>27 000 р.</td>
+                    <td>25 200 р.</td>
                 </tr>
             </table>
             <div class="special-price-containment">
