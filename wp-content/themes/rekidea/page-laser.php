@@ -157,6 +157,23 @@ get_header();
 
 
 </div>
+
+    <!-- ******* Laser price block ****************** -->
+    <div class="laser-price-block-wrapper">
+        <div class="container">
+            <div class="laser-price-block">
+                <h2>мы предлагаем специальные цены<br>
+                    на лазерную резку популярных материалов
+                </h2>
+                <ul>
+                    <li>ЛАЗЕРНАЯ РЕЗКА ОРГСТЕКЛА И АКРИЛА  —  от <span>10</span> руб м. п.</li>
+                    <li>ЛАЗЕРНАЯ РЕЗКА ФАНЕРЫ И МДФ —  от <span>13</span> руб м. п.</li>
+                    <li>ЛАЗЕРНАЯ ГРАВИРОВКА ФАНЕРЫ  —  от <span>1.5</span> руб кв. см. </li>
+                </ul>
+                <a href="/404" class="laser-btn-order">стоимость для других материалов</a>
+            </div>
+        </div>
+    </div>
 <!--**************************************-->
 <!--    poster="--><?//= get_template_directory_uri()?><!--/img/quality-laser/quality-bkg.png"-->
 <!-- Quality video block************************-->
@@ -182,22 +199,6 @@ get_header();
 </div>
 <!--*********************************************-->
 
-<!-- ******* Laser price block ****************** -->
-<div class="laser-price-block-wrapper">
-    <div class="container">
-        <div class="laser-price-block">
-            <h2>мы предлагаем специальные цены<br>
-                на лазерную резку популярных материалов
-            </h2>
-            <ul>
-                <li>ЛАЗЕРНАЯ РЕЗКА ОРГСТЕКЛА И АКРИЛА  —  от <span>10</span> руб м. п.</li>
-                <li>ЛАЗЕРНАЯ РЕЗКА ФАНЕРЫ И МДФ —  от <span>13</span> руб м. п.</li>
-                <li>ЛАЗЕРНАЯ ГРАВИРОВКА ФАНЕРЫ  —  от <span>1.5</span> руб кв. см. </li>
-            </ul>
-            <a href="/404" class="laser-btn-order">стоимость для других материалов</a>
-        </div>
-    </div>
-</div>
 <!--***********************************************-->
 <!-- Craft acrylic block **************************-->
 <div class="craft-acrylic-block container">
