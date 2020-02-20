@@ -147,6 +147,189 @@
         </div>
     </div>
 </div>
+    <div class="special-price-block">
+        <div class="container special-price-container">
+            <h3 class="wow zoomIn"><span>мы предлагаем специальные цены</span> <span>на&nbsp;стеклянные магнитно-маркерные доски</span></h3>
+            <div class="special-price-content">
+                <table class="special-price-table wow zoomIn" data-wow-delay="1s">
+                    <tr>
+                        <td>ШИРИНА, мм</td>
+                        <td>ВЫСОТА, мм</td>
+                        <td><span>Скидка 10%</span></td>
+                        <td>СТОИМОСТЬ</td>
+                    </tr>
+                    <tr>
+                        <td>600</td>
+                        <td>900</td>
+                        <td>6700 р.</td>
+                        <td>6030 р.</td>
+                    </tr>
+                    <tr>
+                        <td>900</td>
+                        <td>1200</td>
+                        <td>9800 р.</td>
+                        <td>8820 р.</td>
+                    </tr>
+                    <tr>
+                        <td>1000</td>
+                        <td>1500</td>
+                        <td>16 400 р.</td>
+                        <td>14 760 р.</td>
+                    </tr>
+                    <tr>
+                        <td>1000</td>
+                        <td>2000</td>
+                        <td>21 500 р.</td>
+                        <td>19 350 р.</td>
+                    </tr>
+                    <tr>
+                        <td>1200</td>
+                        <td>1800</td>
+                        <td>23 000 р.</td>
+                        <td>20 700 р.</td>
+                    </tr>
+                    <tr>
+                        <td>1200</td>
+                        <td>2000</td>
+                        <td>25 000 р.</td>
+                        <td>22 500 р.</td>
+                    </tr>
+                    <tr>
+                        <td>1200</td>
+                        <td>2400</td>
+                        <td>28 000 р.</td>
+                        <td>25 200 р.</td>
+                    </tr>
+                </table>
+                <div class="special-price-containment">
+                    <header>В КОМПЛЕКТ ВХОДЯТ:</header>
+                    <div class="special-price-containment__items">
+                        <div class="special-price-containment__item">
+                            <img src="<?= get_template_directory_uri()?>/img/special-price/eraser_icon.png">
+                            <span>губка стиратель</span>
+                        </div>
+                        <div class="special-price-containment__item">
+                            <img src="<?= get_template_directory_uri()?>/img/special-price/magnet_icon.png">
+                            <span>от 5 неодимовых магнитов</span>
+                        </div>
+                        <div class="special-price-containment__item">
+                            <img src="<?= get_template_directory_uri()?>/img/special-price/marker_icon.png">
+                            <span>маркер меловой</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="special-price-order-btn">
+                    <a href="#" class="laser-btn-order">Заказать</a>
+                </div>
+                <div class="special-price-desc wow zoomIn" data-wow-delay="1.6s">
+                    <img src="<?= get_template_directory_uri()?>/img/special-price/desc.png">
+                    <div class="special-price-ball wow zoomIn" data-wow-delay="2.5s">
+                        <img src="<?= get_template_directory_uri()?>/img/special-price/red-ball.png">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="colors-block">
+        <div class="container">
+            <h3  class="wow zoomIn">ВЫ МОЖЕТЕ ВЫБРАТЬ ЛЮБОЙ цвет магнитно-маркерной доски из каталога</h3>
+            <h4  class="wow zoomIn">Вы можете выбрать цвет своей магнитно-маркерной доски, в том числе с нанесением логотипа и любого изображения.</h4>
+
+            <div class="colors-show-btn">
+                <a href="#">Посмотреть цвета каталога</a>
+            </div>
+
+            <div class="colors-table-content wow zoomIn" data-wow-delay="1s">
+                <div>
+                    <div class="color-010"><span>#010</span></div>
+                    <div class="color-034 white"><span>#034</span></div>
+                    <div class="color-050 white"><span>#050</span></div>
+                    <div class="color-056 white"><span>#056</span></div>
+                    <div class="color-800 white"><span>#800</span></div>
+                </div>
+                <div>
+                    <div class="color-020"><span>#020</span></div>
+                    <div class="color-036 white"><span>#036</span></div>
+                    <div class="color-065 white"><span>#065</span></div>
+                    <div class="color-066 white"><span>#066</span></div>
+                    <div class="color-083 white"><span>#083</span></div>
+                </div>
+                <div>
+                    <div class="color-019"><span>#019</span></div>
+                    <div class="color-035 white"><span>#035</span></div>
+                    <div class="color-049 white"><span>#049</span></div>
+                    <div class="color-054 white"><span>#054</span></div>
+                    <div class="color-081 white"><span>#081</span></div>
+                </div>
+                <div>
+                    <div class="color-021"><span>#021</span></div>
+                    <div class="color-404 white"><span>#404</span></div>
+                    <div class="color-086 white"><span>#086</span></div>
+                    <div class="color-055"><span>#055</span></div>
+                    <div class="color-082"><span>#082</span></div>
+                </div>
+                <div>
+                    <div class="color-022"><span>#022</span></div>
+                    <div class="color-040 white"><span>#040</span></div>
+                    <div class="color-067 white"><span>#067</span></div>
+                    <div class="color-060 white"><span>#060</span></div>
+                    <div class="color-023"><span>#023</span></div>
+                </div>
+                <div>
+                    <div class="color-025"><span>#025</span></div>
+                    <div class="color-043 white"><span>#043</span></div>
+                    <div class="color-057 white"><span>#057</span></div>
+                    <div class="color-613 white"><span>#613</span></div>
+                    <div class="color-072"><span>#072</span></div>
+                </div>
+                <div>
+                    <div class="color-312 white"><span>#312</span></div>
+                    <div class="color-042 white"><span>#042</span></div>
+                    <div class="color-051 white"><span>#051</span></div>
+                    <div class="color-061 white"><span>#061</span></div>
+                    <div class="color-074 white"><span>#074</span></div>
+                </div>
+                <div>
+                    <div class="color-030 white"><span>#030</span></div>
+                    <div class="color-041 white"><span>#041</span></div>
+                    <div class="color-098 white"><span>#098</span></div>
+                    <div class="color-068 white"><span>#068</span></div>
+                    <div class="color-076 white"><span>#076</span></div>
+                </div>
+                <div>
+                    <div class="color-031 white"><span>#031</span></div>
+                    <div class="color-045 white"><span>#045</span></div>
+                    <div class="color-052 white"><span>#052</span></div>
+                    <div class="color-062 white"><span>#062</span></div>
+                    <div class="color-071 white"><span>#071</span></div>
+                </div>
+                <div>
+                    <div class="color-032 white"><span>#032</span></div>
+                    <div class="color-562 white"><span>#562</span></div>
+                    <div class="color-084 white"><span>#084</span></div>
+                    <div class="color-064 white"><span>#064</span></div>
+                    <div class="color-073 white"><span>#073</span></div>
+                </div>
+                <div>
+                    <div class="color-047 white"><span>#047</span></div>
+                    <div class="color-518 white"><span>#518</span></div>
+                    <div class="color-053 white"><span>#053</span></div>
+                    <div class="color-063 white"><span>#063</span></div>
+                    <div class="color-070 white"><span>#070</span></div>
+                </div>
+                <div>
+                    <div class="color-090 white"><span>#090</span></div>
+                    <div class="color-091 white"><span>#091</span></div>
+                    <div class="color-092 white"><span>#092</span></div>
+                </div>
+            </div>
+            <div class="colors-order-btn">
+                <a href="#" class="laser-btn-order wow zoomIn" data-wow-delay="1.7s">Заказать</a>
+            </div>
+        </div>
+    </div>
+
 <!--*********************************************************************************************************************-->
 
 <!--*********************************Big size boards********************************************************************--->
@@ -209,189 +392,6 @@
 
 <!--*********************************************************************************************************************-->
 
-<div class="colors-block">
-    <div class="container">
-        <h3  class="wow zoomIn">ВЫ МОЖЕТЕ ВЫБРАТЬ ЛЮБОЙ цвет магнитно-маркерной доски из каталога</h3>
-        <h4  class="wow zoomIn">Вы можете выбрать цвет своей магнитно-маркерной доски, в том числе с нанесением логотипа и любого изображения.</h4>
-
-        <div class="colors-show-btn">
-            <a href="#">Посмотреть цвета каталога</a>
-        </div>
-
-        <div class="colors-table-content wow zoomIn" data-wow-delay="1s">
-            <div>
-                <div class="color-010"><span>#010</span></div>
-                <div class="color-034 white"><span>#034</span></div>
-                <div class="color-050 white"><span>#050</span></div>
-                <div class="color-056 white"><span>#056</span></div>
-                <div class="color-800 white"><span>#800</span></div>
-            </div>
-            <div>
-                <div class="color-020"><span>#020</span></div>
-                <div class="color-036 white"><span>#036</span></div>
-                <div class="color-065 white"><span>#065</span></div>
-                <div class="color-066 white"><span>#066</span></div>
-                <div class="color-083 white"><span>#083</span></div>
-            </div>
-            <div>
-                <div class="color-019"><span>#019</span></div>
-                <div class="color-035 white"><span>#035</span></div>
-                <div class="color-049 white"><span>#049</span></div>
-                <div class="color-054 white"><span>#054</span></div>
-                <div class="color-081 white"><span>#081</span></div>
-            </div>
-            <div>
-                <div class="color-021"><span>#021</span></div>
-                <div class="color-404 white"><span>#404</span></div>
-                <div class="color-086 white"><span>#086</span></div>
-                <div class="color-055"><span>#055</span></div>
-                <div class="color-082"><span>#082</span></div>
-            </div>
-            <div>
-                <div class="color-022"><span>#022</span></div>
-                <div class="color-040 white"><span>#040</span></div>
-                <div class="color-067 white"><span>#067</span></div>
-                <div class="color-060 white"><span>#060</span></div>
-                <div class="color-023"><span>#023</span></div>
-            </div>
-            <div>
-                <div class="color-025"><span>#025</span></div>
-                <div class="color-043 white"><span>#043</span></div>
-                <div class="color-057 white"><span>#057</span></div>
-                <div class="color-613 white"><span>#613</span></div>
-                <div class="color-072"><span>#072</span></div>
-            </div>
-            <div>
-                <div class="color-312 white"><span>#312</span></div>
-                <div class="color-042 white"><span>#042</span></div>
-                <div class="color-051 white"><span>#051</span></div>
-                <div class="color-061 white"><span>#061</span></div>
-                <div class="color-074 white"><span>#074</span></div>
-            </div>
-            <div>
-                <div class="color-030 white"><span>#030</span></div>
-                <div class="color-041 white"><span>#041</span></div>
-                <div class="color-098 white"><span>#098</span></div>
-                <div class="color-068 white"><span>#068</span></div>
-                <div class="color-076 white"><span>#076</span></div>
-            </div>
-            <div>
-                <div class="color-031 white"><span>#031</span></div>
-                <div class="color-045 white"><span>#045</span></div>
-                <div class="color-052 white"><span>#052</span></div>
-                <div class="color-062 white"><span>#062</span></div>
-                <div class="color-071 white"><span>#071</span></div>
-            </div>
-            <div>
-                <div class="color-032 white"><span>#032</span></div>
-                <div class="color-562 white"><span>#562</span></div>
-                <div class="color-084 white"><span>#084</span></div>
-                <div class="color-064 white"><span>#064</span></div>
-                <div class="color-073 white"><span>#073</span></div>
-            </div>
-            <div>
-                <div class="color-047 white"><span>#047</span></div>
-                <div class="color-518 white"><span>#518</span></div>
-                <div class="color-053 white"><span>#053</span></div>
-                <div class="color-063 white"><span>#063</span></div>
-                <div class="color-070 white"><span>#070</span></div>
-            </div>
-            <div>
-                <div class="color-090 white"><span>#090</span></div>
-                <div class="color-091 white"><span>#091</span></div>
-                <div class="color-092 white"><span>#092</span></div>
-            </div>
-        </div>
-        <div class="colors-order-btn">
-            <a href="#" class="laser-btn-order wow zoomIn" data-wow-delay="1.7s">Заказать</a>
-        </div>
-    </div>
-</div>
-
-
-<div class="special-price-block">
-    <div class="container special-price-container">
-        <h3 class="wow zoomIn"><span>мы предлагаем специальные цены</span> <span>на&nbsp;стеклянные магнитно-маркерные доски</span></h3>
-        <div class="special-price-content">
-            <table class="special-price-table wow zoomIn" data-wow-delay="1s">
-                <tr>
-                    <td>ШИРИНА, мм</td>
-                    <td>ВЫСОТА, мм</td>
-                    <td><span>Скидка 10%</span></td>
-                    <td>СТОИМОСТЬ</td>
-                </tr>
-                <tr>
-                    <td>600</td>
-                    <td>900</td>
-                    <td>6700 р.</td>
-                    <td>6030 р.</td>
-                </tr>
-                <tr>
-                    <td>900</td>
-                    <td>1200</td>
-                    <td>9800 р.</td>
-                    <td>8820 р.</td>
-                </tr>
-                <tr>
-                    <td>1000</td>
-                    <td>1500</td>
-                    <td>16 400 р.</td>
-                    <td>14 760 р.</td>
-                </tr>
-                <tr>
-                    <td>1000</td>
-                    <td>2000</td>
-                    <td>21 500 р.</td>
-                    <td>19 350 р.</td>
-                </tr>
-                <tr>
-                    <td>1200</td>
-                    <td>1800</td>
-                    <td>23 000 р.</td>
-                    <td>20 700 р.</td>
-                </tr>
-                <tr>
-                    <td>1200</td>
-                    <td>2000</td>
-                    <td>25 000 р.</td>
-                    <td>22 500 р.</td>
-                </tr>
-                <tr>
-                    <td>1200</td>
-                    <td>2400</td>
-                    <td>28 000 р.</td>
-                    <td>25 200 р.</td>
-                </tr>
-            </table>
-            <div class="special-price-containment">
-                <header>В КОМПЛЕКТ ВХОДЯТ:</header>
-                <div class="special-price-containment__items">
-                    <div class="special-price-containment__item">
-                        <img src="<?= get_template_directory_uri()?>/img/special-price/eraser_icon.png">
-                        <span>губка стиратель</span>
-                    </div>
-                    <div class="special-price-containment__item">
-                        <img src="<?= get_template_directory_uri()?>/img/special-price/magnet_icon.png">
-                        <span>от 5 неодимовых магнитов</span>
-                    </div>
-                    <div class="special-price-containment__item">
-                        <img src="<?= get_template_directory_uri()?>/img/special-price/marker_icon.png">
-                        <span>маркер меловой</span>
-                    </div>
-                </div>
-            </div>
-            <div class="special-price-order-btn">
-                <a href="#" class="laser-btn-order">Заказать</a>
-            </div>
-            <div class="special-price-desc wow zoomIn" data-wow-delay="1.6s">
-                <img src="<?= get_template_directory_uri()?>/img/special-price/desc.png">
-                <div class="special-price-ball wow zoomIn" data-wow-delay="2.5s">
-                    <img src="<?= get_template_directory_uri()?>/img/special-price/red-ball.png">
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
 
  <!--** montage block ***************************************-->
  <div class="montage-block__wrapper">
