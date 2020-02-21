@@ -2,6 +2,9 @@
 get_header();
 ?>
 <main>
+    <div class="container">
+        <button class="back-btn" onclick="history.go(-1);return false;">Назад</button>
+    </div>
 <div class="recunstruction-wrapper container clearfix">
         <div class="reconstruction__content">
             <h1>САЙТ НА РЕКОНСТРУКЦИИ!</h1>

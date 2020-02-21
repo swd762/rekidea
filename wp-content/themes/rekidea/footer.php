@@ -104,6 +104,7 @@ wp_footer();
 <div class="fade-max"></div>
 <div class="order-click__modal">
     <div class="call-us">
+        <div class="close-btn"><span></span><span></span></div>
         <h4>Позвоните нам!</h4>
         <a href="tel:+74953692079">+ 7 (495) 369-20-79</a>
         <a href="tel:+79265832351">+ 7 (926) 583-23-51</a>

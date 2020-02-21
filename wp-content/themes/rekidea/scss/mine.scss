@@ -570,3 +570,20 @@
     }
   }
 }
+.back-btn {
+  background: transparent;
+  color: #6f0d33;
+  border: none;
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+  cursor: pointer;
+  &:before {
+    content: '';
+    display: inline-block;
+    background: url("img/button-red.svg") no-repeat;
+    width: 14px;
+    height: 14px;
+    transform: rotate(90deg);
+  }
+}

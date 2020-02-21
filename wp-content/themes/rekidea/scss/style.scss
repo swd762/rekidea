@@ -2423,10 +2423,32 @@ footer {
     top: 10px;
     transform: translate(-50%);
   }
+  .close-btn {
+    position: absolute;
+    top: -8px;
+    right: -31px;
+    cursor: pointer;
+    span {
+      height: 1px;
+      width: 18px;
+      background-color: #8c8484;
+      display: block;
+      &:first-child{
+        transform: rotate(45deg);
+        transform-origin: 0 0;
+        margin-bottom: 12px;
+      }
+      &:last-child{
+        transform: rotate(-45deg);
+        transform-origin: 0 100%;
+      }
+    }
+  }
   .call-us {
     display: flex;
     flex-direction: column;
     align-items: center;
+    position: relative;
     h4 {
       font-size: 24px;
       text-transform: uppercase;

@@ -498,6 +498,22 @@ main {
       .colors-block .color-092 {
         background: url("img/magnit-colors/092-side.jpg"); } }
 
+.back-btn {
+  background: transparent;
+  color: #6f0d33;
+  border: none;
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+  cursor: pointer; }
+  .back-btn:before {
+    content: '';
+    display: inline-block;
+    background: url("img/button-red.svg") no-repeat;
+    width: 14px;
+    height: 14px;
+    transform: rotate(90deg); }
+
 .main-header {
   position: fixed;
   width: 100%;
@@ -2365,10 +2381,28 @@ footer {
     .order-click__modal {
       top: 10px;
       transform: translate(-50%); } }
+  .order-click__modal .close-btn {
+    position: absolute;
+    top: -8px;
+    right: -31px;
+    cursor: pointer; }
+    .order-click__modal .close-btn span {
+      height: 1px;
+      width: 18px;
+      background-color: #8c8484;
+      display: block; }
+      .order-click__modal .close-btn span:first-child {
+        transform: rotate(45deg);
+        transform-origin: 0 0;
+        margin-bottom: 12px; }
+      .order-click__modal .close-btn span:last-child {
+        transform: rotate(-45deg);
+        transform-origin: 0 100%; }
   .order-click__modal .call-us {
     display: flex;
     flex-direction: column;
-    align-items: center; }
+    align-items: center;
+    position: relative; }
     .order-click__modal .call-us h4 {
       font-size: 24px;
       text-transform: uppercase;
