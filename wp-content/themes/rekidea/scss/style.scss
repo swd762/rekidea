@@ -2430,7 +2430,7 @@ footer {
     cursor: pointer;
     span {
       height: 1px;
-      width: 18px;
+      width: 19px;
       background-color: #8c8484;
       display: block;
       &:first-child{
@@ -2578,6 +2578,28 @@ footer {
     overflow: hidden;
   }
   .we-call {
+    position: relative;
+    .close-btn {
+      position: absolute;
+      top: -8px;
+      right: -31px;
+      cursor: pointer;
+      span {
+        height: 1px;
+        width: 19px;
+        background-color: #8c8484;
+        display: block;
+        &:first-child{
+          transform: rotate(45deg);
+          transform-origin: 0 0;
+          margin-bottom: 12px;
+        }
+        &:last-child{
+          transform: rotate(-45deg);
+          transform-origin: 0 100%;
+        }
+      }
+    }
     h4 {
       color: $red;
       font-size: 24px;

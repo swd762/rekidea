@@ -104,7 +104,7 @@ wp_footer();
 <div class="fade-max"></div>
 <div class="order-click__modal">
     <div class="call-us">
-        <div class="close-btn"><span></span><span></span></div>
+        <div class="close-btn" onclick="closeOrderModal()"><span></span><span></span></div>
         <h4>Позвоните нам!</h4>
         <a href="tel:+74953692079">+ 7 (495) 369-20-79</a>
         <a href="tel:+79265832351">+ 7 (926) 583-23-51</a>
@@ -123,6 +123,7 @@ wp_footer();
 </div>
 <div class="call-me__modal">
     <div class="we-call">
+        <div class="close-btn" onclick="closeCallModal()"><span></span><span></span></div>
         <h4>Оставьте телефон!<br>
             Мы вам перезвоним.</h4>
     </div>

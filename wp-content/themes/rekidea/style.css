@@ -505,7 +505,8 @@ main {
   display: flex;
   align-items: center;
   margin-top: 10px;
-  cursor: pointer; }
+  cursor: pointer;
+  padding-left: 11px; }
   .back-btn:before {
     content: '';
     display: inline-block;
@@ -2388,7 +2389,7 @@ footer {
     cursor: pointer; }
     .order-click__modal .close-btn span {
       height: 1px;
-      width: 18px;
+      width: 19px;
       background-color: #8c8484;
       display: block; }
       .order-click__modal .close-btn span:first-child {
@@ -2504,13 +2505,32 @@ footer {
       padding: 15px 5px;
       width: 350px;
       overflow: hidden; } }
-  .call-me__modal .we-call h4 {
-    color: #6f0d33;
-    font-size: 24px;
-    font-weight: 400;
-    text-transform: uppercase;
-    text-align: center;
-    padding: 0 25px; }
+  .call-me__modal .we-call {
+    position: relative; }
+    .call-me__modal .we-call .close-btn {
+      position: absolute;
+      top: -8px;
+      right: -31px;
+      cursor: pointer; }
+      .call-me__modal .we-call .close-btn span {
+        height: 1px;
+        width: 19px;
+        background-color: #8c8484;
+        display: block; }
+        .call-me__modal .we-call .close-btn span:first-child {
+          transform: rotate(45deg);
+          transform-origin: 0 0;
+          margin-bottom: 12px; }
+        .call-me__modal .we-call .close-btn span:last-child {
+          transform: rotate(-45deg);
+          transform-origin: 0 100%; }
+    .call-me__modal .we-call h4 {
+      color: #6f0d33;
+      font-size: 24px;
+      font-weight: 400;
+      text-transform: uppercase;
+      text-align: center;
+      padding: 0 25px; }
   .call-me__modal .feedback-form {
     display: flex;
     flex-direction: column;
