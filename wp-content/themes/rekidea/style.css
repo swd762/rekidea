@@ -301,7 +301,7 @@ main {
         .colors-block .colors-table-content > div {
           display: flex;
           width: 100%;
-          flex: 100% 0 0; } }
+          flex: auto 0 0; } }
       .colors-block .colors-table-content > div:last-child {
         display: flex;
         flex-direction: column; }
