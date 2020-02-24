@@ -301,7 +301,7 @@ main {
         .colors-block .colors-table-content > div {
           display: flex;
           width: 100%;
-          flex: 100% 0 0; } }
+          flex: auto 0 0; } }
       .colors-block .colors-table-content > div:last-child {
         display: flex;
         flex-direction: column; }
@@ -497,6 +497,23 @@ main {
     @media (max-width: 1023px) {
       .colors-block .color-092 {
         background: url("img/magnit-colors/092-side.jpg"); } }
+
+.back-btn {
+  background: transparent;
+  color: #6f0d33;
+  border: none;
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+  cursor: pointer;
+  padding-left: 11px; }
+  .back-btn:before {
+    content: '';
+    display: inline-block;
+    background: url("img/button-red.svg") no-repeat;
+    width: 14px;
+    height: 14px;
+    transform: rotate(90deg); }
 
 .main-header {
   position: fixed;
@@ -1864,7 +1881,7 @@ main {
   position: relative; }
   .magnetic-top-banner__content section {
     width: 667px;
-    padding: 0 0 27px 0; }
+    padding: 0 0 25px 0; }
     .magnetic-top-banner__content section h1 {
       font-size: 37px;
       color: #6f0d33;
@@ -2365,10 +2382,28 @@ footer {
     .order-click__modal {
       top: 10px;
       transform: translate(-50%); } }
+  .order-click__modal .close-btn {
+    position: absolute;
+    top: -8px;
+    right: -31px;
+    cursor: pointer; }
+    .order-click__modal .close-btn span {
+      height: 1px;
+      width: 19px;
+      background-color: #8c8484;
+      display: block; }
+      .order-click__modal .close-btn span:first-child {
+        transform: rotate(45deg);
+        transform-origin: 0 0;
+        margin-bottom: 12px; }
+      .order-click__modal .close-btn span:last-child {
+        transform: rotate(-45deg);
+        transform-origin: 0 100%; }
   .order-click__modal .call-us {
     display: flex;
     flex-direction: column;
-    align-items: center; }
+    align-items: center;
+    position: relative; }
     .order-click__modal .call-us h4 {
       font-size: 24px;
       text-transform: uppercase;
@@ -2470,13 +2505,32 @@ footer {
       padding: 15px 5px;
       width: 350px;
       overflow: hidden; } }
-  .call-me__modal .we-call h4 {
-    color: #6f0d33;
-    font-size: 24px;
-    font-weight: 400;
-    text-transform: uppercase;
-    text-align: center;
-    padding: 0 25px; }
+  .call-me__modal .we-call {
+    position: relative; }
+    .call-me__modal .we-call .close-btn {
+      position: absolute;
+      top: -8px;
+      right: -31px;
+      cursor: pointer; }
+      .call-me__modal .we-call .close-btn span {
+        height: 1px;
+        width: 19px;
+        background-color: #8c8484;
+        display: block; }
+        .call-me__modal .we-call .close-btn span:first-child {
+          transform: rotate(45deg);
+          transform-origin: 0 0;
+          margin-bottom: 12px; }
+        .call-me__modal .we-call .close-btn span:last-child {
+          transform: rotate(-45deg);
+          transform-origin: 0 100%; }
+    .call-me__modal .we-call h4 {
+      color: #6f0d33;
+      font-size: 24px;
+      font-weight: 400;
+      text-transform: uppercase;
+      text-align: center;
+      padding: 0 25px; }
   .call-me__modal .feedback-form {
     display: flex;
     flex-direction: column;

@@ -84,11 +84,11 @@
 <div class="complex-magnetic__wrapper clearfix">
     <div class="container">
         <div class="complex-magnetic__content">
-            <h3 class="wow zoomIn">магниты стандартные
+            <h3 class="wow zoomIn" data-wow-offset="0">магниты стандартные
                 и&nbsp;сложной формы</h3>
             <div class="circle-left"></div>
             <div class="circle-right"></div>
-            <section  class="wow zoomIn" data-wow-delay="0.5s">
+            <section  class="wow zoomIn" data-wow-offset="0" data-wow-delay="0.5s">
                 <p>
                     Магнитно-маркерная доска выглядит очень красиво,
                     все наши магниты установлены в специальный корпус.
@@ -107,9 +107,9 @@
                     Наша магнитно-маркерная доска это яркий элемент вашего офисного стиля и рабочего места!
                 </p>
             </section>
-            <img src="<?= get_template_directory_uri()?>/img/magnetic-page/magnit1.png" alt="" class="mag1 wow zoomIn" data-wow-delay="1.5s" >
-            <img src="<?= get_template_directory_uri()?>/img/magnetic-page/magnit2.png" alt="" class="mag2 wow zoomIn" data-wow-delay="2s">
-            <img src="<?= get_template_directory_uri()?>/img/magnetic-page/magnit3.png" alt="" class="mag3 wow zoomIn" data-wow-delay="1s">
+            <img src="<?= get_template_directory_uri()?>/img/magnetic-page/magnit1.png" alt="" data-wow-offset="0" class="mag1 wow zoomIn" data-wow-delay="1.5s" >
+            <img src="<?= get_template_directory_uri()?>/img/magnetic-page/magnit2.png" alt="" data-wow-offset="100" class="mag2 wow zoomIn" data-wow-delay="2s">
+            <img src="<?= get_template_directory_uri()?>/img/magnetic-page/magnit3.png" alt="" data-wow-offset="100" class="mag3 wow zoomIn" data-wow-delay="1s">
         </div>
         <div class="complex-magnetic__content-mobile">
             <h3 class="wow zoomIn">магниты стандартные
@@ -686,7 +686,7 @@
          {
              boxClass:     'wow',      // default
              animateClass: 'animated', // default
-             offset:       180,          // default
+             offset:       160,          // default
              mobile:       false,       // default
              live:         true        // default
          }
