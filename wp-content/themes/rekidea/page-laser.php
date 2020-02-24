@@ -458,17 +458,17 @@ get_header();
             }
         );
 
-        // fuf = new WOW(
-        //     {
-        //         boxClass:     'fuf',      // default
-        //         animateClass: 'animated', // default
-        //         offset:       0,          // default
-        //         mobile:       true,       // default
-        //         live:         true        // default
-        //     }
-        // );
+        fuf = new WOW(
+            {
+                boxClass:     'fuf',      // default
+                animateClass: 'animated', // default
+                offset:       0,          // default
+                mobile:       true,       // default
+                live:         true        // default
+            }
+        );
         wow.init();
-        // fuf.init();
+        fuf.init();
     </script>
 </main>
 <?php
