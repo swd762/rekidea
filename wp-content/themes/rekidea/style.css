@@ -2387,6 +2387,10 @@ footer {
     top: -8px;
     right: -31px;
     cursor: pointer; }
+    @media (max-width: 520px) {
+      .order-click__modal .close-btn {
+        top: -5px;
+        right: 0; } }
     .order-click__modal .close-btn span {
       height: 1px;
       width: 19px;
@@ -2512,6 +2516,10 @@ footer {
       top: -8px;
       right: -31px;
       cursor: pointer; }
+      @media (max-width: 520px) {
+        .call-me__modal .we-call .close-btn {
+          top: -4px;
+          right: 0; } }
       .call-me__modal .we-call .close-btn span {
         height: 1px;
         width: 19px;

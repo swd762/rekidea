@@ -2428,6 +2428,10 @@ footer {
     top: -8px;
     right: -31px;
     cursor: pointer;
+    @media (max-width: 520px) {
+      top: -5px;
+      right: 0;
+    }
     span {
       height: 1px;
       width: 19px;
@@ -2584,6 +2588,10 @@ footer {
       top: -8px;
       right: -31px;
       cursor: pointer;
+      @media (max-width: 520px) {
+        top: -4px;
+        right: 0;
+      }
       span {
         height: 1px;
         width: 19px;
