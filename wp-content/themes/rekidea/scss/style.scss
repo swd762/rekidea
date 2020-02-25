@@ -1010,10 +1010,21 @@
   padding: 5px;
 }
 
+.laser-portfolio-block__content {
+  @media(max-width: 1170px) {
+    padding: 0 12px;
+  }
+}
+
 .content-big {
   display: flex;
   justify-content: center;
-  height: 280px;
+  @media(max-width: 1170px) {
+    height: 241px;
+  }
+  @media(max-width: 1023px) {
+    height: auto;
+  }
   a {
     flex-basis: 370px;
     flex-shrink: 1;
@@ -1023,8 +1034,13 @@
     &:last-child {
       margin-right: 0;
     }
+    @media(max-width: 1170px) {
+      &:nth-child(3) {
+        margin-right: 0;
+      }
+    }
     img {
-      height: 100%;
+      width: 100%;
     }
   }
 }
@@ -1492,14 +1508,16 @@
     display: flex;
     align-items: center;
     justify-content: space-around;
-    margin: 0 auto;
+    margin: 15px auto 0;
     color: #fff;
     text-transform: uppercase;
     text-decoration: none;
     font-size: 14px;
     font-weight: 300;
     padding: 15px 50px;
-    margin-top: 15px;
+    @media (max-width: 1170px) {
+      margin-top: 30px;
+    }
     &:hover {
       background-color: #d0b9c2;
       transition: all 0.3s linear;

@@ -1268,10 +1268,19 @@ main {
 .portfolio-block__content {
   padding: 5px; }
 
+@media (max-width: 1170px) {
+  .laser-portfolio-block__content {
+    padding: 0 12px; } }
+
 .content-big {
   display: flex;
-  justify-content: center;
-  height: 280px; }
+  justify-content: center; }
+  @media (max-width: 1170px) {
+    .content-big {
+      height: 241px; } }
+  @media (max-width: 1023px) {
+    .content-big {
+      height: auto; } }
   .content-big a {
     flex-basis: 370px;
     flex-shrink: 1;
@@ -1280,8 +1289,11 @@ main {
     overflow: hidden; }
     .content-big a:last-child {
       margin-right: 0; }
+    @media (max-width: 1170px) {
+      .content-big a:nth-child(3) {
+        margin-right: 0; } }
     .content-big a img {
-      height: 100%; }
+      width: 100%; }
 
 .content-small {
   margin-top: 8px;
@@ -1642,14 +1654,16 @@ main {
     display: flex;
     align-items: center;
     justify-content: space-around;
-    margin: 0 auto;
+    margin: 15px auto 0;
     color: #fff;
     text-transform: uppercase;
     text-decoration: none;
     font-size: 14px;
     font-weight: 300;
-    padding: 15px 50px;
-    margin-top: 15px; }
+    padding: 15px 50px; }
+    @media (max-width: 1170px) {
+      .laser-portfolio-block-wrapper .button {
+        margin-top: 30px; } }
     .laser-portfolio-block-wrapper .button:hover {
       background-color: #d0b9c2;
       transition: all 0.3s linear; }
@@ -2685,7 +2699,10 @@ footer {
   .magnetic-top-banner__content .magnetic-top-banner__content-text {
     padding: 0 12px 0 47px !important; }
   .magnetic-top-banner__content .flag-banner {
-    width: 97%; } }
+    width: 97%; }
+
+  .hidden-tablet {
+    display: none; } }
 @media (max-width: 1090px) {
   .stands-block-wrapper {
     padding: 50px 0 0 0; }
@@ -2834,9 +2851,6 @@ footer {
 
   .container {
     width: auto; }
-
-  .hidden-tablet {
-    display: none; }
 
   .why-us-block__header p {
     text-align: center; }

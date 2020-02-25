@@ -170,6 +170,10 @@
   }
 }
 
+  .hidden-tablet {
+    display: none;
+  }
+
 
 
 
@@ -420,9 +424,6 @@
   }
   .container {
     width: auto;
-  }
-  .hidden-tablet {
-    display: none;
   }
   // Why us block
   .why-us-block__header {
