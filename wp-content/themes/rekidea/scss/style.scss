@@ -1013,15 +1013,18 @@
 .content-big {
   display: flex;
   justify-content: center;
+  height: 280px;
   a {
     flex-basis: 370px;
-    flex-shrink: 0.5;
+    flex-shrink: 1;
     margin-right: 8px;
+    text-align: center;
+    overflow: hidden;
     &:last-child {
       margin-right: 0;
     }
     img {
-      max-width: 100%;
+      height: 100%;
     }
   }
 }
@@ -1519,22 +1522,6 @@
 }
 .portfolio-block__content {
   padding: 5px;
-}
-
-.content-big {
-  display: flex;
-  justify-content: center;
-  a {
-    flex-basis: 370px;
-    flex-shrink: 0.5;
-    margin-right: 8px;
-    &:last-child {
-      margin-right: 0;
-    }
-    img {
-      max-width: 100%;
-    }
-  }
 }
 // **********************************
 

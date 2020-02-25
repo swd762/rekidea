@@ -1270,15 +1270,18 @@ main {
 
 .content-big {
   display: flex;
-  justify-content: center; }
+  justify-content: center;
+  height: 280px; }
   .content-big a {
     flex-basis: 370px;
-    flex-shrink: 0.5;
-    margin-right: 8px; }
+    flex-shrink: 1;
+    margin-right: 8px;
+    text-align: center;
+    overflow: hidden; }
     .content-big a:last-child {
       margin-right: 0; }
     .content-big a img {
-      max-width: 100%; }
+      height: 100%; }
 
 .content-small {
   margin-top: 8px;
@@ -1664,18 +1667,6 @@ main {
 
 .portfolio-block__content {
   padding: 5px; }
-
-.content-big {
-  display: flex;
-  justify-content: center; }
-  .content-big a {
-    flex-basis: 370px;
-    flex-shrink: 0.5;
-    margin-right: 8px; }
-    .content-big a:last-child {
-      margin-right: 0; }
-    .content-big a img {
-      max-width: 100%; }
 
 .laser-questions-contact__wrapper {
   color: #6f0d33;
