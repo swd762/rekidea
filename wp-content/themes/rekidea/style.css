@@ -2247,7 +2247,6 @@ main {
   justify-content: center;
   align-items: center;
   height: 100%;
-  padding-left: 93px;
   position: relative; }
   @media (max-width: 1023px) {
     .boards-clamp__content {
