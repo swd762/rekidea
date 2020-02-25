@@ -133,7 +133,7 @@
                 Наша магнитно-маркерная доска это яркий элемент вашего офисного стиля и рабочего места!
             </p>
             </section>
-            <img src="<?= get_template_directory_uri()?>/img/magnetic-page/magnit4.png" alt="" class="" style="margin-top: 18px" >
+            <img src="<?= get_template_directory_uri()?>/img/magnetic-page/magnit5.png" alt="" class="" style="margin-top: 18px" >
 
         </div>
     </div>

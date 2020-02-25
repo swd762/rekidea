@@ -1010,18 +1010,37 @@
   padding: 5px;
 }
 
+.laser-portfolio-block__content {
+  @media(max-width: 1170px) {
+    padding: 0 12px;
+  }
+}
+
 .content-big {
   display: flex;
   justify-content: center;
+  @media(max-width: 1170px) {
+    height: 241px;
+  }
+  @media(max-width: 1023px) {
+    height: auto;
+  }
   a {
     flex-basis: 370px;
-    flex-shrink: 0.5;
+    flex-shrink: 1;
     margin-right: 8px;
+    text-align: center;
+    overflow: hidden;
     &:last-child {
       margin-right: 0;
     }
+    @media(max-width: 1170px) {
+      &:nth-child(3) {
+        margin-right: 0;
+      }
+    }
     img {
-      max-width: 100%;
+      width: 100%;
     }
   }
 }
@@ -1489,14 +1508,16 @@
     display: flex;
     align-items: center;
     justify-content: space-around;
-    margin: 0 auto;
+    margin: 15px auto 0;
     color: #fff;
     text-transform: uppercase;
     text-decoration: none;
     font-size: 14px;
     font-weight: 300;
     padding: 15px 50px;
-    margin-top: 15px;
+    @media (max-width: 1170px) {
+      margin-top: 30px;
+    }
     &:hover {
       background-color: #d0b9c2;
       transition: all 0.3s linear;
@@ -1519,22 +1540,6 @@
 }
 .portfolio-block__content {
   padding: 5px;
-}
-
-.content-big {
-  display: flex;
-  justify-content: center;
-  a {
-    flex-basis: 370px;
-    flex-shrink: 0.5;
-    margin-right: 8px;
-    &:last-child {
-      margin-right: 0;
-    }
-    img {
-      max-width: 100%;
-    }
-  }
 }
 // **********************************
 
@@ -2428,6 +2433,10 @@ footer {
     top: -8px;
     right: -31px;
     cursor: pointer;
+    @media (max-width: 520px) {
+      top: -5px;
+      right: 0;
+    }
     span {
       height: 1px;
       width: 19px;
@@ -2584,6 +2593,10 @@ footer {
       top: -8px;
       right: -31px;
       cursor: pointer;
+      @media (max-width: 520px) {
+        top: -4px;
+        right: 0;
+      }
       span {
         height: 1px;
         width: 19px;
