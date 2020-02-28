@@ -2312,11 +2312,29 @@
 //Price header
 .price-header {
   text-align: center;
+  padding: 0 10px;
   h1 {
     font-size: 30px;
     font-weight: bold;
     text-transform: uppercase;
     color: $red;
+  }
+  p {
+    font-weight: 300;
+  }
+  section {
+    margin-top: 20px;
+  }
+  @media (max-width: 520px) {
+    h1 {
+      font-size: 24px;
+    }
+    p {
+      font-size: 14px;
+    }
+    section {
+      margin-top: 10px;
+    }
   }
 }
 
