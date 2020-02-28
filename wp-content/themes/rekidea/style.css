@@ -2296,8 +2296,7 @@ main {
       display: flex; } }
 
 .price-header {
-  text-align: center;
-  padding: 0 10px; }
+  text-align: center; }
   .price-header h1 {
     font-size: 30px;
     font-weight: bold;
@@ -2308,12 +2307,14 @@ main {
   .price-header section {
     margin-top: 20px; }
   @media (max-width: 520px) {
-    .price-header h1 {
-      font-size: 24px; }
-    .price-header p {
-      font-size: 14px; }
-    .price-header section {
-      margin-top: 10px; } }
+    .price-header {
+      padding: 0 10px; }
+      .price-header h1 {
+        font-size: 24px; }
+      .price-header p {
+        font-size: 14px; }
+      .price-header section {
+        margin-top: 10px; } }
 
 .price-cards__wrapper {
   padding: 10px 0 35px 0;
