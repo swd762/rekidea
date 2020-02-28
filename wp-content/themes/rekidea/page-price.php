@@ -1,0 +1,161 @@
+<?php
+get_header();
+?>
+<main>
+<!--Breadcrumbs block *******************-->
+<div class="breadcrumbs">
+    <div class="container">
+        <p>Главная  > Цены</p>
+    </div>
+</div>
+<!--*************************************-->
+<div class="price-header container">
+    <h1>ознакомьтесь с&nbsp;нашими ценами</h1>
+
+</div>
+<!--    *********************************-->
+
+<!--    *********************************-->
+<div class="price-cards__wrapper container">
+
+    <div class="price-card wow zoomIn">
+        <a href="/404">
+            <img src="<?= get_template_directory_uri()?>/img/price-page/pic1.png" alt="">
+            <h3>вывески</h3>
+        </a>
+    </div>
+
+    <div class="price-card wow zoomIn">
+        <a href="/404">
+            <img src="<?= get_template_directory_uri()?>/img/price-page/pic2.png" alt="">
+            <h3>световые панели</h3>
+        </a>
+    </div>
+
+    <div class="price-card wow zoomIn">
+        <a href="/404">
+            <img src="<?= get_template_directory_uri()?>/img/price-page/pic3.png" alt="">
+            <h3>широкоформатная печать</h3>
+        </a>
+    </div>
+
+    <div class="price-card wow zoomIn">
+        <a href="/404">
+            <img src="<?= get_template_directory_uri()?>/img/price-page/pic4.png" alt="">
+            <h3>ростовые фигуры</h3>
+        </a>
+    </div>
+
+    <div class="price-card wow zoomIn">
+        <a href="/404">
+            <img src="<?= get_template_directory_uri()?>/img/price-page/pic5.png" alt="">
+            <h3>мобильные стенды</h3>
+        </a>
+    </div>
+
+    <div class="price-card wow zoomIn">
+        <a href="/404">
+            <img src="<?= get_template_directory_uri()?>/img/price-page/pic6.png" alt="">
+            <h3>фотозона</h3>
+        </a>
+    </div>
+
+    <div class="price-card wow zoomIn">
+        <a href="/404">
+            <img src="<?= get_template_directory_uri()?>/img/price-page/pic7.png" alt="">
+            <h3>магнитно-маркерные доски</h3>
+        </a>
+    </div>
+
+    <div class="price-card wow zoomIn">
+        <a href="/404">
+            <img src="<?= get_template_directory_uri()?>/img/price-page/pic8.png" alt="">
+            <h3>лазерная резка</h3>
+        </a>
+    </div>
+
+    <div class="price-card wow zoomIn">
+        <a href="/404">
+            <img src="<?= get_template_directory_uri()?>/img/price-page/pic9.png" alt="">
+            <h3>картины для дома и<br> офиса</h3>
+        </a>
+    </div>
+
+    <div class="price-card wow zoomIn">
+        <a href="/404">
+            <img src="<?= get_template_directory_uri()?>/img/price-page/pic14.png" alt="">
+            <h3>инфостенды
+                и режимы работы</h3>
+        </a>
+    </div>
+
+    <div class="price-card wow zoomIn">
+        <a href="/404">
+            <img src="<?= get_template_directory_uri()?>/img/price-page/pic10.png" alt="">
+            <h3>оклейка витрин
+                и офисных перегородок</h3>
+        </a>
+    </div>
+
+    <div class="price-card wow zoomIn">
+        <a href="/404">
+            <img src="<?= get_template_directory_uri()?>/img/price-page/pic11.png" alt="">
+            <h3>брендирование<br> транспорта</h3>
+        </a>
+    </div>
+
+    <div class="price-card wow zoomIn">
+        <a href="/404">
+            <img src="<?= get_template_directory_uri()?>/img/price-page/pic12.png" alt="">
+            <h3>штендеры</h3>
+        </a>
+    </div>
+
+    <div class="price-card wow zoomIn">
+        <a href="/404">
+            <img src="<?= get_template_directory_uri()?>/img/price-page/pic13.png" alt="">
+            <h3>аренда рекламных
+                конструкций</h3>
+        </a>
+    </div>
+</div>
+<!--******************************************-->
+
+<!--consultant block ***********************************-->
+<div class="questions-contact__wrapper container">
+    <div class="questions-contact__content">
+        <h2>Затрудняетесь с выбором?</h2>
+        <p>Мы сэкономим ваше время! Звоните для консультаций
+            или оставьте заявку на обратный звонок.
+        </p>
+        <div class="questions-contact__content-contacts">
+            <h4>+ 7 (495) 369-20-79</h4>
+            <a href="#" class="button call-me-js">ПЕРЕЗВОНИТЬ МНЕ</a>
+        </div>
+    </div>
+    <img src="<?= get_template_directory_uri()?>/img/404/operator.png" alt="" class="question-operator">
+    <!--    <img src="--><?//= get_template_directory_uri()?><!--/img/404/operator.png" alt="" class="question-operator-mobile">-->
+</div>
+<!--****************************************************-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</main>
+<?php
+get_footer();
+?>
