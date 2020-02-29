@@ -2438,32 +2438,44 @@
 .wide-printing__nav-mobile {
   display: none;
   margin-top: -12px;
+  flex-direction: column;
+  align-items: center;
+  border-bottom: 1px solid gray;
   .selected {
     color:$red;
     font-weight: bold;
   }
-  ul {
-    display: flex;
-    flex-wrap: wrap;
-    list-style: none;
-    justify-content: center;
-    li {
-      margin-right: 10px;
-      margin-top: 8px;
-      a {
-        color:#4c4c4c;
-        text-decoration: none;
-        text-transform: uppercase;
-        &:hover {
-          color: $red;
-          font-weight: bold;
-        }
+  section {
+    margin-top: 8px;
+    &:last-child {
+      padding-bottom: 5px;
+    }
+    a {
+      color:#4c4c4c;
+      text-decoration: none;
+      text-transform: uppercase;
+      font-size: 13px;
+      &:hover {
+        color: $red;
+        font-weight: bold;
       }
     }
   }
-
   @media (max-width: 950px) {
     display: flex;
+    section {
+      a {
+        font-size: 20px;
+      }
+    }
+  }
+  @media (max-width: 520px) {
+    display: flex;
+    section {
+      a {
+        font-size: 13px;
+      }
+    }
   }
 }
 

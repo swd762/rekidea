@@ -45,19 +45,38 @@ get_header();
         </div>
         <div class="row">
             <div class="wide-printing__nav-mobile">
-                <ul>
-                    <li><a href="#">Вывески</a></li>
-                    <li><a href="#">Световые панели</a></li>
-                    <li class="selected"><a href="#">широкоформатная печать</a></li>
-                    <li><a href="#">ростовые фигуры</a></li>
-                    <li><a href="#">мобильные стенды</a></li>
-                    <li><a href="#">фотозона</a></li>
-                    <li><a href="#">магнитно-маркерные доски</a></li>
-                    <li><a href="#">лазерная резка</a></li>
-                    <li><a href="#">картины для дома и офиса</a></li>
-                    <li><a href="#">инфостенды и режим работы</a></li>
-                    <li><a href="#">оклейка витрин и офисных перегородок</a></li>
-                </ul>
+                <section>
+                    <a href="#">Вывески</a>
+                    <a href="#">Световые панели</a>
+                    <a href="#">фотозона</a>
+                </section>
+                <section>
+                    <a href="#" class="selected">широкоформатная печать</a>
+                    <a href="#">лазерная резка</a>
+                </section>
+                <section>
+                    <a href="#">ростовые фигуры</a>
+                    <a href="#">мобильные стенды</a>
+                </section>
+                <section>
+                    <a href="#">магнитно-маркерные доски</a>
+                    <a href="#">штендеры</a>
+                </section>
+                <section>
+                    <a href="#">картины для дома и офиса</a>
+                </section>
+                <section>
+                    <a href="#">инфостенды и режим работы</a>
+                </section>
+                <section>
+                    <a href="#">оклейка витрин и офисных перегородок</a>
+                </section>
+                <section>
+                    <a href="#">брендирование транспорта</a>
+                </section>
+                <section>
+                    <a href="#">аренда рекламных конструкций</a>
+                </section>
             </div>
         </div>
         <div class="table">
@@ -257,19 +276,38 @@ get_header();
         </div>
         <div class="row">
             <div class="wide-printing__nav-mobile">
-                <ul>
-                    <li><a href="#">Вывески</a></li>
-                    <li><a href="#">Световые панели</a></li>
-                    <li class="selected"><a href="#">широкоформатная печать</a></li>
-                    <li><a href="#">ростовые фигуры</a></li>
-                    <li><a href="#">мобильные стенды</a></li>
-                    <li><a href="#">фотозона</a></li>
-                    <li><a href="#">магнитно-маркерные доски</a></li>
-                    <li><a href="#">лазерная резка</a></li>
-                    <li><a href="#">картины для дома и офиса</a></li>
-                    <li><a href="#">инфостенды и режим работы</a></li>
-                    <li><a href="#">оклейка витрин и офисных перегородок</a></li>
-                </ul>
+                <section>
+                    <a href="#">Вывески</a>
+                    <a href="#">Световые панели</a>
+                    <a href="#">фотозона</a>
+                </section>
+                <section>
+                    <a href="#" class="selected">широкоформатная печать</a>
+                    <a href="#">лазерная резка</a>
+                </section>
+                <section>
+                    <a href="#">ростовые фигуры</a>
+                    <a href="#">мобильные стенды</a>
+                </section>
+                <section>
+                    <a href="#">магнитно-маркерные доски</a>
+                    <a href="#">штендеры</a>
+                </section>
+                <section>
+                    <a href="#">картины для дома и офиса</a>
+                </section>
+                <section>
+                    <a href="#">инфостенды и режим работы</a>
+                </section>
+                <section>
+                    <a href="#">оклейка витрин и офисных перегородок</a>
+                </section>
+                <section>
+                    <a href="#">брендирование транспорта</a>
+                </section>
+                <section>
+                    <a href="#">аренда рекламных конструкций</a>
+                </section>
             </div>
         </div>
         <div class="row flex-center">
