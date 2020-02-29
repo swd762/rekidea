@@ -38,7 +38,23 @@ get_header();
                 </section>
                 <h2>широкоформатная печать</h2>
                 <p>все цены в рублях за 1 кв. м</p>
-
+            </div>
+        </div>
+        <div class="row">
+            <div class="wide-printing__nav-mobile">
+                <ul>
+                    <li><a href="#">Вывески</a></li>
+                    <li><a href="#">Световые панели</a></li>
+                    <li class="selected"><a href="#">широкоформатная печать</a></li>
+                    <li><a href="#">ростовые фигуры</a></li>
+                    <li><a href="#">мобильные стенды</a></li>
+                    <li><a href="#">фотозона</a></li>
+                    <li><a href="#">магнитно-маркерные доски</a></li>
+                    <li><a href="#">лазерная резка</a></li>
+                    <li><a href="#">картины для дома и офиса</a></li>
+                    <li><a href="#">инфостенды и режим работы</a></li>
+                    <li><a href="#">оклейка витрин и офисных перегородок</a></li>
+                </ul>
             </div>
         </div>
         <div class="row">
@@ -215,6 +231,257 @@ get_header();
                     <p>750</p>
                 </div>
                 <div class="var-3__td">
+                    <p>950</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="wide-printing__content-mobile">
+        <div class="row flex-center">
+            <div class="wide-printing__content-mobile-title">
+                <h1>ознакомьтесь с нашими ценами</h1>
+                <section>
+                    <p>Для вашего удовства мы&nbsp;разделили наши цены на&nbsp;список категорий.</p>
+                    <p>Выбирайте интересующую Вас категорию в&nbsp;списке и&nbsp;ознакомьтесь с&nbsp;нашими ценами
+                        и&nbsp;выгодными предложениями.</p>
+                </section>
+
+            </div>
+        </div>
+        <div class="row">
+            <div class="wide-printing__nav-mobile">
+                <ul>
+                    <li><a href="#">Вывески</a></li>
+                    <li><a href="#">Световые панели</a></li>
+                    <li class="selected"><a href="#">широкоформатная печать</a></li>
+                    <li><a href="#">ростовые фигуры</a></li>
+                    <li><a href="#">мобильные стенды</a></li>
+                    <li><a href="#">фотозона</a></li>
+                    <li><a href="#">магнитно-маркерные доски</a></li>
+                    <li><a href="#">лазерная резка</a></li>
+                    <li><a href="#">картины для дома и офиса</a></li>
+                    <li><a href="#">инфостенды и режим работы</a></li>
+                    <li><a href="#">оклейка витрин и офисных перегородок</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="row flex-center">
+            <div class="wide-printing__content-mobile-title-addon">
+                <h2>широкоформатная печать</h2>
+                <p>все цены в рублях за 1 кв. м</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="title-mobile">
+                <div class="tit">Печать на пленке</div>
+                <div class="td">Белая</div>
+                <div class="td">Прозрачная</div>
+            </div>
+            <div class="var-1-mobile">
+                <div class="var-1-mobile__title">
+                    <p>720 dpi</p>
+                    <p>Ламинация</p>
+                </div>
+                <div class="var-1-mobile__td">
+                    <p class="hot-icon-mobile">250</p>
+                    <p>410</p>
+                </div>
+                <div class="var-1-mobile__td">
+                    <p class="hot-icon-mobile">280</p>
+                    <p>440</p>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="title-mobile">
+                <div class="tit" style="background: #fff">Печать на пленке</div>
+                <div class="td">Белая</div>
+                <div class="td">Прозрачная</div>
+            </div>
+            <div class="var-1-mobile">
+                <div class="var-1-mobile__title">
+                    <p>1440 dpi</p>
+                    <p>Ламинация</p>
+                </div>
+                <div class="var-1-mobile__td">
+                    <p class="hot-icon-mobile">320</p>
+                    <p>480</p>
+                </div>
+                <div class="var-1-mobile__td">
+                    <p class="hot-icon-mobile">350</p>
+                    <p>510</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="title-mobile">
+                <div class="tit">Печать на пленке "ORAJET"</div>
+                <div class="td">Белая</div>
+                <div class="td">Прозрачная</div>
+                <div class="td">Легкосьемная</div>
+            </div>
+            <div class="var-1-mobile">
+                <div class="var-1-mobile__title">
+                    <p>720 dpi</p>
+                    <p>Ламинация</p>
+                </div>
+                <div class="var-1-mobile__td">
+                    <p>300</p>
+                    <p>460</p>
+                </div>
+                <div class="var-1-mobile__td">
+                    <p>320</p>
+                    <p>480</p>
+                </div>
+                <div class="var-1-mobile__td">
+                    <p>360</p>
+                    <p>540</p>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="title-mobile">
+                <div class="tit" style="background: #fff">Печать на пленке "ORAJET"</div>
+                <div class="td">Белая</div>
+                <div class="td">Прозрачная</div>
+                <div class="td">Легкосьемная</div>
+            </div>
+            <div class="var-1-mobile">
+                <div class="var-1-mobile__title">
+                    <p>1440 dpi</p>
+                    <p>Ламинация</p>
+                </div>
+                <div class="var-1-mobile__td">
+                    <p>370</p>
+                    <p>530</p>
+                </div>
+                <div class="var-1-mobile__td">
+                    <p>390</p>
+                    <p>550</p>
+                </div>
+                <div class="var-1-mobile__td">
+                    <p>440</p>
+                    <p>600</p>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="title-mobile">
+                <div class="tit">Печать на баннере</div>
+                <div class="td">Ламинированный 450 гр/м</div>
+                <div class="td">Литой 510 гр/м</div>
+            </div>
+            <div class="var-1-mobile">
+                <div class="var-1-mobile__title">
+                    <p>360/720 dpi</p>
+                    <p>Люверсы</p>
+                </div>
+                <div class="var-1-mobile__td">
+                    <p>300</p>
+                    <p>380</p>
+                </div>
+                <div class="var-1-mobile__td">
+                    <p>400</p>
+                    <p>480</p>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="title-mobile">
+                <div class="tit" style="background: #fff">Печать на баннере</div>
+                <div class="td">Ламинированный 450 гр/м</div>
+                <div class="td">Литой 510 гр/м</div>
+            </div>
+            <div class="var-2-mobile">
+                <div class="var-2-mobile__title">
+                    <p>Люверсы</p>
+                </div>
+                <div class="var-2-mobile__td">
+                    <p class="hot-icon-mobile">300</p>
+                </div>
+                <div class="var-2-mobile__td">
+                    <p class="hot-icon-mobile">400</p>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="title-mobile">
+                <div class="tit">Печать на фотобумаге</div>
+                <div class="td">150 гр/м</div>
+                <div class="td">200 гр/м</div>
+            </div>
+            <div class="var-1-mobile">
+                <div class="var-1-mobile__title">
+                    <p>720 dpi</p>
+                    <p>Ламинация</p>
+                </div>
+                <div class="var-1-mobile__td">
+                    <p>350</p>
+                    <p class="hot-icon-mobile">500</p>
+                </div>
+                <div class="var-1-mobile__td">
+                    <p>400</p>
+                    <p class="hot-icon-mobile">560</p>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="title-mobile">
+                <div class="tit" style="background: #fff">Печать на фотобумаге</div>
+                <div class="td">150 гр/м</div>
+                <div class="td">200 гр/м</div>
+            </div>
+            <div class="var-1-mobile">
+                <div class="var-1-mobile__title">
+                    <p>1440 dpi</p>
+                    <p>Ламинация</p>
+                </div>
+                <div class="var-1-mobile__td">
+                    <p>450</p>
+                    <p>560</p>
+                </div>
+                <div class="var-1-mobile__td">
+                    <p>500</p>
+                    <p>660</p>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="title-mobile">
+                <div class="tit">Печать на бэклите</div>
+                <div class="td">150 гр/м</div>
+                <div class="td">200 гр/м</div>
+            </div>
+            <div class="var-1-mobile">
+                <div class="var-1-mobile__title">
+                    <p>1440 dpi</p>
+                    <p>Ламинация</p>
+                </div>
+                <div class="var-1-mobile__td">
+                    <p class="hot-icon-mobile">750</p>
+                    <p>960</p>
+                </div>
+                <div class="var-1-mobile__td">
+                    <p>950</p>
+                    <p>1060</p>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="title-mobile">
+                <div class="tit">Печать на холсте</div>
+                <div class="td">синтетический</div>
+                <div class="td">натуральный (хлопок)</div>
+            </div>
+            <div class="var-3-mobile">
+                <div class="var-3-mobile__title">
+                    <p>1440 dpi</p>
+                </div>
+                <div class="var-3-mobile__td">
+                    <p>750</p>
+                </div>
+                <div class="var-3-mobile__td">
                     <p>950</p>
                 </div>
             </div>

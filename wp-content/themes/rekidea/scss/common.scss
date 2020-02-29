@@ -93,3 +93,12 @@ main {
   top: -12px;
   right: 10px;
 }
+.hot-icon-mobile::after {
+  content: url("img/hot-mobile.png");
+  display: block;
+  width: 18px;
+  height: 19px;
+  position: absolute;
+  top: -8px;
+  right: 5px;
+}
