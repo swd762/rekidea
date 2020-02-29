@@ -3362,7 +3362,104 @@ footer {
 }
 
 // ******************
+// ************Hot deal modal ***********
+.hot-deal__modal {
+  width: 435px;
+  height: 355px;
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  box-shadow: 0 0 14px 0 rgba(0,0,0,.17);
+  padding: 26px 30px 0 30px;
+  z-index: 99994;
+  border-radius: 5px;
 
+  img {
+    width: 60px;
+  }
+  h2 {
+    margin-top: 22px;
+    font-weight: 400;
+    font-size: 24px;
+    color: $red;
+    text-transform: uppercase;
+  }
+  h3 {
+    margin-top: 16px;
+    font-weight: 400;
+    font-size: 24px;
+    color: $red;
+    text-transform: uppercase;
+  }
+  section {
+    margin-top: 28px;
+    p {
+      margin-top: 18px;
+      color: $red;
+      font-size: 24px;
+      font-weight: 300;
+      &:first-child {
+        margin-top: 0;
+      }
+    }
+  }
+  .close-btn {
+    position: absolute;
+    top: 9px;
+    right: 5px;
+    cursor: pointer;
+    //@media (max-width: 520px) {
+    //  top: -5px;
+    //  right: 0;
+    //}
+    span {
+      height: 1px;
+      width: 19px;
+      background-color: #8c8484;
+      display: block;
+      &:first-child{
+        transform: rotate(45deg);
+        transform-origin: 0 0;
+        margin-bottom: 12px;
+      }
+      &:last-child{
+        transform: rotate(-45deg);
+        transform-origin: 0 100%;
+      }
+    }
+  }
+  @media (max-width: 520px) {
+    width: 310px;
+    height: 300px;
+    padding: 25px 5px 0 5px;
+    h2 {
+      font-size: 18px;
+    }
+    h3 {
+      font-size: 18px;
+      margin-top: 10px;
+    }
+    section {
+      margin-top: 22px;
+      p {
+        margin-top: 15px;
+        font-size: 18px;
+      }
+    }
+
+  }
+}
+.active-flex {
+  display: flex;
+}
+
+
+// **************************************
 
 
 // form permanent styles

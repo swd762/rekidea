@@ -62,6 +62,9 @@ main {
   top: -12px;
   right: 10px; }
 
+.hot-icon:hover {
+  cursor: pointer; }
+
 .hot-icon-mobile::after {
   content: url("img/hot-mobile.png");
   display: block;
@@ -3129,6 +3132,80 @@ footer {
 
 .active {
   display: block; }
+
+.hot-deal__modal {
+  width: 435px;
+  height: 355px;
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  box-shadow: 0 0 14px 0 rgba(0, 0, 0, 0.17);
+  padding: 26px 30px 0 30px;
+  z-index: 99994;
+  border-radius: 5px; }
+  .hot-deal__modal img {
+    width: 60px; }
+  .hot-deal__modal h2 {
+    margin-top: 22px;
+    font-weight: 400;
+    font-size: 24px;
+    color: #6f0d33;
+    text-transform: uppercase; }
+  .hot-deal__modal h3 {
+    margin-top: 16px;
+    font-weight: 400;
+    font-size: 24px;
+    color: #6f0d33;
+    text-transform: uppercase; }
+  .hot-deal__modal section {
+    margin-top: 28px; }
+    .hot-deal__modal section p {
+      margin-top: 18px;
+      color: #6f0d33;
+      font-size: 24px;
+      font-weight: 300; }
+      .hot-deal__modal section p:first-child {
+        margin-top: 0; }
+  .hot-deal__modal .close-btn {
+    position: absolute;
+    top: 9px;
+    right: 5px;
+    cursor: pointer; }
+    .hot-deal__modal .close-btn span {
+      height: 1px;
+      width: 19px;
+      background-color: #8c8484;
+      display: block; }
+      .hot-deal__modal .close-btn span:first-child {
+        transform: rotate(45deg);
+        transform-origin: 0 0;
+        margin-bottom: 12px; }
+      .hot-deal__modal .close-btn span:last-child {
+        transform: rotate(-45deg);
+        transform-origin: 0 100%; }
+  @media (max-width: 520px) {
+    .hot-deal__modal {
+      width: 310px;
+      height: 300px;
+      padding: 25px 5px 0 5px; }
+      .hot-deal__modal h2 {
+        font-size: 18px; }
+      .hot-deal__modal h3 {
+        font-size: 18px;
+        margin-top: 10px; }
+      .hot-deal__modal section {
+        margin-top: 22px; }
+        .hot-deal__modal section p {
+          margin-top: 15px;
+          font-size: 18px; } }
+
+.active-flex {
+  display: flex; }
 
 .wpcf7-mail-sent-ok {
   text-align: center;

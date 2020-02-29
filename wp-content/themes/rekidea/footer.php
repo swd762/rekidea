@@ -177,9 +177,14 @@ wp_footer();
         let target = e.target;
         let formIsActive = document.querySelector('.call-me__modal').classList.contains('active');
         let itsFade = target == fadeMax;
+        let HotIsActive = document.querySelector('.hot-deal__modal').classList.contains('active-flex');
         if (formIsActive && itsFade) {
             closeCallModal();
         }
+        if (HotIsActive && itsFade) {
+            closeHotDealModal();
+        }
+
     });
 
     function closeCallModal() {
@@ -190,8 +195,44 @@ wp_footer();
       document.querySelector('body').classList.remove('modal-opened');
     }
 </script>
-
 <!--******************-->
+
+<!--*******************Hot deal modal ******************************-->
+<div class="fade-max"></div>
+<div class="hot-deal__modal">
+    <img src="<?= get_template_directory_uri()?>/img/fire.svg" alt="hot deal">
+    <h2>горячее предложение</h2>
+    <h3>обратите внимание на цену!</h3>
+    <section>
+        <p>Ламинация всего — 160 ₽/м2</p>
+        <p>Печать от 10 м2 — скидка 5%</p>
+        <p>Печать от 30 м2 — скидка 7%</p>
+    </section>
+    <div class="close-btn" onclick="closeHotDealModal()"><span></span><span></span></div>
+</div>
+<script>
+    let hotDeals = document.querySelectorAll('.hot-icon , .hot-icon-mobile');
+    let modal = document.querySelector('.hot-deal__modal');
+    for (let i = 0; i <hotDeals.length ; i++) {
+        hotDeals[i].addEventListener('click', function (e) {
+            e.preventDefault();
+            modal.classList.add('active-flex');
+            fadeMax.classList.add('active');
+            document.querySelector('body').classList.add('modal-opened');
+        });
+    }
+
+    function closeHotDealModal() {
+        let modal = document.querySelector('.hot-deal__modal');
+        modal.classList.remove('active-flex');
+        fadeMax.classList.remove('active');
+        document.querySelector('body').classList.remove('modal-opened');
+    }
+
+</script>
+
+
+<!--*******************************************************************-->
 
 
 <script>

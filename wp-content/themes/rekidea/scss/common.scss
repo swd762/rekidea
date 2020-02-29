@@ -93,6 +93,9 @@ main {
   top: -12px;
   right: 10px;
 }
+.hot-icon:hover {
+  cursor: pointer;
+}
 .hot-icon-mobile::after {
   content: url("img/hot-mobile.png");
   display: block;
