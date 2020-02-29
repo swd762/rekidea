@@ -80,3 +80,16 @@ main {
   clear: both;
   display: table;
 }
+
+
+// hot icon
+
+.hot-icon::after {
+  content: url("img/hot.png");
+  display: block;
+  width: 21px;
+  height: 20px;
+  position: absolute;
+  top: -12px;
+  right: 10px;
+}

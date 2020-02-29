@@ -9,6 +9,8 @@ get_header();
     </div>
 </div>
 <!--*************************************-->
+
+<!--*********Price header************************-->
 <div class="price-header container">
     <h1>ознакомьтесь с&nbsp;нашими ценами</h1>
     <section>
@@ -23,10 +25,10 @@ get_header();
 
 
 </div>
-<!--    *********************************-->
+<!--*********************************-->
 
-<!--    *********************************-->
-<div class="price-cards__wrapper container">
+<!--*********Price cards************************-->
+    <div class="price-cards__wrapper container">
 
     <div class="price-card wow zoomIn">
         <a href="/404">
@@ -147,24 +149,6 @@ get_header();
     <!--    <img src="--><?//= get_template_directory_uri()?><!--/img/404/operator.png" alt="" class="question-operator-mobile">-->
 </div>
 <!--****************************************************-->
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 </main>
 <?php
 get_footer();
