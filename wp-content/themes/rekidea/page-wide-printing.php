@@ -25,6 +25,9 @@ get_header();
             <li><a href="#">картины для дома и офиса</a></li>
             <li><a href="#">инфостенды и режим работы</a></li>
             <li><a href="#">оклейка витрин и офисных перегородок</a></li>
+            <li><a href="#">брендирование транспорта</a></li>
+            <li><a href="#">штендеры</a></li>
+            <li><a href="#">аренда рекламных конструкций</a></li>
         </ul>
     </div>
     <div class="wide-printing__content">
@@ -57,6 +60,7 @@ get_header();
                 </ul>
             </div>
         </div>
+        <div class="table">
         <div class="row">
             <div class="title">
                 <div class="tit">Печать на пленке</div>
@@ -220,8 +224,8 @@ get_header();
         <div class="row">
             <div class="title">
                 <div class="tit">Печать на холсте</div>
-                <div class="td">синтетический</div>
-                <div class="td">натуральный (хлопок)</div>
+                <div class="td">Синтетический</div>
+                <div class="td">Натуральный (хлопок)</div>
             </div>
             <div class="var-3">
                 <div class="var-3__title">
@@ -235,7 +239,10 @@ get_header();
                 </div>
             </div>
         </div>
+        </div>
     </div>
+
+
     <div class="wide-printing__content-mobile">
         <div class="row flex-center">
             <div class="wide-printing__content-mobile-title">
@@ -271,6 +278,7 @@ get_header();
                 <p>все цены в рублях за 1 кв. м</p>
             </div>
         </div>
+        <div class="table-mobile">
         <div class="row">
             <div class="title-mobile">
                 <div class="tit">Печать на пленке</div>
@@ -471,8 +479,8 @@ get_header();
         <div class="row">
             <div class="title-mobile">
                 <div class="tit">Печать на холсте</div>
-                <div class="td">синтетический</div>
-                <div class="td">натуральный (хлопок)</div>
+                <div class="td">Синтетический</div>
+                <div class="td">Натуральный (хлопок)</div>
             </div>
             <div class="var-3-mobile">
                 <div class="var-3-mobile__title">
@@ -485,6 +493,7 @@ get_header();
                     <p>950</p>
                 </div>
             </div>
+        </div>
         </div>
     </div>
 </div>
