@@ -2396,7 +2396,8 @@ main {
   .wide-printing__nav ul {
     list-style: none; }
   .wide-printing__nav li {
-    margin-top: 25px; }
+    margin-top: 25px;
+    padding-left: 10px; }
     .wide-printing__nav li a {
       text-decoration: none;
       text-transform: uppercase;
@@ -2428,7 +2429,7 @@ main {
   .wide-printing__nav-mobile section {
     margin-top: 8px; }
     .wide-printing__nav-mobile section:last-child {
-      padding-bottom: 5px; }
+      padding-bottom: 15px; }
     .wide-printing__nav-mobile section a {
       color: #4c4c4c;
       text-decoration: none;
@@ -2450,15 +2451,16 @@ main {
 
 .wide-printing__content {
   border-left: 2px solid #c0c0c0;
-  padding-bottom: 80px;
+  padding-bottom: 95px;
   margin-bottom: 20px;
   display: flex;
   flex-direction: column;
-  padding-left: 30px; }
+  padding-left: 40px; }
   @media (max-width: 1170px) {
     .wide-printing__content {
       padding-left: 20px;
-      padding-right: 20px; } }
+      padding-right: 20px;
+      padding-bottom: 80px; } }
   @media (max-width: 950px) {
     .wide-printing__content {
       align-items: center; } }
@@ -2472,6 +2474,9 @@ main {
       font-size: 30px;
       color: #6f0d33;
       text-transform: uppercase; }
+    .wide-printing__content .wide-printing__content-title p {
+      font-size: 16px;
+      font-weight: 300; }
     .wide-printing__content .wide-printing__content-title section {
       margin: 20px 0; }
       .wide-printing__content .wide-printing__content-title section p {
@@ -2487,6 +2492,8 @@ main {
   .wide-printing__content .row {
     display: flex;
     margin-top: 25px; }
+    .wide-printing__content .row:first-child {
+      margin-top: 0; }
   .wide-printing__content .title {
     width: 235px;
     display: flex;
@@ -2502,7 +2509,7 @@ main {
       font-size: 15px;
       width: 235px; }
     .wide-printing__content .title .td {
-      margin-top: 20px;
+      margin-top: 15px;
       height: 20px;
       border: 1px solid #6f0d33;
       font-weight: 300;
@@ -2511,12 +2518,20 @@ main {
       padding-left: 20px;
       font-size: 15px;
       width: 235px; }
+      .wide-printing__content .title .td:nth-child(2) {
+        margin-top: 20px; }
     @media (max-width: 1170px) {
       .wide-printing__content .title {
-        width: 220px; } }
+        width: 220px; }
+        .wide-printing__content .title .tit {
+          width: 220px; }
+        .wide-printing__content .title .td {
+          width: 220px; } }
   .wide-printing__content .var-1 {
     margin-left: 30px;
     width: 235px; }
+    .wide-printing__content .var-1:nth-child(3) {
+      margin-left: 20px; }
     .wide-printing__content .var-1 .var-1__title {
       display: flex;
       height: 20px; }
@@ -2543,7 +2558,7 @@ main {
           margin-left: auto; }
     .wide-printing__content .var-1 .var-1__td {
       height: 20px;
-      margin-top: 20px;
+      margin-top: 15px;
       display: flex; }
       .wide-printing__content .var-1 .var-1__td p {
         border: 1px solid #6f0d33;
@@ -2557,6 +2572,8 @@ main {
           width: 127px;
           border-left: none;
           position: relative; }
+      .wide-printing__content .var-1 .var-1__td:nth-child(2) {
+        margin-top: 20px; }
     @media (max-width: 1170px) {
       .wide-printing__content .var-1 {
         width: 215px;
@@ -2613,7 +2630,7 @@ main {
           width: 114px; }
     .wide-printing__content .var-2 .var-2__td {
       height: 20px;
-      margin-top: 20px;
+      margin-top: 15px;
       display: flex; }
       .wide-printing__content .var-2 .var-2__td p {
         border: 1px solid #6f0d33;
@@ -2631,6 +2648,8 @@ main {
           width: 127px;
           border-left: none;
           position: relative; }
+      .wide-printing__content .var-2 .var-2__td:nth-child(2) {
+        margin-top: 20px; }
     @media (max-width: 1170px) {
       .wide-printing__content .var-2 {
         margin-left: 25px;
@@ -2657,7 +2676,7 @@ main {
         width: 108px; }
     .wide-printing__content .var-3 .var-3__td {
       height: 20px;
-      margin-top: 20px;
+      margin-top: 15px;
       display: flex; }
       .wide-printing__content .var-3 .var-3__td p {
         border: 1px solid #6f0d33;
@@ -2666,6 +2685,8 @@ main {
         justify-content: center;
         width: 108px;
         position: relative; }
+      .wide-printing__content .var-3 .var-3__td:nth-child(2) {
+        margin-top: 20px; }
     @media (max-width: 1170px) {
       .wide-printing__content .var-3 {
         margin-left: 25px;
@@ -2711,7 +2732,7 @@ main {
     margin-bottom: 10px; }
   .wide-printing__content-mobile .row {
     display: flex;
-    margin-top: 12px; }
+    margin-top: 15px; }
   .wide-printing__content-mobile .flex-center {
     justify-content: center; }
   .wide-printing__content-mobile .title-mobile {
@@ -2736,6 +2757,8 @@ main {
       align-items: center;
       padding-left: 10px;
       font-size: 10px; }
+      .wide-printing__content-mobile .title-mobile .td:nth-child(2) {
+        margin-top: 15px; }
   .wide-printing__content-mobile .var-1-mobile {
     margin-left: 18px;
     width: 152px; }
@@ -2767,6 +2790,8 @@ main {
       height: 14px;
       margin-top: 10px;
       display: flex; }
+      .wide-printing__content-mobile .var-1-mobile .var-1-mobile__td:nth-child(2) {
+        margin-top: 15px; }
       .wide-printing__content-mobile .var-1-mobile .var-1-mobile__td p {
         border: 1px solid #6f0d33;
         font-size: 10px;
@@ -2797,7 +2822,7 @@ main {
         justify-content: center;
         align-items: center; }
         .wide-printing__content-mobile .var-2-mobile .var-2-mobile__title p:first-child {
-          width: 96px;
+          width: 110px;
           position: relative; }
           .wide-printing__content-mobile .var-2-mobile .var-2-mobile__title p:first-child::after {
             content: url("img/plus.png");
@@ -2811,6 +2836,8 @@ main {
       height: 14px;
       margin-top: 10px;
       display: flex; }
+      .wide-printing__content-mobile .var-2-mobile .var-2-mobile__td:nth-child(2) {
+        margin-top: 15px; }
       .wide-printing__content-mobile .var-2-mobile .var-2-mobile__td p {
         border: 1px solid #6f0d33;
         font-size: 10px;
@@ -2837,6 +2864,8 @@ main {
       height: 14px;
       margin-top: 10px;
       display: flex; }
+      .wide-printing__content-mobile .var-3-mobile .var-3-mobile__td:nth-child(2) {
+        margin-top: 15px; }
       .wide-printing__content-mobile .var-3-mobile .var-3-mobile__td p {
         border: 1px solid #6f0d33;
         font-size: 10px;
