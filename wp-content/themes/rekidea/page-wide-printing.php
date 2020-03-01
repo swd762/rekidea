@@ -14,20 +14,20 @@ get_header();
 <div class="wide-printing__wrapper container clearfix">
     <div class="wide-printing__nav">
         <ul>
-            <li><a href="#">Вывески</a></li>
-            <li><a href="#">Световые панели</a></li>
-            <li class="selected"><a href="#">широкоформатная печать</a></li>
-            <li><a href="#">ростовые фигуры</a></li>
-            <li><a href="#">мобильные стенды</a></li>
-            <li><a href="#">фотозона</a></li>
-            <li><a href="#">магнитно-маркерные доски</a></li>
-            <li><a href="#">лазерная резка</a></li>
-            <li><a href="#">картины для дома и офиса</a></li>
-            <li><a href="#">инфостенды и режим работы</a></li>
-            <li><a href="#">оклейка витрин и офисных перегородок</a></li>
-            <li><a href="#">брендирование транспорта</a></li>
-            <li><a href="#">штендеры</a></li>
-            <li><a href="#">аренда рекламных конструкций</a></li>
+            <li><a href="404">Вывески</a></li>
+            <li><a href="404">Световые панели</a></li>
+            <li class="selected"><a href="/wide-printing">широкоформатная печать</a></li>
+            <li><a href="404">ростовые фигуры</a></li>
+            <li><a href="404">мобильные стенды</a></li>
+            <li><a href="404">фотозона</a></li>
+            <li><a href="404">магнитно-маркерные доски</a></li>
+            <li><a href="404">лазерная резка</a></li>
+            <li><a href="404">картины для дома и офиса</a></li>
+            <li><a href="404">инфостенды и режим работы</a></li>
+            <li><a href="404">оклейка витрин и офисных перегородок</a></li>
+            <li><a href="404">брендирование транспорта</a></li>
+            <li><a href="404">штендеры</a></li>
+            <li><a href="404">аренда рекламных конструкций</a></li>
         </ul>
     </div>
     <div class="wide-printing__content">
@@ -251,10 +251,10 @@ get_header();
                     <p>1440 dpi</p>
                 </div>
                 <div class="var-3__td">
-                    <p>750</p>
+                    <p>500</p>
                 </div>
                 <div class="var-3__td">
-                    <p>950</p>
+                    <p>1000</p>
                 </div>
             </div>
         </div>
@@ -277,36 +277,31 @@ get_header();
         <div class="row">
             <div class="wide-printing__nav-mobile">
                 <section>
-                    <a href="#">Вывески</a>
-                    <a href="#">Световые панели</a>
-                    <a href="#">фотозона</a>
+                    <a href="/404">Вывески</a><a href="/404">Световые панели</a><a href="/404">фотозона</a>
                 </section>
                 <section>
-                    <a href="#" class="selected">широкоформатная печать</a>
-                    <a href="#">лазерная резка</a>
+                    <a href="/wide-printing" class="selected">широкоформатная печать</a><a href="/404">лазерная резка</a>
                 </section>
                 <section>
-                    <a href="#">ростовые фигуры</a>
-                    <a href="#">мобильные стенды</a>
+                    <a href="/404">ростовые фигуры</a><a href="/404">мобильные стенды</a>
                 </section>
                 <section>
-                    <a href="#">магнитно-маркерные доски</a>
-                    <a href="#">штендеры</a>
+                    <a href="/404">магнитно-маркерные доски</a><a href="/404">штендеры</a>
                 </section>
                 <section>
-                    <a href="#">картины для дома и офиса</a>
+                    <a href="/404">картины для дома и офиса</a>
                 </section>
                 <section>
-                    <a href="#">инфостенды и режим работы</a>
+                    <a href="/404">инфостенды и режим работы</a>
                 </section>
                 <section>
-                    <a href="#">оклейка витрин и офисных перегородок</a>
+                    <a href="/404">оклейка витрин и офисных перегородок</a>
                 </section>
                 <section>
-                    <a href="#">брендирование транспорта</a>
+                    <a href="/404">брендирование транспорта</a>
                 </section>
                 <section>
-                    <a href="#">аренда рекламных конструкций</a>
+                    <a href="/404">аренда рекламных конструкций</a>
                 </section>
             </div>
         </div>
@@ -441,13 +436,13 @@ get_header();
             </div>
             <div class="var-2-mobile">
                 <div class="var-2-mobile__title">
-                    <p>Люверсы</p>
+                    <p>Проклейка</p>
                 </div>
                 <div class="var-2-mobile__td">
-                    <p class="hot-icon-mobile">300</p>
+                    <p class="hot-icon-mobile">430</p>
                 </div>
                 <div class="var-2-mobile__td">
-                    <p class="hot-icon-mobile">400</p>
+                    <p class="hot-icon-mobile">540</p>
                 </div>
             </div>
         </div>
@@ -525,10 +520,10 @@ get_header();
                     <p>1440 dpi</p>
                 </div>
                 <div class="var-3-mobile__td">
-                    <p>750</p>
+                    <p>500</p>
                 </div>
                 <div class="var-3-mobile__td">
-                    <p>950</p>
+                    <p>1000</p>
                 </div>
             </div>
         </div>
