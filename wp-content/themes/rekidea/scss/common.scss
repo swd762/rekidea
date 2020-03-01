@@ -85,7 +85,7 @@ main {
 // hot icon
 
 .hot-icon::after {
-  content: url("img/hot.png");
+  content: url("img/fire.svg");
   display: block;
   width: 21px;
   height: 20px;
@@ -97,7 +97,7 @@ main {
   cursor: pointer;
 }
 .hot-icon-mobile::after {
-  content: url("img/hot-mobile.png");
+  content: url("img/fire.svg");
   display: block;
   width: 18px;
   height: 19px;

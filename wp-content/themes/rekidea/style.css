@@ -54,7 +54,7 @@ main {
   display: table; }
 
 .hot-icon::after {
-  content: url("img/hot.png");
+  content: url("img/fire.svg");
   display: block;
   width: 21px;
   height: 20px;
@@ -66,7 +66,7 @@ main {
   cursor: pointer; }
 
 .hot-icon-mobile::after {
-  content: url("img/hot-mobile.png");
+  content: url("img/fire.svg");
   display: block;
   width: 18px;
   height: 19px;
@@ -1365,6 +1365,14 @@ main {
   font-size: 14px;
   font-weight: 300;
   padding: 10px 0 10px 15px; }
+  .breadcrumbs p {
+    font-size: 14px;
+    font-weight: 300; }
+  .breadcrumbs a {
+    color: #585656;
+    font-size: 14px;
+    font-weight: 300;
+    text-decoration: none; }
 
 .laser-top-banner__wrapper {
   background: #f7f7f7; }

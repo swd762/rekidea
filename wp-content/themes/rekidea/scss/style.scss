@@ -1114,6 +1114,16 @@
   font-size: 14px;
   font-weight: 300;
   padding: 10px 0 10px 15px;
+  p {
+    font-size: 14px;
+    font-weight: 300;
+  }
+  a {
+    color: darken(#8b8989,20%);
+    font-size: 14px;
+    font-weight: 300;
+    text-decoration: none;
+  }
 }
 //******************************************
 
