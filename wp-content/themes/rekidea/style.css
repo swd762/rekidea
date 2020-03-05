@@ -2398,10 +2398,13 @@ main {
   display: flex; }
 
 .wide-printing__nav {
-  width: 315px; }
+  width: 315px;
+  flex-shrink: 0; }
   .wide-printing__nav .selected {
     color: #6f0d33;
     font-weight: bold; }
+    .wide-printing__nav .selected a {
+      color: #6f0d33; }
   .wide-printing__nav ul {
     list-style: none; }
   .wide-printing__nav li {
@@ -2416,12 +2419,14 @@ main {
         color: #6f0d33;
         font-weight: bold; }
   @media (max-width: 1170px) {
-    .wide-printing__nav li {
-      margin-top: 22px;
-      padding-right: 10px;
-      padding-left: 10px; }
-      .wide-printing__nav li a {
-        font-size: 14px; } }
+    .wide-printing__nav {
+      width: 282px; }
+      .wide-printing__nav li {
+        margin-top: 22px;
+        padding-right: 10px;
+        padding-left: 10px; }
+        .wide-printing__nav li a {
+          font-size: 14px; } }
   @media (max-width: 950px) {
     .wide-printing__nav {
       display: none; } }
@@ -2462,7 +2467,7 @@ main {
         font-size: 13px; } }
 
 .wide-printing__content {
-  border-left: 2px solid #c0c0c0;
+  border-left: 1px solid #c0c0c0;
   padding-bottom: 95px;
   margin-bottom: 20px;
   display: flex;
@@ -2788,13 +2793,15 @@ main {
           width: 62px;
           position: relative; }
           .wide-printing__content-mobile .var-1-mobile .var-1-mobile__title p:first-child::after {
-            content: url("img/plus.png");
+            content: '';
             display: block;
-            width: 9px;
-            height: 9px;
+            width: 10px;
+            height: 10px;
             position: absolute;
-            top: -1px;
-            right: -9px; }
+            top: 2px;
+            right: -13px;
+            background: url("img/plus.png");
+            background-size: cover; }
         .wide-printing__content-mobile .var-1-mobile .var-1-mobile__title p:last-child {
           width: 74px;
           margin-left: auto; }
@@ -2822,8 +2829,9 @@ main {
     width: 152px; }
     .wide-printing__content-mobile .var-2-mobile .var-2-mobile__title {
       display: flex;
-      justify-content: center;
-      height: 14px; }
+      justify-content: left;
+      height: 14px;
+      padding-left: 13px; }
       .wide-printing__content-mobile .var-2-mobile .var-2-mobile__title p {
         width: 127px;
         background-color: #6f0d33;
@@ -2837,13 +2845,15 @@ main {
           width: 110px;
           position: relative; }
           .wide-printing__content-mobile .var-2-mobile .var-2-mobile__title p:first-child::after {
-            content: url("img/plus.png");
+            content: '';
             display: block;
-            width: 9px;
-            height: 9px;
+            width: 10px;
+            height: 10px;
             position: absolute;
-            top: 0px;
-            left: -20px; }
+            top: 2px;
+            right: -13px;
+            background: url("img/plus.png");
+            background-size: cover; }
     .wide-printing__content-mobile .var-2-mobile .var-2-mobile__td {
       height: 14px;
       margin-top: 10px;
