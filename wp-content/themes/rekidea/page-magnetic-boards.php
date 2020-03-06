@@ -15,7 +15,7 @@
 <div class="magnetic-top-banner__wrapper">
     <div class="container" >
         <div class="magnetic-top-banner__header wow zoomIn">
-            <h2>скидка — 10% на все магнитно-маркерные доски до 01.04.2019</h2>
+            <h2>скидка — 10% на все магнитно-маркерные доски до 01.04.2020</h2>
         </div>
         <div class="magnetic-top-banner__content">
             <section style="overflow: hidden">
