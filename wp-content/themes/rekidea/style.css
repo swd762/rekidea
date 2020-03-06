@@ -2506,6 +2506,8 @@ main {
       text-decoration: underline;
       text-transform: uppercase;
       margin-bottom: 10px; }
+      .wide-printing__content .wide-printing__content-title h2:hover {
+        font-weight: 600; }
   .wide-printing__content .row {
     display: flex;
     margin-top: 25px; }
