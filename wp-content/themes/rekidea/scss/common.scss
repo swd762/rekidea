@@ -84,24 +84,36 @@ main {
 
 // hot icon
 
-.hot-icon::after {
-  content: url("img/fire.svg");
-  display: block;
-  width: 21px;
-  height: 20px;
-  position: absolute;
-  top: -12px;
-  right: 10px;
+.hot-icon {
+  position: relative;
+  &::after {
+    content: url("img/fire.svg");
+    display: block;
+    width: 21px;
+    height: 20px;
+    position: absolute;
+    top: -12px;
+    right: 10px;
+    @media (max-width: 950px) {
+      width: 18px;
+      height: 19px;
+      top: -8px;
+      right: 5px;
+    }
+  }
+  &:hover {
+    cursor: pointer;
+  }
 }
-.hot-icon:hover {
-  cursor: pointer;
-}
-.hot-icon-mobile::after {
-  content: url("img/fire.svg");
-  display: block;
-  width: 18px;
-  height: 19px;
-  position: absolute;
-  top: -8px;
-  right: 5px;
+.hot-icon-mobile {
+  position: relative;
+  &::after {
+    content: url("img/fire.svg");
+    display: block;
+    width: 18px;
+    height: 19px;
+    position: absolute;
+    top: -8px;
+    right: 5px;
+  }
 }

@@ -199,17 +199,6 @@ wp_footer();
 
 <!--*******************Hot deal modal ******************************-->
 <div class="fade-max"></div>
-<div class="hot-deal__modal">
-    <img src="<?= get_template_directory_uri()?>/img/fire.svg" alt="hot deal">
-    <h2>горячее предложение</h2>
-    <h3>обратите внимание на цену!</h3>
-    <section>
-        <p>Ламинация всего — 160 ₽/м2</p>
-        <p>Печать от 10 м2 — скидка 5%</p>
-        <p>Печать от 30 м2 — скидка 7%</p>
-    </section>
-    <div class="close-btn" onclick="closeHotDealModal()"><span></span><span></span></div>
-</div>
 <script>
     let hotDeals = document.querySelectorAll('.hot-icon , .hot-icon-mobile');
     let modal = document.querySelector('.hot-deal__modal');

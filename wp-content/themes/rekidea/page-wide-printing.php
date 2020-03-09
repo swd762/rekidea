@@ -14,23 +14,7 @@ get_header();
 <!--*************************************-->
 <div class="wide-printing__wrapper container clearfix">
     <div class="wide-printing__nav">
-        <ul>
-            <li><a href="404">Вывески</a></li>
-            <li><a href="404">Световые панели</a></li>
-            <li class="selected"><a href="/wide-printing">широкоформатная печать</a></li>
-            <li><a href="404">ростовые фигуры</a></li>
-            <li><a href="404">мобильные стенды</a></li>
-            <li><a href="404">фотозона</a></li>
-            <li><a href="404">магнитно-маркерные доски</a></li>
-            <li><a href="404">лазерная резка</a></li>
-            <li><a href="404">плоттерная резка</a></li>
-            <li><a href="404">картины для дома и офиса</a></li>
-            <li><a href="404">инфостенды и режим работы</a></li>
-            <li><a href="404">оклейка витрин и офисных перегородок</a></li>
-            <li><a href="404">брендирование транспорта</a></li>
-            <li><a href="404">штендеры</a></li>
-            <li><a href="404">аренда рекламных конструкций</a></li>
-        </ul>
+        <?php get_template_part( 'partials/price-menu.inc'); ?>
     </div>
     <div class="wide-printing__content">
         <div class="row">
@@ -43,42 +27,6 @@ get_header();
                 </section>
                 <a href="/404"><h2>широкоформатная печать</h2></a>
                 <p>все цены в рублях за 1 кв. м</p>
-            </div>
-        </div>
-        <div class="row">
-            <div class="wide-printing__nav-mobile">
-                <section>
-                    <a href="#">Вывески</a>
-                    <a href="#">Световые панели</a>
-                    <a href="#">фотозона</a>
-                </section>
-                <section>
-                    <a href="#" class="selected">широкоформатная печать</a>
-                    <a href="#">лазерная резка</a>
-                </section>
-                <section>
-                    <a href="#">ростовые фигуры</a>
-                    <a href="#">мобильные стенды</a>
-                </section>
-                <section>
-                    <a href="#">магнитно-маркерные доски</a>
-                    <a href="#">штендеры</a>
-                </section>
-                <section>
-                    <a href="#">картины для дома и офиса</a>
-                </section>
-                <section>
-                    <a href="#">инфостенды и режим работы</a>
-                </section>
-                <section>
-                    <a href="#">оклейка витрин и офисных перегородок</a>
-                </section>
-                <section>
-                    <a href="#">брендирование транспорта</a>
-                </section>
-                <section>
-                    <a href="#">аренда рекламных конструкций</a>
-                </section>
             </div>
         </div>
         <div class="table">
@@ -538,22 +486,21 @@ get_header();
 
 
 <!--consultant block ***********************************-->
-<div class="questions-contact__wrapper container">
-    <div class="questions-contact__content">
-        <h2>Затрудняетесь с выбором?</h2>
-        <p>Мы сэкономим ваше время! Звоните для консультаций
-            или оставьте заявку на обратный звонок.
-        </p>
-        <div class="questions-contact__content-contacts">
-            <h4>+ 7 (495) 369-20-79</h4>
-            <a href="#" class="button call-me-js">ПЕРЕЗВОНИТЬ МНЕ</a>
-        </div>
-    </div>
-    <img src="<?= get_template_directory_uri()?>/img/404/operator.png" alt="" class="question-operator">
-    <!--    <img src="--><?//= get_template_directory_uri()?><!--/img/404/operator.png" alt="" class="question-operator-mobile">-->
-</div>
+    <?php get_template_part( 'partials/bottom-consultation-block.inc'); ?>
 <!--****************************************************-->
 </main>
+
+<div class="hot-deal__modal">
+    <img src="<?= get_template_directory_uri()?>/img/fire.svg" alt="hot deal">
+    <h2>горячее предложение</h2>
+    <h3>обратите внимание на цену!</h3>
+    <section>
+        <p>Ламинация всего — 160 ₽/м2</p>
+        <p>Печать от 10 м2 — скидка 5%</p>
+        <p>Печать от 30 м2 — скидка 7%</p>
+    </section>
+    <div class="close-btn" onclick="closeHotDealModal()"><span></span><span></span></div>
+</div>
 <?php
 get_footer();
 ?>
