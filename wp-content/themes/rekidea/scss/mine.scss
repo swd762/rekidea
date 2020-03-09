@@ -590,6 +590,25 @@
 }
 
 .price-table {
+  .horizontal {
+    .row {
+      padding-bottom: 16px;
+      justify-content: center;
+      .tit {
+        width: 252px;
+        margin-bottom: 0;
+      }
+      .td {
+        width: 161px;
+        text-align: left;
+        padding-left: 30px;
+        margin-bottom: 0;
+      }
+      &:last-child {
+        padding-bottom: 30px;
+      }
+    }
+  }
   .row {
     display: flex;
     padding-bottom: 25px;
@@ -599,6 +618,9 @@
     &:last-child {
       padding-bottom: 0;
     }
+  }
+  .columns {
+    display: flex;
   }
   .tit {
     background-color: #6f0d33;
@@ -815,6 +837,60 @@
         top: -9px;
         right: -10px;
       }
+    }
+  }
+}
+
+.laser-price-page {
+  .price__content {
+    padding-left: 111px;
+    width: 747px;
+  }
+}
+.laser-price {
+  width: 608px;
+  .row {
+    display: block;
+    padding-bottom: 22px;
+    .tit {
+      margin: 0;
+      &.desc {
+        margin-bottom: 16px;
+      }
+      &.short {
+        width: 419px;
+        margin-left: 188px;
+      }
+    }
+    .td {
+      margin: 0;
+      border-top: none;
+    }
+  }
+  .horizontal {
+    .row {
+      display: flex;
+      .td {
+        border-top: 1px solid #6f0d33;
+      }
+    }
+  }
+  .columns {
+    .column {
+      width: 121px;
+      margin-right: 28px;
+      &:first-child {
+        width: 160px;
+      }
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+  .hot-icon {
+    &::after {
+      top: -9px;
+      right: -9px;
     }
   }
 }

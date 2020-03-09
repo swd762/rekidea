@@ -545,6 +545,19 @@ main {
     height: 14px;
     transform: rotate(90deg); }
 
+.price-table .horizontal .row {
+  padding-bottom: 16px;
+  justify-content: center; }
+  .price-table .horizontal .row .tit {
+    width: 252px;
+    margin-bottom: 0; }
+  .price-table .horizontal .row .td {
+    width: 161px;
+    text-align: left;
+    padding-left: 30px;
+    margin-bottom: 0; }
+  .price-table .horizontal .row:last-child {
+    padding-bottom: 30px; }
 .price-table .row {
   display: flex;
   padding-bottom: 25px; }
@@ -553,6 +566,8 @@ main {
       padding-bottom: 15px; } }
   .price-table .row:last-child {
     padding-bottom: 0; }
+.price-table .columns {
+  display: flex; }
 .price-table .tit {
   background-color: #6f0d33;
   color: #ffffff;
@@ -739,6 +754,40 @@ main {
   .pictures-price .hot-icon::after {
     top: -9px;
     right: -10px; } }
+
+.laser-price-page .price__content {
+  padding-left: 111px;
+  width: 747px; }
+
+.laser-price {
+  width: 608px; }
+  .laser-price .row {
+    display: block;
+    padding-bottom: 22px; }
+    .laser-price .row .tit {
+      margin: 0; }
+      .laser-price .row .tit.desc {
+        margin-bottom: 16px; }
+      .laser-price .row .tit.short {
+        width: 419px;
+        margin-left: 188px; }
+    .laser-price .row .td {
+      margin: 0;
+      border-top: none; }
+  .laser-price .horizontal .row {
+    display: flex; }
+    .laser-price .horizontal .row .td {
+      border-top: 1px solid #6f0d33; }
+  .laser-price .columns .column {
+    width: 121px;
+    margin-right: 28px; }
+    .laser-price .columns .column:first-child {
+      width: 160px; }
+    .laser-price .columns .column:last-child {
+      margin-right: 0; }
+  .laser-price .hot-icon::after {
+    top: -9px;
+    right: -9px; }
 
 .main-header {
   position: fixed;
@@ -3423,6 +3472,13 @@ footer {
     color: #6f0d33;
     text-transform: uppercase;
     text-align: center; }
+  .hot-deal__modal h4 {
+    margin-top: 16px;
+    font-weight: 300;
+    font-size: 24px;
+    color: #6f0d33;
+    text-transform: uppercase;
+    text-align: center; }
   .hot-deal__modal section {
     margin-top: 28px; }
     .hot-deal__modal section p {
@@ -3432,6 +3488,10 @@ footer {
       font-weight: 300; }
       .hot-deal__modal section p:first-child {
         margin-top: 0; }
+    .hot-deal__modal section span {
+      margin-top: 15px;
+      display: block;
+      font-weight: 300; }
   .hot-deal__modal .close-btn {
     position: absolute;
     top: 9px;

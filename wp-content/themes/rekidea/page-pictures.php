@@ -5,7 +5,7 @@ get_header();
 <!--Breadcrumbs block *******************-->
 <div class="breadcrumbs">
     <div class="container">
-        <p><a href="/">Главная</a> > <a href="/price">Цены</a> > Плоттерная резка</p>
+        <p><a href="/">Главная</a> > <a href="/price">Цены</a> > Картины для дома и офиса</p>
         </div>
     </div>
 </div>

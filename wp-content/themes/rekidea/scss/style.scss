@@ -3466,6 +3466,14 @@ footer {
     text-transform: uppercase;
     text-align: center;
   }
+  h4 {
+    margin-top: 16px;
+    font-weight: 300;
+    font-size: 24px;
+    color: $red;
+    text-transform: uppercase;
+    text-align: center;
+  }
   section {
     margin-top: 28px;
     p {
@@ -3476,6 +3484,11 @@ footer {
       &:first-child {
         margin-top: 0;
       }
+    }
+    span {
+      margin-top: 15px;
+      display: block;
+      font-weight: 300;
     }
   }
   .close-btn {
