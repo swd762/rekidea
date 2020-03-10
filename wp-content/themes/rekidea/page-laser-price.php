@@ -43,6 +43,7 @@ get_header();
             <div class="row">
                 <div class="tit desc">Лазерная резка фанеры и МДФ</div>
                 <div class="tit desc short">Стоимость материала в рубля за м. п.</div>
+                <div class="tit desc-mobile">Лазерная резка фанеры и МДФ<br>Стоимость материала в рубля за м. п.</div>
                 <div class="columns">
                     <div class="column">
                         <div class="tit">Толщина материала</div>
@@ -89,6 +90,7 @@ get_header();
             <div class="row">
                 <div class="tit desc">Лазерная резка оргстекла и акрила</div>
                 <div class="tit desc short">Стоимость материала в рубля за м. п.</div>
+                <div class="tit desc-mobile">Лазерная резка оргстекла и акрила<br>Стоимость материала в рубля за м. п.</div>
                 <div class="columns">
                     <div class="column">
                         <div class="tit">Толщина материала</div>
@@ -139,6 +141,7 @@ get_header();
             <div class="row">
                 <div class="tit desc">Лазерная резка ПЭТа</div>
                 <div class="tit desc short">Стоимость материала в рубля за м. п.</div>
+                <div class="tit desc-mobile">Лазерная резка ПЭТа<br>Стоимость материала в рубля за м. п.</div>
                 <div class="columns">
                     <div class="column">
                         <div class="tit">Толщина материала</div>
@@ -169,6 +172,7 @@ get_header();
             <div class="row">
                 <div class="tit desc">Лазерная резка полистирола</div>
                 <div class="tit desc short">Стоимость материала в рубля за м. п.</div>
+                <div class="tit desc-mobile">Лазерная резка полистирола<br>Стоимость материала в рубля за м. п.</div>
                 <div class="columns">
                     <div class="column">
                         <div class="tit">Толщина материала</div>
@@ -206,120 +210,6 @@ get_header();
                         <div class="td">9</div>
                         <div class="td">13,5</div>
                     </div>
-                </div>
-            </div>
-        </div>
-        <div class="price-table pictures-price mobile">
-            <div class="row">
-                <div class="column">
-                    <div class="tit">Плакаты на фотобумаге</div>
-                    <div class="td empty"></div>
-                </div>
-                <div class="column">
-                    <div class="tit">А3</div>
-                    <div class="td">70</div>
-                </div>
-                <div class="column">
-                    <div class="tit">А2</div>
-                    <div class="td">140</div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="column">
-                    <div class="tit">Плакаты на фотобумаге</div>
-                    <div class="td empty"></div>
-                </div>
-                <div class="column">
-                    <div class="tit">А1</div>
-                    <div class="td">220</div>
-                </div>
-                <div class="column">
-                    <div class="tit">А0</div>
-                    <div class="td">400</div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="column">
-                    <div class="tit">Постеры на ПВХ 5мм</div>
-                    <div class="td">золото/серебро</div>
-                </div>
-                <div class="column">
-                    <div class="tit">А3</div>
-                    <div class="td">500</div>
-                </div>
-                <div class="column">
-                    <div class="tit">А2</div>
-                    <div class="td">1000</div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="column">
-                    <div class="tit">Постеры на ПВХ 5мм</div>
-                    <div class="td">золото/серебро</div>
-                </div>
-                <div class="column">
-                    <div class="tit">А1</div>
-                    <div class="td">1500</div>
-                </div>
-                <div class="column">
-                    <div class="tit">А0</div>
-                    <div class="td">3000</div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="column">
-                    <div class="tit">Постеры на ал. раме</div>
-                    <div class="td">золото/серебро</div>
-                </div>
-                <div class="column">
-                    <div class="tit">А3</div>
-                    <div class="td">850</div>
-                </div>
-                <div class="column">
-                    <div class="tit">А2</div>
-                    <div class="td">1500</div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="column">
-                    <div class="tit">Постеры на ал. раме</div>
-                    <div class="td">золото/серебро</div>
-                </div>
-                <div class="column">
-                    <div class="tit">А1</div>
-                    <div class="td">3000</div>
-                </div>
-                <div class="column">
-                    <div class="tit">А0</div>
-                    <div class="td">4500</div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="column">
-                    <div class="tit">Картины на хосте / см</div>
-                    <div class="td tall">Натуральный холст<br>галерейная натяжка на подрамник</div>
-                </div>
-                <div class="column">
-                    <div class="tit">30х42</div>
-                    <div class="td">1000</div>
-                </div>
-                <div class="column">
-                    <div class="tit">42х60</div>
-                    <div class="td">1800</div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="column">
-                    <div class="tit hot-icon">Картины на хосте / см</div>
-                    <div class="td tall">Натуральный холст<br>галерейная натяжка на подрамник</div>
-                </div>
-                <div class="column">
-                    <div class="tit">50х50</div>
-                    <div class="td">2500</div>
-                </div>
-                <div class="column">
-                    <div class="tit">60х80</div>
-                    <div class="td">4000</div>
                 </div>
             </div>
         </div>

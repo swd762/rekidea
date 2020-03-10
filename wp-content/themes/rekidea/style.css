@@ -27,6 +27,17 @@ main {
   width: auto;
   margin: 0 auto; }
 
+.red-btn {
+  text-decoration: none;
+  background-color: #6f0d33;
+  color: #fff;
+  padding: 14px 50px;
+  font-size: 14px;
+  text-transform: uppercase; }
+  .red-btn:hover {
+    background-color: #d0b9c2;
+    transition: all 0.3s linear; }
+
 .laser-btn-order {
   text-decoration: none;
   background-color: #6f0d33;
@@ -613,7 +624,6 @@ main {
 
 .price__nav-mobile {
   display: none;
-  margin-top: -12px;
   flex-direction: column;
   align-items: center;
   border-bottom: 1px solid gray;
@@ -622,17 +632,33 @@ main {
   @media (max-width: 950px) {
     .price__nav-mobile {
       display: flex; } }
+  .price__nav-mobile ul {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 490px; }
+    @media (max-width: 950px) {
+      .price__nav-mobile ul {
+        width: 100%; } }
+  .price__nav-mobile li {
+    list-style: none;
+    margin-bottom: 4px;
+    margin-right: 12px; }
+    .price__nav-mobile li.current-menu-item a {
+      color: #6f0d33;
+      font-weight: bold; }
+  .price__nav-mobile a {
+    color: #4c4c4c;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 20px; }
+    @media (max-width: 520px) {
+      .price__nav-mobile a {
+        font-size: 13px; } }
   .price__nav-mobile section {
     margin-top: 8px; }
-    .price__nav-mobile section a {
-      color: #4c4c4c;
-      text-decoration: none;
-      text-transform: uppercase;
-      font-size: 20px;
-      margin-right: 12px; }
-      @media (max-width: 950px) {
-        .price__nav-mobile section a {
-          font-size: 13px; } }
 
 .price__content {
   border-left: 1px solid #c0c0c0;
@@ -758,31 +784,80 @@ main {
 .laser-price-page .price__content {
   padding-left: 111px;
   width: 747px; }
+  @media (max-width: 950px) {
+    .laser-price-page .price__content {
+      padding-left: 0;
+      width: 100%; } }
+@media (max-width: 950px) {
+  .laser-price-page .price__content-title {
+    margin-bottom: 14px; } }
 
 .laser-price {
   width: 608px; }
+  @media (max-width: 1023px) {
+    .laser-price {
+      width: 327px;
+      margin: 0 auto; } }
   .laser-price .row {
     display: block;
     padding-bottom: 22px; }
+    @media (max-width: 1023px) {
+      .laser-price .row {
+        padding-bottom: 11px; } }
     .laser-price .row .tit {
       margin: 0; }
       .laser-price .row .tit.desc {
         margin-bottom: 16px; }
+        @media (max-width: 1023px) {
+          .laser-price .row .tit.desc {
+            display: none; } }
       .laser-price .row .tit.short {
         width: 419px;
         margin-left: 188px; }
+        @media (max-width: 1023px) {
+          .laser-price .row .tit.short {
+            margin-left: 0;
+            width: 100%; } }
+      .laser-price .row .tit.desc-mobile {
+        display: none;
+        margin-bottom: 4px; }
+        @media (max-width: 1023px) {
+          .laser-price .row .tit.desc-mobile {
+            display: block; } }
     .laser-price .row .td {
       margin: 0;
       border-top: none; }
   .laser-price .horizontal .row {
     display: flex; }
+    @media (max-width: 1023px) {
+      .laser-price .horizontal .row {
+        padding-bottom: 11px; } }
+    @media (max-width: 1023px) {
+      .laser-price .horizontal .row:last-child {
+        padding-bottom: 11px; } }
+    @media (max-width: 1023px) {
+      .laser-price .horizontal .row .tit {
+        height: 14px; } }
     .laser-price .horizontal .row .td {
       border-top: 1px solid #6f0d33; }
+      @media (max-width: 1023px) {
+        .laser-price .horizontal .row .td {
+          height: 14px; } }
+  @media (max-width: 1023px) {
+    .laser-price .columns {
+      align-items: flex-end; } }
   .laser-price .columns .column {
     width: 121px;
     margin-right: 28px; }
+    @media (max-width: 1023px) {
+      .laser-price .columns .column {
+        width: 73px;
+        margin-right: 11px; } }
     .laser-price .columns .column:first-child {
       width: 160px; }
+      @media (max-width: 1023px) {
+        .laser-price .columns .column:first-child {
+          width: 65px; } }
     .laser-price .columns .column:last-child {
       margin-right: 0; }
   .laser-price .hot-icon::after {
@@ -2663,6 +2738,9 @@ main {
   .wide-printing__nav li {
     margin-top: 25px;
     padding-left: 10px; }
+    .wide-printing__nav li.current-menu-item a {
+      color: #6f0d33;
+      font-weight: bold; }
     .wide-printing__nav li a {
       text-decoration: none;
       text-transform: uppercase;
@@ -2738,7 +2816,8 @@ main {
     .wide-printing__content {
       display: none; } }
   .wide-printing__content .wide-printing__content-title {
-    text-align: center; }
+    text-align: center;
+    padding-bottom: 25px; }
     .wide-printing__content .wide-printing__content-title h1 {
       font-weight: bold;
       font-size: 30px;

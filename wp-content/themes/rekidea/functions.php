@@ -22,6 +22,8 @@ add_action('wp_enqueue_scripts', 'add_styles_and_scripts');
 // ** Register menu **
 register_nav_menu('top', 'главное меню');
 register_nav_menu('top-mobile', 'главное меню мобилка');
+register_nav_menu('price', 'Меню цен');
+register_nav_menu('price-mobile', 'Меню цен мобилка');
 
 add_filter('wpcf7_form_elements', 'contact_form_remove_checkbox_wrapping' );
 function contact_form_remove_checkbox_wrapping( $content ) {

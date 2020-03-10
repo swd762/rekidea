@@ -42,6 +42,21 @@ main {
   margin: 0 auto;
 }
 
+.red-btn {
+  text-align: center;
+  text-decoration: none;
+  background-color: $red;
+  color:#fff;
+  padding: 14px 50px;
+  font-size: 14px;
+  text-transform: uppercase;
+  &:hover {
+    background-color: #d0b9c2;
+    //box-shadow: 4px 4px 8px 0px rgba(82, 11, 27, 0.2);
+    transition: all 0.3s linear;
+  }
+}
+
 // Order red button  from laser page
  .laser-btn-order {
    //display: table;

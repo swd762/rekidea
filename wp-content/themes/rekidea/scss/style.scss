@@ -2431,6 +2431,12 @@
   li {
     margin-top: 25px;
     padding-left: 10px;
+    &.current-menu-item {
+      a {
+        color: #6f0d33;
+        font-weight: bold;
+      }
+    }
     a {
       text-decoration: none;
       text-transform: uppercase;
@@ -2524,6 +2530,7 @@
   }
   .wide-printing__content-title {
     text-align: center;
+    padding-bottom: 25px;
     h1 {
       font-weight: bold;
       font-size: 30px;
