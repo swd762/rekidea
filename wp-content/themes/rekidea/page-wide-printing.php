@@ -230,7 +230,7 @@ get_header();
                     <a href="/404">Вывески</a><a href="/404">Световые панели</a><a href="/404">фотозона</a>
                 </section>
                 <section>
-                    <a href="/wide-printing" class="selected">широкоформатная печать</a><a href="/404">лазерная резка</a>
+                    <a href="/wide-printing" class="selected">широкоформатная печать</a><a href="/laser-price">лазерная резка</a>
                 </section>
                 <section>
                     <a href="/404">ростовые фигуры</a><a href="/404">мобильные стенды</a>
@@ -239,7 +239,7 @@ get_header();
                     <a href="/404">магнитно-маркерные доски</a><a href="/404">штендеры</a>
                 </section>
                 <section>
-                    <a href="/404">картины для дома и офиса</a>
+                    <a href="/pictures">картины для дома и офиса</a>
                 </section>
                 <section>
                     <a href="/404">инфостенды и режим работы</a>
