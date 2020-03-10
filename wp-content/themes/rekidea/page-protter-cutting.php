@@ -21,7 +21,7 @@ get_header();
             <div class="price__content-title">
                 <h1>ознакомьтесь с нашими ценами</h1>
                 <section>
-                    <p>Для вашего удовства мы&nbsp;разделили наши цены на&nbsp;список категорий.</p>
+                    <p>Для вашего удобства мы&nbsp;разделили наши цены на&nbsp;список категорий.</p>
                     <p>Выбирайте интересующую Вас категорию в&nbsp;списке и&nbsp;ознакомьтесь с&nbsp;нашими ценами
                         и&nbsp;выгодными предложениями.</p>
                 </section>
@@ -198,11 +198,6 @@ get_header();
     <img src="<?= get_template_directory_uri()?>/img/fire.svg" alt="hot deal">
     <h2>горячее предложение</h2>
     <h3>обратите внимание на цену!</h3>
-    <section>
-        <p>Ламинация всего — 160 ₽/м2</p>
-        <p>Печать от 10 м2 — скидка 5%</p>
-        <p>Печать от 30 м2 — скидка 7%</p>
-    </section>
     <div class="close-btn" onclick="closeHotDealModal()"><span></span><span></span></div>
 </div>
 <?php
