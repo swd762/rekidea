@@ -28,6 +28,7 @@ main {
   margin: 0 auto; }
 
 .red-btn {
+  text-align: center;
   text-decoration: none;
   background-color: #6f0d33;
   color: #fff;
@@ -1288,10 +1289,18 @@ main {
 
 .pictures-block-wrapper {
   height: 253px;
-  background: url("img/pictures-block/banner.png") center no-repeat;
-  display: flex;
-  align-items: center;
-  justify-content: center; }
+  background: url("img/pictures-block/banner.png") center no-repeat; }
+  .pictures-block-wrapper.laser-wrapper {
+    background: url("img/pictures-block/laser.png") center no-repeat;
+    margin-bottom: 15px; }
+    .pictures-block-wrapper.laser-wrapper div {
+      background-color: transparent; }
+  .pictures-block-wrapper a {
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%; }
   .pictures-block-wrapper div {
     width: 247px;
     height: 190px;
@@ -1302,7 +1311,7 @@ main {
       text-align: center;
       font-size: 17px;
       margin: 30px 0 30px 0; }
-    .pictures-block-wrapper div a.button {
+    .pictures-block-wrapper div .button {
       width: 165px;
       height: 44px;
       background-color: #6f0d33;
@@ -1315,7 +1324,7 @@ main {
       text-decoration: none;
       font-size: 14px;
       font-weight: 300; }
-      .pictures-block-wrapper div a.button:hover {
+      .pictures-block-wrapper div .button:hover {
         background-color: #d0b9c2;
         transition: all 0.3s linear; }
 

@@ -593,9 +593,23 @@
 .pictures-block-wrapper {
   height: 253px;
   background: url("img/pictures-block/banner.png") center no-repeat;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  //display: flex;
+  //align-items: center;
+  //justify-content: center;
+  &.laser-wrapper {
+    background: url("img/pictures-block/laser.png") center no-repeat;
+    margin-bottom: 15px;
+    div {
+      background-color: transparent;
+    }
+  }
+  a {
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+  }
   div {
     width: 247px;
     height: 190px;
@@ -607,7 +621,7 @@
       font-size: 17px;
       margin: 30px 0 30px 0;
     }
-    a.button {
+    .button {
       width: 165px;
       height: 44px;
       background-color: $red;

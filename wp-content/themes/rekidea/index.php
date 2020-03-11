@@ -32,14 +32,26 @@ get_header();
     <?php } ?>
  </div>
 <!--******************************************-->
-<!--Pictures block-->
- <div class="pictures-block-wrapper">
-    <div>
-        <h3>Картины<br> для дома и офиса</h3>
-        <a href="/404" class="button">
-            посмотреть все
+    <div class="pictures-block-wrapper laser-wrapper">
+        <a href="/laser">
+            <div>
+                <h3>Лазерная<br> и фрезерная резка</h3>
+                <span class="button">
+                    посмотреть все
+                </span>
+            </div>
         </a>
     </div>
+<!--Pictures block-->
+ <div class="pictures-block-wrapper">
+     <a href="/404">
+        <div>
+            <h3>Картины<br> для дома и офиса</h3>
+            <span href="/404" class="button">
+                посмотреть все
+            </span>
+        </div>
+     </a>
  </div>
 <!--******************************************-->
 
