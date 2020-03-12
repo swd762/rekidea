@@ -83,7 +83,7 @@ get_header();
             </div>
 
             <div class="price-card wow zoomIn">
-                <a href="/laser-price">
+                <a href="/price/laser-price">
                     <img src="<?= get_template_directory_uri() ?>/img/price-page/pic8.png" alt="">
                     <h3>лазерная резка</h3>
                 </a>
