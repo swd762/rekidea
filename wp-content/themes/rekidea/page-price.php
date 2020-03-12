@@ -97,7 +97,7 @@ get_header();
             </div>
 
             <div class="price-card wow zoomIn">
-                <a href="/404">
+                <a href="/pictures">
                     <img src="<?= get_template_directory_uri() ?>/img/price-page/pic9.png" alt="">
                     <h3>картины для дома и<br class="br-remove"> офиса</h3>
                 </a>
