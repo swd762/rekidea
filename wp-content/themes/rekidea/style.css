@@ -28,6 +28,7 @@ main {
   margin: 0 auto; }
 
 .red-btn {
+  display: table;
   text-align: center;
   text-decoration: none;
   background-color: #6f0d33;
@@ -880,10 +881,12 @@ main {
 .photozone-wrapper .wide-printing__nav {
   width: 297px; }
 .photozone-wrapper .price__content {
-  padding-left: 23px; }
+  padding-left: 23px;
+  padding-bottom: 0; }
   @media (max-width: 950px) {
     .photozone-wrapper .price__content {
-      padding-left: 0; } }
+      padding-left: 0;
+      width: 100%; } }
 .photozone-wrapper .describe-page-link {
   display: none; }
   @media (max-width: 1169px) {
@@ -892,12 +895,28 @@ main {
   @media (max-width: 950px) {
     .photozone-wrapper .describe-page-link {
       margin-bottom: 15px; } }
-@media (max-width: 950px) {
-  .photozone-wrapper .price__content-title {
-    margin-bottom: 15px; } }
+.photozone-wrapper .price__content-title {
+  padding: 0 80px; }
+  @media (max-width: 1169px) {
+    .photozone-wrapper .price__content-title {
+      padding: 0;
+      margin-bottom: 15px; } }
+  @media (max-width: 950px) {
+    .photozone-wrapper .price__content-title {
+      padding: 0;
+      margin-bottom: 15px; } }
+  .photozone-wrapper .price__content-title section {
+    margin: 20px 0 0; }
 
 .wo-price-page {
-  padding-bottom: 33px; }
+  padding-bottom: 22px; }
+  @media (max-width: 1169px) {
+    .wo-price-page {
+      padding-bottom: 0;
+      width: 689px; } }
+  @media (max-width: 1023px) {
+    .wo-price-page {
+      width: 100%; } }
   .wo-price-page .top-part {
     display: flex;
     padding-bottom: 25px; }
@@ -928,7 +947,8 @@ main {
           margin-bottom: 14px; } }
       .wo-price-page .text-part .first-text p {
         margin-bottom: 18px;
-        font-size: 16px; }
+        font-size: 16px;
+        text-align: center; }
         @media (max-width: 1169px) {
           .wo-price-page .text-part .first-text p {
             margin-bottom: 11px; } }
@@ -972,14 +992,51 @@ main {
       display: none; }
       @media (max-width: 1023px) {
         .wo-price-page .callback-form-part.mobile {
-          display: block; } }
+          display: block;
+          margin-bottom: 30px; } }
+    .wo-price-page .callback-form-part div.wpcf7-response-output {
+      margin: 0; }
   .wo-price-page .photo-block {
-    height: 194px; }
+    height: 194px;
+    margin-bottom: 33px; }
+    @media (max-width: 1169px) {
+      .wo-price-page .photo-block {
+        height: 164px !important;
+        margin-bottom: 23px; } }
+    @media (max-width: 1023px) {
+      .wo-price-page .photo-block {
+        height: 239px !important;
+        margin-bottom: 23px;
+        width: 318px;
+        overflow: hidden;
+        margin-right: auto;
+        margin-left: auto; } }
     .wo-price-page .photo-block .single_image {
       width: 259px !important;
-      margin-right: 20px; }
+      margin-right: 20px;
+      display: block; }
+      @media (max-width: 1169px) {
+        .wo-price-page .photo-block .single_image {
+          width: 219px !important;
+          margin-right: 15px; } }
+      @media (max-width: 1023px) {
+        .wo-price-page .photo-block .single_image {
+          width: 318px !important;
+          margin-right: 0; } }
       .wo-price-page .photo-block .single_image:last-child {
         margin-right: 0; }
+      .wo-price-page .photo-block .single_image img {
+        width: 100%; }
+  .wo-price-page .red-btn {
+    margin: 0 auto;
+    padding: 8px 44px;
+    font-size: 11px; }
+    @media (max-width: 1169px) {
+      .wo-price-page .red-btn {
+        padding: 8px 33px; } }
+    @media (max-width: 1023px) {
+      .wo-price-page .red-btn {
+        margin-bottom: 20px; } }
 
 .callback-form {
   width: 100%;

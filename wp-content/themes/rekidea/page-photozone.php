@@ -71,47 +71,7 @@ if(have_posts()) {
                         <div class="feedback-form">
                             <div role="form" class="wpcf7" id="wpcf7-f274-o2" dir="ltr" lang="ru-RU">
                                 <div class="screen-reader-response"></div>
-                                <form action="/laser/#wpcf7-f274-o2" method="post" class="wpcf7-form"
-                                      novalidate="novalidate">
-                                    <div style="display: none;">
-                                        <input type="hidden" name="_wpcf7" value="274">
-                                        <input type="hidden" name="_wpcf7_version" value="5.1.6">
-                                        <input type="hidden" name="_wpcf7_locale" value="ru_RU">
-                                        <input type="hidden" name="_wpcf7_unit_tag" value="wpcf7-f274-o2">
-                                        <input type="hidden" name="_wpcf7_container_post" value="0">
-                                    </div>
-                                    <div class="feedback-field">
-                                        <span class="wpcf7-form-control-wrap feedback-name"><input type="text"
-                                                                                                   name="feedback-name"
-                                                                                                   value="" size="40"
-                                                                                                   class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required"
-                                                                                                   aria-required="true"
-                                                                                                   aria-invalid="false"
-                                                                                                   placeholder="Имя"></span>
-                                    </div>
-                                    <div class="feedback-field">
-                                        <span class="wpcf7-form-control-wrap feedback-phone"><input type="tel"
-                                                                                                    name="feedback-phone"
-                                                                                                    value="" size="40"
-                                                                                                    class="wpcf7-form-control wpcf7-text wpcf7-tel wpcf7-validates-as-required wpcf7-validates-as-tel"
-                                                                                                    aria-required="true"
-                                                                                                    aria-invalid="false"
-                                                                                                    placeholder="Телефон"></span>
-                                    </div>
-                                    <div class="feedback-field">
-                                        <span class="wpcf7-form-control-wrap message-name"><input type="text"
-                                                                                                  name="message-name"
-                                                                                                  value="" size="40"
-                                                                                                  class="wpcf7-form-control wpcf7-text"
-                                                                                                  aria-invalid="false"
-                                                                                                  placeholder="Сообщение"></span>
-                                    </div>
-                                    <div class="feedback-submit">
-                                        <input type="submit" value="Перезвоните мне"
-                                               class="wpcf7-form-control wpcf7-submit"><span class="ajax-loader"></span>
-                                    </div>
-                                    <div class="wpcf7-response-output wpcf7-display-none"></div>
-                                </form>
+                                <?php echo do_shortcode('[contact-form-7 id="337" title="price-call"]') ?>
                             </div>
                             <div class="private_term_agree">
                                 Нажимая кнопку «Перезвонить мне», я <a href="/privacy-policy">даю свое согласие</a>
@@ -132,9 +92,7 @@ if(have_posts()) {
                     <img src="<?= get_template_directory_uri()?>/img/photozone/photozona-3.png" alt="">
                 </a>
             </div>
-<!--            --><?php //echo do_shortcode('[slick-carousel-slider category="11" design="design-6"]')?>
-
-
+            <a href="/404" class="red-btn">Посмотреть наши работы</a>
             <div class="callback-form-part mobile">
                 <div class="callback-form">
                     <div class="call-us">
@@ -153,47 +111,7 @@ if(have_posts()) {
                     <div class="feedback-form">
                         <div role="form" class="wpcf7" id="wpcf7-f274-o2" dir="ltr" lang="ru-RU">
                             <div class="screen-reader-response"></div>
-                            <form action="/laser/#wpcf7-f274-o2" method="post" class="wpcf7-form"
-                                  novalidate="novalidate">
-                                <div style="display: none;">
-                                    <input type="hidden" name="_wpcf7" value="274">
-                                    <input type="hidden" name="_wpcf7_version" value="5.1.6">
-                                    <input type="hidden" name="_wpcf7_locale" value="ru_RU">
-                                    <input type="hidden" name="_wpcf7_unit_tag" value="wpcf7-f274-o2">
-                                    <input type="hidden" name="_wpcf7_container_post" value="0">
-                                </div>
-                                <div class="feedback-field">
-                                    <span class="wpcf7-form-control-wrap feedback-name"><input type="text"
-                                                                                               name="feedback-name"
-                                                                                               value="" size="40"
-                                                                                               class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required"
-                                                                                               aria-required="true"
-                                                                                               aria-invalid="false"
-                                                                                               placeholder="Имя"></span>
-                                </div>
-                                <div class="feedback-field">
-                                    <span class="wpcf7-form-control-wrap feedback-phone"><input type="tel"
-                                                                                                name="feedback-phone"
-                                                                                                value="" size="40"
-                                                                                                class="wpcf7-form-control wpcf7-text wpcf7-tel wpcf7-validates-as-required wpcf7-validates-as-tel"
-                                                                                                aria-required="true"
-                                                                                                aria-invalid="false"
-                                                                                                placeholder="Телефон"></span>
-                                </div>
-                                <div class="feedback-field">
-                                    <span class="wpcf7-form-control-wrap message-name"><input type="text"
-                                                                                              name="message-name"
-                                                                                              value="" size="40"
-                                                                                              class="wpcf7-form-control wpcf7-text"
-                                                                                              aria-invalid="false"
-                                                                                              placeholder="Сообщение"></span>
-                                </div>
-                                <div class="feedback-submit">
-                                    <input type="submit" value="Перезвоните мне"
-                                           class="wpcf7-form-control wpcf7-submit"><span class="ajax-loader"></span>
-                                </div>
-                                <div class="wpcf7-response-output wpcf7-display-none"></div>
-                            </form>
+                            <?php echo do_shortcode('[contact-form-7 id="337" title="price-call"]') ?>
                         </div>
                         <div class="private_term_agree">
                             Нажимая кнопку «Перезвонить мне», я <a href="/privacy-policy">даю свое согласие</a>
@@ -216,7 +134,21 @@ get_footer();
     infinite: true,
     slidesToShow: 3,
     arrows: false,
-    dots: false
+    dots: false,
+      responsive: [
+          {
+              breakpoint: 1023,
+              settings: {
+                  slidesToShow: 1,
+                  slidesToScroll: 1,
+                  infinite: true,
+                  dots: false
+              }
+          }
+          // You can unslick at a given breakpoint now by adding:
+          // settings: "unslick"
+          // instead of a settings object
+      ]
   });
 
   jQuery(function($) {

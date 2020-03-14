@@ -992,8 +992,10 @@
   }
   .price__content {
     padding-left: 23px;
+    padding-bottom: 0;
     @media(max-width: 950px) {
       padding-left: 0;
+      width: 100%;
     }
   }
   .describe-page-link {
@@ -1006,14 +1008,30 @@
     }
   }
   .price__content-title {
-    @media(max-width: 950px) {
+    padding: 0 80px;
+    @media(max-width: 1169px) {
+      padding: 0;
       margin-bottom: 15px;
+    }
+    @media(max-width: 950px) {
+      padding: 0;
+      margin-bottom: 15px;
+    }
+    section {
+      margin: 20px 0 0;
     }
   }
 }
 
 .wo-price-page {
-  padding-bottom: 33px;
+  padding-bottom: 22px;
+  @media(max-width: 1169px) {
+    padding-bottom: 0;
+    width: 689px;
+  }
+  @media(max-width: 1023px) {
+    width: 100%;
+  }
   .top-part {
     display: flex;
     padding-bottom: 25px;
@@ -1047,6 +1065,7 @@
       p {
         margin-bottom: 18px;
         font-size: 16px;
+        text-align: center;
         @media(max-width: 1169px) {
           margin-bottom: 11px;
         }
@@ -1100,17 +1119,57 @@
       display: none;
       @media(max-width: 1023px) {
         display: block;
+        margin-bottom: 30px;
       }
+    }
+    div.wpcf7-response-output {
+      margin: 0;
     }
   }
   .photo-block {
     height: 194px;
+    margin-bottom: 33px;
+    @media(max-width: 1169px) {
+      height: 164px !important;
+      margin-bottom: 23px;
+    }
+    @media(max-width: 1023px) {
+      height: 239px !important;
+      margin-bottom: 23px;
+      width: 318px;
+      overflow: hidden;
+      margin-right: auto;
+      margin-left: auto;
+    }
     .single_image {
       width: 259px !important;
       margin-right: 20px;
+      display: block;
+      @media(max-width: 1169px) {
+        width: 219px !important;
+        margin-right: 15px;
+      }
+      @media(max-width: 1023px) {
+        width: 318px !important;
+        margin-right: 0;
+      }
       &:last-child {
         margin-right: 0;
       }
+      img {
+        width: 100%;
+      }
+    }
+  }
+  .red-btn {
+    margin: 0 auto;
+    padding: 8px 44px;
+    font-size: 11px;
+    @media(max-width: 1169px) {
+      padding: 8px 33px;
+    }
+    @media(max-width: 1023px) {
+      margin-bottom: 20px;
     }
   }
 }
