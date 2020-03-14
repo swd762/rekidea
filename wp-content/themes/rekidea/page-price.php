@@ -76,7 +76,7 @@ get_header();
             </div>
 
             <div class="price-card wow zoomIn">
-                <a href="/404">
+                <a href="/price/magnetic-boards-price">
                     <img src="<?= get_template_directory_uri() ?>/img/price-page/pic7.png" alt="">
                     <h3>магнитно-маркерные доски</h3>
                 </a>
