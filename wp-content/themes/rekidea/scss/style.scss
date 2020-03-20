@@ -1985,6 +1985,8 @@
   background-color: #577abc;
 }
 // *****************************************************
+
+// *************** craft boards ****************************
 .craft-boards-wrapper {
   background-color: #f7f7f7;
   display: flex;
@@ -2025,71 +2027,7 @@
       .slide img {width: 100%}
     }
   }
-
 }
-// *************** craft boards ****************************
-
-
-//.craft-boards__content {
-//  //display: none;
-//  width: 60%;
-//  float: right;
-//  padding-top: 50px;
-//  text-align: center;
-//  margin-right: 20px;
-//  h3 {
-//    font-size: 30px;
-//    font-weight: bold;
-//    color: $red;
-//    text-transform: uppercase;
-//    text-align: center;
-//  }
-//  p {
-//    font-size: 18px;
-//    margin-top: 35px;
-//    margin-bottom: 65px;
-//    font-weight: 300;
-//    text-align: left;
-//    padding-left: 52px;
-//    @media(max-width: 1169px) {
-//      padding-left: 16px;
-//    }
-//  }
-//}
-//
-//.craft-boards__content-mobile {
-//  display: none;
-//  flex-direction: column;
-//  align-items: center;
-//  padding: 20px 0 0 0  ;
-//  @media (max-width: 900px) {
-//    display: flex;
-//  }
-//  h3 {
-//    font-size: 24px;
-//    font-weight: bold;
-//    color: $red;
-//    text-transform: uppercase;
-//    text-align: center;
-//    width: 70%;
-//    @media (max-width: 900px) {
-//      width: 86%;
-//    }
-//  }
-//  p {
-//    font-size: 13px;
-//    margin-top: 15px;
-//    margin-bottom: 25px;
-//    width: 70%;
-//    text-align: center;
-//  }
-//  img {
-//    margin-top: 20px;
-//    @media (max-width: 520px) {
-//      width: 100%;
-//    }
-//  }
-//}
 //*********************************************************
 
 //***********complex magnetic ****************************
@@ -2283,6 +2221,31 @@
   }
 }
 //********************************************************************
+
+// ** Boards video player
+.magnetic-video-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 15px 15px 15px ;
+  color: $red;
+  h3 {
+    font-size: 30px;
+    text-transform: uppercase;
+
+  }
+  p {
+    margin: 10px 0 15px 0;
+    font-size: 16px;
+  }
+  iframe {
+    width: 100%;
+  }
+}
+
+// ********************************************************************
+
+// ***
 .boards-clamp__wrapper {
   height: 271px;
   background: url("img/magnetic-page/boards-2-bg.jpg") center no-repeat;

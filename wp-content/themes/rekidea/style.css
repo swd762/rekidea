@@ -2932,6 +2932,21 @@ main {
       margin-right: 10px;
       flex-shrink: 0; }
 
+.magnetic-video-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 15px 15px 15px;
+  color: #6f0d33; }
+  .magnetic-video-wrapper h3 {
+    font-size: 30px;
+    text-transform: uppercase; }
+  .magnetic-video-wrapper p {
+    margin: 10px 0 15px 0;
+    font-size: 16px; }
+  .magnetic-video-wrapper iframe {
+    width: 100%; }
+
 .boards-clamp__wrapper {
   height: 271px;
   background: url("img/magnetic-page/boards-2-bg.jpg") center no-repeat;
