@@ -51,34 +51,87 @@
 <!--********************************************************************************************************************-->
 
 <!--************************************-craft boards block *************************************************************-->
-<div class="craft-boards__wrapper">
-    <div class="craft-boards__overlay wow fadeInLeft">
-        <div class="container">
-            <div class="craft-boards__content">
-                    <h3 class="wow zoomIn" data-wow-delay="0.5s"  >изготовим брендированные доски и&nbsp;магниты с&nbsp;вашим логотипом
-                    </h3>
-                    <p class="wow zoomIn" data-wow-delay="0.5s" >
-                        Уникальная технология позволяет персонализировать маркерную
-                        доску и&nbsp;магниты, нанеся под стекло изображение, логотип, фоновый рисунок, разлиновку
-                        или отдельные элементы корпоративного стиля.
-                    </p>
-                    <a href="#" class="laser-btn-order wow zoomIn" data-wow-delay="0.5s" >Заказать</a>
+    <div class="craft-boards-wrapper">
+        <div class="slide1">
+            <div class="samples-slider">
+                <div class="slide">
+                    <img src="<?= get_template_directory_uri()?>/img/magnetic-page/craft-left-1.jpg" alt="">
+                </div>
+                <div class="slide">
+                    <img src="<?= get_template_directory_uri()?>/img/magnetic-page/craft-left-2.jpg" alt="">
+                </div>
             </div>
         </div>
-    </div>
-    <div class="craft-boards__content-mobile">
-        <h3 class="">изготовим брендированные доски и&nbsp;магниты с&nbsp;вашим логотипом
-        </h3>
-        <p class="">
-            Уникальная технология позволяет персонализировать маркерную
-            доску и&nbsp;магниты, нанеся под стекло изображение, логотип, фоновый рисунок, разлиновку
-            или отдельные элементы корпоративного стиля.
-        </p>
-        <a href="#" class="laser-btn-order wow zoomIn">Заказать</a>
+        <div class="content">
+            <h3>изготовим брендированные доски и&nbsp;магниты с&nbsp;вашим логотипом
+            </h3>
+            <p>
+                Уникальная технология позволяет персонализировать маркерную
+                доску и&nbsp;магниты, нанеся под стекло изображение, логотип, фоновый рисунок, разлиновку
+                или отдельные элементы корпоративного стиля.
+            </p>
+            <a href="#" class="laser-btn-order">Заказать</a>
+        </div>
+        <div class="slide2">
+            <div class="samples-slider">
+                <div class="slide">
+                    <img src="<?= get_template_directory_uri()?>/img/magnetic-page/craft-left-2.jpg" alt="">
+                </div>
+                <div class="slide">
+                    <img src="<?= get_template_directory_uri()?>/img/magnetic-page/craft-left-1.jpg" alt="">
+                </div>
+            </div>
+        </div>
 
-        <img src="<?= get_template_directory_uri()?>/img/magnetic-page/tabl.jpg" alt="" class="">
     </div>
-</div>
+
+    <script>
+        jQuery(function($) {
+            $('.samples-slider').slick({
+                slidesToShow: 1,
+                slidesToScroll: 1,
+                arrows: false,
+                dots: false,
+                autoplay: true,
+                autoplaySpeed: 2000
+                // centerMode: true,
+                // adaptiveHeight: true,
+                // focusOnSelect: true
+            });
+        });
+    </script>
+
+
+
+
+<!--<div class="craft-boards__wrapper">-->
+<!--    <div class="craft-boards__overlay wow fadeInLeft">-->
+<!--        <div class="container">-->
+<!--            <div class="craft-boards__content">-->
+<!--                    <h3 class="wow zoomIn" data-wow-delay="0.5s"  >изготовим брендированные доски и&nbsp;магниты с&nbsp;вашим логотипом-->
+<!--                    </h3>-->
+<!--                    <p class="wow zoomIn" data-wow-delay="0.5s" >-->
+<!--                        Уникальная технология позволяет персонализировать маркерную-->
+<!--                        доску и&nbsp;магниты, нанеся под стекло изображение, логотип, фоновый рисунок, разлиновку-->
+<!--                        или отдельные элементы корпоративного стиля.-->
+<!--                    </p>-->
+<!--                    <a href="#" class="laser-btn-order wow zoomIn" data-wow-delay="0.5s" >Заказать</a>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--    <div class="craft-boards__content-mobile">-->
+<!--        <h3 class="">изготовим брендированные доски и&nbsp;магниты с&nbsp;вашим логотипом-->
+<!--        </h3>-->
+<!--        <p class="">-->
+<!--            Уникальная технология позволяет персонализировать маркерную-->
+<!--            доску и&nbsp;магниты, нанеся под стекло изображение, логотип, фоновый рисунок, разлиновку-->
+<!--            или отдельные элементы корпоративного стиля.-->
+<!--        </p>-->
+<!--        <a href="#" class="laser-btn-order wow zoomIn">Заказать</a>-->
+<!---->
+<!--        <img src="--><?//= get_template_directory_uri()?><!--/img/magnetic-page/tabl.jpg" alt="" class="">-->
+<!--    </div>-->
+<!--</div>-->
 <!--********************************************************************************************************************-->
 
 <!--Complex-magnetic block *******************************************************************************************  -->

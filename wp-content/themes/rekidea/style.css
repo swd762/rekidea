@@ -2605,6 +2605,9 @@ main {
     .feedback-form-page form .private_term_agree {
       font-weight: 300; }
 
+.magnetic-top-banner__wrapper {
+  overflow: hidden; }
+
 .magnetic-top-banner__header {
   padding: 0 10px; }
   .magnetic-top-banner__header h2 {
@@ -2740,77 +2743,35 @@ main {
 .blue {
   background-color: #577abc; }
 
-.craft-boards__wrapper {
-  background-color: #f3f3f4;
-  height: 407px;
-  position: relative; }
-  @media (max-width: 900px) {
-    .craft-boards__wrapper {
-      height: initial; } }
-
-.craft-boards__overlay {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  background: url("img/magnetic-page/bondarenko.jpg") center no-repeat; }
-  @media (max-width: 900px) {
-    .craft-boards__overlay {
-      display: none; } }
-
-.craft-boards__content {
-  width: 60%;
-  float: right;
-  padding-top: 50px;
-  text-align: center;
-  margin-right: 20px; }
-  .craft-boards__content h3 {
-    font-size: 30px;
-    font-weight: bold;
-    color: #6f0d33;
-    text-transform: uppercase;
-    text-align: center; }
-  .craft-boards__content p {
-    font-size: 18px;
-    margin-top: 35px;
-    margin-bottom: 65px;
-    font-weight: 300;
-    text-align: left;
-    padding-left: 52px; }
-    @media (max-width: 1169px) {
-      .craft-boards__content p {
-        padding-left: 16px; } }
-
-.craft-boards__content-mobile {
-  display: none;
-  flex-direction: column;
-  align-items: center;
-  padding: 20px 0 0 0; }
-  @media (max-width: 900px) {
-    .craft-boards__content-mobile {
-      display: flex; } }
-  .craft-boards__content-mobile h3 {
-    font-size: 24px;
-    font-weight: bold;
-    color: #6f0d33;
-    text-transform: uppercase;
-    text-align: center;
-    width: 70%; }
-    @media (max-width: 900px) {
-      .craft-boards__content-mobile h3 {
-        width: 86%; } }
-  .craft-boards__content-mobile p {
-    font-size: 13px;
-    margin-top: 15px;
-    margin-bottom: 25px;
-    width: 70%;
-    text-align: center; }
-  .craft-boards__content-mobile img {
-    margin-top: 20px; }
-    @media (max-width: 520px) {
-      .craft-boards__content-mobile img {
-        width: 100%; } }
+.craft-boards-wrapper {
+  background-color: #f7f7f7;
+  display: flex;
+  text-align: center; }
+  .craft-boards-wrapper .slick-slide img {
+    width: 100%; }
+  .craft-boards-wrapper .slide1 {
+    width: 33.3%; }
+    .craft-boards-wrapper .slide1 .samples-slider .slide img {
+      width: 100%; }
+  .craft-boards-wrapper .content {
+    padding: 10px 10px;
+    width: 33.3%; }
+    .craft-boards-wrapper .content h3 {
+      font-size: 30px;
+      font-weight: bold;
+      color: #6f0d33;
+      text-transform: uppercase;
+      text-align: center; }
+    .craft-boards-wrapper .content p {
+      font-size: 16px;
+      margin-top: 15px;
+      margin-bottom: 35px;
+      font-weight: 300;
+      text-align: center; }
+  .craft-boards-wrapper .slide2 {
+    width: 33.3%; }
+    .craft-boards-wrapper .slide2 .samples-slider .slide img {
+      width: 100%; }
 
 .complex-magnetic__content {
   position: relative;
