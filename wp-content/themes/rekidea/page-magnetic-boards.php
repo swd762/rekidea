@@ -386,11 +386,13 @@
             посмотрите видео, как выглядит доска
         </h3>
     <p>В живую наши доски смотрять еще лучше и эффектней!</p>
-    <iframe width="940" height="525" src="https://www.youtube.com/embed/uyA_qSVoud4" frameborder="0" allowfullscreen>
-    </iframe>
+    <div class="video-container">
+        <iframe width="1280" height="720" src="https://www.youtube.com/embed/uyA_qSVoud4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+
 
 </div>
-
+<!--***-->
 
 
 

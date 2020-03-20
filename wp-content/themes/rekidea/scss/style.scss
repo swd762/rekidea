@@ -1855,7 +1855,8 @@
       font-weight: 300;
       line-height: 1.3;
       p {
-        font-size: 18px;
+        //font-size: 18px;
+        font-size: 16px;
       }
     }
   }
@@ -1990,9 +1991,52 @@
 .craft-boards-wrapper {
   background-color: #f7f7f7;
   display: flex;
-  //height: 500px;
   text-align: center;
-
+  @media (max-width: 1450px) {
+    div.content {
+      h3 {
+        margin-top: 0;
+        font-size: 20px;
+      }
+      p {
+        font-size: 12px;
+        margin-top: 5px;
+        margin-bottom: 20px;
+      }
+    }
+  }
+   @media (max-width: 1023px) {
+     align-items: center;
+     flex-direction: column;
+    .slide1 {display: none}
+    div.content {
+      width: 80%;
+      padding: 10px 10px 30px 10px;
+      h3 {
+        font-size: 27px;
+      }
+      p {
+        font-size: 14px;
+      }
+    }
+    div.slide2 {
+      width: 80%;
+    }
+   }
+  @media (max-width: 520px) {
+    div.content {
+      width: 100%;
+      h3 {
+        font-size: 24px;
+      }
+      p {
+        //font-size: 14px;
+      }
+    }
+    div.slide2 {
+      width: 100%;
+    }
+  }
   .slick-slide img {
     width: 100%;
   }
@@ -2006,19 +2050,19 @@
     padding: 10px 10px;
     width: 33.3%;
     h3 {
-      font-size: 30px;
+      font-size: 26px;
       font-weight: bold;
       color: $red;
       text-transform: uppercase;
       text-align: center;
+      margin-top:30px;
     }
     p {
-      font-size: 16px;
-      margin-top: 15px;
-      margin-bottom: 35px;
+      font-size: 15px;
+      margin-top: 10px;
+      margin-bottom: 30px;
       font-weight: 300;
-      text-align: center;
-      //padding-left: 52px;
+      //text-align: center;
     }
   }
   .slide2 {
@@ -2051,6 +2095,7 @@
   p {
     text-align: center;
     font-weight: 300;
+    font-size: 16px;
   }
   .circle-left {
     width: 180px;
@@ -2143,7 +2188,8 @@
     margin: 40px 0;
   }
   p {
-    font-size: 18px;
+    //font-size: 18px;
+    font-size: 16px;
     font-weight: 300;
   }
   .boards-characters {
@@ -2238,8 +2284,36 @@
     margin: 10px 0 15px 0;
     font-size: 16px;
   }
-  iframe {
-    //width: 100%;
+  .video-container {
+    position: relative;
+    padding-bottom: 30.25%;
+    width: 50%;
+    iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+  }
+  @media (max-width: 1023px) {
+    h3 {font-size: 24px}
+    p {font-size: 14px}
+    .video-container {
+      padding-bottom: 35.25%;
+      width: 60%;
+    }
+
+  }
+  @media (max-width: 520px) {
+    text-align: center;
+    h3 {font-size: 24px}
+    p {font-size: 14px}
+    .video-container {
+      padding-bottom: 56.25%;
+      width: 100%;
+    }
+
   }
 }
 
