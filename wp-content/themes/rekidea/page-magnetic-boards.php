@@ -689,25 +689,24 @@
     успешно и эффективно решаем ваши задачи и проблемы. Ознакомьтесь с нашими проектами!</p>
   </div>
   <div class="laser-portfolio-block__content">
-   <div class="content-big">
+      <div class="content-big">
 
-
-    <a href="<?= get_template_directory_uri()?>/img/portfolio-magnetic/3.jpg" class="single_image">
-      <img src="<?= get_template_directory_uri()?>/img/portfolio-magnetic/3-1.png" alt="">
-    </a>
-    <a href="<?= get_template_directory_uri()?>/img/portfolio-magnetic/4.jpg" class="single_image">
-      <img src="<?= get_template_directory_uri()?>/img/portfolio-magnetic/4-1.png" alt="">
-    </a>
-    <a href="<?= get_template_directory_uri()?>/img/portfolio-magnetic/5.jpg" class="single_image hidden-mobile">
-           <img src="<?= get_template_directory_uri()?>/img/portfolio-magnetic/5-1.png" alt="">
-    </a>
-    <a href="<?= get_template_directory_uri()?>/img/portfolio-magnetic/2.jpg" class="single_image hidden-tablet">
-           <img src="<?= get_template_directory_uri()?>/img/portfolio-magnetic/2-1.png" alt="">
-    </a>
-    <a href="<?= get_template_directory_uri()?>/img/portfolio-magnetic/1.jpg" class="single_image hidden-tablet">
-      <img src="<?= get_template_directory_uri()?>/img/portfolio-magnetic/1-1.png" alt="">
-    </a>
-   </div>
+          <a href="<?= get_template_directory_uri()?>/img/portfolio-magnetic/2.jpg" class="single_image">
+              <img src="<?= get_template_directory_uri()?>/img/portfolio-magnetic/2-1.png" alt="">
+          </a>
+          <a href="<?= get_template_directory_uri()?>/img/portfolio-magnetic/3.jpg" class="single_image">
+              <img src="<?= get_template_directory_uri()?>/img/portfolio-magnetic/3-1.png" alt="">
+          </a>
+          <a href="<?= get_template_directory_uri()?>/img/portfolio-magnetic/5.jpg" class="single_image hidden-mobile">
+              <img src="<?= get_template_directory_uri()?>/img/portfolio-magnetic/5-1.jpg" alt="">
+          </a>
+          <a href="<?= get_template_directory_uri()?>/img/portfolio-magnetic/4.jpg" class="single_image hidden-tablet">
+              <img src="<?= get_template_directory_uri()?>/img/portfolio-magnetic/4-1.jpg" alt="">
+          </a>
+          <a href="<?= get_template_directory_uri()?>/img/portfolio-magnetic/1.jpg" class="single_image hidden-tablet">
+              <img src="<?= get_template_directory_uri()?>/img/portfolio-magnetic/1-1.png" alt="">
+          </a>
+      </div>
   </div>
   <a href="/404" class="button">Посмотреть наши работы</a>
  </div>
