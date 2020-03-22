@@ -3646,6 +3646,11 @@ main {
         width: 70px;
         position: relative; }
 
+.contacts__wrapper {
+  display: flex; }
+  .contacts__wrapper .contacts__contacts {
+    width: 500px; }
+
 footer {
   background-color: #474747; }
 
