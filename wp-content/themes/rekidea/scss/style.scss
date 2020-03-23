@@ -3184,29 +3184,38 @@
       font-weight: 300;
     }
     .form-wrapper {
-      display: grid;
-      grid-template-columns: 270px 345px;
-      grid-template-rows: 30px 30px 30px;
-      grid-gap: 15px;
+      width: 635px;
+      .grid {
+        display: grid;
+        grid-template-columns: 273px 345px;
+        grid-template-rows: 35px 35px 35px;
+        grid-gap: 15px;
+        .feedback-field  {
+          grid-column-start: 1;
+          grid-column-end: 1;
+          input {
+            width: 100%;
+            height: 100%;
+            border-radius: 5px;
+            border: 1px solid #d5d5d5;
+          }
 
-      .feedback-field input {
-        grid-column-start: 1;
-        grid-column-end: 1;
-        //width: 270px;
-        //height: 31px;
-        border-radius: 5px;
-        border: 1px solid #d5d5d5;
+        }
+        .feedback-text {
+          grid-column-start: 2;
+          grid-column-end: 2;
+          grid-row-start: 1;
+          grid-row-end: 4;
+          textarea {
+            width: 100%;
+            height: 100%;
+            border-radius: 5px;
+            border: 1px solid #d5d5d5;
+          }
+
+        }
       }
-      .feedback-text textarea {
-        grid-column-start: 2;
-        grid-column-end: 3;
-        grid-row-start: 1;
-        grid-row-end: 3;
-        //width: 270px;
-        //height: 31px;
-        border-radius: 5px;
-        border: 1px solid #d5d5d5;
-      }
+
     }
   }
 

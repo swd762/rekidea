@@ -3671,22 +3671,30 @@ main {
     font-size: 16px;
     font-weight: 300; }
   .contacts__wrapper .contacts__feedback .form-wrapper {
-    display: grid;
-    grid-template-columns: 270px 345px;
-    grid-template-rows: 30px 30px 30px;
-    grid-gap: 15px; }
-    .contacts__wrapper .contacts__feedback .form-wrapper .feedback-field input {
-      grid-column-start: 1;
-      grid-column-end: 1;
-      border-radius: 5px;
-      border: 1px solid #d5d5d5; }
-    .contacts__wrapper .contacts__feedback .form-wrapper .feedback-text textarea {
-      grid-column-start: 2;
-      grid-column-end: 3;
-      grid-row-start: 1;
-      grid-row-end: 3;
-      border-radius: 5px;
-      border: 1px solid #d5d5d5; }
+    width: 635px; }
+    .contacts__wrapper .contacts__feedback .form-wrapper .grid {
+      display: grid;
+      grid-template-columns: 273px 345px;
+      grid-template-rows: 35px 35px 35px;
+      grid-gap: 15px; }
+      .contacts__wrapper .contacts__feedback .form-wrapper .grid .feedback-field {
+        grid-column-start: 1;
+        grid-column-end: 1; }
+        .contacts__wrapper .contacts__feedback .form-wrapper .grid .feedback-field input {
+          width: 100%;
+          height: 100%;
+          border-radius: 5px;
+          border: 1px solid #d5d5d5; }
+      .contacts__wrapper .contacts__feedback .form-wrapper .grid .feedback-text {
+        grid-column-start: 2;
+        grid-column-end: 2;
+        grid-row-start: 1;
+        grid-row-end: 4; }
+        .contacts__wrapper .contacts__feedback .form-wrapper .grid .feedback-text textarea {
+          width: 100%;
+          height: 100%;
+          border-radius: 5px;
+          border: 1px solid #d5d5d5; }
 
 .map_wrapper {
   height: 590px;
