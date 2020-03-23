@@ -382,10 +382,10 @@
 
 <!--magnetic video player-->
 <div class="magnetic-video-wrapper">
-        <h3>
-            посмотрите видео, как выглядит доска
-        </h3>
-    <p>В живую наши доски смотрять еще лучше и эффектней!</p>
+    <h3>
+        посмотрите видео, как выглядит доска
+    </h3>
+    <p>В живую наши доски смотрятся еще лучше и эффектней!</p>
     <div class="video-container">
         <iframe width="1280" height="720" src="https://www.youtube.com/embed/uyA_qSVoud4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
     </div>

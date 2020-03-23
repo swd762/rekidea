@@ -2974,7 +2974,8 @@ main {
     text-transform: uppercase; }
   .magnetic-video-wrapper p {
     margin: 10px 0 15px 0;
-    font-size: 16px; }
+    font-size: 16px;
+    color: black; }
   .magnetic-video-wrapper .video-container {
     position: relative;
     padding-bottom: 30.25%;
