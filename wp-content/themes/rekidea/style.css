@@ -3722,6 +3722,9 @@ main {
       justify-content: center;
       width: 100%;
       margin-top: 15px; }
+      .contacts__wrapper .contacts__feedback .form-wrapper .feedback-submit input:hover {
+        background-color: #580a29;
+        cursor: pointer; }
   @media (max-width: 1170px) {
     .contacts__wrapper {
       padding: 20px 20px; }
