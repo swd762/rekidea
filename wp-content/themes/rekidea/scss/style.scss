@@ -3156,11 +3156,67 @@
   display: flex;
   .contacts__contacts {
     width: 500px;
+    h1 {
+      font-size: 20px;
+      font-weight: 400;
+      color: $red;
+    }
+    h5 {
+      font-size: 16px;
+      font-weight: 400;
+      margin: 10px 0 5px 0;
+      color: $red;
+    }
+    p {
+      font-size: 16px;
+      font-weight: 300;
+    }
+  }
+  .contacts__feedback {
+    h2 {
+      color: $red;
+      font-size: 20px;
+      font-weight: 400;
+    }
+    h4 {
+      color: $red;
+      font-size: 16px;
+      font-weight: 300;
+    }
+    .form-wrapper {
+      display: grid;
+      grid-template-columns: 270px 345px;
+      grid-template-rows: 30px 30px 30px;
+      grid-gap: 15px;
 
-
+      .feedback-field input {
+        grid-column-start: 1;
+        grid-column-end: 1;
+        //width: 270px;
+        //height: 31px;
+        border-radius: 5px;
+        border: 1px solid #d5d5d5;
+      }
+      .feedback-text textarea {
+        grid-column-start: 2;
+        grid-column-end: 3;
+        grid-row-start: 1;
+        grid-row-end: 3;
+        //width: 270px;
+        //height: 31px;
+        border-radius: 5px;
+        border: 1px solid #d5d5d5;
+      }
+    }
   }
 
+}
 
+
+// *** Map ***
+.map_wrapper {
+height: 590px;
+width: 100%;
 }
 
 
