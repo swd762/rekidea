@@ -3730,21 +3730,19 @@ main {
   @media (max-width: 1170px) {
     .contacts__wrapper {
       padding: 15px 10px; }
-      .contacts__wrapper .contacts__feedback {
-        width: 100%; }
-        .contacts__wrapper .contacts__feedback .form-wrapper .grid {
-          grid-template-columns: 340px;
-          grid-template-rows: 35px 35px 35px 35px 35px 35px;
-          grid-gap: 10px;
-          margin-bottom: 20px; }
-          .contacts__wrapper .contacts__feedback .form-wrapper .grid .feedback-field {
-            grid-column-start: 1;
-            grid-column-end: 1; }
-          .contacts__wrapper .contacts__feedback .form-wrapper .grid .feedback-text {
-            grid-column-start: 1;
-            grid-column-end: 1;
-            grid-row-start: 4;
-            grid-row-end: 7; } }
+      .contacts__wrapper .contacts__feedback .form-wrapper .grid {
+        grid-template-columns: 340px;
+        grid-template-rows: 35px 35px 35px 35px 35px 35px;
+        grid-gap: 10px;
+        margin-bottom: 20px; }
+        .contacts__wrapper .contacts__feedback .form-wrapper .grid .feedback-field {
+          grid-column-start: 1;
+          grid-column-end: 1; }
+        .contacts__wrapper .contacts__feedback .form-wrapper .grid .feedback-text {
+          grid-column-start: 1;
+          grid-column-end: 1;
+          grid-row-start: 4;
+          grid-row-end: 7; } }
 
 .map_wrapper {
   height: 590px;
