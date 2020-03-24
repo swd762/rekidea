@@ -3156,7 +3156,7 @@
 .contacts__wrapper {
   display: flex;
   padding: 25px 0;
-  flex-wrap: wrap;
+  //flex-wrap: wrap;
 
   .contacts__contacts {
     width: 500px;
@@ -3254,9 +3254,13 @@
   }
   @media (max-width: 1170px) {
     padding: 20px 20px;
-    .contacts__feedback h2 {margin-top: 15px}
+
+    .contacts__feedback  {
+      margin-left: 20px;
+      h2 {margin-top: 15px}
+    }
   }
-  @media (max-width: 1170px) {
+  @media (max-width: 1024px) {
     padding: 15px 10px;
     .contacts__feedback {
       //width: 100%;
@@ -3280,7 +3284,19 @@
       }
     }
   }
-
+  @media (max-width: 750px) {
+    flex-direction: column;
+    align-items: center;
+    .contacts__feedback {
+      margin-left: 0;
+      width: 350px;
+      text-align: center;
+    }
+    .contacts__contacts {
+      width: 350px;
+      text-align: center;
+    }
+  }
 }
 
 
@@ -3289,7 +3305,14 @@
 height: 590px;
 width: 100%;
 }
-
+// styles for balloon
+.ymaps-2-1-76-balloon {
+  left: 35px !important;
+  top: -38px !important;
+}
+.ymaps-2-1-76-balloon__tail {
+  display: none!important;
+}
 
 
 
