@@ -42,8 +42,8 @@ get_header();
             </div>
             <div class="row">
                 <div class="tit desc">Лазерная резка фанеры и МДФ</div>
-                <div class="tit desc short">Стоимость материала в рубля за м. п.</div>
-                <div class="tit desc-mobile">Лазерная резка фанеры и МДФ<br>Стоимость материала в рубля за м. п.</div>
+                <div class="tit desc short">Стоимость материала в рублях за м. п.</div>
+                <div class="tit desc-mobile">Лазерная резка фанеры и МДФ<br>Стоимость материала в рублях за м. п.</div>
                 <div class="columns">
                     <div class="column">
                         <div class="tit">Толщина материала</div>
@@ -89,8 +89,8 @@ get_header();
             </div>
             <div class="row">
                 <div class="tit desc">Лазерная резка оргстекла и акрила</div>
-                <div class="tit desc short">Стоимость материала в рубля за м. п.</div>
-                <div class="tit desc-mobile">Лазерная резка оргстекла и акрила<br>Стоимость материала в рубля за м. п.</div>
+                <div class="tit desc short">Стоимость материала в рублях за м. п.</div>
+                <div class="tit desc-mobile">Лазерная резка оргстекла и акрила<br>Стоимость материала в рублях за м. п.</div>
                 <div class="columns">
                     <div class="column">
                         <div class="tit">Толщина материала</div>
@@ -140,8 +140,8 @@ get_header();
             </div>
             <div class="row">
                 <div class="tit desc">Лазерная резка ПЭТа</div>
-                <div class="tit desc short">Стоимость материала в рубля за м. п.</div>
-                <div class="tit desc-mobile">Лазерная резка ПЭТа<br>Стоимость материала в рубля за м. п.</div>
+                <div class="tit desc short">Стоимость материала в рублях за м. п.</div>
+                <div class="tit desc-mobile">Лазерная резка ПЭТа<br>Стоимость материала в рублях за м. п.</div>
                 <div class="columns">
                     <div class="column">
                         <div class="tit">Толщина материала</div>
@@ -171,8 +171,8 @@ get_header();
             </div>
             <div class="row">
                 <div class="tit desc">Лазерная резка полистирола</div>
-                <div class="tit desc short">Стоимость материала в рубля за м. п.</div>
-                <div class="tit desc-mobile">Лазерная резка полистирола<br>Стоимость материала в рубля за м. п.</div>
+                <div class="tit desc short">Стоимость материала в рублях за м. п.</div>
+                <div class="tit desc-mobile">Лазерная резка полистирола<br>Стоимость материала в рублях за м. п.</div>
                 <div class="columns">
                     <div class="column">
                         <div class="tit">Толщина материала</div>
