@@ -75,10 +75,10 @@
         <div class="slide2">
             <div class="samples-slider">
                 <div class="slide">
-                    <img src="<?= get_template_directory_uri()?>/img/magnetic-page/craft-left-2.jpg" alt="">
+                    <img src="<?= get_template_directory_uri()?>/img/magnetic-page/craft-right-2.jpg" alt="">
                 </div>
                 <div class="slide">
-                    <img src="<?= get_template_directory_uri()?>/img/magnetic-page/craft-left-1.jpg" alt="">
+                    <img src="<?= get_template_directory_uri()?>/img/magnetic-page/craft-right-1.jpg" alt="">
                 </div>
             </div>
         </div>
