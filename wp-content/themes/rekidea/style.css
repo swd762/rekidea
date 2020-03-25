@@ -3675,6 +3675,8 @@ main {
     font-weight: 300; }
   .contacts__wrapper .contacts__feedback .form-wrapper {
     margin-top: 15px; }
+    .contacts__wrapper .contacts__feedback .form-wrapper .wpcf7-not-valid-tip {
+      font-size: 9px !important; }
     .contacts__wrapper .contacts__feedback .form-wrapper .grid {
       display: grid;
       grid-template-columns: 273px 345px;

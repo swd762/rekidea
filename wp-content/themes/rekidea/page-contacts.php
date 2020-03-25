@@ -82,9 +82,9 @@ get_header();
                 {
                     iconLayout: 'default#image', // обозначаем что будет использоваться пользовательское изображение
                     iconImageHref: '<?= get_template_directory_uri()?>/img/checkpoint-rekidea.svg',  // указываем путь к картинке которая будет служить меткой
-                    iconImageSize: [60, 100], // указываем размер изображения
+                    // iconImageSize: [60, 100], // указываем размер изображения
                     hideIconOnBalloonOpen: false,
-                    iconImageOffset: [-28, -70] // обозначаем сдвиг от левого верхнего угла к точке изображения метки .
+                    // iconImageOffset: [-28, -70] // обозначаем сдвиг от левого верхнего угла к точке изображения метки .
                 });
 
             myMap.geoObjects.add(myPlacemark);

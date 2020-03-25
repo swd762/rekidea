@@ -3189,8 +3189,12 @@
       font-weight: 300;
     }
     .form-wrapper {
+
       //width: 635px;
       margin-top: 15px;
+      .wpcf7-not-valid-tip {
+        font-size: 9px!important;
+      }
       .grid {
         display: grid;
         grid-template-columns: 273px 345px;
