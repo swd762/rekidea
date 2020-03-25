@@ -15,6 +15,7 @@ wp_head();
     <link rel="profile" href="https://gmpg.org/xfn/11" />
     <link href="<?= get_template_directory_uri()?>/img/rekidea-favicon.svg" rel="icon" type="image/svg+xml" />
     <?php wp_head(); ?>
+    <script src="//code-ya.jivosite.com/widget/GRZZqvy1xe" async></script>
 </head>
 <body <?php body_class(); ?>>
   <?php
