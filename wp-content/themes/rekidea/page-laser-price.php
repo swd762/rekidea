@@ -1,5 +1,16 @@
 <?php
 get_header();
+
+?>
+<?php
+if ( have_posts() ) {
+    // Load posts loop.
+    while ( have_posts() ) {
+        the_post();
+
+        $prices = getPrices(get_the_ID(), 'laser');
+    }
+}
 ?>
 <main>
 <!--Breadcrumbs block *******************-->
@@ -47,43 +58,27 @@ get_header();
                 <div class="columns">
                     <div class="column">
                         <div class="tit">Толщина материала</div>
-                        <div class="td">1-3 мм</div>
-                        <div class="td">4 мм</div>
-                        <div class="td">5 мм</div>
-                        <div class="td">6 мм</div>
-                        <div class="td">8 мм</div>
-                        <div class="td">10 мм</div>
-                        <div class="td">12 мм</div>
+                        <?php foreach ($prices['mdf']['sizes'] as $item) {?>
+                            <div class="td"><?php echo $item?></div>
+                        <?php } ?>
                     </div>
                     <div class="column">
                         <div class="tit">до 500 м. п.</div>
-                        <div class="td">13</div>
-                        <div class="td">15</div>
-                        <div class="td">17</div>
-                        <div class="td">20</div>
-                        <div class="td">23</div>
-                        <div class="td">26</div>
-                        <div class="td">30</div>
+                        <?php foreach ($prices['mdf']['prices1'] as $item) {?>
+                            <div class="td"><?php echo $item?></div>
+                        <?php } ?>
                     </div>
                     <div class="column">
                         <div class="tit hot-icon">от 500 м. п.</div>
-                        <div class="td">1,95</div>
-                        <div class="td">2,25</div>
-                        <div class="td">2,55</div>
-                        <div class="td">3</div>
-                        <div class="td">3,45</div>
-                        <div class="td">3,9</div>
-                        <div class="td">4,5</div>
+                        <?php foreach ($prices['mdf']['prices2'] as $item) {?>
+                            <div class="td"><?php echo $item?></div>
+                        <?php } ?>
                     </div>
                     <div class="column">
                         <div class="tit hot-icon">от 1000 м. п.</div>
-                        <div class="td">3,9</div>
-                        <div class="td">4,5</div>
-                        <div class="td">5,1</div>
-                        <div class="td">6</div>
-                        <div class="td">6,9</div>
-                        <div class="td">7,8</div>
-                        <div class="td">9</div>
+                        <?php foreach ($prices['mdf']['prices3'] as $item) {?>
+                            <div class="td"><?php echo $item?></div>
+                        <?php } ?>
                     </div>
                 </div>
             </div>
@@ -94,47 +89,27 @@ get_header();
                 <div class="columns">
                     <div class="column">
                         <div class="tit">Толщина материала</div>
-                        <div class="td">1 мм</div>
-                        <div class="td">2 мм</div>
-                        <div class="td">3 мм</div>
-                        <div class="td">4 мм</div>
-                        <div class="td">5 мм</div>
-                        <div class="td">6 мм</div>
-                        <div class="td">8 мм</div>
-                        <div class="td">10 мм</div>
+                        <?php foreach ($prices['akril']['sizes'] as $item) {?>
+                            <div class="td"><?php echo $item?></div>
+                        <?php } ?>
                     </div>
                     <div class="column">
                         <div class="tit">до 500 м. п.</div>
-                        <div class="td">10</div>
-                        <div class="td">13</div>
-                        <div class="td">17</div>
-                        <div class="td">23</div>
-                        <div class="td">25</div>
-                        <div class="td">27</div>
-                        <div class="td">50</div>
-                        <div class="td">65</div>
+                        <?php foreach ($prices['akril']['prices1'] as $item) {?>
+                            <div class="td"><?php echo $item?></div>
+                        <?php } ?>
                     </div>
                     <div class="column">
                         <div class="tit hot-icon">от 500 м. п.</div>
-                        <div class="td">1,5</div>
-                        <div class="td">1,95</div>
-                        <div class="td">2,55</div>
-                        <div class="td">3,45</div>
-                        <div class="td">3,75</div>
-                        <div class="td">4,05</div>
-                        <div class="td">7,5</div>
-                        <div class="td">9,75</div>
+                        <?php foreach ($prices['akril']['prices2'] as $item) {?>
+                            <div class="td"><?php echo $item?></div>
+                        <?php } ?>
                     </div>
                     <div class="column">
                         <div class="tit hot-icon">от 1000 м. п.</div>
-                        <div class="td">3</div>
-                        <div class="td">3,9</div>
-                        <div class="td">5,1</div>
-                        <div class="td">6,9</div>
-                        <div class="td">7,5</div>
-                        <div class="td">8,1</div>
-                        <div class="td">15</div>
-                        <div class="td">19,5</div>
+                        <?php foreach ($prices['akril']['prices3'] as $item) {?>
+                            <div class="td"><?php echo $item?></div>
+                        <?php } ?>
                     </div>
                 </div>
             </div>
@@ -145,27 +120,27 @@ get_header();
                 <div class="columns">
                     <div class="column">
                         <div class="tit">Толщина материала</div>
-                        <div class="td">0,5 мм</div>
-                        <div class="td">1 мм</div>
-                        <div class="td">2 мм</div>
+                        <?php foreach ($prices['pet']['sizes'] as $item) {?>
+                            <div class="td"><?php echo $item?></div>
+                        <?php } ?>
                     </div>
                     <div class="column">
                         <div class="tit">до 500 м. п.</div>
-                        <div class="td">15</div>
-                        <div class="td">23</div>
-                        <div class="td">26</div>
+                        <?php foreach ($prices['pet']['prices1'] as $item) {?>
+                            <div class="td"><?php echo $item?></div>
+                        <?php } ?>
                     </div>
                     <div class="column">
                         <div class="tit hot-icon">от 500 м. п.</div>
-                        <div class="td">2,25</div>
-                        <div class="td">3,45</div>
-                        <div class="td">3,9</div>
+                        <?php foreach ($prices['pet']['prices2'] as $item) {?>
+                            <div class="td"><?php echo $item?></div>
+                        <?php } ?>
                     </div>
                     <div class="column">
                         <div class="tit hot-icon">от 1000 м. п.</div>
-                        <div class="td">4,5</div>
-                        <div class="td">6,9</div>
-                        <div class="td">7,8</div>
+                        <?php foreach ($prices['pet']['prices3'] as $item) {?>
+                            <div class="td"><?php echo $item?></div>
+                        <?php } ?>
                     </div>
                 </div>
             </div>
@@ -176,39 +151,27 @@ get_header();
                 <div class="columns">
                     <div class="column">
                         <div class="tit">Толщина материала</div>
-                        <div class="td">1 мм</div>
-                        <div class="td">2 мм</div>
-                        <div class="td">3 мм</div>
-                        <div class="td">4-5 мм</div>
-                        <div class="td">6 мм</div>
-                        <div class="td">8 мм</div>
+                        <?php foreach ($prices['polistirol']['sizes'] as $item) {?>
+                            <div class="td"><?php echo $item?></div>
+                        <?php } ?>
                     </div>
                     <div class="column">
                         <div class="tit">до 500 м. п.</div>
-                        <div class="td">15</div>
-                        <div class="td">17</div>
-                        <div class="td">22</div>
-                        <div class="td">25</div>
-                        <div class="td">30</div>
-                        <div class="td">45</div>
+                        <?php foreach ($prices['polistirol']['prices1'] as $item) {?>
+                            <div class="td"><?php echo $item?></div>
+                        <?php } ?>
                     </div>
                     <div class="column">
                         <div class="tit hot-icon">от 500 м. п.</div>
-                        <div class="td">2,25</div>
-                        <div class="td">2,55</div>
-                        <div class="td">3,3</div>
-                        <div class="td">3,75</div>
-                        <div class="td">4,5</div>
-                        <div class="td">6,75</div>
+                        <?php foreach ($prices['polistirol']['prices1'] as $item) {?>
+                            <div class="td"><?php echo $item?></div>
+                        <?php } ?>
                     </div>
                     <div class="column">
                         <div class="tit hot-icon">от 1000 м. п.</div>
-                        <div class="td">4,5</div>
-                        <div class="td">5,1</div>
-                        <div class="td">6,6</div>
-                        <div class="td">7,5</div>
-                        <div class="td">9</div>
-                        <div class="td">13,5</div>
+                        <?php foreach ($prices['polistirol']['prices3'] as $item) {?>
+                            <div class="td"><?php echo $item?></div>
+                        <?php } ?>
                     </div>
                 </div>
             </div>

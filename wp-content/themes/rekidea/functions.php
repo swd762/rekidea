@@ -46,6 +46,37 @@ function contact_form_remove_checkbox_wrapping( $content ) {
 }
 
 
+function getPrices($postId, $target) {
+    $prices = get_fields($postId);
+
+    foreach ($prices as $key=>$price) {
+        $prices[$key] = explode(PHP_EOL, $price);
+
+        $sizes = [];
+        $prises1 = [];
+        $prises2 = [];
+        $prises3 = [];
+
+        foreach ($prices[$key] as $item) {
+            if($item) {
+                $temp = explode('|', $item);
+                $sizes[] = $temp[0];
+                $prises1[] = $temp[1];
+                $prises2[] = $temp[2];
+                $prises3[] = $temp[3];
+            }
+        }
+
+        $prices[$key] = [];
+        $prices[$key]['sizes'] = $sizes;
+        $prices[$key]['prices1'] = $prises1;
+        $prices[$key]['prices2'] = $prises2;
+        $prices[$key]['prices3'] = $prises3;
+    }
+
+    return $prices;
+}
+
 
 
 

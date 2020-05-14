@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AAGA,yBAA0B;EACzB,gBAAgB,EAAE,WAAW",
+"sources": ["block-title/editor.scss"],
+"names": [],
+"file": "editor.css"
+}
