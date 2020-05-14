@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.3
+-- version 4.7.7
 -- https://www.phpmyadmin.net/
 --
 -- Хост: 127.0.0.1:3306
--- Время создания: Мар 24 2020 г., 22:09
--- Версия сервера: 5.7.23
--- Версия PHP: 7.0.32
+-- Время создания: Май 14 2020 г., 10:25
+-- Версия сервера: 5.7.20
+-- Версия PHP: 7.1.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -19,8 +19,87 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- База данных: `wp_rek`
+-- База данных: `rsht1`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Структура таблицы `wp_actionscheduler_actions`
+--
+
+CREATE TABLE `wp_actionscheduler_actions` (
+  `action_id` bigint(20) UNSIGNED NOT NULL,
+  `hook` varchar(191) COLLATE utf8mb4_unicode_520_ci NOT NULL,
+  `status` varchar(20) COLLATE utf8mb4_unicode_520_ci NOT NULL,
+  `scheduled_date_gmt` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `scheduled_date_local` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `args` varchar(191) COLLATE utf8mb4_unicode_520_ci DEFAULT NULL,
+  `schedule` longtext COLLATE utf8mb4_unicode_520_ci,
+  `group_id` bigint(20) UNSIGNED NOT NULL DEFAULT '0',
+  `attempts` int(11) NOT NULL DEFAULT '0',
+  `last_attempt_gmt` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `last_attempt_local` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `claim_id` bigint(20) UNSIGNED NOT NULL DEFAULT '0',
+  `extended_args` varchar(8000) COLLATE utf8mb4_unicode_520_ci DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_520_ci;
+
+--
+-- Дамп данных таблицы `wp_actionscheduler_actions`
+--
+
+INSERT INTO `wp_actionscheduler_actions` (`action_id`, `hook`, `status`, `scheduled_date_gmt`, `scheduled_date_local`, `args`, `schedule`, `group_id`, `attempts`, `last_attempt_gmt`, `last_attempt_local`, `claim_id`, `extended_args`) VALUES
+(355, 'action_scheduler/migration_hook', 'pending', '2020-05-14 07:25:05', '2020-05-14 07:25:05', '[]', 'O:30:\"ActionScheduler_SimpleSchedule\":2:{s:22:\"\0*\0scheduled_timestamp\";i:1589441105;s:41:\"\0ActionScheduler_SimpleSchedule\0timestamp\";i:1589441105;}', 1, 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', 0, NULL);
+
+-- --------------------------------------------------------
+
+--
+-- Структура таблицы `wp_actionscheduler_claims`
+--
+
+CREATE TABLE `wp_actionscheduler_claims` (
+  `claim_id` bigint(20) UNSIGNED NOT NULL,
+  `date_created_gmt` datetime NOT NULL DEFAULT '0000-00-00 00:00:00'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_520_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Структура таблицы `wp_actionscheduler_groups`
+--
+
+CREATE TABLE `wp_actionscheduler_groups` (
+  `group_id` bigint(20) UNSIGNED NOT NULL,
+  `slug` varchar(255) COLLATE utf8mb4_unicode_520_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_520_ci;
+
+--
+-- Дамп данных таблицы `wp_actionscheduler_groups`
+--
+
+INSERT INTO `wp_actionscheduler_groups` (`group_id`, `slug`) VALUES
+(1, 'action-scheduler-migration');
+
+-- --------------------------------------------------------
+
+--
+-- Структура таблицы `wp_actionscheduler_logs`
+--
+
+CREATE TABLE `wp_actionscheduler_logs` (
+  `log_id` bigint(20) UNSIGNED NOT NULL,
+  `action_id` bigint(20) UNSIGNED NOT NULL,
+  `message` text COLLATE utf8mb4_unicode_520_ci NOT NULL,
+  `log_date_gmt` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `log_date_local` datetime NOT NULL DEFAULT '0000-00-00 00:00:00'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_520_ci;
+
+--
+-- Дамп данных таблицы `wp_actionscheduler_logs`
+--
+
+INSERT INTO `wp_actionscheduler_logs` (`log_id`, `action_id`, `message`, `log_date_gmt`, `log_date_local`) VALUES
+(1, 355, 'action created', '2020-05-14 07:24:05', '2020-05-14 07:24:05');
 
 -- --------------------------------------------------------
 
@@ -99,8 +178,8 @@ CREATE TABLE `wp_options` (
 --
 
 INSERT INTO `wp_options` (`option_id`, `option_name`, `option_value`, `autoload`) VALUES
-(1, 'siteurl', 'http://rek.local', 'yes'),
-(2, 'home', 'http://rek.local', 'yes'),
+(1, 'siteurl', 'http://rsht.local', 'yes'),
+(2, 'home', 'http://rsht.local', 'yes'),
 (3, 'blogname', 'Rekidea', 'yes'),
 (4, 'blogdescription', 'Рекламное производство', 'yes'),
 (5, 'users_can_register', '0', 'yes'),
@@ -127,11 +206,11 @@ INSERT INTO `wp_options` (`option_id`, `option_name`, `option_value`, `autoload`
 (26, 'comment_moderation', '0', 'yes'),
 (27, 'moderation_notify', '1', 'yes'),
 (28, 'permalink_structure', '/%year%/%monthnum%/%day%/%postname%/', 'yes'),
-(29, 'rewrite_rules', 'a:95:{s:11:\"^wp-json/?$\";s:22:\"index.php?rest_route=/\";s:14:\"^wp-json/(.*)?\";s:33:\"index.php?rest_route=/$matches[1]\";s:21:\"^index.php/wp-json/?$\";s:22:\"index.php?rest_route=/\";s:24:\"^index.php/wp-json/(.*)?\";s:33:\"index.php?rest_route=/$matches[1]\";s:47:\"category/(.+?)/feed/(feed|rdf|rss|rss2|atom)/?$\";s:52:\"index.php?category_name=$matches[1]&feed=$matches[2]\";s:42:\"category/(.+?)/(feed|rdf|rss|rss2|atom)/?$\";s:52:\"index.php?category_name=$matches[1]&feed=$matches[2]\";s:23:\"category/(.+?)/embed/?$\";s:46:\"index.php?category_name=$matches[1]&embed=true\";s:35:\"category/(.+?)/page/?([0-9]{1,})/?$\";s:53:\"index.php?category_name=$matches[1]&paged=$matches[2]\";s:17:\"category/(.+?)/?$\";s:35:\"index.php?category_name=$matches[1]\";s:44:\"tag/([^/]+)/feed/(feed|rdf|rss|rss2|atom)/?$\";s:42:\"index.php?tag=$matches[1]&feed=$matches[2]\";s:39:\"tag/([^/]+)/(feed|rdf|rss|rss2|atom)/?$\";s:42:\"index.php?tag=$matches[1]&feed=$matches[2]\";s:20:\"tag/([^/]+)/embed/?$\";s:36:\"index.php?tag=$matches[1]&embed=true\";s:32:\"tag/([^/]+)/page/?([0-9]{1,})/?$\";s:43:\"index.php?tag=$matches[1]&paged=$matches[2]\";s:14:\"tag/([^/]+)/?$\";s:25:\"index.php?tag=$matches[1]\";s:45:\"type/([^/]+)/feed/(feed|rdf|rss|rss2|atom)/?$\";s:50:\"index.php?post_format=$matches[1]&feed=$matches[2]\";s:40:\"type/([^/]+)/(feed|rdf|rss|rss2|atom)/?$\";s:50:\"index.php?post_format=$matches[1]&feed=$matches[2]\";s:21:\"type/([^/]+)/embed/?$\";s:44:\"index.php?post_format=$matches[1]&embed=true\";s:33:\"type/([^/]+)/page/?([0-9]{1,})/?$\";s:51:\"index.php?post_format=$matches[1]&paged=$matches[2]\";s:15:\"type/([^/]+)/?$\";s:33:\"index.php?post_format=$matches[1]\";s:64:\"wpsisac_slider-category/([^/]+)/feed/(feed|rdf|rss|rss2|atom)/?$\";s:62:\"index.php?wpsisac_slider-category=$matches[1]&feed=$matches[2]\";s:59:\"wpsisac_slider-category/([^/]+)/(feed|rdf|rss|rss2|atom)/?$\";s:62:\"index.php?wpsisac_slider-category=$matches[1]&feed=$matches[2]\";s:40:\"wpsisac_slider-category/([^/]+)/embed/?$\";s:56:\"index.php?wpsisac_slider-category=$matches[1]&embed=true\";s:52:\"wpsisac_slider-category/([^/]+)/page/?([0-9]{1,})/?$\";s:63:\"index.php?wpsisac_slider-category=$matches[1]&paged=$matches[2]\";s:34:\"wpsisac_slider-category/([^/]+)/?$\";s:45:\"index.php?wpsisac_slider-category=$matches[1]\";s:12:\"robots\\.txt$\";s:18:\"index.php?robots=1\";s:48:\".*wp-(atom|rdf|rss|rss2|feed|commentsrss2)\\.php$\";s:18:\"index.php?feed=old\";s:20:\".*wp-app\\.php(/.*)?$\";s:19:\"index.php?error=403\";s:18:\".*wp-register.php$\";s:23:\"index.php?register=true\";s:32:\"feed/(feed|rdf|rss|rss2|atom)/?$\";s:27:\"index.php?&feed=$matches[1]\";s:27:\"(feed|rdf|rss|rss2|atom)/?$\";s:27:\"index.php?&feed=$matches[1]\";s:8:\"embed/?$\";s:21:\"index.php?&embed=true\";s:20:\"page/?([0-9]{1,})/?$\";s:28:\"index.php?&paged=$matches[1]\";s:41:\"comments/feed/(feed|rdf|rss|rss2|atom)/?$\";s:42:\"index.php?&feed=$matches[1]&withcomments=1\";s:36:\"comments/(feed|rdf|rss|rss2|atom)/?$\";s:42:\"index.php?&feed=$matches[1]&withcomments=1\";s:17:\"comments/embed/?$\";s:21:\"index.php?&embed=true\";s:44:\"search/(.+)/feed/(feed|rdf|rss|rss2|atom)/?$\";s:40:\"index.php?s=$matches[1]&feed=$matches[2]\";s:39:\"search/(.+)/(feed|rdf|rss|rss2|atom)/?$\";s:40:\"index.php?s=$matches[1]&feed=$matches[2]\";s:20:\"search/(.+)/embed/?$\";s:34:\"index.php?s=$matches[1]&embed=true\";s:32:\"search/(.+)/page/?([0-9]{1,})/?$\";s:41:\"index.php?s=$matches[1]&paged=$matches[2]\";s:14:\"search/(.+)/?$\";s:23:\"index.php?s=$matches[1]\";s:47:\"author/([^/]+)/feed/(feed|rdf|rss|rss2|atom)/?$\";s:50:\"index.php?author_name=$matches[1]&feed=$matches[2]\";s:42:\"author/([^/]+)/(feed|rdf|rss|rss2|atom)/?$\";s:50:\"index.php?author_name=$matches[1]&feed=$matches[2]\";s:23:\"author/([^/]+)/embed/?$\";s:44:\"index.php?author_name=$matches[1]&embed=true\";s:35:\"author/([^/]+)/page/?([0-9]{1,})/?$\";s:51:\"index.php?author_name=$matches[1]&paged=$matches[2]\";s:17:\"author/([^/]+)/?$\";s:33:\"index.php?author_name=$matches[1]\";s:69:\"([0-9]{4})/([0-9]{1,2})/([0-9]{1,2})/feed/(feed|rdf|rss|rss2|atom)/?$\";s:80:\"index.php?year=$matches[1]&monthnum=$matches[2]&day=$matches[3]&feed=$matches[4]\";s:64:\"([0-9]{4})/([0-9]{1,2})/([0-9]{1,2})/(feed|rdf|rss|rss2|atom)/?$\";s:80:\"index.php?year=$matches[1]&monthnum=$matches[2]&day=$matches[3]&feed=$matches[4]\";s:45:\"([0-9]{4})/([0-9]{1,2})/([0-9]{1,2})/embed/?$\";s:74:\"index.php?year=$matches[1]&monthnum=$matches[2]&day=$matches[3]&embed=true\";s:57:\"([0-9]{4})/([0-9]{1,2})/([0-9]{1,2})/page/?([0-9]{1,})/?$\";s:81:\"index.php?year=$matches[1]&monthnum=$matches[2]&day=$matches[3]&paged=$matches[4]\";s:39:\"([0-9]{4})/([0-9]{1,2})/([0-9]{1,2})/?$\";s:63:\"index.php?year=$matches[1]&monthnum=$matches[2]&day=$matches[3]\";s:56:\"([0-9]{4})/([0-9]{1,2})/feed/(feed|rdf|rss|rss2|atom)/?$\";s:64:\"index.php?year=$matches[1]&monthnum=$matches[2]&feed=$matches[3]\";s:51:\"([0-9]{4})/([0-9]{1,2})/(feed|rdf|rss|rss2|atom)/?$\";s:64:\"index.php?year=$matches[1]&monthnum=$matches[2]&feed=$matches[3]\";s:32:\"([0-9]{4})/([0-9]{1,2})/embed/?$\";s:58:\"index.php?year=$matches[1]&monthnum=$matches[2]&embed=true\";s:44:\"([0-9]{4})/([0-9]{1,2})/page/?([0-9]{1,})/?$\";s:65:\"index.php?year=$matches[1]&monthnum=$matches[2]&paged=$matches[3]\";s:26:\"([0-9]{4})/([0-9]{1,2})/?$\";s:47:\"index.php?year=$matches[1]&monthnum=$matches[2]\";s:43:\"([0-9]{4})/feed/(feed|rdf|rss|rss2|atom)/?$\";s:43:\"index.php?year=$matches[1]&feed=$matches[2]\";s:38:\"([0-9]{4})/(feed|rdf|rss|rss2|atom)/?$\";s:43:\"index.php?year=$matches[1]&feed=$matches[2]\";s:19:\"([0-9]{4})/embed/?$\";s:37:\"index.php?year=$matches[1]&embed=true\";s:31:\"([0-9]{4})/page/?([0-9]{1,})/?$\";s:44:\"index.php?year=$matches[1]&paged=$matches[2]\";s:13:\"([0-9]{4})/?$\";s:26:\"index.php?year=$matches[1]\";s:58:\"[0-9]{4}/[0-9]{1,2}/[0-9]{1,2}/[^/]+/attachment/([^/]+)/?$\";s:32:\"index.php?attachment=$matches[1]\";s:68:\"[0-9]{4}/[0-9]{1,2}/[0-9]{1,2}/[^/]+/attachment/([^/]+)/trackback/?$\";s:37:\"index.php?attachment=$matches[1]&tb=1\";s:88:\"[0-9]{4}/[0-9]{1,2}/[0-9]{1,2}/[^/]+/attachment/([^/]+)/feed/(feed|rdf|rss|rss2|atom)/?$\";s:49:\"index.php?attachment=$matches[1]&feed=$matches[2]\";s:83:\"[0-9]{4}/[0-9]{1,2}/[0-9]{1,2}/[^/]+/attachment/([^/]+)/(feed|rdf|rss|rss2|atom)/?$\";s:49:\"index.php?attachment=$matches[1]&feed=$matches[2]\";s:83:\"[0-9]{4}/[0-9]{1,2}/[0-9]{1,2}/[^/]+/attachment/([^/]+)/comment-page-([0-9]{1,})/?$\";s:50:\"index.php?attachment=$matches[1]&cpage=$matches[2]\";s:64:\"[0-9]{4}/[0-9]{1,2}/[0-9]{1,2}/[^/]+/attachment/([^/]+)/embed/?$\";s:43:\"index.php?attachment=$matches[1]&embed=true\";s:53:\"([0-9]{4})/([0-9]{1,2})/([0-9]{1,2})/([^/]+)/embed/?$\";s:91:\"index.php?year=$matches[1]&monthnum=$matches[2]&day=$matches[3]&name=$matches[4]&embed=true\";s:57:\"([0-9]{4})/([0-9]{1,2})/([0-9]{1,2})/([^/]+)/trackback/?$\";s:85:\"index.php?year=$matches[1]&monthnum=$matches[2]&day=$matches[3]&name=$matches[4]&tb=1\";s:77:\"([0-9]{4})/([0-9]{1,2})/([0-9]{1,2})/([^/]+)/feed/(feed|rdf|rss|rss2|atom)/?$\";s:97:\"index.php?year=$matches[1]&monthnum=$matches[2]&day=$matches[3]&name=$matches[4]&feed=$matches[5]\";s:72:\"([0-9]{4})/([0-9]{1,2})/([0-9]{1,2})/([^/]+)/(feed|rdf|rss|rss2|atom)/?$\";s:97:\"index.php?year=$matches[1]&monthnum=$matches[2]&day=$matches[3]&name=$matches[4]&feed=$matches[5]\";s:65:\"([0-9]{4})/([0-9]{1,2})/([0-9]{1,2})/([^/]+)/page/?([0-9]{1,})/?$\";s:98:\"index.php?year=$matches[1]&monthnum=$matches[2]&day=$matches[3]&name=$matches[4]&paged=$matches[5]\";s:72:\"([0-9]{4})/([0-9]{1,2})/([0-9]{1,2})/([^/]+)/comment-page-([0-9]{1,})/?$\";s:98:\"index.php?year=$matches[1]&monthnum=$matches[2]&day=$matches[3]&name=$matches[4]&cpage=$matches[5]\";s:61:\"([0-9]{4})/([0-9]{1,2})/([0-9]{1,2})/([^/]+)(?:/([0-9]+))?/?$\";s:97:\"index.php?year=$matches[1]&monthnum=$matches[2]&day=$matches[3]&name=$matches[4]&page=$matches[5]\";s:47:\"[0-9]{4}/[0-9]{1,2}/[0-9]{1,2}/[^/]+/([^/]+)/?$\";s:32:\"index.php?attachment=$matches[1]\";s:57:\"[0-9]{4}/[0-9]{1,2}/[0-9]{1,2}/[^/]+/([^/]+)/trackback/?$\";s:37:\"index.php?attachment=$matches[1]&tb=1\";s:77:\"[0-9]{4}/[0-9]{1,2}/[0-9]{1,2}/[^/]+/([^/]+)/feed/(feed|rdf|rss|rss2|atom)/?$\";s:49:\"index.php?attachment=$matches[1]&feed=$matches[2]\";s:72:\"[0-9]{4}/[0-9]{1,2}/[0-9]{1,2}/[^/]+/([^/]+)/(feed|rdf|rss|rss2|atom)/?$\";s:49:\"index.php?attachment=$matches[1]&feed=$matches[2]\";s:72:\"[0-9]{4}/[0-9]{1,2}/[0-9]{1,2}/[^/]+/([^/]+)/comment-page-([0-9]{1,})/?$\";s:50:\"index.php?attachment=$matches[1]&cpage=$matches[2]\";s:53:\"[0-9]{4}/[0-9]{1,2}/[0-9]{1,2}/[^/]+/([^/]+)/embed/?$\";s:43:\"index.php?attachment=$matches[1]&embed=true\";s:64:\"([0-9]{4})/([0-9]{1,2})/([0-9]{1,2})/comment-page-([0-9]{1,})/?$\";s:81:\"index.php?year=$matches[1]&monthnum=$matches[2]&day=$matches[3]&cpage=$matches[4]\";s:51:\"([0-9]{4})/([0-9]{1,2})/comment-page-([0-9]{1,})/?$\";s:65:\"index.php?year=$matches[1]&monthnum=$matches[2]&cpage=$matches[3]\";s:38:\"([0-9]{4})/comment-page-([0-9]{1,})/?$\";s:44:\"index.php?year=$matches[1]&cpage=$matches[2]\";s:27:\".?.+?/attachment/([^/]+)/?$\";s:32:\"index.php?attachment=$matches[1]\";s:37:\".?.+?/attachment/([^/]+)/trackback/?$\";s:37:\"index.php?attachment=$matches[1]&tb=1\";s:57:\".?.+?/attachment/([^/]+)/feed/(feed|rdf|rss|rss2|atom)/?$\";s:49:\"index.php?attachment=$matches[1]&feed=$matches[2]\";s:52:\".?.+?/attachment/([^/]+)/(feed|rdf|rss|rss2|atom)/?$\";s:49:\"index.php?attachment=$matches[1]&feed=$matches[2]\";s:52:\".?.+?/attachment/([^/]+)/comment-page-([0-9]{1,})/?$\";s:50:\"index.php?attachment=$matches[1]&cpage=$matches[2]\";s:33:\".?.+?/attachment/([^/]+)/embed/?$\";s:43:\"index.php?attachment=$matches[1]&embed=true\";s:16:\"(.?.+?)/embed/?$\";s:41:\"index.php?pagename=$matches[1]&embed=true\";s:20:\"(.?.+?)/trackback/?$\";s:35:\"index.php?pagename=$matches[1]&tb=1\";s:40:\"(.?.+?)/feed/(feed|rdf|rss|rss2|atom)/?$\";s:47:\"index.php?pagename=$matches[1]&feed=$matches[2]\";s:35:\"(.?.+?)/(feed|rdf|rss|rss2|atom)/?$\";s:47:\"index.php?pagename=$matches[1]&feed=$matches[2]\";s:28:\"(.?.+?)/page/?([0-9]{1,})/?$\";s:48:\"index.php?pagename=$matches[1]&paged=$matches[2]\";s:35:\"(.?.+?)/comment-page-([0-9]{1,})/?$\";s:48:\"index.php?pagename=$matches[1]&cpage=$matches[2]\";s:24:\"(.?.+?)(?:/([0-9]+))?/?$\";s:47:\"index.php?pagename=$matches[1]&page=$matches[2]\";}', 'yes'),
+(29, 'rewrite_rules', 'a:156:{s:11:\"^wp-json/?$\";s:22:\"index.php?rest_route=/\";s:14:\"^wp-json/(.*)?\";s:33:\"index.php?rest_route=/$matches[1]\";s:21:\"^index.php/wp-json/?$\";s:22:\"index.php?rest_route=/\";s:24:\"^index.php/wp-json/(.*)?\";s:33:\"index.php?rest_route=/$matches[1]\";s:47:\"category/(.+?)/feed/(feed|rdf|rss|rss2|atom)/?$\";s:52:\"index.php?category_name=$matches[1]&feed=$matches[2]\";s:42:\"category/(.+?)/(feed|rdf|rss|rss2|atom)/?$\";s:52:\"index.php?category_name=$matches[1]&feed=$matches[2]\";s:23:\"category/(.+?)/embed/?$\";s:46:\"index.php?category_name=$matches[1]&embed=true\";s:35:\"category/(.+?)/page/?([0-9]{1,})/?$\";s:53:\"index.php?category_name=$matches[1]&paged=$matches[2]\";s:17:\"category/(.+?)/?$\";s:35:\"index.php?category_name=$matches[1]\";s:44:\"tag/([^/]+)/feed/(feed|rdf|rss|rss2|atom)/?$\";s:42:\"index.php?tag=$matches[1]&feed=$matches[2]\";s:39:\"tag/([^/]+)/(feed|rdf|rss|rss2|atom)/?$\";s:42:\"index.php?tag=$matches[1]&feed=$matches[2]\";s:20:\"tag/([^/]+)/embed/?$\";s:36:\"index.php?tag=$matches[1]&embed=true\";s:32:\"tag/([^/]+)/page/?([0-9]{1,})/?$\";s:43:\"index.php?tag=$matches[1]&paged=$matches[2]\";s:14:\"tag/([^/]+)/?$\";s:25:\"index.php?tag=$matches[1]\";s:45:\"type/([^/]+)/feed/(feed|rdf|rss|rss2|atom)/?$\";s:50:\"index.php?post_format=$matches[1]&feed=$matches[2]\";s:40:\"type/([^/]+)/(feed|rdf|rss|rss2|atom)/?$\";s:50:\"index.php?post_format=$matches[1]&feed=$matches[2]\";s:21:\"type/([^/]+)/embed/?$\";s:44:\"index.php?post_format=$matches[1]&embed=true\";s:33:\"type/([^/]+)/page/?([0-9]{1,})/?$\";s:51:\"index.php?post_format=$matches[1]&paged=$matches[2]\";s:15:\"type/([^/]+)/?$\";s:33:\"index.php?post_format=$matches[1]\";s:64:\"wpsisac_slider-category/([^/]+)/feed/(feed|rdf|rss|rss2|atom)/?$\";s:62:\"index.php?wpsisac_slider-category=$matches[1]&feed=$matches[2]\";s:59:\"wpsisac_slider-category/([^/]+)/(feed|rdf|rss|rss2|atom)/?$\";s:62:\"index.php?wpsisac_slider-category=$matches[1]&feed=$matches[2]\";s:40:\"wpsisac_slider-category/([^/]+)/embed/?$\";s:56:\"index.php?wpsisac_slider-category=$matches[1]&embed=true\";s:52:\"wpsisac_slider-category/([^/]+)/page/?([0-9]{1,})/?$\";s:63:\"index.php?wpsisac_slider-category=$matches[1]&paged=$matches[2]\";s:34:\"wpsisac_slider-category/([^/]+)/?$\";s:45:\"index.php?wpsisac_slider-category=$matches[1]\";s:35:\"product/[^/]+/attachment/([^/]+)/?$\";s:32:\"index.php?attachment=$matches[1]\";s:45:\"product/[^/]+/attachment/([^/]+)/trackback/?$\";s:37:\"index.php?attachment=$matches[1]&tb=1\";s:65:\"product/[^/]+/attachment/([^/]+)/feed/(feed|rdf|rss|rss2|atom)/?$\";s:49:\"index.php?attachment=$matches[1]&feed=$matches[2]\";s:60:\"product/[^/]+/attachment/([^/]+)/(feed|rdf|rss|rss2|atom)/?$\";s:49:\"index.php?attachment=$matches[1]&feed=$matches[2]\";s:60:\"product/[^/]+/attachment/([^/]+)/comment-page-([0-9]{1,})/?$\";s:50:\"index.php?attachment=$matches[1]&cpage=$matches[2]\";s:41:\"product/[^/]+/attachment/([^/]+)/embed/?$\";s:43:\"index.php?attachment=$matches[1]&embed=true\";s:24:\"product/([^/]+)/embed/?$\";s:40:\"index.php?product=$matches[1]&embed=true\";s:28:\"product/([^/]+)/trackback/?$\";s:34:\"index.php?product=$matches[1]&tb=1\";s:36:\"product/([^/]+)/page/?([0-9]{1,})/?$\";s:47:\"index.php?product=$matches[1]&paged=$matches[2]\";s:43:\"product/([^/]+)/comment-page-([0-9]{1,})/?$\";s:47:\"index.php?product=$matches[1]&cpage=$matches[2]\";s:32:\"product/([^/]+)(?:/([0-9]+))?/?$\";s:46:\"index.php?product=$matches[1]&page=$matches[2]\";s:24:\"product/[^/]+/([^/]+)/?$\";s:32:\"index.php?attachment=$matches[1]\";s:34:\"product/[^/]+/([^/]+)/trackback/?$\";s:37:\"index.php?attachment=$matches[1]&tb=1\";s:54:\"product/[^/]+/([^/]+)/feed/(feed|rdf|rss|rss2|atom)/?$\";s:49:\"index.php?attachment=$matches[1]&feed=$matches[2]\";s:49:\"product/[^/]+/([^/]+)/(feed|rdf|rss|rss2|atom)/?$\";s:49:\"index.php?attachment=$matches[1]&feed=$matches[2]\";s:49:\"product/[^/]+/([^/]+)/comment-page-([0-9]{1,})/?$\";s:50:\"index.php?attachment=$matches[1]&cpage=$matches[2]\";s:30:\"product/[^/]+/([^/]+)/embed/?$\";s:43:\"index.php?attachment=$matches[1]&embed=true\";s:22:\"^wc-api/v([1-3]{1})/?$\";s:51:\"index.php?wc-api-version=$matches[1]&wc-api-route=/\";s:24:\"^wc-api/v([1-3]{1})(.*)?\";s:61:\"index.php?wc-api-version=$matches[1]&wc-api-route=$matches[2]\";s:24:\"^wc-auth/v([1]{1})/(.*)?\";s:63:\"index.php?wc-auth-version=$matches[1]&wc-auth-route=$matches[2]\";s:32:\"category/(.+?)/wc-api(/(.*))?/?$\";s:54:\"index.php?category_name=$matches[1]&wc-api=$matches[3]\";s:29:\"tag/([^/]+)/wc-api(/(.*))?/?$\";s:44:\"index.php?tag=$matches[1]&wc-api=$matches[3]\";s:33:\"product/([^/]+)/wc-api(/(.*))?/?$\";s:48:\"index.php?product=$matches[1]&wc-api=$matches[3]\";s:39:\"product/[^/]+/([^/]+)/wc-api(/(.*))?/?$\";s:51:\"index.php?attachment=$matches[1]&wc-api=$matches[3]\";s:50:\"product/[^/]+/attachment/([^/]+)/wc-api(/(.*))?/?$\";s:51:\"index.php?attachment=$matches[1]&wc-api=$matches[3]\";s:55:\"product-category/(.+?)/feed/(feed|rdf|rss|rss2|atom)/?$\";s:50:\"index.php?product_cat=$matches[1]&feed=$matches[2]\";s:50:\"product-category/(.+?)/(feed|rdf|rss|rss2|atom)/?$\";s:50:\"index.php?product_cat=$matches[1]&feed=$matches[2]\";s:31:\"product-category/(.+?)/embed/?$\";s:44:\"index.php?product_cat=$matches[1]&embed=true\";s:43:\"product-category/(.+?)/page/?([0-9]{1,})/?$\";s:51:\"index.php?product_cat=$matches[1]&paged=$matches[2]\";s:25:\"product-category/(.+?)/?$\";s:33:\"index.php?product_cat=$matches[1]\";s:52:\"product-tag/([^/]+)/feed/(feed|rdf|rss|rss2|atom)/?$\";s:50:\"index.php?product_tag=$matches[1]&feed=$matches[2]\";s:47:\"product-tag/([^/]+)/(feed|rdf|rss|rss2|atom)/?$\";s:50:\"index.php?product_tag=$matches[1]&feed=$matches[2]\";s:28:\"product-tag/([^/]+)/embed/?$\";s:44:\"index.php?product_tag=$matches[1]&embed=true\";s:40:\"product-tag/([^/]+)/page/?([0-9]{1,})/?$\";s:51:\"index.php?product_tag=$matches[1]&paged=$matches[2]\";s:22:\"product-tag/([^/]+)/?$\";s:33:\"index.php?product_tag=$matches[1]\";s:12:\"robots\\.txt$\";s:18:\"index.php?robots=1\";s:48:\".*wp-(atom|rdf|rss|rss2|feed|commentsrss2)\\.php$\";s:18:\"index.php?feed=old\";s:20:\".*wp-app\\.php(/.*)?$\";s:19:\"index.php?error=403\";s:18:\".*wp-register.php$\";s:23:\"index.php?register=true\";s:32:\"feed/(feed|rdf|rss|rss2|atom)/?$\";s:27:\"index.php?&feed=$matches[1]\";s:27:\"(feed|rdf|rss|rss2|atom)/?$\";s:27:\"index.php?&feed=$matches[1]\";s:8:\"embed/?$\";s:21:\"index.php?&embed=true\";s:20:\"page/?([0-9]{1,})/?$\";s:28:\"index.php?&paged=$matches[1]\";s:17:\"wc-api(/(.*))?/?$\";s:29:\"index.php?&wc-api=$matches[2]\";s:41:\"comments/feed/(feed|rdf|rss|rss2|atom)/?$\";s:42:\"index.php?&feed=$matches[1]&withcomments=1\";s:36:\"comments/(feed|rdf|rss|rss2|atom)/?$\";s:42:\"index.php?&feed=$matches[1]&withcomments=1\";s:17:\"comments/embed/?$\";s:21:\"index.php?&embed=true\";s:26:\"comments/wc-api(/(.*))?/?$\";s:29:\"index.php?&wc-api=$matches[2]\";s:44:\"search/(.+)/feed/(feed|rdf|rss|rss2|atom)/?$\";s:40:\"index.php?s=$matches[1]&feed=$matches[2]\";s:39:\"search/(.+)/(feed|rdf|rss|rss2|atom)/?$\";s:40:\"index.php?s=$matches[1]&feed=$matches[2]\";s:20:\"search/(.+)/embed/?$\";s:34:\"index.php?s=$matches[1]&embed=true\";s:32:\"search/(.+)/page/?([0-9]{1,})/?$\";s:41:\"index.php?s=$matches[1]&paged=$matches[2]\";s:29:\"search/(.+)/wc-api(/(.*))?/?$\";s:42:\"index.php?s=$matches[1]&wc-api=$matches[3]\";s:14:\"search/(.+)/?$\";s:23:\"index.php?s=$matches[1]\";s:47:\"author/([^/]+)/feed/(feed|rdf|rss|rss2|atom)/?$\";s:50:\"index.php?author_name=$matches[1]&feed=$matches[2]\";s:42:\"author/([^/]+)/(feed|rdf|rss|rss2|atom)/?$\";s:50:\"index.php?author_name=$matches[1]&feed=$matches[2]\";s:23:\"author/([^/]+)/embed/?$\";s:44:\"index.php?author_name=$matches[1]&embed=true\";s:35:\"author/([^/]+)/page/?([0-9]{1,})/?$\";s:51:\"index.php?author_name=$matches[1]&paged=$matches[2]\";s:32:\"author/([^/]+)/wc-api(/(.*))?/?$\";s:52:\"index.php?author_name=$matches[1]&wc-api=$matches[3]\";s:17:\"author/([^/]+)/?$\";s:33:\"index.php?author_name=$matches[1]\";s:69:\"([0-9]{4})/([0-9]{1,2})/([0-9]{1,2})/feed/(feed|rdf|rss|rss2|atom)/?$\";s:80:\"index.php?year=$matches[1]&monthnum=$matches[2]&day=$matches[3]&feed=$matches[4]\";s:64:\"([0-9]{4})/([0-9]{1,2})/([0-9]{1,2})/(feed|rdf|rss|rss2|atom)/?$\";s:80:\"index.php?year=$matches[1]&monthnum=$matches[2]&day=$matches[3]&feed=$matches[4]\";s:45:\"([0-9]{4})/([0-9]{1,2})/([0-9]{1,2})/embed/?$\";s:74:\"index.php?year=$matches[1]&monthnum=$matches[2]&day=$matches[3]&embed=true\";s:57:\"([0-9]{4})/([0-9]{1,2})/([0-9]{1,2})/page/?([0-9]{1,})/?$\";s:81:\"index.php?year=$matches[1]&monthnum=$matches[2]&day=$matches[3]&paged=$matches[4]\";s:54:\"([0-9]{4})/([0-9]{1,2})/([0-9]{1,2})/wc-api(/(.*))?/?$\";s:82:\"index.php?year=$matches[1]&monthnum=$matches[2]&day=$matches[3]&wc-api=$matches[5]\";s:39:\"([0-9]{4})/([0-9]{1,2})/([0-9]{1,2})/?$\";s:63:\"index.php?year=$matches[1]&monthnum=$matches[2]&day=$matches[3]\";s:56:\"([0-9]{4})/([0-9]{1,2})/feed/(feed|rdf|rss|rss2|atom)/?$\";s:64:\"index.php?year=$matches[1]&monthnum=$matches[2]&feed=$matches[3]\";s:51:\"([0-9]{4})/([0-9]{1,2})/(feed|rdf|rss|rss2|atom)/?$\";s:64:\"index.php?year=$matches[1]&monthnum=$matches[2]&feed=$matches[3]\";s:32:\"([0-9]{4})/([0-9]{1,2})/embed/?$\";s:58:\"index.php?year=$matches[1]&monthnum=$matches[2]&embed=true\";s:44:\"([0-9]{4})/([0-9]{1,2})/page/?([0-9]{1,})/?$\";s:65:\"index.php?year=$matches[1]&monthnum=$matches[2]&paged=$matches[3]\";s:41:\"([0-9]{4})/([0-9]{1,2})/wc-api(/(.*))?/?$\";s:66:\"index.php?year=$matches[1]&monthnum=$matches[2]&wc-api=$matches[4]\";s:26:\"([0-9]{4})/([0-9]{1,2})/?$\";s:47:\"index.php?year=$matches[1]&monthnum=$matches[2]\";s:43:\"([0-9]{4})/feed/(feed|rdf|rss|rss2|atom)/?$\";s:43:\"index.php?year=$matches[1]&feed=$matches[2]\";s:38:\"([0-9]{4})/(feed|rdf|rss|rss2|atom)/?$\";s:43:\"index.php?year=$matches[1]&feed=$matches[2]\";s:19:\"([0-9]{4})/embed/?$\";s:37:\"index.php?year=$matches[1]&embed=true\";s:31:\"([0-9]{4})/page/?([0-9]{1,})/?$\";s:44:\"index.php?year=$matches[1]&paged=$matches[2]\";s:28:\"([0-9]{4})/wc-api(/(.*))?/?$\";s:45:\"index.php?year=$matches[1]&wc-api=$matches[3]\";s:13:\"([0-9]{4})/?$\";s:26:\"index.php?year=$matches[1]\";s:58:\"[0-9]{4}/[0-9]{1,2}/[0-9]{1,2}/[^/]+/attachment/([^/]+)/?$\";s:32:\"index.php?attachment=$matches[1]\";s:68:\"[0-9]{4}/[0-9]{1,2}/[0-9]{1,2}/[^/]+/attachment/([^/]+)/trackback/?$\";s:37:\"index.php?attachment=$matches[1]&tb=1\";s:88:\"[0-9]{4}/[0-9]{1,2}/[0-9]{1,2}/[^/]+/attachment/([^/]+)/feed/(feed|rdf|rss|rss2|atom)/?$\";s:49:\"index.php?attachment=$matches[1]&feed=$matches[2]\";s:83:\"[0-9]{4}/[0-9]{1,2}/[0-9]{1,2}/[^/]+/attachment/([^/]+)/(feed|rdf|rss|rss2|atom)/?$\";s:49:\"index.php?attachment=$matches[1]&feed=$matches[2]\";s:83:\"[0-9]{4}/[0-9]{1,2}/[0-9]{1,2}/[^/]+/attachment/([^/]+)/comment-page-([0-9]{1,})/?$\";s:50:\"index.php?attachment=$matches[1]&cpage=$matches[2]\";s:64:\"[0-9]{4}/[0-9]{1,2}/[0-9]{1,2}/[^/]+/attachment/([^/]+)/embed/?$\";s:43:\"index.php?attachment=$matches[1]&embed=true\";s:53:\"([0-9]{4})/([0-9]{1,2})/([0-9]{1,2})/([^/]+)/embed/?$\";s:91:\"index.php?year=$matches[1]&monthnum=$matches[2]&day=$matches[3]&name=$matches[4]&embed=true\";s:57:\"([0-9]{4})/([0-9]{1,2})/([0-9]{1,2})/([^/]+)/trackback/?$\";s:85:\"index.php?year=$matches[1]&monthnum=$matches[2]&day=$matches[3]&name=$matches[4]&tb=1\";s:77:\"([0-9]{4})/([0-9]{1,2})/([0-9]{1,2})/([^/]+)/feed/(feed|rdf|rss|rss2|atom)/?$\";s:97:\"index.php?year=$matches[1]&monthnum=$matches[2]&day=$matches[3]&name=$matches[4]&feed=$matches[5]\";s:72:\"([0-9]{4})/([0-9]{1,2})/([0-9]{1,2})/([^/]+)/(feed|rdf|rss|rss2|atom)/?$\";s:97:\"index.php?year=$matches[1]&monthnum=$matches[2]&day=$matches[3]&name=$matches[4]&feed=$matches[5]\";s:65:\"([0-9]{4})/([0-9]{1,2})/([0-9]{1,2})/([^/]+)/page/?([0-9]{1,})/?$\";s:98:\"index.php?year=$matches[1]&monthnum=$matches[2]&day=$matches[3]&name=$matches[4]&paged=$matches[5]\";s:72:\"([0-9]{4})/([0-9]{1,2})/([0-9]{1,2})/([^/]+)/comment-page-([0-9]{1,})/?$\";s:98:\"index.php?year=$matches[1]&monthnum=$matches[2]&day=$matches[3]&name=$matches[4]&cpage=$matches[5]\";s:62:\"([0-9]{4})/([0-9]{1,2})/([0-9]{1,2})/([^/]+)/wc-api(/(.*))?/?$\";s:99:\"index.php?year=$matches[1]&monthnum=$matches[2]&day=$matches[3]&name=$matches[4]&wc-api=$matches[6]\";s:62:\"[0-9]{4}/[0-9]{1,2}/[0-9]{1,2}/[^/]+/([^/]+)/wc-api(/(.*))?/?$\";s:51:\"index.php?attachment=$matches[1]&wc-api=$matches[3]\";s:73:\"[0-9]{4}/[0-9]{1,2}/[0-9]{1,2}/[^/]+/attachment/([^/]+)/wc-api(/(.*))?/?$\";s:51:\"index.php?attachment=$matches[1]&wc-api=$matches[3]\";s:61:\"([0-9]{4})/([0-9]{1,2})/([0-9]{1,2})/([^/]+)(?:/([0-9]+))?/?$\";s:97:\"index.php?year=$matches[1]&monthnum=$matches[2]&day=$matches[3]&name=$matches[4]&page=$matches[5]\";s:47:\"[0-9]{4}/[0-9]{1,2}/[0-9]{1,2}/[^/]+/([^/]+)/?$\";s:32:\"index.php?attachment=$matches[1]\";s:57:\"[0-9]{4}/[0-9]{1,2}/[0-9]{1,2}/[^/]+/([^/]+)/trackback/?$\";s:37:\"index.php?attachment=$matches[1]&tb=1\";s:77:\"[0-9]{4}/[0-9]{1,2}/[0-9]{1,2}/[^/]+/([^/]+)/feed/(feed|rdf|rss|rss2|atom)/?$\";s:49:\"index.php?attachment=$matches[1]&feed=$matches[2]\";s:72:\"[0-9]{4}/[0-9]{1,2}/[0-9]{1,2}/[^/]+/([^/]+)/(feed|rdf|rss|rss2|atom)/?$\";s:49:\"index.php?attachment=$matches[1]&feed=$matches[2]\";s:72:\"[0-9]{4}/[0-9]{1,2}/[0-9]{1,2}/[^/]+/([^/]+)/comment-page-([0-9]{1,})/?$\";s:50:\"index.php?attachment=$matches[1]&cpage=$matches[2]\";s:53:\"[0-9]{4}/[0-9]{1,2}/[0-9]{1,2}/[^/]+/([^/]+)/embed/?$\";s:43:\"index.php?attachment=$matches[1]&embed=true\";s:64:\"([0-9]{4})/([0-9]{1,2})/([0-9]{1,2})/comment-page-([0-9]{1,})/?$\";s:81:\"index.php?year=$matches[1]&monthnum=$matches[2]&day=$matches[3]&cpage=$matches[4]\";s:51:\"([0-9]{4})/([0-9]{1,2})/comment-page-([0-9]{1,})/?$\";s:65:\"index.php?year=$matches[1]&monthnum=$matches[2]&cpage=$matches[3]\";s:38:\"([0-9]{4})/comment-page-([0-9]{1,})/?$\";s:44:\"index.php?year=$matches[1]&cpage=$matches[2]\";s:27:\".?.+?/attachment/([^/]+)/?$\";s:32:\"index.php?attachment=$matches[1]\";s:37:\".?.+?/attachment/([^/]+)/trackback/?$\";s:37:\"index.php?attachment=$matches[1]&tb=1\";s:57:\".?.+?/attachment/([^/]+)/feed/(feed|rdf|rss|rss2|atom)/?$\";s:49:\"index.php?attachment=$matches[1]&feed=$matches[2]\";s:52:\".?.+?/attachment/([^/]+)/(feed|rdf|rss|rss2|atom)/?$\";s:49:\"index.php?attachment=$matches[1]&feed=$matches[2]\";s:52:\".?.+?/attachment/([^/]+)/comment-page-([0-9]{1,})/?$\";s:50:\"index.php?attachment=$matches[1]&cpage=$matches[2]\";s:33:\".?.+?/attachment/([^/]+)/embed/?$\";s:43:\"index.php?attachment=$matches[1]&embed=true\";s:16:\"(.?.+?)/embed/?$\";s:41:\"index.php?pagename=$matches[1]&embed=true\";s:20:\"(.?.+?)/trackback/?$\";s:35:\"index.php?pagename=$matches[1]&tb=1\";s:40:\"(.?.+?)/feed/(feed|rdf|rss|rss2|atom)/?$\";s:47:\"index.php?pagename=$matches[1]&feed=$matches[2]\";s:35:\"(.?.+?)/(feed|rdf|rss|rss2|atom)/?$\";s:47:\"index.php?pagename=$matches[1]&feed=$matches[2]\";s:28:\"(.?.+?)/page/?([0-9]{1,})/?$\";s:48:\"index.php?pagename=$matches[1]&paged=$matches[2]\";s:35:\"(.?.+?)/comment-page-([0-9]{1,})/?$\";s:48:\"index.php?pagename=$matches[1]&cpage=$matches[2]\";s:28:\"(.?.+?)/order-pay(/(.*))?/?$\";s:52:\"index.php?pagename=$matches[1]&order-pay=$matches[3]\";s:33:\"(.?.+?)/order-received(/(.*))?/?$\";s:57:\"index.php?pagename=$matches[1]&order-received=$matches[3]\";s:25:\"(.?.+?)/orders(/(.*))?/?$\";s:49:\"index.php?pagename=$matches[1]&orders=$matches[3]\";s:29:\"(.?.+?)/view-order(/(.*))?/?$\";s:53:\"index.php?pagename=$matches[1]&view-order=$matches[3]\";s:28:\"(.?.+?)/downloads(/(.*))?/?$\";s:52:\"index.php?pagename=$matches[1]&downloads=$matches[3]\";s:31:\"(.?.+?)/edit-account(/(.*))?/?$\";s:55:\"index.php?pagename=$matches[1]&edit-account=$matches[3]\";s:31:\"(.?.+?)/edit-address(/(.*))?/?$\";s:55:\"index.php?pagename=$matches[1]&edit-address=$matches[3]\";s:34:\"(.?.+?)/payment-methods(/(.*))?/?$\";s:58:\"index.php?pagename=$matches[1]&payment-methods=$matches[3]\";s:32:\"(.?.+?)/lost-password(/(.*))?/?$\";s:56:\"index.php?pagename=$matches[1]&lost-password=$matches[3]\";s:34:\"(.?.+?)/customer-logout(/(.*))?/?$\";s:58:\"index.php?pagename=$matches[1]&customer-logout=$matches[3]\";s:37:\"(.?.+?)/add-payment-method(/(.*))?/?$\";s:61:\"index.php?pagename=$matches[1]&add-payment-method=$matches[3]\";s:40:\"(.?.+?)/delete-payment-method(/(.*))?/?$\";s:64:\"index.php?pagename=$matches[1]&delete-payment-method=$matches[3]\";s:45:\"(.?.+?)/set-default-payment-method(/(.*))?/?$\";s:69:\"index.php?pagename=$matches[1]&set-default-payment-method=$matches[3]\";s:25:\"(.?.+?)/wc-api(/(.*))?/?$\";s:49:\"index.php?pagename=$matches[1]&wc-api=$matches[3]\";s:31:\".?.+?/([^/]+)/wc-api(/(.*))?/?$\";s:51:\"index.php?attachment=$matches[1]&wc-api=$matches[3]\";s:42:\".?.+?/attachment/([^/]+)/wc-api(/(.*))?/?$\";s:51:\"index.php?attachment=$matches[1]&wc-api=$matches[3]\";s:24:\"(.?.+?)(?:/([0-9]+))?/?$\";s:47:\"index.php?pagename=$matches[1]&page=$matches[2]\";}', 'yes'),
 (30, 'hack_file', '0', 'yes'),
 (31, 'blog_charset', 'UTF-8', 'yes'),
 (32, 'moderation_keys', '', 'no'),
-(33, 'active_plugins', 'a:6:{i:0;s:30:\"advanced-custom-fields/acf.php\";i:1;s:36:\"contact-form-7/wp-contact-form-7.php\";i:2;s:43:\"custom-post-type-ui/custom-post-type-ui.php\";i:3;s:35:\"image-watermark/image-watermark.php\";i:4;s:47:\"really-simple-captcha/really-simple-captcha.php\";i:5;s:60:\"wp-slick-slider-and-image-carousel/wp-slick-image-slider.php\";}', 'yes'),
+(33, 'active_plugins', 'a:6:{i:0;s:30:\"advanced-custom-fields/acf.php\";i:1;s:36:\"contact-form-7/wp-contact-form-7.php\";i:2;s:43:\"custom-post-type-ui/custom-post-type-ui.php\";i:3;s:35:\"image-watermark/image-watermark.php\";i:4;s:27:\"woocommerce/woocommerce.php\";i:5;s:60:\"wp-slick-slider-and-image-carousel/wp-slick-image-slider.php\";}', 'yes'),
 (34, 'category_base', '', 'yes'),
 (35, 'ping_sites', 'http://rpc.pingomatic.com/', 'yes'),
 (36, 'comment_max_links', '2', 'yes'),
@@ -191,9 +270,9 @@ INSERT INTO `wp_options` (`option_id`, `option_name`, `option_value`, `autoload`
 (90, 'medium_large_size_h', '0', 'yes'),
 (91, 'wp_page_for_privacy_policy', '3', 'yes'),
 (92, 'show_comments_cookies_opt_in', '1', 'yes'),
-(93, 'admin_email_lifespan', '0', 'yes'),
+(93, 'admin_email_lifespan', '1589700073', 'yes'),
 (94, 'initial_db_version', '45805', 'yes'),
-(95, 'wp_user_roles', 'a:5:{s:13:\"administrator\";a:2:{s:4:\"name\";s:13:\"Administrator\";s:12:\"capabilities\";a:61:{s:13:\"switch_themes\";b:1;s:11:\"edit_themes\";b:1;s:16:\"activate_plugins\";b:1;s:12:\"edit_plugins\";b:1;s:10:\"edit_users\";b:1;s:10:\"edit_files\";b:1;s:14:\"manage_options\";b:1;s:17:\"moderate_comments\";b:1;s:17:\"manage_categories\";b:1;s:12:\"manage_links\";b:1;s:12:\"upload_files\";b:1;s:6:\"import\";b:1;s:15:\"unfiltered_html\";b:1;s:10:\"edit_posts\";b:1;s:17:\"edit_others_posts\";b:1;s:20:\"edit_published_posts\";b:1;s:13:\"publish_posts\";b:1;s:10:\"edit_pages\";b:1;s:4:\"read\";b:1;s:8:\"level_10\";b:1;s:7:\"level_9\";b:1;s:7:\"level_8\";b:1;s:7:\"level_7\";b:1;s:7:\"level_6\";b:1;s:7:\"level_5\";b:1;s:7:\"level_4\";b:1;s:7:\"level_3\";b:1;s:7:\"level_2\";b:1;s:7:\"level_1\";b:1;s:7:\"level_0\";b:1;s:17:\"edit_others_pages\";b:1;s:20:\"edit_published_pages\";b:1;s:13:\"publish_pages\";b:1;s:12:\"delete_pages\";b:1;s:19:\"delete_others_pages\";b:1;s:22:\"delete_published_pages\";b:1;s:12:\"delete_posts\";b:1;s:19:\"delete_others_posts\";b:1;s:22:\"delete_published_posts\";b:1;s:20:\"delete_private_posts\";b:1;s:18:\"edit_private_posts\";b:1;s:18:\"read_private_posts\";b:1;s:20:\"delete_private_pages\";b:1;s:18:\"edit_private_pages\";b:1;s:18:\"read_private_pages\";b:1;s:12:\"delete_users\";b:1;s:12:\"create_users\";b:1;s:17:\"unfiltered_upload\";b:1;s:14:\"edit_dashboard\";b:1;s:14:\"update_plugins\";b:1;s:14:\"delete_plugins\";b:1;s:15:\"install_plugins\";b:1;s:13:\"update_themes\";b:1;s:14:\"install_themes\";b:1;s:11:\"update_core\";b:1;s:10:\"list_users\";b:1;s:12:\"remove_users\";b:1;s:13:\"promote_users\";b:1;s:18:\"edit_theme_options\";b:1;s:13:\"delete_themes\";b:1;s:6:\"export\";b:1;}}s:6:\"editor\";a:2:{s:4:\"name\";s:6:\"Editor\";s:12:\"capabilities\";a:34:{s:17:\"moderate_comments\";b:1;s:17:\"manage_categories\";b:1;s:12:\"manage_links\";b:1;s:12:\"upload_files\";b:1;s:15:\"unfiltered_html\";b:1;s:10:\"edit_posts\";b:1;s:17:\"edit_others_posts\";b:1;s:20:\"edit_published_posts\";b:1;s:13:\"publish_posts\";b:1;s:10:\"edit_pages\";b:1;s:4:\"read\";b:1;s:7:\"level_7\";b:1;s:7:\"level_6\";b:1;s:7:\"level_5\";b:1;s:7:\"level_4\";b:1;s:7:\"level_3\";b:1;s:7:\"level_2\";b:1;s:7:\"level_1\";b:1;s:7:\"level_0\";b:1;s:17:\"edit_others_pages\";b:1;s:20:\"edit_published_pages\";b:1;s:13:\"publish_pages\";b:1;s:12:\"delete_pages\";b:1;s:19:\"delete_others_pages\";b:1;s:22:\"delete_published_pages\";b:1;s:12:\"delete_posts\";b:1;s:19:\"delete_others_posts\";b:1;s:22:\"delete_published_posts\";b:1;s:20:\"delete_private_posts\";b:1;s:18:\"edit_private_posts\";b:1;s:18:\"read_private_posts\";b:1;s:20:\"delete_private_pages\";b:1;s:18:\"edit_private_pages\";b:1;s:18:\"read_private_pages\";b:1;}}s:6:\"author\";a:2:{s:4:\"name\";s:6:\"Author\";s:12:\"capabilities\";a:10:{s:12:\"upload_files\";b:1;s:10:\"edit_posts\";b:1;s:20:\"edit_published_posts\";b:1;s:13:\"publish_posts\";b:1;s:4:\"read\";b:1;s:7:\"level_2\";b:1;s:7:\"level_1\";b:1;s:7:\"level_0\";b:1;s:12:\"delete_posts\";b:1;s:22:\"delete_published_posts\";b:1;}}s:11:\"contributor\";a:2:{s:4:\"name\";s:11:\"Contributor\";s:12:\"capabilities\";a:5:{s:10:\"edit_posts\";b:1;s:4:\"read\";b:1;s:7:\"level_1\";b:1;s:7:\"level_0\";b:1;s:12:\"delete_posts\";b:1;}}s:10:\"subscriber\";a:2:{s:4:\"name\";s:10:\"Subscriber\";s:12:\"capabilities\";a:2:{s:4:\"read\";b:1;s:7:\"level_0\";b:1;}}}', 'yes'),
+(95, 'wp_user_roles', 'a:7:{s:13:\"administrator\";a:2:{s:4:\"name\";s:13:\"Administrator\";s:12:\"capabilities\";a:114:{s:13:\"switch_themes\";b:1;s:11:\"edit_themes\";b:1;s:16:\"activate_plugins\";b:1;s:12:\"edit_plugins\";b:1;s:10:\"edit_users\";b:1;s:10:\"edit_files\";b:1;s:14:\"manage_options\";b:1;s:17:\"moderate_comments\";b:1;s:17:\"manage_categories\";b:1;s:12:\"manage_links\";b:1;s:12:\"upload_files\";b:1;s:6:\"import\";b:1;s:15:\"unfiltered_html\";b:1;s:10:\"edit_posts\";b:1;s:17:\"edit_others_posts\";b:1;s:20:\"edit_published_posts\";b:1;s:13:\"publish_posts\";b:1;s:10:\"edit_pages\";b:1;s:4:\"read\";b:1;s:8:\"level_10\";b:1;s:7:\"level_9\";b:1;s:7:\"level_8\";b:1;s:7:\"level_7\";b:1;s:7:\"level_6\";b:1;s:7:\"level_5\";b:1;s:7:\"level_4\";b:1;s:7:\"level_3\";b:1;s:7:\"level_2\";b:1;s:7:\"level_1\";b:1;s:7:\"level_0\";b:1;s:17:\"edit_others_pages\";b:1;s:20:\"edit_published_pages\";b:1;s:13:\"publish_pages\";b:1;s:12:\"delete_pages\";b:1;s:19:\"delete_others_pages\";b:1;s:22:\"delete_published_pages\";b:1;s:12:\"delete_posts\";b:1;s:19:\"delete_others_posts\";b:1;s:22:\"delete_published_posts\";b:1;s:20:\"delete_private_posts\";b:1;s:18:\"edit_private_posts\";b:1;s:18:\"read_private_posts\";b:1;s:20:\"delete_private_pages\";b:1;s:18:\"edit_private_pages\";b:1;s:18:\"read_private_pages\";b:1;s:12:\"delete_users\";b:1;s:12:\"create_users\";b:1;s:17:\"unfiltered_upload\";b:1;s:14:\"edit_dashboard\";b:1;s:14:\"update_plugins\";b:1;s:14:\"delete_plugins\";b:1;s:15:\"install_plugins\";b:1;s:13:\"update_themes\";b:1;s:14:\"install_themes\";b:1;s:11:\"update_core\";b:1;s:10:\"list_users\";b:1;s:12:\"remove_users\";b:1;s:13:\"promote_users\";b:1;s:18:\"edit_theme_options\";b:1;s:13:\"delete_themes\";b:1;s:6:\"export\";b:1;s:18:\"manage_woocommerce\";b:1;s:24:\"view_woocommerce_reports\";b:1;s:12:\"edit_product\";b:1;s:12:\"read_product\";b:1;s:14:\"delete_product\";b:1;s:13:\"edit_products\";b:1;s:20:\"edit_others_products\";b:1;s:16:\"publish_products\";b:1;s:21:\"read_private_products\";b:1;s:15:\"delete_products\";b:1;s:23:\"delete_private_products\";b:1;s:25:\"delete_published_products\";b:1;s:22:\"delete_others_products\";b:1;s:21:\"edit_private_products\";b:1;s:23:\"edit_published_products\";b:1;s:20:\"manage_product_terms\";b:1;s:18:\"edit_product_terms\";b:1;s:20:\"delete_product_terms\";b:1;s:20:\"assign_product_terms\";b:1;s:15:\"edit_shop_order\";b:1;s:15:\"read_shop_order\";b:1;s:17:\"delete_shop_order\";b:1;s:16:\"edit_shop_orders\";b:1;s:23:\"edit_others_shop_orders\";b:1;s:19:\"publish_shop_orders\";b:1;s:24:\"read_private_shop_orders\";b:1;s:18:\"delete_shop_orders\";b:1;s:26:\"delete_private_shop_orders\";b:1;s:28:\"delete_published_shop_orders\";b:1;s:25:\"delete_others_shop_orders\";b:1;s:24:\"edit_private_shop_orders\";b:1;s:26:\"edit_published_shop_orders\";b:1;s:23:\"manage_shop_order_terms\";b:1;s:21:\"edit_shop_order_terms\";b:1;s:23:\"delete_shop_order_terms\";b:1;s:23:\"assign_shop_order_terms\";b:1;s:16:\"edit_shop_coupon\";b:1;s:16:\"read_shop_coupon\";b:1;s:18:\"delete_shop_coupon\";b:1;s:17:\"edit_shop_coupons\";b:1;s:24:\"edit_others_shop_coupons\";b:1;s:20:\"publish_shop_coupons\";b:1;s:25:\"read_private_shop_coupons\";b:1;s:19:\"delete_shop_coupons\";b:1;s:27:\"delete_private_shop_coupons\";b:1;s:29:\"delete_published_shop_coupons\";b:1;s:26:\"delete_others_shop_coupons\";b:1;s:25:\"edit_private_shop_coupons\";b:1;s:27:\"edit_published_shop_coupons\";b:1;s:24:\"manage_shop_coupon_terms\";b:1;s:22:\"edit_shop_coupon_terms\";b:1;s:24:\"delete_shop_coupon_terms\";b:1;s:24:\"assign_shop_coupon_terms\";b:1;}}s:6:\"editor\";a:2:{s:4:\"name\";s:6:\"Editor\";s:12:\"capabilities\";a:34:{s:17:\"moderate_comments\";b:1;s:17:\"manage_categories\";b:1;s:12:\"manage_links\";b:1;s:12:\"upload_files\";b:1;s:15:\"unfiltered_html\";b:1;s:10:\"edit_posts\";b:1;s:17:\"edit_others_posts\";b:1;s:20:\"edit_published_posts\";b:1;s:13:\"publish_posts\";b:1;s:10:\"edit_pages\";b:1;s:4:\"read\";b:1;s:7:\"level_7\";b:1;s:7:\"level_6\";b:1;s:7:\"level_5\";b:1;s:7:\"level_4\";b:1;s:7:\"level_3\";b:1;s:7:\"level_2\";b:1;s:7:\"level_1\";b:1;s:7:\"level_0\";b:1;s:17:\"edit_others_pages\";b:1;s:20:\"edit_published_pages\";b:1;s:13:\"publish_pages\";b:1;s:12:\"delete_pages\";b:1;s:19:\"delete_others_pages\";b:1;s:22:\"delete_published_pages\";b:1;s:12:\"delete_posts\";b:1;s:19:\"delete_others_posts\";b:1;s:22:\"delete_published_posts\";b:1;s:20:\"delete_private_posts\";b:1;s:18:\"edit_private_posts\";b:1;s:18:\"read_private_posts\";b:1;s:20:\"delete_private_pages\";b:1;s:18:\"edit_private_pages\";b:1;s:18:\"read_private_pages\";b:1;}}s:6:\"author\";a:2:{s:4:\"name\";s:6:\"Author\";s:12:\"capabilities\";a:10:{s:12:\"upload_files\";b:1;s:10:\"edit_posts\";b:1;s:20:\"edit_published_posts\";b:1;s:13:\"publish_posts\";b:1;s:4:\"read\";b:1;s:7:\"level_2\";b:1;s:7:\"level_1\";b:1;s:7:\"level_0\";b:1;s:12:\"delete_posts\";b:1;s:22:\"delete_published_posts\";b:1;}}s:11:\"contributor\";a:2:{s:4:\"name\";s:11:\"Contributor\";s:12:\"capabilities\";a:5:{s:10:\"edit_posts\";b:1;s:4:\"read\";b:1;s:7:\"level_1\";b:1;s:7:\"level_0\";b:1;s:12:\"delete_posts\";b:1;}}s:10:\"subscriber\";a:2:{s:4:\"name\";s:10:\"Subscriber\";s:12:\"capabilities\";a:2:{s:4:\"read\";b:1;s:7:\"level_0\";b:1;}}s:8:\"customer\";a:2:{s:4:\"name\";s:8:\"Customer\";s:12:\"capabilities\";a:1:{s:4:\"read\";b:1;}}s:12:\"shop_manager\";a:2:{s:4:\"name\";s:12:\"Shop manager\";s:12:\"capabilities\";a:92:{s:7:\"level_9\";b:1;s:7:\"level_8\";b:1;s:7:\"level_7\";b:1;s:7:\"level_6\";b:1;s:7:\"level_5\";b:1;s:7:\"level_4\";b:1;s:7:\"level_3\";b:1;s:7:\"level_2\";b:1;s:7:\"level_1\";b:1;s:7:\"level_0\";b:1;s:4:\"read\";b:1;s:18:\"read_private_pages\";b:1;s:18:\"read_private_posts\";b:1;s:10:\"edit_posts\";b:1;s:10:\"edit_pages\";b:1;s:20:\"edit_published_posts\";b:1;s:20:\"edit_published_pages\";b:1;s:18:\"edit_private_pages\";b:1;s:18:\"edit_private_posts\";b:1;s:17:\"edit_others_posts\";b:1;s:17:\"edit_others_pages\";b:1;s:13:\"publish_posts\";b:1;s:13:\"publish_pages\";b:1;s:12:\"delete_posts\";b:1;s:12:\"delete_pages\";b:1;s:20:\"delete_private_pages\";b:1;s:20:\"delete_private_posts\";b:1;s:22:\"delete_published_pages\";b:1;s:22:\"delete_published_posts\";b:1;s:19:\"delete_others_posts\";b:1;s:19:\"delete_others_pages\";b:1;s:17:\"manage_categories\";b:1;s:12:\"manage_links\";b:1;s:17:\"moderate_comments\";b:1;s:12:\"upload_files\";b:1;s:6:\"export\";b:1;s:6:\"import\";b:1;s:10:\"list_users\";b:1;s:18:\"edit_theme_options\";b:1;s:18:\"manage_woocommerce\";b:1;s:24:\"view_woocommerce_reports\";b:1;s:12:\"edit_product\";b:1;s:12:\"read_product\";b:1;s:14:\"delete_product\";b:1;s:13:\"edit_products\";b:1;s:20:\"edit_others_products\";b:1;s:16:\"publish_products\";b:1;s:21:\"read_private_products\";b:1;s:15:\"delete_products\";b:1;s:23:\"delete_private_products\";b:1;s:25:\"delete_published_products\";b:1;s:22:\"delete_others_products\";b:1;s:21:\"edit_private_products\";b:1;s:23:\"edit_published_products\";b:1;s:20:\"manage_product_terms\";b:1;s:18:\"edit_product_terms\";b:1;s:20:\"delete_product_terms\";b:1;s:20:\"assign_product_terms\";b:1;s:15:\"edit_shop_order\";b:1;s:15:\"read_shop_order\";b:1;s:17:\"delete_shop_order\";b:1;s:16:\"edit_shop_orders\";b:1;s:23:\"edit_others_shop_orders\";b:1;s:19:\"publish_shop_orders\";b:1;s:24:\"read_private_shop_orders\";b:1;s:18:\"delete_shop_orders\";b:1;s:26:\"delete_private_shop_orders\";b:1;s:28:\"delete_published_shop_orders\";b:1;s:25:\"delete_others_shop_orders\";b:1;s:24:\"edit_private_shop_orders\";b:1;s:26:\"edit_published_shop_orders\";b:1;s:23:\"manage_shop_order_terms\";b:1;s:21:\"edit_shop_order_terms\";b:1;s:23:\"delete_shop_order_terms\";b:1;s:23:\"assign_shop_order_terms\";b:1;s:16:\"edit_shop_coupon\";b:1;s:16:\"read_shop_coupon\";b:1;s:18:\"delete_shop_coupon\";b:1;s:17:\"edit_shop_coupons\";b:1;s:24:\"edit_others_shop_coupons\";b:1;s:20:\"publish_shop_coupons\";b:1;s:25:\"read_private_shop_coupons\";b:1;s:19:\"delete_shop_coupons\";b:1;s:27:\"delete_private_shop_coupons\";b:1;s:29:\"delete_published_shop_coupons\";b:1;s:26:\"delete_others_shop_coupons\";b:1;s:25:\"edit_private_shop_coupons\";b:1;s:27:\"edit_published_shop_coupons\";b:1;s:24:\"manage_shop_coupon_terms\";b:1;s:22:\"edit_shop_coupon_terms\";b:1;s:24:\"delete_shop_coupon_terms\";b:1;s:24:\"assign_shop_coupon_terms\";b:1;}}}', 'yes'),
 (96, 'fresh_site', '0', 'yes'),
 (97, 'WPLANG', 'ru_RU', 'yes'),
 (98, 'widget_search', 'a:2:{i:2;a:1:{s:5:\"title\";s:0:\"\";}s:12:\"_multiwidget\";i:1;}', 'yes'),
@@ -202,7 +281,7 @@ INSERT INTO `wp_options` (`option_id`, `option_name`, `option_value`, `autoload`
 (101, 'widget_archives', 'a:2:{i:2;a:3:{s:5:\"title\";s:0:\"\";s:5:\"count\";i:0;s:8:\"dropdown\";i:0;}s:12:\"_multiwidget\";i:1;}', 'yes'),
 (102, 'widget_meta', 'a:2:{i:2;a:1:{s:5:\"title\";s:0:\"\";}s:12:\"_multiwidget\";i:1;}', 'yes'),
 (103, 'sidebars_widgets', 'a:2:{s:19:\"wp_inactive_widgets\";a:6:{i:0;s:8:\"search-2\";i:1;s:14:\"recent-posts-2\";i:2;s:17:\"recent-comments-2\";i:3;s:10:\"archives-2\";i:4;s:12:\"categories-2\";i:5;s:6:\"meta-2\";}s:13:\"array_version\";i:3;}', 'yes'),
-(104, 'cron', 'a:6:{i:1585077619;a:1:{s:34:\"wp_privacy_delete_old_export_files\";a:1:{s:32:\"40cd750bba9870f18aada2478b24840a\";a:3:{s:8:\"schedule\";s:6:\"hourly\";s:4:\"args\";a:0:{}s:8:\"interval\";i:3600;}}}i:1585113619;a:3:{s:16:\"wp_version_check\";a:1:{s:32:\"40cd750bba9870f18aada2478b24840a\";a:3:{s:8:\"schedule\";s:10:\"twicedaily\";s:4:\"args\";a:0:{}s:8:\"interval\";i:43200;}}s:17:\"wp_update_plugins\";a:1:{s:32:\"40cd750bba9870f18aada2478b24840a\";a:3:{s:8:\"schedule\";s:10:\"twicedaily\";s:4:\"args\";a:0:{}s:8:\"interval\";i:43200;}}s:16:\"wp_update_themes\";a:1:{s:32:\"40cd750bba9870f18aada2478b24840a\";a:3:{s:8:\"schedule\";s:10:\"twicedaily\";s:4:\"args\";a:0:{}s:8:\"interval\";i:43200;}}}i:1585156818;a:1:{s:32:\"recovery_mode_clean_expired_keys\";a:1:{s:32:\"40cd750bba9870f18aada2478b24840a\";a:3:{s:8:\"schedule\";s:5:\"daily\";s:4:\"args\";a:0:{}s:8:\"interval\";i:86400;}}}i:1585156829;a:2:{s:19:\"wp_scheduled_delete\";a:1:{s:32:\"40cd750bba9870f18aada2478b24840a\";a:3:{s:8:\"schedule\";s:5:\"daily\";s:4:\"args\";a:0:{}s:8:\"interval\";i:86400;}}s:25:\"delete_expired_transients\";a:1:{s:32:\"40cd750bba9870f18aada2478b24840a\";a:3:{s:8:\"schedule\";s:5:\"daily\";s:4:\"args\";a:0:{}s:8:\"interval\";i:86400;}}}i:1585156831;a:1:{s:30:\"wp_scheduled_auto_draft_delete\";a:1:{s:32:\"40cd750bba9870f18aada2478b24840a\";a:3:{s:8:\"schedule\";s:5:\"daily\";s:4:\"args\";a:0:{}s:8:\"interval\";i:86400;}}}s:7:\"version\";i:2;}', 'yes'),
+(104, 'cron', 'a:17:{i:1589441044;a:2:{s:30:\"woocommerce_tracker_send_event\";a:1:{s:32:\"40cd750bba9870f18aada2478b24840a\";a:3:{s:8:\"schedule\";s:5:\"daily\";s:4:\"args\";a:0:{}s:8:\"interval\";i:86400;}}s:14:\"wc_admin_daily\";a:1:{s:32:\"40cd750bba9870f18aada2478b24840a\";a:3:{s:8:\"schedule\";s:5:\"daily\";s:4:\"args\";a:0:{}s:8:\"interval\";i:86400;}}}i:1589441054;a:1:{s:30:\"generate_category_lookup_table\";a:1:{s:32:\"40cd750bba9870f18aada2478b24840a\";a:2:{s:8:\"schedule\";b:0;s:4:\"args\";a:0:{}}}}i:1589441061;a:1:{s:29:\"wc_admin_unsnooze_admin_notes\";a:1:{s:32:\"40cd750bba9870f18aada2478b24840a\";a:3:{s:8:\"schedule\";s:6:\"hourly\";s:4:\"args\";a:0:{}s:8:\"interval\";i:3600;}}}i:1589441093;a:1:{s:26:\"action_scheduler_run_queue\";a:1:{s:32:\"0d04ed39571b55704c122d726248bbac\";a:3:{s:8:\"schedule\";s:12:\"every_minute\";s:4:\"args\";a:1:{i:0;s:7:\"WP Cron\";}s:8:\"interval\";i:60;}}}i:1589441094;a:1:{s:25:\"woocommerce_geoip_updater\";a:1:{s:32:\"40cd750bba9870f18aada2478b24840a\";a:3:{s:8:\"schedule\";s:11:\"fifteendays\";s:4:\"args\";a:0:{}s:8:\"interval\";i:1296000;}}}i:1589444419;a:1:{s:34:\"wp_privacy_delete_old_export_files\";a:1:{s:32:\"40cd750bba9870f18aada2478b24840a\";a:3:{s:8:\"schedule\";s:6:\"hourly\";s:4:\"args\";a:0:{}s:8:\"interval\";i:3600;}}}i:1589444634;a:1:{s:32:\"woocommerce_cancel_unpaid_orders\";a:1:{s:32:\"40cd750bba9870f18aada2478b24840a\";a:2:{s:8:\"schedule\";b:0;s:4:\"args\";a:0:{}}}}i:1589444640;a:1:{s:33:\"wc_admin_process_orders_milestone\";a:1:{s:32:\"40cd750bba9870f18aada2478b24840a\";a:3:{s:8:\"schedule\";s:6:\"hourly\";s:4:\"args\";a:0:{}s:8:\"interval\";i:3600;}}}i:1589451834;a:1:{s:24:\"woocommerce_cleanup_logs\";a:1:{s:32:\"40cd750bba9870f18aada2478b24840a\";a:3:{s:8:\"schedule\";s:5:\"daily\";s:4:\"args\";a:0:{}s:8:\"interval\";i:86400;}}}i:1589462634;a:1:{s:28:\"woocommerce_cleanup_sessions\";a:1:{s:32:\"40cd750bba9870f18aada2478b24840a\";a:3:{s:8:\"schedule\";s:10:\"twicedaily\";s:4:\"args\";a:0:{}s:8:\"interval\";i:43200;}}}i:1589476818;a:1:{s:32:\"recovery_mode_clean_expired_keys\";a:1:{s:32:\"40cd750bba9870f18aada2478b24840a\";a:3:{s:8:\"schedule\";s:5:\"daily\";s:4:\"args\";a:0:{}s:8:\"interval\";i:86400;}}}i:1589476819;a:3:{s:16:\"wp_version_check\";a:1:{s:32:\"40cd750bba9870f18aada2478b24840a\";a:3:{s:8:\"schedule\";s:10:\"twicedaily\";s:4:\"args\";a:0:{}s:8:\"interval\";i:43200;}}s:17:\"wp_update_plugins\";a:1:{s:32:\"40cd750bba9870f18aada2478b24840a\";a:3:{s:8:\"schedule\";s:10:\"twicedaily\";s:4:\"args\";a:0:{}s:8:\"interval\";i:43200;}}s:16:\"wp_update_themes\";a:1:{s:32:\"40cd750bba9870f18aada2478b24840a\";a:3:{s:8:\"schedule\";s:10:\"twicedaily\";s:4:\"args\";a:0:{}s:8:\"interval\";i:43200;}}}i:1589476829;a:2:{s:19:\"wp_scheduled_delete\";a:1:{s:32:\"40cd750bba9870f18aada2478b24840a\";a:3:{s:8:\"schedule\";s:5:\"daily\";s:4:\"args\";a:0:{}s:8:\"interval\";i:86400;}}s:25:\"delete_expired_transients\";a:1:{s:32:\"40cd750bba9870f18aada2478b24840a\";a:3:{s:8:\"schedule\";s:5:\"daily\";s:4:\"args\";a:0:{}s:8:\"interval\";i:86400;}}}i:1589476831;a:1:{s:30:\"wp_scheduled_auto_draft_delete\";a:1:{s:32:\"40cd750bba9870f18aada2478b24840a\";a:3:{s:8:\"schedule\";s:5:\"daily\";s:4:\"args\";a:0:{}s:8:\"interval\";i:86400;}}}i:1589490000;a:1:{s:27:\"woocommerce_scheduled_sales\";a:1:{s:32:\"40cd750bba9870f18aada2478b24840a\";a:3:{s:8:\"schedule\";s:5:\"daily\";s:4:\"args\";a:0:{}s:8:\"interval\";i:86400;}}}i:1589527444;a:1:{s:33:\"woocommerce_cleanup_personal_data\";a:1:{s:32:\"40cd750bba9870f18aada2478b24840a\";a:3:{s:8:\"schedule\";s:5:\"daily\";s:4:\"args\";a:0:{}s:8:\"interval\";i:86400;}}}s:7:\"version\";i:2;}', 'yes'),
 (105, 'widget_pages', 'a:1:{s:12:\"_multiwidget\";i:1;}', 'yes'),
 (106, 'widget_calendar', 'a:1:{s:12:\"_multiwidget\";i:1;}', 'yes'),
 (107, 'widget_media_audio', 'a:1:{s:12:\"_multiwidget\";i:1;}', 'yes'),
@@ -236,15 +315,165 @@ INSERT INTO `wp_options` (`option_id`, `option_name`, `option_value`, `autoload`
 (804, 'yandex-metrika', 'a:1:{s:12:\"counter-code\";s:8:\"57586672\";}', 'yes'),
 (1373, 'wpsisac_slider-category_children', 'a:0:{}', 'yes'),
 (1416, 'can_compress_scripts', '1', 'no'),
-(1456, '_site_transient_timeout_browser_b4046c447614dcbe06d949fe3062a42a', '1585550516', 'no'),
-(1457, '_site_transient_browser_b4046c447614dcbe06d949fe3062a42a', 'a:10:{s:4:\"name\";s:6:\"Chrome\";s:7:\"version\";s:13:\"80.0.3987.149\";s:8:\"platform\";s:7:\"Windows\";s:10:\"update_url\";s:29:\"https://www.google.com/chrome\";s:7:\"img_src\";s:43:\"http://s.w.org/images/browsers/chrome.png?1\";s:11:\"img_src_ssl\";s:44:\"https://s.w.org/images/browsers/chrome.png?1\";s:15:\"current_version\";s:2:\"18\";s:7:\"upgrade\";b:0;s:8:\"insecure\";b:0;s:6:\"mobile\";b:0;}', 'no'),
-(1458, '_site_transient_timeout_php_check_e481018c713db17b5f16f6d87bf44ece', '1585550517', 'no'),
-(1459, '_site_transient_php_check_e481018c713db17b5f16f6d87bf44ece', 'a:5:{s:19:\"recommended_version\";s:3:\"7.3\";s:15:\"minimum_version\";s:6:\"5.6.20\";s:12:\"is_supported\";b:0;s:9:\"is_secure\";b:0;s:13:\"is_acceptable\";b:1;}', 'no'),
-(1488, '_site_transient_timeout_theme_roots', '1585072310', 'no'),
-(1489, '_site_transient_theme_roots', 'a:1:{s:7:\"rekidea\";s:7:\"/themes\";}', 'no'),
-(1491, '_site_transient_update_core', 'O:8:\"stdClass\":4:{s:7:\"updates\";a:1:{i:0;O:8:\"stdClass\":10:{s:8:\"response\";s:6:\"latest\";s:8:\"download\";s:65:\"https://downloads.wordpress.org/release/ru_RU/wordpress-5.3.2.zip\";s:6:\"locale\";s:5:\"ru_RU\";s:8:\"packages\";O:8:\"stdClass\":5:{s:4:\"full\";s:65:\"https://downloads.wordpress.org/release/ru_RU/wordpress-5.3.2.zip\";s:10:\"no_content\";b:0;s:11:\"new_bundled\";b:0;s:7:\"partial\";b:0;s:8:\"rollback\";b:0;}s:7:\"current\";s:5:\"5.3.2\";s:7:\"version\";s:5:\"5.3.2\";s:11:\"php_version\";s:6:\"5.6.20\";s:13:\"mysql_version\";s:3:\"5.0\";s:11:\"new_bundled\";s:3:\"5.3\";s:15:\"partial_version\";s:0:\"\";}}s:12:\"last_checked\";i:1585070514;s:15:\"version_checked\";s:5:\"5.3.2\";s:12:\"translations\";a:0:{}}', 'no'),
-(1492, '_site_transient_update_themes', 'O:8:\"stdClass\":4:{s:12:\"last_checked\";i:1585070515;s:7:\"checked\";a:1:{s:7:\"rekidea\";s:0:\"\";}s:8:\"response\";a:0:{}s:12:\"translations\";a:0:{}}', 'no'),
-(1493, '_site_transient_update_plugins', 'O:8:\"stdClass\":5:{s:12:\"last_checked\";i:1585070516;s:7:\"checked\";a:7:{s:30:\"advanced-custom-fields/acf.php\";s:5:\"5.8.7\";s:19:\"akismet/akismet.php\";s:5:\"4.1.3\";s:36:\"contact-form-7/wp-contact-form-7.php\";s:5:\"5.1.6\";s:43:\"custom-post-type-ui/custom-post-type-ui.php\";s:5:\"1.7.3\";s:9:\"hello.php\";s:5:\"1.7.2\";s:35:\"image-watermark/image-watermark.php\";s:5:\"1.6.6\";s:60:\"wp-slick-slider-and-image-carousel/wp-slick-image-slider.php\";s:5:\"1.9.1\";}s:8:\"response\";a:5:{s:30:\"advanced-custom-fields/acf.php\";O:8:\"stdClass\":12:{s:2:\"id\";s:36:\"w.org/plugins/advanced-custom-fields\";s:4:\"slug\";s:22:\"advanced-custom-fields\";s:6:\"plugin\";s:30:\"advanced-custom-fields/acf.php\";s:11:\"new_version\";s:5:\"5.8.8\";s:3:\"url\";s:53:\"https://wordpress.org/plugins/advanced-custom-fields/\";s:7:\"package\";s:71:\"https://downloads.wordpress.org/plugin/advanced-custom-fields.5.8.8.zip\";s:5:\"icons\";a:2:{s:2:\"2x\";s:75:\"https://ps.w.org/advanced-custom-fields/assets/icon-256x256.png?rev=1082746\";s:2:\"1x\";s:75:\"https://ps.w.org/advanced-custom-fields/assets/icon-128x128.png?rev=1082746\";}s:7:\"banners\";a:2:{s:2:\"2x\";s:78:\"https://ps.w.org/advanced-custom-fields/assets/banner-1544x500.jpg?rev=1729099\";s:2:\"1x\";s:77:\"https://ps.w.org/advanced-custom-fields/assets/banner-772x250.jpg?rev=1729102\";}s:11:\"banners_rtl\";a:0:{}s:6:\"tested\";s:5:\"5.3.2\";s:12:\"requires_php\";s:3:\"5.4\";s:13:\"compatibility\";O:8:\"stdClass\":0:{}}s:19:\"akismet/akismet.php\";O:8:\"stdClass\":12:{s:2:\"id\";s:21:\"w.org/plugins/akismet\";s:4:\"slug\";s:7:\"akismet\";s:6:\"plugin\";s:19:\"akismet/akismet.php\";s:11:\"new_version\";s:5:\"4.1.4\";s:3:\"url\";s:38:\"https://wordpress.org/plugins/akismet/\";s:7:\"package\";s:56:\"https://downloads.wordpress.org/plugin/akismet.4.1.4.zip\";s:5:\"icons\";a:2:{s:2:\"2x\";s:59:\"https://ps.w.org/akismet/assets/icon-256x256.png?rev=969272\";s:2:\"1x\";s:59:\"https://ps.w.org/akismet/assets/icon-128x128.png?rev=969272\";}s:7:\"banners\";a:1:{s:2:\"1x\";s:61:\"https://ps.w.org/akismet/assets/banner-772x250.jpg?rev=479904\";}s:11:\"banners_rtl\";a:0:{}s:6:\"tested\";s:3:\"5.4\";s:12:\"requires_php\";b:0;s:13:\"compatibility\";O:8:\"stdClass\":0:{}}s:36:\"contact-form-7/wp-contact-form-7.php\";O:8:\"stdClass\":12:{s:2:\"id\";s:28:\"w.org/plugins/contact-form-7\";s:4:\"slug\";s:14:\"contact-form-7\";s:6:\"plugin\";s:36:\"contact-form-7/wp-contact-form-7.php\";s:11:\"new_version\";s:5:\"5.1.7\";s:3:\"url\";s:45:\"https://wordpress.org/plugins/contact-form-7/\";s:7:\"package\";s:63:\"https://downloads.wordpress.org/plugin/contact-form-7.5.1.7.zip\";s:5:\"icons\";a:2:{s:2:\"2x\";s:66:\"https://ps.w.org/contact-form-7/assets/icon-256x256.png?rev=984007\";s:2:\"1x\";s:66:\"https://ps.w.org/contact-form-7/assets/icon-128x128.png?rev=984007\";}s:7:\"banners\";a:2:{s:2:\"2x\";s:69:\"https://ps.w.org/contact-form-7/assets/banner-1544x500.png?rev=860901\";s:2:\"1x\";s:68:\"https://ps.w.org/contact-form-7/assets/banner-772x250.png?rev=880427\";}s:11:\"banners_rtl\";a:0:{}s:6:\"tested\";s:3:\"5.4\";s:12:\"requires_php\";b:0;s:13:\"compatibility\";O:8:\"stdClass\":0:{}}s:43:\"custom-post-type-ui/custom-post-type-ui.php\";O:8:\"stdClass\":12:{s:2:\"id\";s:33:\"w.org/plugins/custom-post-type-ui\";s:4:\"slug\";s:19:\"custom-post-type-ui\";s:6:\"plugin\";s:43:\"custom-post-type-ui/custom-post-type-ui.php\";s:11:\"new_version\";s:5:\"1.7.4\";s:3:\"url\";s:50:\"https://wordpress.org/plugins/custom-post-type-ui/\";s:7:\"package\";s:68:\"https://downloads.wordpress.org/plugin/custom-post-type-ui.1.7.4.zip\";s:5:\"icons\";a:2:{s:2:\"2x\";s:72:\"https://ps.w.org/custom-post-type-ui/assets/icon-256x256.png?rev=1069557\";s:2:\"1x\";s:72:\"https://ps.w.org/custom-post-type-ui/assets/icon-128x128.png?rev=1069557\";}s:7:\"banners\";a:2:{s:2:\"2x\";s:75:\"https://ps.w.org/custom-post-type-ui/assets/banner-1544x500.png?rev=1069557\";s:2:\"1x\";s:74:\"https://ps.w.org/custom-post-type-ui/assets/banner-772x250.png?rev=1069557\";}s:11:\"banners_rtl\";a:0:{}s:6:\"tested\";s:5:\"5.4.0\";s:12:\"requires_php\";s:3:\"5.6\";s:13:\"compatibility\";O:8:\"stdClass\":0:{}}s:60:\"wp-slick-slider-and-image-carousel/wp-slick-image-slider.php\";O:8:\"stdClass\":12:{s:2:\"id\";s:48:\"w.org/plugins/wp-slick-slider-and-image-carousel\";s:4:\"slug\";s:34:\"wp-slick-slider-and-image-carousel\";s:6:\"plugin\";s:60:\"wp-slick-slider-and-image-carousel/wp-slick-image-slider.php\";s:11:\"new_version\";s:5:\"1.9.2\";s:3:\"url\";s:65:\"https://wordpress.org/plugins/wp-slick-slider-and-image-carousel/\";s:7:\"package\";s:77:\"https://downloads.wordpress.org/plugin/wp-slick-slider-and-image-carousel.zip\";s:5:\"icons\";a:1:{s:2:\"1x\";s:87:\"https://ps.w.org/wp-slick-slider-and-image-carousel/assets/icon-128x128.png?rev=1443298\";}s:7:\"banners\";a:1:{s:2:\"1x\";s:89:\"https://ps.w.org/wp-slick-slider-and-image-carousel/assets/banner-772x250.png?rev=1711327\";}s:11:\"banners_rtl\";a:0:{}s:6:\"tested\";s:5:\"5.3.2\";s:12:\"requires_php\";b:0;s:13:\"compatibility\";O:8:\"stdClass\":0:{}}}s:12:\"translations\";a:1:{i:0;a:7:{s:4:\"type\";s:6:\"plugin\";s:4:\"slug\";s:7:\"akismet\";s:8:\"language\";s:5:\"ru_RU\";s:7:\"version\";s:5:\"4.1.3\";s:7:\"updated\";s:19:\"2020-03-17 21:01:13\";s:7:\"package\";s:74:\"https://downloads.wordpress.org/translation/plugin/akismet/4.1.3/ru_RU.zip\";s:10:\"autoupdate\";b:1;}}s:9:\"no_update\";a:2:{s:9:\"hello.php\";O:8:\"stdClass\":9:{s:2:\"id\";s:25:\"w.org/plugins/hello-dolly\";s:4:\"slug\";s:11:\"hello-dolly\";s:6:\"plugin\";s:9:\"hello.php\";s:11:\"new_version\";s:5:\"1.7.2\";s:3:\"url\";s:42:\"https://wordpress.org/plugins/hello-dolly/\";s:7:\"package\";s:60:\"https://downloads.wordpress.org/plugin/hello-dolly.1.7.2.zip\";s:5:\"icons\";a:2:{s:2:\"2x\";s:64:\"https://ps.w.org/hello-dolly/assets/icon-256x256.jpg?rev=2052855\";s:2:\"1x\";s:64:\"https://ps.w.org/hello-dolly/assets/icon-128x128.jpg?rev=2052855\";}s:7:\"banners\";a:1:{s:2:\"1x\";s:66:\"https://ps.w.org/hello-dolly/assets/banner-772x250.jpg?rev=2052855\";}s:11:\"banners_rtl\";a:0:{}}s:35:\"image-watermark/image-watermark.php\";O:8:\"stdClass\":9:{s:2:\"id\";s:29:\"w.org/plugins/image-watermark\";s:4:\"slug\";s:15:\"image-watermark\";s:6:\"plugin\";s:35:\"image-watermark/image-watermark.php\";s:11:\"new_version\";s:5:\"1.6.6\";s:3:\"url\";s:46:\"https://wordpress.org/plugins/image-watermark/\";s:7:\"package\";s:64:\"https://downloads.wordpress.org/plugin/image-watermark.1.6.6.zip\";s:5:\"icons\";a:2:{s:2:\"2x\";s:68:\"https://ps.w.org/image-watermark/assets/icon-256x256.png?rev=1018443\";s:2:\"1x\";s:68:\"https://ps.w.org/image-watermark/assets/icon-128x128.png?rev=1018443\";}s:7:\"banners\";a:1:{s:2:\"1x\";s:69:\"https://ps.w.org/image-watermark/assets/banner-772x250.png?rev=692625\";}s:11:\"banners_rtl\";a:0:{}}}}', 'no');
+(1492, '_site_transient_update_themes', 'O:8:\"stdClass\":4:{s:12:\"last_checked\";i:1589441027;s:7:\"checked\";a:1:{s:7:\"rekidea\";s:0:\"\";}s:8:\"response\";a:0:{}s:12:\"translations\";a:0:{}}', 'no'),
+(2570, '_site_transient_update_core', 'O:8:\"stdClass\":4:{s:7:\"updates\";a:4:{i:0;O:8:\"stdClass\":10:{s:8:\"response\";s:7:\"upgrade\";s:8:\"download\";s:65:\"https://downloads.wordpress.org/release/ru_RU/wordpress-5.4.1.zip\";s:6:\"locale\";s:5:\"ru_RU\";s:8:\"packages\";O:8:\"stdClass\":5:{s:4:\"full\";s:65:\"https://downloads.wordpress.org/release/ru_RU/wordpress-5.4.1.zip\";s:10:\"no_content\";b:0;s:11:\"new_bundled\";b:0;s:7:\"partial\";b:0;s:8:\"rollback\";b:0;}s:7:\"current\";s:5:\"5.4.1\";s:7:\"version\";s:5:\"5.4.1\";s:11:\"php_version\";s:6:\"5.6.20\";s:13:\"mysql_version\";s:3:\"5.0\";s:11:\"new_bundled\";s:3:\"5.3\";s:15:\"partial_version\";s:0:\"\";}i:1;O:8:\"stdClass\":10:{s:8:\"response\";s:7:\"upgrade\";s:8:\"download\";s:59:\"https://downloads.wordpress.org/release/wordpress-5.4.1.zip\";s:6:\"locale\";s:5:\"en_US\";s:8:\"packages\";O:8:\"stdClass\":5:{s:4:\"full\";s:59:\"https://downloads.wordpress.org/release/wordpress-5.4.1.zip\";s:10:\"no_content\";s:70:\"https://downloads.wordpress.org/release/wordpress-5.4.1-no-content.zip\";s:11:\"new_bundled\";s:71:\"https://downloads.wordpress.org/release/wordpress-5.4.1-new-bundled.zip\";s:7:\"partial\";b:0;s:8:\"rollback\";b:0;}s:7:\"current\";s:5:\"5.4.1\";s:7:\"version\";s:5:\"5.4.1\";s:11:\"php_version\";s:6:\"5.6.20\";s:13:\"mysql_version\";s:3:\"5.0\";s:11:\"new_bundled\";s:3:\"5.3\";s:15:\"partial_version\";s:0:\"\";}i:2;O:8:\"stdClass\":11:{s:8:\"response\";s:10:\"autoupdate\";s:8:\"download\";s:65:\"https://downloads.wordpress.org/release/ru_RU/wordpress-5.4.1.zip\";s:6:\"locale\";s:5:\"ru_RU\";s:8:\"packages\";O:8:\"stdClass\":5:{s:4:\"full\";s:65:\"https://downloads.wordpress.org/release/ru_RU/wordpress-5.4.1.zip\";s:10:\"no_content\";b:0;s:11:\"new_bundled\";b:0;s:7:\"partial\";b:0;s:8:\"rollback\";b:0;}s:7:\"current\";s:5:\"5.4.1\";s:7:\"version\";s:5:\"5.4.1\";s:11:\"php_version\";s:6:\"5.6.20\";s:13:\"mysql_version\";s:3:\"5.0\";s:11:\"new_bundled\";s:3:\"5.3\";s:15:\"partial_version\";s:0:\"\";s:9:\"new_files\";s:1:\"1\";}i:3;O:8:\"stdClass\":11:{s:8:\"response\";s:10:\"autoupdate\";s:8:\"download\";s:65:\"https://downloads.wordpress.org/release/ru_RU/wordpress-5.3.3.zip\";s:6:\"locale\";s:5:\"ru_RU\";s:8:\"packages\";O:8:\"stdClass\":5:{s:4:\"full\";s:65:\"https://downloads.wordpress.org/release/ru_RU/wordpress-5.3.3.zip\";s:10:\"no_content\";b:0;s:11:\"new_bundled\";b:0;s:7:\"partial\";b:0;s:8:\"rollback\";b:0;}s:7:\"current\";s:5:\"5.3.3\";s:7:\"version\";s:5:\"5.3.3\";s:11:\"php_version\";s:6:\"5.6.20\";s:13:\"mysql_version\";s:3:\"5.0\";s:11:\"new_bundled\";s:3:\"5.3\";s:15:\"partial_version\";s:0:\"\";s:9:\"new_files\";s:1:\"1\";}}s:12:\"last_checked\";i:1589441024;s:15:\"version_checked\";s:5:\"5.3.2\";s:12:\"translations\";a:0:{}}', 'no'),
+(2572, 'auto_core_update_notified', 'a:4:{s:4:\"type\";s:7:\"success\";s:5:\"email\";s:17:\"swd.admin@mail.ru\";s:7:\"version\";s:5:\"5.3.3\";s:9:\"timestamp\";i:1588225641;}', 'no'),
+(2974, '_site_transient_timeout_browser_d89a5df993c1338c5235193f56aa2992', '1590045676', 'no'),
+(2975, '_site_transient_browser_d89a5df993c1338c5235193f56aa2992', 'a:10:{s:4:\"name\";s:7:\"Firefox\";s:7:\"version\";s:4:\"76.0\";s:8:\"platform\";s:7:\"Windows\";s:10:\"update_url\";s:32:\"https://www.mozilla.org/firefox/\";s:7:\"img_src\";s:44:\"http://s.w.org/images/browsers/firefox.png?1\";s:11:\"img_src_ssl\";s:45:\"https://s.w.org/images/browsers/firefox.png?1\";s:15:\"current_version\";s:2:\"56\";s:7:\"upgrade\";b:0;s:8:\"insecure\";b:0;s:6:\"mobile\";b:0;}', 'no'),
+(2976, '_site_transient_timeout_php_check_c10b24bcda05543594ded94839f19c88', '1590045678', 'no'),
+(2977, '_site_transient_php_check_c10b24bcda05543594ded94839f19c88', 'a:5:{s:19:\"recommended_version\";s:3:\"7.3\";s:15:\"minimum_version\";s:6:\"5.6.20\";s:12:\"is_supported\";b:0;s:9:\"is_secure\";b:1;s:13:\"is_acceptable\";b:1;}', 'no'),
+(2978, '_site_transient_timeout_community-events-1aecf33ab8525ff212ebdffbb438372e', '1589484082', 'no'),
+(2979, '_site_transient_community-events-1aecf33ab8525ff212ebdffbb438372e', 'a:3:{s:9:\"sandboxed\";b:0;s:8:\"location\";a:1:{s:2:\"ip\";s:9:\"127.0.0.0\";}s:6:\"events\";a:1:{i:0;a:8:{s:4:\"type\";s:6:\"meetup\";s:5:\"title\";s:12:\"WP Moscow 13\";s:3:\"url\";s:57:\"https://www.meetup.com/wordpress-moscow/events/270407082/\";s:6:\"meetup\";s:16:\"WordPress Moscow\";s:10:\"meetup_url\";s:40:\"https://www.meetup.com/wordpress-moscow/\";s:4:\"date\";s:19:\"2020-05-30 12:00:00\";s:8:\"end_date\";s:19:\"2020-05-30 15:00:00\";s:8:\"location\";a:4:{s:8:\"location\";s:6:\"Online\";s:7:\"country\";s:2:\"RU\";s:8:\"latitude\";d:55.75;s:9:\"longitude\";d:37.619998931885;}}}}', 'no'),
+(2980, '_transient_timeout_plugin_slugs', '1589527297', 'no'),
+(2981, '_transient_plugin_slugs', 'a:7:{i:0;s:30:\"advanced-custom-fields/acf.php\";i:1;s:19:\"akismet/akismet.php\";i:2;s:36:\"contact-form-7/wp-contact-form-7.php\";i:3;s:43:\"custom-post-type-ui/custom-post-type-ui.php\";i:4;s:35:\"image-watermark/image-watermark.php\";i:5;s:60:\"wp-slick-slider-and-image-carousel/wp-slick-image-slider.php\";i:6;s:33:\"yandex-metrika/yandex-metrika.php\";}', 'no'),
+(2982, '_site_transient_timeout_poptags_40cd750bba9870f18aada2478b24840a', '1589451741', 'no');
+INSERT INTO `wp_options` (`option_id`, `option_name`, `option_value`, `autoload`) VALUES
+(2983, '_site_transient_poptags_40cd750bba9870f18aada2478b24840a', 'O:8:\"stdClass\":100:{s:6:\"widget\";a:3:{s:4:\"name\";s:6:\"widget\";s:4:\"slug\";s:6:\"widget\";s:5:\"count\";i:4689;}s:11:\"woocommerce\";a:3:{s:4:\"name\";s:11:\"woocommerce\";s:4:\"slug\";s:11:\"woocommerce\";s:5:\"count\";i:4093;}s:4:\"post\";a:3:{s:4:\"name\";s:4:\"post\";s:4:\"slug\";s:4:\"post\";s:5:\"count\";i:2666;}s:5:\"admin\";a:3:{s:4:\"name\";s:5:\"admin\";s:4:\"slug\";s:5:\"admin\";s:5:\"count\";i:2551;}s:5:\"posts\";a:3:{s:4:\"name\";s:5:\"posts\";s:4:\"slug\";s:5:\"posts\";s:5:\"count\";i:1960;}s:9:\"shortcode\";a:3:{s:4:\"name\";s:9:\"shortcode\";s:4:\"slug\";s:9:\"shortcode\";s:5:\"count\";i:1805;}s:8:\"comments\";a:3:{s:4:\"name\";s:8:\"comments\";s:4:\"slug\";s:8:\"comments\";s:5:\"count\";i:1788;}s:7:\"twitter\";a:3:{s:4:\"name\";s:7:\"twitter\";s:4:\"slug\";s:7:\"twitter\";s:5:\"count\";i:1483;}s:6:\"google\";a:3:{s:4:\"name\";s:6:\"google\";s:4:\"slug\";s:6:\"google\";s:5:\"count\";i:1471;}s:6:\"images\";a:3:{s:4:\"name\";s:6:\"images\";s:4:\"slug\";s:6:\"images\";s:5:\"count\";i:1471;}s:8:\"facebook\";a:3:{s:4:\"name\";s:8:\"facebook\";s:4:\"slug\";s:8:\"facebook\";s:5:\"count\";i:1448;}s:5:\"image\";a:3:{s:4:\"name\";s:5:\"image\";s:4:\"slug\";s:5:\"image\";s:5:\"count\";i:1424;}s:3:\"seo\";a:3:{s:4:\"name\";s:3:\"seo\";s:4:\"slug\";s:3:\"seo\";s:5:\"count\";i:1416;}s:7:\"sidebar\";a:3:{s:4:\"name\";s:7:\"sidebar\";s:4:\"slug\";s:7:\"sidebar\";s:5:\"count\";i:1301;}s:5:\"email\";a:3:{s:4:\"name\";s:5:\"email\";s:4:\"slug\";s:5:\"email\";s:5:\"count\";i:1189;}s:7:\"gallery\";a:3:{s:4:\"name\";s:7:\"gallery\";s:4:\"slug\";s:7:\"gallery\";s:5:\"count\";i:1185;}s:4:\"page\";a:3:{s:4:\"name\";s:4:\"page\";s:4:\"slug\";s:4:\"page\";s:5:\"count\";i:1119;}s:9:\"ecommerce\";a:3:{s:4:\"name\";s:9:\"ecommerce\";s:4:\"slug\";s:9:\"ecommerce\";s:5:\"count\";i:1118;}s:6:\"social\";a:3:{s:4:\"name\";s:6:\"social\";s:4:\"slug\";s:6:\"social\";s:5:\"count\";i:1089;}s:5:\"login\";a:3:{s:4:\"name\";s:5:\"login\";s:4:\"slug\";s:5:\"login\";s:5:\"count\";i:988;}s:5:\"video\";a:3:{s:4:\"name\";s:5:\"video\";s:4:\"slug\";s:5:\"video\";s:5:\"count\";i:877;}s:5:\"links\";a:3:{s:4:\"name\";s:5:\"links\";s:4:\"slug\";s:5:\"links\";s:5:\"count\";i:874;}s:7:\"widgets\";a:3:{s:4:\"name\";s:7:\"widgets\";s:4:\"slug\";s:7:\"widgets\";s:5:\"count\";i:872;}s:8:\"security\";a:3:{s:4:\"name\";s:8:\"security\";s:4:\"slug\";s:8:\"security\";s:5:\"count\";i:861;}s:4:\"spam\";a:3:{s:4:\"name\";s:4:\"spam\";s:4:\"slug\";s:4:\"spam\";s:5:\"count\";i:791;}s:10:\"e-commerce\";a:3:{s:4:\"name\";s:10:\"e-commerce\";s:4:\"slug\";s:10:\"e-commerce\";s:5:\"count\";i:773;}s:7:\"content\";a:3:{s:4:\"name\";s:7:\"content\";s:4:\"slug\";s:7:\"content\";s:5:\"count\";i:766;}s:6:\"slider\";a:3:{s:4:\"name\";s:6:\"slider\";s:4:\"slug\";s:6:\"slider\";s:5:\"count\";i:765;}s:9:\"analytics\";a:3:{s:4:\"name\";s:9:\"analytics\";s:4:\"slug\";s:9:\"analytics\";s:5:\"count\";i:755;}s:10:\"buddypress\";a:3:{s:4:\"name\";s:10:\"buddypress\";s:4:\"slug\";s:10:\"buddypress\";s:5:\"count\";i:744;}s:4:\"form\";a:3:{s:4:\"name\";s:4:\"form\";s:4:\"slug\";s:4:\"form\";s:5:\"count\";i:718;}s:3:\"rss\";a:3:{s:4:\"name\";s:3:\"rss\";s:4:\"slug\";s:3:\"rss\";s:5:\"count\";i:716;}s:5:\"media\";a:3:{s:4:\"name\";s:5:\"media\";s:4:\"slug\";s:5:\"media\";s:5:\"count\";i:709;}s:5:\"pages\";a:3:{s:4:\"name\";s:5:\"pages\";s:4:\"slug\";s:5:\"pages\";s:5:\"count\";i:699;}s:6:\"search\";a:3:{s:4:\"name\";s:6:\"search\";s:4:\"slug\";s:6:\"search\";s:5:\"count\";i:686;}s:6:\"jquery\";a:3:{s:4:\"name\";s:6:\"jquery\";s:4:\"slug\";s:6:\"jquery\";s:5:\"count\";i:659;}s:4:\"menu\";a:3:{s:4:\"name\";s:4:\"menu\";s:4:\"slug\";s:4:\"menu\";s:5:\"count\";i:652;}s:4:\"feed\";a:3:{s:4:\"name\";s:4:\"feed\";s:4:\"slug\";s:4:\"feed\";s:5:\"count\";i:650;}s:6:\"editor\";a:3:{s:4:\"name\";s:6:\"editor\";s:4:\"slug\";s:6:\"editor\";s:5:\"count\";i:644;}s:8:\"category\";a:3:{s:4:\"name\";s:8:\"category\";s:4:\"slug\";s:8:\"category\";s:5:\"count\";i:640;}s:4:\"ajax\";a:3:{s:4:\"name\";s:4:\"ajax\";s:4:\"slug\";s:4:\"ajax\";s:5:\"count\";i:627;}s:5:\"embed\";a:3:{s:4:\"name\";s:5:\"embed\";s:4:\"slug\";s:5:\"embed\";s:5:\"count\";i:626;}s:3:\"css\";a:3:{s:4:\"name\";s:3:\"css\";s:4:\"slug\";s:3:\"css\";s:5:\"count\";i:584;}s:12:\"contact-form\";a:3:{s:4:\"name\";s:12:\"contact form\";s:4:\"slug\";s:12:\"contact-form\";s:5:\"count\";i:583;}s:10:\"javascript\";a:3:{s:4:\"name\";s:10:\"javascript\";s:4:\"slug\";s:10:\"javascript\";s:5:\"count\";i:578;}s:7:\"youtube\";a:3:{s:4:\"name\";s:7:\"youtube\";s:4:\"slug\";s:7:\"youtube\";s:5:\"count\";i:573;}s:4:\"link\";a:3:{s:4:\"name\";s:4:\"link\";s:4:\"slug\";s:4:\"link\";s:5:\"count\";i:570;}s:7:\"payment\";a:3:{s:4:\"name\";s:7:\"payment\";s:4:\"slug\";s:7:\"payment\";s:5:\"count\";i:566;}s:5:\"share\";a:3:{s:4:\"name\";s:5:\"share\";s:4:\"slug\";s:5:\"share\";s:5:\"count\";i:553;}s:5:\"theme\";a:3:{s:4:\"name\";s:5:\"theme\";s:4:\"slug\";s:5:\"theme\";s:5:\"count\";i:547;}s:7:\"comment\";a:3:{s:4:\"name\";s:7:\"comment\";s:4:\"slug\";s:7:\"comment\";s:5:\"count\";i:546;}s:9:\"affiliate\";a:3:{s:4:\"name\";s:9:\"affiliate\";s:4:\"slug\";s:9:\"affiliate\";s:5:\"count\";i:540;}s:10:\"responsive\";a:3:{s:4:\"name\";s:10:\"responsive\";s:4:\"slug\";s:10:\"responsive\";s:5:\"count\";i:535;}s:9:\"dashboard\";a:3:{s:4:\"name\";s:9:\"dashboard\";s:4:\"slug\";s:9:\"dashboard\";s:5:\"count\";i:534;}s:6:\"custom\";a:3:{s:4:\"name\";s:6:\"custom\";s:4:\"slug\";s:6:\"custom\";s:5:\"count\";i:529;}s:3:\"ads\";a:3:{s:4:\"name\";s:3:\"ads\";s:4:\"slug\";s:3:\"ads\";s:5:\"count\";i:523;}s:10:\"categories\";a:3:{s:4:\"name\";s:10:\"categories\";s:4:\"slug\";s:10:\"categories\";s:5:\"count\";i:512;}s:3:\"api\";a:3:{s:4:\"name\";s:3:\"api\";s:4:\"slug\";s:3:\"api\";s:5:\"count\";i:506;}s:7:\"contact\";a:3:{s:4:\"name\";s:7:\"contact\";s:4:\"slug\";s:7:\"contact\";s:5:\"count\";i:502;}s:15:\"payment-gateway\";a:3:{s:4:\"name\";s:15:\"payment gateway\";s:4:\"slug\";s:15:\"payment-gateway\";s:5:\"count\";i:499;}s:4:\"user\";a:3:{s:4:\"name\";s:4:\"user\";s:4:\"slug\";s:4:\"user\";s:5:\"count\";i:498;}s:4:\"tags\";a:3:{s:4:\"name\";s:4:\"tags\";s:4:\"slug\";s:4:\"tags\";s:5:\"count\";i:490;}s:6:\"button\";a:3:{s:4:\"name\";s:6:\"button\";s:4:\"slug\";s:6:\"button\";s:5:\"count\";i:490;}s:9:\"gutenberg\";a:3:{s:4:\"name\";s:9:\"gutenberg\";s:4:\"slug\";s:9:\"gutenberg\";s:5:\"count\";i:486;}s:5:\"users\";a:3:{s:4:\"name\";s:5:\"users\";s:4:\"slug\";s:5:\"users\";s:5:\"count\";i:475;}s:6:\"mobile\";a:3:{s:4:\"name\";s:6:\"mobile\";s:4:\"slug\";s:6:\"mobile\";s:5:\"count\";i:473;}s:6:\"events\";a:3:{s:4:\"name\";s:6:\"events\";s:4:\"slug\";s:6:\"events\";s:5:\"count\";i:469;}s:5:\"photo\";a:3:{s:4:\"name\";s:5:\"photo\";s:4:\"slug\";s:5:\"photo\";s:5:\"count\";i:438;}s:4:\"chat\";a:3:{s:4:\"name\";s:4:\"chat\";s:4:\"slug\";s:4:\"chat\";s:5:\"count\";i:437;}s:9:\"marketing\";a:3:{s:4:\"name\";s:9:\"marketing\";s:4:\"slug\";s:9:\"marketing\";s:5:\"count\";i:435;}s:9:\"slideshow\";a:3:{s:4:\"name\";s:9:\"slideshow\";s:4:\"slug\";s:9:\"slideshow\";s:5:\"count\";i:428;}s:10:\"navigation\";a:3:{s:4:\"name\";s:10:\"navigation\";s:4:\"slug\";s:10:\"navigation\";s:5:\"count\";i:427;}s:5:\"popup\";a:3:{s:4:\"name\";s:5:\"popup\";s:4:\"slug\";s:5:\"popup\";s:5:\"count\";i:426;}s:5:\"stats\";a:3:{s:4:\"name\";s:5:\"stats\";s:4:\"slug\";s:5:\"stats\";s:5:\"count\";i:423;}s:8:\"calendar\";a:3:{s:4:\"name\";s:8:\"calendar\";s:4:\"slug\";s:8:\"calendar\";s:5:\"count\";i:423;}s:6:\"photos\";a:3:{s:4:\"name\";s:6:\"photos\";s:4:\"slug\";s:6:\"photos\";s:5:\"count\";i:422;}s:10:\"statistics\";a:3:{s:4:\"name\";s:10:\"statistics\";s:4:\"slug\";s:10:\"statistics\";s:5:\"count\";i:408;}s:5:\"forms\";a:3:{s:4:\"name\";s:5:\"forms\";s:4:\"slug\";s:5:\"forms\";s:5:\"count\";i:406;}s:10:\"newsletter\";a:3:{s:4:\"name\";s:10:\"newsletter\";s:4:\"slug\";s:10:\"newsletter\";s:5:\"count\";i:405;}s:4:\"news\";a:3:{s:4:\"name\";s:4:\"news\";s:4:\"slug\";s:4:\"news\";s:5:\"count\";i:396;}s:10:\"shortcodes\";a:3:{s:4:\"name\";s:10:\"shortcodes\";s:4:\"slug\";s:10:\"shortcodes\";s:5:\"count\";i:395;}s:14:\"contact-form-7\";a:3:{s:4:\"name\";s:14:\"contact form 7\";s:4:\"slug\";s:14:\"contact-form-7\";s:5:\"count\";i:394;}s:12:\"social-media\";a:3:{s:4:\"name\";s:12:\"social media\";s:4:\"slug\";s:12:\"social-media\";s:5:\"count\";i:385;}s:8:\"redirect\";a:3:{s:4:\"name\";s:8:\"redirect\";s:4:\"slug\";s:8:\"redirect\";s:5:\"count\";i:384;}s:7:\"plugins\";a:3:{s:4:\"name\";s:7:\"plugins\";s:4:\"slug\";s:7:\"plugins\";s:5:\"count\";i:377;}s:4:\"code\";a:3:{s:4:\"name\";s:4:\"code\";s:4:\"slug\";s:4:\"code\";s:5:\"count\";i:376;}s:9:\"multisite\";a:3:{s:4:\"name\";s:9:\"multisite\";s:4:\"slug\";s:9:\"multisite\";s:5:\"count\";i:373;}s:11:\"performance\";a:3:{s:4:\"name\";s:11:\"performance\";s:4:\"slug\";s:11:\"performance\";s:5:\"count\";i:371;}s:3:\"url\";a:3:{s:4:\"name\";s:3:\"url\";s:4:\"slug\";s:3:\"url\";s:5:\"count\";i:369;}s:12:\"notification\";a:3:{s:4:\"name\";s:12:\"notification\";s:4:\"slug\";s:12:\"notification\";s:5:\"count\";i:362;}s:4:\"meta\";a:3:{s:4:\"name\";s:4:\"meta\";s:4:\"slug\";s:4:\"meta\";s:5:\"count\";i:357;}s:4:\"list\";a:3:{s:4:\"name\";s:4:\"list\";s:4:\"slug\";s:4:\"list\";s:5:\"count\";i:357;}s:5:\"block\";a:3:{s:4:\"name\";s:5:\"block\";s:4:\"slug\";s:5:\"block\";s:5:\"count\";i:354;}s:9:\"elementor\";a:3:{s:4:\"name\";s:9:\"elementor\";s:4:\"slug\";s:9:\"elementor\";s:5:\"count\";i:346;}s:8:\"shipping\";a:3:{s:4:\"name\";s:8:\"shipping\";s:4:\"slug\";s:8:\"shipping\";s:5:\"count\";i:344;}s:8:\"tracking\";a:3:{s:4:\"name\";s:8:\"tracking\";s:4:\"slug\";s:8:\"tracking\";s:5:\"count\";i:343;}s:16:\"google-analytics\";a:3:{s:4:\"name\";s:16:\"google analytics\";s:4:\"slug\";s:16:\"google-analytics\";s:5:\"count\";i:338;}s:16:\"custom-post-type\";a:3:{s:4:\"name\";s:16:\"custom post type\";s:4:\"slug\";s:16:\"custom-post-type\";s:5:\"count\";i:337;}s:11:\"advertising\";a:3:{s:4:\"name\";s:11:\"advertising\";s:4:\"slug\";s:11:\"advertising\";s:5:\"count\";i:335;}s:5:\"cache\";a:3:{s:4:\"name\";s:5:\"cache\";s:4:\"slug\";s:5:\"cache\";s:5:\"count\";i:332;}}', 'no'),
+(2985, '_site_transient_timeout_theme_roots', '1589442826', 'no'),
+(2986, '_site_transient_theme_roots', 'a:1:{s:7:\"rekidea\";s:7:\"/themes\";}', 'no'),
+(2987, '_site_transient_update_plugins', 'O:8:\"stdClass\":5:{s:12:\"last_checked\";i:1589441031;s:7:\"checked\";a:8:{s:30:\"advanced-custom-fields/acf.php\";s:5:\"5.8.7\";s:19:\"akismet/akismet.php\";s:5:\"4.1.3\";s:36:\"contact-form-7/wp-contact-form-7.php\";s:5:\"5.1.6\";s:43:\"custom-post-type-ui/custom-post-type-ui.php\";s:5:\"1.7.3\";s:35:\"image-watermark/image-watermark.php\";s:5:\"1.6.6\";s:27:\"woocommerce/woocommerce.php\";s:5:\"4.1.0\";s:60:\"wp-slick-slider-and-image-carousel/wp-slick-image-slider.php\";s:5:\"1.9.1\";s:33:\"yandex-metrika/yandex-metrika.php\";s:5:\"0.8.4\";}s:8:\"response\";a:5:{s:30:\"advanced-custom-fields/acf.php\";O:8:\"stdClass\":12:{s:2:\"id\";s:36:\"w.org/plugins/advanced-custom-fields\";s:4:\"slug\";s:22:\"advanced-custom-fields\";s:6:\"plugin\";s:30:\"advanced-custom-fields/acf.php\";s:11:\"new_version\";s:6:\"5.8.11\";s:3:\"url\";s:53:\"https://wordpress.org/plugins/advanced-custom-fields/\";s:7:\"package\";s:72:\"https://downloads.wordpress.org/plugin/advanced-custom-fields.5.8.11.zip\";s:5:\"icons\";a:2:{s:2:\"2x\";s:75:\"https://ps.w.org/advanced-custom-fields/assets/icon-256x256.png?rev=1082746\";s:2:\"1x\";s:75:\"https://ps.w.org/advanced-custom-fields/assets/icon-128x128.png?rev=1082746\";}s:7:\"banners\";a:2:{s:2:\"2x\";s:78:\"https://ps.w.org/advanced-custom-fields/assets/banner-1544x500.jpg?rev=1729099\";s:2:\"1x\";s:77:\"https://ps.w.org/advanced-custom-fields/assets/banner-772x250.jpg?rev=1729102\";}s:11:\"banners_rtl\";a:0:{}s:6:\"tested\";s:5:\"5.4.1\";s:12:\"requires_php\";s:3:\"5.4\";s:13:\"compatibility\";O:8:\"stdClass\":0:{}}s:19:\"akismet/akismet.php\";O:8:\"stdClass\":12:{s:2:\"id\";s:21:\"w.org/plugins/akismet\";s:4:\"slug\";s:7:\"akismet\";s:6:\"plugin\";s:19:\"akismet/akismet.php\";s:11:\"new_version\";s:5:\"4.1.5\";s:3:\"url\";s:38:\"https://wordpress.org/plugins/akismet/\";s:7:\"package\";s:56:\"https://downloads.wordpress.org/plugin/akismet.4.1.5.zip\";s:5:\"icons\";a:2:{s:2:\"2x\";s:59:\"https://ps.w.org/akismet/assets/icon-256x256.png?rev=969272\";s:2:\"1x\";s:59:\"https://ps.w.org/akismet/assets/icon-128x128.png?rev=969272\";}s:7:\"banners\";a:1:{s:2:\"1x\";s:61:\"https://ps.w.org/akismet/assets/banner-772x250.jpg?rev=479904\";}s:11:\"banners_rtl\";a:0:{}s:6:\"tested\";s:5:\"5.4.1\";s:12:\"requires_php\";b:0;s:13:\"compatibility\";O:8:\"stdClass\":0:{}}s:36:\"contact-form-7/wp-contact-form-7.php\";O:8:\"stdClass\":12:{s:2:\"id\";s:28:\"w.org/plugins/contact-form-7\";s:4:\"slug\";s:14:\"contact-form-7\";s:6:\"plugin\";s:36:\"contact-form-7/wp-contact-form-7.php\";s:11:\"new_version\";s:5:\"5.1.7\";s:3:\"url\";s:45:\"https://wordpress.org/plugins/contact-form-7/\";s:7:\"package\";s:63:\"https://downloads.wordpress.org/plugin/contact-form-7.5.1.7.zip\";s:5:\"icons\";a:2:{s:2:\"2x\";s:67:\"https://ps.w.org/contact-form-7/assets/icon-256x256.png?rev=2279696\";s:2:\"1x\";s:67:\"https://ps.w.org/contact-form-7/assets/icon-128x128.png?rev=2279696\";}s:7:\"banners\";a:2:{s:2:\"2x\";s:69:\"https://ps.w.org/contact-form-7/assets/banner-1544x500.png?rev=860901\";s:2:\"1x\";s:68:\"https://ps.w.org/contact-form-7/assets/banner-772x250.png?rev=880427\";}s:11:\"banners_rtl\";a:0:{}s:6:\"tested\";s:5:\"5.4.1\";s:12:\"requires_php\";b:0;s:13:\"compatibility\";O:8:\"stdClass\":0:{}}s:43:\"custom-post-type-ui/custom-post-type-ui.php\";O:8:\"stdClass\":12:{s:2:\"id\";s:33:\"w.org/plugins/custom-post-type-ui\";s:4:\"slug\";s:19:\"custom-post-type-ui\";s:6:\"plugin\";s:43:\"custom-post-type-ui/custom-post-type-ui.php\";s:11:\"new_version\";s:5:\"1.7.4\";s:3:\"url\";s:50:\"https://wordpress.org/plugins/custom-post-type-ui/\";s:7:\"package\";s:68:\"https://downloads.wordpress.org/plugin/custom-post-type-ui.1.7.4.zip\";s:5:\"icons\";a:2:{s:2:\"2x\";s:72:\"https://ps.w.org/custom-post-type-ui/assets/icon-256x256.png?rev=1069557\";s:2:\"1x\";s:72:\"https://ps.w.org/custom-post-type-ui/assets/icon-128x128.png?rev=1069557\";}s:7:\"banners\";a:2:{s:2:\"2x\";s:75:\"https://ps.w.org/custom-post-type-ui/assets/banner-1544x500.png?rev=1069557\";s:2:\"1x\";s:74:\"https://ps.w.org/custom-post-type-ui/assets/banner-772x250.png?rev=1069557\";}s:11:\"banners_rtl\";a:0:{}s:6:\"tested\";s:5:\"5.4.0\";s:12:\"requires_php\";s:3:\"5.6\";s:13:\"compatibility\";O:8:\"stdClass\":0:{}}s:60:\"wp-slick-slider-and-image-carousel/wp-slick-image-slider.php\";O:8:\"stdClass\":12:{s:2:\"id\";s:48:\"w.org/plugins/wp-slick-slider-and-image-carousel\";s:4:\"slug\";s:34:\"wp-slick-slider-and-image-carousel\";s:6:\"plugin\";s:60:\"wp-slick-slider-and-image-carousel/wp-slick-image-slider.php\";s:11:\"new_version\";s:3:\"2.0\";s:3:\"url\";s:65:\"https://wordpress.org/plugins/wp-slick-slider-and-image-carousel/\";s:7:\"package\";s:77:\"https://downloads.wordpress.org/plugin/wp-slick-slider-and-image-carousel.zip\";s:5:\"icons\";a:1:{s:2:\"1x\";s:87:\"https://ps.w.org/wp-slick-slider-and-image-carousel/assets/icon-128x128.png?rev=1443298\";}s:7:\"banners\";a:1:{s:2:\"1x\";s:89:\"https://ps.w.org/wp-slick-slider-and-image-carousel/assets/banner-772x250.png?rev=1711327\";}s:11:\"banners_rtl\";a:0:{}s:6:\"tested\";s:5:\"5.4.1\";s:12:\"requires_php\";b:0;s:13:\"compatibility\";O:8:\"stdClass\":0:{}}}s:12:\"translations\";a:3:{i:0;a:7:{s:4:\"type\";s:6:\"plugin\";s:4:\"slug\";s:7:\"akismet\";s:8:\"language\";s:5:\"ru_RU\";s:7:\"version\";s:5:\"4.1.3\";s:7:\"updated\";s:19:\"2020-03-17 21:01:13\";s:7:\"package\";s:74:\"https://downloads.wordpress.org/translation/plugin/akismet/4.1.3/ru_RU.zip\";s:10:\"autoupdate\";b:1;}i:1;a:7:{s:4:\"type\";s:6:\"plugin\";s:4:\"slug\";s:11:\"woocommerce\";s:8:\"language\";s:5:\"ru_RU\";s:7:\"version\";s:5:\"4.1.0\";s:7:\"updated\";s:19:\"2020-05-07 08:54:09\";s:7:\"package\";s:78:\"https://downloads.wordpress.org/translation/plugin/woocommerce/4.1.0/ru_RU.zip\";s:10:\"autoupdate\";b:1;}i:2;a:7:{s:4:\"type\";s:6:\"plugin\";s:4:\"slug\";s:14:\"yandex-metrika\";s:8:\"language\";s:5:\"ru_RU\";s:7:\"version\";s:5:\"0.8.4\";s:7:\"updated\";s:19:\"2015-10-12 18:56:42\";s:7:\"package\";s:81:\"https://downloads.wordpress.org/translation/plugin/yandex-metrika/0.8.4/ru_RU.zip\";s:10:\"autoupdate\";b:1;}}s:9:\"no_update\";a:3:{s:35:\"image-watermark/image-watermark.php\";O:8:\"stdClass\":9:{s:2:\"id\";s:29:\"w.org/plugins/image-watermark\";s:4:\"slug\";s:15:\"image-watermark\";s:6:\"plugin\";s:35:\"image-watermark/image-watermark.php\";s:11:\"new_version\";s:5:\"1.6.6\";s:3:\"url\";s:46:\"https://wordpress.org/plugins/image-watermark/\";s:7:\"package\";s:64:\"https://downloads.wordpress.org/plugin/image-watermark.1.6.6.zip\";s:5:\"icons\";a:2:{s:2:\"2x\";s:68:\"https://ps.w.org/image-watermark/assets/icon-256x256.png?rev=1018443\";s:2:\"1x\";s:68:\"https://ps.w.org/image-watermark/assets/icon-128x128.png?rev=1018443\";}s:7:\"banners\";a:1:{s:2:\"1x\";s:69:\"https://ps.w.org/image-watermark/assets/banner-772x250.png?rev=692625\";}s:11:\"banners_rtl\";a:0:{}}s:27:\"woocommerce/woocommerce.php\";O:8:\"stdClass\":9:{s:2:\"id\";s:25:\"w.org/plugins/woocommerce\";s:4:\"slug\";s:11:\"woocommerce\";s:6:\"plugin\";s:27:\"woocommerce/woocommerce.php\";s:11:\"new_version\";s:5:\"4.1.0\";s:3:\"url\";s:42:\"https://wordpress.org/plugins/woocommerce/\";s:7:\"package\";s:60:\"https://downloads.wordpress.org/plugin/woocommerce.4.1.0.zip\";s:5:\"icons\";a:2:{s:2:\"2x\";s:64:\"https://ps.w.org/woocommerce/assets/icon-256x256.png?rev=2075035\";s:2:\"1x\";s:64:\"https://ps.w.org/woocommerce/assets/icon-128x128.png?rev=2075035\";}s:7:\"banners\";a:2:{s:2:\"2x\";s:67:\"https://ps.w.org/woocommerce/assets/banner-1544x500.png?rev=2075035\";s:2:\"1x\";s:66:\"https://ps.w.org/woocommerce/assets/banner-772x250.png?rev=2075035\";}s:11:\"banners_rtl\";a:0:{}}s:33:\"yandex-metrika/yandex-metrika.php\";O:8:\"stdClass\":9:{s:2:\"id\";s:28:\"w.org/plugins/yandex-metrika\";s:4:\"slug\";s:14:\"yandex-metrika\";s:6:\"plugin\";s:33:\"yandex-metrika/yandex-metrika.php\";s:11:\"new_version\";s:5:\"0.8.4\";s:3:\"url\";s:45:\"https://wordpress.org/plugins/yandex-metrika/\";s:7:\"package\";s:63:\"https://downloads.wordpress.org/plugin/yandex-metrika.0.8.4.zip\";s:5:\"icons\";a:2:{s:2:\"2x\";s:66:\"https://ps.w.org/yandex-metrika/assets/icon-256x256.png?rev=981164\";s:2:\"1x\";s:66:\"https://ps.w.org/yandex-metrika/assets/icon-128x128.png?rev=981164\";}s:7:\"banners\";a:1:{s:2:\"1x\";s:68:\"https://ps.w.org/yandex-metrika/assets/banner-772x250.png?rev=723813\";}s:11:\"banners_rtl\";a:0:{}}}}', 'no'),
+(2988, 'action_scheduler_hybrid_store_demarkation', '354', 'yes'),
+(2989, 'schema-ActionScheduler_StoreSchema', '3.0.1589441033', 'yes'),
+(2990, 'schema-ActionScheduler_LoggerSchema', '2.0.1589441033', 'yes'),
+(2993, 'woocommerce_store_address', '', 'yes'),
+(2994, 'woocommerce_store_address_2', '', 'yes'),
+(2995, 'woocommerce_store_city', '', 'yes'),
+(2996, 'woocommerce_default_country', 'GB', 'yes'),
+(2997, 'woocommerce_store_postcode', '', 'yes'),
+(2998, 'woocommerce_allowed_countries', 'all', 'yes'),
+(2999, 'woocommerce_all_except_countries', '', 'yes'),
+(3000, 'woocommerce_specific_allowed_countries', '', 'yes'),
+(3001, 'woocommerce_ship_to_countries', '', 'yes'),
+(3002, 'woocommerce_specific_ship_to_countries', '', 'yes'),
+(3003, 'woocommerce_default_customer_address', 'base', 'yes'),
+(3004, 'woocommerce_calc_taxes', 'no', 'yes'),
+(3005, 'woocommerce_enable_coupons', 'yes', 'yes'),
+(3006, 'woocommerce_calc_discounts_sequentially', 'no', 'no'),
+(3007, 'woocommerce_currency', 'GBP', 'yes'),
+(3008, 'woocommerce_currency_pos', 'left', 'yes'),
+(3009, 'woocommerce_price_thousand_sep', ',', 'yes'),
+(3010, 'woocommerce_price_decimal_sep', '.', 'yes'),
+(3011, 'woocommerce_price_num_decimals', '2', 'yes'),
+(3012, 'woocommerce_shop_page_id', '', 'yes'),
+(3013, 'woocommerce_cart_redirect_after_add', 'no', 'yes'),
+(3014, 'woocommerce_enable_ajax_add_to_cart', 'yes', 'yes'),
+(3015, 'woocommerce_placeholder_image', '354', 'yes'),
+(3016, 'woocommerce_weight_unit', 'kg', 'yes'),
+(3017, 'woocommerce_dimension_unit', 'cm', 'yes'),
+(3018, 'woocommerce_enable_reviews', 'yes', 'yes'),
+(3019, 'woocommerce_review_rating_verification_label', 'yes', 'no'),
+(3020, 'woocommerce_review_rating_verification_required', 'no', 'no'),
+(3021, 'woocommerce_enable_review_rating', 'yes', 'yes'),
+(3022, 'woocommerce_review_rating_required', 'yes', 'no'),
+(3023, 'woocommerce_manage_stock', 'yes', 'yes'),
+(3024, 'woocommerce_hold_stock_minutes', '60', 'no'),
+(3025, 'woocommerce_notify_low_stock', 'yes', 'no'),
+(3026, 'woocommerce_notify_no_stock', 'yes', 'no'),
+(3027, 'woocommerce_stock_email_recipient', 'swd.admin@mail.ru', 'no'),
+(3028, 'woocommerce_notify_low_stock_amount', '2', 'no'),
+(3029, 'woocommerce_notify_no_stock_amount', '0', 'yes'),
+(3030, 'woocommerce_hide_out_of_stock_items', 'no', 'yes'),
+(3031, 'woocommerce_stock_format', '', 'yes'),
+(3032, 'woocommerce_file_download_method', 'force', 'no'),
+(3033, 'woocommerce_downloads_require_login', 'no', 'no'),
+(3034, 'woocommerce_downloads_grant_access_after_payment', 'yes', 'no'),
+(3035, 'woocommerce_downloads_add_hash_to_filename', 'yes', 'yes'),
+(3036, 'woocommerce_prices_include_tax', 'no', 'yes'),
+(3037, 'woocommerce_tax_based_on', 'shipping', 'yes'),
+(3038, 'woocommerce_shipping_tax_class', 'inherit', 'yes'),
+(3039, 'woocommerce_tax_round_at_subtotal', 'no', 'yes'),
+(3040, 'woocommerce_tax_classes', '', 'yes'),
+(3041, 'woocommerce_tax_display_shop', 'excl', 'yes'),
+(3042, 'woocommerce_tax_display_cart', 'excl', 'yes'),
+(3043, 'woocommerce_price_display_suffix', '', 'yes'),
+(3044, 'woocommerce_tax_total_display', 'itemized', 'no'),
+(3045, 'woocommerce_enable_shipping_calc', 'yes', 'no'),
+(3046, 'woocommerce_shipping_cost_requires_address', 'no', 'yes'),
+(3047, 'woocommerce_ship_to_destination', 'billing', 'no'),
+(3048, 'woocommerce_shipping_debug_mode', 'no', 'yes'),
+(3049, 'woocommerce_enable_guest_checkout', 'yes', 'no'),
+(3050, 'woocommerce_enable_checkout_login_reminder', 'no', 'no'),
+(3051, 'woocommerce_enable_signup_and_login_from_checkout', 'no', 'no'),
+(3052, 'woocommerce_enable_myaccount_registration', 'no', 'no'),
+(3053, 'woocommerce_registration_generate_username', 'yes', 'no'),
+(3054, 'woocommerce_registration_generate_password', 'yes', 'no'),
+(3055, 'woocommerce_erasure_request_removes_order_data', 'no', 'no'),
+(3056, 'woocommerce_erasure_request_removes_download_data', 'no', 'no'),
+(3057, 'woocommerce_allow_bulk_remove_personal_data', 'no', 'no'),
+(3058, 'woocommerce_registration_privacy_policy_text', 'Your personal data will be used to support your experience throughout this website, to manage access to your account, and for other purposes described in our [privacy_policy].', 'yes'),
+(3059, 'woocommerce_checkout_privacy_policy_text', 'Your personal data will be used to process your order, support your experience throughout this website, and for other purposes described in our [privacy_policy].', 'yes'),
+(3060, 'woocommerce_delete_inactive_accounts', 'a:2:{s:6:\"number\";s:0:\"\";s:4:\"unit\";s:6:\"months\";}', 'no'),
+(3061, 'woocommerce_trash_pending_orders', '', 'no'),
+(3062, 'woocommerce_trash_failed_orders', '', 'no'),
+(3063, 'woocommerce_trash_cancelled_orders', '', 'no'),
+(3064, 'woocommerce_anonymize_completed_orders', 'a:2:{s:6:\"number\";s:0:\"\";s:4:\"unit\";s:6:\"months\";}', 'no'),
+(3065, 'woocommerce_email_from_name', 'Rekidea', 'no'),
+(3066, 'woocommerce_email_from_address', 'swd.admin@mail.ru', 'no'),
+(3067, 'woocommerce_email_header_image', '', 'no'),
+(3068, 'woocommerce_email_footer_text', '{site_title} &mdash; Built with {WooCommerce}', 'no'),
+(3069, 'woocommerce_email_base_color', '#96588a', 'no'),
+(3070, 'woocommerce_email_background_color', '#f7f7f7', 'no'),
+(3071, 'woocommerce_email_body_background_color', '#ffffff', 'no'),
+(3072, 'woocommerce_email_text_color', '#3c3c3c', 'no'),
+(3073, 'woocommerce_cart_page_id', '', 'no'),
+(3074, 'woocommerce_checkout_page_id', '', 'no'),
+(3075, 'woocommerce_myaccount_page_id', '', 'no'),
+(3076, 'woocommerce_terms_page_id', '', 'no'),
+(3077, 'woocommerce_force_ssl_checkout', 'no', 'yes'),
+(3078, 'woocommerce_unforce_ssl_checkout', 'no', 'yes'),
+(3079, 'woocommerce_checkout_pay_endpoint', 'order-pay', 'yes'),
+(3080, 'woocommerce_checkout_order_received_endpoint', 'order-received', 'yes'),
+(3081, 'woocommerce_myaccount_add_payment_method_endpoint', 'add-payment-method', 'yes'),
+(3082, 'woocommerce_myaccount_delete_payment_method_endpoint', 'delete-payment-method', 'yes'),
+(3083, 'woocommerce_myaccount_set_default_payment_method_endpoint', 'set-default-payment-method', 'yes'),
+(3084, 'woocommerce_myaccount_orders_endpoint', 'orders', 'yes'),
+(3085, 'woocommerce_myaccount_view_order_endpoint', 'view-order', 'yes'),
+(3086, 'woocommerce_myaccount_downloads_endpoint', 'downloads', 'yes'),
+(3087, 'woocommerce_myaccount_edit_account_endpoint', 'edit-account', 'yes'),
+(3088, 'woocommerce_myaccount_edit_address_endpoint', 'edit-address', 'yes'),
+(3089, 'woocommerce_myaccount_payment_methods_endpoint', 'payment-methods', 'yes'),
+(3090, 'woocommerce_myaccount_lost_password_endpoint', 'lost-password', 'yes'),
+(3091, 'woocommerce_logout_endpoint', 'customer-logout', 'yes'),
+(3092, 'woocommerce_api_enabled', 'no', 'yes'),
+(3093, 'woocommerce_allow_tracking', 'no', 'no'),
+(3094, 'woocommerce_show_marketplace_suggestions', 'yes', 'no'),
+(3095, 'woocommerce_single_image_width', '600', 'yes'),
+(3096, 'woocommerce_thumbnail_image_width', '300', 'yes'),
+(3097, 'woocommerce_checkout_highlight_required_fields', 'yes', 'yes'),
+(3098, 'woocommerce_demo_store', 'no', 'no'),
+(3099, 'woocommerce_permalinks', 'a:5:{s:12:\"product_base\";s:7:\"product\";s:13:\"category_base\";s:16:\"product-category\";s:8:\"tag_base\";s:11:\"product-tag\";s:14:\"attribute_base\";s:0:\"\";s:22:\"use_verbose_page_rules\";b:0;}', 'yes'),
+(3100, 'current_theme_supports_woocommerce', 'no', 'yes'),
+(3101, 'woocommerce_queue_flush_rewrite_rules', 'no', 'yes'),
+(3102, '_transient_wc_attribute_taxonomies', 'a:0:{}', 'yes'),
+(3103, 'product_cat_children', 'a:0:{}', 'yes'),
+(3104, 'default_product_cat', '25', 'yes'),
+(3105, 'woocommerce_admin_notices', 'a:3:{i:0;s:7:\"install\";i:1;s:20:\"no_secure_connection\";i:2;s:14:\"template_files\";}', 'yes'),
+(3108, 'woocommerce_version', '4.1.0', 'yes'),
+(3109, 'woocommerce_db_version', '4.1.0', 'yes'),
+(3110, 'action_scheduler_lock_async-request-runner', '1589441095', 'yes'),
+(3111, 'woocommerce_maxmind_geolocation_settings', 'a:1:{s:15:\"database_prefix\";s:32:\"24JFsLqbWaMQ9NZ5S99Fp9iZ0rNJOaPb\";}', 'yes'),
+(3112, '_transient_woocommerce_webhook_ids_status_active', 'a:0:{}', 'yes'),
+(3113, 'widget_woocommerce_widget_cart', 'a:1:{s:12:\"_multiwidget\";i:1;}', 'yes'),
+(3114, 'widget_woocommerce_layered_nav_filters', 'a:1:{s:12:\"_multiwidget\";i:1;}', 'yes'),
+(3115, 'widget_woocommerce_layered_nav', 'a:1:{s:12:\"_multiwidget\";i:1;}', 'yes'),
+(3116, 'widget_woocommerce_price_filter', 'a:1:{s:12:\"_multiwidget\";i:1;}', 'yes'),
+(3117, 'widget_woocommerce_product_categories', 'a:1:{s:12:\"_multiwidget\";i:1;}', 'yes'),
+(3118, 'widget_woocommerce_product_search', 'a:1:{s:12:\"_multiwidget\";i:1;}', 'yes'),
+(3119, 'widget_woocommerce_product_tag_cloud', 'a:1:{s:12:\"_multiwidget\";i:1;}', 'yes'),
+(3120, 'widget_woocommerce_products', 'a:1:{s:12:\"_multiwidget\";i:1;}', 'yes'),
+(3121, 'widget_woocommerce_recently_viewed_products', 'a:1:{s:12:\"_multiwidget\";i:1;}', 'yes'),
+(3122, 'widget_woocommerce_top_rated_products', 'a:1:{s:12:\"_multiwidget\";i:1;}', 'yes'),
+(3123, 'widget_woocommerce_recent_reviews', 'a:1:{s:12:\"_multiwidget\";i:1;}', 'yes'),
+(3124, 'widget_woocommerce_rating_filter', 'a:1:{s:12:\"_multiwidget\";i:1;}', 'yes'),
+(3125, 'woocommerce_onboarding_opt_in', 'no', 'yes'),
+(3128, 'woocommerce_admin_version', '1.1.1', 'yes'),
+(3129, 'woocommerce_admin_install_timestamp', '1589441044', 'yes'),
+(3131, '_transient_timeout_as-post-store-dependencies-met', '1589527445', 'no'),
+(3132, '_transient_as-post-store-dependencies-met', 'yes', 'no'),
+(3133, '_transient_wc_count_comments', 'O:8:\"stdClass\":7:{s:14:\"total_comments\";i:0;s:3:\"all\";i:0;s:9:\"moderated\";i:0;s:8:\"approved\";i:0;s:4:\"spam\";i:0;s:5:\"trash\";i:0;s:12:\"post-trashed\";i:0;}', 'yes'),
+(3134, 'woocommerce_meta_box_errors', 'a:0:{}', 'yes'),
+(3135, 'woocommerce_admin_last_orders_milestone', '0', 'yes'),
+(3137, 'woocommerce_onboarding_profile', 'a:0:{}', 'yes');
 
 -- --------------------------------------------------------
 
@@ -1639,13 +1868,12 @@ INSERT INTO `wp_postmeta` (`meta_id`, `post_id`, `meta_key`, `meta_value`) VALUE
 (1813, 346, '_wp_attachment_metadata', 'a:5:{s:5:\"width\";i:800;s:6:\"height\";i:600;s:4:\"file\";s:35:\"2020/03/800х600_tablichki_10-1.jpg\";s:5:\"sizes\";a:3:{s:6:\"medium\";a:4:{s:4:\"file\";s:35:\"800х600_tablichki_10-1-300x225.jpg\";s:5:\"width\";i:300;s:6:\"height\";i:225;s:9:\"mime-type\";s:10:\"image/jpeg\";}s:9:\"thumbnail\";a:4:{s:4:\"file\";s:35:\"800х600_tablichki_10-1-150x150.jpg\";s:5:\"width\";i:150;s:6:\"height\";i:150;s:9:\"mime-type\";s:10:\"image/jpeg\";}s:12:\"medium_large\";a:4:{s:4:\"file\";s:35:\"800х600_tablichki_10-1-768x576.jpg\";s:5:\"width\";i:768;s:6:\"height\";i:576;s:9:\"mime-type\";s:10:\"image/jpeg\";}}s:10:\"image_meta\";a:12:{s:8:\"aperture\";s:1:\"0\";s:6:\"credit\";s:0:\"\";s:6:\"camera\";s:0:\"\";s:7:\"caption\";s:0:\"\";s:17:\"created_timestamp\";s:1:\"0\";s:9:\"copyright\";s:0:\"\";s:12:\"focal_length\";s:1:\"0\";s:3:\"iso\";s:1:\"0\";s:13:\"shutter_speed\";s:1:\"0\";s:5:\"title\";s:0:\"\";s:11:\"orientation\";s:1:\"0\";s:8:\"keywords\";a:0:{}}}'),
 (1814, 346, 'iw-is-watermarked', '1'),
 (1815, 347, '_edit_lock', '1584891481:1'),
-(1816, 349, '_form', '<div class=\"grid\">\n\n<div class=\"feedback-field\">\n[text* feedback-name placeholder \"Имя\"]\n</div>\n<div class=\"feedback-text\">\n[textarea* feedback-text placeholder \"Опишите Ваш запрос\"]\n</div>\n<div class=\"feedback-field\">\n[tel* feedback-phone placeholder \"Телефон\"]\n</div>\n\n<div class=\"feedback-field\">\n[text* feedback-name placeholder \"Тема заявки\"]\n</div>\n</div>\n<div class=\"private_term_agree\">\nНажимая кнопку «Перезвонить мне», я <a href=\"/privacy-policy\">даю свое согласие</a> на обработку персональных данных.\n</div>\n\n<div class=\"feedback-submit\">\n[submit value \"Перезвоните мне\" ]\n</div>'),
-(1817, 349, '_mail', 'a:9:{s:6:\"active\";b:1;s:7:\"subject\";s:24:\"Rekidea \"[your-subject]\"\";s:6:\"sender\";s:29:\"Rekidea <wordpress@rek.local>\";s:9:\"recipient\";s:17:\"swd.admin@mail.ru\";s:4:\"body\";s:186:\"От: [your-name] <[your-email]>\nТема: [your-subject]\n\nСообщение:\n[your-message]\n\n-- \nЭто сообщение отправлено с сайта Rekidea (http://rek.local)\";s:18:\"additional_headers\";s:22:\"Reply-To: [your-email]\";s:11:\"attachments\";s:0:\"\";s:8:\"use_html\";b:0;s:13:\"exclude_blank\";b:0;}'),
+(1816, 349, '_form', '<div class=\"grid\">\n\n<div class=\"feedback-field\">\n[text* feedback-name placeholder \"Имя\"]\n</div>\n<div class=\"feedback-text\">\n[textarea* feedback-text placeholder \"Опишите Ваш запрос\"]\n</div>\n<div class=\"feedback-field\">\n[tel* feedback-phone placeholder \"Телефон\"]\n</div>\n\n<div class=\"feedback-field\">\n[text* feedback-topic placeholder \"Тема заявки\"]\n</div>\n</div>\n<div class=\"private_term_agree\">\nНажимая кнопку «Перезвонить мне», я <a href=\"/privacy-policy\">даю свое согласие</a> на обработку персональных данных.\n</div>\n\n<div class=\"feedback-submit\">\n[submit value \"Перезвоните мне\" ]\n</div>'),
+(1817, 349, '_mail', 'a:9:{s:6:\"active\";b:1;s:7:\"subject\";s:37:\"RekIdea. Форма контакты.\";s:6:\"sender\";s:21:\"Rek <info@rekidea.ru>\";s:9:\"recipient\";s:17:\"rekidea@yandex.ru\";s:4:\"body\";s:119:\"Имя: [feedback-name]\nТелефон: [feedback-phone]\nТема: [feedback-topic]\nСообщение: [feedback-text]\";s:18:\"additional_headers\";s:25:\"Reply-To: info@rekidea.ru\";s:11:\"attachments\";s:0:\"\";s:8:\"use_html\";b:0;s:13:\"exclude_blank\";b:0;}'),
 (1818, 349, '_mail_2', 'a:9:{s:6:\"active\";b:0;s:7:\"subject\";s:24:\"Rekidea \"[your-subject]\"\";s:6:\"sender\";s:29:\"Rekidea <wordpress@rek.local>\";s:9:\"recipient\";s:12:\"[your-email]\";s:4:\"body\";s:127:\"Сообщение:\n[your-message]\n\n-- \nЭто сообщение отправлено с сайта Rekidea (http://rek.local)\";s:18:\"additional_headers\";s:27:\"Reply-To: swd.admin@mail.ru\";s:11:\"attachments\";s:0:\"\";s:8:\"use_html\";b:0;s:13:\"exclude_blank\";b:0;}'),
 (1819, 349, '_messages', 'a:22:{s:12:\"mail_sent_ok\";s:92:\"Спасибо за Ваше сообщение. Оно успешно отправлено.\";s:12:\"mail_sent_ng\";s:144:\"При отправке сообщения произошла ошибка. Пожалуйста, попробуйте ещё раз позже.\";s:16:\"validation_error\";s:180:\"Одно или несколько полей содержат ошибочные данные. Пожалуйста, проверьте их и попробуйте ещё раз.\";s:4:\"spam\";s:144:\"При отправке сообщения произошла ошибка. Пожалуйста, попробуйте ещё раз позже.\";s:12:\"accept_terms\";s:132:\"Вы должны принять условия и положения перед отправкой вашего сообщения.\";s:16:\"invalid_required\";s:60:\"Поле обязательно для заполнения.\";s:16:\"invalid_too_long\";s:39:\"Поле слишком длинное.\";s:17:\"invalid_too_short\";s:41:\"Поле слишком короткое.\";s:12:\"invalid_date\";s:45:\"Формат даты некорректен.\";s:14:\"date_too_early\";s:74:\"Введённая дата слишком далеко в прошлом.\";s:13:\"date_too_late\";s:74:\"Введённая дата слишком далеко в будущем.\";s:13:\"upload_failed\";s:90:\"При загрузке файла произошла неизвестная ошибка.\";s:24:\"upload_file_type_invalid\";s:81:\"Вам не разрешено загружать файлы этого типа.\";s:21:\"upload_file_too_large\";s:39:\"Файл слишком большой.\";s:23:\"upload_failed_php_error\";s:67:\"При загрузке файла произошла ошибка.\";s:14:\"invalid_number\";s:47:\"Формат числа некорректен.\";s:16:\"number_too_small\";s:68:\"Число меньше минимально допустимого.\";s:16:\"number_too_large\";s:70:\"Число больше максимально допустимого.\";s:23:\"quiz_answer_not_correct\";s:69:\"Неверный ответ на проверочный вопрос.\";s:13:\"invalid_email\";s:62:\"Неверно введён электронный адрес.\";s:11:\"invalid_url\";s:53:\"Введён некорректный URL адрес.\";s:11:\"invalid_tel\";s:70:\"Введён некорректный телефонный номер.\";}'),
 (1820, 349, '_additional_settings', ''),
 (1821, 349, '_locale', 'ru_RU'),
-(1829, 349, '_config_errors', 'a:1:{s:23:\"mail.additional_headers\";a:1:{i:0;a:2:{s:4:\"code\";i:102;s:4:\"args\";a:3:{s:7:\"message\";s:125:\"Был использован некорректный синтаксис почтового адреса в поле %name%.\";s:6:\"params\";a:1:{s:4:\"name\";s:8:\"Reply-To\";}s:4:\"link\";s:68:\"https://contactform7.com/configuration-errors/invalid-mailbox-syntax\";}}}}'),
 (1830, 351, '_menu_item_type', 'post_type'),
 (1831, 351, '_menu_item_menu_item_parent', '0'),
 (1832, 351, '_menu_item_object_id', '347'),
@@ -1659,9 +1887,11 @@ INSERT INTO `wp_postmeta` (`meta_id`, `post_id`, `meta_key`, `meta_value`) VALUE
 (1841, 352, '_menu_item_object_id', '347'),
 (1842, 352, '_menu_item_object', 'page'),
 (1843, 352, '_menu_item_target', ''),
-(1844, 352, '_menu_item_classes', 'a:1:{i:0;s:0:\"\";}'),
+(1844, 352, '_menu_item_classes', 'a:1:{i:0;s:4:\"dark\";}'),
 (1845, 352, '_menu_item_xfn', ''),
-(1846, 352, '_menu_item_url', '');
+(1846, 352, '_menu_item_url', ''),
+(1849, 354, '_wp_attached_file', 'woocommerce-placeholder.png'),
+(1850, 354, '_wp_attachment_metadata', 'a:5:{s:5:\"width\";i:1200;s:6:\"height\";i:1200;s:4:\"file\";s:27:\"woocommerce-placeholder.png\";s:5:\"sizes\";a:4:{s:6:\"medium\";a:4:{s:4:\"file\";s:35:\"woocommerce-placeholder-300x300.png\";s:5:\"width\";i:300;s:6:\"height\";i:300;s:9:\"mime-type\";s:9:\"image/png\";}s:5:\"large\";a:4:{s:4:\"file\";s:37:\"woocommerce-placeholder-1024x1024.png\";s:5:\"width\";i:1024;s:6:\"height\";i:1024;s:9:\"mime-type\";s:9:\"image/png\";}s:9:\"thumbnail\";a:4:{s:4:\"file\";s:35:\"woocommerce-placeholder-150x150.png\";s:5:\"width\";i:150;s:6:\"height\";i:150;s:9:\"mime-type\";s:9:\"image/png\";}s:12:\"medium_large\";a:4:{s:4:\"file\";s:35:\"woocommerce-placeholder-768x768.png\";s:5:\"width\";i:768;s:6:\"height\";i:768;s:9:\"mime-type\";s:9:\"image/png\";}}s:10:\"image_meta\";a:12:{s:8:\"aperture\";s:1:\"0\";s:6:\"credit\";s:0:\"\";s:6:\"camera\";s:0:\"\";s:7:\"caption\";s:0:\"\";s:17:\"created_timestamp\";s:1:\"0\";s:9:\"copyright\";s:0:\"\";s:12:\"focal_length\";s:1:\"0\";s:3:\"iso\";s:1:\"0\";s:13:\"shutter_speed\";s:1:\"0\";s:5:\"title\";s:0:\"\";s:11:\"orientation\";s:1:\"0\";s:8:\"keywords\";a:0:{}}}');
 
 -- --------------------------------------------------------
 
@@ -1807,24 +2037,24 @@ INSERT INTO `wp_posts` (`ID`, `post_author`, `post_date`, `post_date_gmt`, `post
 (141, 1, '2020-01-30 15:22:47', '2020-01-30 12:22:47', '', 'Для офисов, кафе и ресторанов', '', 'publish', 'closed', 'closed', '', '%d0%b4%d0%bb%d1%8f-%d0%be%d1%84%d0%b8%d1%81%d0%be%d0%b2-%d0%ba%d0%b0%d1%84%d0%b5-%d0%b8-%d1%80%d0%b5%d1%81%d1%82%d0%be%d1%80%d0%b0%d0%bd%d0%be%d0%b2', '', '', '2020-03-23 20:22:16', '2020-03-23 17:22:16', '', 0, 'http://rsht.local/?p=141', 37, 'nav_menu_item', '', 0),
 (142, 1, '2020-01-30 15:22:47', '2020-01-30 12:22:47', '', 'С плоскими и объемными карманами', '', 'publish', 'closed', 'closed', '', '%d1%81-%d0%bf%d0%bb%d0%be%d1%81%d0%ba%d0%b8%d0%bc%d0%b8-%d0%b8-%d0%be%d0%b1%d1%8a%d0%b5%d0%bc%d0%bd%d1%8b%d0%bc%d0%b8-%d0%ba%d0%b0%d1%80%d0%bc%d0%b0%d0%bd%d0%b0%d0%bc%d0%b8', '', '', '2020-03-23 20:22:16', '2020-03-23 17:22:16', '', 0, 'http://rsht.local/?p=142', 39, 'nav_menu_item', '', 0),
 (143, 1, '2020-01-30 15:22:47', '2020-01-30 12:22:47', '', 'Режим работы', '', 'publish', 'closed', 'closed', '', '%d1%80%d0%b5%d0%b6%d0%b8%d0%bc-%d1%80%d0%b0%d0%b1%d0%be%d1%82%d1%8b', '', '', '2020-03-23 20:22:16', '2020-03-23 17:22:16', '', 0, 'http://rsht.local/?p=143', 40, 'nav_menu_item', '', 0),
-(144, 1, '2020-01-30 15:52:09', '2020-01-30 12:52:09', '', 'Вывески', '', 'publish', 'closed', 'closed', '', '%d0%b2%d1%8b%d0%b2%d0%b5%d1%81%d0%ba%d0%b8-2', '', '', '2020-03-23 20:22:36', '2020-03-23 17:22:36', '', 0, 'http://rsht.local/?p=144', 1, 'nav_menu_item', '', 0),
-(145, 1, '2020-01-30 15:52:09', '2020-01-30 12:52:09', '', 'Световые панели', '', 'publish', 'closed', 'closed', '', '%d1%81%d0%b2%d0%b5%d1%82%d0%be%d0%b2%d1%8b%d0%b5-%d0%bf%d0%b0%d0%bd%d0%b5%d0%bb%d0%b8-2', '', '', '2020-03-23 20:22:36', '2020-03-23 17:22:36', '', 0, 'http://rsht.local/?p=145', 6, 'nav_menu_item', '', 0),
-(146, 1, '2020-01-30 15:52:09', '2020-01-30 12:52:09', '', 'Широкоформатная печать', '', 'publish', 'closed', 'closed', '', '%d1%88%d0%b8%d1%80%d0%be%d0%ba%d0%be%d1%84%d0%be%d1%80%d0%bc%d0%b0%d1%82%d0%bd%d0%b0%d1%8f-%d0%bf%d0%b5%d1%87%d0%b0%d1%82%d1%8c-2', '', '', '2020-03-23 20:22:36', '2020-03-23 17:22:36', '', 0, 'http://rsht.local/?p=146', 10, 'nav_menu_item', '', 0),
-(147, 1, '2020-01-30 15:52:09', '2020-01-30 12:52:09', '', 'Пресс волл', '', 'publish', 'closed', 'closed', '', '%d0%bf%d1%80%d0%b5%d1%81%d1%81-%d0%b2%d0%be%d0%bb%d0%bb-2', '', '', '2020-03-23 20:22:36', '2020-03-23 17:22:36', '', 0, 'http://rsht.local/?p=147', 17, 'nav_menu_item', '', 0),
-(148, 1, '2020-01-30 15:52:09', '2020-01-30 12:52:09', '', 'Фотозона', '', 'publish', 'closed', 'closed', '', '%d1%84%d0%be%d1%82%d0%be%d0%b7%d0%be%d0%bd%d0%b0-2', '', '', '2020-03-23 20:22:36', '2020-03-23 17:22:36', '', 0, 'http://rsht.local/?p=148', 18, 'nav_menu_item', '', 0),
-(149, 1, '2020-01-30 15:52:09', '2020-01-30 12:52:09', '', 'Баннерные стенды', '', 'publish', 'closed', 'closed', '', '%d0%b1%d0%b0%d0%bd%d0%bd%d0%b5%d1%80%d0%bd%d1%8b%d0%b5-%d1%81%d1%82%d0%b5%d0%bd%d0%b4%d1%8b-2', '', '', '2020-03-23 20:22:36', '2020-03-23 17:22:36', '', 0, 'http://rsht.local/?p=149', 19, 'nav_menu_item', '', 0),
-(150, 1, '2020-01-30 15:52:09', '2020-01-30 12:52:09', '', 'Ролл ап', '', 'publish', 'closed', 'closed', '', '%d1%80%d0%be%d0%bb%d0%bb-%d0%b0%d0%bf-2', '', '', '2020-03-23 20:22:36', '2020-03-23 17:22:36', '', 0, 'http://rsht.local/?p=150', 20, 'nav_menu_item', '', 0),
-(151, 1, '2020-01-30 15:52:09', '2020-01-30 12:52:09', '', 'Ростовые фигуры', '', 'publish', 'closed', 'closed', '', '%d1%80%d0%be%d1%81%d1%82%d0%be%d0%b2%d1%8b%d0%b5-%d1%84%d0%b8%d0%b3%d1%83%d1%80%d1%8b-2', '', '', '2020-03-23 20:22:36', '2020-03-23 17:22:36', '', 0, 'http://rsht.local/?p=151', 21, 'nav_menu_item', '', 0),
-(152, 1, '2020-01-30 15:52:09', '2020-01-30 12:52:09', '', 'Брендирование транспорта', '', 'publish', 'closed', 'closed', '', '%d0%b1%d1%80%d0%b5%d0%bd%d0%b4%d0%b8%d1%80%d0%be%d0%b2%d0%b0%d0%bd%d0%b8%d0%b5-%d1%82%d1%80%d0%b0%d0%bd%d1%81%d0%bf%d0%be%d1%80%d1%82%d0%b0-2', '', '', '2020-03-23 20:22:36', '2020-03-23 17:22:36', '', 0, 'http://rsht.local/?p=152', 22, 'nav_menu_item', '', 0),
-(153, 1, '2020-01-30 15:54:46', '2020-01-30 12:54:46', '', 'Оклейка витрин и офисных перегородок', '', 'publish', 'closed', 'closed', '', '%d0%be%d0%ba%d0%bb%d0%b5%d0%b9%d0%ba%d0%b0-%d0%b2%d0%b8%d1%82%d1%80%d0%b8%d0%bd-%d0%b8-%d0%be%d1%84%d0%b8%d1%81%d0%bd%d1%8b%d1%85-%d0%bf%d0%b5%d1%80%d0%b5%d0%b3%d0%be%d1%80%d0%be%d0%b4%d0%be%d0%ba-2', '', '', '2020-03-23 20:22:36', '2020-03-23 17:22:36', '', 0, 'http://rsht.local/?p=153', 23, 'nav_menu_item', '', 0),
-(154, 1, '2020-01-30 15:54:46', '2020-01-30 12:54:46', '', 'Картины для дома и офиса', '', 'publish', 'closed', 'closed', '', '%d0%ba%d0%b0%d1%80%d1%82%d0%b8%d0%bd%d1%8b-%d0%b4%d0%bb%d1%8f-%d0%b4%d0%be%d0%bc%d0%b0-%d0%b8-%d0%be%d1%84%d0%b8%d1%81%d0%b0-2', '', '', '2020-03-23 20:22:36', '2020-03-23 17:22:36', '', 0, 'http://rsht.local/?p=154', 28, 'nav_menu_item', '', 0),
-(155, 1, '2020-01-30 15:54:46', '2020-01-30 12:54:46', '', 'Лазерная резка', '', 'publish', 'closed', 'closed', '', '%d0%bb%d0%b0%d0%b7%d0%b5%d1%80%d0%bd%d0%b0%d1%8f-%d1%80%d0%b5%d0%b7%d0%ba%d0%b0-2', '', '', '2020-03-23 20:22:36', '2020-03-23 17:22:36', '', 0, 'http://rsht.local/?p=155', 15, 'nav_menu_item', '', 0),
-(156, 1, '2020-01-30 15:54:46', '2020-01-30 12:54:46', '', 'Информационные стенды', '', 'publish', 'closed', 'closed', '', '%d0%b8%d0%bd%d1%84%d0%be%d1%80%d0%bc%d0%b0%d1%86%d0%b8%d0%be%d0%bd%d0%bd%d1%8b%d0%b5-%d1%81%d1%82%d0%b5%d0%bd%d0%b4%d1%8b-2', '', '', '2020-03-23 20:22:36', '2020-03-23 17:22:36', '', 0, 'http://rsht.local/?p=156', 32, 'nav_menu_item', '', 0),
-(157, 1, '2020-01-30 15:54:46', '2020-01-30 12:54:46', '', 'Разработка дизайн-макетов', '', 'publish', 'closed', 'closed', '', '%d1%80%d0%b0%d0%b7%d1%80%d0%b0%d0%b1%d0%be%d1%82%d0%ba%d0%b0-%d0%b4%d0%b8%d0%b7%d0%b0%d0%b9%d0%bd-%d0%bc%d0%b0%d0%ba%d0%b5%d1%82%d0%be%d0%b2-2', '', '', '2020-03-23 20:22:36', '2020-03-23 17:22:36', '', 0, 'http://rsht.local/?p=157', 35, 'nav_menu_item', '', 0),
-(158, 1, '2020-01-30 15:54:46', '2020-01-30 12:54:46', '', 'Услуги', '', 'publish', 'closed', 'closed', '', '%d1%83%d1%81%d0%bb%d1%83%d0%b3%d0%b8-2', '', '', '2020-03-23 20:22:36', '2020-03-23 17:22:36', '', 0, 'http://rsht.local/?p=158', 36, 'nav_menu_item', '', 0),
-(160, 1, '2020-01-30 15:54:46', '2020-01-30 12:54:46', '', 'Портфолио', '', 'publish', 'closed', 'closed', '', '%d0%bf%d0%be%d1%80%d1%82%d1%84%d0%be%d0%bb%d0%b8%d0%be-2', '', '', '2020-03-23 20:22:36', '2020-03-23 17:22:36', '', 0, 'http://rsht.local/?p=160', 38, 'nav_menu_item', '', 0),
-(161, 1, '2020-01-30 15:54:46', '2020-01-30 12:54:46', '', 'Оплата и доставка', '', 'publish', 'closed', 'closed', '', '%d0%be%d0%bf%d0%bb%d0%b0%d1%82%d0%b0-%d0%b8-%d0%b4%d0%be%d1%81%d1%82%d0%b0%d0%b2%d0%ba%d0%b0-2', '', '', '2020-03-23 20:22:36', '2020-03-23 17:22:36', '', 0, 'http://rsht.local/?p=161', 39, 'nav_menu_item', '', 0),
-(162, 1, '2020-01-30 15:54:46', '2020-01-30 12:54:46', '', 'Статьи', '', 'publish', 'closed', 'closed', '', '%d1%81%d1%82%d0%b0%d1%82%d1%8c%d0%b8-2', '', '', '2020-03-23 20:22:36', '2020-03-23 17:22:36', '', 0, 'http://rsht.local/?p=162', 40, 'nav_menu_item', '', 0),
+(144, 1, '2020-01-30 15:52:09', '2020-01-30 12:52:09', '', 'Вывески', '', 'publish', 'closed', 'closed', '', '%d0%b2%d1%8b%d0%b2%d0%b5%d1%81%d0%ba%d0%b8-2', '', '', '2020-03-25 17:55:47', '2020-03-25 14:55:47', '', 0, 'http://rsht.local/?p=144', 1, 'nav_menu_item', '', 0),
+(145, 1, '2020-01-30 15:52:09', '2020-01-30 12:52:09', '', 'Световые панели', '', 'publish', 'closed', 'closed', '', '%d1%81%d0%b2%d0%b5%d1%82%d0%be%d0%b2%d1%8b%d0%b5-%d0%bf%d0%b0%d0%bd%d0%b5%d0%bb%d0%b8-2', '', '', '2020-03-25 17:55:47', '2020-03-25 14:55:47', '', 0, 'http://rsht.local/?p=145', 6, 'nav_menu_item', '', 0),
+(146, 1, '2020-01-30 15:52:09', '2020-01-30 12:52:09', '', 'Широкоформатная печать', '', 'publish', 'closed', 'closed', '', '%d1%88%d0%b8%d1%80%d0%be%d0%ba%d0%be%d1%84%d0%be%d1%80%d0%bc%d0%b0%d1%82%d0%bd%d0%b0%d1%8f-%d0%bf%d0%b5%d1%87%d0%b0%d1%82%d1%8c-2', '', '', '2020-03-25 17:55:47', '2020-03-25 14:55:47', '', 0, 'http://rsht.local/?p=146', 10, 'nav_menu_item', '', 0),
+(147, 1, '2020-01-30 15:52:09', '2020-01-30 12:52:09', '', 'Пресс волл', '', 'publish', 'closed', 'closed', '', '%d0%bf%d1%80%d0%b5%d1%81%d1%81-%d0%b2%d0%be%d0%bb%d0%bb-2', '', '', '2020-03-25 17:55:47', '2020-03-25 14:55:47', '', 0, 'http://rsht.local/?p=147', 17, 'nav_menu_item', '', 0),
+(148, 1, '2020-01-30 15:52:09', '2020-01-30 12:52:09', '', 'Фотозона', '', 'publish', 'closed', 'closed', '', '%d1%84%d0%be%d1%82%d0%be%d0%b7%d0%be%d0%bd%d0%b0-2', '', '', '2020-03-25 17:55:47', '2020-03-25 14:55:47', '', 0, 'http://rsht.local/?p=148', 18, 'nav_menu_item', '', 0),
+(149, 1, '2020-01-30 15:52:09', '2020-01-30 12:52:09', '', 'Баннерные стенды', '', 'publish', 'closed', 'closed', '', '%d0%b1%d0%b0%d0%bd%d0%bd%d0%b5%d1%80%d0%bd%d1%8b%d0%b5-%d1%81%d1%82%d0%b5%d0%bd%d0%b4%d1%8b-2', '', '', '2020-03-25 17:55:47', '2020-03-25 14:55:47', '', 0, 'http://rsht.local/?p=149', 19, 'nav_menu_item', '', 0),
+(150, 1, '2020-01-30 15:52:09', '2020-01-30 12:52:09', '', 'Ролл ап', '', 'publish', 'closed', 'closed', '', '%d1%80%d0%be%d0%bb%d0%bb-%d0%b0%d0%bf-2', '', '', '2020-03-25 17:55:47', '2020-03-25 14:55:47', '', 0, 'http://rsht.local/?p=150', 20, 'nav_menu_item', '', 0),
+(151, 1, '2020-01-30 15:52:09', '2020-01-30 12:52:09', '', 'Ростовые фигуры', '', 'publish', 'closed', 'closed', '', '%d1%80%d0%be%d1%81%d1%82%d0%be%d0%b2%d1%8b%d0%b5-%d1%84%d0%b8%d0%b3%d1%83%d1%80%d1%8b-2', '', '', '2020-03-25 17:55:47', '2020-03-25 14:55:47', '', 0, 'http://rsht.local/?p=151', 21, 'nav_menu_item', '', 0),
+(152, 1, '2020-01-30 15:52:09', '2020-01-30 12:52:09', '', 'Брендирование транспорта', '', 'publish', 'closed', 'closed', '', '%d0%b1%d1%80%d0%b5%d0%bd%d0%b4%d0%b8%d1%80%d0%be%d0%b2%d0%b0%d0%bd%d0%b8%d0%b5-%d1%82%d1%80%d0%b0%d0%bd%d1%81%d0%bf%d0%be%d1%80%d1%82%d0%b0-2', '', '', '2020-03-25 17:55:47', '2020-03-25 14:55:47', '', 0, 'http://rsht.local/?p=152', 22, 'nav_menu_item', '', 0),
+(153, 1, '2020-01-30 15:54:46', '2020-01-30 12:54:46', '', 'Оклейка витрин и офисных перегородок', '', 'publish', 'closed', 'closed', '', '%d0%be%d0%ba%d0%bb%d0%b5%d0%b9%d0%ba%d0%b0-%d0%b2%d0%b8%d1%82%d1%80%d0%b8%d0%bd-%d0%b8-%d0%be%d1%84%d0%b8%d1%81%d0%bd%d1%8b%d1%85-%d0%bf%d0%b5%d1%80%d0%b5%d0%b3%d0%be%d1%80%d0%be%d0%b4%d0%be%d0%ba-2', '', '', '2020-03-25 17:55:47', '2020-03-25 14:55:47', '', 0, 'http://rsht.local/?p=153', 23, 'nav_menu_item', '', 0),
+(154, 1, '2020-01-30 15:54:46', '2020-01-30 12:54:46', '', 'Картины для дома и офиса', '', 'publish', 'closed', 'closed', '', '%d0%ba%d0%b0%d1%80%d1%82%d0%b8%d0%bd%d1%8b-%d0%b4%d0%bb%d1%8f-%d0%b4%d0%be%d0%bc%d0%b0-%d0%b8-%d0%be%d1%84%d0%b8%d1%81%d0%b0-2', '', '', '2020-03-25 17:55:47', '2020-03-25 14:55:47', '', 0, 'http://rsht.local/?p=154', 28, 'nav_menu_item', '', 0),
+(155, 1, '2020-01-30 15:54:46', '2020-01-30 12:54:46', '', 'Лазерная резка', '', 'publish', 'closed', 'closed', '', '%d0%bb%d0%b0%d0%b7%d0%b5%d1%80%d0%bd%d0%b0%d1%8f-%d1%80%d0%b5%d0%b7%d0%ba%d0%b0-2', '', '', '2020-03-25 17:55:47', '2020-03-25 14:55:47', '', 0, 'http://rsht.local/?p=155', 15, 'nav_menu_item', '', 0),
+(156, 1, '2020-01-30 15:54:46', '2020-01-30 12:54:46', '', 'Информационные стенды', '', 'publish', 'closed', 'closed', '', '%d0%b8%d0%bd%d1%84%d0%be%d1%80%d0%bc%d0%b0%d1%86%d0%b8%d0%be%d0%bd%d0%bd%d1%8b%d0%b5-%d1%81%d1%82%d0%b5%d0%bd%d0%b4%d1%8b-2', '', '', '2020-03-25 17:55:47', '2020-03-25 14:55:47', '', 0, 'http://rsht.local/?p=156', 32, 'nav_menu_item', '', 0),
+(157, 1, '2020-01-30 15:54:46', '2020-01-30 12:54:46', '', 'Разработка дизайн-макетов', '', 'publish', 'closed', 'closed', '', '%d1%80%d0%b0%d0%b7%d1%80%d0%b0%d0%b1%d0%be%d1%82%d0%ba%d0%b0-%d0%b4%d0%b8%d0%b7%d0%b0%d0%b9%d0%bd-%d0%bc%d0%b0%d0%ba%d0%b5%d1%82%d0%be%d0%b2-2', '', '', '2020-03-25 17:55:47', '2020-03-25 14:55:47', '', 0, 'http://rsht.local/?p=157', 35, 'nav_menu_item', '', 0),
+(158, 1, '2020-01-30 15:54:46', '2020-01-30 12:54:46', '', 'Услуги', '', 'publish', 'closed', 'closed', '', '%d1%83%d1%81%d0%bb%d1%83%d0%b3%d0%b8-2', '', '', '2020-03-25 17:55:47', '2020-03-25 14:55:47', '', 0, 'http://rsht.local/?p=158', 36, 'nav_menu_item', '', 0),
+(160, 1, '2020-01-30 15:54:46', '2020-01-30 12:54:46', '', 'Портфолио', '', 'publish', 'closed', 'closed', '', '%d0%bf%d0%be%d1%80%d1%82%d1%84%d0%be%d0%bb%d0%b8%d0%be-2', '', '', '2020-03-25 17:55:47', '2020-03-25 14:55:47', '', 0, 'http://rsht.local/?p=160', 38, 'nav_menu_item', '', 0),
+(161, 1, '2020-01-30 15:54:46', '2020-01-30 12:54:46', '', 'Оплата и доставка', '', 'publish', 'closed', 'closed', '', '%d0%be%d0%bf%d0%bb%d0%b0%d1%82%d0%b0-%d0%b8-%d0%b4%d0%be%d1%81%d1%82%d0%b0%d0%b2%d0%ba%d0%b0-2', '', '', '2020-03-25 17:55:47', '2020-03-25 14:55:47', '', 0, 'http://rsht.local/?p=161', 39, 'nav_menu_item', '', 0),
+(162, 1, '2020-01-30 15:54:46', '2020-01-30 12:54:46', '', 'Статьи', '', 'publish', 'closed', 'closed', '', '%d1%81%d1%82%d0%b0%d1%82%d1%8c%d0%b8-2', '', '', '2020-03-25 17:55:47', '2020-03-25 14:55:47', '', 0, 'http://rsht.local/?p=162', 40, 'nav_menu_item', '', 0),
 (166, 1, '2020-02-02 15:04:58', '2020-02-02 12:04:58', '', 'velostrana', '', 'publish', 'closed', 'closed', '', 'velostrana', '', '', '2020-02-02 15:04:58', '2020-02-02 12:04:58', '', 0, 'http://rek.local/?post_type=slick_slider&#038;p=166', 0, 'slick_slider', '', 0),
 (167, 1, '2020-02-02 15:04:36', '2020-02-02 12:04:36', '', 'azimut', '', 'inherit', 'open', 'closed', '', 'azimut', '', '', '2020-02-02 15:04:36', '2020-02-02 12:04:36', '', 166, 'http://rek.local/wp-content/uploads/2020/02/azimut.png', 0, 'attachment', 'image/png', 0),
 (168, 1, '2020-02-02 15:04:36', '2020-02-02 12:04:36', '', 'botsadmgu', '', 'inherit', 'open', 'closed', '', 'botsadmgu', '', '', '2020-02-02 15:04:36', '2020-02-02 12:04:36', '', 166, 'http://rek.local/wp-content/uploads/2020/02/botsadmgu.png', 0, 'attachment', 'image/png', 0),
@@ -1882,26 +2112,26 @@ INSERT INTO `wp_posts` (`ID`, `post_author`, `post_date`, `post_date_gmt`, `post
 (228, 1, '2020-02-13 08:58:08', '2020-02-13 05:58:08', '', '1_800x600-lion5', '', 'inherit', 'open', 'closed', '', '1_800x600-lion5', '', '', '2020-02-13 08:58:08', '2020-02-13 05:58:08', '', 0, 'http://rek.local/wp-content/uploads/2020/02/1_800x600-lion5.jpg', 0, 'attachment', 'image/jpeg', 0),
 (229, 1, '2020-02-13 08:58:08', '2020-02-13 05:58:08', '', '1_800x600-maria_poz', '', 'inherit', 'open', 'closed', '', '1_800x600-maria_poz', '', '', '2020-02-13 08:58:08', '2020-02-13 05:58:08', '', 0, 'http://rek.local/wp-content/uploads/2020/02/1_800x600-maria_poz.jpg', 0, 'attachment', 'image/jpeg', 0),
 (230, 1, '2020-02-13 08:58:09', '2020-02-13 05:58:09', '', '11_800x600_infostend6', '', 'inherit', 'open', 'closed', '', '11_800x600_infostend6', '', '', '2020-02-13 08:58:09', '2020-02-13 05:58:09', '', 0, 'http://rek.local/wp-content/uploads/2020/02/11_800x600_infostend6.jpg', 0, 'attachment', 'image/jpeg', 0),
-(232, 1, '2020-02-13 10:22:38', '2020-02-13 07:22:38', '', 'Световые объемные буквы для уличных вывесок', '', 'publish', 'closed', 'closed', '', '%d1%81%d0%b2%d0%b5%d1%82%d0%be%d0%b2%d1%8b%d0%b5-%d0%be%d0%b1%d1%8a%d0%b5%d0%bc%d0%bd%d1%8b%d0%b5-%d0%b1%d1%83%d0%ba%d0%b2%d1%8b-%d0%b4%d0%bb%d1%8f-%d1%83%d0%bb%d0%b8%d1%87%d0%bd%d1%8b%d1%85-%d0%b2-2', '', '', '2020-03-23 20:22:36', '2020-03-23 17:22:36', '', 0, 'http://rsht.local/?p=232', 2, 'nav_menu_item', '', 0),
-(233, 1, '2020-02-13 10:22:38', '2020-02-13 07:22:38', '', 'Интерьерные вывески', '', 'publish', 'closed', 'closed', '', '%d0%b8%d0%bd%d1%82%d0%b5%d1%80%d1%8c%d0%b5%d1%80%d0%bd%d1%8b%d0%b5-%d0%b2%d1%8b%d0%b2%d0%b5%d1%81%d0%ba%d0%b8-2', '', '', '2020-03-23 20:22:36', '2020-03-23 17:22:36', '', 0, 'http://rsht.local/?p=233', 3, 'nav_menu_item', '', 0),
-(234, 1, '2020-02-13 10:22:38', '2020-02-13 07:22:38', '', 'Аптечные кресты', '', 'publish', 'closed', 'closed', '', '%d0%b0%d0%bf%d1%82%d0%b5%d1%87%d0%bd%d1%8b%d0%b5-%d0%ba%d1%80%d0%b5%d1%81%d1%82%d1%8b-2', '', '', '2020-03-23 20:22:36', '2020-03-23 17:22:36', '', 0, 'http://rsht.local/?p=234', 4, 'nav_menu_item', '', 0),
-(235, 1, '2020-02-13 10:22:38', '2020-02-13 07:22:38', '', 'Панель-кронштейны', '', 'publish', 'closed', 'closed', '', '%d0%bf%d0%b0%d0%bd%d0%b5%d0%bb%d1%8c-%d0%ba%d1%80%d0%be%d0%bd%d1%88%d1%82%d0%b5%d0%b9%d0%bd%d1%8b-2', '', '', '2020-03-23 20:22:36', '2020-03-23 17:22:36', '', 0, 'http://rsht.local/?p=235', 5, 'nav_menu_item', '', 0),
-(236, 1, '2020-02-13 10:24:38', '2020-02-13 07:24:38', '', 'Магнитные', '', 'publish', 'closed', 'closed', '', '%d0%bc%d0%b0%d0%b3%d0%bd%d0%b8%d1%82%d0%bd%d1%8b%d0%b5-2', '', '', '2020-03-23 20:22:36', '2020-03-23 17:22:36', '', 0, 'http://rsht.local/?p=236', 7, 'nav_menu_item', '', 0),
-(237, 1, '2020-02-13 10:24:38', '2020-02-13 07:24:38', '', 'С клик профилем', '', 'publish', 'closed', 'closed', '', '%d1%81-%d0%ba%d0%bb%d0%b8%d0%ba-%d0%bf%d1%80%d0%be%d1%84%d0%b8%d0%bb%d0%b5%d0%bc-2', '', '', '2020-03-23 20:22:36', '2020-03-23 17:22:36', '', 0, 'http://rsht.local/?p=237', 8, 'nav_menu_item', '', 0),
-(238, 1, '2020-02-13 10:24:38', '2020-02-13 07:24:38', '', 'Безрамочные', '', 'publish', 'closed', 'closed', '', '%d0%b1%d0%b5%d0%b7%d1%80%d0%b0%d0%bc%d0%be%d1%87%d0%bd%d1%8b%d0%b5-2', '', '', '2020-03-23 20:22:36', '2020-03-23 17:22:36', '', 0, 'http://rsht.local/?p=238', 9, 'nav_menu_item', '', 0),
-(239, 1, '2020-02-13 10:25:58', '2020-02-13 07:25:58', '', 'На баннере, плёнке, фотобумаге', '', 'publish', 'closed', 'closed', '', '%d0%bd%d0%b0-%d0%b1%d0%b0%d0%bd%d0%bd%d0%b5%d1%80%d0%b5-%d0%bf%d0%bb%d1%91%d0%bd%d0%ba%d0%b5-%d1%84%d0%be%d1%82%d0%be%d0%b1%d1%83%d0%bc%d0%b0%d0%b3%d0%b5-2', '', '', '2020-03-23 20:22:36', '2020-03-23 17:22:36', '', 0, 'http://rsht.local/?p=239', 11, 'nav_menu_item', '', 0),
-(240, 1, '2020-02-13 10:25:58', '2020-02-13 07:25:58', '', 'Ламинация и прикатка', '', 'publish', 'closed', 'closed', '', '%d0%bb%d0%b0%d0%bc%d0%b8%d0%bd%d0%b0%d1%86%d0%b8%d1%8f-%d0%b8-%d0%bf%d1%80%d0%b8%d0%ba%d0%b0%d1%82%d0%ba%d0%b0-2', '', '', '2020-03-23 20:22:36', '2020-03-23 17:22:36', '', 0, 'http://rsht.local/?p=240', 12, 'nav_menu_item', '', 0),
-(241, 1, '2020-02-13 10:25:58', '2020-02-13 07:25:58', '', 'Плоттерная резка', '', 'publish', 'closed', 'closed', '', '%d0%bf%d0%bb%d0%be%d1%82%d1%82%d0%b5%d1%80%d0%bd%d0%b0%d1%8f-%d1%80%d0%b5%d0%b7%d0%ba%d0%b0-2', '', '', '2020-03-23 20:22:36', '2020-03-23 17:22:36', '', 0, 'http://rsht.local/?p=241', 13, 'nav_menu_item', '', 0),
-(242, 1, '2020-02-13 10:25:58', '2020-02-13 07:25:58', '', 'Плакаты и постеры', '', 'publish', 'closed', 'closed', '', '%d0%bf%d0%bb%d0%b0%d0%ba%d0%b0%d1%82%d1%8b-%d0%b8-%d0%bf%d0%be%d1%81%d1%82%d0%b5%d1%80%d1%8b-2', '', '', '2020-03-23 20:22:36', '2020-03-23 17:22:36', '', 0, 'http://rsht.local/?p=242', 14, 'nav_menu_item', '', 0),
-(243, 1, '2020-02-13 10:28:23', '2020-02-13 07:28:23', '', 'Штендеры', '', 'publish', 'closed', 'closed', '', '%d1%88%d1%82%d0%b5%d0%bd%d0%b4%d0%b5%d1%80%d1%8b-2', '', '', '2020-03-23 20:22:36', '2020-03-23 17:22:36', '', 0, 'http://rsht.local/?p=243', 24, 'nav_menu_item', '', 0),
-(244, 1, '2020-02-13 10:28:23', '2020-02-13 07:28:23', '', 'Прямой и круглый', '', 'publish', 'closed', 'closed', '', '%d0%bf%d1%80%d1%8f%d0%bc%d0%be%d0%b9-%d0%b8-%d0%ba%d1%80%d1%83%d0%b3%d0%bb%d1%8b%d0%b9-2', '', '', '2020-03-23 20:22:36', '2020-03-23 17:22:36', '', 0, 'http://rsht.local/?p=244', 25, 'nav_menu_item', '', 0),
-(245, 1, '2020-02-13 10:28:23', '2020-02-13 07:28:23', '', 'Меловой и маркерный', '', 'publish', 'closed', 'closed', '', '%d0%bc%d0%b5%d0%bb%d0%be%d0%b2%d0%be%d0%b9-%d0%b8-%d0%bc%d0%b0%d1%80%d0%ba%d0%b5%d1%80%d0%bd%d1%8b%d0%b9-2', '', '', '2020-03-23 20:22:36', '2020-03-23 17:22:36', '', 0, 'http://rsht.local/?p=245', 26, 'nav_menu_item', '', 0),
-(246, 1, '2020-02-13 10:28:23', '2020-02-13 07:28:23', '', 'Нестандартные штендеры', '', 'publish', 'closed', 'closed', '', '%d0%bd%d0%b5%d1%81%d1%82%d0%b0%d0%bd%d0%b4%d0%b0%d1%80%d1%82%d0%bd%d1%8b%d0%b5-%d1%88%d1%82%d0%b5%d0%bd%d0%b4%d0%b5%d1%80%d1%8b-2', '', '', '2020-03-23 20:22:36', '2020-03-23 17:22:36', '', 0, 'http://rsht.local/?p=246', 27, 'nav_menu_item', '', 0),
-(247, 1, '2020-02-13 10:28:23', '2020-02-13 07:28:23', '', 'Модульные картины', '', 'publish', 'closed', 'closed', '', '%d0%bc%d0%be%d0%b4%d1%83%d0%bb%d1%8c%d0%bd%d1%8b%d0%b5-%d0%ba%d0%b0%d1%80%d1%82%d0%b8%d0%bd%d1%8b-2', '', '', '2020-03-23 20:22:36', '2020-03-23 17:22:36', '', 0, 'http://rsht.local/?p=247', 29, 'nav_menu_item', '', 0),
-(248, 1, '2020-02-13 10:28:23', '2020-02-13 07:28:23', '', 'Для дома', '', 'publish', 'closed', 'closed', '', '%d0%b4%d0%bb%d1%8f-%d0%b4%d0%be%d0%bc%d0%b0-2', '', '', '2020-03-23 20:22:36', '2020-03-23 17:22:36', '', 0, 'http://rsht.local/?p=248', 30, 'nav_menu_item', '', 0),
-(249, 1, '2020-02-13 10:28:23', '2020-02-13 07:28:23', '', 'Для офисов, кафе и ресторанов', '', 'publish', 'closed', 'closed', '', '%d0%b4%d0%bb%d1%8f-%d0%be%d1%84%d0%b8%d1%81%d0%be%d0%b2-%d0%ba%d0%b0%d1%84%d0%b5-%d0%b8-%d1%80%d0%b5%d1%81%d1%82%d0%be%d1%80%d0%b0%d0%bd%d0%be%d0%b2-2', '', '', '2020-03-23 20:22:36', '2020-03-23 17:22:36', '', 0, 'http://rsht.local/?p=249', 31, 'nav_menu_item', '', 0),
-(250, 1, '2020-02-13 10:29:02', '2020-02-13 07:29:02', '', 'С плоскими и объемными карманами', '', 'publish', 'closed', 'closed', '', '%d1%81-%d0%bf%d0%bb%d0%be%d1%81%d0%ba%d0%b8%d0%bc%d0%b8-%d0%b8-%d0%be%d0%b1%d1%8a%d0%b5%d0%bc%d0%bd%d1%8b%d0%bc%d0%b8-%d0%ba%d0%b0%d1%80%d0%bc%d0%b0%d0%bd%d0%b0%d0%bc%d0%b8-2', '', '', '2020-03-23 20:22:36', '2020-03-23 17:22:36', '', 0, 'http://rsht.local/?p=250', 33, 'nav_menu_item', '', 0),
-(251, 1, '2020-02-13 10:29:02', '2020-02-13 07:29:02', '', 'Режим работы', '', 'publish', 'closed', 'closed', '', '%d1%80%d0%b5%d0%b6%d0%b8%d0%bc-%d1%80%d0%b0%d0%b1%d0%be%d1%82%d1%8b-2', '', '', '2020-03-23 20:22:36', '2020-03-23 17:22:36', '', 0, 'http://rsht.local/?p=251', 34, 'nav_menu_item', '', 0),
+(232, 1, '2020-02-13 10:22:38', '2020-02-13 07:22:38', '', 'Световые объемные буквы для уличных вывесок', '', 'publish', 'closed', 'closed', '', '%d1%81%d0%b2%d0%b5%d1%82%d0%be%d0%b2%d1%8b%d0%b5-%d0%be%d0%b1%d1%8a%d0%b5%d0%bc%d0%bd%d1%8b%d0%b5-%d0%b1%d1%83%d0%ba%d0%b2%d1%8b-%d0%b4%d0%bb%d1%8f-%d1%83%d0%bb%d0%b8%d1%87%d0%bd%d1%8b%d1%85-%d0%b2-2', '', '', '2020-03-25 17:55:47', '2020-03-25 14:55:47', '', 0, 'http://rsht.local/?p=232', 2, 'nav_menu_item', '', 0),
+(233, 1, '2020-02-13 10:22:38', '2020-02-13 07:22:38', '', 'Интерьерные вывески', '', 'publish', 'closed', 'closed', '', '%d0%b8%d0%bd%d1%82%d0%b5%d1%80%d1%8c%d0%b5%d1%80%d0%bd%d1%8b%d0%b5-%d0%b2%d1%8b%d0%b2%d0%b5%d1%81%d0%ba%d0%b8-2', '', '', '2020-03-25 17:55:47', '2020-03-25 14:55:47', '', 0, 'http://rsht.local/?p=233', 3, 'nav_menu_item', '', 0),
+(234, 1, '2020-02-13 10:22:38', '2020-02-13 07:22:38', '', 'Аптечные кресты', '', 'publish', 'closed', 'closed', '', '%d0%b0%d0%bf%d1%82%d0%b5%d1%87%d0%bd%d1%8b%d0%b5-%d0%ba%d1%80%d0%b5%d1%81%d1%82%d1%8b-2', '', '', '2020-03-25 17:55:47', '2020-03-25 14:55:47', '', 0, 'http://rsht.local/?p=234', 4, 'nav_menu_item', '', 0),
+(235, 1, '2020-02-13 10:22:38', '2020-02-13 07:22:38', '', 'Панель-кронштейны', '', 'publish', 'closed', 'closed', '', '%d0%bf%d0%b0%d0%bd%d0%b5%d0%bb%d1%8c-%d0%ba%d1%80%d0%be%d0%bd%d1%88%d1%82%d0%b5%d0%b9%d0%bd%d1%8b-2', '', '', '2020-03-25 17:55:47', '2020-03-25 14:55:47', '', 0, 'http://rsht.local/?p=235', 5, 'nav_menu_item', '', 0),
+(236, 1, '2020-02-13 10:24:38', '2020-02-13 07:24:38', '', 'Магнитные', '', 'publish', 'closed', 'closed', '', '%d0%bc%d0%b0%d0%b3%d0%bd%d0%b8%d1%82%d0%bd%d1%8b%d0%b5-2', '', '', '2020-03-25 17:55:47', '2020-03-25 14:55:47', '', 0, 'http://rsht.local/?p=236', 7, 'nav_menu_item', '', 0),
+(237, 1, '2020-02-13 10:24:38', '2020-02-13 07:24:38', '', 'С клик профилем', '', 'publish', 'closed', 'closed', '', '%d1%81-%d0%ba%d0%bb%d0%b8%d0%ba-%d0%bf%d1%80%d0%be%d1%84%d0%b8%d0%bb%d0%b5%d0%bc-2', '', '', '2020-03-25 17:55:47', '2020-03-25 14:55:47', '', 0, 'http://rsht.local/?p=237', 8, 'nav_menu_item', '', 0),
+(238, 1, '2020-02-13 10:24:38', '2020-02-13 07:24:38', '', 'Безрамочные', '', 'publish', 'closed', 'closed', '', '%d0%b1%d0%b5%d0%b7%d1%80%d0%b0%d0%bc%d0%be%d1%87%d0%bd%d1%8b%d0%b5-2', '', '', '2020-03-25 17:55:47', '2020-03-25 14:55:47', '', 0, 'http://rsht.local/?p=238', 9, 'nav_menu_item', '', 0),
+(239, 1, '2020-02-13 10:25:58', '2020-02-13 07:25:58', '', 'На баннере, плёнке, фотобумаге', '', 'publish', 'closed', 'closed', '', '%d0%bd%d0%b0-%d0%b1%d0%b0%d0%bd%d0%bd%d0%b5%d1%80%d0%b5-%d0%bf%d0%bb%d1%91%d0%bd%d0%ba%d0%b5-%d1%84%d0%be%d1%82%d0%be%d0%b1%d1%83%d0%bc%d0%b0%d0%b3%d0%b5-2', '', '', '2020-03-25 17:55:47', '2020-03-25 14:55:47', '', 0, 'http://rsht.local/?p=239', 11, 'nav_menu_item', '', 0),
+(240, 1, '2020-02-13 10:25:58', '2020-02-13 07:25:58', '', 'Ламинация и прикатка', '', 'publish', 'closed', 'closed', '', '%d0%bb%d0%b0%d0%bc%d0%b8%d0%bd%d0%b0%d1%86%d0%b8%d1%8f-%d0%b8-%d0%bf%d1%80%d0%b8%d0%ba%d0%b0%d1%82%d0%ba%d0%b0-2', '', '', '2020-03-25 17:55:47', '2020-03-25 14:55:47', '', 0, 'http://rsht.local/?p=240', 12, 'nav_menu_item', '', 0),
+(241, 1, '2020-02-13 10:25:58', '2020-02-13 07:25:58', '', 'Плоттерная резка', '', 'publish', 'closed', 'closed', '', '%d0%bf%d0%bb%d0%be%d1%82%d1%82%d0%b5%d1%80%d0%bd%d0%b0%d1%8f-%d1%80%d0%b5%d0%b7%d0%ba%d0%b0-2', '', '', '2020-03-25 17:55:47', '2020-03-25 14:55:47', '', 0, 'http://rsht.local/?p=241', 13, 'nav_menu_item', '', 0),
+(242, 1, '2020-02-13 10:25:58', '2020-02-13 07:25:58', '', 'Плакаты и постеры', '', 'publish', 'closed', 'closed', '', '%d0%bf%d0%bb%d0%b0%d0%ba%d0%b0%d1%82%d1%8b-%d0%b8-%d0%bf%d0%be%d1%81%d1%82%d0%b5%d1%80%d1%8b-2', '', '', '2020-03-25 17:55:47', '2020-03-25 14:55:47', '', 0, 'http://rsht.local/?p=242', 14, 'nav_menu_item', '', 0),
+(243, 1, '2020-02-13 10:28:23', '2020-02-13 07:28:23', '', 'Штендеры', '', 'publish', 'closed', 'closed', '', '%d1%88%d1%82%d0%b5%d0%bd%d0%b4%d0%b5%d1%80%d1%8b-2', '', '', '2020-03-25 17:55:47', '2020-03-25 14:55:47', '', 0, 'http://rsht.local/?p=243', 24, 'nav_menu_item', '', 0),
+(244, 1, '2020-02-13 10:28:23', '2020-02-13 07:28:23', '', 'Прямой и круглый', '', 'publish', 'closed', 'closed', '', '%d0%bf%d1%80%d1%8f%d0%bc%d0%be%d0%b9-%d0%b8-%d0%ba%d1%80%d1%83%d0%b3%d0%bb%d1%8b%d0%b9-2', '', '', '2020-03-25 17:55:47', '2020-03-25 14:55:47', '', 0, 'http://rsht.local/?p=244', 25, 'nav_menu_item', '', 0),
+(245, 1, '2020-02-13 10:28:23', '2020-02-13 07:28:23', '', 'Меловой и маркерный', '', 'publish', 'closed', 'closed', '', '%d0%bc%d0%b5%d0%bb%d0%be%d0%b2%d0%be%d0%b9-%d0%b8-%d0%bc%d0%b0%d1%80%d0%ba%d0%b5%d1%80%d0%bd%d1%8b%d0%b9-2', '', '', '2020-03-25 17:55:47', '2020-03-25 14:55:47', '', 0, 'http://rsht.local/?p=245', 26, 'nav_menu_item', '', 0),
+(246, 1, '2020-02-13 10:28:23', '2020-02-13 07:28:23', '', 'Нестандартные штендеры', '', 'publish', 'closed', 'closed', '', '%d0%bd%d0%b5%d1%81%d1%82%d0%b0%d0%bd%d0%b4%d0%b0%d1%80%d1%82%d0%bd%d1%8b%d0%b5-%d1%88%d1%82%d0%b5%d0%bd%d0%b4%d0%b5%d1%80%d1%8b-2', '', '', '2020-03-25 17:55:47', '2020-03-25 14:55:47', '', 0, 'http://rsht.local/?p=246', 27, 'nav_menu_item', '', 0),
+(247, 1, '2020-02-13 10:28:23', '2020-02-13 07:28:23', '', 'Модульные картины', '', 'publish', 'closed', 'closed', '', '%d0%bc%d0%be%d0%b4%d1%83%d0%bb%d1%8c%d0%bd%d1%8b%d0%b5-%d0%ba%d0%b0%d1%80%d1%82%d0%b8%d0%bd%d1%8b-2', '', '', '2020-03-25 17:55:47', '2020-03-25 14:55:47', '', 0, 'http://rsht.local/?p=247', 29, 'nav_menu_item', '', 0),
+(248, 1, '2020-02-13 10:28:23', '2020-02-13 07:28:23', '', 'Для дома', '', 'publish', 'closed', 'closed', '', '%d0%b4%d0%bb%d1%8f-%d0%b4%d0%be%d0%bc%d0%b0-2', '', '', '2020-03-25 17:55:47', '2020-03-25 14:55:47', '', 0, 'http://rsht.local/?p=248', 30, 'nav_menu_item', '', 0),
+(249, 1, '2020-02-13 10:28:23', '2020-02-13 07:28:23', '', 'Для офисов, кафе и ресторанов', '', 'publish', 'closed', 'closed', '', '%d0%b4%d0%bb%d1%8f-%d0%be%d1%84%d0%b8%d1%81%d0%be%d0%b2-%d0%ba%d0%b0%d1%84%d0%b5-%d0%b8-%d1%80%d0%b5%d1%81%d1%82%d0%be%d1%80%d0%b0%d0%bd%d0%be%d0%b2-2', '', '', '2020-03-25 17:55:47', '2020-03-25 14:55:47', '', 0, 'http://rsht.local/?p=249', 31, 'nav_menu_item', '', 0),
+(250, 1, '2020-02-13 10:29:02', '2020-02-13 07:29:02', '', 'С плоскими и объемными карманами', '', 'publish', 'closed', 'closed', '', '%d1%81-%d0%bf%d0%bb%d0%be%d1%81%d0%ba%d0%b8%d0%bc%d0%b8-%d0%b8-%d0%be%d0%b1%d1%8a%d0%b5%d0%bc%d0%bd%d1%8b%d0%bc%d0%b8-%d0%ba%d0%b0%d1%80%d0%bc%d0%b0%d0%bd%d0%b0%d0%bc%d0%b8-2', '', '', '2020-03-25 17:55:47', '2020-03-25 14:55:47', '', 0, 'http://rsht.local/?p=250', 33, 'nav_menu_item', '', 0),
+(251, 1, '2020-02-13 10:29:02', '2020-02-13 07:29:02', '', 'Режим работы', '', 'publish', 'closed', 'closed', '', '%d1%80%d0%b5%d0%b6%d0%b8%d0%bc-%d1%80%d0%b0%d0%b1%d0%be%d1%82%d1%8b-2', '', '', '2020-03-25 17:55:47', '2020-03-25 14:55:47', '', 0, 'http://rsht.local/?p=251', 34, 'nav_menu_item', '', 0),
 (254, 1, '2020-02-16 22:37:13', '2020-02-16 19:37:13', '<!-- wp:heading {\"level\":1} -->\n<h1>Политика конфиденциальности </h1>\n<!-- /wp:heading -->\n\n<!-- wp:paragraph -->\n<p>Настоящее Положение о защите персональных данных действует в отношении всей информации, которую рекламное производство РекИдея, может получить о Клиенте во время использования сайта РекИдея.</p>\n<!-- /wp:paragraph -->\n\n<!-- wp:paragraph -->\n<p>Вы можете не предоставлять свои персональные данные (не проходить регистрацию), если вы зашли на сайт РекИдея с ознакомительными целями, чтобы составить впечатление об ассортименте и ценах на товар, представленный на нашем сайте, а также при наличии соответствующего сервиса оценить качество обслуживания Клиентов нашего интернет-магазина.</p>\n<!-- /wp:paragraph -->\n\n<!-- wp:paragraph -->\n<p>Мы просим вас предоставить ваши персональные данные для оформления вами заказа в нашем интернет-магазине. От вас потребуется пройти процедуру регистрации Клиента и/или предоставить менеджеру call-центра свои персональные данные, чтобы мы могли в полном объеме выполнить свои обязательства перед вами по обработке и исполнению заказа.</p>\n<!-- /wp:paragraph -->\n\n<!-- wp:paragraph -->\n<p>Ваши персональные данные могут включать в себя следующую информацию:</p>\n<!-- /wp:paragraph -->\n\n<!-- wp:list -->\n<ul><li>фамилия, имя, отчество;</li><li>контактный телефон;</li><li>адрес электронной почты;</li><li>адрес для доставки заказанных на нашем сайте товаров;</li></ul>\n<!-- /wp:list -->\n\n<!-- wp:paragraph -->\n<p>а также другую информацию, которую вы захотите предоставить любым способом. Предоставляя свои персональные данные, вы соглашаетесь на их обработку в целях исполнения нами своих обязательств перед вами по продаже товаров и оказанию услуг, предоставления вам справочной информации об изменениях в условиях обслуживании Клиентов, о новых продуктах, акциях, промокодах, а также в целях продвижения товаров и услуг.</p>\n<!-- /wp:paragraph -->\n\n<!-- wp:paragraph -->\n<p>При обработке ваших персональных данных мы руководствуется положениями Федерального закона Российской Федерации от 27.07.2006 N 152-ФЗ «О персональных данных», Федерального закона Российской Федерации 27.07.2006 N 149-ФЗ «Об информации, информационных технологиях и о защите информации», а также иными нормативными документами в области защиты и обработки персональных данных.</p>\n<!-- /wp:paragraph -->\n\n<!-- wp:paragraph -->\n<p>Персональная информация, которую мы собираем, позволяет нам оперативно направлять Клиентам уведомления о процессе выполнения нами заказов, об изменениях в условиях продажи, новинках, заметных обновлениях цен, специальных предложениях и других важных событиях. Если вы не желаете быть включенным в наш список рассылки, вы можете в любое время отказаться от получения рассылки путем нажатия ссылки «Отписаться от рассылки» в любом нашем письме (рассылке) либо уведомив о вашем желании перестать получать наши рассылки, направив письмо на почту Службы поддержки покупателей.</p>\n<!-- /wp:paragraph -->\n\n<!-- wp:paragraph -->\n<p>Мы обязуемся не передавать полученную от вас информацию третьим лицам.&nbsp;Не считается нарушением обязательств передача конфиденциальной информации о персональных данных в компетентные органы по надлежащие оформленным запросам в соответствии с требованиями действующего законодательства Российской Федерации.</p>\n<!-- /wp:paragraph -->\n\n<!-- wp:paragraph -->\n<p>При обработке ваших персональных данных мы уделяем большое внимание обеспечению безопасности вашей личной информации. Мы применяем необходимые и достаточные современные технологии в области защиты персональных данных наших Клиентов для ограничения несанкционированного и неправомерного доступа к ним.</p>\n<!-- /wp:paragraph -->\n\n<!-- wp:paragraph -->\n<p>Мы оставляем за собой право вносить изменения в настоящее «Положение о защите персональных данных». Это может быть вызвано изменениями действующего законодательства в области персональных данных, а также в других случаях, для повышения качества обслуживания. Мы обязуемся незамедлительно извещать вас об этом путем опубликования на нашем сайте текста «Положения» с внесенными правками.</p>\n<!-- /wp:paragraph -->\n\n<p><!--EndFragment--><br /><br /></p>', 'Политика конфиденциальности', '', 'inherit', 'closed', 'closed', '', '3-revision-v1', '', '', '2020-02-16 22:37:13', '2020-02-16 19:37:13', '', 3, 'http://rekidea.ru/2020/02/16/3-revision-v1/', 0, 'revision', '', 0),
 (255, 1, '2020-02-17 15:27:44', '2020-02-17 12:27:44', '', 'магнитно-маркерные доски', '', 'publish', 'closed', 'closed', '', 'magnetic-boards', '', '', '2020-02-17 15:27:44', '2020-02-17 12:27:44', '', 0, 'http://rek.local/?page_id=255', 0, 'page', '', 0),
 (256, 1, '2020-02-17 15:27:09', '2020-02-17 12:27:09', '', 'магнитно-маркерные доски', '', 'inherit', 'closed', 'closed', '', '255-revision-v1', '', '', '2020-02-17 15:27:09', '2020-02-17 12:27:09', '', 255, 'http://rek.local/2020/02/17/255-revision-v1/', 0, 'revision', '', 0),
@@ -1911,14 +2141,14 @@ INSERT INTO `wp_posts` (`ID`, `post_author`, `post_date`, `post_date_gmt`, `post
 (272, 1, '2020-02-17 19:03:27', '2020-02-17 16:03:27', '', 'tablichki_4', '', 'inherit', 'open', 'closed', '', 'tablichki_4', '', '', '2020-02-17 19:03:27', '2020-02-17 16:03:27', '', 0, 'http://rek.local/wp-content/uploads/2020/02/tablichki_4.jpg', 0, 'attachment', 'image/jpeg', 0),
 (273, 1, '2020-02-17 19:03:28', '2020-02-17 16:03:28', '', 'tablichki_language', '', 'inherit', 'open', 'closed', '', 'tablichki_language', '', '', '2020-02-17 19:03:28', '2020-02-17 16:03:28', '', 0, 'http://rek.local/wp-content/uploads/2020/02/tablichki_language.jpg', 0, 'attachment', 'image/jpeg', 0),
 (274, 1, '2020-02-18 11:06:07', '2020-02-18 08:06:07', '<div class=\"feedback-field\">\r\n[text* feedback-name placeholder \"Имя\"]\r\n</div>\r\n<div class=\"feedback-field\">\r\n[tel* feedback-phone placeholder \"Телефон\"]\r\n</div>\r\n<div class=\"feedback-field\">\r\n[text message-name placeholder \"Сообщение\"]\r\n</div>\r\n<div class=\"feedback-submit\">\r\n[submit value \"Перезвоните мне\" ]\r\n</div>\r\n<div class=\"private_term_agree\">\r\nНажимая кнопку «Перезвонить мне», я <a href=\"/privacy-policy\">даю свое согласие</a> на обработку персональных данных.\r\n</div>\n1\nRekIdea. Заказ\nRek <info@rekidea.ru>\nrekidea@yandex.ru\nИмя: [feedback-name]\r\nТелефон: [feedback-phone]\r\nСообщение: [message-name]\nReply-To: <info@rekidea.ru>\n\n\n\n\nRekidea \"[your-subject]\"\nRekidea <wordpress@rek.local>\n[your-email]\nСообщение:\r\n[your-message]\r\n\r\n-- \r\nЭто сообщение отправлено с сайта Rekidea (http://rek.local)\nReply-To: swd.admin@mail.ru\n\n\n\nСпасибо. Ваше сообщение отправлено. Менеджер свяжется с вами в ближайшее время\nПри отправке сообщения произошла ошибка. Пожалуйста, попробуйте ещё раз позже.\nОдно или несколько полей содержат ошибочные данные. Пожалуйста, проверьте их и попробуйте ещё раз.\nПри отправке сообщения произошла ошибка. Пожалуйста, попробуйте ещё раз позже.\nВы должны принять условия и положения перед отправкой вашего сообщения.\nПоле обязательно для заполнения.\nПоле слишком длинное.\nПоле слишком короткое.\nФормат даты некорректен.\nВведённая дата слишком далеко в прошлом.\nВведённая дата слишком далеко в будущем.\nПри загрузке файла произошла неизвестная ошибка.\nВам не разрешено загружать файлы этого типа.\nФайл слишком большой.\nПри загрузке файла произошла ошибка.\nФормат числа некорректен.\nЧисло меньше минимально допустимого.\nЧисло больше максимально допустимого.\nНеверный ответ на проверочный вопрос.\nНеверно введён электронный адрес.\nВведён некорректный URL адрес.\nВведён некорректный телефонный номер.', 'order-btn', '', 'publish', 'closed', 'closed', '', 'order-btn', '', '', '2020-02-19 20:23:28', '2020-02-19 17:23:28', '', 0, 'http://rek.local/?post_type=wpcf7_contact_form&#038;p=274', 0, 'wpcf7_contact_form', '', 0),
-(275, 1, '2020-02-19 20:34:06', '2020-02-19 17:34:06', '', 'Магнитно-маркерные доски', '', 'publish', 'closed', 'closed', '', '%d0%bc%d0%b0%d0%b3%d0%bd%d0%b8%d1%82%d0%bd%d0%be-%d0%bc%d0%b0%d1%80%d0%ba%d0%b5%d1%80%d0%bd%d1%8b%d0%b5-%d0%b4%d0%be%d1%81%d0%ba%d0%b8-3', '', '', '2020-03-23 20:22:36', '2020-03-23 17:22:36', '', 0, 'http://rsht.local/?p=275', 16, 'nav_menu_item', '', 0),
+(275, 1, '2020-02-19 20:34:06', '2020-02-19 17:34:06', '', 'Магнитно-маркерные доски', '', 'publish', 'closed', 'closed', '', '%d0%bc%d0%b0%d0%b3%d0%bd%d0%b8%d1%82%d0%bd%d0%be-%d0%bc%d0%b0%d1%80%d0%ba%d0%b5%d1%80%d0%bd%d1%8b%d0%b5-%d0%b4%d0%be%d1%81%d0%ba%d0%b8-3', '', '', '2020-03-25 17:55:47', '2020-03-25 14:55:47', '', 0, 'http://rsht.local/?p=275', 16, 'nav_menu_item', '', 0),
 (276, 1, '2020-02-19 20:34:57', '2020-02-19 17:34:57', '', 'Магнитно-маркерные доски', '', 'publish', 'closed', 'closed', '', '%d0%bc%d0%b0%d0%b3%d0%bd%d0%b8%d1%82%d0%bd%d0%be-%d0%bc%d0%b0%d1%80%d0%ba%d0%b5%d1%80%d0%bd%d1%8b%d0%b5-%d0%b4%d0%be%d1%81%d0%ba%d0%b8-2', '', '', '2020-03-23 20:22:16', '2020-03-23 17:22:16', '', 0, 'http://rsht.local/?p=276', 14, 'nav_menu_item', '', 0),
 (278, 1, '2020-02-27 14:16:50', '2020-02-27 11:16:50', '', 'Цены', '', 'publish', 'closed', 'closed', '', 'price', '', '', '2020-02-27 14:16:50', '2020-02-27 11:16:50', '', 0, 'http://rek.local/?page_id=278', 0, 'page', '', 0),
 (279, 1, '2020-02-27 14:16:42', '2020-02-27 11:16:42', '', 'Цены', '', 'inherit', 'closed', 'closed', '', '278-revision-v1', '', '', '2020-02-27 14:16:42', '2020-02-27 11:16:42', '', 278, 'http://rek.local/2020/02/27/278-revision-v1/', 0, 'revision', '', 0),
 (280, 1, '2020-02-28 15:14:07', '2020-02-28 12:14:07', '', 'Широкоформатная печать', '', 'publish', 'closed', 'closed', '', 'wide-printing', '', '', '2020-02-28 15:14:07', '2020-02-28 12:14:07', '', 0, 'http://rek.local/?page_id=280', 0, 'page', '', 0),
 (281, 1, '2020-02-28 15:13:55', '2020-02-28 12:13:55', '', 'Широкоформатная печать', '', 'inherit', 'closed', 'closed', '', '280-revision-v1', '', '', '2020-02-28 15:13:55', '2020-02-28 12:13:55', '', 280, 'http://rek.local/2020/02/28/280-revision-v1/', 0, 'revision', '', 0),
 (282, 1, '2020-03-01 12:12:56', '2020-03-01 09:12:56', ' ', '', '', 'publish', 'closed', 'closed', '', '282', '', '', '2020-03-23 20:22:16', '2020-03-23 17:22:16', '', 0, 'http://rsht.local/?p=282', 45, 'nav_menu_item', '', 0),
-(283, 1, '2020-03-01 12:13:38', '2020-03-01 09:13:38', ' ', '', '', 'publish', 'closed', 'closed', '', '283', '', '', '2020-03-23 20:22:36', '2020-03-23 17:22:36', '', 0, 'http://rsht.local/?p=283', 37, 'nav_menu_item', '', 0),
+(283, 1, '2020-03-01 12:13:38', '2020-03-01 09:13:38', ' ', '', '', 'publish', 'closed', 'closed', '', '283', '', '', '2020-03-25 17:55:47', '2020-03-25 14:55:47', '', 0, 'http://rsht.local/?p=283', 37, 'nav_menu_item', '', 0),
 (285, 1, '2020-03-07 14:56:58', '2020-03-07 11:56:58', '', 'Плоттерная резка', '', 'publish', 'closed', 'closed', '', 'protter-cutting', '', '', '2020-03-07 14:57:34', '2020-03-07 11:57:34', '', 0, 'http://rsht.local/?page_id=285', 0, 'page', '', 0),
 (286, 1, '2020-03-07 14:56:58', '2020-03-07 11:56:58', '', 'Плоттерная резка', '', 'inherit', 'closed', 'closed', '', '285-revision-v1', '', '', '2020-03-07 14:56:58', '2020-03-07 11:56:58', '', 285, 'http://rsht.local/2020/03/07/285-revision-v1/', 0, 'revision', '', 0),
 (287, 1, '2020-03-07 15:03:02', '2020-03-07 12:03:02', '', 'Плоттерная резка', '', 'inherit', 'closed', 'closed', '', '285-autosave-v1', '', '', '2020-03-07 15:03:02', '2020-03-07 12:03:02', '', 285, 'http://rsht.local/2020/03/07/285-autosave-v1/', 0, 'revision', '', 0),
@@ -1980,10 +2210,11 @@ INSERT INTO `wp_posts` (`ID`, `post_author`, `post_date`, `post_date_gmt`, `post
 (346, 1, '2020-03-20 15:07:38', '2020-03-20 12:07:38', '', '800х600_tablichki_10 (1)', '', 'inherit', 'open', 'closed', '', '800%d1%85600_tablichki_10-1', '', '', '2020-03-20 15:07:38', '2020-03-20 12:07:38', '', 0, 'http://rek.local/wp-content/uploads/2020/03/800х600_tablichki_10-1.jpg', 0, 'attachment', 'image/jpeg', 0),
 (347, 1, '2020-03-22 18:40:20', '2020-03-22 15:40:20', '', 'Контакты', '', 'publish', 'closed', 'closed', '', 'contacts', '', '', '2020-03-22 18:40:20', '2020-03-22 15:40:20', '', 0, 'http://rek.local/?page_id=347', 0, 'page', '', 0),
 (348, 1, '2020-03-22 18:40:03', '2020-03-22 15:40:03', '', 'Контакты', '', 'inherit', 'closed', 'closed', '', '347-revision-v1', '', '', '2020-03-22 18:40:03', '2020-03-22 15:40:03', '', 347, 'http://rek.local/2020/03/22/347-revision-v1/', 0, 'revision', '', 0),
-(349, 1, '2020-03-23 08:44:20', '2020-03-23 05:44:20', '<div class=\"grid\">\r\n\r\n<div class=\"feedback-field\">\r\n[text* feedback-name placeholder \"Имя\"]\r\n</div>\r\n<div class=\"feedback-text\">\r\n[textarea* feedback-text placeholder \"Опишите Ваш запрос\"]\r\n</div>\r\n<div class=\"feedback-field\">\r\n[tel* feedback-phone placeholder \"Телефон\"]\r\n</div>\r\n\r\n<div class=\"feedback-field\">\r\n[text* feedback-name placeholder \"Тема заявки\"]\r\n</div>\r\n</div>\r\n<div class=\"private_term_agree\">\r\nНажимая кнопку «Перезвонить мне», я <a href=\"/privacy-policy\">даю свое согласие</a> на обработку персональных данных.\r\n</div>\r\n\r\n<div class=\"feedback-submit\">\r\n[submit value \"Перезвоните мне\" ]\r\n</div>\n1\nRekidea \"[your-subject]\"\nRekidea <wordpress@rek.local>\nswd.admin@mail.ru\nОт: [your-name] <[your-email]>\r\nТема: [your-subject]\r\n\r\nСообщение:\r\n[your-message]\r\n\r\n-- \r\nЭто сообщение отправлено с сайта Rekidea (http://rek.local)\nReply-To: [your-email]\n\n\n\n\nRekidea \"[your-subject]\"\nRekidea <wordpress@rek.local>\n[your-email]\nСообщение:\r\n[your-message]\r\n\r\n-- \r\nЭто сообщение отправлено с сайта Rekidea (http://rek.local)\nReply-To: swd.admin@mail.ru\n\n\n\nСпасибо за Ваше сообщение. Оно успешно отправлено.\nПри отправке сообщения произошла ошибка. Пожалуйста, попробуйте ещё раз позже.\nОдно или несколько полей содержат ошибочные данные. Пожалуйста, проверьте их и попробуйте ещё раз.\nПри отправке сообщения произошла ошибка. Пожалуйста, попробуйте ещё раз позже.\nВы должны принять условия и положения перед отправкой вашего сообщения.\nПоле обязательно для заполнения.\nПоле слишком длинное.\nПоле слишком короткое.\nФормат даты некорректен.\nВведённая дата слишком далеко в прошлом.\nВведённая дата слишком далеко в будущем.\nПри загрузке файла произошла неизвестная ошибка.\nВам не разрешено загружать файлы этого типа.\nФайл слишком большой.\nПри загрузке файла произошла ошибка.\nФормат числа некорректен.\nЧисло меньше минимально допустимого.\nЧисло больше максимально допустимого.\nНеверный ответ на проверочный вопрос.\nНеверно введён электронный адрес.\nВведён некорректный URL адрес.\nВведён некорректный телефонный номер.', 'Contacts feedback', '', 'publish', 'closed', 'closed', '', 'contacts-feedback', '', '', '2020-03-23 10:46:06', '2020-03-23 07:46:06', '', 0, 'http://rek.local/?post_type=wpcf7_contact_form&#038;p=349', 0, 'wpcf7_contact_form', '', 0),
-(350, 1, '2020-03-23 09:41:57', '0000-00-00 00:00:00', '', 'Черновик', '', 'auto-draft', 'open', 'open', '', '', '', '', '2020-03-23 09:41:57', '0000-00-00 00:00:00', '', 0, 'http://rek.local/?p=350', 0, 'post', '', 0),
+(349, 1, '2020-03-23 08:44:20', '2020-03-23 05:44:20', '<div class=\"grid\">\r\n\r\n<div class=\"feedback-field\">\r\n[text* feedback-name placeholder \"Имя\"]\r\n</div>\r\n<div class=\"feedback-text\">\r\n[textarea* feedback-text placeholder \"Опишите Ваш запрос\"]\r\n</div>\r\n<div class=\"feedback-field\">\r\n[tel* feedback-phone placeholder \"Телефон\"]\r\n</div>\r\n\r\n<div class=\"feedback-field\">\r\n[text* feedback-topic placeholder \"Тема заявки\"]\r\n</div>\r\n</div>\r\n<div class=\"private_term_agree\">\r\nНажимая кнопку «Перезвонить мне», я <a href=\"/privacy-policy\">даю свое согласие</a> на обработку персональных данных.\r\n</div>\r\n\r\n<div class=\"feedback-submit\">\r\n[submit value \"Перезвоните мне\" ]\r\n</div>\n1\nRekIdea. Форма контакты.\nRek <info@rekidea.ru>\nrekidea@yandex.ru\nИмя: [feedback-name]\r\nТелефон: [feedback-phone]\r\nТема: [feedback-topic]\r\nСообщение: [feedback-text]\nReply-To: info@rekidea.ru\n\n\n\n\nRekidea \"[your-subject]\"\nRekidea <wordpress@rek.local>\n[your-email]\nСообщение:\r\n[your-message]\r\n\r\n-- \r\nЭто сообщение отправлено с сайта Rekidea (http://rek.local)\nReply-To: swd.admin@mail.ru\n\n\n\nСпасибо за Ваше сообщение. Оно успешно отправлено.\nПри отправке сообщения произошла ошибка. Пожалуйста, попробуйте ещё раз позже.\nОдно или несколько полей содержат ошибочные данные. Пожалуйста, проверьте их и попробуйте ещё раз.\nПри отправке сообщения произошла ошибка. Пожалуйста, попробуйте ещё раз позже.\nВы должны принять условия и положения перед отправкой вашего сообщения.\nПоле обязательно для заполнения.\nПоле слишком длинное.\nПоле слишком короткое.\nФормат даты некорректен.\nВведённая дата слишком далеко в прошлом.\nВведённая дата слишком далеко в будущем.\nПри загрузке файла произошла неизвестная ошибка.\nВам не разрешено загружать файлы этого типа.\nФайл слишком большой.\nПри загрузке файла произошла ошибка.\nФормат числа некорректен.\nЧисло меньше минимально допустимого.\nЧисло больше максимально допустимого.\nНеверный ответ на проверочный вопрос.\nНеверно введён электронный адрес.\nВведён некорректный URL адрес.\nВведён некорректный телефонный номер.', 'Contacts feedback', '', 'publish', 'closed', 'closed', '', 'contacts-feedback', '', '', '2020-03-25 17:55:04', '2020-03-25 14:55:04', '', 0, 'http://rek.local/?post_type=wpcf7_contact_form&#038;p=349', 0, 'wpcf7_contact_form', '', 0),
 (351, 1, '2020-03-23 20:22:16', '2020-03-23 17:22:16', ' ', '', '', 'publish', 'closed', 'closed', '', '351', '', '', '2020-03-23 20:22:16', '2020-03-23 17:22:16', '', 0, 'http://rek.local/?p=351', 49, 'nav_menu_item', '', 0),
-(352, 1, '2020-03-23 20:22:36', '2020-03-23 17:22:36', ' ', '', '', 'publish', 'closed', 'closed', '', '352', '', '', '2020-03-23 20:22:36', '2020-03-23 17:22:36', '', 0, 'http://rek.local/?p=352', 41, 'nav_menu_item', '', 0);
+(352, 1, '2020-03-23 20:22:36', '2020-03-23 17:22:36', ' ', '', '', 'publish', 'closed', 'closed', '', '352', '', '', '2020-03-25 17:55:47', '2020-03-25 14:55:47', '', 0, 'http://rek.local/?p=352', 41, 'nav_menu_item', '', 0),
+(353, 1, '2020-05-14 10:21:18', '0000-00-00 00:00:00', '', 'Черновик', '', 'auto-draft', 'open', 'open', '', '', '', '', '2020-05-14 10:21:18', '0000-00-00 00:00:00', '', 0, 'http://rsht.local/?p=353', 0, 'post', '', 0),
+(354, 1, '2020-05-14 10:23:54', '2020-05-14 07:23:54', '', 'woocommerce-placeholder', '', 'inherit', 'open', 'closed', '', 'woocommerce-placeholder', '', '', '2020-05-14 10:23:54', '2020-05-14 07:23:54', '', 0, 'http://rsht.local/wp-content/uploads/2020/05/woocommerce-placeholder.png', 0, 'attachment', 'image/png', 0);
 
 -- --------------------------------------------------------
 
@@ -2025,7 +2256,21 @@ INSERT INTO `wp_terms` (`term_id`, `name`, `slug`, `term_group`) VALUES
 (8, 'partners-slider', 'partners-slider', 0),
 (9, 'Меню цен (Мобильное)', '%d0%bc%d0%b5%d0%bd%d1%8e-%d1%86%d0%b5%d0%bd-%d0%bc%d0%be%d0%b1%d0%b8%d0%bb%d1%8c%d0%bd%d0%be%d0%b5', 0),
 (10, 'Меню цен', '%d0%bc%d0%b5%d0%bd%d1%8e-%d1%86%d0%b5%d0%bd', 0),
-(11, 'photozone-slider', 'photozone-slider', 0);
+(11, 'photozone-slider', 'photozone-slider', 0),
+(12, 'simple', 'simple', 0),
+(13, 'grouped', 'grouped', 0),
+(14, 'variable', 'variable', 0),
+(15, 'external', 'external', 0),
+(16, 'exclude-from-search', 'exclude-from-search', 0),
+(17, 'exclude-from-catalog', 'exclude-from-catalog', 0),
+(18, 'featured', 'featured', 0),
+(19, 'outofstock', 'outofstock', 0),
+(20, 'rated-1', 'rated-1', 0),
+(21, 'rated-2', 'rated-2', 0),
+(22, 'rated-3', 'rated-3', 0),
+(23, 'rated-4', 'rated-4', 0),
+(24, 'rated-5', 'rated-5', 0),
+(25, 'Uncategorized', 'uncategorized', 0);
 
 -- --------------------------------------------------------
 
@@ -2215,7 +2460,21 @@ INSERT INTO `wp_term_taxonomy` (`term_taxonomy_id`, `term_id`, `taxonomy`, `desc
 (8, 8, 'wpsisac_slider-category', '', 0, 7),
 (9, 9, 'nav_menu', '', 0, 15),
 (10, 10, 'nav_menu', '', 0, 15),
-(11, 11, 'wpsisac_slider-category', '', 0, 3);
+(11, 11, 'wpsisac_slider-category', '', 0, 3),
+(12, 12, 'product_type', '', 0, 0),
+(13, 13, 'product_type', '', 0, 0),
+(14, 14, 'product_type', '', 0, 0),
+(15, 15, 'product_type', '', 0, 0),
+(16, 16, 'product_visibility', '', 0, 0),
+(17, 17, 'product_visibility', '', 0, 0),
+(18, 18, 'product_visibility', '', 0, 0),
+(19, 19, 'product_visibility', '', 0, 0),
+(20, 20, 'product_visibility', '', 0, 0),
+(21, 21, 'product_visibility', '', 0, 0),
+(22, 22, 'product_visibility', '', 0, 0),
+(23, 23, 'product_visibility', '', 0, 0),
+(24, 24, 'product_visibility', '', 0, 0),
+(25, 25, 'product_cat', '', 0, 0);
 
 -- --------------------------------------------------------
 
@@ -2250,8 +2509,8 @@ INSERT INTO `wp_usermeta` (`umeta_id`, `user_id`, `meta_key`, `meta_value`) VALU
 (13, 1, 'wp_user_level', '10'),
 (14, 1, 'dismissed_wp_pointers', 'plugin_editor_notice,theme_editor_notice'),
 (15, 1, 'show_welcome_panel', '0'),
-(16, 1, 'session_tokens', 'a:3:{s:64:\"1b6c21b00be609a80130a91e80a8d8b235b20050b3c674efe0f845097e6f59ec\";a:4:{s:10:\"expiration\";i:1585064316;s:2:\"ip\";s:9:\"127.0.0.1\";s:2:\"ua\";s:115:\"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.149 Safari/537.36\";s:5:\"login\";i:1584891516;}s:64:\"1d24bd2c15f21902b4363770eb2bcc67ba9993194d9faa74a5ed6d903562089c\";a:4:{s:10:\"expiration\";i:1585114903;s:2:\"ip\";s:9:\"127.0.0.1\";s:2:\"ua\";s:115:\"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.149 Safari/537.36\";s:5:\"login\";i:1584942103;}s:64:\"c2a8785ed630714de746d663199f22077c4ebc9ed70eee5e73e44a5ad2773d25\";a:4:{s:10:\"expiration\";i:1585156865;s:2:\"ip\";s:9:\"127.0.0.1\";s:2:\"ua\";s:115:\"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.149 Safari/537.36\";s:5:\"login\";i:1584984065;}}'),
-(17, 1, 'wp_dashboard_quick_press_last_post_id', '350'),
+(16, 1, 'session_tokens', 'a:1:{s:64:\"13f46aea36aed959d6f64915a56b4a3875cd06f7b1a8c1343d58625ceee87de2\";a:4:{s:10:\"expiration\";i:1589613666;s:2:\"ip\";s:9:\"127.0.0.1\";s:2:\"ua\";s:78:\"Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:76.0) Gecko/20100101 Firefox/76.0\";s:5:\"login\";i:1589440866;}}'),
+(17, 1, 'wp_dashboard_quick_press_last_post_id', '353'),
 (18, 1, 'community-events-location', 'a:1:{s:2:\"ip\";s:9:\"127.0.0.0\";}'),
 (19, 1, 'closedpostboxes_dashboard', 'a:2:{i:0;s:19:\"dashboard_right_now\";i:1;s:17:\"dashboard_primary\";}'),
 (20, 1, 'metaboxhidden_dashboard', 'a:0:{}'),
@@ -2270,7 +2529,8 @@ INSERT INTO `wp_usermeta` (`umeta_id`, `user_id`, `meta_key`, `meta_value`) VALU
 (33, 1, 'closedpostboxes_post', 'a:2:{i:0;s:23:\"acf-group_5e2f0669d466c\";i:1;s:23:\"acf-group_5e39a521c94a8\";}'),
 (34, 1, 'metaboxhidden_post', 'a:0:{}'),
 (35, 1, 'wp_media_library_mode', 'grid'),
-(36, 1, 'wpcf7_hide_welcome_panel_on', 'a:1:{i:0;s:3:\"5.1\";}');
+(36, 1, 'wpcf7_hide_welcome_panel_on', 'a:1:{i:0;s:3:\"5.1\";}'),
+(37, 1, '_woocommerce_tracks_anon_id', 'woo:alT/K7neLBOED0Viy40BqMNJ');
 
 -- --------------------------------------------------------
 
@@ -2298,9 +2558,489 @@ CREATE TABLE `wp_users` (
 INSERT INTO `wp_users` (`ID`, `user_login`, `user_pass`, `user_nicename`, `user_email`, `user_url`, `user_registered`, `user_activation_key`, `user_status`, `display_name`) VALUES
 (1, 'admin', '$P$BI3WIloevVp042FIzNgW9SfLMTSbjg.', 'admin', 'swd.admin@mail.ru', '', '2020-01-23 17:20:18', '', 0, 'admin');
 
+-- --------------------------------------------------------
+
+--
+-- Структура таблицы `wp_wc_admin_notes`
+--
+
+CREATE TABLE `wp_wc_admin_notes` (
+  `note_id` bigint(20) UNSIGNED NOT NULL,
+  `name` varchar(255) COLLATE utf8mb4_unicode_520_ci NOT NULL,
+  `type` varchar(20) COLLATE utf8mb4_unicode_520_ci NOT NULL,
+  `locale` varchar(20) COLLATE utf8mb4_unicode_520_ci NOT NULL,
+  `title` longtext COLLATE utf8mb4_unicode_520_ci NOT NULL,
+  `content` longtext COLLATE utf8mb4_unicode_520_ci NOT NULL,
+  `icon` varchar(200) COLLATE utf8mb4_unicode_520_ci NOT NULL,
+  `content_data` longtext COLLATE utf8mb4_unicode_520_ci,
+  `status` varchar(200) COLLATE utf8mb4_unicode_520_ci NOT NULL,
+  `source` varchar(200) COLLATE utf8mb4_unicode_520_ci NOT NULL,
+  `date_created` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `date_reminder` datetime DEFAULT NULL,
+  `is_snoozable` tinyint(1) NOT NULL DEFAULT '0'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_520_ci;
+
+--
+-- Дамп данных таблицы `wp_wc_admin_notes`
+--
+
+INSERT INTO `wp_wc_admin_notes` (`note_id`, `name`, `type`, `locale`, `title`, `content`, `icon`, `content_data`, `status`, `source`, `date_created`, `date_reminder`, `is_snoozable`) VALUES
+(1, 'wc-admin-welcome-note', 'info', 'en_US', 'New feature(s)', 'Welcome to the new WooCommerce experience! In this new release you\'ll be able to have a glimpse of how your store is doing in the Dashboard, manage important aspects of your business (such as managing orders, stock, reviews) from anywhere in the interface, dive into your store data with a completely new Analytics section and more!', 'info', '{}', 'unactioned', 'woocommerce-admin', '2020-05-14 07:24:04', NULL, 0),
+(2, 'wc-admin-store-notice-setting-moved', 'info', 'en_US', 'Looking for the Store Notice setting?', 'It can now be found in the Customizer.', 'info', '{}', 'unactioned', 'woocommerce-admin', '2020-05-14 07:24:04', NULL, 0),
+(3, 'wc-admin-wc-helper-connection', 'info', 'en_US', 'Connect to WooCommerce.com', 'Connect to get important product notifications and updates.', 'info', '{}', 'unactioned', 'woocommerce-admin', '2020-05-14 07:24:12', NULL, 0);
+
+-- --------------------------------------------------------
+
+--
+-- Структура таблицы `wp_wc_admin_note_actions`
+--
+
+CREATE TABLE `wp_wc_admin_note_actions` (
+  `action_id` bigint(20) UNSIGNED NOT NULL,
+  `note_id` bigint(20) UNSIGNED NOT NULL,
+  `name` varchar(255) COLLATE utf8mb4_unicode_520_ci NOT NULL,
+  `label` varchar(255) COLLATE utf8mb4_unicode_520_ci NOT NULL,
+  `query` longtext COLLATE utf8mb4_unicode_520_ci NOT NULL,
+  `status` varchar(255) COLLATE utf8mb4_unicode_520_ci NOT NULL,
+  `is_primary` tinyint(1) NOT NULL DEFAULT '0'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_520_ci;
+
+--
+-- Дамп данных таблицы `wp_wc_admin_note_actions`
+--
+
+INSERT INTO `wp_wc_admin_note_actions` (`action_id`, `note_id`, `name`, `label`, `query`, `status`, `is_primary`) VALUES
+(1, 1, 'learn-more', 'Learn more', 'https://woocommerce.wordpress.com/', 'actioned', 0),
+(2, 2, 'open-customizer', 'Open Customizer', 'customize.php', 'actioned', 0),
+(3, 3, 'connect', 'Connect', '?page=wc-addons&section=helper', 'unactioned', 0);
+
+-- --------------------------------------------------------
+
+--
+-- Структура таблицы `wp_wc_category_lookup`
+--
+
+CREATE TABLE `wp_wc_category_lookup` (
+  `category_tree_id` bigint(20) UNSIGNED NOT NULL,
+  `category_id` bigint(20) UNSIGNED NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_520_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Структура таблицы `wp_wc_customer_lookup`
+--
+
+CREATE TABLE `wp_wc_customer_lookup` (
+  `customer_id` bigint(20) UNSIGNED NOT NULL,
+  `user_id` bigint(20) UNSIGNED DEFAULT NULL,
+  `username` varchar(60) COLLATE utf8mb4_unicode_520_ci NOT NULL DEFAULT '',
+  `first_name` varchar(255) COLLATE utf8mb4_unicode_520_ci NOT NULL,
+  `last_name` varchar(255) COLLATE utf8mb4_unicode_520_ci NOT NULL,
+  `email` varchar(100) COLLATE utf8mb4_unicode_520_ci DEFAULT NULL,
+  `date_last_active` timestamp NULL DEFAULT NULL,
+  `date_registered` timestamp NULL DEFAULT NULL,
+  `country` char(2) COLLATE utf8mb4_unicode_520_ci NOT NULL DEFAULT '',
+  `postcode` varchar(20) COLLATE utf8mb4_unicode_520_ci NOT NULL DEFAULT '',
+  `city` varchar(100) COLLATE utf8mb4_unicode_520_ci NOT NULL DEFAULT '',
+  `state` varchar(100) COLLATE utf8mb4_unicode_520_ci NOT NULL DEFAULT ''
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_520_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Структура таблицы `wp_wc_download_log`
+--
+
+CREATE TABLE `wp_wc_download_log` (
+  `download_log_id` bigint(20) UNSIGNED NOT NULL,
+  `timestamp` datetime NOT NULL,
+  `permission_id` bigint(20) UNSIGNED NOT NULL,
+  `user_id` bigint(20) UNSIGNED DEFAULT NULL,
+  `user_ip_address` varchar(100) COLLATE utf8mb4_unicode_520_ci DEFAULT ''
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_520_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Структура таблицы `wp_wc_order_coupon_lookup`
+--
+
+CREATE TABLE `wp_wc_order_coupon_lookup` (
+  `order_id` bigint(20) UNSIGNED NOT NULL,
+  `coupon_id` bigint(20) UNSIGNED NOT NULL,
+  `date_created` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `discount_amount` double NOT NULL DEFAULT '0'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_520_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Структура таблицы `wp_wc_order_product_lookup`
+--
+
+CREATE TABLE `wp_wc_order_product_lookup` (
+  `order_item_id` bigint(20) UNSIGNED NOT NULL,
+  `order_id` bigint(20) UNSIGNED NOT NULL,
+  `product_id` bigint(20) UNSIGNED NOT NULL,
+  `variation_id` bigint(20) UNSIGNED NOT NULL,
+  `customer_id` bigint(20) UNSIGNED DEFAULT NULL,
+  `date_created` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `product_qty` int(11) NOT NULL,
+  `product_net_revenue` double NOT NULL DEFAULT '0',
+  `product_gross_revenue` double NOT NULL DEFAULT '0',
+  `coupon_amount` double NOT NULL DEFAULT '0',
+  `tax_amount` double NOT NULL DEFAULT '0',
+  `shipping_amount` double NOT NULL DEFAULT '0',
+  `shipping_tax_amount` double NOT NULL DEFAULT '0'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_520_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Структура таблицы `wp_wc_order_stats`
+--
+
+CREATE TABLE `wp_wc_order_stats` (
+  `order_id` bigint(20) UNSIGNED NOT NULL,
+  `parent_id` bigint(20) UNSIGNED NOT NULL DEFAULT '0',
+  `date_created` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `date_created_gmt` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `num_items_sold` int(11) NOT NULL DEFAULT '0',
+  `total_sales` double NOT NULL DEFAULT '0',
+  `tax_total` double NOT NULL DEFAULT '0',
+  `shipping_total` double NOT NULL DEFAULT '0',
+  `net_total` double NOT NULL DEFAULT '0',
+  `returning_customer` tinyint(1) DEFAULT NULL,
+  `status` varchar(200) COLLATE utf8mb4_unicode_520_ci NOT NULL,
+  `customer_id` bigint(20) UNSIGNED NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_520_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Структура таблицы `wp_wc_order_tax_lookup`
+--
+
+CREATE TABLE `wp_wc_order_tax_lookup` (
+  `order_id` bigint(20) UNSIGNED NOT NULL,
+  `tax_rate_id` bigint(20) UNSIGNED NOT NULL,
+  `date_created` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `shipping_tax` double NOT NULL DEFAULT '0',
+  `order_tax` double NOT NULL DEFAULT '0',
+  `total_tax` double NOT NULL DEFAULT '0'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_520_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Структура таблицы `wp_wc_product_meta_lookup`
+--
+
+CREATE TABLE `wp_wc_product_meta_lookup` (
+  `product_id` bigint(20) NOT NULL,
+  `sku` varchar(100) COLLATE utf8mb4_unicode_520_ci DEFAULT '',
+  `virtual` tinyint(1) DEFAULT '0',
+  `downloadable` tinyint(1) DEFAULT '0',
+  `min_price` decimal(19,4) DEFAULT NULL,
+  `max_price` decimal(19,4) DEFAULT NULL,
+  `onsale` tinyint(1) DEFAULT '0',
+  `stock_quantity` double DEFAULT NULL,
+  `stock_status` varchar(100) COLLATE utf8mb4_unicode_520_ci DEFAULT 'instock',
+  `rating_count` bigint(20) DEFAULT '0',
+  `average_rating` decimal(3,2) DEFAULT '0.00',
+  `total_sales` bigint(20) DEFAULT '0',
+  `tax_status` varchar(100) COLLATE utf8mb4_unicode_520_ci DEFAULT 'taxable',
+  `tax_class` varchar(100) COLLATE utf8mb4_unicode_520_ci DEFAULT ''
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_520_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Структура таблицы `wp_wc_tax_rate_classes`
+--
+
+CREATE TABLE `wp_wc_tax_rate_classes` (
+  `tax_rate_class_id` bigint(20) UNSIGNED NOT NULL,
+  `name` varchar(200) COLLATE utf8mb4_unicode_520_ci NOT NULL DEFAULT '',
+  `slug` varchar(200) COLLATE utf8mb4_unicode_520_ci NOT NULL DEFAULT ''
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_520_ci;
+
+--
+-- Дамп данных таблицы `wp_wc_tax_rate_classes`
+--
+
+INSERT INTO `wp_wc_tax_rate_classes` (`tax_rate_class_id`, `name`, `slug`) VALUES
+(1, 'Reduced rate', 'reduced-rate'),
+(2, 'Zero rate', 'zero-rate');
+
+-- --------------------------------------------------------
+
+--
+-- Структура таблицы `wp_wc_webhooks`
+--
+
+CREATE TABLE `wp_wc_webhooks` (
+  `webhook_id` bigint(20) UNSIGNED NOT NULL,
+  `status` varchar(200) COLLATE utf8mb4_unicode_520_ci NOT NULL,
+  `name` text COLLATE utf8mb4_unicode_520_ci NOT NULL,
+  `user_id` bigint(20) UNSIGNED NOT NULL,
+  `delivery_url` text COLLATE utf8mb4_unicode_520_ci NOT NULL,
+  `secret` text COLLATE utf8mb4_unicode_520_ci NOT NULL,
+  `topic` varchar(200) COLLATE utf8mb4_unicode_520_ci NOT NULL,
+  `date_created` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `date_created_gmt` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `date_modified` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `date_modified_gmt` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `api_version` smallint(4) NOT NULL,
+  `failure_count` smallint(10) NOT NULL DEFAULT '0',
+  `pending_delivery` tinyint(1) NOT NULL DEFAULT '0'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_520_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Структура таблицы `wp_woocommerce_api_keys`
+--
+
+CREATE TABLE `wp_woocommerce_api_keys` (
+  `key_id` bigint(20) UNSIGNED NOT NULL,
+  `user_id` bigint(20) UNSIGNED NOT NULL,
+  `description` varchar(200) COLLATE utf8mb4_unicode_520_ci DEFAULT NULL,
+  `permissions` varchar(10) COLLATE utf8mb4_unicode_520_ci NOT NULL,
+  `consumer_key` char(64) COLLATE utf8mb4_unicode_520_ci NOT NULL,
+  `consumer_secret` char(43) COLLATE utf8mb4_unicode_520_ci NOT NULL,
+  `nonces` longtext COLLATE utf8mb4_unicode_520_ci,
+  `truncated_key` char(7) COLLATE utf8mb4_unicode_520_ci NOT NULL,
+  `last_access` datetime DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_520_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Структура таблицы `wp_woocommerce_attribute_taxonomies`
+--
+
+CREATE TABLE `wp_woocommerce_attribute_taxonomies` (
+  `attribute_id` bigint(20) UNSIGNED NOT NULL,
+  `attribute_name` varchar(200) COLLATE utf8mb4_unicode_520_ci NOT NULL,
+  `attribute_label` varchar(200) COLLATE utf8mb4_unicode_520_ci DEFAULT NULL,
+  `attribute_type` varchar(20) COLLATE utf8mb4_unicode_520_ci NOT NULL,
+  `attribute_orderby` varchar(20) COLLATE utf8mb4_unicode_520_ci NOT NULL,
+  `attribute_public` int(1) NOT NULL DEFAULT '1'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_520_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Структура таблицы `wp_woocommerce_downloadable_product_permissions`
+--
+
+CREATE TABLE `wp_woocommerce_downloadable_product_permissions` (
+  `permission_id` bigint(20) UNSIGNED NOT NULL,
+  `download_id` varchar(36) COLLATE utf8mb4_unicode_520_ci NOT NULL,
+  `product_id` bigint(20) UNSIGNED NOT NULL,
+  `order_id` bigint(20) UNSIGNED NOT NULL DEFAULT '0',
+  `order_key` varchar(200) COLLATE utf8mb4_unicode_520_ci NOT NULL,
+  `user_email` varchar(200) COLLATE utf8mb4_unicode_520_ci NOT NULL,
+  `user_id` bigint(20) UNSIGNED DEFAULT NULL,
+  `downloads_remaining` varchar(9) COLLATE utf8mb4_unicode_520_ci DEFAULT NULL,
+  `access_granted` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `access_expires` datetime DEFAULT NULL,
+  `download_count` bigint(20) UNSIGNED NOT NULL DEFAULT '0'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_520_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Структура таблицы `wp_woocommerce_log`
+--
+
+CREATE TABLE `wp_woocommerce_log` (
+  `log_id` bigint(20) UNSIGNED NOT NULL,
+  `timestamp` datetime NOT NULL,
+  `level` smallint(4) NOT NULL,
+  `source` varchar(200) COLLATE utf8mb4_unicode_520_ci NOT NULL,
+  `message` longtext COLLATE utf8mb4_unicode_520_ci NOT NULL,
+  `context` longtext COLLATE utf8mb4_unicode_520_ci
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_520_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Структура таблицы `wp_woocommerce_order_itemmeta`
+--
+
+CREATE TABLE `wp_woocommerce_order_itemmeta` (
+  `meta_id` bigint(20) UNSIGNED NOT NULL,
+  `order_item_id` bigint(20) UNSIGNED NOT NULL,
+  `meta_key` varchar(255) COLLATE utf8mb4_unicode_520_ci DEFAULT NULL,
+  `meta_value` longtext COLLATE utf8mb4_unicode_520_ci
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_520_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Структура таблицы `wp_woocommerce_order_items`
+--
+
+CREATE TABLE `wp_woocommerce_order_items` (
+  `order_item_id` bigint(20) UNSIGNED NOT NULL,
+  `order_item_name` text COLLATE utf8mb4_unicode_520_ci NOT NULL,
+  `order_item_type` varchar(200) COLLATE utf8mb4_unicode_520_ci NOT NULL DEFAULT '',
+  `order_id` bigint(20) UNSIGNED NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_520_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Структура таблицы `wp_woocommerce_payment_tokenmeta`
+--
+
+CREATE TABLE `wp_woocommerce_payment_tokenmeta` (
+  `meta_id` bigint(20) UNSIGNED NOT NULL,
+  `payment_token_id` bigint(20) UNSIGNED NOT NULL,
+  `meta_key` varchar(255) COLLATE utf8mb4_unicode_520_ci DEFAULT NULL,
+  `meta_value` longtext COLLATE utf8mb4_unicode_520_ci
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_520_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Структура таблицы `wp_woocommerce_payment_tokens`
+--
+
+CREATE TABLE `wp_woocommerce_payment_tokens` (
+  `token_id` bigint(20) UNSIGNED NOT NULL,
+  `gateway_id` varchar(200) COLLATE utf8mb4_unicode_520_ci NOT NULL,
+  `token` text COLLATE utf8mb4_unicode_520_ci NOT NULL,
+  `user_id` bigint(20) UNSIGNED NOT NULL DEFAULT '0',
+  `type` varchar(200) COLLATE utf8mb4_unicode_520_ci NOT NULL,
+  `is_default` tinyint(1) NOT NULL DEFAULT '0'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_520_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Структура таблицы `wp_woocommerce_sessions`
+--
+
+CREATE TABLE `wp_woocommerce_sessions` (
+  `session_id` bigint(20) UNSIGNED NOT NULL,
+  `session_key` char(32) COLLATE utf8mb4_unicode_520_ci NOT NULL,
+  `session_value` longtext COLLATE utf8mb4_unicode_520_ci NOT NULL,
+  `session_expiry` bigint(20) UNSIGNED NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_520_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Структура таблицы `wp_woocommerce_shipping_zones`
+--
+
+CREATE TABLE `wp_woocommerce_shipping_zones` (
+  `zone_id` bigint(20) UNSIGNED NOT NULL,
+  `zone_name` varchar(200) COLLATE utf8mb4_unicode_520_ci NOT NULL,
+  `zone_order` bigint(20) UNSIGNED NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_520_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Структура таблицы `wp_woocommerce_shipping_zone_locations`
+--
+
+CREATE TABLE `wp_woocommerce_shipping_zone_locations` (
+  `location_id` bigint(20) UNSIGNED NOT NULL,
+  `zone_id` bigint(20) UNSIGNED NOT NULL,
+  `location_code` varchar(200) COLLATE utf8mb4_unicode_520_ci NOT NULL,
+  `location_type` varchar(40) COLLATE utf8mb4_unicode_520_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_520_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Структура таблицы `wp_woocommerce_shipping_zone_methods`
+--
+
+CREATE TABLE `wp_woocommerce_shipping_zone_methods` (
+  `zone_id` bigint(20) UNSIGNED NOT NULL,
+  `instance_id` bigint(20) UNSIGNED NOT NULL,
+  `method_id` varchar(200) COLLATE utf8mb4_unicode_520_ci NOT NULL,
+  `method_order` bigint(20) UNSIGNED NOT NULL,
+  `is_enabled` tinyint(1) NOT NULL DEFAULT '1'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_520_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Структура таблицы `wp_woocommerce_tax_rates`
+--
+
+CREATE TABLE `wp_woocommerce_tax_rates` (
+  `tax_rate_id` bigint(20) UNSIGNED NOT NULL,
+  `tax_rate_country` varchar(2) COLLATE utf8mb4_unicode_520_ci NOT NULL DEFAULT '',
+  `tax_rate_state` varchar(200) COLLATE utf8mb4_unicode_520_ci NOT NULL DEFAULT '',
+  `tax_rate` varchar(8) COLLATE utf8mb4_unicode_520_ci NOT NULL DEFAULT '',
+  `tax_rate_name` varchar(200) COLLATE utf8mb4_unicode_520_ci NOT NULL DEFAULT '',
+  `tax_rate_priority` bigint(20) UNSIGNED NOT NULL,
+  `tax_rate_compound` int(1) NOT NULL DEFAULT '0',
+  `tax_rate_shipping` int(1) NOT NULL DEFAULT '1',
+  `tax_rate_order` bigint(20) UNSIGNED NOT NULL,
+  `tax_rate_class` varchar(200) COLLATE utf8mb4_unicode_520_ci NOT NULL DEFAULT ''
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_520_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Структура таблицы `wp_woocommerce_tax_rate_locations`
+--
+
+CREATE TABLE `wp_woocommerce_tax_rate_locations` (
+  `location_id` bigint(20) UNSIGNED NOT NULL,
+  `location_code` varchar(200) COLLATE utf8mb4_unicode_520_ci NOT NULL,
+  `tax_rate_id` bigint(20) UNSIGNED NOT NULL,
+  `location_type` varchar(40) COLLATE utf8mb4_unicode_520_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_520_ci;
+
 --
 -- Индексы сохранённых таблиц
 --
+
+--
+-- Индексы таблицы `wp_actionscheduler_actions`
+--
+ALTER TABLE `wp_actionscheduler_actions`
+  ADD PRIMARY KEY (`action_id`),
+  ADD KEY `hook` (`hook`),
+  ADD KEY `status` (`status`),
+  ADD KEY `scheduled_date_gmt` (`scheduled_date_gmt`),
+  ADD KEY `args` (`args`),
+  ADD KEY `group_id` (`group_id`),
+  ADD KEY `last_attempt_gmt` (`last_attempt_gmt`),
+  ADD KEY `claim_id` (`claim_id`);
+
+--
+-- Индексы таблицы `wp_actionscheduler_claims`
+--
+ALTER TABLE `wp_actionscheduler_claims`
+  ADD PRIMARY KEY (`claim_id`),
+  ADD KEY `date_created_gmt` (`date_created_gmt`);
+
+--
+-- Индексы таблицы `wp_actionscheduler_groups`
+--
+ALTER TABLE `wp_actionscheduler_groups`
+  ADD PRIMARY KEY (`group_id`),
+  ADD KEY `slug` (`slug`(191));
+
+--
+-- Индексы таблицы `wp_actionscheduler_logs`
+--
+ALTER TABLE `wp_actionscheduler_logs`
+  ADD PRIMARY KEY (`log_id`),
+  ADD KEY `action_id` (`action_id`),
+  ADD KEY `log_date_gmt` (`log_date_gmt`);
 
 --
 -- Индексы таблицы `wp_commentmeta`
@@ -2319,7 +3059,8 @@ ALTER TABLE `wp_comments`
   ADD KEY `comment_approved_date_gmt` (`comment_approved`,`comment_date_gmt`),
   ADD KEY `comment_date_gmt` (`comment_date_gmt`),
   ADD KEY `comment_parent` (`comment_parent`),
-  ADD KEY `comment_author_email` (`comment_author_email`(10));
+  ADD KEY `comment_author_email` (`comment_author_email`(10)),
+  ADD KEY `woo_idx_comment_type` (`comment_type`);
 
 --
 -- Индексы таблицы `wp_links`
@@ -2403,8 +3144,235 @@ ALTER TABLE `wp_users`
   ADD KEY `user_email` (`user_email`);
 
 --
+-- Индексы таблицы `wp_wc_admin_notes`
+--
+ALTER TABLE `wp_wc_admin_notes`
+  ADD PRIMARY KEY (`note_id`);
+
+--
+-- Индексы таблицы `wp_wc_admin_note_actions`
+--
+ALTER TABLE `wp_wc_admin_note_actions`
+  ADD PRIMARY KEY (`action_id`),
+  ADD KEY `note_id` (`note_id`);
+
+--
+-- Индексы таблицы `wp_wc_category_lookup`
+--
+ALTER TABLE `wp_wc_category_lookup`
+  ADD PRIMARY KEY (`category_tree_id`,`category_id`);
+
+--
+-- Индексы таблицы `wp_wc_customer_lookup`
+--
+ALTER TABLE `wp_wc_customer_lookup`
+  ADD PRIMARY KEY (`customer_id`),
+  ADD UNIQUE KEY `user_id` (`user_id`),
+  ADD KEY `email` (`email`);
+
+--
+-- Индексы таблицы `wp_wc_download_log`
+--
+ALTER TABLE `wp_wc_download_log`
+  ADD PRIMARY KEY (`download_log_id`),
+  ADD KEY `permission_id` (`permission_id`),
+  ADD KEY `timestamp` (`timestamp`);
+
+--
+-- Индексы таблицы `wp_wc_order_coupon_lookup`
+--
+ALTER TABLE `wp_wc_order_coupon_lookup`
+  ADD PRIMARY KEY (`order_id`,`coupon_id`),
+  ADD KEY `coupon_id` (`coupon_id`),
+  ADD KEY `date_created` (`date_created`);
+
+--
+-- Индексы таблицы `wp_wc_order_product_lookup`
+--
+ALTER TABLE `wp_wc_order_product_lookup`
+  ADD PRIMARY KEY (`order_item_id`),
+  ADD KEY `order_id` (`order_id`),
+  ADD KEY `product_id` (`product_id`),
+  ADD KEY `customer_id` (`customer_id`),
+  ADD KEY `date_created` (`date_created`);
+
+--
+-- Индексы таблицы `wp_wc_order_stats`
+--
+ALTER TABLE `wp_wc_order_stats`
+  ADD PRIMARY KEY (`order_id`),
+  ADD KEY `date_created` (`date_created`),
+  ADD KEY `customer_id` (`customer_id`),
+  ADD KEY `status` (`status`(191));
+
+--
+-- Индексы таблицы `wp_wc_order_tax_lookup`
+--
+ALTER TABLE `wp_wc_order_tax_lookup`
+  ADD PRIMARY KEY (`order_id`,`tax_rate_id`),
+  ADD KEY `tax_rate_id` (`tax_rate_id`),
+  ADD KEY `date_created` (`date_created`);
+
+--
+-- Индексы таблицы `wp_wc_product_meta_lookup`
+--
+ALTER TABLE `wp_wc_product_meta_lookup`
+  ADD PRIMARY KEY (`product_id`),
+  ADD KEY `virtual` (`virtual`),
+  ADD KEY `downloadable` (`downloadable`),
+  ADD KEY `stock_status` (`stock_status`),
+  ADD KEY `stock_quantity` (`stock_quantity`),
+  ADD KEY `onsale` (`onsale`),
+  ADD KEY `min_max_price` (`min_price`,`max_price`);
+
+--
+-- Индексы таблицы `wp_wc_tax_rate_classes`
+--
+ALTER TABLE `wp_wc_tax_rate_classes`
+  ADD PRIMARY KEY (`tax_rate_class_id`),
+  ADD UNIQUE KEY `slug` (`slug`(191));
+
+--
+-- Индексы таблицы `wp_wc_webhooks`
+--
+ALTER TABLE `wp_wc_webhooks`
+  ADD PRIMARY KEY (`webhook_id`),
+  ADD KEY `user_id` (`user_id`);
+
+--
+-- Индексы таблицы `wp_woocommerce_api_keys`
+--
+ALTER TABLE `wp_woocommerce_api_keys`
+  ADD PRIMARY KEY (`key_id`),
+  ADD KEY `consumer_key` (`consumer_key`),
+  ADD KEY `consumer_secret` (`consumer_secret`);
+
+--
+-- Индексы таблицы `wp_woocommerce_attribute_taxonomies`
+--
+ALTER TABLE `wp_woocommerce_attribute_taxonomies`
+  ADD PRIMARY KEY (`attribute_id`),
+  ADD KEY `attribute_name` (`attribute_name`(20));
+
+--
+-- Индексы таблицы `wp_woocommerce_downloadable_product_permissions`
+--
+ALTER TABLE `wp_woocommerce_downloadable_product_permissions`
+  ADD PRIMARY KEY (`permission_id`),
+  ADD KEY `download_order_key_product` (`product_id`,`order_id`,`order_key`(16),`download_id`),
+  ADD KEY `download_order_product` (`download_id`,`order_id`,`product_id`),
+  ADD KEY `order_id` (`order_id`),
+  ADD KEY `user_order_remaining_expires` (`user_id`,`order_id`,`downloads_remaining`,`access_expires`);
+
+--
+-- Индексы таблицы `wp_woocommerce_log`
+--
+ALTER TABLE `wp_woocommerce_log`
+  ADD PRIMARY KEY (`log_id`),
+  ADD KEY `level` (`level`);
+
+--
+-- Индексы таблицы `wp_woocommerce_order_itemmeta`
+--
+ALTER TABLE `wp_woocommerce_order_itemmeta`
+  ADD PRIMARY KEY (`meta_id`),
+  ADD KEY `order_item_id` (`order_item_id`),
+  ADD KEY `meta_key` (`meta_key`(32));
+
+--
+-- Индексы таблицы `wp_woocommerce_order_items`
+--
+ALTER TABLE `wp_woocommerce_order_items`
+  ADD PRIMARY KEY (`order_item_id`),
+  ADD KEY `order_id` (`order_id`);
+
+--
+-- Индексы таблицы `wp_woocommerce_payment_tokenmeta`
+--
+ALTER TABLE `wp_woocommerce_payment_tokenmeta`
+  ADD PRIMARY KEY (`meta_id`),
+  ADD KEY `payment_token_id` (`payment_token_id`),
+  ADD KEY `meta_key` (`meta_key`(32));
+
+--
+-- Индексы таблицы `wp_woocommerce_payment_tokens`
+--
+ALTER TABLE `wp_woocommerce_payment_tokens`
+  ADD PRIMARY KEY (`token_id`),
+  ADD KEY `user_id` (`user_id`);
+
+--
+-- Индексы таблицы `wp_woocommerce_sessions`
+--
+ALTER TABLE `wp_woocommerce_sessions`
+  ADD PRIMARY KEY (`session_id`),
+  ADD UNIQUE KEY `session_key` (`session_key`);
+
+--
+-- Индексы таблицы `wp_woocommerce_shipping_zones`
+--
+ALTER TABLE `wp_woocommerce_shipping_zones`
+  ADD PRIMARY KEY (`zone_id`);
+
+--
+-- Индексы таблицы `wp_woocommerce_shipping_zone_locations`
+--
+ALTER TABLE `wp_woocommerce_shipping_zone_locations`
+  ADD PRIMARY KEY (`location_id`),
+  ADD KEY `location_id` (`location_id`),
+  ADD KEY `location_type_code` (`location_type`(10),`location_code`(20));
+
+--
+-- Индексы таблицы `wp_woocommerce_shipping_zone_methods`
+--
+ALTER TABLE `wp_woocommerce_shipping_zone_methods`
+  ADD PRIMARY KEY (`instance_id`);
+
+--
+-- Индексы таблицы `wp_woocommerce_tax_rates`
+--
+ALTER TABLE `wp_woocommerce_tax_rates`
+  ADD PRIMARY KEY (`tax_rate_id`),
+  ADD KEY `tax_rate_country` (`tax_rate_country`),
+  ADD KEY `tax_rate_state` (`tax_rate_state`(2)),
+  ADD KEY `tax_rate_class` (`tax_rate_class`(10)),
+  ADD KEY `tax_rate_priority` (`tax_rate_priority`);
+
+--
+-- Индексы таблицы `wp_woocommerce_tax_rate_locations`
+--
+ALTER TABLE `wp_woocommerce_tax_rate_locations`
+  ADD PRIMARY KEY (`location_id`),
+  ADD KEY `tax_rate_id` (`tax_rate_id`),
+  ADD KEY `location_type_code` (`location_type`(10),`location_code`(20));
+
+--
 -- AUTO_INCREMENT для сохранённых таблиц
 --
+
+--
+-- AUTO_INCREMENT для таблицы `wp_actionscheduler_actions`
+--
+ALTER TABLE `wp_actionscheduler_actions`
+  MODIFY `action_id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=356;
+
+--
+-- AUTO_INCREMENT для таблицы `wp_actionscheduler_claims`
+--
+ALTER TABLE `wp_actionscheduler_claims`
+  MODIFY `claim_id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT для таблицы `wp_actionscheduler_groups`
+--
+ALTER TABLE `wp_actionscheduler_groups`
+  MODIFY `group_id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT для таблицы `wp_actionscheduler_logs`
+--
+ALTER TABLE `wp_actionscheduler_logs`
+  MODIFY `log_id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT для таблицы `wp_commentmeta`
@@ -2428,19 +3396,19 @@ ALTER TABLE `wp_links`
 -- AUTO_INCREMENT для таблицы `wp_options`
 --
 ALTER TABLE `wp_options`
-  MODIFY `option_id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1494;
+  MODIFY `option_id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3140;
 
 --
 -- AUTO_INCREMENT для таблицы `wp_postmeta`
 --
 ALTER TABLE `wp_postmeta`
-  MODIFY `meta_id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1847;
+  MODIFY `meta_id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1851;
 
 --
 -- AUTO_INCREMENT для таблицы `wp_posts`
 --
 ALTER TABLE `wp_posts`
-  MODIFY `ID` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=353;
+  MODIFY `ID` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=355;
 
 --
 -- AUTO_INCREMENT для таблицы `wp_termmeta`
@@ -2452,25 +3420,155 @@ ALTER TABLE `wp_termmeta`
 -- AUTO_INCREMENT для таблицы `wp_terms`
 --
 ALTER TABLE `wp_terms`
-  MODIFY `term_id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `term_id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
 
 --
 -- AUTO_INCREMENT для таблицы `wp_term_taxonomy`
 --
 ALTER TABLE `wp_term_taxonomy`
-  MODIFY `term_taxonomy_id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `term_taxonomy_id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
 
 --
 -- AUTO_INCREMENT для таблицы `wp_usermeta`
 --
 ALTER TABLE `wp_usermeta`
-  MODIFY `umeta_id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
+  MODIFY `umeta_id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=38;
 
 --
 -- AUTO_INCREMENT для таблицы `wp_users`
 --
 ALTER TABLE `wp_users`
   MODIFY `ID` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT для таблицы `wp_wc_admin_notes`
+--
+ALTER TABLE `wp_wc_admin_notes`
+  MODIFY `note_id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
+-- AUTO_INCREMENT для таблицы `wp_wc_admin_note_actions`
+--
+ALTER TABLE `wp_wc_admin_note_actions`
+  MODIFY `action_id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
+-- AUTO_INCREMENT для таблицы `wp_wc_customer_lookup`
+--
+ALTER TABLE `wp_wc_customer_lookup`
+  MODIFY `customer_id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT для таблицы `wp_wc_download_log`
+--
+ALTER TABLE `wp_wc_download_log`
+  MODIFY `download_log_id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT для таблицы `wp_wc_tax_rate_classes`
+--
+ALTER TABLE `wp_wc_tax_rate_classes`
+  MODIFY `tax_rate_class_id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT для таблицы `wp_wc_webhooks`
+--
+ALTER TABLE `wp_wc_webhooks`
+  MODIFY `webhook_id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT для таблицы `wp_woocommerce_api_keys`
+--
+ALTER TABLE `wp_woocommerce_api_keys`
+  MODIFY `key_id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT для таблицы `wp_woocommerce_attribute_taxonomies`
+--
+ALTER TABLE `wp_woocommerce_attribute_taxonomies`
+  MODIFY `attribute_id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT для таблицы `wp_woocommerce_downloadable_product_permissions`
+--
+ALTER TABLE `wp_woocommerce_downloadable_product_permissions`
+  MODIFY `permission_id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT для таблицы `wp_woocommerce_log`
+--
+ALTER TABLE `wp_woocommerce_log`
+  MODIFY `log_id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT для таблицы `wp_woocommerce_order_itemmeta`
+--
+ALTER TABLE `wp_woocommerce_order_itemmeta`
+  MODIFY `meta_id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT для таблицы `wp_woocommerce_order_items`
+--
+ALTER TABLE `wp_woocommerce_order_items`
+  MODIFY `order_item_id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT для таблицы `wp_woocommerce_payment_tokenmeta`
+--
+ALTER TABLE `wp_woocommerce_payment_tokenmeta`
+  MODIFY `meta_id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT для таблицы `wp_woocommerce_payment_tokens`
+--
+ALTER TABLE `wp_woocommerce_payment_tokens`
+  MODIFY `token_id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT для таблицы `wp_woocommerce_sessions`
+--
+ALTER TABLE `wp_woocommerce_sessions`
+  MODIFY `session_id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT для таблицы `wp_woocommerce_shipping_zones`
+--
+ALTER TABLE `wp_woocommerce_shipping_zones`
+  MODIFY `zone_id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT для таблицы `wp_woocommerce_shipping_zone_locations`
+--
+ALTER TABLE `wp_woocommerce_shipping_zone_locations`
+  MODIFY `location_id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT для таблицы `wp_woocommerce_shipping_zone_methods`
+--
+ALTER TABLE `wp_woocommerce_shipping_zone_methods`
+  MODIFY `instance_id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT для таблицы `wp_woocommerce_tax_rates`
+--
+ALTER TABLE `wp_woocommerce_tax_rates`
+  MODIFY `tax_rate_id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT для таблицы `wp_woocommerce_tax_rate_locations`
+--
+ALTER TABLE `wp_woocommerce_tax_rate_locations`
+  MODIFY `location_id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+
+--
+-- Ограничения внешнего ключа сохраненных таблиц
+--
+
+--
+-- Ограничения внешнего ключа таблицы `wp_wc_download_log`
+--
+ALTER TABLE `wp_wc_download_log`
+  ADD CONSTRAINT `fk_wp_wc_download_log_permission_id` FOREIGN KEY (`permission_id`) REFERENCES `wp_woocommerce_downloadable_product_permissions` (`permission_id`) ON DELETE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
