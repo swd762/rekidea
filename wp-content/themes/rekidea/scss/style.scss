@@ -2503,27 +2503,39 @@
   }
   ul {
     list-style: none;
-  }
-  li {
-    margin-top: 25px;
-    padding-left: 10px;
-    &.current-menu-item {
-      a {
-        color: #6f0d33;
-        font-weight: bold;
+    &.menu {
+      &>li {
+        margin-top: 25px;
+        padding-left: 10px;
+        &.current-menu-item {
+          &>a {
+            color: #6f0d33;
+            font-weight: bold;
+          }
+        }
+        a {
+          text-decoration: none;
+          text-transform: uppercase;
+          color: #4c4c4c;
+          font-size: 15px;
+          &:hover {
+            color: $red;
+            font-weight: bold;
+          }
+        }
       }
     }
-    a {
-      text-decoration: none;
-      text-transform: uppercase;
-      color: #4c4c4c;
-      font-size: 15px;
-      &:hover {
-        color: $red;
-        font-weight: bold;
+    &.sub-menu {
+      &>li {
+        margin-top: 10px;
+        &>a {
+          font-size: 15px;
+          text-transform: none;
+        }
       }
     }
   }
+
   @media (max-width: 1170px) {
     width: 282px;
     li {
