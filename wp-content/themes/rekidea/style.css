@@ -710,6 +710,29 @@ main {
     .price__content-title h2:hover {
       font-weight: 600; }
 
+.price-categories {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between; }
+  .price-categories .price-category {
+    margin-bottom: 45px; }
+    @media (max-width: 380px) {
+      .price-categories .price-category {
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between; } }
+    .price-categories .price-category a {
+      color: #6f0d33; }
+      .price-categories .price-category a:hover .price-category-title {
+        font-weight: bold; }
+    .price-categories .price-category .price-category-img img {
+      max-width: 100%; }
+    .price-categories .price-category .price-category-title {
+      font-size: 16px;
+      padding-top: 5px;
+      text-align: center; }
+
 @media (max-width: 1023px) {
   .protter-cutting-price {
     display: none; } }
@@ -1239,6 +1262,9 @@ main {
           width: 150px;
           height: 150px; } }
 
+/**
+  mobile stands prices
+ */
 .main-header {
   position: fixed;
   width: 100%;

@@ -769,6 +769,38 @@
     }
   }
 }
+.price-categories {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  .price-category {
+    margin-bottom: 45px;
+    @media (max-width: 380px) {
+      width: 50%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    a {
+      color: #6f0d33;
+      &:hover {
+        .price-category-title {
+          font-weight: bold;
+        }
+      }
+    }
+    .price-category-img {
+      img {
+        max-width: 100%;
+      }
+    }
+    .price-category-title {
+      font-size: 16px;
+      padding-top: 5px;
+      text-align: center;
+    }
+  }
+}
 
 .protter-cutting-price {
   @media (max-width: 1023px) {
@@ -1418,3 +1450,8 @@
     }
   }
 }
+
+
+/**
+  mobile stands prices
+ */
