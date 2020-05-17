@@ -687,16 +687,30 @@
     flex-wrap: wrap;
     justify-content: center;
     width: 490px;
+    &.menu {
+      &>li {
+        margin-bottom: 4px;
+        margin-right: 12px;
+      }
+    }
+    &.sub-menu {
+      &>li {
+        margin-right: 10px;
+        &>a {
+          text-transform: none;
+        }
+      }
+    }
     @media (max-width: 950px) {
       width: 100%;
     }
   }
   li {
     list-style: none;
-    margin-bottom: 4px;
-    margin-right: 12px;
+
     &.current-menu-item {
-      a {
+      width: 100%;
+      &>a {
         color: #6f0d33;
         font-weight: bold;
       }
