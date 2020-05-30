@@ -17,7 +17,6 @@ if ( have_posts() ) {
 <div class="breadcrumbs">
     <div class="container">
         <p><a href="/">Главная</a> > <a href="/price">Цены</a> > Мобильные стенды</p>
-        </div>
     </div>
 </div>
 <!--*************************************-->

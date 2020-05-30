@@ -640,16 +640,23 @@ main {
     flex-wrap: wrap;
     justify-content: center;
     width: 490px; }
+    .price__nav-mobile ul.menu > li {
+      margin-bottom: 4px;
+      margin-right: 12px; }
+    .price__nav-mobile ul.sub-menu > li {
+      margin-right: 10px; }
+      .price__nav-mobile ul.sub-menu > li > a {
+        text-transform: none; }
     @media (max-width: 950px) {
       .price__nav-mobile ul {
         width: 100%; } }
   .price__nav-mobile li {
-    list-style: none;
-    margin-bottom: 4px;
-    margin-right: 12px; }
-    .price__nav-mobile li.current-menu-item a {
-      color: #6f0d33;
-      font-weight: bold; }
+    list-style: none; }
+    .price__nav-mobile li.current-menu-item {
+      width: 100%; }
+      .price__nav-mobile li.current-menu-item > a {
+        color: #6f0d33;
+        font-weight: bold; }
   .price__nav-mobile a {
     color: #4c4c4c;
     text-decoration: none;
@@ -3178,20 +3185,25 @@ main {
       color: #6f0d33; }
   .wide-printing__nav ul {
     list-style: none; }
-  .wide-printing__nav li {
-    margin-top: 25px;
-    padding-left: 10px; }
-    .wide-printing__nav li.current-menu-item a {
-      color: #6f0d33;
-      font-weight: bold; }
-    .wide-printing__nav li a {
-      text-decoration: none;
-      text-transform: uppercase;
-      color: #4c4c4c;
-      font-size: 15px; }
-      .wide-printing__nav li a:hover {
+    .wide-printing__nav ul.menu > li {
+      margin-top: 25px;
+      padding-left: 10px; }
+      .wide-printing__nav ul.menu > li.current-menu-item > a {
         color: #6f0d33;
         font-weight: bold; }
+      .wide-printing__nav ul.menu > li a {
+        text-decoration: none;
+        text-transform: uppercase;
+        color: #4c4c4c;
+        font-size: 15px; }
+        .wide-printing__nav ul.menu > li a:hover {
+          color: #6f0d33;
+          font-weight: bold; }
+    .wide-printing__nav ul.sub-menu > li {
+      margin-top: 10px; }
+      .wide-printing__nav ul.sub-menu > li > a {
+        font-size: 15px;
+        text-transform: none; }
   @media (max-width: 1170px) {
     .wide-printing__nav {
       width: 282px; }
