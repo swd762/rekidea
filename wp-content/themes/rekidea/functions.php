@@ -77,6 +77,8 @@ function getPrices($postId, $target) {
     return $prices;
 }
 
+//add_theme_support( 'woocommerce' );
+
 
 
 

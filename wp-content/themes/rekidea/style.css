@@ -1270,8 +1270,64 @@ main {
           height: 150px; } }
 
 /**
-  mobile stands prices
+  Cart
  */
+.cart-content {
+  padding-left: 13px;
+  padding-top: 10px; }
+
+.woocommerce table.cart {
+  border-radius: 0;
+  margin-bottom: 24px; }
+  .woocommerce table.cart th {
+    background-color: #efefef;
+    border-right: 1px solid #e1e1e1; }
+    .woocommerce table.cart th:last-child {
+      border-right: none; }
+  .woocommerce table.cart td {
+    border-right: 1px solid #e1e1e1; }
+    .woocommerce table.cart td:last-child {
+      border-right: none; }
+  .woocommerce table.cart .product-thumbnail {
+    padding: 10px;
+    text-align: center; }
+    .woocommerce table.cart .product-thumbnail img {
+      width: auto;
+      max-width: 100%;
+      height: auto;
+      max-height: 110px; }
+  .woocommerce table.cart .product-quantity .quantity-item {
+    display: flex; }
+    .woocommerce table.cart .product-quantity .quantity-item input {
+      border-radius: 2px;
+      border: 1px solid #e1e1e1;
+      width: 40px;
+      height: 32px; }
+    .woocommerce table.cart .product-quantity .quantity-item .quantity-changers {
+      display: flex;
+      flex-direction: column;
+      border: 1px solid #e1e1e1;
+      height: 32px;
+      border-left: none; }
+      .woocommerce table.cart .product-quantity .quantity-item .quantity-changers div {
+        height: 16px;
+        width: 13px;
+        cursor: pointer; }
+.woocommerce table .order-total td {
+  background-color: #efefef; }
+  .woocommerce table .order-total td:first-child {
+    text-align: right; }
+.woocommerce .wc-proceed-to-checkout {
+  display: flex;
+  justify-content: right;
+  padding: 0 0 30px; }
+  .woocommerce .wc-proceed-to-checkout a.checkout-button {
+    background-color: #019a04;
+    width: 240px;
+    border-right: 10px;
+    padding: 13px;
+    margin: 0; }
+
 .main-header {
   position: fixed;
   width: 100%;
@@ -3809,6 +3865,17 @@ main {
 
 .ymaps-2-1-76-balloon__tail {
   display: none !important; }
+
+.shop-products__container {
+  border-left: 1px solid #c0c0c0; }
+
+.shop-card-wrapper {
+  width: 100%; }
+  .shop-card-wrapper .shop-card-wrapper__thumb-slider {
+    width: 300px; }
+    .shop-card-wrapper .shop-card-wrapper__thumb-slider .slide {
+      display: flex;
+      justify-content: center; }
 
 footer {
   background-color: #474747; }
