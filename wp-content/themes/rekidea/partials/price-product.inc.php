@@ -1,28 +1,63 @@
-
-
 <div class="shop-card">
     <div class="shop-card__thumb-slider">
-        <div class="samples-slider">
+        <div class="samples-slider shop-hot-icon">
             <div class="slide">
-                <a href="#"><img src="<?= get_template_directory_uri()?>/img/test/roll-2.jpg" alt="shop thumbnail"></a>
+                <a href="#"><img src="<?= get_template_directory_uri() ?>/img/test/roll-2.jpg" alt="shop thumbnail"></a>
             </div>
             <div class="slide">
-                <a href="#"><img src="<?= get_template_directory_uri()?>/img/test/roll-1.jpg" alt="shop thumbnail"></a>
+                <a href="#"><img src="<?= get_template_directory_uri() ?>/img/test/roll-1.jpg" alt="shop thumbnail"></a>
             </div>
             <div class="slide">
-                <a href="#"><img src="<?= get_template_directory_uri()?>/img/test/roll-3.jpg" alt="shop thumbnail"></a>
+                <a href="#"><img src="<?= get_template_directory_uri() ?>/img/test/roll-3.jpg" alt="shop thumbnail"></a>
             </div>
         </div>
     </div>
-
-
+    <div class="shop-card__main">
+        <div class="shop-card__main-header">
+            <h2>Ролл ап IDEA 一 <strong>standart</strong></h2>
+            <p>Классическая модель роллерного стенда. Лидер продаж на российском рынке. Толщина стенки корпуса 0,8 мм,
+                верхняя зажимная планка
+                с пластиковым кронштейном на вертикальной опоре.
+            </p>
+            <a href="#" class="doc-link">
+                <img src="<?= get_template_directory_uri() ?>/img/shop-card/pdf.png" alt="pdf link icon">
+                Технические требования к макету
+            </a>
+        </div>
+        <div class="shop-card__main-content">
+            <table>
+                <tr>
+                    <th>Размеры, см</th>
+                    <th>Стоимость Ролл Ап<br>
+                        без печати, руб</th>
+                    <th>Ролл Ап с печатью<br>
+                        на баннере, руб</th>
+                </tr>
+                <tr>
+                    <td><a href="#">60х180</a></td>
+                    <td><a class="hot-deal" href="#">1590</a></td>
+                    <td><a href="#">2290</a></td>
+                </tr>
+                <tr>
+                    <td><a href="#">60х180</a></td>
+                    <td><a class="hot-deal" href="#">1590</a></td>
+                    <td><a href="#">2290</a></td>
+                </tr>
+                <tr>
+                    <td><a href="#">60х180</a></td>
+                    <td><a class="hot-deal" href="#">1590</a></td>
+                    <td><a href="#">2290</a></td>
+                </tr>
+            </table>
+        </div>
+    </div>
 
 
 </div>
 
 
 <script>
-    jQuery(function($) {
+    jQuery(function ($) {
         $('.samples-slider').slick({
             slidesToShow: 1,
             slidesToScroll: 1,
@@ -40,10 +75,6 @@
 
 
 </script>
-
-
-
-
 
 
 <!--    <h2>Product Details</h2>-->

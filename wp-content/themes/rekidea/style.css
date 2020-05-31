@@ -3870,7 +3870,28 @@ main {
   border-left: 1px solid #c0c0c0; }
 
 .shop-card {
-  width: 100%; }
+  width: 100%;
+  display: flex; }
+  .shop-card .shop-hot-icon {
+    position: relative; }
+    .shop-card .shop-hot-icon::after {
+      content: url(img/fire.svg);
+      display: block;
+      width: 70px;
+      height: 70px;
+      position: absolute;
+      top: 50px;
+      left: 50%; }
+  .shop-card .shop-hit-icon {
+    position: relative; }
+    .shop-card .shop-hit-icon::after {
+      content: url(img/hit.png);
+      display: block;
+      width: 70px;
+      height: 70px;
+      position: absolute;
+      top: 50px;
+      left: 50%; }
   .shop-card .shop-card__thumb-slider {
     width: 300px; }
     .shop-card .shop-card__thumb-slider .slide {
@@ -3902,6 +3923,42 @@ main {
       border: none;
       outline: none;
       z-index: 1; }
+  .shop-card .shop-card__main-content > table {
+    border: 1px solid #6f0d33;
+    border-collapse: collapse;
+    width: 100%; }
+    .shop-card .shop-card__main-content > table th {
+      font-size: 13px;
+      font-weight: 300;
+      color: #fff;
+      background-color: #6f0d33;
+      padding: 5px; }
+      .shop-card .shop-card__main-content > table th:nth-of-type(2n+2) {
+        border-left: 1px solid #fff;
+        border-right: 1px solid #fff;
+        width: 37%; }
+      .shop-card .shop-card__main-content > table th:first-of-type {
+        width: 26%; }
+    .shop-card .shop-card__main-content > table td {
+      text-align: center;
+      border: 1px solid #6f0d33;
+      font-size: 14px;
+      padding: 10px; }
+      .shop-card .shop-card__main-content > table td .hot-deal {
+        position: relative; }
+        .shop-card .shop-card__main-content > table td .hot-deal:after {
+          content: url(img/fire.svg);
+          display: block;
+          width: 30px;
+          position: absolute;
+          top: -7px;
+          right: -35px; }
+      .shop-card .shop-card__main-content > table td > a {
+        font-size: 14px;
+        color: #000;
+        text-decoration: none; }
+        .shop-card .shop-card__main-content > table td > a:hover {
+          text-decoration: underline; }
 
 footer {
   background-color: #474747; }
