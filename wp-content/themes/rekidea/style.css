@@ -3869,13 +3869,39 @@ main {
 .shop-products__container {
   border-left: 1px solid #c0c0c0; }
 
-.shop-card-wrapper {
+.shop-card {
   width: 100%; }
-  .shop-card-wrapper .shop-card-wrapper__thumb-slider {
+  .shop-card .shop-card__thumb-slider {
     width: 300px; }
-    .shop-card-wrapper .shop-card-wrapper__thumb-slider .slide {
+    .shop-card .shop-card__thumb-slider .slide {
       display: flex;
-      justify-content: center; }
+      justify-content: center;
+      outline: none; }
+      .shop-card .shop-card__thumb-slider .slide > a {
+        outline: none; }
+        .shop-card .shop-card__thumb-slider .slide > a > img {
+          width: 220px; }
+    .shop-card .shop-card__thumb-slider .arrow-next {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 15px;
+      height: 30px;
+      right: 10px;
+      background: url(img/shop-card/button-shop-next.png) center no-repeat;
+      border: none;
+      outline: none; }
+    .shop-card .shop-card__thumb-slider .arrow-prev {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%) rotate(180deg);
+      width: 15px;
+      height: 30px;
+      left: 10px;
+      background: url(img/shop-card/button-shop-next.png) center no-repeat;
+      border: none;
+      outline: none;
+      z-index: 1; }
 
 footer {
   background-color: #474747; }

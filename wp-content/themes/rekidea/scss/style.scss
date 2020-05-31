@@ -3827,13 +3827,45 @@
   border-left: 1px solid #c0c0c0;
 }
 
-.shop-card-wrapper {
+.shop-card {
   width: 100%;
-  .shop-card-wrapper__thumb-slider {
+  .shop-card__thumb-slider {
     width: 300px;
     .slide {
       display: flex;
       justify-content: center;
+      outline: none;
+      &>a {
+        outline: none;
+        &>img {
+          width: 220px;
+        }
+      }
+
+    }
+    .arrow-next {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+
+      width: 15px;
+      height: 30px;
+      right: 10px;
+      background: url(img/shop-card/button-shop-next.png) center no-repeat;
+      border:none;
+      outline: none;
+    }
+    .arrow-prev {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%) rotate(180deg);
+      width: 15px;
+      height: 30px;
+      left: 10px;
+      background: url(img/shop-card/button-shop-next.png) center no-repeat;
+      border:none;
+      outline: none;
+      z-index: 1;
     }
   }
 

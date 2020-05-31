@@ -1,22 +1,18 @@
 
 
-<div class="shop-card-wrapper">
-    <div class="shop-card-wrapper__thumb-slider">
+<div class="shop-card">
+    <div class="shop-card__thumb-slider">
         <div class="samples-slider">
             <div class="slide">
-                <img src="<?= get_template_directory_uri()?>/img/test/roll-2.jpg" alt="">
+                <a href="#"><img src="<?= get_template_directory_uri()?>/img/test/roll-2.jpg" alt="shop thumbnail"></a>
             </div>
             <div class="slide">
-                <img src="<?= get_template_directory_uri()?>/img/test/roll-1.jpg" alt="">
+                <a href="#"><img src="<?= get_template_directory_uri()?>/img/test/roll-1.jpg" alt="shop thumbnail"></a>
             </div>
             <div class="slide">
-                <img src="<?= get_template_directory_uri()?>/img/test/roll-3.jpg" alt="">
+                <a href="#"><img src="<?= get_template_directory_uri()?>/img/test/roll-3.jpg" alt="shop thumbnail"></a>
             </div>
-
         </div>
-
-
-
     </div>
 
 
@@ -33,6 +29,8 @@
             arrows: true,
             dots: false,
             autoplay: true,
+            prevArrow: '<button class="arrow-prev"></button>',
+            nextArrow: '<button class="arrow-next"></button>',
             autoplaySpeed: 2000
             // centerMode: true,
             // adaptiveHeight: true,
