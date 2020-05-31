@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AACC,iEAAgC;EAC/B,SAAS,EAAE,IAAI;AAEhB,0EAAyC;EACxC,KAAK,EAAE,IAAI;EACX,aAAa,EAAE,GAAG;EAClB,OAAO,EAAE,KAAK;AAEf,gEAA+B;EAC9B,UAAU,EAAE,CAAC",
+"sources": ["toggle-button-control/style.scss"],
+"names": [],
+"file": "style.css"
+}
