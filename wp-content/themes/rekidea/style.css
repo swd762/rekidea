@@ -16,6 +16,9 @@ body {
   body.modal-opened {
     overflow: hidden; }
 
+a, button {
+  outline: none; }
+
 main {
   overflow: hidden; }
 
@@ -3893,7 +3896,9 @@ main {
       top: 50px;
       left: 50%; }
   .shop-card .shop-card__thumb-slider {
-    width: 300px; }
+    width: 300px;
+    margin-right: 30px;
+    margin-left: 30px; }
     .shop-card .shop-card__thumb-slider .slide {
       display: flex;
       justify-content: center;
@@ -3923,6 +3928,29 @@ main {
       border: none;
       outline: none;
       z-index: 1; }
+  .shop-card .shop-card__main-header h2 {
+    font-size: 18px;
+    font-weight: 400;
+    color: #6f0d33;
+    text-transform: uppercase;
+    margin-bottom: 15px; }
+    .shop-card .shop-card__main-header h2 > span {
+      font-weight: 500; }
+  .shop-card .shop-card__main-header p {
+    font-size: 14px;
+    font-weight: 300;
+    margin-bottom: 15px; }
+  .shop-card .shop-card__main-header .doc-link {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    font-weight: 300;
+    color: #6f0d33;
+    margin-bottom: 15px; }
+    .shop-card .shop-card__main-header .doc-link > img {
+      margin-right: 15px; }
+    .shop-card .shop-card__main-header .doc-link:hover {
+      text-decoration: none; }
   .shop-card .shop-card__main-content > table {
     border: 1px solid #6f0d33;
     border-collapse: collapse;
