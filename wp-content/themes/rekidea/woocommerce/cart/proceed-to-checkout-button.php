@@ -1,8 +1,10 @@
 <?php
 /**
- * Cart totals
+ * Proceed to checkout button
  *
- * This template can be overridden by copying it to yourtheme/woocommerce/cart/cart-totals.php.
+ * Contains the markup for the proceed to checkout button on the cart.
+ *
+ * This template can be overridden by copying it to yourtheme/woocommerce/cart/proceed-to-checkout-button.php.
  *
  * HOWEVER, on occasion WooCommerce will need to update template files and you
  * (the theme developer) will need to copy the new files to your theme to
@@ -12,20 +14,12 @@
  *
  * @see     https://docs.woocommerce.com/document/template-structure/
  * @package WooCommerce/Templates
- * @version 2.3.6
+ * @version 2.4.0
  */
 
-defined( 'ABSPATH' ) || exit;
-
+if ( ! defined( 'ABSPATH' ) ) {
+	exit; // Exit if accessed directly.
+}
 ?>
-<tr class="order-total">
-    <td colspan="4">Итого:</td>
-    <td colspan="2" data-title="Итого"><?php wc_cart_totals_order_total_html(); ?></td>
-</tr>
 
-</tbody>
-</table>
-
-<div class="wc-proceed-to-checkout">
-    <?php do_action( 'woocommerce_proceed_to_checkout' ); ?>
-</div>
+<a href="<?php echo esc_url( wc_get_checkout_url() ); ?>" class="checkout-button button alt wc-forward">Оформить заказ</a>
