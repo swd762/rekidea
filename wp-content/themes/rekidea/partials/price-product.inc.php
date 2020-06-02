@@ -21,7 +21,6 @@
             <div class="slide">
                 <img src="<?= get_template_directory_uri() ?>/img/test/roll-3.jpg" alt="shop thumbnail">
             </div>
-
         </div>
     </div>
     <div class="shop-card__main">
@@ -47,20 +46,36 @@
                 </tr>
                 <tr>
                     <td><a href="#">60х180</a></td>
-                    <td><a class="hot-deal" href="#">1590</a></td>
+                    <td><a href="#">1590</a><a class="hot-deal" href="#"></a></td>
                     <td><a href="#">2290</a></td>
                 </tr>
                 <tr>
                     <td><a href="#">60х180</a></td>
-                    <td><a class="hot-deal" href="#">1590</a></td>
+                    <td><a href="#">1590</a></td>
                     <td><a href="#">2290</a></td>
                 </tr>
                 <tr>
                     <td><a href="#">60х180</a></td>
-                    <td><a class="hot-deal" href="#">1590</a></td>
+                    <td><a href="#">1590</a></td>
                     <td><a href="#">2290</a></td>
                 </tr>
             </table>
+
+            <a href="#" class="buy-btn">купить</a>
+
+            <div class="description-container">
+                <div class="description-container__nav">
+                    <ul>
+                        <li class="selected">Сроки</li>
+                        <li>Доставка</li>
+                        <li>Оплата</li>
+                    </ul>
+                </div>
+                <div class="description-container__content">
+                    <p>- Изготовление Ролл ап стенда занимает от 1 дня.</p>
+                    <p>- Срочное изготовление стенда от 3 часов.</p>
+                </div>
+            </div>
         </div>
     </div>
 

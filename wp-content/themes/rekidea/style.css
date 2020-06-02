@@ -54,6 +54,19 @@ main {
     background-color: #d0b9c2;
     transition: all 0.3s linear; }
 
+.buy-btn {
+  font-size: 14px;
+  font-weight: 300;
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 10px 45px;
+  display: inline-block;
+  background-color: #029a03;
+  color: #fff; }
+  .buy-btn:hover {
+    background-color: #02b303;
+    transition: all 0.3s linear; }
+
 .fade {
   display: none;
   position: fixed;
@@ -3967,7 +3980,8 @@ main {
 
 .shop-card {
   width: 100%;
-  display: flex; }
+  display: flex;
+  border-bottom: 1px solid #cccbcb; }
   .shop-card .shop-hot-icon {
     position: relative; }
     .shop-card .shop-hot-icon::after {
@@ -3991,7 +4005,9 @@ main {
   .shop-card .shop-card__thumb-slider {
     width: 300px;
     margin-right: 30px;
-    margin-left: 30px; }
+    margin-left: 30px;
+    display: flex;
+    flex-direction: column; }
     .shop-card .shop-card__thumb-slider .samples-slider .slide {
       display: flex;
       justify-content: center;
@@ -4049,7 +4065,8 @@ main {
   .shop-card .shop-card__main-content > table {
     border: 1px solid #6f0d33;
     border-collapse: collapse;
-    width: 100%; }
+    width: 100%;
+    margin-bottom: 20px; }
     .shop-card .shop-card__main-content > table th {
       font-size: 13px;
       font-weight: 300;
@@ -4082,6 +4099,26 @@ main {
         text-decoration: none; }
         .shop-card .shop-card__main-content > table td > a:hover {
           text-decoration: underline; }
+  .shop-card .shop-card__main-content .description-container {
+    margin-top: 20px;
+    margin-bottom: 25px; }
+    .shop-card .shop-card__main-content .description-container__nav {
+      margin-bottom: 10px; }
+      .shop-card .shop-card__main-content .description-container__nav > ul {
+        list-style: none;
+        display: flex; }
+        .shop-card .shop-card__main-content .description-container__nav > ul > li {
+          margin-right: 32px;
+          font-size: 17px;
+          font-weight: bold;
+          color: #cccbcb;
+          cursor: pointer; }
+        .shop-card .shop-card__main-content .description-container__nav > ul > .selected {
+          color: #6f0d33; }
+    .shop-card .shop-card__main-content .description-container__content {
+      font-size: 14px;
+      font-weight: 300;
+      color: #000; }
 
 footer {
   background-color: #474747; }
