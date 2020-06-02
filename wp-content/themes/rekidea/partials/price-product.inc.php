@@ -11,10 +11,22 @@
                 <a href="#"><img src="<?= get_template_directory_uri() ?>/img/test/roll-3.jpg" alt="shop thumbnail"></a>
             </div>
         </div>
+        <div class="thumbs-slider">
+            <div class="slide">
+                <img src="<?= get_template_directory_uri() ?>/img/test/roll-2.jpg" alt="shop thumbnail">
+            </div>
+            <div class="slide">
+                <img src="<?= get_template_directory_uri() ?>/img/test/roll-1.jpg" alt="shop thumbnail">
+            </div>
+            <div class="slide">
+                <img src="<?= get_template_directory_uri() ?>/img/test/roll-3.jpg" alt="shop thumbnail">
+            </div>
+
+        </div>
     </div>
     <div class="shop-card__main">
         <div class="shop-card__main-header">
-            <h2>Ролл ап IDEA 一 <strong>standart</strong></h2>
+            <h2>Ролл ап IDEA<span>一 standart</span></h2>
             <p>Классическая модель роллерного стенда. Лидер продаж на российском рынке. Толщина стенки корпуса 0,8 мм,
                 верхняя зажимная планка
                 с пластиковым кронштейном на вертикальной опоре.
@@ -63,16 +75,31 @@
             slidesToScroll: 1,
             arrows: true,
             dots: false,
-            autoplay: true,
+            // autoplay: true,
             prevArrow: '<button class="arrow-prev"></button>',
             nextArrow: '<button class="arrow-next"></button>',
-            autoplaySpeed: 2000
+            // asNavFor: '.thumbs-slider',
+            // autoplaySpeed: 2000
             // centerMode: true,
-            // adaptiveHeight: true,
+             adaptiveHeight: false,
             // focusOnSelect: true
         });
+        $('.thumbs-slider').slick({
+            infinite: true,
+            slidesToShow: 3,
+            slidesToScroll: 1,
+            arrows: true,
+            dots: false,
+            autoplay: false,
+            prevArrow: '<button class="arrow-prev"></button>',
+            nextArrow: '<button class="arrow-next"></button>',
+            asNavFor: '.samples-slider',
+            // autoplaySpeed: 2000,
+             centerMode: true,
+            // adaptiveHeight: true,
+            focusOnSelect: true
+        });
     });
-
 
 </script>
 
