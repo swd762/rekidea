@@ -1477,7 +1477,12 @@
 
 .cart-content {
   padding-left: 13px;
-  padding-top: 10px;
+  @media(max-width: 1139px) {
+    padding-right: 19px;
+  }
+  @media(max-width: 768px) {
+    padding-right: 13px;
+  }
 }
 .woocommerce {
   table {
@@ -1506,6 +1511,9 @@
       .cart_item {
         td {
           text-align: center;
+          @media(max-width: 768px) {
+            width: 100%;
+          }
         }
       }
       .product-thumbnail {
@@ -1535,6 +1543,9 @@
         .quantity {
           display: flex;
           justify-content: center;
+          @media(max-width: 768px) {
+            justify-content: right;
+          }
         }
         .quantity-item {
           display: flex;
@@ -1581,6 +1592,12 @@
       }
       .product-remove-td {
         position: relative;
+        width: 77px;
+        @media(max-width: 768px) {
+          &:before {
+            display: none;
+          }
+        }
         .confirm-window {
           position: absolute;
           top: 28px;
@@ -1591,6 +1608,14 @@
           border-radius: 6px;
           width: 299px;
           padding: 15px 10px 8px;
+          display: none;
+          &.active {
+            display: block;
+          }
+          @media(max-width: 768px) {
+            top: -17px;
+            right: 0;
+          }
           p {
             font-size: 15px;
             color: #7b7b7b;
@@ -1610,6 +1635,8 @@
               height: auto;
               padding: 3px 0;
               line-height: initial;
+              cursor: pointer;
+              text-align: center;
             }
           }
         }
@@ -1625,9 +1652,15 @@
           }
           &:first-child {
             text-align: right;
+            @media(max-width: 768px) {
+              display: none;
+            }
           }
           &:last-child {
             padding-left: 30px;
+            @media(max-width: 768px) {
+              padding-left: 12px;
+            }
           }
         }
       }
@@ -1663,10 +1696,31 @@
     border-radius: 0;
     border: 1px solid red;
     margin: 0 auto;
+    @media(max-width: 768px) {
+     margin-right: 0;
+    }
   }
   a.remove {
     border-radius: 0;
     border: 1px solid red;
     margin-right: 4px;
   }
+  .actions-tr {
+    display: none !important;
+  }
+}
+.shop-header-with-square {
+  h4 {
+    font-size: 25px;
+    font-weight: 400;
+    &:before {
+      content: '';
+      display: inline-block;
+      width: 19px;
+      height: 19px;
+      background-color: $purple-color;
+      margin-right: 12px;
+    }
+  }
+  margin-bottom: 15px;
 }
