@@ -60,7 +60,7 @@ do_action( 'woocommerce_before_cart' ); ?>
 						?>
 						</td>
 
-						<td class="product-name" data-title="<?php esc_attr_e( 'Product', 'woocommerce' ); ?>">
+						<td class="product-name" data-title="Наименование">
 						<?php
 						if ( ! $product_permalink ) {
 							echo wp_kses_post( apply_filters( 'woocommerce_cart_item_name', $_product->get_name(), $cart_item, $cart_item_key ) . '&nbsp;' );
@@ -80,12 +80,12 @@ do_action( 'woocommerce_before_cart' ); ?>
 						?>
 						</td>
 
-                        <td class="product-parameters">
+                        <td class="product-parameters" data-title="Параметры">
                             <p><strong>Размер:</strong> 60x180</p>
                             <p><strong>Тип:</strong> С печатью</p>
                         </td>
 
-						<td class="product-quantity" data-title="<?php esc_attr_e( 'Quantity', 'woocommerce' ); ?>">
+						<td class="product-quantity" data-title="Количество">
 						<?php
 						if ( $_product->is_sold_individually() ) {
 							$product_quantity = sprintf( '1 <input type="hidden" name="cart[%s][qty]" value="1" />', $cart_item_key );
@@ -107,7 +107,7 @@ do_action( 'woocommerce_before_cart' ); ?>
 						?>
 						</td>
 
-						<td class="product-subtotal" data-title="<?php esc_attr_e( 'Subtotal', 'woocommerce' ); ?>">
+						<td class="product-subtotal" data-title="Цена">
 							<?php
 								echo apply_filters( 'woocommerce_cart_item_subtotal', WC()->cart->get_product_subtotal( $_product, $cart_item['quantity'] ), $cart_item, $cart_item_key ); // PHPCS: XSS ok.
 							?>
@@ -130,7 +130,7 @@ do_action( 'woocommerce_before_cart' ); ?>
                                         $cart_item_key
                                     );
                                     ?>
-                                    <a href="#" class="confirm-btn">Нет</a>
+                                    <div class="confirm-btn cancel">Нет</div>
                                 </div>
                             </div>
                             <?php
@@ -155,7 +155,7 @@ do_action( 'woocommerce_before_cart' ); ?>
 
 			<?php do_action( 'woocommerce_cart_contents' ); ?>
 
-			<tr>
+			<tr class="actions-tr">
 				<td colspan="6" class="actions">
 
 					<?php if ( wc_coupons_enabled() ) { ?>
@@ -165,7 +165,7 @@ do_action( 'woocommerce_before_cart' ); ?>
 						</div>
 					<?php } ?>
 
-					<button type="submit" class="button" name="update_cart" value="<?php esc_attr_e( 'Update cart', 'woocommerce' ); ?>"><?php esc_html_e( 'Update cart', 'woocommerce' ); ?></button>
+					<button type="submit" class="button js-update-cart-btn" name="update_cart" value="<?php esc_attr_e( 'Update cart', 'woocommerce' ); ?>"><?php esc_html_e( 'Update cart', 'woocommerce' ); ?></button>
 
 					<?php do_action( 'woocommerce_cart_actions' ); ?>
 
@@ -186,9 +186,11 @@ do_action( 'woocommerce_before_cart' ); ?>
 <script>
     document.querySelectorAll('.quantity-changers .quantity-changer-up').forEach(function (e) {
         e.addEventListener('click', function (e) {
-                let input = e.target.closest('.quantity-item').querySelector('input');
-                input.value = parseInt(input.value) + 1;
-            input.dispatchEvent(new Event('input', { bubbles: true }));
+            let input = e.target.closest('.quantity-item').querySelector('input');
+            input.value = parseInt(input.value) + 1;
+            input.dispatchEvent(new Event('change', { bubbles: true }));
+
+            updateCart();
         })
     });
 
@@ -199,8 +201,39 @@ do_action( 'woocommerce_before_cart' ); ?>
 
             if(currentValue > 1) {
                 input.value = currentValue - 1;
-                input.dispatchEvent(new Event('input', { bubbles: true }));
+                input.dispatchEvent(new Event('change', { bubbles: true }));
+                updateCart();
             }
         })
     });
+
+    document.querySelectorAll('.cart-content .product-remove-td .remove-confirm').forEach(function (e) {
+        e.addEventListener('click', function (e) {
+            e.preventDefault();
+            e.target.closest('.product-remove-td').querySelector('.confirm-window').classList.add('active');
+        })
+    });
+
+    document.querySelectorAll('.cart-content .product-remove-td a.remove').forEach(function (e) {
+        e.addEventListener('click', function (e) {
+            e.target.closest('.product-remove-td').querySelector('.confirm-window').classList.remove('active');
+        })
+    });
+
+    document.querySelectorAll('.cart-content .product-remove-td .cancel').forEach(function (e) {
+        e.addEventListener('click', function (e) {
+            e.preventDefault();
+            e.target.closest('.product-remove-td').querySelector('.confirm-window').classList.remove('active');
+        })
+    });
+
+    let updateTimerId;
+
+    function updateCart() {
+        clearTimeout(updateTimerId);
+
+        updateTimerId = setTimeout(function () {
+            jQuery("[name='update_cart']").trigger("click");
+        }, 1000);
+    }
 </script>
