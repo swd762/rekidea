@@ -80,6 +80,33 @@ function getPrices($postId, $target) {
 //add_theme_support( 'woocommerce' );
 
 
+// Перехватываем
+add_filter('woocommerce_checkout_fields', 'custom_override_checkout_fields');
+
+// Наша перехваченная функция - $fields проходит через фильтр!
+function custom_override_checkout_fields($fields)
+{
+    $fields['order']['order_comments']['placeholder'] = 'Мой новый текст в примечании к товару';
+
+    $fields['billing']['billing_first_name']['label'] = "Ф.И.О.:";
+    $fields['billing']['billing_first_name']['class'][0] = "form-row-wide";
+
+    $fields['billing']['billing_phone']['label'] = "Телефон:";
+    $fields['billing']['billing_email']['label'] = "E-Mail:";
+
+    // remove unnecessary fields
+    unset($fields['billing']['billing_last_name']);
+    unset($fields['billing']['billing_company']);
+    unset($fields['billing']['billing_country']);
+    unset($fields['billing']['billing_address_1']);
+    unset($fields['billing']['billing_address_2']);
+    unset($fields['billing']['billing_city']);
+    unset($fields['billing']['billing_state']);
+    unset($fields['billing']['billing_postcode']);
+
+    return $fields;
+}
+
 
 
 
