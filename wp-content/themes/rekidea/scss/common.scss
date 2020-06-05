@@ -78,6 +78,22 @@ main {
    }
 }
 
+// green buy button
+.buy-btn {
+  font-size: 14px;
+  font-weight: 300;
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 10px 45px;
+  display: inline-block;
+  background-color: #029a03;
+  color: #fff;
+  &:hover {
+    background-color: lighten(#029a03, 5%);
+    transition: all 0.3s linear;
+  }
+}
+
 
 
 

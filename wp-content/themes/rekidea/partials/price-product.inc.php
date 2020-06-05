@@ -1,3 +1,8 @@
+<?php
+
+?>
+
+
 <div class="shop-card">
     <div class="shop-card__thumb-slider">
         <div class="samples-slider shop-hot-icon">
@@ -21,15 +26,13 @@
             <div class="slide">
                 <img src="<?= get_template_directory_uri() ?>/img/test/roll-3.jpg" alt="shop thumbnail">
             </div>
-
         </div>
     </div>
     <div class="shop-card__main">
         <div class="shop-card__main-header">
-            <h2>Ролл ап IDEA<span>一 standart</span></h2>
-            <p>Классическая модель роллерного стенда. Лидер продаж на российском рынке. Толщина стенки корпуса 0,8 мм,
-                верхняя зажимная планка
-                с пластиковым кронштейном на вертикальной опоре.
+            <h2><?php echo $goods[0]['title'] ?><span>一 standart</span></h2>
+            <p>
+                <?php the_content(); ?>
             </p>
             <a href="#" class="doc-link">
                 <img src="<?= get_template_directory_uri() ?>/img/shop-card/pdf.png" alt="pdf link icon">
@@ -47,24 +50,38 @@
                 </tr>
                 <tr>
                     <td><a href="#">60х180</a></td>
-                    <td><a class="hot-deal" href="#">1590</a></td>
+                    <td><a href="#">1590</a><a class="hot-deal" href="#"></a></td>
                     <td><a href="#">2290</a></td>
                 </tr>
                 <tr>
                     <td><a href="#">60х180</a></td>
-                    <td><a class="hot-deal" href="#">1590</a></td>
+                    <td><a href="#">1590</a></td>
                     <td><a href="#">2290</a></td>
                 </tr>
                 <tr>
                     <td><a href="#">60х180</a></td>
-                    <td><a class="hot-deal" href="#">1590</a></td>
+                    <td><a href="#">1590</a></td>
                     <td><a href="#">2290</a></td>
                 </tr>
             </table>
+
+            <a href="#" class="buy-btn">купить</a>
+
+            <div class="description-container">
+                <div class="description-container__nav">
+                    <ul>
+                        <li class="selected">Сроки</li>
+                        <li>Доставка</li>
+                        <li>Оплата</li>
+                    </ul>
+                </div>
+                <div class="description-container__content">
+                    <p>- Изготовление Ролл ап стенда занимает от 1 дня.</p>
+                    <p>- Срочное изготовление стенда от 3 часов.</p>
+                </div>
+            </div>
         </div>
     </div>
-
-
 </div>
 
 
