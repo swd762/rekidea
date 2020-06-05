@@ -178,9 +178,14 @@ wp_footer();
         let formIsActive = document.querySelector('.call-me__modal').classList.contains('active');
         let itsFade = target == fadeMax;
         let HotIsActive = document.querySelector('.hot-deal__modal').classList.contains('active-flex');
+        let BuyIsActive = document.querySelector('.shop-buy__modal').classList.contains('active-flex');
         if (formIsActive && itsFade) {
             closeCallModal();
         }
+        if (BuyIsActive && itsFade) {
+            closeShopBuyModal();
+        }
+
         if (HotIsActive && itsFade) {
             closeHotDealModal();
         }
@@ -198,9 +203,10 @@ wp_footer();
 <!--******************-->
 
 <!--*******************Hot deal modal ******************************-->
+
 <div class="fade-max"></div>
 <script>
-    let hotDeals = document.querySelectorAll('.hot-icon , .hot-icon-mobile');
+    let hotDeals = document.querySelectorAll('.hot-icon , .hot-icon-mobile , .hot-deal');
     let modal = document.querySelector('.hot-deal__modal');
     for (let i = 0; i <hotDeals.length ; i++) {
         hotDeals[i].addEventListener('click', function (e) {

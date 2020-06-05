@@ -1,3 +1,8 @@
+<?php
+
+?>
+
+
 <div class="shop-card">
     <div class="shop-card__thumb-slider">
         <div class="samples-slider shop-hot-icon">
@@ -25,10 +30,9 @@
     </div>
     <div class="shop-card__main">
         <div class="shop-card__main-header">
-            <h2>Ролл ап IDEA<span>一 standart</span></h2>
-            <p>Классическая модель роллерного стенда. Лидер продаж на российском рынке. Толщина стенки корпуса 0,8 мм,
-                верхняя зажимная планка
-                с пластиковым кронштейном на вертикальной опоре.
+            <h2><?php echo $goods[0]['title'] ?><span>一 standart</span></h2>
+            <p>
+                <?php the_content(); ?>
             </p>
             <a href="#" class="doc-link">
                 <img src="<?= get_template_directory_uri() ?>/img/shop-card/pdf.png" alt="pdf link icon">
@@ -78,8 +82,6 @@
             </div>
         </div>
     </div>
-
-
 </div>
 
 

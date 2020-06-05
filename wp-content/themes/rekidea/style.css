@@ -1289,8 +1289,13 @@ main {
   Cart
  */
 .cart-content {
-  padding-left: 13px;
-  padding-top: 10px; }
+  padding-left: 13px; }
+  @media (max-width: 1139px) {
+    .cart-content {
+      padding-right: 19px; } }
+  @media (max-width: 768px) {
+    .cart-content {
+      padding-right: 13px; } }
 
 .woocommerce table.cart {
   border-radius: 0;
@@ -1309,6 +1314,9 @@ main {
       border-right: none; }
   .woocommerce table.cart .cart_item td {
     text-align: center; }
+    @media (max-width: 768px) {
+      .woocommerce table.cart .cart_item td {
+        width: 100%; } }
   .woocommerce table.cart .product-thumbnail {
     padding: 10px;
     text-align: center;
@@ -1331,6 +1339,9 @@ main {
     .woocommerce table.cart .product-quantity .quantity {
       display: flex;
       justify-content: center; }
+      @media (max-width: 768px) {
+        .woocommerce table.cart .product-quantity .quantity {
+          justify-content: right; } }
     .woocommerce table.cart .product-quantity .quantity-item {
       display: flex; }
       .woocommerce table.cart .product-quantity .quantity-item input {
@@ -1365,7 +1376,11 @@ main {
   .woocommerce table.cart .product-subtotal {
     width: 126px; }
   .woocommerce table.cart .product-remove-td {
-    position: relative; }
+    position: relative;
+    width: 77px; }
+    @media (max-width: 768px) {
+      .woocommerce table.cart .product-remove-td:before {
+        display: none; } }
     .woocommerce table.cart .product-remove-td .confirm-window {
       position: absolute;
       top: 28px;
@@ -1375,7 +1390,14 @@ main {
       z-index: 1;
       border-radius: 6px;
       width: 299px;
-      padding: 15px 10px 8px; }
+      padding: 15px 10px 8px;
+      display: none; }
+      .woocommerce table.cart .product-remove-td .confirm-window.active {
+        display: block; }
+      @media (max-width: 768px) {
+        .woocommerce table.cart .product-remove-td .confirm-window {
+          top: -17px;
+          right: 0; } }
       .woocommerce table.cart .product-remove-td .confirm-window p {
         font-size: 15px;
         color: #7b7b7b; }
@@ -1393,7 +1415,9 @@ main {
           width: 85px;
           height: auto;
           padding: 3px 0;
-          line-height: initial; }
+          line-height: initial;
+          cursor: pointer;
+          text-align: center; }
   .woocommerce table.cart .order-total td {
     background-color: #efefef;
     font-size: 14px;
@@ -1403,8 +1427,14 @@ main {
       font-weight: bold; }
     .woocommerce table.cart .order-total td:first-child {
       text-align: right; }
+      @media (max-width: 768px) {
+        .woocommerce table.cart .order-total td:first-child {
+          display: none; } }
     .woocommerce table.cart .order-total td:last-child {
       padding-left: 30px; }
+      @media (max-width: 768px) {
+        .woocommerce table.cart .order-total td:last-child {
+          padding-left: 12px; } }
 .woocommerce .wc-proceed-to-checkout {
   display: flex;
   justify-content: right;
@@ -1432,10 +1462,28 @@ main {
   border-radius: 0;
   border: 1px solid red;
   margin: 0 auto; }
+  @media (max-width: 768px) {
+    .woocommerce a.remove-confirm {
+      margin-right: 0; } }
 .woocommerce a.remove {
   border-radius: 0;
   border: 1px solid red;
   margin-right: 4px; }
+.woocommerce .actions-tr {
+  display: none !important; }
+
+.shop-header-with-square {
+  margin-bottom: 15px; }
+  .shop-header-with-square h4 {
+    font-size: 25px;
+    font-weight: 400; }
+    .shop-header-with-square h4:before {
+      content: '';
+      display: inline-block;
+      width: 19px;
+      height: 19px;
+      background-color: #6f0d33;
+      margin-right: 12px; }
 
 .main-header {
   position: fixed;
@@ -4490,6 +4538,90 @@ footer {
       .hot-deal__modal section {
         margin-top: 22px; }
         .hot-deal__modal section p {
+          margin-top: 15px;
+          font-size: 18px; } }
+
+.active-flex {
+  display: flex; }
+
+.shop-buy__modal {
+  width: 435px;
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  box-shadow: 0 0 14px 0 rgba(0, 0, 0, 0.17);
+  padding: 26px 30px 20px 30px;
+  z-index: 99994;
+  border-radius: 5px; }
+  .shop-buy__modal img {
+    width: 60px; }
+  .shop-buy__modal h2 {
+    margin-top: 22px;
+    font-weight: 400;
+    font-size: 24px;
+    color: #6f0d33;
+    text-transform: uppercase; }
+  .shop-buy__modal h3 {
+    margin-top: 16px;
+    font-weight: 400;
+    font-size: 24px;
+    color: #6f0d33;
+    text-transform: uppercase;
+    text-align: center; }
+  .shop-buy__modal h4 {
+    margin-top: 16px;
+    font-weight: 300;
+    font-size: 24px;
+    color: #6f0d33;
+    text-transform: uppercase;
+    text-align: center; }
+  .shop-buy__modal section {
+    margin-top: 28px; }
+    .shop-buy__modal section p {
+      margin-top: 18px;
+      color: #6f0d33;
+      font-size: 24px;
+      font-weight: 300; }
+      .shop-buy__modal section p:first-child {
+        margin-top: 0; }
+    .shop-buy__modal section span {
+      margin-top: 15px;
+      display: block;
+      font-weight: 300; }
+  .shop-buy__modal .close-btn {
+    position: absolute;
+    top: 9px;
+    right: 5px;
+    cursor: pointer; }
+    .shop-buy__modal .close-btn span {
+      height: 1px;
+      width: 19px;
+      background-color: #8c8484;
+      display: block; }
+      .shop-buy__modal .close-btn span:first-child {
+        transform: rotate(45deg);
+        transform-origin: 0 0;
+        margin-bottom: 12px; }
+      .shop-buy__modal .close-btn span:last-child {
+        transform: rotate(-45deg);
+        transform-origin: 0 100%; }
+  @media (max-width: 520px) {
+    .shop-buy__modal {
+      width: 310px;
+      padding: 25px 5px 20px 5px; }
+      .shop-buy__modal h2 {
+        font-size: 18px; }
+      .shop-buy__modal h3 {
+        font-size: 18px;
+        margin-top: 10px; }
+      .shop-buy__modal section {
+        margin-top: 22px; }
+        .shop-buy__modal section p {
           margin-top: 15px;
           font-size: 18px; } }
 
