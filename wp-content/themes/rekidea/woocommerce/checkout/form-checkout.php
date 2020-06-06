@@ -59,9 +59,31 @@ if ( ! $checkout->is_registration_enabled() && $checkout->is_registration_requir
 	
 	<?php do_action( 'woocommerce_checkout_before_order_review_heading' ); ?>
 	
-	<h3 id="order_review_heading"><?php esc_html_e( 'Your order', 'woocommerce' ); ?></h3>
-	
 	<?php do_action( 'woocommerce_checkout_before_order_review' ); ?>
+
+
+    <div class="woocommerce-additional-fields checkout-fieldset">
+        <h3>Комментарий к заказу</h3>
+        <?php do_action( 'woocommerce_before_order_notes', $checkout ); ?>
+
+        <?php if ( apply_filters( 'woocommerce_enable_order_notes_field', 'yes' === get_option( 'woocommerce_enable_order_comments', 'yes' ) ) ) : ?>
+
+            <?php if ( ! WC()->cart->needs_shipping() || wc_ship_to_billing_address_only() ) : ?>
+
+                <h3><?php esc_html_e( 'Additional information', 'woocommerce' ); ?></h3>
+
+            <?php endif; ?>
+
+            <div class="woocommerce-additional-fields__field-wrapper">
+                <?php foreach ( $checkout->get_checkout_fields( 'order' ) as $key => $field ) : ?>
+                    <?php woocommerce_form_field( $key, $field, $checkout->get_value( $key ) ); ?>
+                <?php endforeach; ?>
+            </div>
+
+        <?php endif; ?>
+
+        <?php do_action( 'woocommerce_after_order_notes', $checkout ); ?>
+    </div>
 
 	<div id="order_review" class="woocommerce-checkout-review-order">
 		<?php do_action( 'woocommerce_checkout_order_review' ); ?>
@@ -69,6 +91,13 @@ if ( ! $checkout->is_registration_enabled() && $checkout->is_registration_requir
 
 	<?php do_action( 'woocommerce_checkout_after_order_review' ); ?>
 
+    <?php do_action( 'woocommerce_review_order_before_submit' ); ?>
+
+    <?php echo apply_filters( 'woocommerce_order_button_html', '<button type="submit" class="button alt woocommerce_checkout_submit" name="woocommerce_checkout_place_order" id="place_order" value="Оформить заказ" data-value="Оформить заказ">Оформить заказ</button>' ); // @codingStandardsIgnoreLine ?>
+
+    <?php do_action( 'woocommerce_review_order_after_submit' ); ?>
+
+    <?php wc_get_template( 'checkout/terms.php' ); ?>
 </form>
 
 <?php do_action( 'woocommerce_after_checkout_form', $checkout ); ?>

@@ -108,6 +108,8 @@ function custom_override_checkout_fields($fields)
 }
 
 
+remove_action( 'woocommerce_checkout_order_review', 'woocommerce_checkout_payment', 20 );
+add_action( 'woocommerce_review_order_after_shipping', 'woocommerce_checkout_payment', 20 );
 
 
 
