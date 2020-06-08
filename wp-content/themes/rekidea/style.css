@@ -4558,41 +4558,12 @@ footer {
   padding: 26px 30px 20px 30px;
   z-index: 99994;
   border-radius: 5px; }
-  .shop-buy__modal img {
-    width: 60px; }
   .shop-buy__modal h2 {
     margin-top: 22px;
     font-weight: 400;
     font-size: 24px;
     color: #6f0d33;
     text-transform: uppercase; }
-  .shop-buy__modal h3 {
-    margin-top: 16px;
-    font-weight: 400;
-    font-size: 24px;
-    color: #6f0d33;
-    text-transform: uppercase;
-    text-align: center; }
-  .shop-buy__modal h4 {
-    margin-top: 16px;
-    font-weight: 300;
-    font-size: 24px;
-    color: #6f0d33;
-    text-transform: uppercase;
-    text-align: center; }
-  .shop-buy__modal section {
-    margin-top: 28px; }
-    .shop-buy__modal section p {
-      margin-top: 18px;
-      color: #6f0d33;
-      font-size: 24px;
-      font-weight: 300; }
-      .shop-buy__modal section p:first-child {
-        margin-top: 0; }
-    .shop-buy__modal section span {
-      margin-top: 15px;
-      display: block;
-      font-weight: 300; }
   .shop-buy__modal .close-btn {
     position: absolute;
     top: 9px;

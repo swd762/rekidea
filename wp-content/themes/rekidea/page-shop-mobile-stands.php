@@ -46,18 +46,27 @@ get_header();
                         $goodsPrice['title'] = $product->get_name();
                         $goodsPrice['thumbs'] = $product->get_gallery_image_ids();
                         $goodsPrice['description'] = $product->get_description();
+                        $goodsPrice['product_id'] = $product->get_id();
 
                         foreach ($product->get_available_variations() as $variation) {
                             foreach ($variation['attributes'] as $key => $value) {
                                 $goodsPrice['size'][$value][] = $variation['display_price'];
                                 break;
                             }
+                            $goodsPrice['var_id'][] = $variation['variation_id'];
+
                         }
                         $goods[] = $goodsPrice;
                         ?>
 
                     <?php endwhile; ?>
-
+<!--                    --><?php
+//                    echo '<pre>';
+//
+//                    var_dump($goods);
+//
+//                    echo '</pre>';
+//                    ?>
                     <?php
 
                     $counter = 0;
@@ -149,6 +158,9 @@ get_header();
                         <?php
 
                     }
+                    //                    echo '<pre>';
+                    //                    var_dump($product->get_available_variations());
+                    //                    echo '</pre>';
                     ?>
 
 
@@ -210,20 +222,46 @@ get_header();
 
     <!--*** shop buy modal-->
     <div class="shop-buy__modal">
-        <div class="shop-buy__modal-content"></div>
+        <form class="shop-buy__modal-content" action="">
+            <h2 class="title"></h2>
+            <p>выберите размер</p>
+            <select name="size" id="selectSize" onchange="rebuildGoodsModal()">
+            </select>
+            <section class="shop-qty">
+                <span>Количество</span>
+                <input type="text" name="quantity" value="1" id="qty" onchange="rebuildGoodsModal()">
+            </section>
+            <section class="shop-options">
+                <span>c печатью</span>
+                <label>
+                    <input type="checkbox" name="isPrint" id="isPrint" onchange="rebuildGoodsModal()">
+                </label>
+            </section>
+            <section class="shop-price">
+                <span>Итого</span>
+                <span id="summary">0</span>
+            </section>
+            <section class="shop-params" style="display: none">
+                <input type="text" name="product_id" id="product_id" disabled>
+                <input type="text" name="variant_id" id="variant_id" disabled>
+            </section>
+            <input type="submit" class="shop_add_to_cart_button">
+        </form>
 
-        <h2 class="title"></h2>
-        <p>выберите размер</p>
-        <select name="size" id="selectSize">
-
-        </select>
 
         <div class="close-btn" onclick="closeShopBuyModal()"><span></span><span></span></div>
     </div>
     <!--***-->
+
+    <script>
+
+    </script>
+
     <script>
         var goods = <?= json_encode($goods)?>;
-        console.log(goods[0]);
+
+
+        var globalIndex = 0;
 
         function buy(index) {
             let modal = document.querySelector('.shop-buy__modal');
@@ -234,31 +272,121 @@ get_header();
 
             let title = document.querySelector('.title');
             title.innerText = goods[index]['title'];
-            // modalContent.appendChild(title);
+
             let select = document.querySelector('#selectSize');
 
-            var counter = 0;
+
             for (var key in goods[index]['size']) {
                 let selectValue = document.createElement('option');
                 selectValue.innerText = key;
                 select.appendChild(selectValue);
-                counter++;
             }
-            console.log(counter);
 
+            globalIndex = index;
 
+            rebuildGoodsModal();
         }
+
+        function rebuildGoodsModal() {
+
+            let size_index = 0;
+
+            let size = document.querySelector('#selectSize').options[document.getElementById("selectSize").options
+                .selectedIndex].text;
+
+            let qty = document.querySelector('#qty').value;
+
+
+            let isPrintValue = document.querySelector('#isPrint').checked ? 1 : 0;
+
+
+            let summary = document.getElementById('summary');
+
+            let summaryValue = goods[globalIndex]['size'][size][isPrintValue] * qty;
+
+            document.getElementById("product_id").value = goods[globalIndex]['product_id'];
+
+            for (var key in goods[globalIndex]['size']) {
+                if (key === size) {
+                    break;
+                }
+                size_index++;
+            }
+
+            document.getElementById("variant_id").value = goods[globalIndex]['var_id'][size_index * 2 + isPrintValue];
+            summary.innerText = summaryValue;
+        }
+
+        jQuery(document).ready(function ($) {
+
+            $('.shop_add_to_cart_button').on('click', function (e) {
+                e.preventDefault();
+                $thisbutton = $(this),
+                    $form = $thisbutton.closest('form'),
+                    product_qty = $form.find('input[name=quantity]').val(),
+                    product_id = $('#product_id').val(),
+                    variation_id = $('#variant_id').val();
+
+                alert(variation_id);
+
+                var data = {
+                    action: 'ql_woocommerce_ajax_add_to_cart',
+                    product_id: product_id,
+                    product_sku: '',
+                    quantity: product_qty,
+                    variation_id: variation_id,
+
+                };
+
+                $.ajax({
+
+                    type: 'post',
+
+                    url: wc_add_to_cart_params.ajax_url,
+
+                    data: data,
+
+                    beforeSend: function (response) {
+
+                        // $thisbutton.removeClass('added').addClass('loading');
+
+                    },
+
+                    complete: function (response) {
+
+                        // $thisbutton.addClass('added').removeClass('loading');
+
+                    },
+
+                    success: function (response) {
+
+                        // if (response.error & response.product_url) {
+                        //
+                        //     window.location = response.product_url;
+                        //
+                        //     return;
+                        //
+                        // } else {
+                        //
+                        //     $(document.body).trigger('added_to_cart', [response.fragments, response.cart_hash, $thisbutton]);
+                        //
+                        // }
+
+                    },
+                });
+            });
+        });
 
 
         function closeShopBuyModal() {
             let modal = document.querySelector('.shop-buy__modal');
-            let modalContent = document.querySelector('.shop-buy__modal-content');
+            let selectContent = document.querySelector('#selectSize');
             modal.classList.remove('active-flex');
             fadeMax.classList.remove('active');
             document.querySelector('body').classList.remove('modal-opened');
-            // while (modalContent.firstChild) {
-            //     modalContent.removeChild(modalContent.firstChild);
-            // }
+            while (selectContent.firstChild) {
+                selectContent.removeChild(selectContent.firstChild);
+            }
         }
 
     </script>
