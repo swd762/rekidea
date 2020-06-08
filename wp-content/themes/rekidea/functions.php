@@ -94,6 +94,16 @@ function custom_override_checkout_fields($fields)
     $fields['billing']['billing_phone']['label'] = "Телефон:";
     $fields['billing']['billing_email']['label'] = "E-Mail:";
 
+    $fields['shipping']['shipping_city']['priority'] = 10;
+    $fields['shipping']['shipping_city']['required'] = false;
+    $fields['shipping']['shipping_city']['label'] = 'Город:';
+    $fields['shipping']['shipping_address_1']['priority'] = 20;
+    $fields['shipping']['shipping_address_1']['label'] = 'Улица:';
+    $fields['shipping']['shipping_address_1']['placeholder'] = '';
+    $fields['shipping']['shipping_address_1']['required'] = false;
+
+    $fields['order']['order_comments']['placeholder'] = '';
+
     // remove unnecessary fields
     unset($fields['billing']['billing_last_name']);
     unset($fields['billing']['billing_company']);
@@ -104,8 +114,59 @@ function custom_override_checkout_fields($fields)
     unset($fields['billing']['billing_state']);
     unset($fields['billing']['billing_postcode']);
 
+    unset($fields['shipping']['shipping_first_name']);
+    unset($fields['shipping']['shipping_last_name']);
+    unset($fields['shipping']['shipping_company']);
+    unset($fields['shipping']['shipping_country']);
+    unset($fields['shipping']['shipping_address_2']);
+    unset($fields['shipping']['shipping_state']);
+    unset($fields['shipping']['shipping_postcode']);
+
+    //add custom fields
+    $fields['shipping']['house'] = array(
+        'label' => 'Дом:',
+        'required' => false,
+        'class' => array('house_field'),
+        'priority' => 30
+    );
+
+    $fields['shipping']['entrance'] = array(
+        'label' => 'Подъезд:',
+        'required' => false,
+        'class' => array('entrance_field'),
+        'priority' => 40
+    );
+
+    $fields['shipping']['apartment'] = array(
+        'label' => 'Квартира:',
+        'required' => false,
+        'class' => array('apartment_field'),
+        'priority' => 50
+    );
+
+    $fields['shipping']['floor'] = array(
+        'label' => 'Этаж:',
+        'required' => false,
+        'class' => array('floor_field'),
+        'priority' => 60
+    );
+
+    $fields['shipping']['lift'] = array(
+        'type' => 'checkbox',
+        'label' => 'Грузовой лифт',
+        'required' => false,
+        'class' => array('lift_field'),
+        'priority' => 70
+    );
+
     return $fields;
 }
+
+remove_action( 'woocommerce_checkout_order_review', 'woocommerce_checkout_payment', 20 );
+add_action( 'woocommerce_review_order_after_shipping', 'woocommerce_checkout_payment', 20 );
+'product_url' => apply_filters('ql_woocommerce_cart_redirect_after_error', get_permalink($product_id), $product_id));
+
+
 
 add_action('wp_ajax_ql_woocommerce_ajax_add_to_cart', 'ql_woocommerce_ajax_add_to_cart');
 
@@ -140,16 +201,15 @@ function ql_woocommerce_ajax_add_to_cart() {
         $data = array(
 
             'error' => true,
-
-            'product_url' => apply_filters('ql_woocommerce_cart_redirect_after_error', get_permalink($product_id), $product_id));
-
-        echo wp_send_json($data);
+      echo wp_send_json($data);
 
     }
 
     wp_die();
 
 }
+
+
 
 
 
