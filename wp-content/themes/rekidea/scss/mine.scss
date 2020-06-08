@@ -1760,6 +1760,8 @@
   }
   .woocommerce-billing-fields__field-wrapper {
     width: 50%;
+  }
+  .woocommerce-billing-fields__field-wrapper, .woocommerce-shipping-fields {
     label {
       line-height: initial !important;
       margin-bottom: 5px;
@@ -1828,6 +1830,51 @@
     label {
       font-size: 13px;
       color: #6a6f6c;
+    }
+  }
+
+  .woocommerce-shipping-fields {
+    #ship-to-different-address {
+      display: none;
+    }
+    .shipping_address {
+      display: block !important;
+      .woocommerce-shipping-fields__field-wrapper {
+        label {
+          span {
+            display: none;
+          }
+        }
+        &>p {
+          display: inline-block;
+          margin-right: 27px;
+          &#shipping_city_field {
+            display: block;
+            width: 251px;
+          }
+          &:last-child {
+            margin-right: 0;
+          }
+        }
+        #shipping_address_1_field, #shipping_city_field {
+          width: 251px;
+        }
+        #house_field {
+          width: 157px;
+        }
+        #entrance_field, #apartment_field, #floor_field {
+          width: 64px;
+        }
+        #lift_field {
+          label {
+
+          }
+          input {
+            width: auto;
+            margin: 0 8px 0 0;
+          }
+        }
+      }
     }
   }
 }

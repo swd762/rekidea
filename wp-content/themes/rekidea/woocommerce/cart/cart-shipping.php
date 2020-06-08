@@ -54,6 +54,7 @@ $count = 0;
 					</li>
 				<?php $count++; endforeach; ?>
 			</ul>
+        <h4>Адрес доставки:</h4>
             <?php do_action( 'woocommerce_checkout_shipping' ); ?>
 			<?php if ( is_cart() ) : ?>
 				<p class="woocommerce-shipping-destination">
