@@ -264,7 +264,7 @@ get_header();
         function buy(index, size=null, isPrint = 0) {
 
             let modal = document.querySelector('.shop-buy__modal');
-            let modalContent = document.querySelector('.shop-buy__modal-content');
+            // let modalContent = document.querySelector('.shop-buy__modal-content');
             modal.classList.add('active-flex');
             fadeMax.classList.add('active');
 
@@ -283,12 +283,8 @@ get_header();
                 select.appendChild(selectValue);
             }
 
-            if (isPrint == 1) isPrintValue.checked=true;
+            if (isPrint === 1) isPrintValue.checked=true;
             else isPrintValue.checked=false;
-
-
-
-
 
             globalIndex = index;
 
@@ -335,8 +331,6 @@ get_header();
                     product_id = $('#product_id').val(),
                     variation_id = $('#variant_id').val();
 
-                alert(variation_id);
-
                 var data = {
                     action: 'ql_woocommerce_ajax_add_to_cart',
                     product_id: product_id,
@@ -349,25 +343,16 @@ get_header();
                 $.ajax({
 
                     type: 'post',
-
                     url: wc_add_to_cart_params.ajax_url,
-
                     data: data,
-
                     beforeSend: function (response) {
-
                         // $thisbutton.removeClass('added').addClass('loading');
-
                     },
-
                     complete: function (response) {
-
                         // $thisbutton.addClass('added').removeClass('loading');
-
+                        closeShopBuyModal();
                     },
-
                     success: function (response) {
-
                         // if (response.error & response.product_url) {
                         //
                         //     window.location = response.product_url;
@@ -379,7 +364,6 @@ get_header();
                         //     $(document.body).trigger('added_to_cart', [response.fragments, response.cart_hash, $thisbutton]);
                         //
                         // }
-
                     },
                 });
             });
