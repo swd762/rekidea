@@ -164,8 +164,8 @@ function custom_override_checkout_fields($fields)
 
 remove_action( 'woocommerce_checkout_order_review', 'woocommerce_checkout_payment', 20 );
 add_action( 'woocommerce_review_order_after_shipping', 'woocommerce_checkout_payment', 20 );
-'product_url' => apply_filters('ql_woocommerce_cart_redirect_after_error', get_permalink($product_id), $product_id));
 
+//
 
 
 add_action('wp_ajax_ql_woocommerce_ajax_add_to_cart', 'ql_woocommerce_ajax_add_to_cart');
@@ -201,6 +201,8 @@ function ql_woocommerce_ajax_add_to_cart() {
         $data = array(
 
             'error' => true,
+            'product_url' => apply_filters('ql_woocommerce_cart_redirect_after_error', get_permalink($product_id), $product_id));
+
       echo wp_send_json($data);
 
     }
