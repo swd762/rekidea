@@ -125,17 +125,17 @@ get_header();
                                         <?php foreach ($good['size'] as $size => $price) { ?>
 
                                             <tr>
-                                                <td><a href="#"><?= $size ?></a></td>
-                                                <td><a href="#" onclick="buy(<?= $index ?>)"><?= $price[0] ?></a><a
-                                                            class="hot-deal"
-                                                            href="#"></a>
+                                                <td><a href="#" onclick="buy(<?= $index ?>,'<?= $size ?>')"><?= $size ?></a></td>
+                                                <td><a href="#" onclick="buy(<?= $index ?>,'<?= $size ?>')"><?=$price[0] ?></a>
+                                                    <a class="hot-deal" href="#"></a>
                                                 </td>
-                                                <td><a href="#"><?= $price[1] ?></a></td>
+                                                <td><a href="#" onclick="buy(<?= $index ?>,'<?= $size ?>',1)
+                                                            "><?= $price[1] ?></a></td>
                                             </tr>
                                         <?php } ?>
                                     </table>
 
-                                    <a href="#" class="buy-btn">купить</a>
+                                    <a href="#" class="buy-btn" onclick="buy(<?= $index ?>)">купить</a>
 
                                     <div class="description-container">
                                         <div class="description-container__nav">
@@ -165,9 +165,10 @@ get_header();
 
 
                     <script>
+
+//                        slider for product card
+
                         jQuery(function ($) {
-
-
                             $('.samples-slider').slick({
                                 slidesToShow: 1,
                                 slidesToScroll: 1,
@@ -198,7 +199,6 @@ get_header();
                                 focusOnSelect: true
                             });
                         });
-
                     </script>
 
                     <!-- *** -->
@@ -259,28 +259,36 @@ get_header();
 
     <script>
         var goods = <?= json_encode($goods)?>;
-
-
         var globalIndex = 0;
 
-        function buy(index) {
+        function buy(index, size=null, isPrint = 0) {
+
             let modal = document.querySelector('.shop-buy__modal');
             let modalContent = document.querySelector('.shop-buy__modal-content');
             modal.classList.add('active-flex');
             fadeMax.classList.add('active');
-            console.log(goods[index]['title']);
+
 
             let title = document.querySelector('.title');
             title.innerText = goods[index]['title'];
 
             let select = document.querySelector('#selectSize');
 
+            let isPrintValue = document.querySelector('#isPrint');
 
             for (var key in goods[index]['size']) {
                 let selectValue = document.createElement('option');
+                if (key === size) selectValue.defaultSelected=true;
                 selectValue.innerText = key;
                 select.appendChild(selectValue);
             }
+
+            if (isPrint == 1) isPrintValue.checked=true;
+            else isPrintValue.checked=false;
+
+
+
+
 
             globalIndex = index;
 
