@@ -184,47 +184,37 @@ do_action( 'woocommerce_before_cart' ); ?>
 <?php do_action( 'woocommerce_after_cart' ); ?>
 
 <script>
-    document.querySelectorAll('.quantity-changers .quantity-changer-up').forEach(function (e) {
-        e.addEventListener('click', function (e) {
-            let input = e.target.closest('.quantity-item').querySelector('input');
-            input.value = parseInt(input.value) + 1;
+    jQuery('.cart-content').on('click', '.quantity-changers .quantity-changer-up', function (e) {
+        let input = e.target.closest('.quantity-item').querySelector('input');
+        input.value = parseInt(input.value) + 1;
+        input.dispatchEvent(new Event('change', { bubbles: true }));
+
+        updateCart();
+    });
+
+    jQuery('.cart-content').on('click', '.quantity-changers .quantity-changer-down', function (e) {
+        let input = e.target.closest('.quantity-item').querySelector('input');
+        let currentValue = parseInt(input.value);
+
+        if(currentValue > 1) {
+            input.value = currentValue - 1;
             input.dispatchEvent(new Event('change', { bubbles: true }));
-
             updateCart();
-        })
+        }
     });
 
-    document.querySelectorAll('.quantity-changers .quantity-changer-down').forEach(function (e) {
-        e.addEventListener('click', function (e) {
-            let input = e.target.closest('.quantity-item').querySelector('input');
-            let currentValue = parseInt(input.value);
-
-            if(currentValue > 1) {
-                input.value = currentValue - 1;
-                input.dispatchEvent(new Event('change', { bubbles: true }));
-                updateCart();
-            }
-        })
+    jQuery('.cart-content').on('click', '.product-remove-td .remove-confirm', function (e) {
+        e.preventDefault();
+        e.target.closest('.product-remove-td').querySelector('.confirm-window').classList.add('active');
     });
 
-    document.querySelectorAll('.cart-content .product-remove-td .remove-confirm').forEach(function (e) {
-        e.addEventListener('click', function (e) {
-            e.preventDefault();
-            e.target.closest('.product-remove-td').querySelector('.confirm-window').classList.add('active');
-        })
+    jQuery('.cart-content').on('click', '.product-remove-td a.remove', function (e) {
+        e.target.closest('.product-remove-td').querySelector('.confirm-window').classList.remove('active');
     });
 
-    document.querySelectorAll('.cart-content .product-remove-td a.remove').forEach(function (e) {
-        e.addEventListener('click', function (e) {
-            e.target.closest('.product-remove-td').querySelector('.confirm-window').classList.remove('active');
-        })
-    });
-
-    document.querySelectorAll('.cart-content .product-remove-td .cancel').forEach(function (e) {
-        e.addEventListener('click', function (e) {
-            e.preventDefault();
-            e.target.closest('.product-remove-td').querySelector('.confirm-window').classList.remove('active');
-        })
+    jQuery('.cart-content').on('click', '.product-remove-td .cancel', function (e) {
+        e.preventDefault();
+        e.target.closest('.product-remove-td').querySelector('.confirm-window').classList.remove('active');
     });
 
     let updateTimerId;
