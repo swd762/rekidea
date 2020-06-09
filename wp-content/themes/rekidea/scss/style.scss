@@ -3829,17 +3829,20 @@
 .shop-products__container {
   border-left: 1px solid #c0c0c0;
   padding-left: 20px;
+
   &-banner {
     height: 100px;
     width: 100%;
     background-color: #a6a6a6;
     margin-bottom: 15px;
   }
+
   &-filter {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    &>.filter-item {
+
+    & > .filter-item {
       font-size: 14px;
       font-weight: 300;
       color: #000;
@@ -3852,10 +3855,19 @@
 
       cursor: pointer;
     }
-    &>.filter-item-active {
+
+    & > .filter-item-active {
       color: #fff;
       background-color: $red;
     }
+  }
+
+  & > .row .price__content-title {
+    margin-bottom: 0;
+  }
+  @media (max-width: 750px) {
+    padding-left: 20px;
+    border-left: none;
   }
 }
 
@@ -3863,6 +3875,7 @@
   width: 100%;
   display: flex;
   border-bottom: 1px solid #cccbcb;
+  margin-top: 25px;
 
   .shop-hot-icon {
     position: relative;
@@ -3952,6 +3965,10 @@
   }
 
   .shop-card__main {
+    & > .shop-card__thumb-slider {
+      display: none;
+    }
+
     &-header {
       h2 {
         font-size: 18px;
@@ -4053,23 +4070,28 @@
       .description-container {
         margin-top: 20px;
         margin-bottom: 25px;
+
         &__nav {
           margin-bottom: 10px;
-          &>ul {
+
+          & > ul {
             list-style: none;
             display: flex;
-            &>li {
+
+            & > li {
               margin-right: 32px;
               font-size: 17px;
               font-weight: bold;
               color: #cccbcb;
               cursor: pointer;
             }
-            &>.selected {
+
+            & > .selected {
               color: $red;
             }
           }
         }
+
         &__content {
           font-size: 14px;
           font-weight: 300;
@@ -4077,10 +4099,35 @@
         }
 
       }
-
-
     }
+  }
 
+  @media (max-width: 750px) {
+    flex-direction: column;
+    &>.shop-card__thumb-slider {
+      display: none;
+    }
+    .shop-card__main {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      &-header {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+      &-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      & > .shop-card__thumb-slider {
+        display: flex;
+        margin-bottom: 15px;
+        margin-top: 15px;
+      }
+    }
   }
 
 }
@@ -4620,6 +4667,7 @@ footer {
 .active-flex {
   display: flex;
 }
+
 // **************************************
 
 // ************Shop modal ***********
