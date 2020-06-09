@@ -109,7 +109,7 @@ get_header();
                                     <p>
                                         <?php echo $good['description']; ?>
                                     </p>
-                                    <a href="#" class="doc-link">
+                                    <a target="_blank" href="<?= get_template_directory_uri()?>/img/rollup-tech.pdf>" class="doc-link">
                                         <img src="<?= get_template_directory_uri() ?>/img/shop-card/pdf.png"
                                              alt="pdf link icon">
                                         Технические требования к макету
@@ -247,28 +247,31 @@ get_header();
     <div class="shop-buy__modal">
         <form class="shop-buy__modal-content" action="">
             <h2 class="title"></h2>
-            <p>выберите размер</p>
+            <p>Выберите размер</p>
             <select name="size" id="selectSize" onchange="rebuildGoodsModal()">
             </select>
             <section class="shop-qty">
-                <span>Количество</span>
+                <span>Количество:</span>
                 <input type="text" name="quantity" value="1" id="qty" onchange="rebuildGoodsModal()">
             </section>
             <section class="shop-options">
-                <span>c печатью</span>
+                <span>С печатью</span>
                 <label>
                     <input type="checkbox" name="isPrint" id="isPrint" onchange="rebuildGoodsModal()">
                 </label>
             </section>
             <section class="shop-price">
-                <span>Итого</span>
+                <span>Итого:</span>
                 <span id="summary">0</span>
             </section>
             <section class="shop-params" style="display: none">
                 <input type="text" name="product_id" id="product_id" disabled>
                 <input type="text" name="variant_id" id="variant_id" disabled>
             </section>
-            <input type="submit" class="shop_add_to_cart_button">
+            <section class="shop-submit">
+                <input type="submit" value="Купить" class="shop_add_to_cart_button">
+            </section>
+
         </form>
         <div class="close-btn" onclick="closeShopBuyModal()"><span></span><span></span></div>
     </div>

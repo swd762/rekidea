@@ -4672,10 +4672,10 @@ footer {
 
 // ************Shop modal ***********
 .shop-buy__modal {
-  width: 435px;
+  width: 450px;
   display: none;
   flex-direction: column;
-  align-items: center;
+  //align-items: center;
   position: fixed;
   left: 50%;
   top: 50%;
@@ -4685,58 +4685,85 @@ footer {
   padding: 26px 30px 20px 30px;
   z-index: 99994;
   border-radius: 5px;
+  color: #4c4c4c;
+  &-content {
+    &>p {
+      font-size: 15px;
+      margin: 8px 0;
+      font-weight: 300;
+    }
+    section {
+      margin-top: 10px;
+    }
+    h2 {
+      font-weight: 400;
+      font-size: 22px;
+      color: #000;
+      text-transform: uppercase;
+    }
+    &>select {
+      padding: 5px;
+      color: #4c4c4c;
+      width: 75%;
+      font-size: 15px;
+      font-weight: 300;
+    }
 
-  //img {
-  //  width: 60px;
-  //}
+    .shop-qty {
+      &>span {
+        font-size: 15px;
+        color: #4c4c4c;
+        margin-right: 10px;
+      }
+      &>input {
+        padding: 8px;
+        font-size: 15px;
+        width: 48px;
+        color: #4c4c4c;
+      }
+    }
+    .shop-options {
+      &>span {
+        font-size: 15px;
+        color: #4c4c4c;
+        margin-right: 23px;
+      }
+    }
+    .shop-price {
+      &>span {
+        font-size: 15px;
+        color: #4c4c4c;
+        margin-right: 5px;
+        &:last-child {
+          font-size: 23px;
+          color: #000;
 
-  h2 {
-    margin-top: 22px;
-    font-weight: 400;
-    font-size: 24px;
-    color: $red;
-    text-transform: uppercase;
+        }
+      }
+    }
+    .shop-submit {
+      display: flex;
+      justify-content: center;
+      &>input {
+        font-size: 14px;
+        font-weight: 300;
+        text-transform: uppercase;
+        text-decoration: none;
+        padding: 10px 45px;
+        display: inline-block;
+        background-color: #029a03;
+        color: #fff;
+        border:0;
+        cursor: pointer;
+        &:hover {
+          background-color: lighten(#029a03, 5%);
+          transition: all 0.3s linear;
+        }
+      }
+
+    }
   }
 
-
-  //h3 {
-  //  margin-top: 16px;
-  //  font-weight: 400;
-  //  font-size: 24px;
-  //  color: $red;
-  //  text-transform: uppercase;
-  //  text-align: center;
-  //}
-  //
-  //h4 {
-  //  margin-top: 16px;
-  //  font-weight: 300;
-  //  font-size: 24px;
-  //  color: $red;
-  //  text-transform: uppercase;
-  //  text-align: center;
-  //}
-
-  //section {
-  //  margin-top: 28px;
-  //
-  //  p {
-  //    margin-top: 18px;
-  //    color: $red;
-  //    font-size: 24px;
-  //    font-weight: 300;
-  //
-  //    &:first-child {
-  //      margin-top: 0;
-  //    }
-  //  }
-  //
-  //  //span {
-  //  //  margin-top: 15px;
-  //  //  display: block;
-  //  //  font-weight: 300;
-  //  //}
-  //}
 
   .close-btn {
     position: absolute;
