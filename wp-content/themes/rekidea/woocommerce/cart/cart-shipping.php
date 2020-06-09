@@ -41,9 +41,9 @@ $count = 0;
                         <label class="woocommerce-radio-block">
                             <?php
                             if ( 1 < count( $available_methods ) ) {
-                                printf( '<input type="radio" name="shipping_method[%1$d]" data-index="%1$d" id="shipping_method_%1$d_%2$s" value="%3$s" class="shipping_method" %4$s />', $index, esc_attr( sanitize_title( $method->id ) ), esc_attr( $method->id ), checked( $method->id, $chosen_method, false ) ); // WPCS: XSS ok.
+                                printf( '<input type="radio" name="shipping_method[%1$d]" data-index="%1$d" data-position="%5$d" id="shipping_method_%1$d_%2$s" value="%3$s" class="shipping_method" %4$s />', $index, esc_attr( sanitize_title( $method->id ) ), esc_attr( $method->id ), checked( $method->id, $chosen_method, false ), esc_attr( $count ) ); // WPCS: XSS ok.
                             } else {
-                                printf( '<input type="hidden" name="shipping_method[%1$d]" data-index="%1$d" id="shipping_method_%1$d_%2$s" value="%3$s" class="shipping_method" />', $index, esc_attr( sanitize_title( $method->id ) ), esc_attr( $method->id ) ); // WPCS: XSS ok.
+                                printf( '<input type="hidden" name="shipping_method[%1$d]" data-index="%1$d" data-position="%4$d" id="shipping_method_%1$d_%2$s" value="%3$s" class="shipping_method" />', $index, esc_attr( sanitize_title( $method->id ) ), esc_attr( $method->id ), esc_attr( $count ) ); // WPCS: XSS ok.
                             }
                             printf( '<div for="shipping_method_%1$s_%2$s">%3$s</div>', $index, esc_attr( sanitize_title( $method->id ) ), wc_cart_totals_shipping_method_label( $method ) ); // WPCS: XSS ok.
                             do_action( 'woocommerce_after_shipping_rate', $method, $index );
@@ -54,8 +54,10 @@ $count = 0;
 					</li>
 				<?php $count++; endforeach; ?>
 			</ul>
-        <h4>Адрес доставки:</h4>
-            <?php do_action( 'woocommerce_checkout_shipping' ); ?>
+            <div class="shipping_address-container">
+            <h4>Адрес доставки:</h4>
+                <?php do_action( 'woocommerce_checkout_shipping' ); ?>
+            </div>
 			<?php if ( is_cart() ) : ?>
 				<p class="woocommerce-shipping-destination">
 					<?php
@@ -94,3 +96,23 @@ $count = 0;
 		<?php endif; ?>
 	</div>
 </div>
+
+<script>
+    jQuery(".woocommerce-shipping-methods").on('change', '.shipping_method', function () {
+        switch (jQuery('.woocommerce-shipping-methods .shipping_method:checked').data('position')) {
+            case 0:
+                document.querySelector('.shipping_address-container').style.display = 'block';
+                document.querySelector('.woocommerce-shipping-fields__field-wrapper #shipping_city_field').style.display = 'none';
+                break;
+            case 1:
+                document.querySelector('.shipping_address-container').style.display = 'block';
+                document.querySelector('.woocommerce-shipping-fields__field-wrapper #shipping_city_field').style.display = 'block';
+                break;
+
+            case 2:
+                document.querySelector('.shipping_address-container').style.display = 'none';
+                break;
+        }
+    })
+    jQuery('.woocommerce-shipping-methods .shipping_method:checked').trigger('change');
+</script>

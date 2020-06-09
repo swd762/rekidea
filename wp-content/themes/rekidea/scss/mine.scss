@@ -1729,6 +1729,10 @@
 
 .checkout-content {
   padding-top: 18px;
+  @media(max-width: 1023px) {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
 }
 .checkout-fieldset {
   padding: 20px;
@@ -1760,6 +1764,9 @@
   }
   .woocommerce-billing-fields__field-wrapper {
     width: 50%;
+    @media(max-width: 550px) {
+      width: 100%;
+    }
   }
   .woocommerce-billing-fields__field-wrapper, .woocommerce-shipping-fields {
     label {
@@ -1872,6 +1879,12 @@
           input {
             width: auto;
             margin: 0 8px 0 0;
+          }
+        }
+        @media(max-width: 550px) {
+          &>p {
+            display: block;
+            width: 100% !important;
           }
         }
       }
