@@ -283,8 +283,7 @@ get_header();
                 select.appendChild(selectValue);
             }
 
-            if (isPrint === 1) isPrintValue.checked=true;
-            else isPrintValue.checked=false;
+            isPrintValue.checked = isPrint === 1;
 
             globalIndex = index;
 
@@ -318,6 +317,7 @@ get_header();
             }
 
             document.getElementById("variant_id").value = goods[globalIndex]['var_id'][size_index * 2 + isPrintValue];
+
             summary.innerText = summaryValue;
         }
 
@@ -337,11 +337,9 @@ get_header();
                     product_sku: '',
                     quantity: product_qty,
                     variation_id: variation_id,
-
                 };
 
                 $.ajax({
-
                     type: 'post',
                     url: wc_add_to_cart_params.ajax_url,
                     data: data,
