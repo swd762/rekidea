@@ -18,15 +18,28 @@ get_header();
             <div class="shop__content shop-products__container">
                 <div class="row">
                     <div class="price__content-title">
-                        <h1>ознакомьтесь с нашими ценами</h1>
-                        <section>
-                            <p>Для вашего удобства мы&nbsp;разделили наши цены на&nbsp;список категорий.</p>
-                            <p>Выбирайте интересующую Вас категорию в&nbsp;списке и&nbsp;ознакомьтесь с&nbsp;нашими
-                                ценами
-                                и&nbsp;выгодными предложениями.</p>
-                        </section>
+<!--                        <h1>ознакомьтесь с нашими ценами</h1>-->
+<!--                        <section>-->
+<!--                            <p>Для вашего удобства мы&nbsp;разделили наши цены на&nbsp;список категорий.</p>-->
+<!--                            <p>Выбирайте интересующую Вас категорию в&nbsp;списке и&nbsp;ознакомьтесь с&nbsp;нашими-->
+<!--                                ценами-->
+<!--                                и&nbsp;выгодными предложениями.-->
+<!--                            </p>-->
+<!--                        </section>-->
+
+                        <div class="shop-products__container-banner"></div>
                         <?php get_template_part('partials/price-menu-mobile.inc'); ?>
                         <a href="/404"><h2>Ролл ап стенды</h2></a>
+                        <div class="shop-products__container-filter">
+                            <span class="filter-item">Стандартный</span>
+                            <span class="filter-item filter-item-active">Утяжеленный</span>
+                            <span class="filter-item">В корпусе</span>
+                            <span class="filter-item">Каплевидный</span>
+
+                            <span class="filter-item">Двухсторонний</span>
+                            <span class="filter-item">Цветной</span>
+                            <span class="filter-item">С приводом</span>
+                        </div>
                     </div>
                 </div>
                 <div class="price-categories mobile-stands-price-categories">
@@ -60,13 +73,7 @@ get_header();
                         ?>
 
                     <?php endwhile; ?>
-<!--                    --><?php
-//                    echo '<pre>';
-//
-//                    var_dump($goods);
-//
-//                    echo '</pre>';
-//                    ?>
+
                     <?php
 
                     $counter = 0;
@@ -98,8 +105,8 @@ get_header();
                             </div>
                             <div class="shop-card__main">
                                 <div class="shop-card__main-header">
-                                    <h2><?php echo $good['title'] ?>
-                                        <!--                                        <span>一 standart</span>-->
+                                    <h2>
+                                        <?php echo $good['title'] ?>
                                     </h2>
                                     <p>
                                         <?php echo $good['description']; ?>
@@ -125,8 +132,10 @@ get_header();
                                         <?php foreach ($good['size'] as $size => $price) { ?>
 
                                             <tr>
-                                                <td><a href="#" onclick="buy(<?= $index ?>,'<?= $size ?>')"><?= $size ?></a></td>
-                                                <td><a href="#" onclick="buy(<?= $index ?>,'<?= $size ?>')"><?=$price[0] ?></a>
+                                                <td><a href="#"
+                                                       onclick="buy(<?= $index ?>,'<?= $size ?>')"><?= $size ?></a></td>
+                                                <td><a href="#"
+                                                       onclick="buy(<?= $index ?>,'<?= $size ?>')"><?= $price[0] ?></a>
                                                     <a class="hot-deal" href="#"></a>
                                                 </td>
                                                 <td><a href="#" onclick="buy(<?= $index ?>,'<?= $size ?>',1)
@@ -156,17 +165,13 @@ get_header();
 
 
                         <?php
-
                     }
-                    //                    echo '<pre>';
-                    //                    var_dump($product->get_available_variations());
-                    //                    echo '</pre>';
                     ?>
 
 
                     <script>
 
-//                        slider for product card
+                        //                        slider for product card
 
                         jQuery(function ($) {
                             $('.samples-slider').slick({
@@ -174,11 +179,9 @@ get_header();
                                 slidesToScroll: 1,
                                 arrows: true,
                                 dots: false,
-                                // autoplay: true,
                                 prevArrow: '<button class="arrow-prev"></button>',
                                 nextArrow: '<button class="arrow-next"></button>',
                                 // asNavFor: '.thumbs-slider',
-                                // autoplaySpeed: 2000
                                 // centerMode: true,
                                 adaptiveHeight: false,
                                 // focusOnSelect: true
@@ -247,21 +250,15 @@ get_header();
             </section>
             <input type="submit" class="shop_add_to_cart_button">
         </form>
-
-
         <div class="close-btn" onclick="closeShopBuyModal()"><span></span><span></span></div>
     </div>
     <!--***-->
 
     <script>
-
-    </script>
-
-    <script>
         var goods = <?= json_encode($goods)?>;
         var globalIndex = 0;
 
-        function buy(index, size=null, isPrint = 0) {
+        function buy(index, size = null, isPrint = 0) {
 
             let modal = document.querySelector('.shop-buy__modal');
             // let modalContent = document.querySelector('.shop-buy__modal-content');
@@ -278,7 +275,7 @@ get_header();
 
             for (var key in goods[index]['size']) {
                 let selectValue = document.createElement('option');
-                if (key === size) selectValue.defaultSelected=true;
+                if (key === size) selectValue.defaultSelected = true;
                 selectValue.innerText = key;
                 select.appendChild(selectValue);
             }

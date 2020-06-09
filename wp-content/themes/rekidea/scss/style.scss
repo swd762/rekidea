@@ -3828,6 +3828,35 @@
 // *** shop products and cards ***
 .shop-products__container {
   border-left: 1px solid #c0c0c0;
+  padding-left: 20px;
+  &-banner {
+    height: 100px;
+    width: 100%;
+    background-color: #a6a6a6;
+    margin-bottom: 15px;
+  }
+  &-filter {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    &>.filter-item {
+      font-size: 14px;
+      font-weight: 300;
+      color: #000;
+      border: 1px solid #822d4e;
+      border-radius: 5px;
+      padding: 10px 6px;
+      margin-left: 5px;
+      margin-bottom: 5px;
+
+
+      cursor: pointer;
+    }
+    &>.filter-item-active {
+      color: #fff;
+      background-color: $red;
+    }
+  }
 }
 
 .shop-card {
@@ -3866,7 +3895,7 @@
   .shop-card__thumb-slider {
     width: 300px;
     margin-right: 30px;
-    margin-left: 30px;
+    //margin-left: 30px;
     display: flex;
     flex-direction: column;
 
