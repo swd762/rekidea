@@ -51,8 +51,6 @@ get_header();
                         'orderby' => 'menu_order',
                         'order' => 'ASC',
                     ));
-
-
                     while ($loop->have_posts()): $loop->the_post(); ?>
 
                         <?php
@@ -117,6 +115,28 @@ get_header();
                                         Технические требования к макету
                                     </a>
                                 </div>
+
+                                <div class="shop-card__thumb-slider">
+                                    <div class="samples-slider shop-hot-icon">
+
+                                        <?php foreach ($good['thumbs'] as $thumbs) { ?>
+                                            <div class="slide">
+                                                <a href="#"><img src="<?= wp_get_attachment_image_url($thumbs, 'full') ?>"
+                                                                 alt="shop thumbnail"></a>
+                                            </div>
+                                        <?php } ?>
+
+                                    </div>
+<!--                                    <div class="thumbs-slider">-->
+<!--                                        --><?php //foreach ($good['thumbs'] as $thumbs) { ?>
+<!--                                            <div class="slide">-->
+<!--                                                <img src="--><?//= wp_get_attachment_image_url($thumbs, 'full') ?><!--"-->
+<!--                                                     alt="shop thumbnail">-->
+<!--                                            </div>-->
+<!--                                        --><?php //} ?>
+<!--                                    </div>-->
+                                </div>
+
                                 <div class="shop-card__main-content">
                                     <table>
                                         <tr>
