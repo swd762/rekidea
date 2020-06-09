@@ -1979,3 +1979,28 @@
     }
   }
 }
+
+.thankyou-content {
+  h4 {
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 14px;
+  }
+  p, strong {
+    font-size: 15px;
+  }
+  .questions-contact__wrapper {
+    margin-top: 150px;
+    @media(max-width: 550px) {
+      margin-top: 40px;
+    }
+    .button {
+      font-size: 13px !important;
+      background-color: #6f0d33 !important;
+      color: #fff !important;
+      text-decoration: none !important;
+      display: flex !important;
+      font-weight: 400 !important;
+    }
+  }
+}
