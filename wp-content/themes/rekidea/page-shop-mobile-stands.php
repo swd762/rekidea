@@ -2,6 +2,15 @@
 get_header();
 ?>
     <main>
+        <div class="s-header__basket-wr woocommerce">
+            <?php
+            global $woocommerce; ?>
+            <a href="<?php echo $woocommerce->cart->get_cart_url() ?>" class="basket-btn basket-btn_fixed-xs">
+                <span class="basket-btn__label">Корзина</span>
+                <span class="basket-btn__counter">(<?php echo sprintf($woocommerce->cart->cart_contents_count); ?>)</span>
+            </a>
+        </div>
+
         <!--Breadcrumbs block *******************-->
         <div class="breadcrumbs">
             <div class="container">
@@ -18,14 +27,14 @@ get_header();
             <div class="shop__content shop-products__container">
                 <div class="row">
                     <div class="price__content-title">
-<!--                        <h1>ознакомьтесь с нашими ценами</h1>-->
-<!--                        <section>-->
-<!--                            <p>Для вашего удобства мы&nbsp;разделили наши цены на&nbsp;список категорий.</p>-->
-<!--                            <p>Выбирайте интересующую Вас категорию в&nbsp;списке и&nbsp;ознакомьтесь с&nbsp;нашими-->
-<!--                                ценами-->
-<!--                                и&nbsp;выгодными предложениями.-->
-<!--                            </p>-->
-<!--                        </section>-->
+                        <!--                        <h1>ознакомьтесь с нашими ценами</h1>-->
+                        <!--                        <section>-->
+                        <!--                            <p>Для вашего удобства мы&nbsp;разделили наши цены на&nbsp;список категорий.</p>-->
+                        <!--                            <p>Выбирайте интересующую Вас категорию в&nbsp;списке и&nbsp;ознакомьтесь с&nbsp;нашими-->
+                        <!--                                ценами-->
+                        <!--                                и&nbsp;выгодными предложениями.-->
+                        <!--                            </p>-->
+                        <!--                        </section>-->
 
                         <div class="shop-products__container-banner"></div>
                         <?php get_template_part('partials/price-menu-mobile.inc'); ?>
@@ -109,7 +118,8 @@ get_header();
                                     <p>
                                         <?php echo $good['description']; ?>
                                     </p>
-                                    <a target="_blank" href="<?= get_template_directory_uri()?>/img/rollup-tech.pdf>" class="doc-link">
+                                    <a target="_blank" href="<?= get_template_directory_uri() ?>/img/rollup-tech.pdf>"
+                                       class="doc-link">
                                         <img src="<?= get_template_directory_uri() ?>/img/shop-card/pdf.png"
                                              alt="pdf link icon">
                                         Технические требования к макету
@@ -121,20 +131,22 @@ get_header();
 
                                         <?php foreach ($good['thumbs'] as $thumbs) { ?>
                                             <div class="slide">
-                                                <a href="#"><img src="<?= wp_get_attachment_image_url($thumbs, 'full') ?>"
-                                                                 alt="shop thumbnail"></a>
+                                                <a href="#"><img
+                                                            src="<?= wp_get_attachment_image_url($thumbs, 'full') ?>"
+                                                            alt="shop thumbnail"></a>
                                             </div>
                                         <?php } ?>
 
                                     </div>
-<!--                                    <div class="thumbs-slider">-->
-<!--                                        --><?php //foreach ($good['thumbs'] as $thumbs) { ?>
-<!--                                            <div class="slide">-->
-<!--                                                <img src="--><?//= wp_get_attachment_image_url($thumbs, 'full') ?><!--"-->
-<!--                                                     alt="shop thumbnail">-->
-<!--                                            </div>-->
-<!--                                        --><?php //} ?>
-<!--                                    </div>-->
+                                    <!--                                    <div class="thumbs-slider">-->
+                                    <!--                                        --><?php //foreach ($good['thumbs'] as $thumbs) { ?>
+                                    <!--                                            <div class="slide">-->
+                                    <!--                                                <img src="-->
+                                    <?//= wp_get_attachment_image_url($thumbs, 'full') ?><!--"-->
+                                    <!--                                                     alt="shop thumbnail">-->
+                                    <!--                                            </div>-->
+                                    <!--                                        --><?php //} ?>
+                                    <!--                                    </div>-->
                                 </div>
 
                                 <div class="shop-card__main-content">
@@ -283,6 +295,7 @@ get_header();
 
         function buy(index, size = null, isPrint = 0) {
 
+
             let modal = document.querySelector('.shop-buy__modal');
             // let modalContent = document.querySelector('.shop-buy__modal-content');
             modal.classList.add('active-flex');
@@ -371,17 +384,16 @@ get_header();
                         closeShopBuyModal();
                     },
                     success: function (response) {
-                        // if (response.error & response.product_url) {
-                        //
-                        //     window.location = response.product_url;
-                        //
-                        //     return;
-                        //
-                        // } else {
-                        //
-                        //     $(document.body).trigger('added_to_cart', [response.fragments, response.cart_hash, $thisbutton]);
-                        //
-                        // }
+                        if (response.error & response.product_url) {
+
+                            // window.location = response.product_url;
+
+                            // return;
+
+                        } else {
+
+                            $(document.body).trigger('added_to_cart', [response.fragments, response.cart_hash]);
+                        }
                     },
                 });
             });

@@ -1,21 +1,22 @@
 <?php
-add_theme_support( 'post-thumbnails' );
+add_theme_support('post-thumbnails');
 //add_theme_support( 'excerpt' );
 
-function add_styles_and_scripts () {
+function add_styles_and_scripts()
+{
     //  ** Load styles **
     wp_enqueue_style('animate', get_theme_file_uri('/animate.min.css'));
-    wp_enqueue_style('style', get_stylesheet_directory_uri(). '/style.css', [], 27);
-    wp_enqueue_style('fancybox', get_stylesheet_directory_uri(). '/jquery.fancybox.css');
-    wp_enqueue_style('flexi', get_stylesheet_directory_uri(). '/addons/flexi/css/flexi.css');
+    wp_enqueue_style('style', get_stylesheet_directory_uri() . '/style.css', [], 27);
+    wp_enqueue_style('fancybox', get_stylesheet_directory_uri() . '/jquery.fancybox.css');
+    wp_enqueue_style('flexi', get_stylesheet_directory_uri() . '/addons/flexi/css/flexi.css');
     wp_enqueue_style('uptop', get_theme_file_uri('/addons/uptop/css/ui.totop.css'));
     wp_enqueue_style('slick', get_theme_file_uri('/addons/slick/slick.css'));
     wp_enqueue_style('slick1', get_theme_file_uri('/addons/slick/slick-theme.css'));
 
     // ** Load scripts **
-    wp_enqueue_script('wow', get_theme_file_uri('/js/wow.min.js'), array('jquery') );
-    wp_enqueue_script('fancybox', get_theme_file_uri('/js/jquery.fancybox.js'), array('jquery') );
-    wp_enqueue_script('flexi', get_theme_file_uri('/addons/flexi/js/jquery.flexisel.js'), array('jquery') );
+    wp_enqueue_script('wow', get_theme_file_uri('/js/wow.min.js'), array('jquery'));
+    wp_enqueue_script('fancybox', get_theme_file_uri('/js/jquery.fancybox.js'), array('jquery'));
+    wp_enqueue_script('flexi', get_theme_file_uri('/addons/flexi/js/jquery.flexisel.js'), array('jquery'));
     wp_enqueue_script('up', get_theme_file_uri('/addons/uptop/js/jquery.ui.totop.js'), array('jquery'));
     wp_enqueue_script('up_easing', get_theme_file_uri('/addons/uptop/js/easing.js'), array('jquery'));
     wp_enqueue_script('slick', get_theme_file_uri('/addons/slick/slick.min.js'), array('jquery'));
@@ -30,26 +31,28 @@ register_nav_menu('top-mobile', 'главное меню мобилка');
 register_nav_menu('price', 'Меню цен');
 register_nav_menu('price-mobile', 'Меню цен мобилка');
 
-add_filter('wpcf7_form_elements', 'contact_form_remove_checkbox_wrapping' );
-function contact_form_remove_checkbox_wrapping( $content ) {
-    preg_match_all('/<span class="wpcf7-form-control-wrap[a-zA-Z ]*"><span class="wpcf7-form-control wpcf7-[checkbox|radio]+" id="([^\"]+)"><span class="[^\"]+">(<input type="[checkbox|radio]+" name="[^\"]+" value="[^\"]*" \/>)<span class="wpcf7-list-item-label">[^\"]+<\/span><\/span><\/span><\/span>/i', $content, $out );
-    if ( !empty( $out[0] ) ) {
-        $count = count( $out[1] );
-        for ( $i = 0; $i<$count; $i++ ) {
-            $out[2][ $i ] = str_replace(' value=', 'id="' . $out[1][ $i ] . '" value=', $out[2][$i] );
+add_filter('wpcf7_form_elements', 'contact_form_remove_checkbox_wrapping');
+function contact_form_remove_checkbox_wrapping($content)
+{
+    preg_match_all('/<span class="wpcf7-form-control-wrap[a-zA-Z ]*"><span class="wpcf7-form-control wpcf7-[checkbox|radio]+" id="([^\"]+)"><span class="[^\"]+">(<input type="[checkbox|radio]+" name="[^\"]+" value="[^\"]*" \/>)<span class="wpcf7-list-item-label">[^\"]+<\/span><\/span><\/span><\/span>/i', $content, $out);
+    if (!empty($out[0])) {
+        $count = count($out[1]);
+        for ($i = 0; $i < $count; $i++) {
+            $out[2][$i] = str_replace(' value=', 'id="' . $out[1][$i] . '" value=', $out[2][$i]);
         }
 
-        return str_replace( $out[0], $out[2], $content );
+        return str_replace($out[0], $out[2], $content);
     }
 
     return $content;
 }
 
 
-function getPrices($postId, $target) {
+function getPrices($postId, $target)
+{
     $prices = get_fields($postId);
 
-    foreach ($prices as $key=>$price) {
+    foreach ($prices as $key => $price) {
         $prices[$key] = explode(PHP_EOL, $price);
 
         $sizes = [];
@@ -58,7 +61,7 @@ function getPrices($postId, $target) {
         $prises3 = [];
 
         foreach ($prices[$key] as $item) {
-            if($item) {
+            if ($item) {
                 $temp = explode('|', $item);
                 $sizes[] = $temp[0];
                 $prises1[] = $temp[1];
@@ -162,17 +165,16 @@ function custom_override_checkout_fields($fields)
     return $fields;
 }
 
-remove_action( 'woocommerce_checkout_order_review', 'woocommerce_checkout_payment', 20 );
-add_action( 'woocommerce_review_order_after_shipping', 'woocommerce_checkout_payment', 20 );
-
-//
+remove_action('woocommerce_checkout_order_review', 'woocommerce_checkout_payment', 20);
+add_action('woocommerce_review_order_after_shipping', 'woocommerce_checkout_payment', 20);
 
 
+// *** add to cart function ***
 add_action('wp_ajax_ql_woocommerce_ajax_add_to_cart', 'ql_woocommerce_ajax_add_to_cart');
-
 add_action('wp_ajax_nopriv_ql_woocommerce_ajax_add_to_cart', 'ql_woocommerce_ajax_add_to_cart');
 
-function ql_woocommerce_ajax_add_to_cart() {
+function ql_woocommerce_ajax_add_to_cart()
+{
 
     $product_id = apply_filters('ql_woocommerce_add_to_cart_product_id', absint($_POST['product_id']));
 
@@ -194,24 +196,33 @@ function ql_woocommerce_ajax_add_to_cart() {
 
         }
 
-        WC_AJAX :: get_refreshed_fragments();
+        WC_AJAX:: get_refreshed_fragments();
 
     } else {
-
         $data = array(
-
             'error' => true,
             'product_url' => apply_filters('ql_woocommerce_cart_redirect_after_error', get_permalink($product_id), $product_id));
-
-      echo wp_send_json($data);
+        echo wp_send_json($data);
 
     }
-
     wp_die();
-
 }
+// *** *** ***
 
+// *** filter for basket widget ***
+add_filter('woocommerce_add_to_cart_fragments', 'header_add_to_cart_fragment');
 
+function header_add_to_cart_fragment($fragments)
+{
+    global $woocommerce;
+    ob_start();
+    ?>
+    <span class="basket-btn__counter">(<?php echo sprintf($woocommerce->cart->cart_contents_count); ?>)</span>
+    <?php
+    $fragments['.basket-btn__counter'] = ob_get_clean();
+    return $fragments;
+}
+// *** *** ***
 
 
 
