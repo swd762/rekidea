@@ -6,10 +6,13 @@
     .header__address-wrapper, .header__email-wrapper {
       display: none;
     }
+
     .header__meta_tablet {
-      display: flex;
-      flex-direction: column;
+
       padding-top: 15px;
+      &>span {
+        font-size: 15px;
+      }
     }
   }
   .nav-wrapper {

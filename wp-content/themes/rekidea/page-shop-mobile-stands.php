@@ -2,15 +2,6 @@
 get_header();
 ?>
     <main>
-        <div class="s-header__basket-wr woocommerce">
-            <?php
-            global $woocommerce; ?>
-            <a href="<?php echo $woocommerce->cart->get_cart_url() ?>" class="basket-btn basket-btn_fixed-xs">
-                <span class="basket-btn__label">Корзина</span>
-                <span class="basket-btn__counter">(<?php echo sprintf($woocommerce->cart->cart_contents_count); ?>)</span>
-            </a>
-        </div>
-
         <!--Breadcrumbs block *******************-->
         <div class="breadcrumbs">
             <div class="container">
@@ -27,14 +18,7 @@ get_header();
             <div class="shop__content shop-products__container">
                 <div class="row">
                     <div class="price__content-title">
-                        <!--                        <h1>ознакомьтесь с нашими ценами</h1>-->
-                        <!--                        <section>-->
-                        <!--                            <p>Для вашего удобства мы&nbsp;разделили наши цены на&nbsp;список категорий.</p>-->
-                        <!--                            <p>Выбирайте интересующую Вас категорию в&nbsp;списке и&nbsp;ознакомьтесь с&nbsp;нашими-->
-                        <!--                                ценами-->
-                        <!--                                и&nbsp;выгодными предложениями.-->
-                        <!--                            </p>-->
-                        <!--                        </section>-->
+
 
                         <div class="shop-products__container-banner"></div>
                         <?php get_template_part('partials/price-menu-mobile.inc'); ?>
@@ -164,19 +148,19 @@ get_header();
                                         <?php foreach ($good['size'] as $size => $price) { ?>
 
                                             <tr>
-                                                <td><a href="#"
-                                                       onclick="buy(<?= $index ?>,'<?= $size ?>')"><?= $size ?></a></td>
-                                                <td><a href="#"
-                                                       onclick="buy(<?= $index ?>,'<?= $size ?>')"><?= $price[0] ?></a>
-                                                    <a class="hot-deal" href="#"></a>
+                                                <td><span href="#"
+                                                       onclick="buy(<?= $index ?>,'<?= $size ?>')"><?= $size ?></span></td>
+                                                <td><span href="#"
+                                                       onclick="buy(<?= $index ?>,'<?= $size ?>')"><?= $price[0] ?></span>
+                                                    <span class="hot-deal" href="#"></span>
                                                 </td>
-                                                <td><a href="#" onclick="buy(<?= $index ?>,'<?= $size ?>',1)
-                                                            "><?= $price[1] ?></a></td>
+                                                <td><span href="#" onclick="buy(<?= $index ?>,'<?= $size ?>',1)
+                                                            "><?= $price[1] ?></span></td>
                                             </tr>
                                         <?php } ?>
                                     </table>
 
-                                    <a href="#" class="buy-btn" onclick="buy(<?= $index ?>)">купить</a>
+                                    <span href="#" class="buy-btn" onclick="buy(<?= $index ?>)">купить</span>
 
                                     <div class="description-container">
                                         <div class="description-container__nav">
@@ -293,6 +277,8 @@ get_header();
         var goods = <?= json_encode($goods)?>;
         var globalIndex = 0;
 
+
+
         function buy(index, size = null, isPrint = 0) {
 
 
@@ -364,7 +350,7 @@ get_header();
                     product_id = $('#product_id').val(),
                     variation_id = $('#variant_id').val();
 
-                var data = {
+                let data = {
                     action: 'ql_woocommerce_ajax_add_to_cart',
                     product_id: product_id,
                     product_sku: '',
@@ -382,6 +368,7 @@ get_header();
                     complete: function (response) {
                         // $thisbutton.addClass('added').removeClass('loading');
                         closeShopBuyModal();
+
                     },
                     success: function (response) {
                         if (response.error & response.product_url) {
@@ -391,8 +378,12 @@ get_header();
                             // return;
 
                         } else {
-
-                            $(document.body).trigger('added_to_cart', [response.fragments, response.cart_hash]);
+                            // $('.basket-btn__tot').remove();
+                            $(document.body).trigger('added_to_cart', [response.fragments]);
+                            // alert(response.fragments['div.widget_shopping_cart_content']);
+                            // console.log(response.fragments);
+                            // $('.sosachka').appendChild(response.fragments['div.widget_shopping_cart_content'][0]);
+                        //
                         }
                     },
                 });

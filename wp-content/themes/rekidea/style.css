@@ -62,7 +62,8 @@ main {
   padding: 10px 45px;
   display: inline-block;
   background-color: #029a03;
-  color: #fff; }
+  color: #fff;
+  cursor: pointer; }
   .buy-btn:hover {
     background-color: #02b303;
     transition: all 0.3s linear; }
@@ -1723,6 +1724,28 @@ main {
         transform-origin: 0 0;
         transform: rotate(0);
         margin-bottom: 0; }
+  .header-mobile .shop-cart-widget__mobile {
+    margin-right: 20px; }
+    .header-mobile .shop-cart-widget__mobile .shop-cart-widget__mobile-icon {
+      display: block;
+      position: relative; }
+      .header-mobile .shop-cart-widget__mobile .shop-cart-widget__mobile-icon > span {
+        position: absolute;
+        font-size: 12px;
+        background: green;
+        color: #fff;
+        padding: 3px;
+        border-radius: 16px;
+        display: flex;
+        width: 16px;
+        height: 16px;
+        align-items: center;
+        justify-content: center;
+        top: 0;
+        right: -7px; }
+      .header-mobile .shop-cart-widget__mobile .shop-cart-widget__mobile-icon > img {
+        width: 22px;
+        height: 22px; }
   .header-mobile .header-mobile__meta {
     display: flex;
     margin-left: auto; }
@@ -1862,6 +1885,9 @@ main {
     .header__phone-wrapper .header__phone-logo:hover {
       background-color: #d0b9c2;
       transition: all 0.3s linear; }
+    @media (max-width: 1170px) {
+      .header__phone-wrapper .header__phone-logo {
+        font-size: 15px; } }
   .header__phone-wrapper .header__phone-logo-bkg {
     background-color: #d0b9c2; }
   .header__phone-wrapper .header__phone-logo-arrow::after {
@@ -1989,7 +2015,9 @@ main {
   color: #111111; }
 
 .header__meta_tablet {
-  display: none; }
+  display: flex;
+  flex-direction: column;
+  padding-top: 15px; }
 
 .nav-wrapper {
   height: 40px;
@@ -4375,11 +4403,12 @@ main {
           position: absolute;
           top: -7px;
           right: -35px; }
-      .shop-card .shop-card__main-content > table td > a {
+      .shop-card .shop-card__main-content > table td > span {
         font-size: 14px;
         color: #000;
-        text-decoration: none; }
-        .shop-card .shop-card__main-content > table td > a:hover {
+        text-decoration: none;
+        cursor: pointer; }
+        .shop-card .shop-card__main-content > table td > span:hover {
           text-decoration: underline; }
   .shop-card .shop-card__main-content .description-container {
     margin-top: 20px;
@@ -4926,15 +4955,43 @@ footer {
   padding-bottom: 12px;
   padding-right: 19px; }
 
+.shop-cart-widget__btn {
+  text-decoration: none; }
+  .shop-cart-widget__btn .shop-cart-widget__btn-icon {
+    display: flex;
+    background-color: #660033;
+    color: #fff;
+    border-radius: 5px;
+    overflow: hidden;
+    background-size: 23px 23px;
+    background-image: url(img/shopping-cart.svg);
+    background-repeat: no-repeat;
+    background-position: 8px center; }
+    .shop-cart-widget__btn .shop-cart-widget__btn-icon .basket-btn__label {
+      display: flex;
+      align-items: center;
+      padding: 10px 8px 10px 38px;
+      font-size: 14px;
+      font-weight: 300;
+      text-transform: uppercase; }
+    .shop-cart-widget__btn .shop-cart-widget__btn-icon .basket-btn__counter {
+      display: inline-block;
+      padding: 10px;
+      background-color: green;
+      font-weight: bold; }
+  .shop-cart-widget__btn .shop-cart-widget__btn-amount > span {
+    font-size: 15px;
+    color: #000; }
+
 @media (max-width: 1170px) {
   .header__top-content {
     padding: 0 22px 0 25px; }
     .header__top-content .header__address-wrapper, .header__top-content .header__email-wrapper {
       display: none; }
     .header__top-content .header__meta_tablet {
-      display: flex;
-      flex-direction: column;
       padding-top: 15px; }
+      .header__top-content .header__meta_tablet > span {
+        font-size: 15px; }
 
   .nav-wrapper .top-menu-desktop #menu-top > li:last-child > a {
     padding-right: 20px; }

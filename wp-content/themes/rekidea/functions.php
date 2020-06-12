@@ -207,6 +207,7 @@ function ql_woocommerce_ajax_add_to_cart()
     }
     wp_die();
 }
+
 // *** *** ***
 
 // *** filter for basket widget ***
@@ -217,9 +218,16 @@ function header_add_to_cart_fragment($fragments)
     global $woocommerce;
     ob_start();
     ?>
-    <span class="basket-btn__counter">(<?php echo sprintf($woocommerce->cart->cart_contents_count); ?>)</span>
+    <span class="basket-btn__counter"><?php echo sprintf($woocommerce->cart->cart_contents_count); ?></span>
     <?php
     $fragments['.basket-btn__counter'] = ob_get_clean();
+
+    ob_start(); ?>
+    <span class="basket-btn__amount"><?php echo sprintf(
+            str_replace(',00','',$woocommerce->cart->get_cart_total()));
+        ?></span>
+    <?php
+    $fragments['.basket-btn__amount'] = ob_get_clean();
     return $fragments;
 }
 // *** *** ***

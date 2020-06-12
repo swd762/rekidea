@@ -151,16 +151,38 @@ wp_head();
                      })
                  </script>
 <!--******************************************************************-->
-                <div class="header__email-wrapper">
-                    <? the_field('email', get_the_ID());?>
-                </div>
-                <div class="header__address-wrapper">
-                    <? the_field('address', get_the_ID());?>
-                </div>
+<!--                <div class="header__email-wrapper">-->
+<!--                 <div class="header__address-wrapper">-->
+<!--                    --><?// the_field('email', get_the_ID());?><!--<br>-->
+<!--                    --><?// the_field('address', get_the_ID());?>
+<!--                </div>-->
                  <div class="header__meta_tablet">
-                    <span><? the_field('email', get_the_ID());?></span>
+                     <span><? the_field('email', get_the_ID());?></span>
                      <span><? the_field('address', get_the_ID());?></span>
                  </div>
+                <div class="shop-cart-widget">
+                    <?php
+                    global $woocommerce; ?>
+                    <a href="<?php echo $woocommerce->cart->get_cart_url() ?>" class="shop-cart-widget__btn">
+                        <div class="shop-cart-widget__btn-icon">
+                            <span class="basket-btn__label">Корзина</span>
+                            <span class="basket-btn__counter"><?php echo sprintf($woocommerce->cart->cart_contents_count); ?></span>
+                        </div>
+                        <div class="shop-cart-widget__btn-amount">
+                          <span>Сумма: </span>
+                          <span class="basket-btn__amount"><?php echo sprintf(
+                                  str_replace(',00','',$woocommerce->cart->get_cart_total()));
+                              ?></span>
+                        </div>
+
+
+
+                    </a>
+                </div>
+<!--                 <div class="header__meta_tablet">-->
+<!--                    <span>--><?// the_field('email', get_the_ID());?><!--</span>-->
+<!--                     <span>--><?// the_field('address', get_the_ID());?><!--</span>-->
+<!--                 </div>-->
             </div>
          </div>
          <div class="header-mobile">
@@ -173,6 +195,14 @@ wp_head();
                  <a href="/"><img src="<?= get_template_directory_uri()?>/img/rekidea-mobile.svg" alt="Рекидея лого"></a>
              </div>
              <div class="header-mobile__meta">
+                 <div class="shop-cart-widget__mobile">
+                     <a href="<?php echo $woocommerce->cart->get_cart_url() ?>" class="shop-cart-widget__mobile-icon">
+                         <img src="<?= get_template_directory_uri()?>/img/shopping-cart-mob.svg" alt="">
+                         <span class="basket-btn__counter"><?php echo sprintf($woocommerce->cart->cart_contents_count); ?></span>
+
+
+                     </a>
+                 </div>
                  <div class="header-mobile__search">
                     <img src="<?= get_template_directory_uri()?>/img/search_icon.png">
                  </div>

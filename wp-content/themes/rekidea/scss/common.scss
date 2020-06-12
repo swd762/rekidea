@@ -88,6 +88,7 @@ main {
   display: inline-block;
   background-color: #029a03;
   color: #fff;
+  cursor: pointer;
   &:hover {
     background-color: lighten(#029a03, 5%);
     transition: all 0.3s linear;
