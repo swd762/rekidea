@@ -41,7 +41,7 @@ if ( have_posts() ) {
         </div>
         <div class="price-categories mobile-stands-price-categories">
             <div class="price-category">
-                <a href="/404">
+                <a href="/price/mobile-stands-price-categories/roll-up">
                     <div class="price-category-img">
                         <img src="<?= get_template_directory_uri()?>/img/mobile-stands-price-categories/rollup-140x196.jpg">
                     </div>

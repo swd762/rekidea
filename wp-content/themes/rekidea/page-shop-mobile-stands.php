@@ -1,4 +1,7 @@
 <?php
+/**
+ * Template Name: Категория магазина
+ */
 get_header();
 ?>
     <main>

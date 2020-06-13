@@ -2921,10 +2921,13 @@
         margin-top: 25px;
         padding-left: 10px;
 
-        &.current-menu-item {
+        &.current-menu-item, &.current-page-ancestor {
           & > a {
             color: #6f0d33;
             font-weight: bold;
+          }
+          ul {
+            display: block;
           }
         }
 
@@ -2939,16 +2942,25 @@
             font-weight: bold;
           }
         }
+
+        ul {
+          display: none;
+        }
       }
     }
 
     &.sub-menu {
       & > li {
         margin-top: 10px;
-
         & > a {
           font-size: 15px;
           text-transform: none;
+        }
+        &.current_page_item {
+          & > a {
+            color: #6f0d33;
+            font-weight: bold;
+          }
         }
       }
     }
@@ -3878,6 +3890,7 @@
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
+    margin-top: 17px;
 
     & > .filter-item {
       font-size: 14px;
@@ -3885,12 +3898,13 @@
       color: #000;
       border: 1px solid #822d4e;
       border-radius: 5px;
-      padding: 10px 6px;
-      margin-left: 5px;
+      padding: 10px;
+      margin-left: 14px;
       margin-bottom: 5px;
-
-
       cursor: pointer;
+      &:first-child {
+        margin-left: 0;
+      }
     }
 
     & > .filter-item-active {
@@ -4078,7 +4092,17 @@
           text-align: center;
           border: 1px solid $red;
           font-size: 14px;
-          padding: 10px;
+          padding: 5px;
+
+          &:first-child {
+            width: 131px;
+          }
+          &:nth-child(2) {
+            width: 179px;
+          }
+          &:last-child {
+            width: 178px;
+          }
 
           .hot-deal {
             position: relative;
@@ -4808,8 +4832,8 @@ footer {
         border: 0;
         cursor: pointer;
 
-        &:hover {
-          background-color: lighten(#029a03, 5%);
+        &:hover, &:focus {
+          background-color: #b93f6f;
           transition: all 0.3s linear;
         }
       }

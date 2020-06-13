@@ -62,7 +62,7 @@ get_header();
             </div>
 
             <div class="price-card wow zoomIn">
-                <a href="/404">
+                <a href="/price/mobile-stands-price-categories">
                     <img src="<?= get_template_directory_uri() ?>/img/price-page/pic5.png" alt="">
                     <h3>мобильные стенды</h3>
                 </a>
