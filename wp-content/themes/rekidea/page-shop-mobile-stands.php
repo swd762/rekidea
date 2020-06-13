@@ -105,7 +105,7 @@ get_header();
                                     <p>
                                         <?php echo $good['description']; ?>
                                     </p>
-                                    <a target="_blank" href="<?= get_template_directory_uri() ?>/img/rollup-tech.pdf>"
+                                    <a target="_blank" href="<?= get_template_directory_uri() ?>/img/rollup-tech.pdf"
                                        class="doc-link">
                                         <img src="<?= get_template_directory_uri() ?>/img/shop-card/pdf.png"
                                              alt="pdf link icon">
