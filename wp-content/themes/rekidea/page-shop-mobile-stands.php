@@ -134,7 +134,6 @@ get_header();
                                     <i id="<?= $goods_anchor ?>"></i>
                                 </a>
                                 <?php
-
                             }
                             ?>
                             <div class="shop-card__thumb-slider">
