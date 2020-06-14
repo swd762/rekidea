@@ -64,8 +64,8 @@ main {
   background-color: #029a03;
   color: #fff;
   cursor: pointer; }
-  .buy-btn:hover {
-    background-color: #02b303;
+  .buy-btn:hover, .buy-btn:focus {
+    background-color: #b93f6f;
     transition: all 0.3s linear; }
 
 .fade {
@@ -669,11 +669,9 @@ main {
         width: 100%; } }
   .price__nav-mobile li {
     list-style: none; }
-    .price__nav-mobile li.current-menu-item {
-      width: 100%; }
-      .price__nav-mobile li.current-menu-item > a {
-        color: #6f0d33;
-        font-weight: bold; }
+    .price__nav-mobile li.current-menu-item > a {
+      color: #6f0d33;
+      font-weight: bold; }
   .price__nav-mobile a {
     color: #4c4c4c;
     text-decoration: none;
@@ -3632,9 +3630,11 @@ main {
     .wide-printing__nav ul.menu > li {
       margin-top: 25px;
       padding-left: 10px; }
-      .wide-printing__nav ul.menu > li.current-menu-item > a {
+      .wide-printing__nav ul.menu > li.current-menu-item > a, .wide-printing__nav ul.menu > li.current-page-ancestor > a {
         color: #6f0d33;
         font-weight: bold; }
+      .wide-printing__nav ul.menu > li.current-menu-item ul, .wide-printing__nav ul.menu > li.current-page-ancestor ul {
+        display: block; }
       .wide-printing__nav ul.menu > li a {
         text-decoration: none;
         text-transform: uppercase;
@@ -3643,11 +3643,16 @@ main {
         .wide-printing__nav ul.menu > li a:hover {
           color: #6f0d33;
           font-weight: bold; }
+      .wide-printing__nav ul.menu > li ul {
+        display: none; }
     .wide-printing__nav ul.sub-menu > li {
       margin-top: 10px; }
       .wide-printing__nav ul.sub-menu > li > a {
         font-size: 15px;
         text-transform: none; }
+      .wide-printing__nav ul.sub-menu > li.current_page_item > a {
+        color: #6f0d33;
+        font-weight: bold; }
   @media (max-width: 1170px) {
     .wide-printing__nav {
       width: 282px; }
@@ -4265,17 +4270,20 @@ main {
   .shop-products__container-filter {
     display: flex;
     justify-content: center;
-    flex-wrap: wrap; }
+    flex-wrap: wrap;
+    margin-top: 17px; }
     .shop-products__container-filter > .filter-item {
       font-size: 14px;
       font-weight: 300;
       color: #000;
       border: 1px solid #822d4e;
       border-radius: 5px;
-      padding: 10px 6px;
-      margin-left: 5px;
+      padding: 10px;
+      margin-left: 14px;
       margin-bottom: 5px;
       cursor: pointer; }
+      .shop-products__container-filter > .filter-item:first-child {
+        margin-left: 0; }
     .shop-products__container-filter > .filter-item-active {
       color: #fff;
       background-color: #6f0d33; }
@@ -4335,7 +4343,8 @@ main {
       right: 10px;
       background: url(img/shop-card/button-shop-next.png) center no-repeat;
       border: none;
-      outline: none; }
+      outline: none;
+      cursor: pointer; }
     .shop-card .shop-card__thumb-slider .arrow-prev {
       position: absolute;
       top: 50%;
@@ -4346,7 +4355,8 @@ main {
       background: url(img/shop-card/button-shop-next.png) center no-repeat;
       border: none;
       outline: none;
-      z-index: 1; }
+      z-index: 1;
+      cursor: pointer; }
   .shop-card .shop-card__main > .shop-card__thumb-slider {
     display: none; }
   .shop-card .shop-card__main-header h2 {
@@ -4393,7 +4403,13 @@ main {
       text-align: center;
       border: 1px solid #6f0d33;
       font-size: 14px;
-      padding: 10px; }
+      padding: 5px; }
+      .shop-card .shop-card__main-content > table td:first-child {
+        width: 131px; }
+      .shop-card .shop-card__main-content > table td:nth-child(2) {
+        width: 179px; }
+      .shop-card .shop-card__main-content > table td:last-child {
+        width: 178px; }
       .shop-card .shop-card__main-content > table td .hot-deal {
         position: relative; }
         .shop-card .shop-card__main-content > table td .hot-deal:after {
@@ -4894,8 +4910,8 @@ footer {
       color: #fff;
       border: 0;
       cursor: pointer; }
-      .shop-buy__modal-content .shop-submit > input:hover {
-        background-color: #02b303;
+      .shop-buy__modal-content .shop-submit > input:hover, .shop-buy__modal-content .shop-submit > input:focus {
+        background-color: #b93f6f;
         transition: all 0.3s linear; }
   .shop-buy__modal .close-btn {
     position: absolute;

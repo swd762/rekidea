@@ -50,6 +50,8 @@ get_header();
                     while ($loop->have_posts()): $loop->the_post(); ?>
 
                         <?php
+                        $goodsPrice = [];
+
                         $goodsPrice['title'] = $product->get_name();
                         $goodsPrice['thumbs'] = $product->get_gallery_image_ids();
                         $goodsPrice['description'] = $product->get_description();
