@@ -211,14 +211,14 @@ get_header();
                                 infinite: true,
                                 slidesToShow: 3,
                                 slidesToScroll: 1,
-                                arrows: true,
+                                arrows: false,
                                 dots: false,
                                 autoplay: false,
                                 prevArrow: '<button class="arrow-prev"></button>',
                                 nextArrow: '<button class="arrow-next"></button>',
                                 asNavFor: '.samples-slider',
                                 // autoplaySpeed: 2000,
-                                centerMode: true,
+                                // centerMode: true
                                 // adaptiveHeight: true,
                                 focusOnSelect: true
                             });
