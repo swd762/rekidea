@@ -33,8 +33,19 @@ a, button {
 }
 
 main {
-  overflow: hidden;
+  //overflow: hidden;
 }
+
+.ancored {
+  display: block;
+  position: relative;
+  &>i {
+    position: absolute;
+    top: -250px;
+    display: block;
+  }
+}
+
 
 .container {
   width: 1140px;

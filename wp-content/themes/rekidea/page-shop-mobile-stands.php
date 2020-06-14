@@ -26,36 +26,74 @@ get_header();
                         <div class="shop-products__container-banner"></div>
                         <?php get_template_part('partials/price-menu-mobile.inc'); ?>
                         <a href="/404"><h2>Ролл ап стенды</h2></a>
-                        <div class="shop-products__container-filter">
-                            <span class="filter-item">Стандартный</span>
-                            <span class="filter-item filter-item-active">Утяжеленный</span>
-                            <span class="filter-item">В корпусе</span>
-                            <span class="filter-item">Каплевидный</span>
 
-                            <span class="filter-item">Двухсторонний</span>
-                            <span class="filter-item">Цветной</span>
-                            <span class="filter-item">С приводом</span>
-                        </div>
                     </div>
                 </div>
                 <div class="price-categories mobile-stands-price-categories">
+                    <div class="shop-products__container-filter">
+                        <a href="#27" class="filter-item filter-item-active">Стандартный</a>
+                        <a href="#28" class="filter-item ">Утяжеленный</a>
+                        <a href="#29" class="filter-item">В корпусе</a>
+                        <span class="filter-item">Каплевидный</span>
+
+                        <span class="filter-item">Двухсторонний</span>
+                        <span class="filter-item">Цветной</span>
+                        <span class="filter-item">С приводом</span>
+                    </div>
+
                     <?php
 
-                    $loop = new WP_Query(array(
-                        'post_type' => 'product',
-                        'posts_per_page' => 20,
-                        'orderby' => 'menu_order',
-                        'order' => 'ASC',
-                    ));
-                    while ($loop->have_posts()): $loop->the_post(); ?>
+                    //                    $terms = get_terms(array(
+                    //                        'taxonomy' => 'product_cat',
+                    //                        'name' => 'Стандартный',
+                    //                    ));
+
+                    //                    var_dump($terms);
+                    //                    foreach ($terms as $term) {
+                                        $loop = new WP_Query(array(
+                                            'post_type' => 'product',
+                                            'posts_per_page' => 20,
+                                            'orderby' => 'menu_order',
+                                            'order' => 'ASC',
+                                        ));
+                    //                    }
+//                    $loop = get_posts(array(
+//                        'post_type' => 'product',
+//                        'posts_per_page' => 20,
+//                        'orderby' => 'menu_order',
+//                        'order' => 'ASC',
+//                    ));
+
+                                        while ($loop->have_posts()): $loop->the_post();
+
+
+
+//                    foreach ($loop as $post) {
+//
+//                        setup_postdata($post);
+
+
+                        ?>
+
 
                         <?php
+
+                        $categories = get_the_terms($post->ID, 'product_cat');
+//                       // var_dump($post->ID);
+//                                        echo '<pre>';
+////                      var_dump($categories[1]);
+//
+//                                            echo '</pre>';
+
+
                         $goodsPrice = [];
+
 
                         $goodsPrice['title'] = $product->get_name();
                         $goodsPrice['thumbs'] = $product->get_gallery_image_ids();
                         $goodsPrice['description'] = $product->get_description();
                         $goodsPrice['product_id'] = $product->get_id();
+                        $goodsPrice['category_id'] = $categories[1]->term_id;
 
                         foreach ($product->get_available_variations() as $variation) {
                             foreach ($variation['attributes'] as $key => $value) {
@@ -66,19 +104,39 @@ get_header();
 
                         }
                         $goods[] = $goodsPrice;
-                        ?>
 
-                    <?php endwhile; ?>
+
+                    wp_reset_postdata();
+
+                    ?>
+
+                                        <?php endwhile; ?>
 
                     <?php
-
+//                    var_dump($goods);
                     $counter = 0;
+                    usort($goods, function($a,$b){
+                            if (($a['category_id']===$b['category_id'])) return 0;
+                        return ($a['category_id']<$b['category_id'])? -1: 1;
+                    });
+
+                    $goods_anchor = 0;
 
                     foreach ($goods as $index => $good) {
-
                         ?>
                         <!--*** template card *** -->
                         <div class="shop-card">
+                            <?php
+                            if ($goods_anchor!=$good['category_id']) {
+                                $goods_anchor = $good['category_id'];
+                                ?>
+                                <a href="#" class="ancored">
+                                    <i id="<?= $goods_anchor ?>"></i>
+                                </a>
+                                <?php
+
+                            }
+                            ?>
                             <div class="shop-card__thumb-slider">
                                 <div class="samples-slider shop-hot-icon">
 
@@ -154,9 +212,10 @@ get_header();
 
                                             <tr>
                                                 <td><span href="#"
-                                                       onclick="buy(<?= $index ?>,'<?= $size ?>')"><?= $size ?></span></td>
+                                                          onclick="buy(<?= $index ?>,'<?= $size ?>')"><?= $size ?></span>
+                                                </td>
                                                 <td><span href="#"
-                                                       onclick="buy(<?= $index ?>,'<?= $size ?>')"><?= $price[0] ?></span>
+                                                          onclick="buy(<?= $index ?>,'<?= $size ?>')"><?= $price[0] ?></span>
                                                     <span class="hot-deal" href="#"></span>
                                                 </td>
                                                 <td><span href="#" onclick="buy(<?= $index ?>,'<?= $size ?>',1)
@@ -283,7 +342,6 @@ get_header();
         var globalIndex = 0;
 
 
-
         function buy(index, size = null, isPrint = 0) {
 
 
@@ -388,7 +446,7 @@ get_header();
                             // alert(response.fragments['div.widget_shopping_cart_content']);
                             // console.log(response.fragments);
                             // $('.sosachka').appendChild(response.fragments['div.widget_shopping_cart_content'][0]);
-                        //
+                            //
                         }
                     },
                 });

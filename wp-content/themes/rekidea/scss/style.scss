@@ -2787,7 +2787,6 @@
 }
 
 //*****************************************************
-
 // ******************** Price main page****************
 
 //Price header
@@ -3891,6 +3890,10 @@
     justify-content: center;
     flex-wrap: wrap;
     margin-top: 17px;
+    position: sticky;
+    top: 124px;
+    z-index: 1;
+    background: #fff;
 
     & > .filter-item {
       font-size: 14px;

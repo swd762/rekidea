@@ -19,8 +19,13 @@ body {
 a, button {
   outline: none; }
 
-main {
-  overflow: hidden; }
+.ancored {
+  display: block;
+  position: relative; }
+  .ancored > i {
+    position: absolute;
+    top: -250px;
+    display: block; }
 
 .container {
   width: 1140px;
@@ -4271,7 +4276,11 @@ main {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    margin-top: 17px; }
+    margin-top: 17px;
+    position: sticky;
+    top: 124px;
+    z-index: 1;
+    background: #fff; }
     .shop-products__container-filter > .filter-item {
       font-size: 14px;
       font-weight: 300;
