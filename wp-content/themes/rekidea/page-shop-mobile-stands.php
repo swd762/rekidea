@@ -4,6 +4,63 @@
  */
 get_header();
 ?>
+
+<?php
+
+$loop = new WP_Query(array(
+    'post_type' => 'product',
+    'posts_per_page' => 20,
+    'orderby' => 'menu_order',
+    'order' => 'ASC',
+));
+//                    }
+//                    $loop = get_posts(array(
+//                        'post_type' => 'product',
+//                        'posts_per_page' => 20,
+//                        'orderby' => 'menu_order',
+//                        'order' => 'ASC',
+//                    ));
+
+while ($loop->have_posts()): $loop->the_post();
+
+
+//                    foreach ($loop as $post) {
+//
+//                        setup_postdata($post);
+
+
+    ?>
+
+
+    <?php
+
+    $categories = get_the_terms($post->ID, 'product_cat');
+    $goodsPrice = [];
+
+
+    $goodsPrice['title'] = $product->get_name();
+    $goodsPrice['thumbs'] = $product->get_gallery_image_ids();
+    $goodsPrice['description'] = $product->get_description();
+    $goodsPrice['product_id'] = $product->get_id();
+    $goodsPrice['category_id'] = $categories[1]->term_id;
+
+    foreach ($product->get_available_variations() as $variation) {
+        foreach ($variation['attributes'] as $key => $value) {
+            $goodsPrice['size'][$value][] = $variation['display_price'];
+            break;
+        }
+        $goodsPrice['var_id'][] = $variation['variation_id'];
+
+    }
+    $goods[] = $goodsPrice;
+
+
+    wp_reset_postdata();
+
+    ?>
+
+<?php endwhile; ?>
+
     <main>
         <!--Breadcrumbs block *******************-->
         <div class="breadcrumbs">
@@ -31,93 +88,56 @@ get_header();
                 </div>
                 <div class="price-categories mobile-stands-price-categories">
                     <div class="shop-products__container-filter">
-                        <a href="#27" class="filter-item filter-item-active">Стандартный</a>
-                        <a href="#28" class="filter-item ">Утяжеленный</a>
-                        <a href="#29" class="filter-item">В корпусе</a>
-                        <span class="filter-item">Каплевидный</span>
+                        <?php
+                        $list_categories = get_categories([
+                            'taxonomy' => 'product_cat',
+                            'child_of' => '26',
+                            'orderby' => 'term_id',
+                            'order' => 'ASC'
+                        ]);
+                        $flag = 0;
+                        foreach ($list_categories as $index => $cat) {
+                            if ($flag) {
 
-                        <span class="filter-item">Двухсторонний</span>
-                        <span class="filter-item">Цветной</span>
-                        <span class="filter-item">С приводом</span>
-                    </div>
-
-                    <?php
-
-                    //                    $terms = get_terms(array(
-                    //                        'taxonomy' => 'product_cat',
-                    //                        'name' => 'Стандартный',
-                    //                    ));
-
-                    //                    var_dump($terms);
-                    //                    foreach ($terms as $term) {
-                                        $loop = new WP_Query(array(
-                                            'post_type' => 'product',
-                                            'posts_per_page' => 20,
-                                            'orderby' => 'menu_order',
-                                            'order' => 'ASC',
-                                        ));
-                    //                    }
-//                    $loop = get_posts(array(
-//                        'post_type' => 'product',
-//                        'posts_per_page' => 20,
-//                        'orderby' => 'menu_order',
-//                        'order' => 'ASC',
-//                    ));
-
-                                        while ($loop->have_posts()): $loop->the_post();
-
-
-
-//                    foreach ($loop as $post) {
-//
-//                        setup_postdata($post);
-
-
+                            }
+                            ?>
+                            <span data-anchor="<?= $cat->term_id ?>"
+                                  class="filter-item <?= ($flag == 0) ? "filter-item-active" : '' ?> "><?=
+                                $cat->name ?>
+                            </span>
+                            <?php
+                            $flag = 1;
+                        }
                         ?>
 
+                    </div>
 
-                        <?php
+                    <script>
 
-                        $categories = get_the_terms($post->ID, 'product_cat');
-//                       // var_dump($post->ID);
-//                                        echo '<pre>';
-////                      var_dump($categories[1]);
-//
-//                                            echo '</pre>';
+                        function toAnchor_filter() {
+                            let items = document.querySelectorAll('.shop-products__container-filter .filter-item');
 
-
-                        $goodsPrice = [];
-
-
-                        $goodsPrice['title'] = $product->get_name();
-                        $goodsPrice['thumbs'] = $product->get_gallery_image_ids();
-                        $goodsPrice['description'] = $product->get_description();
-                        $goodsPrice['product_id'] = $product->get_id();
-                        $goodsPrice['category_id'] = $categories[1]->term_id;
-
-                        foreach ($product->get_available_variations() as $variation) {
-                            foreach ($variation['attributes'] as $key => $value) {
-                                $goodsPrice['size'][$value][] = $variation['display_price'];
-                                break;
+                            for (let i = 0; i < items.length; i++) {
+                                items[i].addEventListener('click', function () {
+                                    document.getElementsByClassName('filter-item-active')[0].classList.remove('filter-item-active');
+                                    let anchor = this.dataset.anchor;
+                                    this.classList.add('filter-item-active');
+                                    // console.log(anchor);
+                                    window.location = "#" + anchor;
+                                });
                             }
-                            $goodsPrice['var_id'][] = $variation['variation_id'];
-
                         }
-                        $goods[] = $goodsPrice;
 
+                        toAnchor_filter();
 
-                    wp_reset_postdata();
+                    </script>
 
-                    ?>
-
-                                        <?php endwhile; ?>
 
                     <?php
-//                    var_dump($goods);
                     $counter = 0;
-                    usort($goods, function($a,$b){
-                            if (($a['category_id']===$b['category_id'])) return 0;
-                        return ($a['category_id']<$b['category_id'])? -1: 1;
+                    usort($goods, function ($a, $b) {
+                        if (($a['category_id'] === $b['category_id'])) return 0;
+                        return ($a['category_id'] < $b['category_id']) ? -1 : 1;
                     });
 
                     $goods_anchor = 0;
@@ -127,7 +147,7 @@ get_header();
                         <!--*** template card *** -->
                         <div class="shop-card">
                             <?php
-                            if ($goods_anchor!=$good['category_id']) {
+                            if ($goods_anchor != $good['category_id']) {
                                 $goods_anchor = $good['category_id'];
                                 ?>
                                 <a href="#" class="ancored">
