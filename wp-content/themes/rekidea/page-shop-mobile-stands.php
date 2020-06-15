@@ -144,14 +144,11 @@ while ($loop->have_posts()): $loop->the_post();
                             ?>
                             <div class="shop-card__thumb-slider">
                                 <div class="samples-slider shop-hot-icon">
-
                                     <?php foreach ($good['thumbs'] as $thumbs) { ?>
                                         <div class="slide">
-                                            <a href="#"><img src="<?= wp_get_attachment_image_url($thumbs, 'full') ?>"
-                                                             alt="shop thumbnail"></a>
+                                            <a href="#"><img src="<?= wp_get_attachment_image_url($thumbs, 'full') ?>" alt="shop thumbnail"></a>
                                         </div>
                                     <?php } ?>
-
                                 </div>
                                 <div class="thumbs-slider">
                                     <?php foreach ($good['thumbs'] as $thumbs) { ?>
@@ -226,9 +223,9 @@ while ($loop->have_posts()): $loop->the_post();
                                     <div class="description-container">
                                         <div class="description-container__nav">
                                             <ul>
-                                                <li class="selected">Сроки</li>
-                                                <li>Доставка</li>
-                                                <li>Оплата</li>
+                                                <li data-index="0" class="selected">Сроки</li>
+                                                <li data-index="1">Доставка</li>
+                                                <li data-index="2">Оплата</li>
                                             </ul>
                                         </div>
                                         <div class="description-container__content active-tab">
@@ -244,34 +241,19 @@ while ($loop->have_posts()): $loop->the_post();
                                 </div>
                             </div>
                         </div>
-
-                        <script>
-                             var descContainer = document.querySelector('.description-container');
-                             var tabs = document.querySelectorAll('.description-container__nav li');
-                             var tab_views = document.querySelectorAll('.description-container__content');
-                             for(let i = 0; i <tabs.length ; i++) {
-                               tabs[i].addEventListener('click', function(){
-                                   this.parentNode.querySelector('.selected').classList.remove('selected');
-                                   this.classList.add('selected');
-                                    this.parentNode.parentNode.parentNode.querySelector('.active-tab').classList.remove
-                                    ('active-tab');
-                                    tab_views[i].classList.add('active-tab');
-
-
-                               });
-                             }
-
-
-                        </script>
-
-
-                        <?php
-                    }
-                    ?>
+                    <?php } ?>
 
 
                     <script>
-
+                        document.querySelectorAll('.description-container__nav li').forEach(function (e) {
+                            e.addEventListener('click', function (element) {
+                                let container = e.closest('.description-container');
+                                container.querySelector('.description-container__nav li.selected').classList.remove('selected');
+                                e.classList.add('selected');
+                                container.querySelector('.description-container__content.active-tab').classList.remove('active-tab');
+                                container.querySelectorAll('.description-container__content')[e.dataset.index].classList.add('active-tab')
+                            });
+                        });
                         //     slider for product card
 
                         jQuery(function ($) {
