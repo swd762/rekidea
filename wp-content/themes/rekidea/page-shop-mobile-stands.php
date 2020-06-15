@@ -97,9 +97,6 @@ while ($loop->have_posts()): $loop->the_post();
                         ]);
                         $flag = 0;
                         foreach ($list_categories as $index => $cat) {
-                            if ($flag) {
-
-                            }
                             ?>
                             <span data-anchor="<?= $cat->term_id ?>"
                                   class="filter-item <?= ($flag == 0) ? "filter-item-active" : '' ?> "><?=
