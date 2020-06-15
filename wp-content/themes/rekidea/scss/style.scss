@@ -3931,6 +3931,10 @@
   display: flex;
   border-bottom: 1px solid #cccbcb;
   margin-top: 25px;
+  &:last-of-type {
+    margin-bottom: 60px;
+  }
+
 
   .shop-hot-icon {
     position: relative;
@@ -4164,11 +4168,15 @@
           font-size: 14px;
           font-weight: 300;
           color: #000;
+          display: none;
         }
-
+        &>.active-tab {
+          display: block;
+        }
       }
     }
   }
+
 
   @media (max-width: 750px) {
     flex-direction: column;

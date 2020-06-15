@@ -13,22 +13,8 @@ $loop = new WP_Query(array(
     'orderby' => 'menu_order',
     'order' => 'ASC',
 ));
-//                    }
-//                    $loop = get_posts(array(
-//                        'post_type' => 'product',
-//                        'posts_per_page' => 20,
-//                        'orderby' => 'menu_order',
-//                        'order' => 'ASC',
-//                    ));
 
 while ($loop->have_posts()): $loop->the_post();
-
-
-//                    foreach ($loop as $post) {
-//
-//                        setup_postdata($post);
-
-
     ?>
 
 
@@ -43,6 +29,9 @@ while ($loop->have_posts()): $loop->the_post();
     $goodsPrice['description'] = $product->get_description();
     $goodsPrice['product_id'] = $product->get_id();
     $goodsPrice['category_id'] = $categories[1]->term_id;
+    $goodsPrice['deadline_tab'] = get_field('deadlines');
+    $goodsPrice['delivery_tab'] = get_field('delivery');
+    $goodsPrice['payment_tab'] = get_field('payment');
 
     foreach ($product->get_available_variations() as $variation) {
         foreach ($variation['attributes'] as $key => $value) {
@@ -108,27 +97,25 @@ while ($loop->have_posts()): $loop->the_post();
                         ?>
 
                     </div>
-
+                    <!-- tab filter script -->
                     <script>
-
                         function toAnchor_filter() {
                             let items = document.querySelectorAll('.shop-products__container-filter .filter-item');
-
+                            let filterBlock = document.querySelector('.shop-products__container-filter');
                             for (let i = 0; i < items.length; i++) {
                                 items[i].addEventListener('click', function () {
-                                    document.getElementsByClassName('filter-item-active')[0].classList.remove('filter-item-active');
+                                    filterBlock.getElementsByClassName('filter-item-active')[0].classList.remove
+                                    ('filter-item-active');
                                     let anchor = this.dataset.anchor;
                                     this.classList.add('filter-item-active');
-                                    // console.log(anchor);
                                     window.location = "#" + anchor;
                                 });
                             }
                         }
 
                         toAnchor_filter();
-
                     </script>
-
+                    <!--  ***  -->
 
                     <?php
                     $counter = 0;
@@ -140,6 +127,8 @@ while ($loop->have_posts()): $loop->the_post();
                     $goods_anchor = 0;
 
                     foreach ($goods as $index => $good) {
+
+
                         ?>
                         <!--*** template card *** -->
                         <div class="shop-card">
@@ -201,15 +190,7 @@ while ($loop->have_posts()): $loop->the_post();
                                         <?php } ?>
 
                                     </div>
-                                    <!--                                    <div class="thumbs-slider">-->
-                                    <!--                                        --><?php //foreach ($good['thumbs'] as $thumbs) { ?>
-                                    <!--                                            <div class="slide">-->
-                                    <!--                                                <img src="-->
-                                    <?//= wp_get_attachment_image_url($thumbs, 'full') ?><!--"-->
-                                    <!--                                                     alt="shop thumbnail">-->
-                                    <!--                                            </div>-->
-                                    <!--                                        --><?php //} ?>
-                                    <!--                                    </div>-->
+
                                 </div>
 
                                 <div class="shop-card__main-content">
@@ -227,20 +208,20 @@ while ($loop->have_posts()): $loop->the_post();
                                         <?php foreach ($good['size'] as $size => $price) { ?>
 
                                             <tr>
-                                                <td><span href="#"
-                                                          onclick="buy(<?= $index ?>,'<?= $size ?>')"><?= $size ?></span>
+                                                <td><span
+                                                            onclick="buy(<?= $index ?>,'<?= $size ?>')"><?= $size ?></span>
                                                 </td>
-                                                <td><span href="#"
-                                                          onclick="buy(<?= $index ?>,'<?= $size ?>')"><?= $price[0] ?></span>
+                                                <td><span
+                                                            onclick="buy(<?= $index ?>,'<?= $size ?>')"><?= $price[0] ?></span>
                                                     <span class="hot-deal" href="#"></span>
                                                 </td>
-                                                <td><span href="#" onclick="buy(<?= $index ?>,'<?= $size ?>',1)
+                                                <td><span onclick="buy(<?= $index ?>,'<?= $size ?>',1)
                                                             "><?= $price[1] ?></span></td>
                                             </tr>
                                         <?php } ?>
                                     </table>
 
-                                    <span href="#" class="buy-btn" onclick="buy(<?= $index ?>)">купить</span>
+                                    <span class="buy-btn" onclick="buy(<?= $index ?>)">купить</span>
 
                                     <div class="description-container">
                                         <div class="description-container__nav">
@@ -250,14 +231,38 @@ while ($loop->have_posts()): $loop->the_post();
                                                 <li>Оплата</li>
                                             </ul>
                                         </div>
+                                        <div class="description-container__content active-tab">
+                                            <p><?= $good['deadline_tab']; ?></p>
+                                        </div>
                                         <div class="description-container__content">
-                                            <p>- Изготовление Ролл ап стенда занимает от 1 дня.</p>
-                                            <p>- Срочное изготовление стенда от 3 часов.</p>
+                                            <p><?= $good['delivery_tab']; ?></p>
+                                        </div>
+                                        <div class="description-container__content">
+                                            <p><?= $good['payment_tab']; ?></p>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
+
+                        <script>
+                             var descContainer = document.querySelector('.description-container');
+                             var tabs = document.querySelectorAll('.description-container__nav li');
+                             var tab_views = document.querySelectorAll('.description-container__content');
+                             for(let i = 0; i <tabs.length ; i++) {
+                               tabs[i].addEventListener('click', function(){
+                                   this.parentNode.querySelector('.selected').classList.remove('selected');
+                                   this.classList.add('selected');
+                                    this.parentNode.parentNode.parentNode.querySelector('.active-tab').classList.remove
+                                    ('active-tab');
+                                    tab_views[i].classList.add('active-tab');
+
+
+                               });
+                             }
+
+
+                        </script>
 
 
                         <?php
@@ -267,7 +272,7 @@ while ($loop->have_posts()): $loop->the_post();
 
                     <script>
 
-                        //                        slider for product card
+                        //     slider for product card
 
                         jQuery(function ($) {
                             $('.samples-slider').slick({

@@ -1692,6 +1692,16 @@ a, button {
     display: flex !important;
     font-weight: 400 !important; }
 
+.mobile-stands-price-page .wide-printing__nav > div {
+  position: sticky;
+  position: -webkit-sticky;
+  top: 130px;
+  max-height: calc(100vh - 156px);
+  overflow-y: auto; }
+  .mobile-stands-price-page .wide-printing__nav > div::-webkit-scrollbar {
+    width: 3px;
+    height: 3px; }
+
 .main-header {
   position: fixed;
   width: 100%;
@@ -4308,6 +4318,8 @@ a, button {
   display: flex;
   border-bottom: 1px solid #cccbcb;
   margin-top: 25px; }
+  .shop-card:last-of-type {
+    margin-bottom: 60px; }
   .shop-card .shop-hot-icon {
     position: relative; }
     .shop-card .shop-hot-icon::after {
@@ -4454,7 +4466,10 @@ a, button {
     .shop-card .shop-card__main-content .description-container__content {
       font-size: 14px;
       font-weight: 300;
-      color: #000; }
+      color: #000;
+      display: none; }
+    .shop-card .shop-card__main-content .description-container > .active-tab {
+      display: block; }
   @media (max-width: 750px) {
     .shop-card {
       flex-direction: column; }
