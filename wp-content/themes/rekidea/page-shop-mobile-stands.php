@@ -29,9 +29,12 @@ while ($loop->have_posts()): $loop->the_post();
     $goodsPrice['description'] = $product->get_description();
     $goodsPrice['product_id'] = $product->get_id();
     $goodsPrice['category_id'] = $categories[1]->term_id;
-    $goodsPrice['deadline_tab'] = get_field('deadlines');
-    $goodsPrice['delivery_tab'] = get_field('delivery');
-    $goodsPrice['payment_tab'] = get_field('payment');
+
+    $import_custom_fields = get_fields();
+
+    $goodsPrice['deadline_tab'] = $import_custom_fields['deadlines'];
+    $goodsPrice['delivery_tab'] = $import_custom_fields['delivery'];
+    $goodsPrice['payment_tab'] = $import_custom_fields['payment'];
 
     foreach ($product->get_available_variations() as $variation) {
         foreach ($variation['attributes'] as $key => $value) {
@@ -146,7 +149,8 @@ while ($loop->have_posts()): $loop->the_post();
                                 <div class="samples-slider shop-hot-icon">
                                     <?php foreach ($good['thumbs'] as $thumbs) { ?>
                                         <div class="slide">
-                                            <a href="#"><img src="<?= wp_get_attachment_image_url($thumbs, 'full') ?>" alt="shop thumbnail"></a>
+                                            <a href="#"><img src="<?= wp_get_attachment_image_url($thumbs, 'full') ?>"
+                                                             alt="shop thumbnail"></a>
                                         </div>
                                     <?php } ?>
                                 </div>
@@ -355,7 +359,7 @@ while ($loop->have_posts()): $loop->the_post();
 
 
             let title = document.querySelector('.title');
-            title.innerText = goods[index]['title'];
+            title.innerHTML = goods[index]['title'];
 
             let select = document.querySelector('#selectSize');
 
@@ -376,22 +380,13 @@ while ($loop->have_posts()): $loop->the_post();
         }
 
         function rebuildGoodsModal() {
-
             let size_index = 0;
-
             let size = document.querySelector('#selectSize').options[document.getElementById("selectSize").options
                 .selectedIndex].text;
-
             let qty = document.querySelector('#qty').value;
-
-
             let isPrintValue = document.querySelector('#isPrint').checked ? 1 : 0;
-
-
             let summary = document.getElementById('summary');
-
             let summaryValue = goods[globalIndex]['size'][size][isPrintValue] * qty;
-
             document.getElementById("product_id").value = goods[globalIndex]['product_id'];
 
             for (var key in goods[globalIndex]['size']) {
@@ -402,7 +397,6 @@ while ($loop->have_posts()): $loop->the_post();
             }
 
             document.getElementById("variant_id").value = goods[globalIndex]['var_id'][size_index * 2 + isPrintValue];
-
             summary.innerText = summaryValue;
         }
 
@@ -444,12 +438,7 @@ while ($loop->have_posts()): $loop->the_post();
                             // return;
 
                         } else {
-                            // $('.basket-btn__tot').remove();
                             $(document.body).trigger('added_to_cart', [response.fragments]);
-                            // alert(response.fragments['div.widget_shopping_cart_content']);
-                            // console.log(response.fragments);
-                            // $('.sosachka').appendChild(response.fragments['div.widget_shopping_cart_content'][0]);
-                            //
                         }
                     },
                 });

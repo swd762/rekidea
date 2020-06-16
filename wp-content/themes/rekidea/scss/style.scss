@@ -4165,11 +4165,12 @@
         }
 
         &__content {
+          display: none;
           &>p {
             font-size: 14px;
             font-weight: 300;
             color: #000;
-            display: none;
+
           }
         }
         &>.active-tab {
@@ -4756,7 +4757,6 @@ footer {
   width: 450px;
   display: none;
   flex-direction: column;
-  //align-items: center;
   position: fixed;
   left: 50%;
   top: 50%;
@@ -4784,6 +4784,9 @@ footer {
       font-size: 22px;
       color: #000;
       text-transform: uppercase;
+      &>strong {
+        font-size: 22px;
+      }
     }
 
     & > select {

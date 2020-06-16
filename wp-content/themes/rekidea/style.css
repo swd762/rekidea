@@ -4463,11 +4463,12 @@ a, button {
           cursor: pointer; }
         .shop-card .shop-card__main-content .description-container__nav > ul > .selected {
           color: #6f0d33; }
-    .shop-card .shop-card__main-content .description-container__content > p {
-      font-size: 14px;
-      font-weight: 300;
-      color: #000;
+    .shop-card .shop-card__main-content .description-container__content {
       display: none; }
+      .shop-card .shop-card__main-content .description-container__content > p {
+        font-size: 14px;
+        font-weight: 300;
+        color: #000; }
     .shop-card .shop-card__main-content .description-container > .active-tab {
       display: block; }
   @media (max-width: 750px) {
@@ -4894,6 +4895,8 @@ footer {
     font-size: 22px;
     color: #000;
     text-transform: uppercase; }
+    .shop-buy__modal-content h2 > strong {
+      font-size: 22px; }
   .shop-buy__modal-content > select {
     padding: 5px;
     color: #4c4c4c;
