@@ -4463,7 +4463,7 @@ a, button {
           cursor: pointer; }
         .shop-card .shop-card__main-content .description-container__nav > ul > .selected {
           color: #6f0d33; }
-    .shop-card .shop-card__main-content .description-container__content {
+    .shop-card .shop-card__main-content .description-container__content > p {
       font-size: 14px;
       font-weight: 300;
       color: #000;
