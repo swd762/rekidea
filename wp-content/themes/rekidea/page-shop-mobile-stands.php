@@ -63,11 +63,11 @@ while ($loop->have_posts()): $loop->the_post();
 
     }
 
-    echo '<pre>';
+//    echo '<pre>';
 //    var_dump($goodsPrice['hot']);
 //    var_dump($product->get_available_variations());
-    var_dump($goodsPrice['size']);
-    echo '</pre>';
+//    var_dump($goodsPrice['size']);
+//    echo '</pre>';
 
     $goods[] = $goodsPrice;
 
@@ -246,7 +246,7 @@ while ($loop->have_posts()): $loop->the_post();
                                                             onclick="buy(<?= $index ?>,'<?= $size ?>')"><?= $price['wo_print'] ?></span>
                                                     <?php
                                                     echo ($price['wo_print_hot'])? '<span
-                                                     class="hot-deal" href="#"></span>':'';
+                                                     class="hot-deal"></span>':'';
                                                     ?>
 
                                                 </td>
@@ -254,7 +254,7 @@ while ($loop->have_posts()): $loop->the_post();
                                                             "><?= $price['print'] ?></span>
                                                     <?php
                                                     echo ($price['print_hot'])? '<span
-                                                     class="hot-deal" href="#"></span>':'';
+                                                     class="hot-deal"></span>':'';
                                                     ?>
                                                 </td>
                                             </tr>

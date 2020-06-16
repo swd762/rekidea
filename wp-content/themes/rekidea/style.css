@@ -4432,14 +4432,15 @@ a, button {
       .shop-card .shop-card__main-content > table td:last-child {
         width: 178px; }
       .shop-card .shop-card__main-content > table td .hot-deal {
-        position: relative; }
+        position: relative;
+        display: inline-block; }
         .shop-card .shop-card__main-content > table td .hot-deal:after {
           content: url(img/fire.svg);
           display: block;
-          width: 30px;
+          width: 25px;
+          height: 25px;
           position: absolute;
-          top: -7px;
-          right: -35px; }
+          top: -17px; }
       .shop-card .shop-card__main-content > table td > span {
         font-size: 14px;
         color: #000;
