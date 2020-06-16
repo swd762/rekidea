@@ -29,8 +29,12 @@ while ($loop->have_posts()): $loop->the_post();
     $goodsPrice['description'] = $product->get_description();
     $goodsPrice['product_id'] = $product->get_id();
     $goodsPrice['category_id'] = $categories[1]->term_id;
-
     $import_custom_fields = get_fields();
+    $import_media_gallery = acf_photo_gallery('watermark-pics', $post->ID);
+
+    foreach ($import_media_gallery as $watermarks) {
+        $goodsPrice['watermarks'][] = $watermarks['full_image_url'];
+    }
 
     $goodsPrice['deadline_tab'] = $import_custom_fields['deadlines'];
     $goodsPrice['delivery_tab'] = $import_custom_fields['delivery'];
@@ -147,12 +151,17 @@ while ($loop->have_posts()): $loop->the_post();
                             ?>
                             <div class="shop-card__thumb-slider">
                                 <div class="samples-slider shop-hot-icon">
-                                    <?php foreach ($good['thumbs'] as $thumbs) { ?>
+                                    <?php foreach ($good['thumbs'] as $pics_index=>$thumbs) { ?>
                                         <div class="slide">
-                                            <a href="#"><img src="<?= wp_get_attachment_image_url($thumbs, 'full') ?>"
-                                                             alt="shop thumbnail"></a>
+                                            <a class="fancybox" href="<?= isset($good['watermarks'][$pics_index])?
+                                                $good['watermarks'][$pics_index]: get_template_directory_uri().'
+                                            /img/404/operator.png';  ?>" >
+                                                <img src="<?= wp_get_attachment_image_url($thumbs, 'full') ?>"
+                                                             alt="shop thumbnail">
+                                            </a>
                                         </div>
                                     <?php } ?>
+
                                 </div>
                                 <div class="thumbs-slider">
                                     <?php foreach ($good['thumbs'] as $thumbs) { ?>
@@ -261,6 +270,13 @@ while ($loop->have_posts()): $loop->the_post();
                         //     slider for product card
 
                         jQuery(function ($) {
+
+                                $(document).ready(function() {
+                                    $(".fancybox").fancybox();
+                                });
+
+
+
                             $('.samples-slider').slick({
                                 slidesToShow: 1,
                                 slidesToScroll: 1,
@@ -348,38 +364,29 @@ while ($loop->have_posts()): $loop->the_post();
         var goods = <?= json_encode($goods)?>;
         var globalIndex = 0;
 
-
         function buy(index, size = null, isPrint = 0) {
 
-
             let modal = document.querySelector('.shop-buy__modal');
-            // let modalContent = document.querySelector('.shop-buy__modal-content');
             modal.classList.add('active-flex');
             fadeMax.classList.add('active');
-
-
             let title = document.querySelector('.title');
             title.innerHTML = goods[index]['title'];
-
             let select = document.querySelector('#selectSize');
-
             let isPrintValue = document.querySelector('#isPrint');
-
             for (var key in goods[index]['size']) {
                 let selectValue = document.createElement('option');
                 if (key === size) selectValue.defaultSelected = true;
                 selectValue.innerText = key;
                 select.appendChild(selectValue);
             }
-
             isPrintValue.checked = isPrint === 1;
-
             globalIndex = index;
 
             rebuildGoodsModal();
         }
 
         function rebuildGoodsModal() {
+
             let size_index = 0;
             let size = document.querySelector('#selectSize').options[document.getElementById("selectSize").options
                 .selectedIndex].text;
@@ -388,14 +395,12 @@ while ($loop->have_posts()): $loop->the_post();
             let summary = document.getElementById('summary');
             let summaryValue = goods[globalIndex]['size'][size][isPrintValue] * qty;
             document.getElementById("product_id").value = goods[globalIndex]['product_id'];
-
             for (var key in goods[globalIndex]['size']) {
                 if (key === size) {
                     break;
                 }
                 size_index++;
             }
-
             document.getElementById("variant_id").value = goods[globalIndex]['var_id'][size_index * 2 + isPrintValue];
             summary.innerText = summaryValue;
         }
