@@ -63,9 +63,9 @@ do_action( 'woocommerce_before_cart' ); ?>
 						<td class="product-name" data-title="Наименование">
 						<?php
 						if ( ! $product_permalink ) {
-							echo wp_kses_post( apply_filters( 'woocommerce_cart_item_name', $_product->get_name(), $cart_item, $cart_item_key ) . '&nbsp;' );
+							echo wp_kses_post( apply_filters( 'woocommerce_cart_item_name', $_product->get_title(), $cart_item, $cart_item_key ) . '&nbsp;' );
 						} else {
-							echo wp_kses_post( apply_filters( 'woocommerce_cart_item_name', sprintf( '<a href="%s">%s</a>', esc_url( $product_permalink ), $_product->get_name() ), $cart_item, $cart_item_key ) );
+							echo wp_kses_post( apply_filters( 'woocommerce_cart_item_name', sprintf( '<a href="%s">%s</a>', esc_url( $product_permalink ), $_product->get_title() ), $cart_item, $cart_item_key ) );
 						}
 
 						do_action( 'woocommerce_after_cart_item_name', $cart_item, $cart_item_key );
@@ -81,8 +81,11 @@ do_action( 'woocommerce_before_cart' ); ?>
 						</td>
 
                         <td class="product-parameters" data-title="Параметры">
-                            <p><strong>Размер:</strong> 60x180</p>
-                            <p><strong>Тип:</strong> С печатью</p>
+                            <?php
+                            foreach ($_product->get_attributes() as $key => $value) {
+                                echo "<p><strong>" . getAttributeDisplayName($key) . ":</strong> {$value}</p>";
+                            }
+                            ?>
                         </td>
 
 						<td class="product-quantity" data-title="Количество">
