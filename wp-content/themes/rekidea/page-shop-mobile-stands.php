@@ -42,12 +42,33 @@ while ($loop->have_posts()): $loop->the_post();
 
     foreach ($product->get_available_variations() as $variation) {
         foreach ($variation['attributes'] as $key => $value) {
-            $goodsPrice['size'][$value][] = $variation['display_price'];
+            if (isset($goodsPrice['size'][$value])) {
+                $goodsPrice['size'][$value]['print'] = $variation['display_regular_price'];
+                if ($variation['display_price']<$variation['display_regular_price']) {
+                    $goodsPrice['size'][$value]['print_hot'] = true;
+                } else {
+                    $goodsPrice['size'][$value]['print_hot'] = false;
+                }
+            } else {
+                $goodsPrice['size'][$value]['wo_print'] = $variation['display_regular_price'];
+                if ($variation['display_price']<$variation['display_regular_price']) {
+                    $goodsPrice['size'][$value]['wo_print_hot'] = true;
+                } else {
+                    $goodsPrice['size'][$value]['w0_print_hot'] = false;
+                }
+            }
             break;
         }
         $goodsPrice['var_id'][] = $variation['variation_id'];
 
     }
+
+    echo '<pre>';
+//    var_dump($goodsPrice['hot']);
+//    var_dump($product->get_available_variations());
+    var_dump($goodsPrice['size']);
+    echo '</pre>';
+
     $goods[] = $goodsPrice;
 
 
@@ -222,11 +243,20 @@ while ($loop->have_posts()): $loop->the_post();
                                                             onclick="buy(<?= $index ?>,'<?= $size ?>')"><?= $size ?></span>
                                                 </td>
                                                 <td><span
-                                                            onclick="buy(<?= $index ?>,'<?= $size ?>')"><?= $price[0] ?></span>
-                                                    <span class="hot-deal" href="#"></span>
+                                                            onclick="buy(<?= $index ?>,'<?= $size ?>')"><?= $price['wo_print'] ?></span>
+                                                    <?php
+                                                    echo ($price['wo_print_hot'])? '<span
+                                                     class="hot-deal" href="#"></span>':'';
+                                                    ?>
+
                                                 </td>
                                                 <td><span onclick="buy(<?= $index ?>,'<?= $size ?>',1)
-                                                            "><?= $price[1] ?></span></td>
+                                                            "><?= $price['print'] ?></span>
+                                                    <?php
+                                                    echo ($price['print_hot'])? '<span
+                                                     class="hot-deal" href="#"></span>':'';
+                                                    ?>
+                                                </td>
                                             </tr>
                                         <?php } ?>
                                     </table>
