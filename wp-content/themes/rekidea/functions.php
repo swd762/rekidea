@@ -232,6 +232,17 @@ function header_add_to_cart_fragment($fragments)
 }
 // *** *** ***
 
+    function getAttributeDisplayName($attributeName) {
+        $names = [
+            'type' => 'Тип',
+            'size' => 'Размер'
+        ];
+
+        if(array_key_exists($attributeName, $names)) return $names[$attributeName];
+
+        return $attributeName;
+    }
+
 
 
 
