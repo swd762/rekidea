@@ -82,7 +82,7 @@ while ($loop->have_posts()): $loop->the_post();
         <!--Breadcrumbs block *******************-->
         <div class="breadcrumbs">
             <div class="container">
-                <p><a href="/">Главная</a> > <a href="/price">Цены</a> > <a href="">Мобильные стенды</a> > Roll Up</p>
+                <p><a href="/">Главная</a> > <a href="/price">Цены</a> > <a href="/price/mobile-stands-price-categories/">Мобильные стенды</a> > Roll Up</p>
             </div>
         </div>
         <!--*************************************-->

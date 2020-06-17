@@ -6,7 +6,7 @@ function add_styles_and_scripts()
 {
     //  ** Load styles **
     wp_enqueue_style('animate', get_theme_file_uri('/animate.min.css'));
-    wp_enqueue_style('style', get_stylesheet_directory_uri() . '/style.css', [], 27);
+    wp_enqueue_style('style', get_stylesheet_directory_uri() . '/style.css', [], 29);
     wp_enqueue_style('fancybox', get_stylesheet_directory_uri() . '/jquery.fancybox.css');
     wp_enqueue_style('flexi', get_stylesheet_directory_uri() . '/addons/flexi/css/flexi.css');
     wp_enqueue_style('uptop', get_theme_file_uri('/addons/uptop/css/ui.totop.css'));
@@ -234,7 +234,7 @@ function header_add_to_cart_fragment($fragments)
 
     function getAttributeDisplayName($attributeName) {
         $names = [
-            'type' => 'Тип',
+            'print' => 'Тип',
             'size' => 'Размер'
         ];
 
