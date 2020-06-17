@@ -171,7 +171,8 @@ while ($loop->have_posts()): $loop->the_post();
                             }
                             ?>
                             <div class="shop-card__thumb-slider">
-                                <div class="samples-slider shop-hot-icon">
+                                <div class="samples-slider">
+<!--                                    <div class="samples-slider shop-hot-icon">-->
                                     <?php foreach ($good['thumbs'] as $pics_index=>$thumbs) { ?>
                                         <div class="slide">
                                             <a class="fancybox" href="<?= isset($good['watermarks'][$pics_index])?
@@ -210,15 +211,24 @@ while ($loop->have_posts()): $loop->the_post();
                                 </div>
 
                                 <div class="shop-card__thumb-slider">
-                                    <div class="samples-slider shop-hot-icon">
-
-                                        <?php foreach ($good['thumbs'] as $thumbs) { ?>
+                                    <div class="samples-slider">
+                                        <?php foreach ($good['thumbs'] as $pics_index=>$thumbs) { ?>
                                             <div class="slide">
-                                                <a href="#"><img
-                                                            src="<?= wp_get_attachment_image_url($thumbs, 'full') ?>"
-                                                            alt="shop thumbnail"></a>
+                                                <a class="fancybox" href="<?= isset($good['watermarks'][$pics_index])?
+                                                    $good['watermarks'][$pics_index]: get_template_directory_uri().'
+                                            /img/404/operator.png';  ?>" >
+                                                    <img src="<?= wp_get_attachment_image_url($thumbs, 'full') ?>"
+                                                         alt="shop thumbnail">
+                                                </a>
                                             </div>
                                         <?php } ?>
+<!--                                        --><?php //foreach ($good['thumbs'] as $thumbs) { ?>
+<!--                                            <div class="slide">-->
+<!--                                                <a href="#"><img-->
+<!--                                                            src="--><?//= wp_get_attachment_image_url($thumbs, 'full') ?><!--"-->
+<!--                                                            alt="shop thumbnail"></a>-->
+<!--                                            </div>-->
+<!--                                        --><?php //} ?>
 
                                     </div>
 
