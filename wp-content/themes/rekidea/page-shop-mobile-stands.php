@@ -250,7 +250,7 @@ while ($loop->have_posts()): $loop->the_post();
                                                     ?>
 
                                                 </td>
-                                                <td><span onclick="buy(<?= $index ?>,'<?= $size ?>',1)
+                                                <td><span onclick="buy(<?= $index ?>,'<?= $size ?>','print')
                                                             "><?= $price['print'] ?></span>
                                                     <?php
                                                     echo ($price['print_hot'])? '<span
@@ -394,7 +394,10 @@ while ($loop->have_posts()): $loop->the_post();
         var goods = <?= json_encode($goods)?>;
         var globalIndex = 0;
 
-        function buy(index, size = null, isPrint = 0) {
+            console.log(goods);
+
+
+        function buy(index, size = null, isPrint = 'wo_print') {
 
             let modal = document.querySelector('.shop-buy__modal');
             modal.classList.add('active-flex');
@@ -409,7 +412,7 @@ while ($loop->have_posts()): $loop->the_post();
                 selectValue.innerText = key;
                 select.appendChild(selectValue);
             }
-            isPrintValue.checked = isPrint === 1;
+            isPrintValue.checked = isPrint === 'print';
             globalIndex = index;
 
             rebuildGoodsModal();
@@ -421,7 +424,7 @@ while ($loop->have_posts()): $loop->the_post();
             let size = document.querySelector('#selectSize').options[document.getElementById("selectSize").options
                 .selectedIndex].text;
             let qty = document.querySelector('#qty').value;
-            let isPrintValue = document.querySelector('#isPrint').checked ? 1 : 0;
+            let isPrintValue = document.querySelector('#isPrint').checked ? 'print' : 'wo_print';
             let summary = document.getElementById('summary');
             let summaryValue = goods[globalIndex]['size'][size][isPrintValue] * qty;
             document.getElementById("product_id").value = goods[globalIndex]['product_id'];
@@ -431,7 +434,9 @@ while ($loop->have_posts()): $loop->the_post();
                 }
                 size_index++;
             }
-            document.getElementById("variant_id").value = goods[globalIndex]['var_id'][size_index * 2 + isPrintValue];
+            let print_id = (isPrintValue === 'print')?1:0;
+            // console.log(print_id);
+            document.getElementById("variant_id").value = goods[globalIndex]['var_id'][size_index * 2 + print_id];
             summary.innerText = summaryValue;
         }
 
