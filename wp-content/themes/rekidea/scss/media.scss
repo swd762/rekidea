@@ -1418,8 +1418,17 @@
       width: 200px!important;
       height: 250px!important;
     }
-    margin: 10px 5px;
-    padding: 15px;
+    //margin: 10px 5px;
+    //padding: 15px;
+    border: none;
+    margin: 10px 0;
+    padding: 0 5px;
+    overflow: hidden;
+
+    .questions-contact__content {
+      border: 5px solid #6f0d33;
+      padding: 15px;
+    }
     //overflow: hidden;
     .question-operator {
       position: absolute;
