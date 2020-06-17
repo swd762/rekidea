@@ -22,7 +22,7 @@ if ( have_posts() ) {
 <!--*************************************-->
 
 <!--*************************************-->
-<div class="price__wrapper mobile-stands-price-page container clearfix">
+<div class="price__wrapper mobile-stands-price-page-categories container clearfix">
     <div class="wide-printing__nav">
         <?php get_template_part( 'partials/price-menu.inc'); ?>
     </div>

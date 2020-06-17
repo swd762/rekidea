@@ -3895,6 +3895,10 @@
     z-index: 1;
     background: #fff;
 
+    @media (max-width: 1023px) {
+      top: 37px;
+    }
+
     & > .filter-item {
       font-size: 14px;
       font-weight: 300;
@@ -3910,7 +3914,7 @@
       }
       @media (max-width: 1170px) {
         padding: 5px;
-        margin-left: 10px;
+        margin-left: 12px;
       }
     }
 
@@ -3925,7 +3929,7 @@
   }
 
   @media (max-width: 750px) {
-    padding-left: 20px;
+    padding-left: 0;
     border-left: none;
   }
 }
@@ -3974,6 +3978,10 @@
     //margin-left: 30px;
     display: flex;
     flex-direction: column;
+
+    @media (max-width: 750px) {
+      margin-right: 0;
+    }
 
     .samples-slider {
       .slide {
@@ -4147,6 +4155,7 @@
       .description-container {
         margin-top: 20px;
         margin-bottom: 25px;
+        width: 100%;
 
         &__nav {
           margin-bottom: 10px;
