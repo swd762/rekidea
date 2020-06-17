@@ -1620,7 +1620,8 @@ a, button {
     font-size: 14px;
     color: #245269;
     font-weight: 700;
-    text-decoration: none; }
+    text-decoration: none;
+    cursor: pointer; }
     .woocommerce-terms-and-conditions-wrapper a:hover {
       text-decoration: underline; }
 
@@ -4303,6 +4304,10 @@ a, button {
       cursor: pointer; }
       .shop-products__container-filter > .filter-item:first-child {
         margin-left: 0; }
+      @media (max-width: 1170px) {
+        .shop-products__container-filter > .filter-item {
+          padding: 5px;
+          margin-left: 10px; } }
     .shop-products__container-filter > .filter-item-active {
       color: #fff;
       background-color: #6f0d33; }

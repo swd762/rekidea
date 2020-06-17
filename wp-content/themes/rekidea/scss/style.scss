@@ -3908,6 +3908,10 @@
       &:first-child {
         margin-left: 0;
       }
+      @media (max-width: 1170px) {
+        padding: 5px;
+        margin-left: 10px;
+      }
     }
 
     & > .filter-item-active {
