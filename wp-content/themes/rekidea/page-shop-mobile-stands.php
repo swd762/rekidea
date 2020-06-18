@@ -32,10 +32,16 @@ while ($loop->have_posts()): $loop->the_post();
     $import_custom_fields = get_fields();
     $import_media_gallery = acf_photo_gallery('watermark-pics', $post->ID);
 
+//    echo '<pre>';
+//    var_dump($import_custom_fields);
+//    echo '</pre>';
+
+
+
     foreach ($import_media_gallery as $watermarks) {
         $goodsPrice['watermarks'][] = $watermarks['full_image_url'];
     }
-
+    $goodsPrice['offer_icon'] = $import_custom_fields['offer_icon'];
     $goodsPrice['deadline_tab'] = $import_custom_fields['deadlines'];
     $goodsPrice['delivery_tab'] = $import_custom_fields['delivery'];
     $goodsPrice['payment_tab'] = $import_custom_fields['payment'];
@@ -169,10 +175,20 @@ while ($loop->have_posts()): $loop->the_post();
                                 </a>
                                 <?php
                             }
+
+                            $offer_icon = '';
+                            switch(strtolower($good['offer_icon'])) {
+                                case 'hot':
+                                    $offer_icon = "shop-hot-icon";
+                                    break;
+                                case 'hit':
+                                    $offer_icon = "shop-hit-icon";
+                                    break;
+                                default:
+                            }
                             ?>
                             <div class="shop-card__thumb-slider">
-                                <div class="samples-slider">
-<!--                                    <div class="samples-slider shop-hot-icon">-->
+                                <div class="samples-slider <?= $offer_icon ?> ">
                                     <?php foreach ($good['thumbs'] as $pics_index=>$thumbs) { ?>
                                         <div class="slide">
                                             <a class="fancybox" href="<?= isset($good['watermarks'][$pics_index])?
@@ -211,7 +227,7 @@ while ($loop->have_posts()): $loop->the_post();
                                 </div>
 
                                 <div class="shop-card__thumb-slider">
-                                    <div class="samples-slider">
+                                    <div class="samples-slider <?= $offer_icon ?>">
                                         <?php foreach ($good['thumbs'] as $pics_index=>$thumbs) { ?>
                                             <div class="slide">
                                                 <a class="fancybox" href="<?= isset($good['watermarks'][$pics_index])?
