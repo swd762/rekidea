@@ -165,3 +165,9 @@ main {
     right: 5px;
   }
 }
+
+.fancybox-toolbar {
+  .fancybox-button--zoom {
+    display: none !important;
+  }
+}

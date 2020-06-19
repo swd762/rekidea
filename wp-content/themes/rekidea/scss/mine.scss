@@ -694,6 +694,7 @@
       }
     }
     &.sub-menu {
+      padding: 10px 0;
       &>li {
         margin-right: 10px;
         &>a {
@@ -708,7 +709,7 @@
   li {
     list-style: none;
 
-    &.current-menu-item {
+    &.current-menu-item, &.current_page_ancestor {
       &>a {
         color: #6f0d33;
         font-weight: bold;
@@ -2006,6 +2007,10 @@
 }
 
 .mobile-stands-price-page {
+  padding-bottom: 70px;
+  @media(max-width: 550px) {
+    padding-bottom: 10px;
+  }
   .wide-printing__nav {
     & > div {
       position: sticky;
@@ -2014,6 +2019,17 @@
       max-height: calc(100vh - 156px);
       overflow-y: auto;
       &::-webkit-scrollbar { width: 3px; height: 3px;}
+    }
+  }
+}
+
+.woocommerce-order-received {
+  .checkout-content {
+    padding-left: 0;
+    padding-right: 0;
+    .shop-header-with-square, .thankyou-content {
+      padding-left: 20px;
+      padding-right: 20px;
     }
   }
 }

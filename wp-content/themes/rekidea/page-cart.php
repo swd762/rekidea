@@ -15,7 +15,7 @@ if ( have_posts() ) {
     <div class="breadcrumbs">
         <div class="container">
             <p><a href="/">Главная</a> > <a href="/price">Цены</a> > <a href="/price/mobile-stands-price-categories/">Мобильные
-                    стенды</a> > <a href="/404">Roll Up</a> > Корзина</p>
+                    стенды</a> > <a href="/price/mobile-stands-price-categories/roll-up/">Roll Up</a> > Корзина</p>
         </div>
     </div>
 

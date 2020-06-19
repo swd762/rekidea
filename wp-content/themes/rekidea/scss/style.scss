@@ -3939,8 +3939,13 @@
   display: flex;
   border-bottom: 1px solid #cccbcb;
   margin-top: 25px;
+  padding-bottom: 15px;
   &:last-of-type {
     margin-bottom: 60px;
+    border-bottom: none;
+    @media(max-width: 550px) {
+      margin-bottom: 0;
+    }
   }
 
 
