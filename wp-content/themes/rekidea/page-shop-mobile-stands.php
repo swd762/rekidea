@@ -33,9 +33,8 @@ while ($loop->have_posts()): $loop->the_post();
     $import_media_gallery = acf_photo_gallery('watermark-pics', $post->ID);
 
 //    echo '<pre>';
-//    var_dump($import_custom_fields);
+//    var_dump($goodsPrice);
 //    echo '</pre>';
-
 
 
     foreach ($import_media_gallery as $watermarks) {
@@ -50,14 +49,14 @@ while ($loop->have_posts()): $loop->the_post();
         foreach ($variation['attributes'] as $key => $value) {
             if (isset($goodsPrice['size'][$value])) {
                 $goodsPrice['size'][$value]['print'] = $variation['display_regular_price'];
-                if ($variation['display_price']<$variation['display_regular_price']) {
+                if ($variation['display_price'] < $variation['display_regular_price']) {
                     $goodsPrice['size'][$value]['print_hot'] = true;
                 } else {
                     $goodsPrice['size'][$value]['print_hot'] = false;
                 }
             } else {
                 $goodsPrice['size'][$value]['wo_print'] = $variation['display_regular_price'];
-                if ($variation['display_price']<$variation['display_regular_price']) {
+                if ($variation['display_price'] < $variation['display_regular_price']) {
                     $goodsPrice['size'][$value]['wo_print_hot'] = true;
                 } else {
                     $goodsPrice['size'][$value]['w0_print_hot'] = false;
@@ -75,6 +74,7 @@ while ($loop->have_posts()): $loop->the_post();
 //    var_dump($goodsPrice['size']);
 //    echo '</pre>';
 
+
     $goods[] = $goodsPrice;
 
 
@@ -85,10 +85,12 @@ while ($loop->have_posts()): $loop->the_post();
 <?php endwhile; ?>
 
     <main>
+        <!--        <a href="javascript:;" data-fancybox data-src="#store-added-to-cart-modal">1111</a>-->
         <!--Breadcrumbs block *******************-->
         <div class="breadcrumbs">
             <div class="container">
-                <p><a href="/">Главная</a> > <a href="/price">Цены</a> > <a href="/price/mobile-stands-price-categories/">Мобильные стенды</a> > Roll Up</p>
+                <p><a href="/">Главная</a> > <a href="/price">Цены</a> > <a
+                            href="/price/mobile-stands-price-categories/">Мобильные стенды</a> > Roll Up</p>
             </div>
         </div>
         <!--*************************************-->
@@ -101,12 +103,9 @@ while ($loop->have_posts()): $loop->the_post();
             <div class="shop__content shop-products__container">
                 <div class="row">
                     <div class="price__content-title">
-
-
                         <div class="shop-products__container-banner"></div>
                         <?php get_template_part('partials/price-menu-mobile.inc'); ?>
                         <a href="/404"><h2>Ролл ап стенды</h2></a>
-
                     </div>
                 </div>
                 <div class="price-categories mobile-stands-price-categories">
@@ -161,23 +160,22 @@ while ($loop->have_posts()): $loop->the_post();
                     $goods_anchor = 0;
 
                     foreach ($goods as $index => $good) {
-
-
                         ?>
                         <!--*** template card *** -->
                         <div class="shop-card">
-                            <?php
-                            if ($goods_anchor != $good['category_id']) {
-                                $goods_anchor = $good['category_id'];
-                                ?>
-                                <a href="#" class="ancored">
-                                    <i id="<?= $goods_anchor ?>"></i>
-                                </a>
+                            <a href="#" class="ancored">
                                 <?php
-                            }
+                                if ($goods_anchor != $good['category_id']) {
+                                    $goods_anchor = $good['category_id'];
+                                    ?>
 
+                                    <i id="<?= $goods_anchor ?>"></i>
+                                <?php } ?>
+                                <i id="<?= 'product-id-' . $good['product_id'] ?>"></i>
+                            </a>
+                            <?php
                             $offer_icon = '';
-                            switch(strtolower($good['offer_icon'])) {
+                            switch (strtolower($good['offer_icon'])) {
                                 case 'hot':
                                     $offer_icon = "shop-hot-icon";
                                     break;
@@ -189,13 +187,13 @@ while ($loop->have_posts()): $loop->the_post();
                             ?>
                             <div class="shop-card__thumb-slider">
                                 <div class="samples-slider <?= $offer_icon ?> ">
-                                    <?php foreach ($good['thumbs'] as $pics_index=>$thumbs) { ?>
+                                    <?php foreach ($good['thumbs'] as $pics_index => $thumbs) { ?>
                                         <div class="slide">
-                                            <a class="fancybox" href="<?= isset($good['watermarks'][$pics_index])?
-                                                $good['watermarks'][$pics_index]: get_template_directory_uri().'
-                                            /img/404/operator.png';  ?>" >
+                                            <a class="fancybox" href="<?= isset($good['watermarks'][$pics_index]) ?
+                                                $good['watermarks'][$pics_index] : get_template_directory_uri() . '
+                                            /img/404/operator.png'; ?>">
                                                 <img src="<?= wp_get_attachment_image_url($thumbs, 'full') ?>"
-                                                             alt="shop thumbnail">
+                                                     alt="shop thumbnail">
                                             </a>
                                         </div>
                                     <?php } ?>
@@ -218,7 +216,8 @@ while ($loop->have_posts()): $loop->the_post();
                                     <p>
                                         <?php echo $good['description']; ?>
                                     </p>
-                                    <a target="_blank" href="<?= get_template_directory_uri() ?>/img/rollup-tech.pdf"
+                                    <a target="_blank"
+                                       href="<?= get_template_directory_uri() ?>/img/rollup-tech.pdf"
                                        class="doc-link">
                                         <img src="<?= get_template_directory_uri() ?>/img/shop-card/pdf.png"
                                              alt="pdf link icon">
@@ -228,23 +227,25 @@ while ($loop->have_posts()): $loop->the_post();
 
                                 <div class="shop-card__thumb-slider">
                                     <div class="samples-slider <?= $offer_icon ?>">
-                                        <?php foreach ($good['thumbs'] as $pics_index=>$thumbs) { ?>
+                                        <?php foreach ($good['thumbs'] as $pics_index => $thumbs) { ?>
                                             <div class="slide">
-                                                <a class="fancybox" href="<?= isset($good['watermarks'][$pics_index])?
-                                                    $good['watermarks'][$pics_index]: get_template_directory_uri().'
-                                            /img/404/operator.png';  ?>" >
+                                                <a class="fancybox"
+                                                   href="<?= isset($good['watermarks'][$pics_index]) ?
+                                                       $good['watermarks'][$pics_index] : get_template_directory_uri() . '
+                                            /img/404/operator.png'; ?>">
                                                     <img src="<?= wp_get_attachment_image_url($thumbs, 'full') ?>"
                                                          alt="shop thumbnail">
                                                 </a>
                                             </div>
                                         <?php } ?>
-<!--                                        --><?php //foreach ($good['thumbs'] as $thumbs) { ?>
-<!--                                            <div class="slide">-->
-<!--                                                <a href="#"><img-->
-<!--                                                            src="--><?//= wp_get_attachment_image_url($thumbs, 'full') ?><!--"-->
-<!--                                                            alt="shop thumbnail"></a>-->
-<!--                                            </div>-->
-<!--                                        --><?php //} ?>
+                                        <!--                                        --><?php //foreach ($good['thumbs'] as $thumbs) { ?>
+                                        <!--                                            <div class="slide">-->
+                                        <!--                                                <a href="#"><img-->
+                                        <!--                                                            src="-->
+                                        <? //= wp_get_attachment_image_url($thumbs, 'full') ?><!--"-->
+                                        <!--                                                            alt="shop thumbnail"></a>-->
+                                        <!--                                            </div>-->
+                                        <!--                                        --><?php //} ?>
 
                                     </div>
 
@@ -271,16 +272,16 @@ while ($loop->have_posts()): $loop->the_post();
                                                 <td><span
                                                             onclick="buy(<?= $index ?>,'<?= $size ?>')"><?= $price['wo_print'] ?></span>
                                                     <?php
-                                                    echo ($price['wo_print_hot'])? '<span
-                                                     class="hot-deal"></span>':'';
+                                                    echo ($price['wo_print_hot']) ? '<span
+                                                     class="hot-deal"></span>' : '';
                                                     ?>
 
                                                 </td>
                                                 <td><span onclick="buy(<?= $index ?>,'<?= $size ?>','print')
                                                             "><?= $price['print'] ?></span>
                                                     <?php
-                                                    echo ($price['print_hot'])? '<span
-                                                     class="hot-deal"></span>':'';
+                                                    echo ($price['print_hot']) ? '<span
+                                                     class="hot-deal"></span>' : '';
                                                     ?>
                                                 </td>
                                             </tr>
@@ -327,10 +328,9 @@ while ($loop->have_posts()): $loop->the_post();
 
                         jQuery(function ($) {
 
-                                $(document).ready(function() {
-                                    $(".fancybox").fancybox();
-                                });
-
+                            $(document).ready(function () {
+                                $(".fancybox").fancybox();
+                            });
 
 
                             $('.samples-slider').slick({
@@ -416,11 +416,23 @@ while ($loop->have_posts()): $loop->the_post();
     </div>
     <!--***-->
 
+    <!--*** Added to cart modal ***-->
+    <div class="store-added-to-cart-modal" id="store-added-to-cart-modal">
+        <div class="store-added-to-cart-modal__content">
+            <img src="<?= get_template_directory_uri() ?>/img/added-check.svg" alt="check icon" width="85px"
+                 height="85px">
+            <p>Товар добавлен в корзину</p>
+            <a data-fancybox-close href="#0">Продолжить покупки</a>
+            <a href="/cart">Перейти в корзину</a>
+        </div>
+
+    </div>
+    <!--***-->
     <script>
         var goods = <?= json_encode($goods)?>;
         var globalIndex = 0;
 
-            console.log(goods);
+        // console.log(goods);
 
 
         function buy(index, size = null, isPrint = 'wo_print') {
@@ -460,10 +472,21 @@ while ($loop->have_posts()): $loop->the_post();
                 }
                 size_index++;
             }
-            let print_id = (isPrintValue === 'print')?1:0;
+            let print_id = (isPrintValue === 'print') ? 1 : 0;
             // console.log(print_id);
             document.getElementById("variant_id").value = goods[globalIndex]['var_id'][size_index * 2 + print_id];
             summary.innerText = summaryValue;
+        }
+
+        function open_cat() {
+            $.fancybox.open({
+                src: '#store-added-to-cart-modal',
+                type: 'inline',
+                touch: false,
+                modal: true,
+                closeBtn: false
+
+            })
         }
 
         jQuery(document).ready(function ($) {
@@ -492,8 +515,14 @@ while ($loop->have_posts()): $loop->the_post();
                         // $thisbutton.removeClass('added').addClass('loading');
                     },
                     complete: function (response) {
-                        // $thisbutton.addClass('added').removeClass('loading');
+
                         closeShopBuyModal();
+                        $.fancybox.open({
+                            src: '#store-added-to-cart-modal',
+                            type: 'inline',
+                            touch: false
+
+                        })
 
                     },
                     success: function (response) {
