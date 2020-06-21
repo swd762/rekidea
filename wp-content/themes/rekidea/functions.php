@@ -12,6 +12,8 @@ function add_styles_and_scripts()
     wp_enqueue_style('uptop', get_theme_file_uri('/addons/uptop/css/ui.totop.css'));
     wp_enqueue_style('slick', get_theme_file_uri('/addons/slick/slick.css'));
     wp_enqueue_style('slick1', get_theme_file_uri('/addons/slick/slick-theme.css'));
+    wp_enqueue_style('owl', get_theme_file_uri('/addons/owl/owl.carousel.min.css'));
+    wp_enqueue_style('owl-theme', get_theme_file_uri('/addons/owl/owl.theme.default.min.css'));
 
     // ** Load scripts **
     wp_enqueue_script('wow', get_theme_file_uri('/js/wow.min.js'), array('jquery'));
@@ -20,7 +22,7 @@ function add_styles_and_scripts()
     wp_enqueue_script('up', get_theme_file_uri('/addons/uptop/js/jquery.ui.totop.js'), array('jquery'));
     wp_enqueue_script('up_easing', get_theme_file_uri('/addons/uptop/js/easing.js'), array('jquery'));
     wp_enqueue_script('slick', get_theme_file_uri('/addons/slick/slick.min.js'), array('jquery'));
-
+    wp_enqueue_script('owl', get_theme_file_uri('/addons/owl/owl.carousel.min.js'), array('jquery'));
 
 }
 

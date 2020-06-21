@@ -4372,9 +4372,7 @@ a, button {
       left: 50%; }
   .shop-card .shop-card__thumb-slider {
     width: 300px;
-    margin-right: 30px;
-    display: flex;
-    flex-direction: column; }
+    margin-right: 30px; }
     @media (max-width: 750px) {
       .shop-card .shop-card__thumb-slider {
         margin-right: 0; } }
@@ -6000,5 +5998,39 @@ footer {
 @media (max-width: 360px) {
   .craft-cards-wrapper {
     padding: 0 0 20px; } }
+.slider-main .item {
+  color: #FFF;
+  text-align: center;
+  width: 300px;
+  display: flex;
+  justify-content: center; }
+
+.slider-thumbs .item {
+  background: #C9C9C9;
+  color: #FFF;
+  text-align: center;
+  cursor: pointer; }
+.slider-thumbs .current .item {
+  background: #0c83e7; }
+
+.owl-theme .owl-nav {
+  /*default owl-theme theme reset .disabled:hover links */ }
+  .owl-theme .owl-nav [class*='owl-'] {
+    transition: all .3s ease; }
+    .owl-theme .owl-nav [class*='owl-'].disabled:hover {
+      background-color: #D6D6D6; }
+
+.slider-main.owl-theme {
+  position: relative; }
+  .slider-main.owl-theme .owl-next, .slider-main.owl-theme .owl-prev {
+    width: 22px;
+    height: 40px;
+    margin-top: -20px;
+    position: absolute;
+    top: 50%; }
+  .slider-main.owl-theme .owl-prev {
+    left: 10px; }
+  .slider-main.owl-theme .owl-next {
+    right: 10px; }
 
 /*# sourceMappingURL=style.css.map */

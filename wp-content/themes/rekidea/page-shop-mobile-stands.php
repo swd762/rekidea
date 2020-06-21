@@ -186,28 +186,108 @@ while ($loop->have_posts()): $loop->the_post();
                             }
                             ?>
                             <div class="shop-card__thumb-slider">
-                                <div class="samples-slider <?= $offer_icon ?> ">
+                                <div class="owl-carousel owl-theme slider-main owl-main<?= '-' . $index ?> <?= $offer_icon ?>">
                                     <?php foreach ($good['thumbs'] as $pics_index => $thumbs) { ?>
-                                        <div class="slide">
+                                        <div class="item">
                                             <a class="fancybox" href="<?= isset($good['watermarks'][$pics_index]) ?
                                                 $good['watermarks'][$pics_index] : get_template_directory_uri() . '
-                                            /img/404/operator.png'; ?>">
+                                                /img/404/operator.png'; ?>">
                                                 <img src="<?= wp_get_attachment_image_url($thumbs, 'full') ?>"
-                                                     alt="shop thumbnail">
+                                                     alt="shop thumbnail" style="width: 220px"">
                                             </a>
                                         </div>
                                     <?php } ?>
-
                                 </div>
-                                <div class="thumbs-slider">
+
+                                <div class="owl-carousel owl-theme slider-thumbs owl-thumbs<?= '-' . $index ?>">
                                     <?php foreach ($good['thumbs'] as $thumbs) { ?>
-                                        <div class="slide">
+                                        <div class="item">
                                             <img src="<?= wp_get_attachment_image_url($thumbs, 'full') ?>"
                                                  alt="shop thumbnail">
                                         </div>
                                     <?php } ?>
                                 </div>
                             </div>
+                            <script>
+                                jQuery(document).ready(function ($) {
+
+                                    var sync1 = $(".owl-main<?='-' . $index ?>");
+                                    var sync2 = $(".owl-thumbs<?='-' . $index ?>");
+                                    var slidesPerPage = 3; //globaly define number of elements per page
+                                    var syncedSecondary = true;
+
+                                    sync1.owlCarousel({
+                                        items: 1,
+                                        slideSpeed: 2000,
+                                        nav: true,
+                                        autoplay: false,
+                                        dots: true,
+                                        loop: true,
+                                        responsiveRefreshRate: 200,
+                                        navText: ['<svg width="100%" height="100%" viewBox="0 0 11 20"><path style="fill:none;stroke-width: 1px;stroke: #000;" d="M9.554,1.001l-8.607,8.607l8.607,8.606"/></svg>', '<svg width="100%" height="100%" viewBox="0 0 11 20" version="1.1"><path style="fill:none;stroke-width: 1px;stroke: #000;" d="M1.054,18.214l8.606,-8.606l-8.606,-8.607"/></svg>'],
+                                    }).on('changed.owl.carousel', syncPosition);
+
+                                    sync2.on('initialized.owl.carousel', function () {
+                                        sync2.find(".owl-item").eq(0).addClass("current");
+                                    }).owlCarousel({
+                                        items: slidesPerPage,
+                                        dots: false,
+                                        nav: false,
+                                        smartSpeed: 200,
+                                        slideSpeed: 500,
+                                        // mouseDrag: false,
+                                        slideBy: 1, //alternatively you can slide by 1, this way the active slide
+                                        // will stick to the first item in the second carousel
+                                        responsiveRefreshRate: 100
+                                    }).on('changed.owl.carousel', syncPosition2);
+
+
+                                    function syncPosition(el) {
+                                        //if you set loop to false, you have to restore this next line
+                                        //var current = el.item.index;
+
+                                        //if you disable loop you have to comment this block
+                                        var count = el.item.count - 1;
+                                        var current = Math.round(el.item.index - (el.item.count / 2) - .5);
+
+                                        if (current < 0) {
+                                            current = count;
+                                        }
+                                        if (current > count) {
+                                            current = 0;
+                                        }
+
+                                        //end block
+
+                                        sync2.find(".owl-item").removeClass("current").eq(current).addClass("current");
+
+                                        var onscreen = sync2.find('.owl-item.active').length - 1;
+                                        var start = sync2.find('.owl-item.active').first().index();
+                                        var end = sync2.find('.owl-item.active').last().index();
+
+                                        if (current > end) {
+                                            sync2.data('owl.carousel').to(current, 100, true);
+                                        }
+                                        if (current < start) {
+                                            sync2.data('owl.carousel').to(current - onscreen, 100, true);
+                                        }
+                                    }
+
+                                    function syncPosition2(el) {
+                                        if (syncedSecondary) {
+                                            var number = el.item.index;
+                                            sync1.data('owl.carousel').to(number, 100, true);
+                                        }
+                                    }
+
+                                    sync2.on("click", ".owl-item", function (e) {
+                                        e.preventDefault();
+                                        var number = $(this).index();
+                                        sync1.data('owl.carousel').to(number, 300, true);
+                                    });
+                                })
+                            </script>
+
                             <div class="shop-card__main">
                                 <div class="shop-card__main-header">
                                     <h2>
@@ -226,29 +306,18 @@ while ($loop->have_posts()): $loop->the_post();
                                 </div>
 
                                 <div class="shop-card__thumb-slider">
-                                    <div class="samples-slider <?= $offer_icon ?>">
+                                    <div class="owl-carousel owl-theme slider-main owl-main<?= '-' . $index ?> <?= $offer_icon ?>">
                                         <?php foreach ($good['thumbs'] as $pics_index => $thumbs) { ?>
-                                            <div class="slide">
-                                                <a class="fancybox"
-                                                   href="<?= isset($good['watermarks'][$pics_index]) ?
-                                                       $good['watermarks'][$pics_index] : get_template_directory_uri() . '
-                                            /img/404/operator.png'; ?>">
+                                            <div class="item">
+                                                <a class="fancybox" href="<?= isset($good['watermarks'][$pics_index]) ?
+                                                    $good['watermarks'][$pics_index] : get_template_directory_uri() . '
+                                                /img/404/operator.png'; ?>">
                                                     <img src="<?= wp_get_attachment_image_url($thumbs, 'full') ?>"
-                                                         alt="shop thumbnail">
+                                                         alt="shop thumbnail" style="width: 220px"">
                                                 </a>
                                             </div>
                                         <?php } ?>
-                                        <!--                                        --><?php //foreach ($good['thumbs'] as $thumbs) { ?>
-                                        <!--                                            <div class="slide">-->
-                                        <!--                                                <a href="#"><img-->
-                                        <!--                                                            src="-->
-                                        <? //= wp_get_attachment_image_url($thumbs, 'full') ?><!--"-->
-                                        <!--                                                            alt="shop thumbnail"></a>-->
-                                        <!--                                            </div>-->
-                                        <!--                                        --><?php //} ?>
-
                                     </div>
-
                                 </div>
 
                                 <div class="shop-card__main-content">
@@ -311,7 +380,9 @@ while ($loop->have_posts()): $loop->the_post();
                                 </div>
                             </div>
                         </div>
-                    <?php } ?>
+                        <?php
+//                        break;
+                    } ?>
 
 
                     <script>
@@ -331,35 +402,36 @@ while ($loop->have_posts()): $loop->the_post();
                             $(document).ready(function () {
                                 $(".fancybox").fancybox();
                             });
-
-
-                            $('.samples-slider').slick({
-                                slidesToShow: 1,
-                                slidesToScroll: 1,
-                                arrows: true,
-                                dots: false,
-                                prevArrow: '<button class="arrow-prev"></button>',
-                                nextArrow: '<button class="arrow-next"></button>',
-                                // asNavFor: '.thumbs-slider',
-                                // centerMode: true,
-                                adaptiveHeight: false,
-                                // focusOnSelect: true
-                            });
-                            $('.thumbs-slider').slick({
-                                infinite: true,
-                                slidesToShow: 3,
-                                slidesToScroll: 1,
-                                arrows: false,
-                                dots: false,
-                                autoplay: false,
-                                prevArrow: '<button class="arrow-prev"></button>',
-                                nextArrow: '<button class="arrow-next"></button>',
-                                asNavFor: '.samples-slider',
-                                // autoplaySpeed: 2000,
-                                // centerMode: true
-                                // adaptiveHeight: true,
-                                focusOnSelect: true
-                            });
+                            //
+                            //
+                            // $('.samples-slider').slick({
+                            //     slidesToShow: 1,
+                            //     slidesToScroll: 1,
+                            //     arrows: true,
+                            //     dots: false,
+                            //     prevArrow: '<button class="arrow-prev"></button>',
+                            //     nextArrow: '<button class="arrow-next"></button>',
+                            //     asNavFor: '.thumbs-slider',
+                            //     // centerMode: true,
+                            //     adaptiveHeight: false
+                            //     // focusOnSelect: true
+                            // });
+                            // $('.thumbs-slider').slick({
+                            //     // infinite: true,
+                            //     slidesToShow: 3,
+                            //     // slidesToScroll: 1,
+                            //     arrows: false,
+                            //     dots: false,
+                            //     autoplay: false,
+                            //     // prevArrow: '<button class="arrow-prev"></button>',
+                            //     // nextArrow: '<button class="arrow-next"></button>',
+                            //     asNavFor: '.samples-slider',
+                            //     // autoplaySpeed: 2000,
+                            //     //  centerMode: true,
+                            //     // adaptiveHeight: true,
+                            //     focusOnSelect: true,
+                            //     swipeToSlide: true
+                            // });
                         });
                     </script>
 
