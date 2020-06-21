@@ -213,7 +213,7 @@ while ($loop->have_posts()): $loop->the_post();
                                 <div class="owl-carousel owl-theme slider-main owl-main<?= '-' . $index ?> ">
                                     <?php foreach ($good['thumbs'] as $pics_index => $thumbs) { ?>
                                         <div class="item">
-                                            <a class="fancybox" href="<?= isset($good['watermarks'][$pics_index]) ?
+                                            <a class="fancybox" data-fancybox="gallery" href="<?= isset($good['watermarks'][$pics_index]) ?
                                                 $good['watermarks'][$pics_index] : get_template_directory_uri() . '
                                                 /img/404/operator.png'; ?>">
                                                 <img src="<?= wp_get_attachment_image_url($thumbs, 'full') ?>"
@@ -255,7 +255,8 @@ while ($loop->have_posts()): $loop->the_post();
                                     <div class="owl-carousel owl-theme slider-main owl-main<?= '-' . $index ?> <?= $offer_icon ?>">
                                         <?php foreach ($good['thumbs'] as $pics_index => $thumbs) { ?>
                                             <div class="item">
-                                                <a class="fancybox" href="<?= isset($good['watermarks'][$pics_index]) ?
+                                                <a class="fancybox" data-fancybox="gallery"  href="<?= isset
+                                                ($good['watermarks'][$pics_index]) ?
                                                     $good['watermarks'][$pics_index] : get_template_directory_uri() . '
                                                 /img/404/operator.png'; ?>">
                                                     <img src="<?= wp_get_attachment_image_url($thumbs, 'full') ?>"
@@ -420,43 +421,11 @@ while ($loop->have_posts()): $loop->the_post();
                                 container.querySelectorAll('.description-container__content')[e.dataset.index].classList.add('active-tab')
                             });
                         });
-                        //     slider for product card
-
+                        // init lightbox gallery
                         jQuery(function ($) {
-
                             $(document).ready(function () {
                                 $(".fancybox").fancybox();
                             });
-                            //
-                            //
-                            // $('.samples-slider').slick({
-                            //     slidesToShow: 1,
-                            //     slidesToScroll: 1,
-                            //     arrows: true,
-                            //     dots: false,
-                            //     prevArrow: '<button class="arrow-prev"></button>',
-                            //     nextArrow: '<button class="arrow-next"></button>',
-                            //     asNavFor: '.thumbs-slider',
-                            //     // centerMode: true,
-                            //     adaptiveHeight: false
-                            //     // focusOnSelect: true
-                            // });
-                            // $('.thumbs-slider').slick({
-                            //     // infinite: true,
-                            //     slidesToShow: 3,
-                            //     // slidesToScroll: 1,
-                            //     arrows: false,
-                            //     dots: false,
-                            //     autoplay: false,
-                            //     // prevArrow: '<button class="arrow-prev"></button>',
-                            //     // nextArrow: '<button class="arrow-next"></button>',
-                            //     asNavFor: '.samples-slider',
-                            //     // autoplaySpeed: 2000,
-                            //     //  centerMode: true,
-                            //     // adaptiveHeight: true,
-                            //     focusOnSelect: true,
-                            //     swipeToSlide: true
-                            // });
                         });
                     </script>
 
@@ -484,7 +453,6 @@ while ($loop->have_posts()): $loop->the_post();
         <img src="<?= get_template_directory_uri() ?>/img/fire.svg" alt="hot deal">
         <h2>горячее предложение</h2>
         <h2>обратите внимание на цену!</h2>
-
     </div>
     <!--***-->
 
