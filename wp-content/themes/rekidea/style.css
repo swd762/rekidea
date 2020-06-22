@@ -1720,6 +1720,9 @@ a, button {
     padding-left: 20px;
     padding-right: 20px; }
 
+#hot-modal {
+  display: none; }
+
 .main-header {
   position: fixed;
   width: 100%;
@@ -1782,6 +1785,12 @@ a, button {
     margin-left: auto; }
     .header-mobile .header-mobile__meta .header-mobile__search {
       margin-right: 20px; }
+      .header-mobile .header-mobile__meta .header-mobile__search img {
+        width: 19px;
+        height: 19px; }
+    .header-mobile .header-mobile__meta .header-mobile__contacts img {
+      width: 21px;
+      height: 21px; }
 
 .top-menu-mobile {
   display: none;
@@ -4307,7 +4316,7 @@ a, button {
     margin-top: 17px;
     position: sticky;
     top: 124px;
-    z-index: 1;
+    z-index: 10;
     background: #fff; }
     @media (max-width: 1023px) {
       .shop-products__container-filter {

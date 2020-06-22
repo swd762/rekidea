@@ -195,7 +195,6 @@ while ($loop->have_posts()): $loop->the_post();
                                 }
                                 ?>
                                 <script>
-
                                         function open_hot() {
                                             jQuery.fancybox.open({
                                                 src: '#hot-modal',
@@ -205,15 +204,13 @@ while ($loop->have_posts()): $loop->the_post();
                                                 // closeBtn: true
                                             });
                                         }
-
-
-
                                 </script>
 
                                 <div class="owl-carousel owl-theme slider-main owl-main<?= '-' . $index ?> ">
                                     <?php foreach ($good['thumbs'] as $pics_index => $thumbs) { ?>
                                         <div class="item">
-                                            <a class="fancybox" data-fancybox="gallery" href="<?= isset($good['watermarks'][$pics_index]) ?
+                                            <a class="fancybox" data-fancybox="gallery<?= $index ?>" href="<?= isset
+                                            ($good['watermarks'][$pics_index]) ?
                                                 $good['watermarks'][$pics_index] : get_template_directory_uri() . '
                                                 /img/404/operator.png'; ?>">
                                                 <img src="<?= wp_get_attachment_image_url($thumbs, 'full') ?>"
@@ -252,10 +249,10 @@ while ($loop->have_posts()): $loop->the_post();
                                 </div>
 
                                 <div class="shop-card__thumb-slider">
-                                    <div class="owl-carousel owl-theme slider-main owl-main<?= '-' . $index ?> <?= $offer_icon ?>">
+                                    <div class="owl-carousel owl-theme slider-main owl-main<?= '-' . $index ?> ">
                                         <?php foreach ($good['thumbs'] as $pics_index => $thumbs) { ?>
                                             <div class="item">
-                                                <a class="fancybox" data-fancybox="gallery"  href="<?= isset
+                                                <a class="fancybox" data-fancybox="<?= $index ?>gallery"  href="<?= isset
                                                 ($good['watermarks'][$pics_index]) ?
                                                     $good['watermarks'][$pics_index] : get_template_directory_uri() . '
                                                 /img/404/operator.png'; ?>">
@@ -340,8 +337,8 @@ while ($loop->have_posts()): $loop->the_post();
                                     slideSpeed: 2000,
                                     nav: true,
                                     autoplay: false,
-                                    dots: true,
-                                    loop: true,
+                                    dots: false,
+                                    // loop: true,
                                     responsiveRefreshRate: 200,
                                     navText: ['<svg width="100%" height="100%" viewBox="0 0 11 20"><path style="fill:none;stroke-width: 1px;stroke: #000;" d="M9.554,1.001l-8.607,8.607l8.607,8.606"/></svg>', '<svg width="100%" height="100%" viewBox="0 0 11 20" version="1.1"><path style="fill:none;stroke-width: 1px;stroke: #000;" d="M1.054,18.214l8.606,-8.606l-8.606,-8.607"/></svg>'],
                                 }).on('changed.owl.carousel', syncPosition);
@@ -363,18 +360,18 @@ while ($loop->have_posts()): $loop->the_post();
 
                                 function syncPosition(el) {
                                     //if you set loop to false, you have to restore this next line
-                                    //var current = el.item.index;
+                                    var current = el.item.index;
 
                                     //if you disable loop you have to comment this block
-                                    var count = el.item.count - 1;
-                                    var current = Math.round(el.item.index - (el.item.count / 2) - .5);
-
-                                    if (current < 0) {
-                                        current = count;
-                                    }
-                                    if (current > count) {
-                                        current = 0;
-                                    }
+                                    // var count = el.item.count - 1;
+                                    // var current = Math.round(el.item.index - (el.item.count / 2) - .5);
+                                    //
+                                    // if (current < 0) {
+                                    //     current = count;
+                                    // }
+                                    // if (current > count) {
+                                    //     current = 0;
+                                    // }
 
                                     //end block
 
