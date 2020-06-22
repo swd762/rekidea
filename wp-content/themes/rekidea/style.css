@@ -4533,6 +4533,26 @@ a, button {
           margin-bottom: 15px;
           margin-top: 15px; } }
 
+.shop-extra-html-field__title {
+  font-size: 13px;
+  font-weight: 300; }
+
+.shop-extra-html-field {
+  display: flex;
+  margin-top: 10px;
+  margin-bottom: 16px; }
+  .shop-extra-html-field section {
+    margin-right: 25px;
+    font-weight: 300;
+    text-align: center;
+    width: 55px; }
+    .shop-extra-html-field section > p {
+      font-size: 13px; }
+    .shop-extra-html-field section > span {
+      display: block;
+      width: 55px;
+      height: 24px; }
+
 footer {
   background-color: #474747; }
 

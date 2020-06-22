@@ -32,14 +32,12 @@ while ($loop->have_posts()): $loop->the_post();
     $import_custom_fields = get_fields();
     $import_media_gallery = acf_photo_gallery('watermark-pics', $post->ID);
 
-//    echo '<pre>';
-//    var_dump($goodsPrice);
-//    echo '</pre>';
 
 
     foreach ($import_media_gallery as $watermarks) {
         $goodsPrice['watermarks'][] = $watermarks['full_image_url'];
     }
+    $goodsPrice['extra_html_field'] = $import_custom_fields['extra_html_field'];
     $goodsPrice['offer_icon'] = $import_custom_fields['offer_icon'];
     $goodsPrice['deadline_tab'] = $import_custom_fields['deadlines'];
     $goodsPrice['delivery_tab'] = $import_custom_fields['delivery'];
@@ -67,6 +65,9 @@ while ($loop->have_posts()): $loop->the_post();
         $goodsPrice['var_id'][] = $variation['variation_id'];
 
     }
+    echo '<pre>';
+    var_dump($goodsPrice);
+    echo '</pre>';
 
 //    echo '<pre>';
 //    var_dump($goodsPrice['hot']);
@@ -300,6 +301,8 @@ while ($loop->have_posts()): $loop->the_post();
                                             </tr>
                                         <?php } ?>
                                     </table>
+
+                                    <?= $good['extra_html_field']!=null?$good['extra_html_field']:''; ?>
 
                                     <span class="buy-btn" onclick="buy(<?= $index ?>)">купить</span>
 
