@@ -100,6 +100,17 @@
 
     .header-mobile__search {
       margin-right: 20px;
+      img {
+        width: 19px;
+        height: 19px;
+      }
+    }
+
+    .header-mobile__contacts {
+      img {
+        width: 21px;
+        height: 21px;
+      }
     }
   }
 }
@@ -3898,7 +3909,7 @@
     margin-top: 17px;
     position: sticky;
     top: 124px;
-    z-index: 1;
+    z-index: 10;
     background: #fff;
 
     @media (max-width: 1023px) {

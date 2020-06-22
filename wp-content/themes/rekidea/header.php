@@ -204,10 +204,10 @@ wp_head();
                      </a>
                  </div>
                  <div class="header-mobile__search">
-                    <img src="<?= get_template_directory_uri()?>/img/search_icon.png">
+                    <img src="<?= get_template_directory_uri()?>/img/search.svg">
                  </div>
                  <div class="header-mobile__contacts">
-                     <a href="tel:+79265832351"><img src="<?= get_template_directory_uri()?>/img/phone_icon.png"></a>
+                     <a href="tel:+79265832351"><img src="<?= get_template_directory_uri()?>/img/phone.svg"></a>
                  </div>
              </div>
          </div>
