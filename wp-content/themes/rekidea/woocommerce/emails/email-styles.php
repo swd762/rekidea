@@ -106,7 +106,7 @@ body {
 }
 
 #body_content table td {
-	padding: 48px 48px 32px;
+    padding: 5px 20px;
 }
 
 #body_content table td td {
@@ -140,7 +140,7 @@ body {
 #body_content_inner {
 	color: <?php echo esc_attr( $text_lighter_20 ); ?>;
 	font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
-	font-size: 14px;
+	font-size: 16px;
 	line-height: 150%;
 	text-align: <?php echo is_rtl() ? 'right' : 'left'; ?>;
 }
@@ -167,8 +167,9 @@ body {
 }
 
 #header_wrapper {
-	padding: 36px 48px;
+	padding: 10px 0;
 	display: block;
+    text-align: center
 }
 
 h1 {
@@ -223,5 +224,9 @@ img {
 	margin-<?php echo is_rtl() ? 'left' : 'right'; ?>: 10px;
 	max-width: 100%;
 	height: auto;
+}
+p {
+    margin-bottom: 5px !important;
+    line-height: initial;
 }
 <?php

@@ -45,7 +45,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 									<table border="0" cellpadding="0" cellspacing="0" width="100%" id="template_header">
 										<tr>
 											<td id="header_wrapper">
-												<img src="">
+												<img src="<?= get_template_directory_uri()?>/img/logo_big_email.png">
 											</td>
 										</tr>
 									</table>
