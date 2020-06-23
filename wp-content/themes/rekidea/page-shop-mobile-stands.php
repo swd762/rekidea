@@ -65,9 +65,9 @@ while ($loop->have_posts()): $loop->the_post();
         $goodsPrice['var_id'][] = $variation['variation_id'];
 
     }
-    echo '<pre>';
-    var_dump($goodsPrice);
-    echo '</pre>';
+//    echo '<pre>';
+//    var_dump($goodsPrice);
+//    echo '</pre>';
 
 //    echo '<pre>';
 //    var_dump($goodsPrice['hot']);
@@ -250,6 +250,14 @@ while ($loop->have_posts()): $loop->the_post();
                                 </div>
 
                                 <div class="shop-card__thumb-slider">
+                                    <?php if ($offer_icon != '') {
+                                        echo '<span class="';
+                                        echo $offer_icon;
+                                        echo '" onclick="open_hot();"><img src="';
+                                        echo get_template_directory_uri();
+                                        echo '/img/' . $offer_icon . '.png"></span>';
+                                    }
+                                    ?>
                                     <div class="owl-carousel owl-theme slider-main owl-main<?= '-' . $index ?> ">
                                         <?php foreach ($good['thumbs'] as $pics_index => $thumbs) { ?>
                                             <div class="item">
